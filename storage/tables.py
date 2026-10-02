@@ -70,6 +70,8 @@ allergen_group = Table(
     Column("id", Text, primary_key=True),
     Column("display_name", Text, nullable=False),
     Column("kind", Text, nullable=False),
+    Column("official", Boolean, nullable=False),
+    Column("source", Text, nullable=False),
     Column("status", Text, nullable=False),
     Column("confidence", Text, nullable=False),
     Column("note", Text),

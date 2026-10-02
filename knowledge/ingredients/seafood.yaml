@@ -1,0 +1,424 @@
+# 해산물·생선·젓갈·해조류 (형식: knowledge/README.md). 모든 항목은 사람이 검수하기 전까지 status: draft
+# 법정 그룹: 고등어(mackerel), 게, 새우, 오징어, 조개류. 고등어 외 생선은 자체 그룹 other_fish.
+
+- id: seafood
+  name: 해산물
+  kind: concept
+  category: 해산물
+  status: reviewed
+- id: fish
+  name: 생선
+  kind: concept
+  is_a: [seafood]
+  category: 생선
+  status: reviewed
+
+# --- 생선: 고등어(법정) ---
+- id: mackerel
+  name: 고등어
+  aliases: [생고등어]
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: mackerel, certainty: definite}]
+  status: reviewed
+- id: salted_mackerel
+  name: 자반고등어
+  aliases: [간고등어, 고등어자반]
+  derived_from: [mackerel]
+  is_processed: true
+  category: 생선
+  status: reviewed
+- id: canned_mackerel
+  name: 고등어통조림
+  aliases: [고등어캔]
+  derived_from: [mackerel]
+  is_processed: true
+  category: 생선
+  status: reviewed
+
+# --- 생선: 기타(자체 그룹 other_fish) ---
+- id: spanish_mackerel
+  name: 삼치
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  confidence: low
+  note: 삼치는 고등어과지만 법정 표시 대상 '고등어'와 다른 어종으로 보고 기타 생선에 둠. 고등어 그룹에도 넣을지 검수
+  status: reviewed
+- id: pacific_saury
+  name: 꽁치
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  confidence: low
+  note: 꽁치는 고등어과가 아님(꽁치과)으로 알고 있으나 확인 필요
+  status: reviewed
+- id: canned_saury
+  name: 꽁치통조림
+  aliases: [꽁치캔]
+  derived_from: [pacific_saury]
+  is_processed: true
+  category: 생선
+  status: reviewed
+- id: hairtail
+  name: 갈치
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  status: reviewed
+- id: yellow_croaker
+  name: 조기
+  aliases: [참조기]
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  status: reviewed
+- id: gulbi
+  name: 굴비
+  derived_from: [yellow_croaker]
+  is_processed: true
+  category: 생선
+  status: reviewed
+- id: pollock
+  name: 명태
+  aliases: [동태, 생태, 코다리]
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  confidence: low
+  note: 코다리(반건조 명태)를 별칭으로 묶음. 별도 가공품으로 둘지 검수
+  status: reviewed
+- id: dried_pollock
+  name: 황태
+  aliases: [북어, 황태채, 북어채]
+  derived_from: [pollock]
+  is_processed: true
+  category: 생선
+  status: reviewed
+- id: cod
+  name: 대구
+  aliases: [대구살, 생대구]
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  status: reviewed
+- id: flatfish
+  name: 가자미
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  status: reviewed
+- id: salmon
+  name: 연어
+  aliases: [생연어]
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  status: reviewed
+- id: tuna
+  name: 참치
+  aliases: [참치회, 다랑어]
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  status: reviewed
+- id: canned_tuna
+  name: 참치캔
+  aliases: [참치통조림, 통조림참치]
+  derived_from: [tuna, {id: soybean_oil, certainty: possible}]
+  is_processed: true
+  category: 생선
+  confidence: low
+  note: 기름담금 제품은 대두유 사용이 많음(정제유의 대두 처리 기준은 soybean_oil 검수에 따름)
+  status: reviewed
+- id: skipjack
+  name: 가다랑어
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  status: reviewed
+- id: katsuobushi
+  name: 가쓰오부시
+  aliases: [가다랑어포, 가츠오부시]
+  derived_from: [skipjack]
+  is_processed: true
+  category: 생선
+  status: reviewed
+- id: anchovy
+  name: 멸치
+  aliases: [국물용 멸치, 다시멸치, 볶음용 멸치, {text: 잔멸치, form: small}]
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  status: reviewed
+- id: sand_lance
+  name: 까나리
+  is_a: [fish]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  status: reviewed
+
+# --- 생선 가공품 ---
+- id: fish_cake
+  name: 어묵
+  aliases: [오뎅, 사각어묵, 부산어묵, 어묵탕용 어묵]
+  derived_from:
+    - fish
+    - {id: wheat_flour, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: egg, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: 어종이 제품마다 달라 '생선'(분류 노드)에서 파생 → 모든 생선 그룹 possible. 밀가루·전분·대두단백 첨가 제품 많음
+  status: reviewed
+- id: imitation_crab
+  name: 게맛살
+  aliases: [맛살, 게살맛살]
+  derived_from:
+    - fish
+    - {id: crab, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: egg, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: 연육(생선살)이 주원료. 게 추출물·밀·난백·대두 함유 제품 있음
+  status: reviewed
+
+# --- 갑각류 ---
+- id: shrimp_raw
+  name: 새우
+  aliases: [대하, 칵테일새우, 새우살, 흰다리새우, 냉동새우]
+  is_a: [seafood]
+  category: 해산물
+  allergens: [{group: shrimp, certainty: definite}]
+  status: reviewed
+- id: dried_shrimp
+  name: 건새우
+  aliases: [마른 새우, 보리새우]
+  derived_from: [shrimp_raw]
+  is_processed: true
+  category: 해산물
+  status: reviewed
+- id: crab
+  name: 게
+  aliases: [꽃게, 대게, 홍게, 게살]
+  is_a: [seafood]
+  category: 해산물
+  allergens: [{group: crab, certainty: definite}]
+  status: reviewed
+
+# --- 연체류 ---
+- id: squid
+  name: 오징어
+  aliases: [생물 오징어, 한치]
+  is_a: [seafood]
+  category: 해산물
+  allergens: [{group: squid, certainty: definite}]
+  confidence: low
+  note: 한치(오징어류)를 별칭으로 묶음. 법정 '오징어'에 한치가 포함되는지 검수
+  status: reviewed
+- id: dried_squid
+  name: 오징어채
+  aliases: [진미채, 오징어 진미채, 마른오징어]
+  derived_from: [squid]
+  is_processed: true
+  category: 해산물
+  status: reviewed
+- id: small_octopus
+  name: 낙지
+  is_a: [seafood]
+  category: 해산물
+  confidence: low
+  allergens: [{group: other_cephalopods, certainty: definite}]
+  note: 오징어(법정)가 아니라 자체 그룹 기타 연체류에 둠(0-4 검수)
+  status: reviewed
+- id: octopus
+  name: 문어
+  aliases: [자숙문어]
+  is_a: [seafood]
+  category: 해산물
+  allergens: [{group: other_cephalopods, certainty: definite}]
+  confidence: low
+  note: 오징어(법정)가 아니라 자체 그룹 기타 연체류에 둠(0-4 검수)
+  status: reviewed
+- id: webfoot_octopus
+  name: 주꾸미
+  aliases: [쭈꾸미]
+  is_a: [seafood]
+  category: 해산물
+  allergens: [{group: other_cephalopods, certainty: definite}]
+  confidence: low
+  note: 오징어(법정)가 아니라 자체 그룹 기타 연체류에 둠(0-4 검수)
+  status: reviewed
+
+# --- 조개류(법정: 굴·전복·홍합 포함). 알레르기는 중간 노드 clam에만 적고 하위는 is_a로 상속 ---
+- id: clam
+  name: 조개
+  aliases: [조개류, 조갯살]
+  is_a: [seafood]
+  category: 해산물
+  allergens: [{group: shellfish, certainty: definite}]
+  status: reviewed
+- id: manila_clam
+  name: 바지락
+  aliases: [바지락살]
+  is_a: [clam]
+  category: 해산물
+  status: reviewed
+- id: hard_clam
+  name: 모시조개
+  is_a: [clam]
+  category: 해산물
+  status: reviewed
+- id: cockle
+  name: 꼬막
+  aliases: [새꼬막, 참꼬막]
+  is_a: [clam]
+  category: 해산물
+  status: reviewed
+- id: scallop
+  name: 가리비
+  aliases: [가리비살, 관자]
+  is_a: [clam]
+  category: 해산물
+  confidence: low
+  note: 관자는 키조개 관자일 수도 있으나 둘 다 조개류라 알레르기 판정은 같음
+  status: reviewed
+- id: mussel
+  name: 홍합
+  aliases: [섭, 홍합살]
+  is_a: [clam]
+  category: 해산물
+  status: reviewed
+- id: oyster
+  name: 굴
+  aliases: [생굴, 석화]
+  is_a: [clam]
+  category: 해산물
+  status: reviewed
+- id: abalone
+  name: 전복
+  is_a: [clam]
+  category: 해산물
+  status: reviewed
+- id: marsh_clam
+  name: 재첩
+  is_a: [clam]
+  category: 해산물
+  status: reviewed
+
+# --- 젓갈 ---
+- id: jeotgal
+  name: 젓갈류
+  aliases: [젓갈]
+  is_a: [seafood]
+  category: 젓갈
+  status: reviewed
+- id: saeujeot
+  name: 새우젓
+  aliases: [새우젓갈, 육젓, 추젓]
+  is_a: [jeotgal]
+  derived_from: [shrimp_raw]
+  is_processed: true
+  category: 젓갈
+  status: reviewed
+- id: myeongnanjeot
+  name: 명란젓
+  aliases: [명란, 백명란]
+  is_a: [jeotgal]
+  derived_from: [pollock]
+  is_processed: true
+  category: 젓갈
+  status: reviewed
+- id: ojingeojeot
+  name: 오징어젓
+  aliases: [오징어젓갈]
+  is_a: [jeotgal]
+  derived_from: [squid]
+  is_processed: true
+  category: 젓갈
+  status: reviewed
+- id: myeolchijeot
+  name: 멸치젓
+  aliases: [멸치젓갈]
+  is_a: [jeotgal]
+  derived_from: [anchovy]
+  is_processed: true
+  category: 젓갈
+  status: reviewed
+- id: eorigul_jeot
+  name: 어리굴젓
+  aliases: [굴젓]
+  is_a: [jeotgal]
+  derived_from: [oyster]
+  is_processed: true
+  category: 젓갈
+  status: reviewed
+- id: jogae_jeot
+  name: 조개젓
+  aliases: [조개젓갈, 바지락젓]
+  is_a: [jeotgal]
+  derived_from: [clam]
+  is_processed: true
+  category: 젓갈
+  status: reviewed
+- id: fish_sauce
+  name: 액젓
+  aliases: [피시소스]
+  is_a: [jeotgal]
+  category: 젓갈
+  confidence: low
+  note: 원료 어종을 모르는 넓은 재료. 하위(멸치액젓·까나리액젓)의 알레르기를 possible로 가짐. 피시소스(동남아)를 별칭으로 묶어도 되는지 검수
+  status: reviewed
+- id: anchovy_fish_sauce
+  name: 멸치액젓
+  is_a: [fish_sauce]
+  derived_from: [anchovy]
+  is_processed: true
+  category: 젓갈
+  status: reviewed
+- id: sand_lance_fish_sauce
+  name: 까나리액젓
+  is_a: [fish_sauce]
+  derived_from: [sand_lance]
+  is_processed: true
+  category: 젓갈
+  status: reviewed
+
+# --- 해조류 ---
+- id: laver
+  name: 김
+  aliases: [김밥김, 생김, 구운김]
+  category: 해조류
+  status: reviewed
+- id: seasoned_laver
+  name: 조미김
+  aliases: [맛김, 도시락김]
+  derived_from: [laver, {id: sesame_oil, certainty: possible}, {id: perilla_oil, certainty: possible}]
+  is_processed: true
+  category: 해조류
+  confidence: low
+  note: 참기름·들기름·식용유 중 무엇을 쓰는지 제품마다 다름
+  status: reviewed
+- id: seaweed
+  name: 미역
+  aliases: [건미역, 자른미역]
+  category: 해조류
+  status: reviewed
+- id: kelp
+  name: 다시마
+  aliases: [국물용 다시마]
+  category: 해조류
+  status: reviewed
+
+# --- 육수 ---
+- id: anchovy_stock
+  name: 멸치육수
+  aliases: [멸치다시마육수, 멸치 다시물]
+  derived_from: [anchovy, {id: kelp, certainty: possible}]
+  is_processed: true
+  category: 육수·조미료
+  status: reviewed

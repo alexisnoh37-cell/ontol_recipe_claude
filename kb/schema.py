@@ -27,9 +27,16 @@ class StrictModel(BaseModel):
 # --- allergens.yaml -------------------------------------------------------
 
 
+GroupSource = Literal["law_annex2", "custom"]
+
+
 class AllergenGroupSpec(StrictModel):
     id: Id
     display_name: Text
+    # official: 법정 표시 대상(식품 등의 표시·광고에 관한 법률 시행규칙 별표 2) 여부.
+    # source: law_annex2(법정) | custom(서비스 자체 추가). 실제 allergens.yaml에는 둘 다 명시한다.
+    official: bool = False
+    source: GroupSource = "custom"
     status: Status
     confidence: Confidence = "high"
     note: str | None = None

@@ -52,7 +52,7 @@ docker compose up -d --wait          # PostgreSQL 16 (처음 만들 때 테스�
 uv run alembic upgrade head          # 스키마 생성 (docs/plan.md 부록 B)
 ```
 
-DB를 처음부터 다시 만들려면 `docker compose down -v` 후 위 두 줄을 다시 실행합니다.
+저장소를 새로 받은 뒤(새 마이그레이션이 추가되었을 수 있음)에도 `uv run alembic upgrade head`를 먼저 실행합니다. DB를 처음부터 다시 만들려면 `docker compose down -v` 후 위 두 줄을 다시 실행합니다.
 
 ### 3. 지식 컴파일
 

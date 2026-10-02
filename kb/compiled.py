@@ -58,6 +58,8 @@ class AllergenGroupRow:
     id: str
     display_name: str
     kind: str  # base | bundle
+    official: bool  # 법정 표시 대상 여부
+    source: str  # law_annex2 | custom
     status: str
     confidence: str
     note: str | None
@@ -223,8 +225,14 @@ def _build(kn: Knowledge, warnings: list[Issue], src_hash: str) -> CompiledKnowl
             RelationRow(s.from_id, s.to_id, "substitute", None, tuple(s.context), s.ratio, s.status, s.confidence, s.note)
         )
 
-    groups = [AllergenGroupRow(g.id, g.display_name, "base", g.status, g.confidence, g.note) for g in kn.groups]
-    groups += [AllergenGroupRow(b.id, b.display_name, "bundle", b.status, b.confidence, b.note) for b in kn.bundles]
+    groups = [
+        AllergenGroupRow(g.id, g.display_name, "base", g.official, g.source, g.status, g.confidence, g.note)
+        for g in kn.groups
+    ]
+    groups += [
+        AllergenGroupRow(b.id, b.display_name, "bundle", b.official, b.source, b.status, b.confidence, b.note)
+        for b in kn.bundles
+    ]
     members = [GroupMemberRow(b.id, m) for b in kn.bundles for m in b.includes]
     direct = [IngredientAllergenRow(i.id, a.group, a.certainty) for i in kn.ingredients for a in i.allergens]
 

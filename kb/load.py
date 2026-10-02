@@ -32,8 +32,16 @@ class KnowledgeSources:
 
 
 def _read_yaml(path: Path) -> Any:
-    with path.open("r", encoding="utf-8") as fh:
-        return yaml.safe_load(fh)
+    """YAML 문법 오류는 KnowledgeError(yaml_syntax)로 바꿔 다른 오류와 같은 형식으로 보고한다."""
+    from kb.validate import Issue, KnowledgeError
+
+    try:
+        with path.open("r", encoding="utf-8") as fh:
+            return yaml.safe_load(fh)
+    except yaml.YAMLError as exc:
+        mark = getattr(exc, "problem_mark", None)
+        where = path.as_posix() + (f":{mark.line + 1}" if mark is not None else "")
+        raise KnowledgeError([Issue("yaml_syntax", where, str(getattr(exc, "problem", None) or exc))]) from exc
 
 
 def ingredient_files(knowledge_dir: Path) -> list[Path]:

@@ -1,0 +1,354 @@
+# 양념·장류·소스·기름·향신료·주류·첨가물 (형식: knowledge/README.md). 모든 항목은 사람이 검수하기 전까지 status: draft
+# 기본 양념 여부는 config/pantry_staples.yaml이 정한다(여기 적지 않음).
+
+# --- 기본 양념 ---
+- id: salt
+  name: 소금
+  aliases: [굵은소금, 꽃소금, 천일염, 맛소금]
+  category: 양념
+  confidence: low
+  note: 맛소금은 MSG가 섞인 제품. 알레르기 성분은 없다고 보고 별칭으로 둠
+  status: reviewed
+- id: sugar
+  name: 설탕
+  aliases: [백설탕, 황설탕, 흑설탕]
+  category: 양념
+  status: reviewed
+- id: black_pepper
+  name: 후추
+  aliases: [후춧가루, 통후추, 흑후추]
+  category: 허브·향신료
+  status: reviewed
+- id: gochugaru
+  name: 고춧가루
+  aliases: [고운 고춧가루, 굵은 고춧가루]
+  category: 양념
+  status: reviewed
+- id: vinegar
+  name: 식초
+  aliases: [양조식초, 사과식초, 현미식초]
+  category: 양념
+  status: reviewed
+- id: honey
+  name: 꿀
+  aliases: [벌꿀]
+  category: 양념
+  status: reviewed
+- id: oligosaccharide
+  name: 올리고당
+  category: 양념
+  status: reviewed
+- id: corn_syrup
+  name: 물엿
+  aliases: [조청]
+  category: 양념
+  confidence: low
+  note: 조청(쌀 등을 고아 만든 것)과 물엿(전분당)은 원료가 다름. 별칭으로 둘지 검수
+  status: reviewed
+
+# --- 기름 ---
+- id: cooking_oil
+  name: 식용유
+  aliases: [카놀라유, 포도씨유, 해바라기유, 옥수수유]
+  category: 기름
+  confidence: low
+  note: 콩기름(대두유)은 별도 재료 soybean_oil. '식용유'가 콩기름일 수 있는 문제(대두 알레르기)는 검수 필요
+  status: reviewed
+- id: soybean_oil
+  name: 콩기름
+  aliases: [대두유]
+  category: 기름
+  derived_from: [{id: soybean, certainty: possible}]
+  is_processed: true
+  confidence: low
+  note: 정제유의 대두 알레르기 처리 기준은 사람이 판단. 식용유(cooking_oil)와의 is_a 관계는 두지 않음
+  status: reviewed
+- id: sesame_oil
+  name: 참기름
+  derived_from: [sesame]
+  is_processed: true
+  category: 기름
+  status: reviewed
+- id: perilla_oil
+  name: 들기름
+  derived_from: [perilla_seed]
+  is_processed: true
+  category: 기름
+  status: reviewed
+- id: olive_oil
+  name: 올리브유
+  aliases: [올리브오일, 엑스트라버진 올리브유]
+  category: 기름
+  status: reviewed
+- id: chili_oil
+  name: 고추기름
+  aliases: [라유]
+  derived_from: [gochugaru, cooking_oil]
+  is_processed: true
+  category: 기름
+  status: reviewed
+
+# --- 장류 ---
+- id: soy_sauce
+  name: 간장
+  aliases: [진간장, 국간장, 양조간장, 조선간장]
+  derived_from: [soybean, wheat_flour]
+  is_processed: true
+  category: 장류
+  confidence: low
+  note: 국간장(조선간장)은 밀이 없는 제품이 많으나 보수적으로 밀 definite. 국간장을 별도 재료로 나눌지 검수
+  status: reviewed
+- id: doenjang
+  name: 된장
+  aliases: [재래식 된장, 시판 된장]
+  derived_from: [soybean, {id: wheat_flour, certainty: possible}]
+  is_processed: true
+  category: 장류
+  confidence: low
+  note: 밀 포함 여부는 제품별 상이
+  status: reviewed
+- id: gochujang
+  name: 고추장
+  derived_from: [soybean, {id: wheat_flour, certainty: possible}, gochugaru]
+  is_processed: true
+  category: 장류
+  confidence: low
+  note: 밀 포함 여부는 제품별 상이(밀 고추장 많음). 포함 가능으로 처리
+  status: reviewed
+- id: ssamjang
+  name: 쌈장
+  derived_from: [doenjang, gochujang, {id: sesame_oil, certainty: possible}]
+  is_processed: true
+  category: 장류
+  confidence: low
+  note: 된장·고추장 기반. 참기름·참깨 첨가 제품이 많아 possible
+  status: reviewed
+- id: cheonggukjang
+  name: 청국장
+  derived_from: [soybean]
+  is_processed: true
+  category: 장류
+  status: reviewed
+- id: chunjang
+  name: 춘장
+  aliases: [짜장 소스용 춘장]
+  derived_from: [soybean, wheat_flour]
+  is_processed: true
+  category: 장류
+  confidence: low
+  note: 대두·밀이 주원료인 제품 기준
+  status: reviewed
+- id: doubanjiang
+  name: 두반장
+  derived_from: [{id: soybean, certainty: possible}, {id: wheat_flour, certainty: possible}]
+  is_processed: true
+  category: 장류
+  confidence: low
+  note: 잠두(누에콩)가 주원료. 대두·밀 첨가는 제품별 상이
+  status: reviewed
+- id: miso
+  name: 미소된장
+  aliases: [미소, 일본된장]
+  derived_from: [soybean, {id: wheat_flour, certainty: possible}]
+  is_processed: true
+  category: 장류
+  confidence: low
+  note: 보리·쌀 누룩 사용. 밀 사용 제품 있음
+  status: reviewed
+
+# --- 소스 ---
+- id: oyster_sauce
+  name: 굴소스
+  aliases: [오이스터소스]
+  derived_from: [oyster, {id: wheat_flour, certainty: possible}, {id: soybean, certainty: possible}]
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: 굴 추출물 주원료. 밀가루·전분·간장 첨가 제품 있음
+  status: reviewed
+- id: mayonnaise
+  name: 마요네즈
+  aliases: [마요]
+  derived_from: [egg, {id: soybean_oil, certainty: possible}]
+  is_processed: true
+  category: 소스
+  status: reviewed
+- id: ketchup
+  name: 토마토케첩
+  aliases: [케첩, 케찹]
+  derived_from: [tomato]
+  is_processed: true
+  category: 소스
+  status: reviewed
+- id: tomato_sauce
+  name: 토마토소스
+  aliases: [토마토 파스타소스, 마리나라소스]
+  derived_from: [tomato, {id: milk, certainty: possible}, {id: cheese, certainty: possible}]
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: 치즈·크림 첨가 제품 있음
+  status: reviewed
+- id: tomato_paste
+  name: 토마토페이스트
+  derived_from: [tomato]
+  is_processed: true
+  category: 소스
+  status: reviewed
+- id: mustard
+  name: 머스터드
+  aliases: [디종 머스터드, 홀그레인 머스터드, 양겨자]
+  category: 소스
+  status: reviewed
+- id: wasabi
+  name: 와사비
+  aliases: [고추냉이]
+  category: 소스
+  status: reviewed
+- id: tonkatsu_sauce
+  name: 돈가스소스
+  aliases: [돈까스소스]
+  derived_from:
+    - {id: wheat_flour, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: tomato, certainty: possible}
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: 채소·과일 퓨레, 간장, 토마토, 전분 등 제품별 상이
+  status: reviewed
+- id: curry_powder
+  name: 카레가루
+  aliases: [카레, 카레분말, 고형카레, 카레 루]
+  derived_from:
+    - wheat_flour
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: pork, certainty: possible}
+    - {id: chicken, certainty: possible}
+    - {id: tomato, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: 국내 즉석 카레가루 기준 밀 definite. 향신료만 섞은 커리파우더는 밀이 없을 수 있음(별도 재료로 나눌지 검수). 유청·육류 추출물 등은 제품별 상이
+  status: reviewed
+- id: tsuyu
+  name: 쯔유
+  aliases: [가쓰오 쯔유, 메밀소스]
+  derived_from: [soy_sauce, katsuobushi]
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: 간장(대두·밀)과 가쓰오부시(생선) 기반
+  status: reviewed
+- id: tuna_extract
+  name: 참치액
+  derived_from: [skipjack, {id: soy_sauce, certainty: possible}]
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: 가다랑어 추출물 기반. 간장 혼합 여부 제품별 상이
+  status: reviewed
+
+# --- 육수·조미료 ---
+- id: beef_bone_broth
+  name: 사골육수
+  aliases: [사골국물, 사골곰탕 육수]
+  derived_from: [beef_bone]
+  is_processed: true
+  category: 육수·조미료
+  confidence: low
+  note: 시판 제품은 우유·대두 등 첨가가 있는지 확인 필요
+  status: reviewed
+- id: chicken_stock
+  name: 치킨스톡
+  aliases: [치킨스톡 큐브, 닭육수]
+  derived_from:
+    - chicken
+    - {id: wheat_flour, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: milk, certainty: possible}
+  is_processed: true
+  category: 육수·조미료
+  confidence: low
+  note: 고형·분말 제품은 밀·대두·유당 첨가가 흔함
+  status: reviewed
+- id: beef_seasoning
+  name: 쇠고기 맛 조미료
+  aliases: [쇠고기 조미료, 소고기 조미료]
+  derived_from:
+    - {id: beef, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 육수·조미료
+  confidence: low
+  note: 쇠고기 추출물 함량이 낮거나 없는 제품도 있음. 밀·대두 제품별 상이
+  status: reviewed
+
+# --- 허브·향신료 ---
+- id: basil
+  name: 바질
+  aliases: [바질잎, 건바질]
+  category: 허브·향신료
+  status: reviewed
+- id: parsley
+  name: 파슬리
+  aliases: [파슬리가루, 건파슬리]
+  category: 허브·향신료
+  status: reviewed
+- id: bay_leaf
+  name: 월계수잎
+  aliases: [로리에]
+  category: 허브·향신료
+  status: reviewed
+- id: cinnamon
+  name: 계피
+  aliases: [시나몬, 계피가루, 시나몬파우더]
+  category: 허브·향신료
+  status: reviewed
+- id: mustard_powder
+  name: 겨자
+  aliases: [겨잣가루, 연겨자]
+  category: 허브·향신료
+  status: reviewed
+
+# --- 주류 (아황산류) ---
+- id: wine
+  name: 와인
+  aliases: [레드와인, 화이트와인, 포도주, 요리용 와인]
+  derived_from: [grape, sulfite]
+  is_processed: true
+  category: 주류
+  confidence: low
+  note: 대부분의 와인에 아황산류가 들어감(무첨가 제품도 발효 중 소량 생성된다고 알려짐). definite로 둠. 검수
+  status: reviewed
+- id: mirin
+  name: 맛술
+  aliases: [미림, 미향]
+  derived_from: [rice]
+  is_processed: true
+  category: 주류
+  confidence: low
+  note: 쌀 발효 조미술. 아황산류 첨가 여부 확인 필요
+  status: reviewed
+- id: cheongju
+  name: 청주
+  aliases: [요리술, 정종]
+  derived_from: [rice]
+  is_processed: true
+  category: 주류
+  confidence: low
+  note: 맛술과 같은 이유로 확인 필요
+  status: reviewed
+
+# --- 첨가물 ---
+- id: sulfite
+  name: 아황산염
+  aliases: [아황산나트륨, 메타중아황산칼륨, 무수아황산]
+  category: 첨가물
+  allergens: [{group: sulfites, certainty: definite}]
+  note: 레시피 재료로 직접 쓰지 않음. 와인·건과일 등의 derived_from 원천으로만 사용
+  status: reviewed

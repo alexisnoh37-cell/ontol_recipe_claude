@@ -17,6 +17,23 @@
 
 기본 양념 목록은 이 폴더가 아니라 `config/pantry_staples.yaml`이 단일 원천입니다. 재료 YAML에는 `is_pantry_staple`을 적지 않습니다.
 
+## allergens.yaml
+
+`groups`(기본 그룹)와 `bundles`(묶음 그룹) 두 키를 둡니다. 목록은 docs/decisions.md D4에서 사람이 확정했습니다.
+
+| 필드 | 설명 |
+| --- | --- |
+| `id`, `display_name` | 그룹 id와 화면 표시 이름 |
+| `official` | 법정 표시 대상(식품 등의 표시·광고에 관한 법률 시행규칙 별표 2)이면 `true` |
+| `source` | `law_annex2`(법정) 또는 `custom`(서비스 자체 추가). `official: true`와 `law_annex2`는 함께 씁니다. 묶음은 항상 `official: false`, `custom` |
+| `includes` | 묶음 그룹만. 기본 그룹 id 목록(묶음 안의 묶음은 펼쳐서 적음) |
+
+스키마상 `official`·`source`는 기본값(`false`, `custom`)이 있지만, 실제 파일에는 모든 그룹에 직접 적습니다(tests/kb가 검사). DB `allergen_group` 테이블에는 아직 이 두 컬럼이 없어 반영하지 않습니다.
+
+## 검수표
+
+`uv run python scripts/make_review.py`가 컴파일 결과로 `docs/review/ingredients_review.md`를 만듭니다. 지식을 고친 뒤 다시 생성합니다(검수표가 최신이 아니면 tests/kb가 실패). 검수표는 손으로 고치지 않습니다.
+
 ## vocab.yaml
 
 `cuisines`, `equipment`, `techniques`, `categories` 네 키만 둡니다(다른 키는 오류). 값은 화면에 그대로 보이는 한국어 표기 문자열이고, 레시피·선호·대체재 context는 이 값을 그대로 씁니다. 한 번 쓰기 시작한 값을 바꾸면 그 값을 쓰는 데이터도 함께 고칩니다.

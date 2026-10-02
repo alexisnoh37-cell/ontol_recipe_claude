@@ -45,6 +45,8 @@ def test_real_knowledge_counts_match(db_engine):
             .where(t.allergen_closure.c.allergen_group_id == "shrimp", t.allergen_closure.c.ingredient_id == "kimchi")
         ).one()
         assert row.certainty == "possible" and row.via == ["kimchi", "saeujeot", "shrimp_raw"]
+        official = dict(conn.execute(select(t.allergen_group.c.id, t.allergen_group.c.official)).all())
+        assert official["shrimp"] is True and official["sesame"] is False and official["seafood_bundle"] is False
 
 
 def test_write_is_idempotent(db_engine):

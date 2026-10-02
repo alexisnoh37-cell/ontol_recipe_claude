@@ -79,7 +79,7 @@ knowledge/*.yaml  ──(scripts/compile_knowledge.py)──▶  DB 테이블 + 
 | ingredient | id, name, kind(ingredient·concept), category, is_pantry_staple, is_processed, status, confidence | 정규 식재료 마스터. concept는 분류 전용 노드 |
 | ingredient_alias | alias_norm, alias, ingredient_id, form, is_primary | "깐마늘", "다진 마늘"을 마늘로 매핑. 대표 이름도 한 행으로 저장 |
 | ingredient_relation | from_id, to_id, type, certainty, context, ratio, note | is_a, derived_from, substitute, pairs_with. certainty는 derived_from 엣지 단위 |
-| allergen_group | id, display_name, kind(base·bundle) | 알레르기 분류 |
+| allergen_group | id, display_name, kind(base·bundle), official, source(law_annex2·custom) | 알레르기 분류. official은 법정 표시 대상 여부 |
 | allergen_group_member | bundle_id, member_id | 묶음 그룹 → 기본 그룹 |
 | ingredient_allergen | ingredient_id, allergen_group_id, certainty | 원천 재료에만 지정, 하위·파생은 계산으로 상속 |
 | allergen_closure | allergen_group_id, ingredient_id, certainty, via | 상속 결과 캐시(컴파일 시 생성). 묶음 그룹도 펼쳐 저장. via는 설명용 경로 |
@@ -556,6 +556,16 @@ CREATE TABLE unmapped_term (
   last_seen   timestamptz NOT NULL DEFAULT now()
 );
 -- user_event는 Phase 3 마이그레이션에서 추가한다.
+```
+
+0002(0-4 승인): 알레르기 그룹에 법정 표시 대상 여부와 출처를 둔다. 근거는 식품 등의 표시·광고에 관한 법률 시행규칙 별표 2(`knowledge/allergens.yaml`).
+
+```sql
+-- 0002
+ALTER TABLE allergen_group
+  ADD COLUMN official boolean NOT NULL DEFAULT false,
+  ADD COLUMN source   text    NOT NULL DEFAULT 'custom' CHECK (source IN ('law_annex2','custom')),
+  ADD CONSTRAINT allergen_group_official_source CHECK (official = (source = 'law_annex2'));
 ```
 
 ## 부록 C. compile_knowledge.py 동작 순서 (Phase 0-1 확정)

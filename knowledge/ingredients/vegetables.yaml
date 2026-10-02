@@ -1,0 +1,247 @@
+# 채소·버섯 (형식: knowledge/README.md). 모든 항목은 사람이 검수하기 전까지 status: draft
+
+# --- 파·마늘·양념 채소 ---
+- id: green_onion
+  name: 대파
+  aliases: [대파 흰대]
+  category: 채소
+  status: reviewed
+- id: scallion
+  name: 쪽파
+  aliases: [실파]
+  category: 채소
+  status: reviewed
+- id: garlic
+  name: 마늘
+  aliases: [깐마늘, 통마늘, {text: 다진 마늘, form: minced}, {text: 편마늘, form: sliced}]
+  category: 채소
+  status: reviewed
+- id: onion
+  name: 양파
+  aliases: [적양파, 자색양파]
+  category: 채소
+  status: reviewed
+- id: chive
+  name: 부추
+  aliases: [영양부추, 정구지]
+  category: 채소
+  status: reviewed
+- id: ginger
+  name: 생강
+  aliases: [{text: 다진 생강, form: minced}]
+  category: 채소
+  status: reviewed
+- id: green_chili
+  name: 풋고추
+  aliases: [청고추, 오이고추, 꽈리고추]
+  category: 채소
+  confidence: low
+  note: 오이고추·꽈리고추는 품종이 다르고 맵기도 다름. 별도 재료로 나눌지 검수
+  status: reviewed
+- id: cheongyang_pepper
+  name: 청양고추
+  category: 채소
+  status: reviewed
+- id: red_chili
+  name: 홍고추
+  aliases: [빨간 고추, 홍청양고추]
+  category: 채소
+  status: reviewed
+
+# --- 뿌리·줄기 채소 ---
+- id: potato
+  name: 감자
+  aliases: [햇감자, 알감자]
+  category: 채소
+  status: reviewed
+- id: sweet_potato
+  name: 고구마
+  aliases: [밤고구마, 호박고구마]
+  category: 채소
+  status: reviewed
+- id: carrot
+  name: 당근
+  category: 채소
+  status: reviewed
+- id: radish
+  name: 무
+  aliases: [무우, 조선무, 월동무]
+  category: 채소
+  status: reviewed
+- id: young_radish
+  name: 열무
+  category: 채소
+  status: reviewed
+- id: lotus_root
+  name: 연근
+  category: 채소
+  status: reviewed
+- id: burdock
+  name: 우엉
+  category: 채소
+  status: reviewed
+- id: bellflower_root
+  name: 도라지
+  category: 채소
+  status: reviewed
+
+# --- 잎채소 ---
+- id: napa_cabbage
+  name: 배추
+  aliases: [알배추, 알배기배추, 절임배추]
+  category: 채소
+  confidence: low
+  note: 절임배추(소금 절임)를 별칭으로 묶음. 별도 재료로 둘지 검수
+  status: reviewed
+- id: cabbage
+  name: 양배추
+  aliases: [적양배추]
+  category: 채소
+  status: reviewed
+- id: spinach
+  name: 시금치
+  aliases: [섬초]
+  category: 채소
+  status: reviewed
+- id: perilla_leaf
+  name: 깻잎
+  aliases: [들깻잎]
+  category: 채소
+  note: 들깨의 잎. 참깨 알레르기 그룹과 무관
+  status: reviewed
+- id: lettuce
+  name: 상추
+  aliases: [청상추, 적상추]
+  category: 채소
+  status: reviewed
+- id: iceberg_lettuce
+  name: 양상추
+  category: 채소
+  status: reviewed
+- id: minari
+  name: 미나리
+  category: 채소
+  status: reviewed
+- id: crown_daisy
+  name: 쑥갓
+  category: 채소
+  status: reviewed
+- id: bok_choy
+  name: 청경채
+  category: 채소
+  status: reviewed
+- id: bracken
+  name: 고사리
+  aliases: [삶은 고사리, 건고사리]
+  category: 채소
+  status: reviewed
+- id: celery
+  name: 셀러리
+  aliases: [샐러리]
+  category: 채소
+  status: reviewed
+
+# --- 열매채소 ---
+- id: zucchini
+  name: 애호박
+  aliases: [호박(애호박), 주키니]
+  category: 채소
+  confidence: low
+  note: 주키니와 애호박은 품종이 다르나 요리에서 대체로 같이 씀. 별칭으로 둘지 검수
+  status: reviewed
+- id: kabocha
+  name: 단호박
+  category: 채소
+  status: reviewed
+- id: cucumber
+  name: 오이
+  aliases: [백오이, 다다기오이]
+  category: 채소
+  status: reviewed
+- id: eggplant
+  name: 가지
+  category: 채소
+  status: reviewed
+- id: bell_pepper
+  name: 파프리카
+  aliases: [빨간 파프리카, 노란 파프리카]
+  category: 채소
+  status: reviewed
+- id: green_bell_pepper
+  name: 피망
+  category: 채소
+  status: reviewed
+- id: tomato
+  name: 토마토
+  aliases: [완숙토마토, 찰토마토]
+  category: 채소
+  allergens: [{group: tomato, certainty: definite}]
+  status: reviewed
+- id: cherry_tomato
+  name: 방울토마토
+  aliases: [대추방울토마토, 미니토마토]
+  is_a: [tomato]
+  category: 채소
+  status: reviewed
+- id: corn
+  name: 옥수수
+  aliases: [찰옥수수, 초당옥수수]
+  category: 채소
+  status: reviewed
+- id: canned_corn
+  name: 스위트콘
+  aliases: [옥수수콘, 콘통조림]
+  derived_from: [corn]
+  is_processed: true
+  category: 채소
+  status: reviewed
+- id: broccoli
+  name: 브로콜리
+  category: 채소
+  status: reviewed
+- id: asparagus
+  name: 아스파라거스
+  category: 채소
+  status: reviewed
+
+# --- 나물(콩 유래 포함) ---
+- id: soybean_sprouts
+  name: 콩나물
+  derived_from: [soybean]
+  category: 채소
+  confidence: low
+  note: 대두를 발아시킨 것. 대두 알레르기에서 제외 대상으로 볼지 검수(가공품이 아니라 is_processed는 두지 않음 → 컴파일 경고 1건)
+  status: reviewed
+- id: mung_bean_sprouts
+  name: 숙주
+  aliases: [숙주나물]
+  category: 채소
+  note: 녹두 싹. 대두 아님
+  status: reviewed
+
+# --- 버섯 ---
+- id: shiitake
+  name: 표고버섯
+  aliases: [표고, {text: 건표고, form: dried}]
+  category: 버섯
+  status: reviewed
+- id: oyster_mushroom
+  name: 느타리버섯
+  aliases: [느타리]
+  category: 버섯
+  status: reviewed
+- id: enoki
+  name: 팽이버섯
+  aliases: [팽이]
+  category: 버섯
+  status: reviewed
+- id: king_oyster_mushroom
+  name: 새송이버섯
+  aliases: [새송이]
+  category: 버섯
+  status: reviewed
+- id: button_mushroom
+  name: 양송이버섯
+  aliases: [양송이]
+  category: 버섯
+  status: reviewed

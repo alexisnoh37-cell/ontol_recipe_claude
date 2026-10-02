@@ -1,59 +1,160 @@
-# 알레르기 그룹 (형식: knowledge/README.md)
-# 목록은 Phase 0-1 example 그대로이며 확정 전이다. 표시 대상 목록 확정은 사람이 Phase 0-4 시작 전에 한다(docs/decisions.md D4).
-# 기본 그룹(groups): 표시 대상 알레르기 유발물질 단위. 재료의 allergens에는 기본 그룹만 쓴다.
-# 묶음 그룹(bundles): 사용자가 이해하기 쉬운 단위. includes로 기본 그룹을 합친다.
+# 알레르기 그룹 (형식: knowledge/README.md). docs/decisions.md D4에서 사람이 확정(2026-10-03).
+#
+# official: true / source: law_annex2
+#   법정 알레르기 유발물질 표시 대상. 근거: 식품 등의 표시·광고에 관한 법률 시행규칙 별표 2.
+#   목록은 사람이 확정했다. 법령이 바뀌면 사람이 확인해 이 파일을 고친다.
+# official: false / source: custom
+#   서비스가 자체로 추가한 그룹(법정 표시 대상 아님). 제품 성분표에 표시되지 않을 수 있다.
+#
+# 기본 그룹(groups): 재료의 allergens에는 기본 그룹만 쓴다.
+# 묶음 그룹(bundles): 사용자가 고르기 쉬운 단위. includes에는 기본 그룹만 쓴다(묶음 안의 묶음은 펼쳐서 적는다).
 
 groups:
+  # --- 법정 표시 대상 19개 ---
   - id: egg
-    display_name: 난류(계란)
-    status: draft
+    display_name: 알류(가금류)
+    official: true
+    source: law_annex2
+    status: reviewed
   - id: milk
     display_name: 우유
-    status: draft
+    official: true
+    source: law_annex2
+    status: reviewed
+  - id: buckwheat
+    display_name: 메밀
+    official: true
+    source: law_annex2
+    status: reviewed
   - id: peanut
     display_name: 땅콩
-    status: draft
+    official: true
+    source: law_annex2
+    status: reviewed
   - id: soybean
     display_name: 대두
-    status: draft
+    official: true
+    source: law_annex2
+    status: reviewed
   - id: wheat
     display_name: 밀
-    status: draft
-  - id: shrimp
-    display_name: 새우
-    status: draft
+    official: true
+    source: law_annex2
+    status: reviewed
+  - id: mackerel
+    display_name: 고등어
+    official: true
+    source: law_annex2
+    status: reviewed
   - id: crab
     display_name: 게
-    status: draft
+    official: true
+    source: law_annex2
+    status: reviewed
+  - id: shrimp
+    display_name: 새우
+    official: true
+    source: law_annex2
+    status: reviewed
+  - id: pork
+    display_name: 돼지고기
+    official: true
+    source: law_annex2
+    status: reviewed
+  - id: peach
+    display_name: 복숭아
+    official: true
+    source: law_annex2
+    status: reviewed
+  - id: tomato
+    display_name: 토마토
+    official: true
+    source: law_annex2
+    status: reviewed
+  - id: sulfites
+    display_name: 아황산류
+    official: true
+    source: law_annex2
+    status: reviewed
   - id: walnut
     display_name: 호두
-    status: draft
-  - id: pine_nut
-    display_name: 잣
-    status: draft
+    official: true
+    source: law_annex2
+    status: reviewed
+  - id: chicken
+    display_name: 닭고기
+    official: true
+    source: law_annex2
+    status: reviewed
+  - id: beef
+    display_name: 쇠고기
+    official: true
+    source: law_annex2
+    status: reviewed
   - id: squid
     display_name: 오징어
-    status: draft
+    official: true
+    source: law_annex2
+    status: reviewed
   - id: shellfish
-    display_name: 조개류(굴, 전복, 홍합 포함)
-    status: draft
-  - id: fish
-    display_name: 생선
-    status: draft
-    confidence: low
-    note: 표시 대상은 고등어 등 개별 어종 단위일 수 있음. D4에서 확정
+    display_name: 조개류(굴·전복·홍합 포함)
+    official: true
+    source: law_annex2
+    status: reviewed
+  - id: pine_nut
+    display_name: 잣
+    official: true
+    source: law_annex2
+    status: reviewed
+
+  # --- 자체 추가(비공식) ---
+  - id: other_fish
+    display_name: 기타 생선(고등어 외)
+    official: false
+    source: custom
+    status: reviewed
+  - id: sesame
+    display_name: 참깨
+    official: false
+    source: custom
+    status: reviewed
+  - id: other_cephalopods
+    display_name: 기타 연체류(문어·낙지·주꾸미)
+    official: false
+    source: custom
+    status: reviewed
+    note: 오징어(법정)와 별도. 0-4 검수에서 추가
+  - id: other_tree_nuts
+    display_name: 기타 견과류(아몬드·밤 등)
+    official: false
+    source: custom
+    status: reviewed
+    note: 땅콩·호두·잣(법정) 외 견과. 0-4 검수에서 추가
 
 bundles:
   - id: crustacean_bundle
     display_name: 갑각류
     includes: [shrimp, crab]
-    status: draft
+    official: false
+    source: custom
+    status: reviewed
   - id: nuts_bundle
-    display_name: 견과류(땅콩 포함)
-    includes: [peanut, walnut, pine_nut]
-    status: draft
-    note: 땅콩은 식물학적으로 콩과지만 사용자 인식상 함께 피하는 경우가 많아 묶음에 포함
+    display_name: 견과류
+    includes: [peanut, walnut, pine_nut, other_tree_nuts]
+    official: false
+    source: custom
+    status: reviewed
+    note: 땅콩은 식물학적으로 콩과지만 사용자 인식상 함께 피하는 경우가 많아 포함. 아몬드·밤 등은 기타 견과류로 포함
+  - id: fish_bundle
+    display_name: 생선 전체
+    includes: [mackerel, other_fish]
+    official: false
+    source: custom
+    status: reviewed
   - id: seafood_bundle
     display_name: 해산물 전체
-    includes: [shrimp, crab, squid, shellfish, fish]
-    status: draft
+    # 갑각류(shrimp, crab) + 오징어 + 기타 연체류 + 조개류 + 생선 전체(mackerel, other_fish)
+    includes: [shrimp, crab, squid, other_cephalopods, shellfish, mackerel, other_fish]
+    official: false
+    source: custom
+    status: reviewed

@@ -1,0 +1,232 @@
+# 곡류·가루·면·떡·빵 (형식: knowledge/README.md). 모든 항목은 사람이 검수하기 전까지 status: draft
+
+# --- 곡류 ---
+- id: rice
+  name: 쌀
+  aliases: [백미, 멥쌀, {text: 밥, form: cooked}, {text: 쌀밥, form: cooked}, {text: 흰밥, form: cooked}]
+  category: 곡류·가루
+  status: reviewed
+- id: glutinous_rice
+  name: 찹쌀
+  category: 곡류·가루
+  status: reviewed
+- id: brown_rice
+  name: 현미
+  aliases: [{text: 현미밥, form: cooked}]
+  category: 곡류·가루
+  status: reviewed
+- id: buckwheat
+  name: 메밀
+  aliases: [메밀쌀]
+  category: 곡류·가루
+  allergens: [{group: buckwheat, certainty: definite}]
+  status: reviewed
+
+# --- 가루·전분 ---
+- id: wheat_flour
+  name: 밀가루
+  aliases: [중력분, 박력분, 강력분, 통밀가루]
+  category: 곡류·가루
+  allergens: [{group: wheat, certainty: definite}]
+  status: reviewed
+- id: rice_flour
+  name: 쌀가루
+  aliases: [습식 쌀가루, 건식 쌀가루]
+  derived_from: [rice]
+  is_processed: true
+  category: 곡류·가루
+  status: reviewed
+- id: glutinous_rice_flour
+  name: 찹쌀가루
+  derived_from: [glutinous_rice]
+  is_processed: true
+  category: 곡류·가루
+  status: reviewed
+- id: buckwheat_flour
+  name: 메밀가루
+  derived_from: [buckwheat, {id: wheat_flour, certainty: possible}]
+  is_processed: true
+  category: 곡류·가루
+  confidence: low
+  note: 밀가루를 섞은 제품이 있음
+  status: reviewed
+- id: buchimgaru
+  name: 부침가루
+  derived_from:
+    - wheat_flour
+    - {id: soybean, certainty: possible}
+    - {id: egg, certainty: possible}
+    - {id: milk, certainty: possible}
+  is_processed: true
+  category: 곡류·가루
+  confidence: low
+  note: 밀가루 주원료. 대두분·난분·탈지분유 첨가 여부는 제품별 상이
+  status: reviewed
+- id: frying_mix
+  name: 튀김가루
+  derived_from:
+    - wheat_flour
+    - {id: soybean, certainty: possible}
+    - {id: egg, certainty: possible}
+    - {id: milk, certainty: possible}
+  is_processed: true
+  category: 곡류·가루
+  confidence: low
+  note: 부침가루와 같은 이유
+  status: reviewed
+- id: bread_crumbs
+  name: 빵가루
+  aliases: [습식 빵가루, 건식 빵가루]
+  derived_from:
+    - wheat_flour
+    - {id: milk, certainty: possible}
+    - {id: egg, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 곡류·가루
+  confidence: low
+  note: 빵을 갈아 만듦. 우유·계란·대두 함유 여부는 제품별 상이
+  status: reviewed
+- id: potato_starch
+  name: 감자전분
+  aliases: [감자녹말]
+  derived_from: [potato]
+  is_processed: true
+  category: 곡류·가루
+  note: 별칭 "전분"·"녹말"은 감자·옥수수·고구마 중 무엇인지 모호해 뺌
+  status: reviewed
+- id: corn_starch
+  name: 옥수수전분
+  aliases: [옥수수녹말, 콘스타치]
+  derived_from: [corn]
+  is_processed: true
+  category: 곡류·가루
+  status: reviewed
+
+# --- 면 ---
+- id: somen
+  name: 소면
+  aliases: [중면, 국수면]
+  derived_from: [wheat_flour]
+  is_processed: true
+  category: 면·떡·빵
+  status: reviewed
+- id: kalguksu_noodles
+  name: 칼국수면
+  aliases: [칼국수 생면]
+  derived_from: [wheat_flour]
+  is_processed: true
+  category: 면·떡·빵
+  status: reviewed
+- id: udon_noodles
+  name: 우동면
+  aliases: [우동사리]
+  derived_from: [wheat_flour]
+  is_processed: true
+  category: 면·떡·빵
+  status: reviewed
+- id: ramen_noodles
+  name: 라면
+  aliases: [라면사리, 인스턴트라면]
+  derived_from:
+    - wheat_flour
+    - {id: soybean, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: milk, certainty: possible}
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: 면은 밀. 스프(분말)의 대두·쇠고기·우유 등은 제품별 상이. 사리만 쓰는 경우와 구분할지 검수
+  status: reviewed
+- id: pasta
+  name: 파스타
+  aliases: [스파게티, 스파게티면, 펜네, 링귀니]
+  derived_from: [wheat_flour, {id: egg, certainty: possible}]
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: 듀럼밀(밀). 생면·에그파스타는 계란 포함
+  status: reviewed
+- id: buckwheat_noodles
+  name: 메밀면
+  aliases: [메밀국수, 소바, 소바면]
+  derived_from: [buckwheat, {id: wheat_flour, certainty: possible}]
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: 대부분 밀가루를 섞음. 밀 possible
+  status: reviewed
+- id: naengmyeon_noodles
+  name: 냉면사리
+  aliases: [냉면 면, 냉면사리면]
+  derived_from:
+    - {id: buckwheat, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: potato_starch, certainty: possible}
+    - {id: sweet_potato, certainty: possible}
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: 물냉면(메밀·밀)·비빔냉면(전분) 등 제품별 원료 상이
+  status: reviewed
+- id: glass_noodles
+  name: 당면
+  derived_from: [sweet_potato]
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: 고구마전분 당면 기준. 다른 전분을 쓰는 제품도 있음
+  status: reviewed
+- id: rice_noodles
+  name: 쌀국수면
+  aliases: [라이스누들]
+  derived_from: [rice]
+  is_processed: true
+  category: 면·떡·빵
+  status: reviewed
+
+# --- 떡·빵·피 ---
+- id: rice_cake
+  name: 가래떡
+  aliases: [{text: 떡국떡, form: sliced}]
+  derived_from: [rice]
+  is_processed: true
+  category: 면·떡·빵
+  status: reviewed
+- id: tteokbokki_rice_cake
+  name: 떡볶이떡
+  aliases: [밀떡, 쌀떡]
+  derived_from: [{id: rice, certainty: possible}, {id: wheat_flour, certainty: possible}]
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: 밀떡·쌀떡을 한 재료로 묶어 밀 possible. 별도 재료로 나눌지 검수
+  status: reviewed
+- id: bread
+  name: 식빵
+  aliases: [우유식빵, 통밀식빵]
+  derived_from:
+    - wheat_flour
+    - {id: milk, certainty: possible}
+    - {id: egg, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: 우유·계란·대두 함유 여부는 제품별 상이
+  status: reviewed
+- id: dumpling_wrapper
+  name: 만두피
+  derived_from: [wheat_flour]
+  is_processed: true
+  category: 면·떡·빵
+  status: reviewed
+- id: tortilla
+  name: 또띠아
+  aliases: [토르티야]
+  derived_from: [wheat_flour, {id: corn, certainty: possible}]
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: 밀 또띠아 기준. 옥수수 또띠아도 있음
+  status: reviewed

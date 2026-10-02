@@ -1,0 +1,161 @@
+# 과일·견과·씨앗 (형식: knowledge/README.md). 모든 항목은 사람이 검수하기 전까지 status: draft
+
+# --- 과일 ---
+- id: apple
+  name: 사과
+  category: 과일
+  status: reviewed
+- id: pear
+  name: 배
+  aliases: [배(과일), 신고배]
+  category: 과일
+  status: reviewed
+- id: lemon
+  name: 레몬
+  aliases: [{text: 레몬즙, form: juice}]
+  category: 과일
+  confidence: low
+  note: 시판 레몬즙에 아황산류가 들어가는 제품이 있는지 검수(있으면 별도 가공품으로 분리)
+  status: reviewed
+- id: banana
+  name: 바나나
+  category: 과일
+  status: reviewed
+- id: strawberry
+  name: 딸기
+  category: 과일
+  status: reviewed
+- id: grape
+  name: 포도
+  aliases: [청포도, 샤인머스캣]
+  category: 과일
+  status: reviewed
+- id: persimmon
+  name: 감
+  aliases: [단감, 홍시]
+  category: 과일
+  status: reviewed
+- id: kiwi
+  name: 키위
+  aliases: [참다래]
+  category: 과일
+  status: reviewed
+- id: orange
+  name: 오렌지
+  category: 과일
+  status: reviewed
+- id: peach
+  name: 복숭아
+  aliases: [백도, 황도, 천도복숭아]
+  category: 과일
+  allergens: [{group: peach, certainty: definite}]
+  status: reviewed
+- id: canned_peach
+  name: 복숭아통조림
+  aliases: [황도 통조림]
+  derived_from: [peach]
+  is_processed: true
+  category: 과일
+  status: reviewed
+- id: maesil
+  name: 매실
+  aliases: [청매실]
+  category: 과일
+  status: reviewed
+- id: jujube
+  name: 대추
+  aliases: [건대추]
+  category: 과일
+  status: reviewed
+
+# --- 건과일 (아황산류: 표백·보존용으로 쓰는 제품이 있어 possible) ---
+- id: raisin
+  name: 건포도
+  derived_from: [grape, {id: sulfite, certainty: possible}]
+  is_processed: true
+  category: 과일
+  confidence: low
+  note: 아황산류 첨가 여부는 제품별 상이
+  status: reviewed
+- id: dried_persimmon
+  name: 곶감
+  aliases: [반건시]
+  derived_from: [persimmon, {id: sulfite, certainty: possible}]
+  is_processed: true
+  category: 과일
+  confidence: low
+  note: 갈변 방지용 아황산류 처리 제품이 있음. 제품별 상이
+  status: reviewed
+- id: dried_apricot
+  name: 건살구
+  derived_from: [{id: sulfite, certainty: possible}]
+  is_processed: true
+  category: 과일
+  confidence: low
+  note: 살구 원물은 재료로 두지 않음. 아황산류 처리 제품이 흔하다고 알려져 있으나 확인 필요
+  status: reviewed
+
+# --- 견과 (법정: 땅콩, 호두, 잣) ---
+- id: peanut
+  name: 땅콩
+  aliases: [볶은 땅콩, 땅콩가루, 피넛]
+  category: 견과·씨앗
+  allergens: [{group: peanut, certainty: definite}]
+  status: reviewed
+- id: peanut_butter
+  name: 땅콩버터
+  aliases: [피넛버터]
+  derived_from: [peanut]
+  is_processed: true
+  category: 견과·씨앗
+  status: reviewed
+- id: walnut
+  name: 호두
+  aliases: [호두살, 호두알]
+  category: 견과·씨앗
+  allergens: [{group: walnut, certainty: definite}]
+  status: reviewed
+- id: pine_nut
+  name: 잣
+  aliases: [통잣, 잣가루]
+  category: 견과·씨앗
+  allergens: [{group: pine_nut, certainty: definite}]
+  status: reviewed
+- id: almond
+  name: 아몬드
+  aliases: [슬라이스 아몬드, 아몬드 슬라이스]
+  category: 견과·씨앗
+  allergens: [{group: other_tree_nuts, certainty: definite}]
+  confidence: low
+  note: 법정 표시 대상이 아니어서 자체 그룹 기타 견과류에 둠(0-4 검수)
+  status: reviewed
+- id: chestnut
+  name: 밤
+  aliases: [깐밤, 생밤]
+  category: 견과·씨앗
+  allergens: [{group: other_tree_nuts, certainty: possible}]
+  confidence: low
+  note: 밤을 견과 알레르기로 볼지 사람마다 달라 기타 견과류 possible(0-4 검수)
+  status: reviewed
+
+# --- 씨앗 (참깨는 자체 그룹 sesame) ---
+- id: sesame
+  name: 참깨
+  aliases: [통깨, 볶은 참깨, 깨소금, 흰깨]
+  category: 견과·씨앗
+  allergens: [{group: sesame, certainty: definite}]
+  note: 별칭 "깨"는 참깨·들깨를 모두 가리킬 수 있어 뺌
+  status: reviewed
+- id: perilla_seed
+  name: 들깨
+  aliases: [통들깨]
+  category: 견과·씨앗
+  note: 들깨는 참깨와 다른 식물. 참깨 그룹에 넣지 않음
+  status: reviewed
+- id: perilla_powder
+  name: 들깨가루
+  aliases: [들깻가루]
+  derived_from: [perilla_seed]
+  is_processed: true
+  category: 견과·씨앗
+  status: reviewed

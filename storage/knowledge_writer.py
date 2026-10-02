@@ -38,7 +38,14 @@ def _rows(items: Any) -> list[dict[str, Any]]:
     return rows
 
 
+def _only_columns(table, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """컴파일 결과에는 있지만 DB 컬럼이 없는 필드(예: allergen_group.official)는 반영하지 않는다."""
+    names = {c.name for c in table.columns}
+    return [{k: v for k, v in row.items() if k in names} for row in rows]
+
+
 def _upsert(conn: Connection, table, rows: list[dict[str, Any]]) -> None:
+    rows = _only_columns(table, rows)
     if not rows:
         return
     stmt = pg_insert(table).values(rows)

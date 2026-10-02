@@ -1,0 +1,117 @@
+# 알·유제품·콩 (형식: knowledge/README.md). 모든 항목은 사람이 검수하기 전까지 status: draft
+
+# --- 알 (법정: 알류(가금류)) ---
+- id: egg
+  name: 계란
+  aliases: [달걀, 계란 노른자, 계란 흰자, 유정란]
+  category: 알
+  allergens: [{group: egg, certainty: definite}]
+  status: reviewed
+- id: quail_egg
+  name: 메추리알
+  aliases: [깐 메추리알]
+  category: 알
+  allergens: [{group: egg, certainty: definite}]
+  status: reviewed
+
+# --- 유제품 ---
+- id: milk
+  name: 우유
+  aliases: [흰우유, 저지방우유]
+  category: 유제품
+  allergens: [{group: milk, certainty: definite}]
+  status: reviewed
+- id: butter
+  name: 버터
+  aliases: [무염버터, 가염버터]
+  derived_from: [milk]
+  is_processed: true
+  category: 유제품
+  status: reviewed
+- id: heavy_cream
+  name: 생크림
+  aliases: [휘핑크림, 동물성 생크림]
+  derived_from: [milk]
+  is_processed: true
+  category: 유제품
+  confidence: low
+  note: 식물성 휘핑크림(유지방 아님)은 우유 성분이 없거나 적을 수 있음. 휘핑크림을 별칭으로 둘지 검수
+  status: reviewed
+- id: yogurt
+  name: 요거트
+  aliases: [플레인요거트, 요구르트, 그릭요거트]
+  derived_from: [milk]
+  is_processed: true
+  category: 유제품
+  status: reviewed
+- id: cheese
+  name: 치즈
+  derived_from: [milk]
+  is_processed: true
+  category: 유제품
+  status: reviewed
+- id: mozzarella
+  name: 모차렐라치즈
+  aliases: [모짜렐라치즈, 모짜렐라, 피자치즈]
+  is_a: [cheese]
+  category: 유제품
+  status: reviewed
+- id: sliced_cheese
+  name: 슬라이스치즈
+  aliases: [체다치즈, 체다 슬라이스]
+  is_a: [cheese]
+  category: 유제품
+  status: reviewed
+- id: parmesan
+  name: 파마산치즈
+  aliases: [파르메산, 파르미지아노 레지아노, 파마산 가루]
+  is_a: [cheese]
+  category: 유제품
+  status: reviewed
+- id: cream_cheese
+  name: 크림치즈
+  is_a: [cheese]
+  category: 유제품
+  status: reviewed
+
+# --- 콩·두부 (법정: 대두) ---
+- id: soybean
+  name: 대두
+  aliases: [메주콩, 백태, 노란콩]
+  category: 콩·두부
+  allergens: [{group: soybean, certainty: definite}]
+  status: reviewed
+- id: black_soybean
+  name: 검은콩
+  aliases: [서리태, 쥐눈이콩, 서목태]
+  is_a: [soybean]
+  category: 콩·두부
+  note: 검정콩은 대두의 한 품종이라 is_a로 대두 알레르기 상속
+  status: reviewed
+- id: tofu
+  name: 두부
+  aliases: [부침두부, 찌개두부, 순두부, 연두부]
+  derived_from: [soybean]
+  is_processed: true
+  category: 콩·두부
+  status: reviewed
+- id: fried_tofu
+  name: 유부
+  aliases: [유부초밥용 유부, 사각유부]
+  derived_from: [tofu]
+  is_processed: true
+  category: 콩·두부
+  status: reviewed
+- id: soy_milk
+  name: 두유
+  aliases: [무가당 두유]
+  derived_from: [soybean]
+  is_processed: true
+  category: 콩·두부
+  status: reviewed
+- id: red_bean
+  name: 팥
+  aliases: [적두, 통팥]
+  category: 콩·두부
+  note: 팥은 대두가 아님
+  status: reviewed

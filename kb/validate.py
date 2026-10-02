@@ -165,6 +165,12 @@ def validate(sources: KnowledgeSources) -> tuple[Knowledge, list[Issue]]:
         if g.id in group_where:
             errors.append(Issue("duplicate_id", names["allergens"], f"알레르기 그룹 id '{g.id}'가 중복됩니다"))
         group_where[g.id] = g.id
+    for g in groups:
+        if g.official != (g.source == "law_annex2"):
+            errors.append(Issue("bad_source", names["allergens"], f"그룹 '{g.id}': official: true와 source: law_annex2는 함께 써야 합니다"))
+    for b in bundles:
+        if b.official or b.source != "custom":
+            errors.append(Issue("bad_source", names["allergens"], f"묶음 '{b.id}'는 official: false, source: custom이어야 합니다"))
     base_ids = {g.id for g in groups}
     bundle_ids = {b.id for b in bundles}
     for b in bundles:

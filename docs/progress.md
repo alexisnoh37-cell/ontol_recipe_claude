@@ -4,7 +4,7 @@
 
 ## 현재 단계
 
-Phase 0-3 완료(사람 승인, 2026-10-03). **tests/allergy/는 이제 수정·삭제·skip 금지.** 118개 중 115개는 엔진 미구현으로 실패(NotImplementedError)하는 것이 정상이고, 적재 검증 3개는 통과한다. 다음은 Phase 0-4(시작 전 사람이 D4 알레르기 목록 확정).
+Phase 0 완료(0-4 사람 검수 완료, 2026-10-03). 다음은 Phase 1-1(필터 엔진, 목표: tests/allergy 118개 통과). **tests/allergy/는 수정·삭제·skip 금지**(0-3 승인). 엔진 구현 전까지 115개 실패가 정상.
 
 ## 단계별 상태
 
@@ -13,7 +13,7 @@ Phase 0-3 완료(사람 승인, 2026-10-03). **tests/allergy/는 이제 수정·
 | 0-1 설계 확정 | 완료 | 2026-10-03 | 완료 | docs/plan.md 부록 A~C, knowledge/README.md |
 | 0-2 스키마와 지식 컴파일러 | 완료 | 2026-10-03 | 필요(아래 승인 필요 2건) | 테스트 72개 통과, Docker DB에 마이그레이션·컴파일 반영 확인 |
 | 0-3 알레르기 테스트 작성 | 완료 | 2026-10-03 | 완료(승인) | 118개. 1-1 전까지 115개 실패가 정상 |
-| 0-4 식재료 200개 확장 | 대기 | | 필요(검수표) | 시작 전 사람이 알레르기 목록 확정(D4) |
+| 0-4 식재료 200개 확장 | 완료 | 2026-10-03 | 완료(검수) | 재료 252개 reviewed(confidence low 70개 유지), 알레르기 그룹 27개 reviewed |
 | 1-1 필터 엔진 | 대기 | | | |
 | 1-2 점수 엔진 | 대기 | | 선택 | |
 | 1-3 레시피 시드 | 대기 | | 필요(검수표) | |
@@ -58,19 +58,45 @@ Phase 0-3 완료(사람 승인, 2026-10-03). **tests/allergy/는 이제 수정·
 - **테스트 검증**: 임시 참조 구현(저장소 밖)으로 118개 모두 통과, 고의 결함 5종(전부 제외, 선택·고명 무시, possible 무시, 미매칭 허용, 위험한 대체재 사용)이 모두 실패로 잡히는 것을 확인.
 - **엔진 구현 시 지킬 것(테스트가 요구)**: 대체재로 후보를 만들 때도 대체재를 알레르기 closure·절대 불선호로 거른다. draft 제공 여부와 관계없이 필터를 적용한다. `RecommendRequest.pantry`가 있으면 그것을 보유 재료로 쓴다.
 
+0-4에서 정한 것(2026-10-03):
+
+- **D4 확정**(사람): 법정 19개 + 자체 2개(other_fish, sesame) + 묶음 4개. 이전 `fish` 그룹은 `mackerel`·`other_fish`로 나뉘어 삭제.
+- **allergens.yaml 형식 추가**: `official`, `source`(law_annex2·custom). 스키마 기본값은 false·custom(승인된 tests/allergy fixture가 이 필드 없이 작성되어 필수로 둘 수 없음). 실제 파일은 명시 여부를 tests/kb로 강제. DB 컬럼은 아직 없음(writer가 DB에 없는 필드는 건너뜀).
+- **재료 파일 분할**: `knowledge/ingredients/` 8개 파일(meat, seafood, vegetables, fruits_nuts, grains, dairy_egg_soy, seasonings, kimchi_processed). 기존 id 32개 유지.
+- **알레르기 배치**: 돼지고기·쇠고기·닭고기·조개류는 중간 노드(pork, beef, chicken, clam)에 적고 하위는 is_a로 상속. 아황산류는 첨가물 노드 `sulfite`를 두고 와인·건과일이 derived_from. 어묵·게맛살은 분류 노드 `fish`에서 파생 → 모든 생선 그룹 possible. 액젓은 넓은 재료(멸치액젓·까나리액젓의 상위).
+- **참기름 변경**: derived_from 참깨(definite). 기본 양념이라 참깨 알레르기 사용자에게 참기름 레시피가 모두 제외됨.
+- **김치 변경**: 액젓(possible) 원천 추가 → 기타 생선 possible.
+- **검수표 생성기**: `scripts/make_review.py`. 검수표가 최신인지 tests/kb가 검사.
+- **YAML 문법 오류**: traceback 대신 `yaml_syntax` 오류로 보고하도록 수정(0-4 작업 중 발견).
+- **0-4 검수 반영**(사람): 자체 그룹 `other_cephalopods`(문어·낙지·주꾸미, 해산물 전체에 포함), `other_tree_nuts`(아몬드 definite, 밤 possible, 견과류 묶음에 포함, 묶음 이름 "견과류"). 젓갈류 하위에 어리굴젓(굴)·조개젓(조개) 추가 → 젓갈류가 조개류 possible. 배추김치·깍두기에 밀가루·굴 possible 추가.
+- **유지 결정**(사람): 참기름 참깨 definite, 한치 = 오징어 별칭, 국간장 밀 definite, 식용유·콩기름 분리, 삼치 = 기타 생선, 재료 250여 개 유지, 콩나물 경고 허용.
+- **official·source DB 저장**(사람 승인): 마이그레이션 0002, plan.md 부록 B·3-1 수정. 기존 DB는 `uv run alembic upgrade head` 후 재컴파일 필요.
+- **검수 완료 처리**: 모든 재료·알레르기 그룹 status: reviewed(confidence는 그대로). substitutes.yaml은 이번 검수 범위가 아니어서 draft 유지.
+
+## 1-5 화면 요구사항
+
+0-4 검수에서 사람이 정한 안내 문구(Phase 1-5 Streamlit 화면에 반영):
+
+- 알레르기 선택에서 **고등어**를 고르면: "다른 생선에도 반응하면 '생선 전체'를 선택하세요."
+- **식용유**가 들어간 레시피(또는 식용유 재료 표시)에: "제품의 기름 종류(콩기름 등)를 확인하세요."
+
 ## 알려진 문제
 
 - **D4 알레르기 목록 미확정**: allergens.yaml은 0-2에서 example 그대로 `status: draft`로 옮긴다. 0-4 시작 전에 사람이 표시 대상 목록과 생선 그룹 단위를 확정해야 한다(액젓의 derived_from 대상도 이에 따라 정해짐).
 - (해결) `garlic_minced` → `garlic` 변경을 `config/pantry_staples.yaml`에 반영함.
 - 콩기름(soybean_oil)과 식용유(cooking_oil) 사이 is_a 관계는 두지 않았다. 두면 식용유(기본 양념)가 대두 possible이 되어 대두 알레르기 사용자에게 기름을 쓰는 레시피가 대부분 제외된다. 0-4 검수에서 정한다.
-- 알레르기 그룹 6개(crab, fish, pine_nut, shellfish, squid, walnut)는 아직 재료가 없어 컴파일 경고가 난다. 0-4에서 재료를 채운다.
+- (해결) 재료 없는 알레르기 그룹 경고는 0-4에서 모두 해소.
+- 컴파일 경고 3건(의도): 콩나물 derived_from 대두이나 가공품 아님, 멸치액젓·까나리액젓 is_a 4단계(액젓 → 젓갈류 → 해산물).
+- (해결) 아몬드·밤 → 기타 견과류, 낙지·문어·주꾸미 → 기타 연체류(0-4 검수).
+- (해결) `allergen_group.official/source` DB 저장: 마이그레이션 0002.
 - `uv run pytest` 전체는 Phase 1-1 전까지 tests/allergy 때문에 실패로 끝난다(의도). 나머지만 볼 때는 `uv run pytest --ignore=tests/allergy`.
 - 샌드박스 환경에서는 pytest의 기본 임시 폴더 접근이 막혀 `--basetemp`를 지정해 실행했다(일반 환경에서는 불필요).
 - 정제 식용유(콩기름 등)의 대두 알레르기 처리 기준은 0-4 검수표에서 사람이 판단한다.
 
 ## 다음 할 일
 
-- Phase 0-4: 시작 전에 사람이 알레르기 표시 대상 목록(D4) 확정 → 식재료 200개 확장과 검수표.
+- Phase 1-1: 필터 엔진(tests/allergy 118개 통과가 목표). progress.md "엔진 구현 시 지킬 것" 참고.
+- 새 재료를 추가할 때는 status: draft로 넣고 검수표(`scripts/make_review.py`)로 사람 확인 후 reviewed.
 
 ## 다음 단계 제안 (범위 밖 아이디어)
 

@@ -1,0 +1,229 @@
+# 육류·육가공품 (형식: knowledge/README.md). 모든 항목은 사람이 검수하기 전까지 status: draft
+# 돼지고기·쇠고기·닭고기 알레르기는 중간 노드(pork, beef, chicken)에만 적고, 부위는 is_a로 상속한다.
+
+- id: meat
+  name: 육류
+  kind: concept
+  category: 육류
+  status: reviewed
+
+# --- 돼지고기 ---
+- id: pork
+  name: 돼지고기
+  aliases: [돈육]
+  is_a: [meat]
+  category: 육류
+  allergens: [{group: pork, certainty: definite}]
+  status: reviewed
+- id: pork_belly
+  name: 삼겹살
+  aliases: [통삼겹, 대패삼겹살, 오겹살]
+  is_a: [pork]
+  category: 육류
+  status: reviewed
+- id: pork_neck
+  name: 돼지고기 목살
+  aliases: [목살]
+  is_a: [pork]
+  category: 육류
+  status: reviewed
+- id: pork_shoulder
+  name: 돼지고기 앞다리살
+  aliases: [앞다리살, 돼지 앞다리]
+  is_a: [pork]
+  category: 육류
+  status: reviewed
+- id: pork_loin
+  name: 돼지고기 등심
+  aliases: [돈등심, 돼지등심]
+  is_a: [pork]
+  category: 육류
+  status: reviewed
+- id: pork_tenderloin
+  name: 돼지고기 안심
+  aliases: [돈안심, 돼지안심]
+  is_a: [pork]
+  category: 육류
+  status: reviewed
+- id: pork_ribs
+  name: 돼지갈비
+  aliases: [돼지등갈비, 등갈비]
+  is_a: [pork]
+  category: 육류
+  status: reviewed
+- id: ground_pork
+  name: 돼지고기 다짐육
+  aliases: [다진 돼지고기, 돼지 다짐육, 돼지고기 간 것]
+  is_a: [pork]
+  category: 육류
+  status: reviewed
+
+# --- 쇠고기 ---
+- id: beef
+  name: 쇠고기
+  aliases: [소고기, 우육]
+  is_a: [meat]
+  category: 육류
+  allergens: [{group: beef, certainty: definite}]
+  status: reviewed
+- id: beef_brisket
+  name: 차돌박이
+  aliases: [차돌]
+  is_a: [beef]
+  category: 육류
+  status: reviewed
+- id: beef_bulgogi_cut
+  name: 불고기용 소고기
+  aliases: [불고기감, 소불고기감]
+  is_a: [beef]
+  category: 육류
+  status: reviewed
+- id: beef_soup_cut
+  name: 국거리 소고기
+  aliases: [소고기 국거리, 양지, 양지머리]
+  is_a: [beef]
+  category: 육류
+  status: reviewed
+- id: beef_sirloin
+  name: 소고기 등심
+  aliases: [소등심, 꽃등심]
+  is_a: [beef]
+  category: 육류
+  status: reviewed
+- id: beef_tenderloin
+  name: 소고기 안심
+  aliases: [소안심]
+  is_a: [beef]
+  category: 육류
+  status: reviewed
+- id: ground_beef
+  name: 소고기 다짐육
+  aliases: [다진 소고기, 소 다짐육]
+  is_a: [beef]
+  category: 육류
+  status: reviewed
+- id: beef_short_ribs
+  name: 소갈비
+  aliases: [LA갈비, 찜갈비]
+  is_a: [beef]
+  category: 육류
+  status: reviewed
+- id: beef_bone
+  name: 사골
+  aliases: [소 사골, 우족]
+  is_a: [beef]
+  category: 육류
+  confidence: low
+  note: 우족(소 발)을 사골의 별칭으로 묶어도 되는지 검수
+  status: reviewed
+
+# --- 닭고기·가금류 ---
+- id: chicken
+  name: 닭고기
+  aliases: [닭, 생닭, 닭 한 마리]
+  is_a: [meat]
+  category: 육류
+  allergens: [{group: chicken, certainty: definite}]
+  status: reviewed
+- id: chicken_breast
+  name: 닭가슴살
+  is_a: [chicken]
+  category: 육류
+  status: reviewed
+- id: chicken_thigh
+  name: 닭다리살
+  aliases: [닭다리, 닭 정육, 닭다리 정육]
+  is_a: [chicken]
+  category: 육류
+  status: reviewed
+- id: chicken_wing
+  name: 닭날개
+  aliases: [닭봉, 닭윙]
+  is_a: [chicken]
+  category: 육류
+  status: reviewed
+- id: duck
+  name: 오리고기
+  aliases: [오리]
+  is_a: [meat]
+  category: 육류
+  note: 가금류 고기. 알류(가금류) 알레르기는 알에만 해당하므로 그룹 없음
+  status: reviewed
+- id: lamb
+  name: 양고기
+  aliases: [램, 양갈비]
+  is_a: [meat]
+  category: 육류
+  status: reviewed
+
+# --- 육가공품 (제품마다 성분이 달라 대부분 possible, confidence: low) ---
+- id: bacon
+  name: 베이컨
+  derived_from: [pork_belly]
+  is_processed: true
+  category: 육가공품
+  status: reviewed
+- id: ham
+  name: 햄
+  aliases: [슬라이스햄, 김밥햄, 샌드위치햄]
+  derived_from:
+    - pork
+    - {id: chicken, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: milk, certainty: possible}
+  is_processed: true
+  category: 육가공품
+  confidence: low
+  note: 돼지고기 햄 기준. 닭고기 혼합, 대두단백·밀·유청 첨가 제품이 있어 possible
+  status: reviewed
+- id: sausage
+  name: 소시지
+  aliases: [비엔나소시지, 프랑크소시지, 후랑크소시지]
+  derived_from:
+    - {id: pork, certainty: possible}
+    - {id: chicken, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: milk, certainty: possible}
+  is_processed: true
+  category: 육가공품
+  confidence: low
+  note: 원료육이 제품마다 다름(돼지·닭·소 혼합). 모두 possible
+  status: reviewed
+- id: luncheon_meat
+  name: 통조림햄
+  aliases: [런천미트, 캔햄]
+  derived_from:
+    - pork
+    - {id: chicken, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 육가공품
+  confidence: low
+  note: 돼지고기 주원료. 닭고기 혼합·대두단백·전분(밀 가능) 제품 있음
+  status: reviewed
+- id: smoked_duck
+  name: 훈제오리
+  derived_from: [duck]
+  is_processed: true
+  category: 육가공품
+  status: reviewed
+- id: frozen_dumplings
+  name: 냉동만두
+  aliases: [만두, 고기만두, 김치만두]
+  derived_from:
+    - wheat_flour
+    - {id: pork, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: chicken, certainty: possible}
+    - {id: tofu, certainty: possible}
+    - {id: kimchi, certainty: possible}
+    - {id: egg, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: 만두피는 밀. 소는 제품마다 다름(고기·두부·김치·새우 등). 새우만두는 별도 재료로 두지 않음
+  status: reviewed
