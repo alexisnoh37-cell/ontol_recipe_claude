@@ -1,0 +1,4 @@
+# 엔진 실행 옵션 (docs/plan.md 3-2)
+# serve_draft_recipes: true면 검수 전(draft) 레시피도 추천한다(화면에 "검수 전" 표시). 기본은 published만.
+# draft를 제공해도 알레르기·제약 필터는 똑같이 적용된다.
+serve_draft_recipes: false

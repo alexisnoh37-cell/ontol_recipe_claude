@@ -4,7 +4,7 @@
 
 ## 현재 단계
 
-Phase 1-1 완료(2026-10-03, tests/allergy 118개 전부 통과). 다음은 Phase 1-2(점수 엔진). **tests/allergy/는 수정·삭제·skip 금지**(0-3 승인). 이제 하나라도 실패하면 엔진 결함이다.
+Phase 1-2 완료(2026-10-03, 전체 262개 통과). 다음은 Phase 1-3(레시피 시드). **tests/allergy/는 수정·삭제·skip 금지**(0-3 승인). 하나라도 실패하면 엔진 결함이다.
 
 ## 단계별 상태
 
@@ -14,8 +14,8 @@ Phase 1-1 완료(2026-10-03, tests/allergy 118개 전부 통과). 다음은 Phas
 | 0-2 스키마와 지식 컴파일러 | 완료 | 2026-10-03 | 필요(아래 승인 필요 2건) | 테스트 72개 통과, Docker DB에 마이그레이션·컴파일 반영 확인 |
 | 0-3 알레르기 테스트 작성 | 완료 | 2026-10-03 | 완료(승인) | 118개. 1-1 전까지 115개 실패가 정상 |
 | 0-4 식재료 200개 확장 | 완료 | 2026-10-03 | 완료(검수) | 재료 252개 reviewed(confidence low 70개 유지), 알레르기 그룹 27개 reviewed |
-| 1-1 필터 엔진 | 완료 | 2026-10-03 | 필요(아래 "1-1 확인 요청") | 전체 226개 통과(tests/allergy 118, tests/allergy 무수정) |
-| 1-2 점수 엔진 | 대기 | | 선택 | |
+| 1-1 필터 엔진 | 완료 | 2026-10-03 | 완료(승인) | 전체 226개 통과(tests/allergy 118, tests/allergy 무수정) |
+| 1-2 점수 엔진 | 완료 | 2026-10-03 | 선택(아래 "사람 확인 필요") | 전체 262개 통과(tests/logic/test_scoring.py 36개 추가) |
 | 1-3 레시피 시드 | 대기 | | 필요(검수표) | |
 | 1-4 골든셋 | 대기 | | 필요(기대 결과) | |
 | 1-5 API, 화면, 성능 | 대기 | | | |
@@ -85,11 +85,143 @@ Phase 1-1 완료(2026-10-03, tests/allergy 118개 전부 통과). 다음은 Phas
 - **임시 정렬**: 레시피 id 순, score 0.0, breakdown 빈 값. 1-2에서 점수로 교체.
 - **tests/logic 추가**(29개): 매운맛 한도(hard 제외·soft 통과), 필수 조리기구, 시간, 음식 종류, 상위 개념 매칭 방향(삼겹살 → 돼지고기 레시피 매칭, 반대는 missing), 대체재 context, 동의어(달걀=계란), 엔진·컴파일러 정규화 일치, 실제 knowledge 스모크(새우 알레르기 → 김치 possible·새우젓 definite 제외). 고의 결함(매운맛 한도 무시, 대체재 안전·context 무시)으로 테스트가 실패하는 것 확인.
 
-### 1-1 확인 요청(사람)
+### 1-1 확인 결과(사람 승인, 2026-10-03)
 
-- 대체재는 대체 재료를 직접 보유할 때만 인정(하위 재료 보유 불인정)하는 보수적 규칙이 괜찮은지.
-- 모르는 알레르기 그룹 id를 요청 오류로 처리하는 것(API에서는 400으로 바꿀 예정).
-- missing을 id로 내보내는 것(plan 4-7 예시는 이름). API 응답에서 이름으로 바꿀지 1-5에서 정한다.
+- 대체재는 대체 재료를 직접 보유할 때만 인정(하위 재료 보유 불인정): **승인**.
+- 모르는 알레르기 그룹·절대 불선호 재료 id는 `ValueError`(API에서 400): **승인**.
+- missing은 재료 id로 출력, 이름 표기는 1-5(API·화면)에서: **승인**.
+- 그 밖에 1-1에서 정한 내용(보유 간주, 제외 기록, 시간 필터 등): **모두 승인**.
+
+1-2에서 정한 것(2026-10-03):
+
+- **모듈**: `engine/scoring.py`(UserScorer: I·K·T·P·D·M, `rank`, `diversify`), `engine/config.py`(`load_engine_config`, `ScoringConfig.from_mapping`). `config/engine.yaml` 신설(`serve_draft_recipes: false`).
+- **설정 로딩**: 가중치·계수는 `config/weights.yaml`만 원천. 키가 빠지면 `Recommender` 생성 시 `ValueError`(조용히 기본값으로 동작하지 않게). `tests/support/engine_fixtures.build_recommender`가 실제 config/를 읽도록 바꿈(tests/allergy는 무수정).
+- **I**: main·sub(비선택)만, role_weight(main 3, sub 2). 대체재 충족은 관계의 `ratio`, 없으면 `substitute_credit`(0.8). 계산할 재료가 하나도 없으면 1.0. 미매칭 재료(main·sub)는 미보유로 계산.
+- **대체재 선택**: 같은 재료에 쓸 수 있는 대체가 여럿이면 인정 비율이 높은 것, 같으면 id 순(1-1의 id 순에서 변경).
+- **K**: soft cuisine 선호. polarity만 보고 like 1.0 / dislike 0.1 / 없으면 0.5. strength는 쓰지 않는다(plan 4-4 표 그대로). 같은 음식 종류에 상충 선호가 있으면 낮은 값.
+- **T**: preferred_level을 입력한 맛만 가중 평균. max_level만 있는 맛은 T에서 뺀다(필터 전용). 같은 차원이 여러 번 오면 첫 값.
+- **P(C7·4-5)**: 재료 자신 → is_a 조상 depth 순으로 처음 만나는 soft 선호. 같은 깊이 여러 개, 같은 재료 여러 개면 최솟값. 선택 재료는 optional 가중치(0.2), seasoning은 role_weight에 없어 P에서 제외. concept(해산물 등)도 선호 대상 가능. 모르는 선호 재료 id는 `ValueError`(1-1 규칙을 soft 선호에도 적용).
+- **D·M**: config 표 그대로. 난이도 차이는 −2~2로 자름. M은 희망 시간이 없으면 1.0.
+- **정렬**: 점수 내림차순, 동점은 recipe_id 순. 응답의 score·breakdown은 소수 셋째 자리 반올림(정렬은 반올림 전).
+- **다양성(4-6)**: 상위 top_n(10) 안에 같은 cuisine·같은 main 재료(각각 셈)가 한도(3)를 넘으면 뒤로 미룬다. 한도를 지켜 top_n을 못 채우면 미룬 항목을 점수 순으로 채운다. 제외된 레시피는 다양성 단계에도 들어오지 않는다.
+- **설명(4-7)**: 템플릿 notes 추가 — "필요한 주재료와 부재료를 모두 갖고 있습니다"(I = 1이고 대체 없음), "희망 시간보다 오래 걸립니다(약 N분)". `RecommendResult.exclusion_summary`(사유 코드별 제외 레시피 수) 추가.
+- **tests/logic/test_scoring.py**(36개): 구체성 우선(해산물 좋음·새우 싫음, 같은 깊이 최솟값, 가까운 조상 우선), 역할 가중, 매운맛 preferred_level 감점·비제외, T 미입력 0.5, 동의어 입력 매칭, 상위 개념 커버리지, 기본 양념 커버리지 무감점, 비기본 seasoning은 missing이지만 I 제외, 선택 재료 I 제외, 대체 인정 비율(기본·ratio·최고 ratio 선택), 난이도 표·초급자 정렬, K 3단계, M 공식, breakdown 6항목과 가중합 일치, 가중치를 config에서 읽음, 설정 누락 오류, 다양성(음식 종류 한도, main 재료 각각, 제외 레시피 비복귀).
+
+### 1-2 응답 예시(실제 knowledge, 예시용 레시피 6개)
+
+예시 레시피: 돼지고기 김치찌개, 삼겹살 구이, 김치볶음밥, 토마토 파스타(파르메산 선택), 크림 파스타, 카레라이스. 생성 스크립트는 저장소 밖(일회성).
+
+예시 1 — 초급(1), 한식 선호, 매운맛 선호 3·한도 4, 보유: 김치·삼겹살·쪽파·밥, 희망 30분, limit 3:
+
+```json
+{
+  "items": [
+    {
+      "recipe_id": "kimchi_fried_rice",
+      "title": "김치볶음밥",
+      "score": 0.895,
+      "breakdown": {
+        "I": 1.0,
+        "K": 1.0,
+        "T": 0.8,
+        "P": 0.5,
+        "D": 1.0,
+        "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": [
+        "필요한 주재료와 부재료를 모두 갖고 있습니다",
+        "계란은(는) 선택 재료라 빼고 조리할 수 있습니다"
+      ]
+    },
+    {
+      "recipe_id": "kimchi_jjigae_pork",
+      "title": "돼지고기 김치찌개",
+      "score": 0.85,
+      "breakdown": {
+        "I": 0.75,
+        "K": 1.0,
+        "T": 1.0,
+        "P": 0.5,
+        "D": 1.0,
+        "M": 1.0
+      },
+      "missing": [
+        "tofu"
+      ],
+      "substitutions": [
+        {
+          "need": "green_onion",
+          "use": "scallion"
+        }
+      ],
+      "notes": [
+        "양파은(는) 선택 재료라 빼고 조리할 수 있습니다",
+        "대파 대신 쪽파을(를) 쓸 수 있습니다"
+      ]
+    },
+    {
+      "recipe_id": "pork_belly_grill",
+      "title": "삼겹살 구이",
+      "score": 0.715,
+      "breakdown": {
+        "I": 0.6,
+        "K": 1.0,
+        "T": 0.4,
+        "P": 0.5,
+        "D": 1.0,
+        "M": 1.0
+      },
+      "missing": [
+        "lettuce",
+        "ssamjang"
+      ],
+      "substitutions": [],
+      "notes": []
+    }
+  ],
+  "exclusion_summary": {}
+}
+```
+
+예시 2 — 중급(2), 우유 알레르기, 돼지고기 약한 불선호(−0.5), 짠맛 선호 2, 보유: 파스타·토마토소스·양파·돼지 앞다리·감자, 희망 30분. 토마토 파스타는 선택 재료 파르메산 때문에, 크림 파스타는 생크림, 카레라이스는 카레가루(우유 포함 가능)로 제외되어 `allergen: 3`:
+
+```json
+{
+  "items": [
+    {
+      "recipe_id": "kimchi_jjigae_pork",
+      "title": "돼지고기 김치찌개",
+      "score": 0.585,
+      "breakdown": {
+        "I": 0.375,
+        "K": 0.5,
+        "T": 0.8,
+        "P": 0.417,
+        "D": 0.9,
+        "M": 1.0
+      },
+      "missing": [
+        "kimchi",
+        "tofu",
+        "green_onion"
+      ],
+      "substitutions": [],
+      "notes": []
+    }
+  ],
+  "exclusion_summary": {
+    "allergen": 3
+  }
+}
+```
+
+## 사람 확인 필요
+
+- (1-2, 선택) **다양성 한도와 음식 종류 수**: cuisine이 4개뿐이라 상위 10개에 같은 종류 3개 한도면 한식 선호 사용자도 상위 10개 중 한식이 3개만 남는다(나머지는 한도를 못 채울 때만). plan 4-6 그대로 구현했으며, 골든셋(1-4) 결과를 보고 `config/weights.yaml diversity.max_same_cuisine` 조정을 판단해 주세요.
+- (1-2, 선택) K에 선호 strength를 반영하지 않음(plan 표대로 1.0/0.5/0.1). 반영하려면 plan 4-4 수정이 필요하다.
+- (1-2, 선택) 템플릿 조사 표기("양파은(는)")가 어색하다. 1-5에서 이름 표기와 함께 받침 처리를 정한다.
 
 ## 1-5 화면 요구사항
 
@@ -113,7 +245,7 @@ Phase 1-1 완료(2026-10-03, tests/allergy 118개 전부 통과). 다음은 Phas
 
 ## 다음 할 일
 
-- Phase 1-2: 점수 엔진(I·K·T·P·D·M, config/weights.yaml 로딩, config/engine.yaml 신설), 임시 정렬 교체, 다양성 보정. 대체재 ratio를 커버리지에 반영.
+- Phase 1-3: 레시피 시드 50개와 검수표, 시드 형식 확정, scripts/load_recipes.py.
 - 1-5 bench 전에 후보 생성의 대체 역색인을 스냅샷 단위로 캐시할지 측정 후 결정.
 - 새 재료를 추가할 때는 status: draft로 넣고 검수표(`scripts/make_review.py`)로 사람 확인 후 reviewed.
 

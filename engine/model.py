@@ -182,3 +182,5 @@ class RecommendItem:
 class RecommendResult:
     items: tuple[RecommendItem, ...]
     exclusions: tuple[Exclusion, ...] = field(default=())
+    # 사유 코드별 제외된 레시피 수(한 레시피가 사유 여러 개면 사유마다 1). 응답에는 이 요약만 담는다(4-3)
+    exclusion_summary: Mapping[str, int] = field(default_factory=dict)

@@ -7,13 +7,16 @@ tests/allergy/는 사람 승인 후 수정 금지다. 엔진 내부 구성(설�
 from __future__ import annotations
 
 from collections.abc import Iterable
+from pathlib import Path
 
-from engine.config import EngineConfig
+from engine.config import load_engine_config
 from engine.memory import InMemoryKnowledgeRepository, InMemoryRecipeRepository
 from engine.model import AllergenHit, ContainsHit, KnowledgeSnapshot, Recipe, Substitute
 from engine.recommend import Recommender
 from kb import CompiledKnowledge
 from kb.datacheck import check_recipes
+
+CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
 
 
 def snapshot_from_compiled(ck: CompiledKnowledge) -> KnowledgeSnapshot:
@@ -45,10 +48,11 @@ def snapshot_from_compiled(ck: CompiledKnowledge) -> KnowledgeSnapshot:
 def build_recommender(
     ck: CompiledKnowledge, recipes: Iterable[Recipe], *, serve_draft_recipes: bool = False
 ) -> Recommender:
+    """실제 config/(weights.yaml, engine.yaml)를 읽는다. draft 제공 여부만 인자로 덮어쓴다."""
     return Recommender(
         InMemoryKnowledgeRepository(snapshot_from_compiled(ck)),
         InMemoryRecipeRepository(recipes),
-        EngineConfig(serve_draft_recipes=serve_draft_recipes),
+        load_engine_config(CONFIG_DIR, serve_draft_recipes=serve_draft_recipes),
     )
 
 
