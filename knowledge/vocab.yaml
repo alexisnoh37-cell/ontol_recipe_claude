@@ -1,0 +1,50 @@
+# 고정 어휘 (형식: knowledge/README.md)
+# 레시피의 cuisine, recipe_equipment, recipe_step.technique, 재료 category, 대체재 context는 이 목록 안에서만 고른다.
+# 값은 화면에 그대로 보이는 한국어 표기다. 한 번 쓰기 시작한 값은 바꾸지 않는다(바꾸면 레시피·선호 데이터도 함께 고친다).
+
+# 음식 종류: Phase 1은 국가별 평면 어휘(docs/plan.md 3-2, C2)
+cuisines:
+  - 한식
+  - 일식
+  - 중식
+  - 양식
+
+# 조리기구: 레시피 필수 조리기구 필터에 쓴다(B1)
+equipment:
+  - 냄비
+  - 프라이팬
+  - 오븐
+  - 에어프라이어
+  - 전자레인지
+  - 찜기
+  - 믹서
+  - 전기밥솥
+
+# 조리 기법: recipe_step.technique와 substitutes.yaml의 context가 같은 어휘를 쓴다
+techniques:
+  - 볶음
+  - 구이
+  - 조림
+  - 찜
+  - 튀김
+  - 부침
+  - 끓이기
+  - 무침
+  - 데치기
+  - 베이킹
+
+# 재료 분류: 화면 그룹핑용. 판정에는 쓰지 않는다
+categories:
+  - 육류
+  - 해산물
+  - 젓갈
+  - 채소
+  - 곡류·가루
+  - 콩·두부
+  - 알
+  - 유제품
+  - 견과
+  - 양념
+  - 장류
+  - 기름
+  - 김치

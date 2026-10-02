@@ -1,6 +1,7 @@
 # 기본 양념: 사용자가 입력하지 않아도 보유한 것으로 간주한다.
 # 재료 커버리지 계산에서만 쓰고, 알레르기 판정에는 영향을 주지 않는다(간장도 알레르기 판정 대상).
-# id는 knowledge/ingredients.yaml의 id를 쓴다.
+# id는 knowledge/ingredients.yaml의 id를 쓴다. 이 파일이 기본 양념의 단일 원천이다(재료 YAML에는 적지 않음).
+# concept 노드는 등록할 수 없다(컴파일 오류).
 
 staples:
   - salt
@@ -9,7 +10,7 @@ staples:
   - soy_sauce
   - cooking_oil
   - sesame_oil
-  - garlic_minced
+  - garlic
   - gochugaru
   - gochujang
   - doenjang

@@ -1,0 +1,32 @@
+[project]
+name = "recipe-engine"
+version = "0.1.0"
+description = "사용자 선호와 보유 식재료를 반영하는 레시피 추천 엔진 (MVP)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pyyaml>=6.0",
+    "pydantic>=2.7",
+    "sqlalchemy>=2.0",
+    "psycopg[binary]>=3.1",
+    "alembic>=1.13",
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "streamlit>=1.35",
+    "httpx>=0.27",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["engine", "kb", "storage"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"

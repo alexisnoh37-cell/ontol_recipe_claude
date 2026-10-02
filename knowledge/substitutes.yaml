@@ -1,7 +1,7 @@
-# 조건부 대체 관계 예시
+# 조건부 대체 관계 (형식: knowledge/README.md)
 # from: 레시피가 요구하는 재료 / to: 대신 쓸 수 있는 재료
-# context: 이 대체가 성립하는 조리 맥락. 비어 있으면 모든 맥락에서 가능
-# ratio: 대체 시 재료 커버리지 인정 비율(기본 0.8, config/weights.yaml)
+# context: 이 대체가 성립하는 조리 맥락(vocab.yaml의 techniques). 비어 있으면 모든 맥락에서 가능
+# ratio: 선택. 대체 시 재료 커버리지 인정 비율. 없으면 config/weights.yaml의 coverage.substitute_credit
 # 대체재는 점수와 안내에만 쓰고, 알레르기 판정에는 영향을 주지 않는다
 
 - from: scallion

@@ -2,7 +2,7 @@
 
 이 폴더의 YAML이 식재료 지식의 원본입니다(온톨로지 역할). DB의 식재료·관계·알레르기 테이블은 `scripts/compile_knowledge.py`가 이 파일들로부터 생성합니다. DB를 직접 고치지 말고 이 파일을 고친 뒤 다시 컴파일합니다.
 
-아래 형식은 Phase 0-1에서 확정했습니다. `*.example.yaml`은 Phase 0-2에서 실제 파일로 옮기면서 이 형식에 맞춥니다. 형식을 바꾸려면 제안하고 승인받은 뒤 이 문서도 함께 고칩니다.
+아래 형식은 Phase 0-1에서 확정했고, Phase 0-2에서 example 파일을 이 형식의 실제 파일로 옮겼습니다. 형식을 바꾸려면 제안하고 승인받은 뒤 이 문서도 함께 고칩니다.
 
 ## 파일 구성
 
@@ -16,6 +16,10 @@
 컴파일러는 `ingredients.yaml` 하나와 `ingredients/` 폴더 아래 카테고리별 파일(meat.yaml, seafood.yaml 등)을 모두 읽습니다. 재료가 많아지면(Phase 0-4) 폴더로 나눕니다.
 
 기본 양념 목록은 이 폴더가 아니라 `config/pantry_staples.yaml`이 단일 원천입니다. 재료 YAML에는 `is_pantry_staple`을 적지 않습니다.
+
+## vocab.yaml
+
+`cuisines`, `equipment`, `techniques`, `categories` 네 키만 둡니다(다른 키는 오류). 값은 화면에 그대로 보이는 한국어 표기 문자열이고, 레시피·선호·대체재 context는 이 값을 그대로 씁니다. 한 번 쓰기 시작한 값을 바꾸면 그 값을 쓰는 데이터도 함께 고칩니다.
 
 ## 공통 필드
 
@@ -84,10 +88,11 @@
 7. `certainty: possible`(포함 가능)인 연결도 closure에 포함합니다. 판정에서는 포함으로 간주합니다.
 8. `is_processed: true`인데 `derived_from`이 없으면 검증 오류입니다.
 9. `config/pantry_staples.yaml`의 id는 모두 존재해야 합니다.
+10. concept 노드는 기본 양념(`config/pantry_staples.yaml`)과 대체 관계(`from`, `to`)에 쓸 수 없습니다(레시피·보유 재료 금지 규칙과 같은 이유).
 
 상세 동작 순서와 산출 테이블은 `docs/plan.md` 부록 C를 따릅니다.
 
-## example 파일에서 바뀌는 점 (Phase 0-2에서 반영)
+## example 파일에서 바뀐 점 (Phase 0-2에서 반영 완료)
 
 | 항목 | example | 확정 형식 |
 | --- | --- | --- |
