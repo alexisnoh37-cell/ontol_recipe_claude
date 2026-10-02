@@ -21,7 +21,7 @@ ingredients:
   role: sub
 - ingredient: doubanjiang
   raw_text: 두반장 1큰술
-  role: seasoning
+  role: sub
 - ingredient: garlic
   raw_text: 다진 마늘 1큰술
   role: seasoning

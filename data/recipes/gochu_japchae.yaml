@@ -24,7 +24,7 @@ ingredients:
   role: sub
 - ingredient: oyster_sauce
   raw_text: 굴소스 1큰술
-  role: seasoning
+  role: sub
 - ingredient: soy_sauce
   raw_text: 간장 1큰술
   role: seasoning

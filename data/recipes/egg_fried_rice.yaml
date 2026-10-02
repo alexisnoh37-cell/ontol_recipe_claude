@@ -18,6 +18,7 @@ ingredients:
 - ingredient: green_onion
   raw_text: 대파 1/2대
   role: sub
+  optional: true
 - ingredient: soy_sauce
   raw_text: 간장 1큰술
   role: seasoning

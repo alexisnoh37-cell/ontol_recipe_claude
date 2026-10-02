@@ -18,6 +18,7 @@ ingredients:
 - ingredient: green_onion
   raw_text: 대파 1/2대
   role: sub
+  optional: true
 - ingredient: carrot
   raw_text: 당근 약간
   role: sub

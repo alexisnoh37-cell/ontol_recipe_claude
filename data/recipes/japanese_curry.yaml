@@ -27,7 +27,7 @@ ingredients:
   role: sub
 - ingredient: curry_powder
   raw_text: 카레가루(또는 고형 카레) 100g
-  role: seasoning
+  role: sub
 - ingredient: cooking_oil
   raw_text: 식용유 1큰술
   role: seasoning

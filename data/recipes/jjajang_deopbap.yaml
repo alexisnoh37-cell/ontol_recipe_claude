@@ -32,7 +32,7 @@ ingredients:
   optional: true
 - ingredient: chunjang
   raw_text: 춘장 3큰술
-  role: seasoning
+  role: sub
 - ingredient: sugar
   raw_text: 설탕 1큰술
   role: seasoning

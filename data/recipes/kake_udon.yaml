@@ -25,7 +25,7 @@ ingredients:
   role: garnish
 - ingredient: tsuyu
   raw_text: 쯔유 5큰술
-  role: seasoning
+  role: sub
 taste:
   spicy: 0
   salty: 3

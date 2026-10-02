@@ -24,7 +24,7 @@ ingredients:
   optional: true
 - ingredient: tsuyu
   raw_text: 쯔유 3큰술
-  role: seasoning
+  role: sub
 - ingredient: mirin
   raw_text: 맛술 2큰술
   role: seasoning
