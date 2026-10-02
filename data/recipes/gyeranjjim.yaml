@@ -1,0 +1,40 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: gyeranjjim
+title: 계란찜
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: egg
+  raw_text: 계란 3개
+  role: main
+- ingredient: saeujeot
+  raw_text: 새우젓 1작은술
+  role: seasoning
+- ingredient: green_onion
+  raw_text: 대파 약간
+  role: garnish
+- ingredient: anchovy_stock
+  raw_text: 멸치육수 150ml(또는 물)
+  role: seasoning
+  optional: true
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 2
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 계란을 풀고 육수(또는 물)와 다진 새우젓을 섞는다.
+- text: 뚝배기나 냄비에 담아 약불에서 저어 가며 익힌다.
+  technique: 찜
+- text: 뚜껑을 덮고 3분 정도 더 익힌 뒤 대파를 올린다.
+  technique: 찜

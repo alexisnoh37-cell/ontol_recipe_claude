@@ -1,0 +1,63 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: mapo_tofu
+title: 마파두부
+cuisine: 중식
+difficulty: 2
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: low
+note: 매운맛 강도(3)는 두반장 양에 따라 크게 달라짐. 검수 필요
+ingredients:
+- ingredient: tofu
+  raw_text: 두부 1모
+  role: main
+- ingredient: ground_pork
+  raw_text: 돼지고기 다짐육 100g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 1/2대
+  role: sub
+- ingredient: doubanjiang
+  raw_text: 두반장 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1큰술
+  role: seasoning
+- ingredient: ginger
+  raw_text: 다진 생강 약간
+  role: seasoning
+- ingredient: chili_oil
+  raw_text: 고추기름 1큰술
+  role: seasoning
+  optional: true
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+- ingredient: corn_starch
+  raw_text: 옥수수전분 1큰술(전분물)
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 1
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 기름에 대파, 마늘, 생강을 볶아 향을 내고 다짐육을 볶는다.
+  technique: 볶음
+- text: 두반장을 넣어 볶은 뒤 물, 간장, 설탕을 넣고 끓인다.
+  technique: 볶음
+- text: 깍둑썬 두부를 넣고 3분 끓인 뒤 전분물로 농도를 맞추고 고추기름을 두른다.
+  technique: 끓이기

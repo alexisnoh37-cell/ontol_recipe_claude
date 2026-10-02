@@ -11,10 +11,10 @@ from pathlib import Path
 
 from engine.config import load_engine_config
 from engine.memory import InMemoryKnowledgeRepository, InMemoryRecipeRepository
-from engine.model import AllergenHit, ContainsHit, KnowledgeSnapshot, Recipe, Substitute
+from engine.model import AllergenHit, ContainsHit, KnowledgeSnapshot, Recipe, RecipeIngredient, Substitute, Taste
 from engine.recommend import Recommender
 from kb import CompiledKnowledge
-from kb.datacheck import check_recipes
+from kb.datacheck import RecipeSpec, check_recipes
 
 CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
 
@@ -42,6 +42,25 @@ def snapshot_from_compiled(ck: CompiledKnowledge) -> KnowledgeSnapshot:
         substitutes={k: tuple(v) for k, v in substitutes.items()},
         pantry_staples=frozenset(ck.pantry_staples),
         concept_ids=ck.concept_ids,
+    )
+
+
+def recipe_from_spec(spec: RecipeSpec) -> Recipe:
+    """레시피 시드(RecipeSpec) → 엔진 Recipe. 1-5에서 API·DB 로더가 같은 변환을 쓰게 되면 위치를 옮긴다."""
+    return Recipe(
+        id=spec.id,
+        title=spec.title,
+        cuisine=spec.cuisine,
+        difficulty=spec.difficulty or 1,
+        cook_time_min=spec.cook_time_min,
+        ingredients=tuple(
+            RecipeIngredient(n, line.ingredient, line.role, line.optional, line.raw_text)
+            for n, line in enumerate(spec.ingredients, start=1)
+        ),
+        taste=Taste(**spec.taste.model_dump()) if spec.taste else Taste(),
+        required_equipment=frozenset(e.name for e in spec.equipment if e.required),
+        techniques=frozenset(s.technique for s in spec.steps if s.technique),
+        status=spec.status,
     )
 
 

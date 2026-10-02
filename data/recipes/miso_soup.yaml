@@ -1,0 +1,46 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: miso_soup
+title: 미소시루
+cuisine: 일식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: miso
+  raw_text: 미소된장 2큰술
+  role: main
+- ingredient: tofu
+  raw_text: 두부 1/3모
+  role: sub
+- ingredient: seaweed
+  raw_text: 마른 미역 약간
+  role: sub
+- ingredient: katsuobushi
+  raw_text: 가쓰오부시 한 줌(육수용)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마 1장
+  role: sub
+  optional: true
+- ingredient: scallion
+  raw_text: 쪽파 약간
+  role: garnish
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 4
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 물에 다시마를 넣고 끓기 직전에 건진 뒤 가쓰오부시를 넣고 불을 꺼서 우린다.
+  technique: 끓이기
+- text: 육수를 걸러 다시 데운다.
+- text: 두부와 미역을 넣고, 불을 약하게 한 뒤 미소를 풀어 넣는다(오래 끓이지 않는다).
+  technique: 끓이기

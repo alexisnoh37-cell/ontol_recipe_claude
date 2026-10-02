@@ -1,0 +1,53 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: kimchi_jjigae
+title: 돼지고기 김치찌개
+cuisine: 한식
+difficulty: 1
+cook_time_min: 30
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: kimchi
+  raw_text: 배추김치 1/4포기(신김치)
+  role: main
+- ingredient: pork
+  raw_text: 돼지고기(앞다리살 또는 목살) 150g
+  role: main
+- ingredient: tofu
+  raw_text: 두부 1/2모
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+  optional: true
+- ingredient: green_onion
+  raw_text: 대파 1/2대
+  role: garnish
+- ingredient: gochugaru
+  raw_text: 고춧가루 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: soy_sauce
+  raw_text: 국간장 1작은술
+  role: seasoning
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 1
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 냄비에 돼지고기와 김치를 넣고 중불에서 5분 정도 볶는다.
+  technique: 볶음
+- text: 물을 붓고 끓어오르면 양파, 마늘, 고춧가루를 넣고 15분 끓인다.
+  technique: 끓이기
+- text: 두부와 대파를 넣고 한소끔 더 끓인 뒤 국간장으로 간을 맞춘다.
+  technique: 끓이기

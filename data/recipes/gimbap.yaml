@@ -1,0 +1,68 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: gimbap
+title: 김밥
+cuisine: 한식
+difficulty: 3
+cook_time_min: 50
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: rice
+  raw_text: 밥 2공기
+  role: main
+- ingredient: laver
+  raw_text: 김밥용 김 4장
+  role: main
+- ingredient: pickled_radish
+  raw_text: 단무지 4줄
+  role: sub
+- ingredient: egg
+  raw_text: 계란 2개
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 한 줌
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/2개
+  role: sub
+- ingredient: ham
+  raw_text: 김밥용 햄 4줄
+  role: sub
+- ingredient: imitation_crab
+  raw_text: 게맛살 4줄
+  role: sub
+  optional: true
+- ingredient: sesame_oil
+  raw_text: 참기름 1큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 약간
+  role: seasoning
+- ingredient: sesame
+  raw_text: 통깨 약간
+  role: garnish
+  optional: true
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 1
+  sour: 1
+  umami: 2
+  savory: 2
+equipment:
+- name: 프라이팬
+  required: false
+- name: 냄비
+  required: false
+steps:
+- text: 밥에 소금, 참기름, 통깨를 넣어 밑간한다.
+- text: 계란 지단을 부쳐 길게 썬다.
+  technique: 부침
+- text: 당근과 햄은 볶고, 시금치는 데쳐 무친다.
+  technique: 볶음
+- text: 김 위에 밥을 펴고 속재료를 올려 단단히 만 뒤 썬다.

@@ -1,0 +1,48 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: jangjorim
+title: 소고기 장조림
+cuisine: 한식
+difficulty: 2
+cook_time_min: 60
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(홍두깨살 등 장조림용) 300g
+  role: main
+- ingredient: quail_egg
+  raw_text: 메추리알 15개
+  role: sub
+  optional: true
+- ingredient: green_chili
+  raw_text: 꽈리고추 또는 풋고추 약간
+  role: sub
+  optional: true
+- ingredient: garlic
+  raw_text: 통마늘 10쪽
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1/2컵
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 2큰술
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 4
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 2
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 소고기를 덩어리째 물에 넣고 30분 삶는다.
+  technique: 끓이기
+- text: 간장, 설탕, 마늘을 넣고 20분 조린다.
+  technique: 조림
+- text: 삶은 메추리알과 고추를 넣고 10분 더 조린 뒤 고기를 결대로 찢는다.
+  technique: 조림

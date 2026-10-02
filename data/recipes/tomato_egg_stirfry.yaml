@@ -1,0 +1,47 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: tomato_egg_stirfry
+title: 토마토 계란볶음
+cuisine: 중식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: tomato
+  raw_text: 토마토 2개
+  role: main
+- ingredient: egg
+  raw_text: 계란 3개
+  role: main
+- ingredient: green_onion
+  raw_text: 대파 약간
+  role: sub
+  optional: true
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 2큰술
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 2
+  sour: 2
+  umami: 2
+  savory: 2
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 계란을 풀어 기름에 부드럽게 익혀 덜어 둔다.
+  technique: 볶음
+- text: 토마토를 볶아 즙이 나오면 설탕, 소금으로 간한다.
+  technique: 볶음
+- text: 계란을 다시 넣고 가볍게 섞어 대파를 뿌린다.
+  technique: 볶음

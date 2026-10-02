@@ -1,0 +1,42 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: kimchijeon
+title: 김치전
+cuisine: 한식
+difficulty: 1
+cook_time_min: 20
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: kimchi
+  raw_text: 배추김치 1컵(잘게 썬 것)
+  role: main
+- ingredient: buchimgaru
+  raw_text: 부침가루 1컵
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/4개
+  role: sub
+  optional: true
+- ingredient: gochugaru
+  raw_text: 고춧가루 약간
+  role: seasoning
+  optional: true
+- ingredient: cooking_oil
+  raw_text: 식용유 넉넉히
+  role: seasoning
+taste:
+  spicy: 2
+  salty: 3
+  sweet: 1
+  sour: 2
+  umami: 2
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 김치를 잘게 썰고 부침가루, 물, 김치 국물을 섞어 반죽한다.
+- text: 기름을 두른 팬에 반죽을 얇게 펴서 앞뒤로 노릇하게 부친다.
+  technique: 부침

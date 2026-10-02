@@ -1,0 +1,61 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: gamja_jorim
+title: 감자조림
+cuisine: 한식
+difficulty: 1
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: potato
+  raw_text: 감자 2개
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+  optional: true
+- ingredient: carrot
+  raw_text: 당근 1/3개
+  role: sub
+  optional: true
+- ingredient: soy_sauce
+  raw_text: 간장 3큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1큰술
+  role: seasoning
+- ingredient: corn_syrup
+  raw_text: 물엿 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 약간
+  role: seasoning
+- ingredient: sesame
+  raw_text: 통깨 약간
+  role: garnish
+  optional: true
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 3
+  sour: 0
+  umami: 2
+  savory: 2
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 깍둑썬 감자를 기름에 살짝 볶는다.
+  technique: 볶음
+- text: 물, 간장, 설탕, 마늘을 넣고 감자가 익을 때까지 조린다.
+  technique: 조림
+- text: 국물이 거의 졸면 물엿과 참기름을 넣어 윤기를 낸다.
+  technique: 조림

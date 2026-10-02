@@ -1,0 +1,52 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: oyakodon
+title: 오야코동
+cuisine: 일식
+difficulty: 2
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: chicken_thigh
+  raw_text: 닭다리살 200g
+  role: main
+- ingredient: egg
+  raw_text: 계란 3개
+  role: main
+- ingredient: rice
+  raw_text: 밥 2공기
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파 약간
+  role: garnish
+  optional: true
+- ingredient: tsuyu
+  raw_text: 쯔유 3큰술
+  role: seasoning
+- ingredient: mirin
+  raw_text: 맛술 1큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 2
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 물, 쯔유, 맛술, 설탕을 끓이고 양파와 닭고기를 넣어 익힌다.
+  technique: 조림
+- text: 푼 계란을 둘러 붓고 반숙으로 익힌다.
+  technique: 조림
+- text: 밥 위에 올리고 쪽파를 뿌린다.

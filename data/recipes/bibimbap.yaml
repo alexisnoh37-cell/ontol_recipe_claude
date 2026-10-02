@@ -1,0 +1,66 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: bibimbap
+title: 비빔밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 40
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: rice
+  raw_text: 밥 2공기
+  role: main
+- ingredient: soybean_sprouts
+  raw_text: 콩나물 한 줌
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 한 줌
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/3개
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 1/3개
+  role: sub
+  optional: true
+- ingredient: ground_beef
+  raw_text: 소고기 다짐육 80g
+  role: sub
+  optional: true
+- ingredient: egg
+  raw_text: 계란 2개
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 2큰술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 1큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 약간
+  role: seasoning
+taste:
+  spicy: 2
+  salty: 2
+  sweet: 1
+  sour: 0
+  umami: 2
+  savory: 2
+equipment:
+- name: 프라이팬
+  required: false
+- name: 냄비
+  required: false
+steps:
+- text: 콩나물과 시금치를 데쳐 소금, 참기름으로 무친다.
+  technique: 데치기
+- text: 당근, 애호박, 다진 소고기를 각각 볶는다.
+  technique: 볶음
+- text: 계란 프라이를 만든다.
+  technique: 부침
+- text: 밥 위에 나물과 계란을 올리고 고추장, 참기름을 곁들인다.

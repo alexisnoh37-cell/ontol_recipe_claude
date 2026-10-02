@@ -1,0 +1,50 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: egg_fried_rice
+title: 계란볶음밥
+cuisine: 중식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: rice
+  raw_text: 밥 2공기
+  role: main
+- ingredient: egg
+  raw_text: 계란 3개
+  role: main
+- ingredient: green_onion
+  raw_text: 대파 1/2대
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 2큰술
+  role: seasoning
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1작은술
+  role: seasoning
+  optional: true
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 2
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 기름에 대파를 볶아 파기름을 낸다.
+  technique: 볶음
+- text: 계란을 넣어 스크램블한 뒤 밥을 넣고 센 불에서 볶는다.
+  technique: 볶음
+- text: 간장을 팬 가장자리에 둘러 향을 내고 소금(굴소스)으로 간한다.
+  technique: 볶음

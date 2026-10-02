@@ -1,0 +1,44 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: kake_udon
+title: 가케우동
+cuisine: 일식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: udon_noodles
+  raw_text: 우동면 2인분
+  role: main
+- ingredient: fish_cake
+  raw_text: 어묵 1장
+  role: sub
+  optional: true
+- ingredient: fried_tofu
+  raw_text: 유부 2장
+  role: garnish
+  optional: true
+- ingredient: scallion
+  raw_text: 쪽파 약간
+  role: garnish
+- ingredient: tsuyu
+  raw_text: 쯔유 5큰술
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 1
+  sour: 0
+  umami: 4
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 물에 쯔유를 풀어 국물을 끓이고 어묵을 넣는다.
+  technique: 끓이기
+- text: 우동면을 끓는 물에 데쳐 건진다.
+  technique: 데치기
+- text: 그릇에 면을 담고 국물을 부은 뒤 유부와 쪽파를 올린다.

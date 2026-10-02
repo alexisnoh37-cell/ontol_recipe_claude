@@ -1,7 +1,7 @@
 """컴파일된 지식을 기준으로 레시피·사용자 데이터를 검증한다 (docs/plan.md 5-4).
 
-레시피 시드 형식(RecipeSpec)은 0-2 시점의 잠정안이다. DDL(부록 B)의 recipe 계열 컬럼을
-그대로 따르며, Phase 1-3에서 레시피 시드를 만들 때 확정한다.
+레시피 시드 형식(RecipeSpec)은 DDL(부록 B)의 recipe 계열 컬럼을 그대로 따른다(Phase 1-3 확정,
+설명: data/recipes/README.md). 파일 하나에 레시피 하나(data/recipes/<id>.yaml).
 """
 
 from __future__ import annotations

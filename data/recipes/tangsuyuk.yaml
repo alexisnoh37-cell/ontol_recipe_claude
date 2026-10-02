@@ -1,0 +1,61 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: tangsuyuk
+title: 탕수육
+cuisine: 중식
+difficulty: 3
+cook_time_min: 50
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: pork_loin
+  raw_text: 돼지고기 등심 300g
+  role: main
+- ingredient: potato_starch
+  raw_text: 감자전분 1컵
+  role: sub
+- ingredient: egg
+  raw_text: 계란 흰자 1개분
+  role: sub
+  optional: true
+- ingredient: carrot
+  raw_text: 당근 1/3개
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 1/3개
+  role: sub
+  optional: true
+- ingredient: vinegar
+  raw_text: 식초 4큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 5큰술
+  role: seasoning
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유(튀김용)
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 4
+  sour: 3
+  umami: 2
+  savory: 4
+equipment:
+- name: 냄비
+  required: false
+- name: 프라이팬
+  required: false
+steps:
+- text: 고기를 길게 썰어 밑간하고, 불린 전분(과 흰자)으로 튀김옷을 입힌다.
+- text: 170도 기름에 한 번 튀기고 건져서 한 번 더 튀긴다.
+  technique: 튀김
+- text: 물, 식초, 설탕, 간장과 채소를 끓이고 전분물로 농도를 맞춰 소스를 만든다.
+  technique: 끓이기

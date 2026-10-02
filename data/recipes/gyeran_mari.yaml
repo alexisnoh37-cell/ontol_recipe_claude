@@ -1,0 +1,42 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: gyeran_mari
+title: 계란말이
+cuisine: 한식
+difficulty: 2
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: egg
+  raw_text: 계란 4개
+  role: main
+- ingredient: carrot
+  raw_text: 당근 약간(다진 것)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 약간(다진 것)
+  role: sub
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 2
+  savory: 2
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 계란을 풀고 다진 채소와 소금을 섞는다.
+- text: 약불로 달군 팬에 계란물을 얇게 붓고 반쯤 익으면 한쪽부터 만다.
+  technique: 부침
+- text: 남은 계란물을 조금씩 부어 가며 같은 방법으로 말아 두께를 만든다.
+  technique: 부침

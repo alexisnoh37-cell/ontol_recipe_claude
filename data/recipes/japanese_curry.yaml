@@ -1,0 +1,50 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: japanese_curry
+title: 일본식 카레라이스
+cuisine: 일식
+difficulty: 1
+cook_time_min: 40
+servings: 2
+source: agent_draft
+status: draft
+confidence: low
+note: 고형 카레(루)는 카레가루와 원료가 다를 수 있다(유지, 밀가루, 유제품). 현재 카레가루로 매핑
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(카레용) 200g
+  role: main
+- ingredient: rice
+  raw_text: 밥 2공기
+  role: main
+- ingredient: potato
+  raw_text: 감자 1개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/2개
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1개
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루(또는 고형 카레) 100g
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+taste:
+  spicy: 1
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 4
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 고기와 양파를 볶다가 감자, 당근을 넣어 볶는다.
+  technique: 볶음
+- text: 물을 붓고 채소가 익을 때까지 15분 끓인다.
+  technique: 끓이기
+- text: 불을 줄이고 카레를 풀어 걸쭉해질 때까지 저어 가며 끓인 뒤 밥에 곁들인다.
+  technique: 끓이기

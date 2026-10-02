@@ -1,0 +1,43 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: gamjajeon
+title: 감자전
+cuisine: 한식
+difficulty: 2
+cook_time_min: 30
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: potato
+  raw_text: 감자 3개
+  role: main
+- ingredient: potato_starch
+  raw_text: 감자전분 1큰술
+  role: sub
+  optional: true
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 넉넉히
+  role: seasoning
+- ingredient: green_chili
+  raw_text: 풋고추 1개
+  role: garnish
+  optional: true
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 감자를 강판에 갈아 체에 받쳐 물기를 빼고, 가라앉은 전분은 다시 섞는다.
+- text: 소금으로 간한다.
+- text: 기름을 넉넉히 두른 팬에 얇게 펴서 앞뒤로 바삭하게 부친다.
+  technique: 부침

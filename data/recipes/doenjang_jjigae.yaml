@@ -1,0 +1,56 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: doenjang_jjigae
+title: 된장찌개
+cuisine: 한식
+difficulty: 1
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: tofu
+  raw_text: 두부 1/2모
+  role: main
+- ingredient: zucchini
+  raw_text: 애호박 1/3개
+  role: sub
+- ingredient: potato
+  raw_text: 감자 1개
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: anchovy_stock
+  raw_text: 멸치육수 500ml
+  role: seasoning
+- ingredient: doenjang
+  raw_text: 된장 2큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 1개
+  role: garnish
+  optional: true
+- ingredient: green_onion
+  raw_text: 대파 약간
+  role: garnish
+taste:
+  spicy: 1
+  salty: 3
+  sweet: 1
+  sour: 0
+  umami: 4
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 멸치육수에 된장을 풀고 감자를 넣어 끓인다.
+  technique: 끓이기
+- text: 감자가 반쯤 익으면 애호박, 양파, 마늘을 넣고 5분 더 끓인다.
+  technique: 끓이기
+- text: 두부, 청양고추, 대파를 넣고 한소끔 끓여 마무리한다.
+  technique: 끓이기

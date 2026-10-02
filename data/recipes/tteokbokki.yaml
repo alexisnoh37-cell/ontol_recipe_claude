@@ -1,0 +1,61 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: tteokbokki
+title: 떡볶이
+cuisine: 한식
+difficulty: 1
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: tteokbokki_rice_cake
+  raw_text: 떡볶이떡 300g
+  role: main
+- ingredient: fish_cake
+  raw_text: 어묵 2장
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 1대
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추 약간
+  role: sub
+  optional: true
+- ingredient: egg
+  raw_text: 삶은 계란 2개
+  role: sub
+  optional: true
+- ingredient: gochujang
+  raw_text: 고추장 2큰술
+  role: seasoning
+- ingredient: gochugaru
+  raw_text: 고춧가루 1큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 2큰술
+  role: seasoning
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술
+  role: seasoning
+- ingredient: anchovy_stock
+  raw_text: 멸치육수 400ml(또는 물)
+  role: seasoning
+  optional: true
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 3
+  sour: 0
+  umami: 2
+  savory: 2
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 육수(또는 물)에 고추장, 고춧가루, 설탕, 간장을 풀어 끓인다.
+  technique: 끓이기
+- text: 떡과 어묵을 넣고 중불에서 저어 가며 끓인다.
+  technique: 끓이기
+- text: 양념이 걸쭉해지면 대파, 양배추, 삶은 계란을 넣고 한소끔 더 끓인다.
+  technique: 끓이기

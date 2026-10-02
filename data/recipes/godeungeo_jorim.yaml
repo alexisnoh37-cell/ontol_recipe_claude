@@ -1,0 +1,59 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: godeungeo_jorim
+title: 고등어 무조림
+cuisine: 한식
+difficulty: 2
+cook_time_min: 35
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: mackerel
+  raw_text: 고등어 1마리
+  role: main
+- ingredient: radish
+  raw_text: 무 1/4개
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+  optional: true
+- ingredient: green_onion
+  raw_text: 대파 1/2대
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3큰술
+  role: seasoning
+- ingredient: gochugaru
+  raw_text: 고춧가루 2큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1큰술
+  role: seasoning
+- ingredient: ginger
+  raw_text: 다진 생강 약간
+  role: seasoning
+- ingredient: cheongju
+  raw_text: 청주 1큰술
+  role: seasoning
+  optional: true
+taste:
+  spicy: 3
+  salty: 4
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 2
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 무는 도톰하게 썰고 양념장을 만든다.
+- text: 냄비에 무를 깔고 물을 부어 무가 반쯤 익을 때까지 끓인다.
+  technique: 조림
+- text: 고등어와 양념장을 올리고 국물을 끼얹어 가며 15분 조린 뒤 대파를 넣는다.
+  technique: 조림

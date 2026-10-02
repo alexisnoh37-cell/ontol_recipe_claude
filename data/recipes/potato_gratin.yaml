@@ -1,0 +1,53 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: potato_gratin
+title: 감자 그라탕
+cuisine: 양식
+difficulty: 2
+cook_time_min: 50
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: potato
+  raw_text: 감자 3개
+  role: main
+- ingredient: heavy_cream
+  raw_text: 생크림 150ml
+  role: sub
+- ingredient: milk
+  raw_text: 우유 100ml
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모차렐라치즈 80g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 1큰술
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2쪽
+  role: sub
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 1
+  sour: 0
+  umami: 2
+  savory: 5
+equipment:
+- name: 오븐
+  required: true
+- name: 냄비
+  required: false
+steps:
+- text: 감자를 얇게 썰고 그릇 안쪽에 버터를 바른다.
+- text: 생크림, 우유, 다진 마늘, 소금, 후추를 데우고 감자를 넣어 5분 끓인다.
+  technique: 끓이기
+- text: 그릇에 담고 치즈를 올려 200도 오븐에서 25분 굽는다.
+  technique: 베이킹

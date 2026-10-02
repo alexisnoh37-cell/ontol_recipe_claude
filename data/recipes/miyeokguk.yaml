@@ -1,0 +1,45 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: miyeokguk
+title: 소고기 미역국
+cuisine: 한식
+difficulty: 1
+cook_time_min: 40
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: seaweed
+  raw_text: 마른 미역 20g
+  role: main
+- ingredient: beef_soup_cut
+  raw_text: 국거리 소고기 100g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1큰술
+  role: seasoning
+- ingredient: soy_sauce
+  raw_text: 국간장 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 2
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 미역을 물에 불려 먹기 좋게 자른다.
+- text: 참기름에 소고기와 미역을 볶는다.
+  technique: 볶음
+- text: 물을 붓고 20분 이상 끓인 뒤 국간장, 마늘, 소금으로 간한다.
+  technique: 끓이기

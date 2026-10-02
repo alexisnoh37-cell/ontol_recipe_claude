@@ -1,0 +1,67 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: cream_pasta
+title: 베이컨 크림파스타
+cuisine: 양식
+difficulty: 2
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: pasta
+  raw_text: 스파게티면 200g
+  role: main
+- ingredient: heavy_cream
+  raw_text: 생크림 200ml
+  role: main
+- ingredient: bacon
+  raw_text: 베이컨 4줄
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 3쪽
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+  optional: true
+- ingredient: button_mushroom
+  raw_text: 양송이버섯 4개
+  role: sub
+  optional: true
+- ingredient: milk
+  raw_text: 우유 100ml
+  role: sub
+  optional: true
+- ingredient: parmesan
+  raw_text: 파마산치즈 약간
+  role: garnish
+  optional: true
+- ingredient: olive_oil
+  raw_text: 올리브유 1큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 1
+  sour: 0
+  umami: 3
+  savory: 5
+equipment:
+- name: 냄비
+  required: false
+- name: 프라이팬
+  required: false
+steps:
+- text: 소금물에 면을 삶는다.
+  technique: 끓이기
+- text: 올리브유에 마늘, 베이컨, 양파, 버섯을 볶는다.
+  technique: 볶음
+- text: 생크림(과 우유)을 넣고 약불에서 살짝 졸인 뒤 면을 넣어 버무린다.
+  technique: 끓이기

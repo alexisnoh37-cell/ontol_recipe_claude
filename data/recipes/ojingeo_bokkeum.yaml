@@ -1,0 +1,65 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: ojingeo_bokkeum
+title: 오징어볶음
+cuisine: 한식
+difficulty: 2
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: squid
+  raw_text: 오징어 1마리
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 1/2대
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 약간
+  role: sub
+  optional: true
+- ingredient: cabbage
+  raw_text: 양배추 약간
+  role: sub
+  optional: true
+- ingredient: gochujang
+  raw_text: 고추장 1큰술
+  role: seasoning
+- ingredient: gochugaru
+  raw_text: 고춧가루 2큰술
+  role: seasoning
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1큰술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 약간
+  role: seasoning
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 2
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 오징어를 손질해 먹기 좋게 썰고 양념장을 만든다.
+- text: 기름에 채소를 먼저 볶는다.
+  technique: 볶음
+- text: 오징어와 양념장을 넣고 센 불에서 오징어가 익을 때까지만 빠르게 볶는다.
+  technique: 볶음

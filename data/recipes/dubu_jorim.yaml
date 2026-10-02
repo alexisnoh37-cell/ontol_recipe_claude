@@ -1,0 +1,50 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: dubu_jorim
+title: 두부조림
+cuisine: 한식
+difficulty: 1
+cook_time_min: 20
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: tofu
+  raw_text: 두부 1모
+  role: main
+- ingredient: green_onion
+  raw_text: 대파 1/3대
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3큰술
+  role: seasoning
+- ingredient: gochugaru
+  raw_text: 고춧가루 1큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+taste:
+  spicy: 2
+  salty: 3
+  sweet: 1
+  sour: 0
+  umami: 2
+  savory: 2
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 두부를 도톰하게 썰어 기름에 앞뒤로 노릇하게 부친다.
+  technique: 부침
+- text: 양념장과 물을 붓고 약불에서 국물을 끼얹어 가며 조린다.
+  technique: 조림

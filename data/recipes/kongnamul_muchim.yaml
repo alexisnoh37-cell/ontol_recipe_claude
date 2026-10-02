@@ -1,0 +1,49 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: kongnamul_muchim
+title: 콩나물무침
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: soybean_sprouts
+  raw_text: 콩나물 300g
+  role: main
+- ingredient: green_onion
+  raw_text: 대파 약간(다진 것)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 1큰술
+  role: seasoning
+- ingredient: gochugaru
+  raw_text: 고춧가루 약간
+  role: seasoning
+  optional: true
+- ingredient: sesame
+  raw_text: 통깨 약간
+  role: garnish
+taste:
+  spicy: 1
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 끓는 소금물에 콩나물을 넣고 뚜껑을 덮어 5분 정도 데친다.
+  technique: 데치기
+- text: 찬물에 헹궈 물기를 뺀다.
+- text: 마늘, 대파, 소금, 참기름, 통깨를 넣고 무친다.
+  technique: 무침

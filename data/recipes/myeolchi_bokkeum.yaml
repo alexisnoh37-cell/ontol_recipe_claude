@@ -1,0 +1,53 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: myeolchi_bokkeum
+title: 멸치볶음
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: anchovy
+  raw_text: 잔멸치 1컵
+  role: main
+- ingredient: almond
+  raw_text: 아몬드 슬라이스 2큰술
+  role: sub
+  optional: true
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1큰술
+  role: seasoning
+- ingredient: corn_syrup
+  raw_text: 물엿 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+- ingredient: sesame
+  raw_text: 통깨 약간
+  role: garnish
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 3
+  sour: 0
+  umami: 3
+  savory: 2
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 마른 팬에 멸치를 볶아 비린 맛과 수분을 날린다.
+  technique: 볶음
+- text: 기름, 마늘, 간장, 설탕을 넣고 약불에서 버무리듯 볶는다.
+  technique: 볶음
+- text: 불을 끄고 물엿, 아몬드, 통깨를 넣어 섞는다.
+  technique: 볶음

@@ -67,7 +67,21 @@ uv run python scripts/validate_data.py --db                                # + D
 `knowledge/*.yaml`이나 `config/pantry_staples.yaml`을 고친 뒤에는 항상 다시 컴파일합니다. DB의 지식 테이블은 직접 고치지 않습니다.
 검증 오류가 하나라도 있으면 종료 코드 1로 끝나고 DB는 바뀌지 않습니다.
 
-### 4. 테스트
+### 4. 레시피 시드 적재와 검수표
+
+```powershell
+uv run python scripts/load_recipes.py --dry-run      # 레시피 검증만 (DB 불필요)
+uv run python scripts/load_recipes.py                # 검증 후 DB 반영 (지식을 먼저 컴파일해 둘 것)
+uv run python scripts/load_recipes.py --prune        # 시드에 없는 DB 레시피도 삭제
+uv run python scripts/make_recipe_review.py          # docs/review/recipes_review.md 다시 만들기
+uv run python scripts/make_review.py                 # docs/review/ingredients_review.md 다시 만들기
+```
+
+레시피 시드는 `data/recipes/<id>.yaml`(파일 하나에 레시피 하나, 형식은 `data/recipes/README.md`)이 원본입니다.
+시드나 지식을 고친 뒤에는 검수표를 다시 만듭니다(최신이 아니면 테스트가 실패합니다).
+엔진은 기본적으로 published 레시피만 추천합니다. 검수 전(draft) 레시피를 보려면 `config/engine.yaml`의 `serve_draft_recipes`를 `true`로 바꿉니다.
+
+### 5. 테스트
 
 ```powershell
 uv run pytest                        # 전체

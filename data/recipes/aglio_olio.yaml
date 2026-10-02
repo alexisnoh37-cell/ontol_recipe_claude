@@ -1,0 +1,50 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: aglio_olio
+title: 알리오 올리오
+cuisine: 양식
+difficulty: 1
+cook_time_min: 20
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: pasta
+  raw_text: 스파게티면 200g
+  role: main
+- ingredient: garlic
+  raw_text: 마늘 8쪽
+  role: main
+- ingredient: olive_oil
+  raw_text: 올리브유 5큰술
+  role: sub
+- ingredient: red_chili
+  raw_text: 마른 고추 또는 홍고추 2개
+  role: sub
+  optional: true
+- ingredient: parsley
+  raw_text: 파슬리 약간
+  role: garnish
+  optional: true
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+taste:
+  spicy: 1
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 2
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+- name: 프라이팬
+  required: false
+steps:
+- text: 소금물에 면을 삶고 면수를 조금 남겨 둔다.
+  technique: 끓이기
+- text: 약불에서 올리브유에 편 마늘과 고추를 천천히 볶아 향을 낸다.
+  technique: 볶음
+- text: 면과 면수를 넣고 빠르게 버무려 농도를 맞춘 뒤 파슬리를 뿌린다.
+  technique: 볶음

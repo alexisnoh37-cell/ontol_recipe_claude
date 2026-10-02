@@ -1,0 +1,54 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: janchi_guksu
+title: 잔치국수
+cuisine: 한식
+difficulty: 1
+cook_time_min: 30
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: somen
+  raw_text: 소면 200g
+  role: main
+- ingredient: anchovy_stock
+  raw_text: 멸치육수 1L
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 1/3개
+  role: sub
+- ingredient: egg
+  raw_text: 계란 지단 1개분
+  role: garnish
+  optional: true
+- ingredient: seasoned_laver
+  raw_text: 조미김 약간
+  role: garnish
+  optional: true
+- ingredient: green_onion
+  raw_text: 대파 약간
+  role: garnish
+- ingredient: soy_sauce
+  raw_text: 국간장 1큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 멸치육수를 끓여 국간장과 소금으로 간한다.
+  technique: 끓이기
+- text: 애호박을 채 썰어 살짝 볶는다.
+  technique: 볶음
+- text: 소면을 삶아 찬물에 헹군 뒤 그릇에 담고 고명과 육수를 붓는다.
+  technique: 끓이기

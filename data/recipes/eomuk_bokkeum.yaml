@@ -1,0 +1,55 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: eomuk_bokkeum
+title: 어묵볶음
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: fish_cake
+  raw_text: 사각어묵 3장
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 약간
+  role: sub
+  optional: true
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+- ingredient: corn_syrup
+  raw_text: 물엿 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2작은술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+- ingredient: sesame
+  raw_text: 통깨 약간
+  role: garnish
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 3
+  sour: 0
+  umami: 3
+  savory: 2
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 어묵과 채소를 먹기 좋게 썬다.
+- text: 기름에 양파와 어묵을 볶다가 간장, 설탕, 마늘을 넣는다.
+  technique: 볶음
+- text: 물엿과 통깨를 넣고 한 번 더 볶아 마무리한다.
+  technique: 볶음

@@ -1,0 +1,50 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: musaengchae
+title: 무생채
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: radish
+  raw_text: 무 1/3개
+  role: main
+- ingredient: green_onion
+  raw_text: 쪽파 또는 대파 약간
+  role: sub
+  optional: true
+- ingredient: gochugaru
+  raw_text: 고춧가루 1큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+- ingredient: vinegar
+  raw_text: 식초 1큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2작은술
+  role: seasoning
+- ingredient: sesame
+  raw_text: 통깨 약간
+  role: garnish
+taste:
+  spicy: 2
+  salty: 2
+  sweet: 2
+  sour: 2
+  umami: 1
+  savory: 0
+equipment: []
+steps:
+- text: 무를 가늘게 채 썬다.
+- text: 고춧가루로 먼저 버무려 색을 낸다.
+  technique: 무침
+- text: 설탕, 식초, 소금, 마늘, 파를 넣고 무친다.
+  technique: 무침

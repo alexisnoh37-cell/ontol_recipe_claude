@@ -1,0 +1,66 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: budae_jjigae
+title: 부대찌개
+cuisine: 한식
+difficulty: 1
+cook_time_min: 30
+servings: 2
+source: agent_draft
+status: draft
+confidence: low
+note: 가공육(햄, 소시지) 제품마다 원료가 달라 알레르기 표시 확인이 필요함. 맛 강도 검수 필요
+ingredients:
+- ingredient: sausage
+  raw_text: 소시지 4개
+  role: main
+- ingredient: luncheon_meat
+  raw_text: 통조림햄 1/2캔
+  role: main
+- ingredient: kimchi
+  raw_text: 배추김치 1/2컵
+  role: sub
+- ingredient: ramen_noodles
+  raw_text: 라면사리 1개
+  role: sub
+  optional: true
+- ingredient: tofu
+  raw_text: 두부 1/3모
+  role: sub
+  optional: true
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 1/2대
+  role: sub
+- ingredient: sliced_cheese
+  raw_text: 슬라이스치즈 1장
+  role: garnish
+  optional: true
+- ingredient: gochugaru
+  raw_text: 고춧가루 1큰술
+  role: seasoning
+- ingredient: gochujang
+  raw_text: 고추장 1큰술
+  role: seasoning
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1큰술
+  role: seasoning
+taste:
+  spicy: 3
+  salty: 4
+  sweet: 1
+  sour: 1
+  umami: 4
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 햄, 소시지, 채소를 썰고 양념장을 만든다.
+- text: 냄비에 재료를 둘러 담고 양념장을 올린다.
+- text: 물을 붓고 끓으면 라면사리와 치즈를 넣고 한소끔 끓인다.
+  technique: 끓이기

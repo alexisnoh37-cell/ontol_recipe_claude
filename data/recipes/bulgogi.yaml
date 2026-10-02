@@ -1,0 +1,62 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: bulgogi
+title: 소불고기
+cuisine: 한식
+difficulty: 1
+cook_time_min: 40
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: beef_bulgogi_cut
+  raw_text: 불고기용 소고기 300g
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 1/2대
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 약간
+  role: sub
+  optional: true
+- ingredient: pear
+  raw_text: 배 1/4개(간 것)
+  role: sub
+  optional: true
+- ingredient: soy_sauce
+  raw_text: 간장 3큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1큰술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 1큰술
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+- ingredient: sesame
+  raw_text: 통깨 약간
+  role: garnish
+  optional: true
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 3
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 간장, 설탕, 마늘, 간 배, 참기름, 후추를 섞어 양념장을 만든다.
+- text: 소고기를 양념장에 30분 정도 재운다.
+- text: 팬에 고기와 채소를 넣고 센 불에서 국물이 졸아들 때까지 볶는다.
+  technique: 볶음

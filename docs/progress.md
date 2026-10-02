@@ -4,7 +4,7 @@
 
 ## 현재 단계
 
-Phase 1-2 완료(2026-10-03, 전체 262개 통과). 다음은 Phase 1-3(레시피 시드). **tests/allergy/는 수정·삭제·skip 금지**(0-3 승인). 하나라도 실패하면 엔진 결함이다.
+Phase 1-3 완료(2026-10-03, 전체 274개 통과). 레시피 50개 초안(draft)의 **사람 검수 대기**(docs/review/recipes_review.md). 다음은 Phase 1-4(골든셋). **tests/allergy/는 수정·삭제·skip 금지**(0-3 승인). 하나라도 실패하면 엔진 결함이다.
 
 ## 단계별 상태
 
@@ -16,7 +16,7 @@ Phase 1-2 완료(2026-10-03, 전체 262개 통과). 다음은 Phase 1-3(레시�
 | 0-4 식재료 200개 확장 | 완료 | 2026-10-03 | 완료(검수) | 재료 252개 reviewed(confidence low 70개 유지), 알레르기 그룹 27개 reviewed |
 | 1-1 필터 엔진 | 완료 | 2026-10-03 | 완료(승인) | 전체 226개 통과(tests/allergy 118, tests/allergy 무수정) |
 | 1-2 점수 엔진 | 완료 | 2026-10-03 | 선택(아래 "사람 확인 필요") | 전체 262개 통과(tests/logic/test_scoring.py 36개 추가) |
-| 1-3 레시피 시드 | 대기 | | 필요(검수표) | |
+| 1-3 레시피 시드 | 완료 | 2026-10-03 | 필요(검수표, 아래 "사람 확인 필요") | 레시피 50개 draft, DB 적재 확인, 전체 274개 통과 |
 | 1-4 골든셋 | 대기 | | 필요(기대 결과) | |
 | 1-5 API, 화면, 성능 | 대기 | | | |
 | 1-6 MVP 점검과 마무리 | 대기 | | 필요(직접 사용) | |
@@ -41,7 +41,7 @@ Phase 1-2 완료(2026-10-03, 전체 262개 통과). 다음은 Phase 1-3(레시�
 - **closure via**: 재료 → 알레르기를 직접 가진 원천 재료까지의 id 경로.
 - **concept 사용 금지 범위 확대**(A1 연장): 기본 양념, 대체 관계 from/to에도 concept 금지.
 - **DB 반영 시 참조 검사 확대**(승인 필요): 삭제될 재료·알레르기 그룹을 user_preference가 참조해도 실패(FK가 없어 조용히 알레르기 설정이 끊기는 것을 막기 위함). 부록 C-5는 recipe_ingredient, user_pantry만 명시.
-- **레시피 시드 형식 잠정안**(승인 필요): `kb/datacheck.py`의 RecipeSpec. DDL 컬럼을 그대로 따르고 1-3에서 확정.
+- **레시피 시드 형식 잠정안**: `kb/datacheck.py`의 RecipeSpec. DDL 컬럼을 그대로 따른다(1-3에서 그대로 확정).
 - **테스트 DB**: docker 초기화 시 `recipe_test` DB 생성, `TEST_DATABASE_URL`이 있을 때만 tests/storage 실행.
 - **마이그레이션**: 0001_initial은 부록 B DDL을 문장 단위로 그대로 실행. `tests/logic/test_migration_matches_plan.py`가 일치를 검사.
 - **alembic.ini는 ASCII만**: Windows에서 Alembic이 ini를 locale 인코딩(cp949)으로 읽어 한글 주석이 있으면 실행이 깨진다(실행 중 발견, 테스트로 고정).
@@ -106,6 +106,18 @@ Phase 1-2 완료(2026-10-03, 전체 262개 통과). 다음은 Phase 1-3(레시�
 - **다양성(4-6)**: 상위 top_n(10) 안에 같은 cuisine·같은 main 재료(각각 셈)가 한도(3)를 넘으면 뒤로 미룬다. 한도를 지켜 top_n을 못 채우면 미룬 항목을 점수 순으로 채운다. 제외된 레시피는 다양성 단계에도 들어오지 않는다.
 - **설명(4-7)**: 템플릿 notes 추가 — "필요한 주재료와 부재료를 모두 갖고 있습니다"(I = 1이고 대체 없음), "희망 시간보다 오래 걸립니다(약 N분)". `RecommendResult.exclusion_summary`(사유 코드별 제외 레시피 수) 추가.
 - **tests/logic/test_scoring.py**(36개): 구체성 우선(해산물 좋음·새우 싫음, 같은 깊이 최솟값, 가까운 조상 우선), 역할 가중, 매운맛 preferred_level 감점·비제외, T 미입력 0.5, 동의어 입력 매칭, 상위 개념 커버리지, 기본 양념 커버리지 무감점, 비기본 seasoning은 missing이지만 I 제외, 선택 재료 I 제외, 대체 인정 비율(기본·ratio·최고 ratio 선택), 난이도 표·초급자 정렬, K 3단계, M 공식, breakdown 6항목과 가중합 일치, 가중치를 config에서 읽음, 설정 누락 오류, 다양성(음식 종류 한도, main 재료 각각, 제외 레시피 비복귀).
+
+1-3에서 정한 것(2026-10-03):
+
+- **시드 형식 확정**: `data/recipes/<id>.yaml` 파일 하나에 레시피 하나. 형식은 `kb/datacheck.py RecipeSpec`(0-2 잠정안 그대로) + 설명 `data/recipes/README.md`. 공통 읽기 함수 `kb/recipes.py`(`read_recipe_dir`, `load_recipe_specs`: 오류가 하나라도 있으면 `RecipeSeedError`, 일부만 적재 안 함). `scripts/validate_data.py`도 이 함수를 쓴다.
+- **레시피 50개**(한식 30, 일식 7, 중식 7, 양식 6): 모두 `status: draft`, `source: agent_draft`, 2인분. confidence low 4개(부대찌개, 일본식 카레, 마파두부, 연어덮밥 — 이유는 note). 외부 레시피 복제 없이 일반 가정식 절차로 작성.
+- **새 재료 추가 없음**: 기존 252개 재료로 모두 매핑(미매칭 0). 그래서 `test_all_knowledge_is_reviewed`(모든 재료 reviewed)도 그대로 통과.
+- **작성 규칙**: 부위 무관한 고기는 넓은 재료(`pork`, `beef`, `chicken`)로 적어 하위 부위 보유자도 매칭. 특정 부위가 필요하면 하위 재료(돈가스·탕수육 `pork_loin`, 스테이크 `beef_sirloin`). 기본 양념도 모두 적음. 물은 재료로 적지 않음. 고형 카레는 `curry_powder`, 쯔유는 `tsuyu`로 매핑.
+- **조리기구 required 정책**: 냄비·프라이팬은 `required: false`(대부분 사용자가 조리기구를 등록하지 않으면 거의 모든 레시피가 제외되기 때문). 오븐(감자 그라탕)만 `required: true`.
+- **DB 적재**: `storage/recipe_writer.py`(시드에 있는 레시피는 하위 행까지 지우고 다시 넣음, `--prune`일 때만 시드에 없는 레시피 삭제), `scripts/load_recipes.py`(`--dry-run`, 한 트랜잭션). `storage/tables.py`에 recipe, recipe_taste, recipe_equipment, recipe_step 추가. 로컬 Docker DB에 지식 재컴파일 후 50개 적재, 두 번 실행해도 동일(recipe_ingredient 413행, recipe_step 151행).
+- **검수표**: `scripts/make_recipe_review.py` → `docs/review/recipes_review.md`. 열: 제목(id), 종류, 난이도, 맛(매움/짠맛/단맛), 주재료, 선택재료, 걸리는 알레르기 그룹(기본 그룹, `그룹: 원인 재료`, possible은 "(가능)"), confidence. low를 맨 위에, 아래 부록에 레시피 상세(전체 재료와 매핑, 조리기구, 단계).
+- **엔진 변환**: `tests/support/engine_fixtures.recipe_from_spec`(RecipeSpec → engine Recipe). 1-5에서 API가 같은 변환을 쓰게 되면 위치를 옮긴다.
+- **테스트 추가**(12개): `tests/kb/test_recipe_seed.py`(검증 오류 0, 파일 이름 = id, 한식 30·기타 20, 전부 draft, 필수 주재료·맛·난이도·단계 존재, 잘못된 시드 거부, 검수표 최신, 새우 알레르기 → 김치 레시피 3개·계란찜(새우젓)·해물파전(선택 새우) 제외, 우유 알레르기 → 선택 치즈 레시피 제외, draft는 기본 비제공), `tests/storage/test_recipe_writer.py`(개수 일치, 멱등, prune).
 
 ### 1-2 응답 예시(실제 knowledge, 예시용 레시피 6개)
 
@@ -219,6 +231,12 @@ Phase 1-2 완료(2026-10-03, 전체 262개 통과). 다음은 Phase 1-3(레시�
 
 ## 사람 확인 필요
 
+- **(1-3, 필수) 레시피 검수**: `docs/review/recipes_review.md`. confidence low 4개는 전부, 나머지는 매운맛·난이도·주재료/선택재료 구분과 "걸리는 알레르기 그룹" 열을 확인해 주세요. 김치가 들어간 3개(김치찌개, 김치전, 부대찌개)는 모두 새우(가능)가 걸린다. 승인 전까지 status는 draft이고 엔진 기본 설정(published만)에서는 추천되지 않는다.
+- (1-3) **조리기구 required 정책**: 냄비·프라이팬을 `required: false`로 둔 것이 괜찮은지(위 1-3 결정 참고).
+- (1-3) **넓은 재료로 적은 고기**: 김치찌개·제육볶음·카레·짜장·고추잡채는 `pork`(아무 부위), 장조림은 `beef`. 특정 부위로 바꿔야 할 레시피가 있는지.
+- (1-3) **매핑 판단**: 고형 카레 → 카레가루, 장조림용 고기 → 쇠고기(넓은 재료), 계란 흰자 → 계란. 다르게 다뤄야 하면 재료 추가가 필요하다.
+- (1-3) 검수 후 published로 바꿀 때 `tests/kb/test_recipe_seed.py::test_all_recipes_stay_draft_until_review`도 함께 갱신해야 한다.
+
 - (1-2, 선택) **다양성 한도와 음식 종류 수**: cuisine이 4개뿐이라 상위 10개에 같은 종류 3개 한도면 한식 선호 사용자도 상위 10개 중 한식이 3개만 남는다(나머지는 한도를 못 채울 때만). plan 4-6 그대로 구현했으며, 골든셋(1-4) 결과를 보고 `config/weights.yaml diversity.max_same_cuisine` 조정을 판단해 주세요.
 - (1-2, 선택) K에 선호 strength를 반영하지 않음(plan 표대로 1.0/0.5/0.1). 반영하려면 plan 4-4 수정이 필요하다.
 - (1-2, 선택) 템플릿 조사 표기("양파은(는)")가 어색하다. 1-5에서 이름 표기와 함께 받침 처리를 정한다.
@@ -245,7 +263,8 @@ Phase 1-2 완료(2026-10-03, 전체 262개 통과). 다음은 Phase 1-3(레시�
 
 ## 다음 할 일
 
-- Phase 1-3: 레시피 시드 50개와 검수표, 시드 형식 확정, scripts/load_recipes.py.
+- 사람: 레시피 검수표 확인 → 승인한 레시피 status를 published로 변경(에이전트가 대신 정하지 않음).
+- Phase 1-4: 골든셋 페르소나 8명 초안과 평가 스크립트("상위 3개 안에 나와야 할 레시피"는 사람이 채움). 레시피가 draft인 동안은 serve_draft_recipes로 돌려야 한다.
 - 1-5 bench 전에 후보 생성의 대체 역색인을 스냅샷 단위로 캐시할지 측정 후 결정.
 - 새 재료를 추가할 때는 status: draft로 넣고 검수표(`scripts/make_review.py`)로 사람 확인 후 reviewed.
 

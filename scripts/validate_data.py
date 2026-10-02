@@ -17,22 +17,15 @@ import argparse
 import sys
 from pathlib import Path
 
-import yaml
-
 ROOT = Path(__file__).resolve().parent.parent
 
 from kb import Issue, KnowledgeError, compile_paths  # noqa: E402
 from kb.datacheck import check_pantry, check_preferences, check_recipes  # noqa: E402
+from kb.recipes import read_recipe_dir  # noqa: E402
 
 
 def load_recipes(recipes_dir: Path) -> list[tuple[str, object]]:
-    if not recipes_dir.is_dir():
-        return []
-    out = []
-    for path in sorted(recipes_dir.glob("*.yaml")):
-        with path.open("r", encoding="utf-8") as fh:
-            out.append((path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else path.as_posix(), yaml.safe_load(fh)))
-    return out
+    return read_recipe_dir(recipes_dir, ROOT)
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -113,6 +113,21 @@ allergen_closure = Table(
     Column("via", ARRAY(Text), nullable=False),
 )
 
+recipe = Table(
+    "recipe", metadata,
+    Column("id", Text, primary_key=True),
+    Column("title", Text, nullable=False),
+    Column("cuisine", Text, nullable=False),
+    Column("difficulty", SmallInteger, nullable=False),
+    Column("cook_time_min", Integer, nullable=False),
+    Column("servings", SmallInteger),
+    Column("source", Text, nullable=False),
+    Column("status", Text, nullable=False),
+    Column("confidence", Text, nullable=False),
+    Column("note", Text),
+    Column("updated_at", DateTime(timezone=True)),
+)
+
 recipe_ingredient = Table(
     "recipe_ingredient", metadata,
     Column("recipe_id", Text, primary_key=True),
@@ -123,6 +138,32 @@ recipe_ingredient = Table(
     Column("amount", Numeric(8, 2)),
     Column("unit", Text),
     Column("raw_text", Text, nullable=False),
+)
+
+recipe_taste = Table(
+    "recipe_taste", metadata,
+    Column("recipe_id", Text, primary_key=True),
+    Column("spicy", SmallInteger, nullable=False),
+    Column("salty", SmallInteger, nullable=False),
+    Column("sweet", SmallInteger, nullable=False),
+    Column("sour", SmallInteger, nullable=False),
+    Column("umami", SmallInteger, nullable=False),
+    Column("savory", SmallInteger, nullable=False),
+)
+
+recipe_equipment = Table(
+    "recipe_equipment", metadata,
+    Column("recipe_id", Text, primary_key=True),
+    Column("equipment", Text, primary_key=True),
+    Column("required", Boolean, nullable=False),
+)
+
+recipe_step = Table(
+    "recipe_step", metadata,
+    Column("recipe_id", Text, primary_key=True),
+    Column("step_no", SmallInteger, primary_key=True),
+    Column("text", Text, nullable=False),
+    Column("technique", Text),
 )
 
 user_profile = Table(

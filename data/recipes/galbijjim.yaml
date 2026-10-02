@@ -1,0 +1,69 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: galbijjim
+title: 소갈비찜
+cuisine: 한식
+difficulty: 3
+cook_time_min: 120
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: beef_short_ribs
+  raw_text: 소갈비 1kg
+  role: main
+- ingredient: radish
+  raw_text: 무 1/4개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/2개
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 3개
+  role: sub
+  optional: true
+- ingredient: chestnut
+  raw_text: 밤 6알
+  role: sub
+  optional: true
+- ingredient: jujube
+  raw_text: 대추 4알
+  role: garnish
+  optional: true
+- ingredient: pear
+  raw_text: 배 1/4개(간 것)
+  role: sub
+  optional: true
+- ingredient: soy_sauce
+  raw_text: 간장 6큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 2큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 2큰술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 1큰술
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 3
+  sour: 0
+  umami: 4
+  savory: 4
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 갈비를 찬물에 담가 핏물을 뺀다.
+- text: 끓는 물에 갈비를 데쳐 헹군다.
+  technique: 데치기
+- text: 양념장과 물을 넣고 1시간 정도 끓인다.
+  technique: 조림
+- text: 무, 당근, 버섯, 밤을 넣고 국물이 자작해질 때까지 조린다.
+  technique: 조림

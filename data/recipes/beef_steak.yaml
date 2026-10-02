@@ -1,0 +1,49 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: beef_steak
+title: 소고기 스테이크
+cuisine: 양식
+difficulty: 2
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: beef_sirloin
+  raw_text: 소고기 등심(스테이크용) 2장
+  role: main
+- ingredient: butter
+  raw_text: 버터 1큰술
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 4쪽
+  role: sub
+- ingredient: asparagus
+  raw_text: 아스파라거스 4대
+  role: garnish
+  optional: true
+- ingredient: olive_oil
+  raw_text: 올리브유 1큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 4
+  savory: 5
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 고기를 실온에 두고 소금, 후추로 밑간한다.
+- text: 센 불로 달군 팬에 올리브유를 두르고 앞뒤를 굽는다.
+  technique: 구이
+- text: 불을 줄여 버터와 마늘을 넣고 녹은 버터를 끼얹으며 원하는 굽기로 익힌 뒤 잠시 둔다.
+  technique: 구이

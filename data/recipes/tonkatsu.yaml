@@ -1,0 +1,54 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: tonkatsu
+title: 돈가스
+cuisine: 일식
+difficulty: 3
+cook_time_min: 40
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: pork_loin
+  raw_text: 돼지고기 등심(돈가스용) 2장
+  role: main
+- ingredient: wheat_flour
+  raw_text: 밀가루 1/2컵
+  role: sub
+- ingredient: egg
+  raw_text: 계란 1개
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루 1컵
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추채 약간
+  role: garnish
+  optional: true
+- ingredient: tonkatsu_sauce
+  raw_text: 돈가스소스 적당량
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유(튀김용)
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 1
+  sour: 1
+  umami: 2
+  savory: 4
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 고기를 두드려 펴고 소금, 후추로 밑간한다.
+- text: 밀가루, 계란물, 빵가루 순서로 튀김옷을 입힌다.
+- text: 170도 기름에서 노릇하게 튀긴 뒤 기름을 빼고 썬다.
+  technique: 튀김

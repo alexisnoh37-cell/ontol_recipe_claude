@@ -1,0 +1,61 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+id: jjajang_deopbap
+title: 짜장덮밥
+cuisine: 중식
+difficulty: 2
+cook_time_min: 35
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기 150g
+  role: main
+- ingredient: rice
+  raw_text: 밥 2공기
+  role: main
+- ingredient: onion
+  raw_text: 양파 1개
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 1/3개
+  role: sub
+  optional: true
+- ingredient: potato
+  raw_text: 감자 1개
+  role: sub
+  optional: true
+- ingredient: cabbage
+  raw_text: 양배추 약간
+  role: sub
+  optional: true
+- ingredient: chunjang
+  raw_text: 춘장 3큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1큰술
+  role: seasoning
+- ingredient: corn_starch
+  raw_text: 옥수수전분 1큰술(전분물)
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 넉넉히
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 3
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 춘장을 기름에 튀기듯 볶아 덜어 둔다.
+  technique: 튀김
+- text: 고기와 채소를 깍둑썰어 볶는다.
+  technique: 볶음
+- text: 볶은 춘장, 설탕, 물을 넣고 끓인 뒤 전분물로 농도를 맞춰 밥에 올린다.
+  technique: 끓이기
