@@ -96,7 +96,7 @@ def order(result) -> list[str]:
 def test_specificity_most_specific_preference_wins(snapshot, weights):
     recipes = [recipe("shrimp_dish", ("shrimp_raw", "main"), ("onion", "sub")),
                recipe("squid_dish", ("squid", "main"), ("onion", "sub"))]
-    user = UserContext(pantry=frozenset({"onion"}), preferences=(
+    user = UserContext(pantry=frozenset({"onion", "shrimp_raw", "squid"}), preferences=(
         Preference("ingredient", "seafood", 1, 0.6), Preference("ingredient", "shrimp_raw", -1, 0.9)))
     result = make(snapshot, recipes, weights).recommend(user, REQ)
     items = by_id(result)
@@ -200,11 +200,43 @@ def test_pantry_staples_do_not_reduce_coverage(snapshot, weights):
     assert item.missing == ()
 
 
-def test_non_staple_seasoning_is_missing_but_not_in_coverage(snapshot, weights):
+def test_non_staple_seasoning_counts_in_coverage_with_weight_one(snapshot, weights):
+    # 1-4: 기본 양념이 아닌 seasoning(굴소스 등)은 가중치 1로 커버리지에 포함한다
     r = recipe("r", ("onion", "main"), ("oyster_sauce", "seasoning"))
     item = by_id(make(snapshot, [r], weights).recommend(UserContext(pantry=frozenset({"onion"})), REQ))["r"]
-    assert item.breakdown["I"] == 1.0
+    assert weights["coverage"]["role_weight"]["seasoning"] == 1
+    assert item.breakdown["I"] == pytest.approx(3 / 4)
     assert item.missing == ("oyster_sauce",)
+    owned = by_id(make(snapshot, [r], weights).recommend(UserContext(pantry=frozenset({"onion", "oyster_sauce"})), REQ))["r"]
+    assert owned.breakdown["I"] == 1.0
+
+
+def test_staples_and_garnish_excluded_from_coverage_any_role(snapshot, weights):
+    # 기본 양념은 main이어도 계산에서 빠지고, garnish는 역할 가중치가 없다
+    r = recipe("r", ("onion", "main"), ("garlic", "main"), ("salt", "seasoning"), ("tofu", "garnish"))
+    item = by_id(make(snapshot, [r], weights).recommend(UserContext(pantry=frozenset({"onion"})), REQ))["r"]
+    assert item.breakdown["I"] == 1.0
+    assert item.missing == ("tofu",)
+
+
+# --- 동점 처리(1-4) --------------------------------------------------------------------------------
+
+
+def test_tie_break_order(snapshot, weights):
+    # 모든 항목 점수가 같도록 가중치를 coverage 0으로 두고, 동점에서 I → 부족 재료 수 → 조리시간 → id 순
+    w = copy.deepcopy(weights)
+    w["weights"] = {k: 0.0 for k in w["weights"]} | {"difficulty": 1.0}
+    recipes = [
+        recipe("z_full_long", ("onion", "main"), cook_time_min=50),
+        recipe("a_low_cov", ("onion", "main"), ("tofu", "sub")),
+        recipe("y_full_short", ("onion", "main"), cook_time_min=10),
+        recipe("b_full_short", ("onion", "main"), cook_time_min=10),
+        recipe("c_low_cov_more_missing", ("onion", "main"), ("tofu", "seasoning"), ("rice", "seasoning")),
+    ]
+    result = make(snapshot, recipes, w).recommend(UserContext(pantry=frozenset({"onion"})), REQ)
+    assert {i.score for i in result.items} == {1.0}
+    # I: full 1.0, a_low_cov 3/5=0.6, c 3/5=0.6. a와 c는 I가 같고 부족 재료 수(1 < 2)로 갈린다
+    assert order(result) == ["b_full_short", "y_full_short", "z_full_long", "a_low_cov", "c_low_cov_more_missing"]
 
 
 def test_optional_ingredients_excluded_from_coverage(snapshot, weights):

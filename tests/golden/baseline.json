@@ -1,0 +1,670 @@
+{
+ "label": "1-4 수정 전(2026-10-03, 커밋 29de756의 엔진·설정)",
+ "overall": 0.7916666666666666,
+ "personas": {
+  "korean_lover": {
+   "hit_rate": 1.0,
+   "top": [
+    {
+     "recipe_id": "jeyuk_bokkeum",
+     "title": "제육볶음",
+     "score": 0.915,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "kimchi_jjigae",
+     "title": "돼지고기 김치찌개",
+     "score": 0.915,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "dubu_jorim",
+     "title": "두부조림",
+     "score": 0.9,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "jjajang_deopbap",
+     "title": "짜장덮밥",
+     "score": 0.78,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.7,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": [
+      "chunjang",
+      "corn_starch"
+     ]
+    },
+    {
+     "recipe_id": "egg_fried_rice",
+     "title": "계란볶음밥",
+     "score": 0.755,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": []
+    }
+   ]
+  },
+  "beginner": {
+   "hit_rate": 0.6666666666666666,
+   "top": [
+    {
+     "recipe_id": "gyeranjjim",
+     "title": "계란찜",
+     "score": 0.765,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": [
+      "green_onion"
+     ]
+    },
+    {
+     "recipe_id": "gamja_jorim",
+     "title": "감자조림",
+     "score": 0.74,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 0.75
+     },
+     "missing": [
+      "corn_syrup"
+     ]
+    },
+    {
+     "recipe_id": "gyeran_mari",
+     "title": "계란말이",
+     "score": 0.705,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "egg_fried_rice",
+     "title": "계란볶음밥",
+     "score": 0.69,
+     "breakdown": {
+      "I": 0.75,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": [
+      "green_onion"
+     ]
+    },
+    {
+     "recipe_id": "gyudon",
+     "title": "규동",
+     "score": 0.652,
+     "breakdown": {
+      "I": 0.625,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": [
+      "beef_bulgogi_cut",
+      "tsuyu",
+      "mirin"
+     ]
+    }
+   ]
+  },
+  "multi_allergy": {
+   "hit_rate": 0.6666666666666666,
+   "top": [
+    {
+     "recipe_id": "gamjajeon",
+     "title": "감자전",
+     "score": 0.825,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "jjajang_deopbap",
+     "title": "짜장덮밥",
+     "score": 0.825,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": [
+      "chunjang",
+      "corn_starch"
+     ]
+    },
+    {
+     "recipe_id": "gamja_jorim",
+     "title": "감자조림",
+     "score": 0.815,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": [
+      "corn_syrup"
+     ]
+    },
+    {
+     "recipe_id": "gyudon",
+     "title": "규동",
+     "score": 0.815,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": [
+      "tsuyu",
+      "mirin"
+     ]
+    },
+    {
+     "recipe_id": "doenjang_jjigae",
+     "title": "된장찌개",
+     "score": 0.785,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": [
+      "anchovy_stock",
+      "green_onion"
+     ]
+    }
+   ]
+  },
+  "low_spice": {
+   "hit_rate": 0.6666666666666666,
+   "top": [
+    {
+     "recipe_id": "gamjajeon",
+     "title": "감자전",
+     "score": 0.825,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "gyeran_mari",
+     "title": "계란말이",
+     "score": 0.825,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "oyakodon",
+     "title": "오야코동",
+     "score": 0.825,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": [
+      "tsuyu",
+      "mirin"
+     ]
+    },
+    {
+     "recipe_id": "gamja_jorim",
+     "title": "감자조림",
+     "score": 0.815,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": [
+      "corn_syrup"
+     ]
+    },
+    {
+     "recipe_id": "egg_fried_rice",
+     "title": "계란볶음밥",
+     "score": 0.74,
+     "breakdown": {
+      "I": 0.75,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": [
+      "green_onion"
+     ]
+    }
+   ]
+  },
+  "western_lover": {
+   "hit_rate": 0.6666666666666666,
+   "top": [
+    {
+     "recipe_id": "cream_pasta",
+     "title": "베이컨 크림파스타",
+     "score": 0.895,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": [
+      "olive_oil"
+     ]
+    },
+    {
+     "recipe_id": "tomato_pasta",
+     "title": "토마토 파스타",
+     "score": 0.87,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.7,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": [
+      "olive_oil"
+     ]
+    },
+    {
+     "recipe_id": "aglio_olio",
+     "title": "알리오 올리오",
+     "score": 0.825,
+     "breakdown": {
+      "I": 0.75,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": [
+      "olive_oil"
+     ]
+    },
+    {
+     "recipe_id": "jangjorim",
+     "title": "소고기 장조림",
+     "score": 0.65,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.1,
+      "T": 0.7,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 0.5
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "bok_choy_stirfry",
+     "title": "청경채볶음",
+     "score": 0.59,
+     "breakdown": {
+      "I": 0.4,
+      "K": 0.5,
+      "T": 0.7,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": [
+      "bok_choy",
+      "oyster_sauce"
+     ]
+    }
+   ]
+  },
+  "japanese_lover": {
+   "hit_rate": 1.0,
+   "top": [
+    {
+     "recipe_id": "kake_udon",
+     "title": "가케우동",
+     "score": 0.915,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": [
+      "scallion"
+     ]
+    },
+    {
+     "recipe_id": "oyakodon",
+     "title": "오야코동",
+     "score": 0.91,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": [
+      "mirin"
+     ]
+    },
+    {
+     "recipe_id": "salmon_don",
+     "title": "연어덮밥",
+     "score": 0.9,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "gyeran_mari",
+     "title": "계란말이",
+     "score": 0.795,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "gyeranjjim",
+     "title": "계란찜",
+     "score": 0.785,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": [
+      "green_onion"
+     ]
+    }
+   ]
+  },
+  "few_ingredients": {
+   "hit_rate": 1.0,
+   "top": [
+    {
+     "recipe_id": "egg_fried_rice",
+     "title": "계란볶음밥",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "gamja_jorim",
+     "title": "감자조림",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": [
+      "corn_syrup"
+     ]
+    },
+    {
+     "recipe_id": "gyeranjjim",
+     "title": "계란찜",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "gamjajeon",
+     "title": "감자전",
+     "score": 0.69,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "gyudon",
+     "title": "규동",
+     "score": 0.637,
+     "breakdown": {
+      "I": 0.625,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": [
+      "beef_bulgogi_cut",
+      "tsuyu",
+      "mirin"
+     ]
+    }
+   ]
+  },
+  "seafood_expert": {
+   "hit_rate": 0.6666666666666666,
+   "top": [
+    {
+     "recipe_id": "godeungeo_jorim",
+     "title": "고등어 무조림",
+     "score": 0.821,
+     "breakdown": {
+      "I": 0.943,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.654,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": [
+      "ginger"
+     ]
+    },
+    {
+     "recipe_id": "musaengchae",
+     "title": "무생채",
+     "score": 0.775,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": [
+      "sesame"
+     ]
+    },
+    {
+     "recipe_id": "haemul_pajeon",
+     "title": "해물파전",
+     "score": 0.741,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.4,
+      "P": 0.607,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": []
+    },
+    {
+     "recipe_id": "egg_fried_rice",
+     "title": "계란볶음밥",
+     "score": 0.588,
+     "breakdown": {
+      "I": 0.575,
+      "K": 0.5,
+      "T": 0.4,
+      "P": 0.5,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": [
+      "rice"
+     ]
+    },
+    {
+     "recipe_id": "mapo_tofu",
+     "title": "마파두부",
+     "score": 0.572,
+     "breakdown": {
+      "I": 0.229,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.425,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": [
+      "tofu",
+      "ground_pork",
+      "doubanjiang",
+      "ginger",
+      "corn_starch"
+     ]
+    }
+   ]
+  }
+ }
+}

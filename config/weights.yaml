@@ -9,9 +9,9 @@ weights:
   time: 0.10                  # M
 
 coverage:
-  role_weight: {main: 3, sub: 2}
+  role_weight: {main: 3, sub: 2, seasoning: 1}  # garnish는 계산 제외(1-4 골든셋 반영)
   substitute_credit: 0.8      # 대체재로 충족 시 인정 비율
-  exclude_roles: [seasoning]  # 기본 양념은 계산 제외(config/pantry_staples.yaml 참고)
+  exclude_pantry_staples: true  # 기본 양념(config/pantry_staples.yaml)은 role과 관계없이 계산 제외
   exclude_optional: true
 
 cuisine:
@@ -36,5 +36,5 @@ taste:
 
 diversity:
   top_n: 10
-  max_same_cuisine: 3
+  max_same_cuisine: 5          # 1-4 골든셋 반영(3 → 5)
   max_same_main_ingredient: 3

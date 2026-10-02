@@ -9,14 +9,13 @@ kb → 엔진 변환은 tests/support/engine_fixtures를 쓴다(1-5에서 위치
 
 from __future__ import annotations
 
-import copy
+import json
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
 import yaml
 
-from engine.config import EngineConfig
 from engine.model import (
     Preference,
     RecommendItem,
@@ -80,14 +79,6 @@ def build_engine() -> tuple[Recommender, dict[str, str]]:
     return build_recommender(ck, [recipe_from_spec(s) for s in specs]), {i.id: i.name for i in ck.ingredients}
 
 
-def without_diversity(recommender: Recommender) -> Recommender:
-    """비교용: 다양성 한도를 사실상 끈 같은 엔진(1-4에서 다양성 한도 결정을 돕기 위한 참고 자료)."""
-    weights = copy.deepcopy(dict(recommender.config.weights))
-    weights["diversity"] = {**weights["diversity"], "max_same_cuisine": 10**6, "max_same_main_ingredient": 10**6}
-    return Recommender(recommender.knowledge, recommender.recipes,
-                       EngineConfig(weights=weights, serve_draft_recipes=recommender.config.serve_draft_recipes))
-
-
 def hit_rate(expected: tuple[str, ...], items: tuple[RecommendItem, ...], k: int = TOP_K) -> float | None:
     """기대 레시피가 없으면 None(미기입)."""
     if not expected:
@@ -111,6 +102,32 @@ def evaluate(recommender: Recommender, personas: list[Persona]) -> list[PersonaR
 def overall(results: list[PersonaResult]) -> float | None:
     rates = [r.hit_rate for r in results if r.hit_rate is not None]
     return sum(rates) / len(rates) if rates else None
+
+
+# --- 결과 스냅샷(수정 전후 비교용) -------------------------------------------------------------------
+
+
+def snapshot(results: list[PersonaResult], top_n: int = 5) -> dict[str, Any]:
+    """비교용으로 저장하는 평가 결과(JSON 직렬화 가능)."""
+    return {
+        "overall": overall(results),
+        "personas": {
+            r.persona.id: {
+                "hit_rate": r.hit_rate,
+                "top": [{"recipe_id": i.recipe_id, "title": i.title, "score": i.score, "breakdown": dict(i.breakdown),
+                         "missing": list(i.missing)} for i in r.result.items[:top_n]],
+            }
+            for r in results
+        },
+    }
+
+
+def save_snapshot(results: list[PersonaResult], path: Path, label: str) -> None:
+    path.write_text(json.dumps({"label": label, **snapshot(results)}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+
+
+def load_snapshot(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 # --- 초안 표(docs/review/golden_draft.md) ------------------------------------------------------------
@@ -138,48 +155,77 @@ def _profile(p: Persona, names: dict[str, str]) -> list[str]:
     return lines
 
 
+def _rate(value: float | None) -> str:
+    return "미기입" if value is None else f"{value:.2f}"
+
+
+def _top_cell(top: list[dict[str, Any]], expected: tuple[str, ...]) -> str:
+    """상위 목록. 기대 레시피는 굵게, 상위 3개와 4~5위 사이는 구분선."""
+    cells = []
+    for n, i in enumerate(top, start=1):
+        title = f"**{i['title']}**" if i["recipe_id"] in expected else i["title"]
+        cells.append(f"{n}. {title} ({i['score']:.3f})")
+    return "<br>".join(cells) or "(결과 없음)"
+
+
 def render_draft(results: list[PersonaResult], names: dict[str, str], top_n: int = 5,
-                 no_diversity: list[PersonaResult] | None = None) -> str:
+                 baseline: dict[str, Any] | None = None) -> str:
+    now = snapshot(results, top_n)
+    before = baseline or {}
     lines = [
-        "# 골든셋 초안",
+        "# 골든셋 평가",
         "",
         "> `uv run python scripts/eval_golden.py --draft`로 생성한다. 페르소나 원본은 `tests/golden/personas.yaml`.",
-        "> **\"상위 3개 안에 나와야 할 레시피\"는 사람이 채운다**(personas.yaml의 `expected_top3`). 아래 엔진 결과는 참고용이다.",
+        "> \"상위 3개 안에 나와야 할 레시피\"(expected_top3)는 사람이 정한다. 표에서 기대 레시피는 **굵게** 표시한다.",
         "> 점수: S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M (config/weights.yaml). 다양성 보정 적용 후 순위.",
         "",
-        "| 페르소나 | 상위 3개 안에 나와야 할 레시피(사람 기입) | 현재 엔진 상위 5개 | 참고: 다양성 보정 없을 때 상위 5개 |",
-        "|---|---|---|---|",
     ]
-
-    def top_cell(result: RecommendResult) -> str:
-        return "<br>".join(f"{n}. {i.title} ({i.score:.3f})" for n, i in enumerate(result.items[:top_n], start=1)) or "(결과 없음)"
-
-    plain = {r.persona.id: r.result for r in no_diversity or []}
-    for r in results:
-        p = r.persona
-        expected = ", ".join(p.expected_top3) if p.expected_top3 else " "
-        alt = plain.get(p.id)
-        if alt is None:
-            alt_cell = "-"
-        elif [i.recipe_id for i in alt.items[:top_n]] == [i.recipe_id for i in r.result.items[:top_n]]:
-            alt_cell = "(같음)"
-        else:
-            alt_cell = top_cell(alt)
-        lines.append(f"| {p.name} (`{p.id}`) | {expected} | {top_cell(r.result)} | {alt_cell} |")
-    lines += ["", "다양성 보정: 상위 10개 안에 같은 음식 종류·같은 주재료가 3개를 넘지 않게 뒤로 미룬다(config/weights.yaml diversity).",
-              "한도 조정 여부는 이 골든셋 결과를 보고 사람이 정한다."]
-    lines += ["", "## 페르소나별 상세", ""]
+    if before:
+        lines += [
+            f"## 적중률: 수정 전 → 수정 후",
+            "",
+            f"- 수정 전: {before.get('label', '')}",
+            f"- 전체 상위 3개 적중률: **{_rate(before.get('overall'))} → {_rate(now['overall'])}**",
+            "",
+            "| 페르소나 | 기대 레시피 | 적중률 전 | 적중률 후 | 수정 전 상위 5개 | 수정 후 상위 5개 |",
+            "|---|---|---|---|---|---|",
+        ]
+        for r in results:
+            p = r.persona
+            old = before["personas"].get(p.id, {"hit_rate": None, "top": []})
+            lines.append(f"| {p.name} (`{p.id}`) | {', '.join(p.expected_top3) or ' '} | {_rate(old['hit_rate'])} | "
+                         f"{_rate(r.hit_rate)} | {_top_cell(old['top'], p.expected_top3)} | "
+                         f"{_top_cell(now['personas'][p.id]['top'], p.expected_top3)} |")
+    else:
+        lines += [
+            f"전체 상위 3개 적중률: **{_rate(now['overall'])}**",
+            "",
+            "| 페르소나 | 기대 레시피 | 적중률 | 현재 엔진 상위 5개 |",
+            "|---|---|---|---|",
+        ]
+        for r in results:
+            p = r.persona
+            lines.append(f"| {p.name} (`{p.id}`) | {', '.join(p.expected_top3) or ' '} | {_rate(r.hit_rate)} | "
+                         f"{_top_cell(now['personas'][p.id]['top'], p.expected_top3)} |")
+    lines += ["", "## 페르소나별 상세(현재 엔진)", ""]
     for r in results:
         p = r.persona
         lines += [f"### {p.name} (`{p.id}`)", "", p.description, "", *_profile(p, names), "",
-                  "상위 3개 안에 나와야 할 레시피(사람 기입): " + (", ".join(p.expected_top3) if p.expected_top3 else "______"), "",
+                  "상위 3개 안에 나와야 할 레시피(사람 기입): " + (", ".join(p.expected_top3) if p.expected_top3 else "______")
+                  + f" · 적중률 {_rate(r.hit_rate)}", "",
                   "| 순위 | 레시피 | 점수 | I | K | T | P | D | M | 부족 재료 |",
                   "|---|---|---|---|---|---|---|---|---|---|"]
         for n, i in enumerate(r.result.items[:top_n], start=1):
             b = i.breakdown
             missing = ", ".join(names.get(m, m) for m in i.missing) or "-"
-            lines.append(f"| {n} | {i.title} (`{i.recipe_id}`) | {i.score:.3f} | "
+            title = f"**{i.title}**" if i.recipe_id in p.expected_top3 else i.title
+            lines.append(f"| {n} | {title} (`{i.recipe_id}`) | {i.score:.3f} | "
                          + " | ".join(f"{b[c]:.2f}" for c in "IKTPDM") + f" | {missing} |")
+        ranks = {i.recipe_id: n for n, i in enumerate(r.result.items, start=1)}
+        outside = [e for e in p.expected_top3 if e not in [i.recipe_id for i in r.result.items[:3]]]
+        if outside:
+            lines += ["", "상위 3개 밖 기대 레시피: " + ", ".join(
+                f"`{e}`({ranks[e]}위)" if e in ranks else f"`{e}`(상위 10개 밖 또는 후보·필터 제외)" for e in outside)]
         summary = ", ".join(f"{k} {v}" for k, v in sorted(r.result.exclusion_summary.items())) or "없음"
         lines += ["", f"후보 {len(r.result.items)}개 표시(최대 10) · 제외된 레시피(사유별): {summary}", ""]
     return "\n".join(lines).rstrip() + "\n"

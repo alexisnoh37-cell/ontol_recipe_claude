@@ -90,7 +90,7 @@ def test_review_table_is_up_to_date(ck, specs):
 # --- 실제 시드 + 엔진 알레르기 스모크(기본 설정: published만 제공) ------------------------------------------------
 
 
-ALL_PANTRY = frozenset({"kimchi", "egg", "pork_belly", "pasta", "tofu", "rice", "potato", "squid", "tomato_sauce"})
+ALL_PANTRY = frozenset({"kimchi", "egg", "pork_belly", "pasta", "tofu", "rice", "potato", "squid", "tomato_sauce", "scallion"})
 
 
 def test_kimchi_recipes_excluded_for_shrimp_allergy(recommender, specs):
@@ -116,4 +116,4 @@ def test_milk_allergy_excludes_optional_cheese(recommender):
 
 def test_published_seed_served_by_default(recommender):
     result = recommender.recommend(UserContext(pantry=ALL_PANTRY), RecommendRequest(limit=100))
-    assert len(result.items) >= 30
+    assert len(result.items) >= 20

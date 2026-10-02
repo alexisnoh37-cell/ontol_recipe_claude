@@ -12,6 +12,7 @@ RECIPES = [
     recipe("pork_stew", ("pork", "main"), ("salt", "seasoning")),
     recipe("belly_onion", ("pork_belly", "main"), ("onion", "sub")),
     recipe("belly_only", ("pork_belly", "main")),
+    recipe("onion_belly", ("onion", "main"), ("pork_belly", "sub")),
     recipe("tofu_onion", ("onion", "main"), ("tofu", "sub"), ("egg", "garnish", True)),
     recipe("salt_only", ("salt", "main")),
     recipe("onion_stirfry", ("onion", "main"), ("cooking_oil", "sub"), techniques=("볶음",)),
@@ -43,8 +44,9 @@ def test_owned_parent_does_not_match_child_recipe(recommender):
     # 돼지고기 보유 → "삼겹살"만 필요한 레시피는 후보가 아니다
     items = run(recommender, "pork", "onion")
     assert "belly_only" not in items
-    # 다른 재료(양파)로 후보가 된 레시피에서는 삼겹살이 부족 재료로 표시된다
-    assert items["belly_onion"].missing == ("pork_belly",)
+    assert "belly_onion" not in items  # 양파(sub)만 있고 main(삼겹살)이 없으면 후보가 아니다(1-4)
+    # 다른 main 재료(양파)로 후보가 된 레시피에서는 삼겹살이 부족 재료로 표시된다
+    assert items["onion_belly"].missing == ("pork_belly",)
 
 
 def test_concept_in_pantry_is_ignored(recommender):
@@ -63,9 +65,16 @@ def test_missing_lists_unowned_required_but_not_optional_or_staples(recommender)
     assert run(recommender, "pork")["pork_stew"].missing == ()  # 소금은 기본 양념이라 보유로 간주
 
 
-def test_staple_alone_makes_candidate(recommender):
-    # 기본 양념은 보유로 간주하므로 main이 기본 양념인 레시피는 보유 재료가 없어도 후보다
-    assert "salt_only" in run(recommender)
+def test_staple_alone_does_not_make_candidate(recommender):
+    # 기본 양념은 보유로 간주하지만 후보 생성 근거로는 쓰지 않는다(1-4 골든셋 반영)
+    assert "salt_only" not in run(recommender)
+    assert "salt_only" not in run(recommender, "onion")
+
+
+def test_sub_ingredient_alone_does_not_make_candidate(recommender):
+    # 후보가 되려면 main 재료를 하나 이상 보유해야 한다(1-4). 두부(sub)만 있으면 tofu_onion은 후보가 아니다
+    assert "tofu_onion" not in run(recommender, "tofu")
+    assert "tofu_onion" in run(recommender, "onion")
 
 
 # --- 대체재: technique context -------------------------------------------------------------------

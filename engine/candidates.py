@@ -1,6 +1,7 @@
 """후보 생성 (docs/plan.md 4-2).
 
-보유 재료가 main 또는 sub로 쓰인 레시피를 후보로 잡는다. 레시피 재료 X가 "보유"인 경우:
+main 재료를 하나 이상 보유한 레시피를 후보로 잡는다(직접 보유, 하위 개념 보유, 대체재 포함). 기본 양념은
+보유로 간주하지만(점수·missing) 후보 생성 근거로는 쓰지 않는다(1-4 골든셋 반영). 레시피 재료 X가 "보유"인 경우:
   - X를 직접 보유하거나 기본 양념이다.
   - X의 is_a 하위 재료를 보유한다(삼겹살 보유 → "돼지고기" 충족). 반대 방향은 충족이 아니다(C1).
     컴파일된 ingredient_ancestor만 조회한다.
@@ -19,7 +20,7 @@ from typing import Literal
 from engine.model import KnowledgeSnapshot, Recipe, RecipeIngredient, Substitute
 from engine.ports import RecipeRepository
 
-CANDIDATE_ROLES = ("main", "sub")
+CANDIDATE_ROLES = ("main",)  # 후보 생성 근거가 되는 역할
 
 LineStatus = Literal["owned", "substitute", "missing"]
 
@@ -37,9 +38,9 @@ class Candidate:
     lines: tuple[LineMatch, ...]  # recipe.ingredients와 같은 순서
 
 
-def owned_ingredients(snapshot: KnowledgeSnapshot, pantry: frozenset[str]) -> frozenset[str]:
-    """보유로 간주하는 재료: 보유 재료, 기본 양념, 그리고 그들의 is_a 조상."""
-    base = pantry | snapshot.pantry_staples
+def owned_ingredients(snapshot: KnowledgeSnapshot, pantry: frozenset[str], *, include_staples: bool = True) -> frozenset[str]:
+    """보유로 간주하는 재료: 보유 재료, 기본 양념(include_staples), 그리고 그들의 is_a 조상."""
+    base = pantry | snapshot.pantry_staples if include_staples else pantry
     owned = set(base)
     for ingredient_id in base:
         owned.update(snapshot.ancestors.get(ingredient_id, {}))
@@ -94,13 +95,16 @@ def generate_candidates(
 ) -> list[Candidate]:
     """후보 레시피와 재료별 충족 상태. 필터는 이 다음 단계에서 적용한다."""
     owned = owned_ingredients(snapshot, pantry)
-    lookup = set(owned) | _substitutable_needs(snapshot, pantry, is_unsafe)
+    from_pantry = owned_ingredients(snapshot, pantry, include_staples=False)  # 후보 근거(기본 양념 제외)
+    lookup = set(from_pantry) | _substitutable_needs(snapshot, pantry, is_unsafe)
     out: list[Candidate] = []
     for recipe in recipes.by_ingredients(lookup):
         if recipe.status != "published" and not serve_draft_recipes:
             continue
         lines = match_lines(snapshot, recipe, pantry, owned, is_unsafe, default_ratio)
-        if any(m.status != "missing" and m.line.role in CANDIDATE_ROLES for m in lines):
+        if any(m.line.role in CANDIDATE_ROLES
+               and (m.status == "substitute" or (m.status == "owned" and m.line.ingredient_id in from_pantry))
+               for m in lines):
             out.append(Candidate(recipe, lines))
     return out
 

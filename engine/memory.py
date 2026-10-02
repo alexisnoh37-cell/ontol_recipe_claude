@@ -19,7 +19,7 @@ class InMemoryKnowledgeRepository:
 class InMemoryRecipeRepository:
     def __init__(self, recipes: Iterable[Recipe]):
         self._by_id: dict[str, Recipe] = {}
-        self._index: dict[str, list[str]] = {}  # 재료 id → main·sub로 쓰는 레시피 id
+        self._index: dict[str, list[str]] = {}  # 재료 id → main으로 쓰는 레시피 id(CANDIDATE_ROLES)
         for recipe in recipes:
             if recipe.id in self._by_id:
                 raise ValueError(f"레시피 id 중복: {recipe.id}")

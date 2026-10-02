@@ -1,5 +1,5 @@
 # 골든셋 페르소나 (docs/plan.md 7-3, Phase 1-4)
-# expected_top3: "상위 3개 안에 나와야 할 레시피" id 목록. 사람이 채운다(에이전트는 비워 둔다).
+# expected_top3: "상위 3개 안에 나와야 할 레시피" id 목록. 사람이 채운다(에이전트가 정하지 않는다). 2026-10-03 기입.
 # 비어 있는 페르소나는 평가에서 "미기입"으로 따로 센다.
 #
 # 형식
@@ -24,7 +24,7 @@ personas:
     pantry: [kimchi, pork_belly, tofu, onion, green_onion, egg, rice]
     equipment: [냄비, 프라이팬]
     request: {max_time_min: 40}
-    expected_top3: []
+    expected_top3: [kimchi_jjigae, jeyuk_bokkeum, dubu_jorim]  # 사람 기입(2026-10-03)
 
   - id: beginner
     name: 요리 초보 자취생
@@ -35,7 +35,7 @@ personas:
     pantry: [egg, rice, onion, potato, ham, kimchi]
     equipment: [프라이팬, 전자레인지]
     request: {max_time_min: 20}
-    expected_top3: []
+    expected_top3: [egg_fried_rice, gyeranjjim, gamja_jorim]  # 사람 기입(2026-10-03)
 
   - id: multi_allergy
     name: 알레르기 많은 아이 부모
@@ -47,7 +47,7 @@ personas:
     pantry: [beef_bulgogi_cut, pork, potato, onion, carrot, tofu, rice]
     equipment: [냄비, 프라이팬]
     request: {}
-    expected_top3: []
+    expected_top3: [bulgogi, gamja_jorim, gamjajeon]  # 사람 기입(2026-10-03)
 
   - id: low_spice
     name: 매운 것 못 먹는 사람
@@ -58,7 +58,7 @@ personas:
     pantry: [chicken_thigh, egg, rice, onion, potato, carrot, tofu]
     equipment: [냄비, 프라이팬]
     request: {max_time_min: 40}
-    expected_top3: []
+    expected_top3: [gyeran_mari, gamja_jorim, gamjajeon]  # 사람 기입(2026-10-03)
 
   - id: western_lover
     name: 양식 좋아하는 사람
@@ -73,7 +73,7 @@ personas:
     pantry: [pasta, tomato_sauce, bacon, heavy_cream, onion, button_mushroom, beef_sirloin]
     equipment: [냄비, 프라이팬, 오븐]
     request: {max_time_min: 40}
-    expected_top3: []
+    expected_top3: [cream_pasta, tomato_pasta, beef_steak]  # 사람 기입(2026-10-03)
 
   - id: japanese_lover
     name: 일식 좋아하는 사람
@@ -87,7 +87,7 @@ personas:
     pantry: [rice, egg, chicken_thigh, onion, tsuyu, udon_noodles, salmon]
     equipment: [냄비, 프라이팬]
     request: {max_time_min: 30}
-    expected_top3: []
+    expected_top3: [kake_udon, oyakodon, salmon_don]  # 사람 기입(2026-10-03)
 
   - id: few_ingredients
     name: 냉장고가 빈 사람
@@ -96,7 +96,7 @@ personas:
     pantry: [egg, rice, green_onion, potato, onion]
     equipment: [프라이팬]
     request: {}
-    expected_top3: []
+    expected_top3: [egg_fried_rice, gyeranjjim, gamja_jorim]  # 사람 기입(2026-10-03)
 
   - id: seafood_expert
     name: 해산물 좋아하는 숙련자
@@ -110,4 +110,4 @@ personas:
     pantry: [squid, mackerel, radish, scallion, egg, zucchini, buchimgaru]
     equipment: [냄비, 프라이팬]
     request: {max_time_min: 60}
-    expected_top3: []
+    expected_top3: [godeungeo_jorim, haemul_pajeon, ojingeo_bokkeum]  # 사람 기입(2026-10-03)

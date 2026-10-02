@@ -3,7 +3,8 @@
 S = Σ 가중치 × 항목. 항목(I·K·T·P·D·M)은 모두 0~1이고 가중치·계수는 config/weights.yaml에서 온다.
 필터를 통과한 후보만 점수를 매긴다. 알레르기·절대 불선호는 이미 제외되었고 점수로 되살아나지 않는다.
 
-  I 재료 커버리지: main·sub(비선택) 재료의 역할 가중합 중 보유 비율. 대체재는 ratio(없으면 기본 인정 비율).
+  I 재료 커버리지: main 3·sub 2·기본 양념이 아닌 seasoning 1(비선택)의 가중합 중 보유 비율. 기본 양념·선택 재료·
+     garnish는 뺀다. 대체재는 ratio(없으면 기본 인정 비율).
   K 음식 종류: soft cuisine 선호. 선호 like, 불선호 dislike, 없으면 neutral. 상충하면 낮은 값.
   T 맛 적합도: 1 − (|preferred_level − 레시피 강도|의 가중 평균 ÷ 5). 입력한 맛만, 전부 없으면 0.5.
   P 재료 선호: 재료마다 가장 구체적인 soft 선호(is_a 조상 depth가 가장 작은 것, 같은 깊이면 최솟값).
@@ -71,6 +72,8 @@ class UserScorer:
         for m in candidate.lines:
             weight = cfg.coverage_role_weight.get(m.line.role)
             if weight is None or (m.line.optional and cfg.coverage_exclude_optional):
+                continue
+            if cfg.coverage_exclude_pantry_staples and m.line.ingredient_id in self._snapshot.pantry_staples:
                 continue
             need += weight
             if m.status == "owned":
@@ -153,8 +156,20 @@ class UserScorer:
 
 
 def rank(scored: Sequence[Scored]) -> list[Scored]:
-    """점수 내림차순, 동점은 레시피 id 순(결과가 입력 순서에 좌우되지 않게)."""
-    return sorted(scored, key=lambda s: (-s.score, s.candidate.recipe.id))
+    """점수 내림차순. 동점(응답 표기와 같은 소수 셋째 자리 기준)이면 I 높은 순 → 부족 재료 적은 순 →
+    조리시간 짧은 순 → id 순."""
+    return sorted(scored, key=_rank_key)
+
+
+def _rank_key(s: Scored) -> tuple:
+    return (-round(s.score, 3), -round(s.breakdown["I"], 3), missing_count(s.candidate),
+            s.candidate.recipe.cook_time_min, s.candidate.recipe.id)
+
+
+def missing_count(candidate: Candidate) -> int:
+    """응답의 missing과 같은 기준: 선택 재료가 아니면서 보유·대체가 안 되는 재료 id 수."""
+    return len({m.line.ingredient_id for m in candidate.lines
+                if m.status == "missing" and not m.line.optional and m.line.ingredient_id is not None})
 
 
 def diversify(ranked: Sequence[Scored], cfg: ScoringConfig) -> list[Scored]:

@@ -14,7 +14,7 @@ class KnowledgeRepository(Protocol):
 
 class RecipeRepository(Protocol):
     def by_ingredients(self, ids: Iterable[str]) -> Iterable[Recipe]:
-        """주어진 재료 중 하나라도 main 또는 sub로 쓰는 레시피."""
+        """주어진 재료 중 하나라도 main으로 쓰는 레시피(후보 생성 근거, docs/plan.md 4-2)."""
         ...
 
     def get(self, recipe_id: str) -> Recipe | None: ...

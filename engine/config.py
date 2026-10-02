@@ -56,6 +56,7 @@ class ScoringConfig:
     coverage_role_weight: Mapping[str, float]
     substitute_credit: float
     coverage_exclude_optional: bool
+    coverage_exclude_pantry_staples: bool
     cuisine_like: float
     cuisine_neutral: float
     cuisine_dislike: float
@@ -83,6 +84,7 @@ class ScoringConfig:
                 coverage_role_weight={k: float(v) for k, v in cov["role_weight"].items()},
                 substitute_credit=float(cov["substitute_credit"]),
                 coverage_exclude_optional=bool(cov["exclude_optional"]),
+                coverage_exclude_pantry_staples=bool(cov["exclude_pantry_staples"]),
                 cuisine_like=float(cui["like"]),
                 cuisine_neutral=float(cui["neutral"]),
                 cuisine_dislike=float(cui["dislike"]),
