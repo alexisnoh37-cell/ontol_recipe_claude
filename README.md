@@ -74,7 +74,7 @@ uv run pytest                        # 전체
 uv run pytest tests/kb               # 지식 컴파일러
 ```
 
-`tests/allergy/`(알레르기 회귀 테스트)는 엔진을 구현하는 Phase 1-1 전까지 모두 실패하는 것이 정상입니다. 그 외 테스트만 보려면 `uv run pytest --ignore=tests/allergy`를 씁니다.
+`tests/allergy/`(알레르기 회귀 테스트)는 Phase 1-1부터 전부 통과해야 합니다. 하나라도 실패하면 배포하지 않습니다. 알레르기 테스트만 돌리려면 `uv run pytest tests/allergy`를 씁니다.
 
 `tests/storage/`(DB 통합 테스트)는 `.env`에 `TEST_DATABASE_URL`이 있을 때만 실행되고, 없으면 skip됩니다.
 이 테스트는 `recipe_test` DB의 테이블을 지우고 다시 만들므로 개발 DB(`DATABASE_URL`)와 다른 DB를 가리켜야 합니다.

@@ -4,9 +4,8 @@ from __future__ import annotations
 
 from collections.abc import Iterable
 
+from engine.candidates import CANDIDATE_ROLES
 from engine.model import KnowledgeSnapshot, Recipe
-
-CANDIDATE_ROLES = ("main", "sub")
 
 
 class InMemoryKnowledgeRepository:
