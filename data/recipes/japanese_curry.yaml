@@ -1,4 +1,4 @@
-# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 완료(2026-10-03, published).
 id: japanese_curry
 title: 일본식 카레라이스
 cuisine: 일식
@@ -6,7 +6,7 @@ difficulty: 1
 cook_time_min: 40
 servings: 2
 source: agent_draft
-status: draft
+status: published
 confidence: low
 note: 고형 카레(루)는 카레가루와 원료가 다를 수 있다(유지, 밀가루, 유제품). 현재 카레가루로 매핑
 ingredients:

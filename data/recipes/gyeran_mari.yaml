@@ -1,4 +1,4 @@
-# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 완료(2026-10-03, published).
 id: gyeran_mari
 title: 계란말이
 cuisine: 한식
@@ -6,7 +6,7 @@ difficulty: 2
 cook_time_min: 15
 servings: 2
 source: agent_draft
-status: draft
+status: published
 confidence: high
 ingredients:
 - ingredient: egg
@@ -15,9 +15,11 @@ ingredients:
 - ingredient: carrot
   raw_text: 당근 약간(다진 것)
   role: sub
+  optional: true
 - ingredient: green_onion
   raw_text: 대파 약간(다진 것)
   role: sub
+  optional: true
 - ingredient: salt
   raw_text: 소금 약간
   role: seasoning

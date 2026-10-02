@@ -32,7 +32,7 @@ def test_seed_written_and_idempotent(db_engine):
             assert count(conn, t.recipe_taste) == len(specs)
             assert count(conn, t.recipe_step) == sum(len(s.steps) for s in specs)
             assert count(conn, t.recipe_equipment) == sum(len(s.equipment) for s in specs)
-            assert set(conn.scalars(select(t.recipe.c.status))) == {"draft"}
+            assert set(conn.scalars(select(t.recipe.c.status))) == {s.status for s in specs}
         with db_engine.begin() as conn:
             write_recipes(conn, specs)  # 두 번째 반영도 같은 결과
 

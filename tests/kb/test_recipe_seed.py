@@ -1,4 +1,4 @@
-"""레시피 시드(data/recipes/) 검사 (Phase 1-3): 형식·어휘 검증, 구성, 검수표 최신 여부, 알레르기 스모크."""
+"""레시피 시드(data/recipes/) 검사 (Phase 1-3, 검수 완료): 형식·어휘 검증, 구성, 검수표 최신 여부, 알레르기 스모크."""
 
 from __future__ import annotations
 
@@ -29,7 +29,7 @@ def specs(ck):
 
 @pytest.fixture(scope="module")
 def recommender(ck, specs):
-    return build_recommender(ck, [recipe_from_spec(s) for s in specs], serve_draft_recipes=True)
+    return build_recommender(ck, [recipe_from_spec(s) for s in specs])
 
 
 def test_seed_validates_without_issues(specs):
@@ -48,10 +48,17 @@ def test_cuisine_mix(specs):
     assert {"일식", "양식", "중식"} <= set(counts)
 
 
-def test_all_recipes_stay_draft_until_review(specs):
-    # 사람 검수 전이다. 승인되면 status를 published로 바꾸고 이 테스트를 갱신한다.
-    assert {s.status for s in specs} == {"draft"}
+def test_all_recipes_published_after_review(specs):
+    # 1-3 사람 검수 완료(2026-10-03). 새 레시피는 draft로 넣고 검수 후 published로 바꾼다.
+    assert {s.status for s in specs} == {"published"}
     assert {s.source for s in specs} == {"agent_draft"}
+
+
+def test_review_fixes_1_3(specs):
+    # 1-3 검수에서 선택 재료로 바꾼 것
+    optional = {(s.id, i.ingredient) for s in specs for i in s.ingredients if i.optional}
+    assert {("gyeranjjim", "saeujeot"), ("gyeran_mari", "carrot"), ("gyeran_mari", "green_onion"),
+            ("doenjang_jjigae", "zucchini"), ("doenjang_jjigae", "potato"), ("kimchi_jjigae", "tofu")} <= optional
 
 
 def test_every_recipe_is_complete(specs):
@@ -80,7 +87,7 @@ def test_review_table_is_up_to_date(ck, specs):
     assert committed == module.render(ck, specs), "검수표가 최신이 아닙니다: uv run python scripts/make_recipe_review.py"
 
 
-# --- 실제 시드 + 엔진 알레르기 스모크(draft 제공 모드) ------------------------------------------------
+# --- 실제 시드 + 엔진 알레르기 스모크(기본 설정: published만 제공) ------------------------------------------------
 
 
 ALL_PANTRY = frozenset({"kimchi", "egg", "pork_belly", "pasta", "tofu", "rice", "potato", "squid", "tomato_sauce"})
@@ -104,9 +111,9 @@ def test_milk_allergy_excludes_optional_cheese(recommender):
                                    RecommendRequest(limit=100))
     served = {i.recipe_id for i in result.items}
     assert not served & {"tomato_pasta", "cream_pasta", "potato_gratin", "cheese_omelet"}
-    assert all("검수 전 레시피입니다" in i.notes for i in result.items)
+    assert not any("검수 전 레시피입니다" in i.notes for i in result.items)
 
 
-def test_draft_seed_not_served_by_default(ck, specs):
-    rec = build_recommender(ck, [recipe_from_spec(s) for s in specs])
-    assert rec.recommend(UserContext(pantry=ALL_PANTRY), RecommendRequest(limit=100)).items == ()
+def test_published_seed_served_by_default(recommender):
+    result = recommender.recommend(UserContext(pantry=ALL_PANTRY), RecommendRequest(limit=100))
+    assert len(result.items) >= 30

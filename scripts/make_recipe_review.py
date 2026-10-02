@@ -81,9 +81,10 @@ def render(ck: CompiledKnowledge, recipes: list[RecipeSpec]) -> str:
         "# 레시피 검수표",
         "",
         "> `scripts/make_recipe_review.py`가 `data/recipes/*.yaml`과 컴파일된 지식으로 생성한다. 손으로 고치지 않는다.",
-        "> 모든 레시피는 에이전트가 작성한 초안이며 `status: draft`다. 검수 후 사람이 승인하면 published로 바꾼다.",
+        "> 레시피는 에이전트가 작성한 초안이다. 사람이 검수해 승인한 레시피만 `status: published`로 바꾼다.",
         "",
-        f"레시피 {len(recipes)}개: " + ", ".join(f"{c} {n}" for c, n in sorted(counts.items(), key=lambda x: -x[1])),
+        f"레시피 {len(recipes)}개: " + ", ".join(f"{c} {n}" for c, n in sorted(counts.items(), key=lambda x: -x[1]))
+        + " / 상태: " + ", ".join(f"{k} {v}" for k, v in sorted(Counter(r.status for r in recipes).items())),
         "",
         "## 보는 법",
         "",

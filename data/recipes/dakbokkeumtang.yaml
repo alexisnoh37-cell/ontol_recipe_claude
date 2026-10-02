@@ -1,4 +1,4 @@
-# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 전(status: draft).
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안, 사람 검수 완료(2026-10-03, published).
 id: dakbokkeumtang
 title: 닭볶음탕
 cuisine: 한식
@@ -6,7 +6,7 @@ difficulty: 2
 cook_time_min: 50
 servings: 2
 source: agent_draft
-status: draft
+status: published
 confidence: high
 ingredients:
 - ingredient: chicken
