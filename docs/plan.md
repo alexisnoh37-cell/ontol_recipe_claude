@@ -577,7 +577,7 @@ CREATE TABLE unmapped_term (
 4. **산출물**: 정렬된 결정적 구조의 `CompiledKnowledge`. `--dump`면 JSON으로 쓴다(검수표 생성, diff용). `--dry-run`이면 리포트만 출력하고 끝낸다.
 5. **DB 반영**(단일 트랜잭션)
    - `knowledge_build` 행을 추가한다.
-   - ingredient와 allergen_group은 upsert한다. YAML에서 사라진 재료가 recipe_ingredient나 user_pantry에서 참조 중이면 실패하고 참조 목록을 출력한다. 아니면 삭제한다.
+   - ingredient와 allergen_group은 upsert한다. YAML에서 사라진 재료가 recipe_ingredient, user_pantry, user_preference(target_type ingredient)에서 참조 중이거나, 사라진 알레르기 그룹이 user_preference(target_type allergen_group)에서 참조 중이면 실패하고 참조 목록을 출력한다. 아니면 삭제한다. user_preference.target_id는 FK가 없어서, 막지 않으면 사용자의 알레르기·불선호 설정이 조용히 무효가 되기 때문이다(0-3에서 승인).
    - 나머지 지식 테이블(alias, relation, ingredient_allergen, group_member, ancestor, contains, closure)은 모두 지우고 다시 넣는다.
    - 같은 입력이면 같은 DB 상태가 된다(멱등).
 6. **리포트**: 개수, 경고, confidence: low 항목 수, build id를 출력한다.

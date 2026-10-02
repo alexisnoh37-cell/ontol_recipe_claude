@@ -4,7 +4,7 @@
 
 ## 현재 단계
 
-Phase 0-2 완료. 다음은 Phase 0-3(알레르기 회귀 테스트 작성, 사람 승인 필요).
+Phase 0-3 완료(사람 승인, 2026-10-03). **tests/allergy/는 이제 수정·삭제·skip 금지.** 118개 중 115개는 엔진 미구현으로 실패(NotImplementedError)하는 것이 정상이고, 적재 검증 3개는 통과한다. 다음은 Phase 0-4(시작 전 사람이 D4 알레르기 목록 확정).
 
 ## 단계별 상태
 
@@ -12,7 +12,7 @@ Phase 0-2 완료. 다음은 Phase 0-3(알레르기 회귀 테스트 작성, 사�
 | --- | --- | --- | --- | --- |
 | 0-1 설계 확정 | 완료 | 2026-10-03 | 완료 | docs/plan.md 부록 A~C, knowledge/README.md |
 | 0-2 스키마와 지식 컴파일러 | 완료 | 2026-10-03 | 필요(아래 승인 필요 2건) | 테스트 72개 통과, Docker DB에 마이그레이션·컴파일 반영 확인 |
-| 0-3 알레르기 테스트 작성 | 대기 | | 필요(시나리오 승인) | |
+| 0-3 알레르기 테스트 작성 | 완료 | 2026-10-03 | 완료(승인) | 118개. 1-1 전까지 115개 실패가 정상 |
 | 0-4 식재료 200개 확장 | 대기 | | 필요(검수표) | 시작 전 사람이 알레르기 목록 확정(D4) |
 | 1-1 필터 엔진 | 대기 | | | |
 | 1-2 점수 엔진 | 대기 | | 선택 | |
@@ -48,19 +48,29 @@ Phase 0-2 완료. 다음은 Phase 0-3(알레르기 회귀 테스트 작성, 사�
 
 0-2 실행 결과(Docker PostgreSQL 16): `alembic upgrade head`로 테이블 21개 생성. 컴파일 반영 결과 재료 32(concept 2), 별칭 70, 관계 22, allergen_closure 33, contains 35. 두 번 반영해도 지식 테이블 동일(멱등). DB에서 새우젓 shrimp definite, 김치 shrimp possible, 된장 대두 definite·밀 possible, squid closure 0행 확인. `validate_data.py --db` 통과.
 
+0-3에서 정한 것(2026-10-03):
+
+- **0-2 승인 반영**: user_preference 참조 검사 확대를 plan.md 부록 C-5에 반영. 레시피 시드 형식은 1-3에서 확정.
+- **엔진 인터페이스**(engine/model.py, ports.py, memory.py, config.py, recommend.py): 부록 A대로 정의. `Recommender.recommend`는 NotImplementedError. 알레르기는 `UserContext.allergen_groups`(기본·묶음 그룹 id)로, 절대 불선호는 `Preference(is_hard=True)`로 받는다. 제외 기록 `Exclusion`은 사유 코드(`ExclusionReason`), 걸린 재료, 대상, certainty, 근거 경로(via), detail을 가진다. 한 레시피에 여러 행 가능.
+- **테스트 연결부**: kb 컴파일 결과 → 엔진 스냅샷 변환은 `tests/support/engine_fixtures.py`에 둔다(engine은 kb를 import할 수 없음). 엔진 구성이 바뀌면 tests/allergy가 아니라 이 파일을 고친다. Phase 1에서 storage도 같은 변환이 필요하므로 그때 위치를 다시 정한다.
+- **사람 승인**: 엔진 인터페이스 형태(allergen_groups, Preference is_hard, Exclusion 구성)와 변환 코드의 tests/support 배치 승인. 제안 시나리오 8개 추가(넓은 재료는 concept → 적재 거부, 중간 노드 → possible 제외로 분리).
+- **추가 시나리오**: 중간 노드 젓갈류, 3단계 파생, 원천 재료 자체 possible, 상위 재료 지정 → is_a 하위 상속, 대체재로만 후보가 되는 레시피(위험한 대체재로 매칭·안내 금지), draft 제공 시에도 필터, 요청 보유 재료, 해산물 전체 묶음. concept 적재 거부는 `tests/support/engine_fixtures.recipe_load_issue_codes`(레시피 시드 형식 확정 시 여기만 수정)로 검사.
+- **테스트 검증**: 임시 참조 구현(저장소 밖)으로 118개 모두 통과, 고의 결함 5종(전부 제외, 선택·고명 무시, possible 무시, 미매칭 허용, 위험한 대체재 사용)이 모두 실패로 잡히는 것을 확인.
+- **엔진 구현 시 지킬 것(테스트가 요구)**: 대체재로 후보를 만들 때도 대체재를 알레르기 closure·절대 불선호로 거른다. draft 제공 여부와 관계없이 필터를 적용한다. `RecommendRequest.pantry`가 있으면 그것을 보유 재료로 쓴다.
+
 ## 알려진 문제
 
 - **D4 알레르기 목록 미확정**: allergens.yaml은 0-2에서 example 그대로 `status: draft`로 옮긴다. 0-4 시작 전에 사람이 표시 대상 목록과 생선 그룹 단위를 확정해야 한다(액젓의 derived_from 대상도 이에 따라 정해짐).
 - (해결) `garlic_minced` → `garlic` 변경을 `config/pantry_staples.yaml`에 반영함.
 - 콩기름(soybean_oil)과 식용유(cooking_oil) 사이 is_a 관계는 두지 않았다. 두면 식용유(기본 양념)가 대두 possible이 되어 대두 알레르기 사용자에게 기름을 쓰는 레시피가 대부분 제외된다. 0-4 검수에서 정한다.
 - 알레르기 그룹 6개(crab, fish, pine_nut, shellfish, squid, walnut)는 아직 재료가 없어 컴파일 경고가 난다. 0-4에서 재료를 채운다.
+- `uv run pytest` 전체는 Phase 1-1 전까지 tests/allergy 때문에 실패로 끝난다(의도). 나머지만 볼 때는 `uv run pytest --ignore=tests/allergy`.
 - 샌드박스 환경에서는 pytest의 기본 임시 폴더 접근이 막혀 `--basetemp`를 지정해 실행했다(일반 환경에서는 불필요).
 - 정제 식용유(콩기름 등)의 대두 알레르기 처리 기준은 0-4 검수표에서 사람이 판단한다.
 
 ## 다음 할 일
 
-- 사람 확인: 승인 필요 2건(user_preference 참조 검사 확대, 레시피 시드 잠정 형식). 승인되면 plan.md 부록 C-5와 5-3에 반영.
-- Phase 0-3: 알레르기 회귀 테스트 시나리오 작성(tests/allergy/), 시나리오 표 보고 후 사람 승인.
+- Phase 0-4: 시작 전에 사람이 알레르기 표시 대상 목록(D4) 확정 → 식재료 200개 확장과 검수표.
 
 ## 다음 단계 제안 (범위 밖 아이디어)
 
