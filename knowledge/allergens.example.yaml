@@ -1,0 +1,42 @@
+# 알레르기 그룹 예시 (형식 참고용, 목록 확정은 docs/decisions.md D4)
+# 기본 그룹: 표시 대상 알레르기 유발물질 단위
+# 묶음 그룹: 사용자가 이해하기 쉬운 단위. includes로 기본 그룹을 합친다.
+
+groups:
+  - id: egg
+    display_name: 난류(계란)
+  - id: milk
+    display_name: 우유
+  - id: peanut
+    display_name: 땅콩
+  - id: soybean
+    display_name: 대두
+  - id: wheat
+    display_name: 밀
+  - id: shrimp
+    display_name: 새우
+  - id: crab
+    display_name: 게
+  - id: walnut
+    display_name: 호두
+  - id: pine_nut
+    display_name: 잣
+  - id: squid
+    display_name: 오징어
+  - id: shellfish
+    display_name: 조개류(굴, 전복, 홍합 포함)
+  - id: fish
+    display_name: 생선
+    note: 표시 대상은 고등어 등 개별 어종 단위일 수 있음. D4에서 확정
+
+bundles:
+  - id: crustacean_bundle
+    display_name: 갑각류
+    includes: [shrimp, crab]
+  - id: nuts_bundle
+    display_name: 견과류(땅콩 포함)
+    includes: [peanut, walnut, pine_nut]
+    note: 땅콩은 식물학적으로 콩과지만 사용자 인식상 함께 피하는 경우가 많아 묶음에 포함
+  - id: seafood_bundle
+    display_name: 해산물 전체
+    includes: [shrimp, crab, squid, shellfish, fish]

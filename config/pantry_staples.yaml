@@ -1,0 +1,16 @@
+# 기본 양념: 사용자가 입력하지 않아도 보유한 것으로 간주한다.
+# 재료 커버리지 계산에서만 쓰고, 알레르기 판정에는 영향을 주지 않는다(간장도 알레르기 판정 대상).
+# id는 knowledge/ingredients.yaml의 id를 쓴다.
+
+staples:
+  - salt
+  - sugar
+  - black_pepper
+  - soy_sauce
+  - cooking_oil
+  - sesame_oil
+  - garlic_minced
+  - gochugaru
+  - gochujang
+  - doenjang
+  - vinegar

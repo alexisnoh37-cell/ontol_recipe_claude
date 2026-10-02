@@ -1,0 +1,21 @@
+# 조건부 대체 관계 예시
+# from: 레시피가 요구하는 재료 / to: 대신 쓸 수 있는 재료
+# context: 이 대체가 성립하는 조리 맥락. 비어 있으면 모든 맥락에서 가능
+# ratio: 대체 시 재료 커버리지 인정 비율(기본 0.8, config/weights.yaml)
+# 대체재는 점수와 안내에만 쓰고, 알레르기 판정에는 영향을 주지 않는다
+
+- from: scallion
+  to: green_onion
+  context: []
+  note: 고명용이면 대파 흰 부분보다 초록 부분 권장
+  status: draft
+- from: green_onion
+  to: scallion
+  context: []
+  status: draft
+- from: butter
+  to: cooking_oil
+  context: [볶음, 구이]
+  note: 베이킹에서는 대체 불가
+  confidence: low
+  status: draft
