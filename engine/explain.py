@@ -10,6 +10,7 @@ from __future__ import annotations
 from collections.abc import Mapping
 
 from engine.candidates import Candidate
+from engine.korean import josa
 from engine.model import KnowledgeSnapshot, RecommendItem, SubstitutionNote
 
 
@@ -25,12 +26,12 @@ def build_item(snapshot: KnowledgeSnapshot, candidate: Candidate, score: float, 
             note = SubstitutionNote(m.substitute.from_id, m.substitute.to_id)
             if note not in substitutions:
                 substitutions.append(note)
-                notes.append(f"{names[note.need_id]} 대신 {names[note.use_id]}을(를) 쓸 수 있습니다")
+                notes.append(f"{names[note.need_id]} 대신 {josa(names[note.use_id], '을')} 쓸 수 있습니다")
         elif m.status == "missing":
             if line.ingredient_id is None:
                 notes.append(f"확인되지 않은 재료가 있습니다: {line.raw_text}")
             elif line.optional:
-                notes.append(f"{names[line.ingredient_id]}은(는) 선택 재료라 빼고 조리할 수 있습니다")
+                notes.append(f"{josa(names[line.ingredient_id], '은')} 선택 재료라 빼고 조리할 수 있습니다")
             elif line.ingredient_id not in missing:
                 missing.append(line.ingredient_id)
     if breakdown.get("I") == 1.0 and not substitutions:

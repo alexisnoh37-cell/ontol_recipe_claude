@@ -1,0 +1,57 @@
+# 화면·API 표시 문구 (Phase 1-5). 추천 판정에는 쓰지 않는다(표시 전용).
+# 문구는 사람이 정한 것이다(docs/progress.md "1-5 화면 요구사항"). 바꿀 때는 progress.md에 기록한다.
+
+# 알레르기 선택 화면: 이 그룹을 고르면 안내를 보여 준다(0-4 검수)
+allergen_group_notices:
+  mackerel: "다른 생선에도 반응하면 '생선 전체'를 선택하세요."
+
+# 이 재료가 들어간 레시피(재료 자체 또는 그 재료로 만든 가공품 포함) 카드에 안내(0-4 검수)
+ingredient_notices:
+  cooking_oil: "제품의 기름 종류(콩기름 등)를 확인하세요."
+
+# 레시피별 카드 안내(1-3 레시피 검수)
+recipe_notices:
+  salmon_don: "횟감용 생연어 사용"
+
+# 포함 가능(possible) 알레르기가 있거나 confidence: low인 재료가 든 레시피 카드에 표시
+label_check: "제품 성분표를 확인하세요"
+
+# 화면 하단 면책 문구
+disclaimer: >-
+  알레르기 판정은 등록된 식재료 정보와 일반적인 제품 구성에 근거한 참고용입니다.
+  실제 성분은 제조사·제품마다 다를 수 있으므로 조리 전에 반드시 제품 성분표(알레르기 표시)를 확인하세요.
+  이 서비스는 의료적 판단을 대신하지 않습니다.
+
+# 제외 사유 코드 → 화면 표기(engine.model.ExclusionReason)
+exclusion_labels:
+  allergen: 알레르기 성분 포함(포함 가능 포함)
+  unmapped_ingredient: 확인되지 않은 재료가 있어 알레르기 안전을 보장할 수 없음
+  hard_dislike_ingredient: 절대 먹지 않는 재료 포함
+  hard_dislike_cuisine: 절대 먹지 않는 음식 종류
+  spicy_limit: 매운맛 한도 초과
+  equipment: 필요한 조리기구 없음
+  time: 조리시간 초과
+
+# 알레르기 그룹 구분 표기
+allergen_group_kinds:
+  official: 법정 표시 대상
+  custom: 자체 그룹
+  bundle: 묶음
+
+# 맛 차원 표기
+taste_labels:
+  spicy: 매운맛
+  salty: 짠맛
+  sweet: 단맛
+  sour: 신맛
+  umami: 감칠맛
+  savory: 고소함
+
+# 점수 항목 표기
+breakdown_labels:
+  I: 재료 보유
+  K: 음식 종류 선호
+  T: 맛 선호
+  P: 재료 선호
+  D: 난이도 적합
+  M: 조리시간 적합

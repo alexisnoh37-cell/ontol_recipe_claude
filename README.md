@@ -81,11 +81,55 @@ uv run python scripts/make_review.py                 # docs/review/ingredients_r
 시드나 지식을 고친 뒤에는 검수표를 다시 만듭니다(최신이 아니면 테스트가 실패합니다).
 엔진은 기본적으로 published 레시피만 추천합니다. 검수 전(draft) 레시피를 보려면 `config/engine.yaml`의 `serve_draft_recipes`를 `true`로 바꿉니다.
 
-### 5. 테스트
+### 5. API 실행 (FastAPI)
+
+새 PowerShell 창에서(저장소 루트):
+
+```powershell
+uv run uvicorn api.main:default_app --factory --port 8000
+```
+
+- 시작할 때 DB의 컴파일 결과·레시피를 읽어 엔진을 만듭니다. 지식을 재컴파일하거나 레시피를 다시 적재한 뒤에는 API를 재시작하거나 `Invoke-RestMethod -Method Post http://127.0.0.1:8000/admin/reload`를 실행합니다.
+- 브라우저에서 `http://127.0.0.1:8000/docs`를 열면 엔드포인트를 직접 호출해 볼 수 있습니다.
+  - `POST /profiles`, `PATCH /profiles/{id}`(기본 정보·맛·보유 재료·조리기구), `PUT /profiles/{id}/preferences`(음식 종류·재료 선호, 알레르기)
+  - `POST /recommend`, `GET /ingredients/search?q=달걀`(별칭 검색), `GET /allergen-groups`(법정/자체/묶음 구분), `GET /vocab`
+- 제외된 레시피의 사유는 `logs/exclusions.jsonl`에 한 줄씩 쌓입니다(경로는 환경변수 `EXCLUSION_LOG`).
+- DB 없이 지식·레시피를 파일에서 직접 읽으려면 `$env:ENGINE_SOURCE = "files"` 후 실행합니다(프로필 저장에는 여전히 DB가 필요).
+
+### 6. 화면 실행 (Streamlit)
+
+API를 띄운 상태에서 또 다른 PowerShell 창에서:
+
+```powershell
+uv run streamlit run app/main.py
+```
+
+브라우저가 `http://localhost:8501`로 열립니다. 왼쪽에서 프로필을 만들고, "프로필·선호 편집" 탭에서 보유 재료(별칭 검색)와 맛·선호를, "알레르기" 탭에서 알레르기를 저장한 뒤 "추천" 탭에서 추천을 받습니다. API 주소가 다르면 `$env:API_URL = "http://127.0.0.1:8000"`.
+
+### 7. 성능 측정
+
+```powershell
+uv run python scripts/bench.py       # 합성 레시피 1만 개, 요청 300회: p50/p95 출력 (기준 p95 200ms 이하)
+```
+
+### 전체 실행 순서 요약 (Windows, 처음부터)
+
+```powershell
+docker compose up -d --wait                          # 1. DB
+uv run alembic upgrade head                          # 2. 마이그레이션
+uv run python scripts/compile_knowledge.py           # 3. 지식 컴파일
+uv run python scripts/load_recipes.py                # 4. 레시피 적재
+uv run uvicorn api.main:default_app --factory --port 8000   # 5. API (창 1)
+uv run streamlit run app/main.py                     # 6. 화면 (창 2)
+```
+
+### 8. 테스트
 
 ```powershell
 uv run pytest                        # 전체
 uv run pytest tests/kb               # 지식 컴파일러
+uv run pytest tests/api              # API (DB 없이 메모리 저장소로)
+uv run python scripts/eval_golden.py # 골든셋 상위 3개 적중률(0.85 미만이면 tests/golden 실패)
 ```
 
 `tests/allergy/`(알레르기 회귀 테스트)는 Phase 1-1부터 전부 통과해야 합니다. 하나라도 실패하면 배포하지 않습니다. 알레르기 테스트만 돌리려면 `uv run pytest tests/allergy`를 씁니다.

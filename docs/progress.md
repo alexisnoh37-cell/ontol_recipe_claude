@@ -4,7 +4,7 @@
 
 ## 현재 단계
 
-Phase 1-4 완료(2026-10-03, 전체 287개 통과). 골든셋 상위 3개 적중률 0.79(규칙 수정 전) → 0.67(규칙 수정 후) → 0.88(데이터 조정 후). 아래 "1-4 조정 반영". 다음은 Phase 1-5. **tests/allergy/는 수정·삭제·skip 금지**(0-3 승인). 하나라도 실패하면 엔진 결함이다.
+Phase 1-5 완료(2026-10-03). FastAPI·Streamlit·bench 추가, 골든셋 회귀 기준(0.85) 추가, bench p95 약 102ms(기준 200ms 통과). 다음은 Phase 1-6(사람이 화면에서 직접 사용). 1-4까지의 경과는 아래 기록. **tests/allergy/는 수정·삭제·skip 금지**(0-3 승인). 하나라도 실패하면 엔진 결함이다.
 
 ## 단계별 상태
 
@@ -18,7 +18,7 @@ Phase 1-4 완료(2026-10-03, 전체 287개 통과). 골든셋 상위 3개 적중
 | 1-2 점수 엔진 | 완료 | 2026-10-03 | 선택(아래 "사람 확인 필요") | 전체 262개 통과(tests/logic/test_scoring.py 36개 추가) |
 | 1-3 레시피 시드 | 완료 | 2026-10-03 | 완료(검수) | 레시피 50개 published, DB 재적재 확인, 전체 275개 통과 |
 | 1-4 골든셋 | 완료 | 2026-10-03 | 완료(기대 결과 기입, 조정안 결정) | 적중률 0.79 → 0.67 → 0.88, 엔진 규칙 A~D와 데이터 조정 반영, 전체 287개 통과 |
-| 1-5 API, 화면, 성능 | 대기 | | | |
+| 1-5 API, 화면, 성능 | 완료 | 2026-10-03 | 필요(README대로 실행해 화면 확인) | API·화면·bench, p95 ≈ 102ms, 테스트 결과는 아래 "1-5에서 정한 것" |
 | 1-6 MVP 점검과 마무리 | 대기 | | 필요(직접 사용) | |
 
 ## 주요 결정 기록
@@ -205,6 +205,28 @@ Phase 1-4 완료(2026-10-03, 전체 287개 통과). 골든셋 상위 3개 적중
 - **multi_allergy**: 춘장 없는 짜장덮밥 2위 → 4위(I 0.80 → 0.73), 쯔유 없는 규동 3위 → 6위(I 0.73). 감자조림·소불고기가 2·3위로 올라옴. 상위 3개에서 둘 다 빠짐(확인).
 - 일식파 5위에 규동 진입(계란찜 대신). 나머지 페르소나 상위 5개 변화는 표 참조.
 
+1-4 허용된 불일치(1-5에서 기록, 사람 결정: 더 다루지 않음, 가중치 그대로):
+
+- **low_spice 감자조림**: 4위. 점수 0.815로 3위 계란볶음밥과 동점이고, 동점 규칙 D(I → 부족 재료 수 → 조리시간 → id)에서 밀린다. 점수 차이가 아니라 동점 처리 순서 때문이라 규칙을 바꿀 근거가 약하다.
+- **western_lover 스테이크**: 4위. 올리브유(비기본 seasoning)·버터(sub)를 보유하지 않아 I 0.50. 보유 재료가 실제로 부족한 상황이라 낮게 나오는 것이 규칙대로다.
+- **seafood_expert 오징어볶음**: 상위 5개 밖. 양파·대파(sub) 미보유로 I 0.43, 매운맛·해산물 선호로는 커버리지 차이를 넘지 못한다. 재료가 부족한 레시피를 올리려면 I 가중치를 낮춰야 하는데 다른 페르소나에 영향이 커서 보류.
+- 위 3건을 반영한 전체 적중률 0.88을 기준으로, **0.85 미만이면 실패하는 회귀 테스트**(`tests/golden/test_golden.py::test_top3_hit_rate_regression`, `MIN_HIT_RATE = 0.85`)를 추가했다. 기준을 바꾸려면 사람 승인이 필요하다.
+
+1-5에서 정한 것(2026-10-03):
+
+- **변환 함수 정식 모듈화**: `tests/support/engine_fixtures`의 `snapshot_from_compiled`·`recipe_from_spec`·`build_recommender`를 `storage/engine_source.py`로 옮김. API·골든셋(`tests/golden/golden.py`)·bench·테스트가 같은 함수를 쓴다. `tests/support/engine_fixtures.py`는 이 함수를 다시 내보내는 얇은 연결부로 남김(tests/allergy가 import하므로. tests/allergy는 무수정).
+- **엔진 공급원 2가지**(부록 A): `load_files()`(knowledge 컴파일 + 레시피 시드), `load_db(conn)`(DB의 컴파일 결과·레시피 테이블 → `CompiledKnowledge`·`RecipeSpec`으로 되돌린 뒤 같은 변환). DB 공급원도 요청 중 그래프 탐색 없음. `tests/storage/test_engine_source.py`가 "DB 스냅샷 = 파일 스냅샷"과 같은 추천 결과를 검사. 고정 어휘(vocab)는 DB에 없어 `knowledge/vocab.yaml`을 읽는다.
+- **API**(`api/main.py`, `schemas.py`, `present.py`): `GET /health`, `GET /vocab`, `GET /allergen-groups`(category: official 법정 표시 대상 / custom 자체 그룹 / bundle 묶음, 묶음 구성원, 안내 문구), `GET /ingredients/search?q=`(이름·별칭, 정확 → 앞부분 → 포함 순, concept는 `include_concepts=true`일 때만), `GET/POST /profiles`, `GET/PATCH/DELETE /profiles/{id}`, `PUT /profiles/{id}/preferences`(선호·알레르기 통째 저장), `POST /recommend`, `POST /admin/reload`. 실행은 `uvicorn api.main:default_app --factory`(기본 DB 공급원, `ENGINE_SOURCE=files` 가능).
+- **입력 검증**: 모르는 재료·알레르기 그룹·음식 종류·조리기구 → 400, concept를 보유 재료로 → 400, 모양 오류(실력 1~3, 맛 0~5, preferred ≤ max, 절대 선호는 불선호만) → 422. 알레르기 선호는 polarity −1·is_hard로 강제 저장. 엔진 `ValueError` → 400(1-1 승인).
+- **사용자 저장소**(`storage/users.py`): `SqlUserStore`(PostgreSQL)와 `InMemoryUserStore`(API 테스트용)가 같은 동작. `storage/tables.py`에 user_taste, user_equipment 추가(DDL은 그대로, 마이그레이션 변경 없음).
+- **추천 응답(표시 계층)**: 항목마다 breakdown(라벨 포함), missing(이름), `missing_text`("양파, 춘장이 없습니다"), substitutions(이름·문장), notes, notices(안내 문구), label_check("제품 성분표를 확인하세요" + 재료별 사유), `exclusion_summary`(사유 라벨·개수·예시 레시피 3개), disclaimer. 제외 사유는 `logs/exclusions.jsonl`에 행 단위로 기록.
+- **안내 문구**(`config/display.yaml`, 표시 전용): 고등어 선택 시 생선 전체 안내, 식용유(또는 식용유로 만든 가공품, contains 조회) 레시피에 기름 종류 확인, 연어덮밥 "횟감용 생연어 사용", 면책 문구, 제외 사유·알레르기 구분·맛·점수 항목 라벨.
+- **성분표 확인 표시 기준**: 레시피 재료(선택·고명 포함) 중 어느 기본 알레르기 그룹에든 possible로 걸리거나 `confidence: low`인 재료가 있으면 표시. 사용자 알레르기와 무관하게 표시한다(사용자 알레르기에 possible로 걸리면 이미 제외됨).
+- **조사 처리**: `engine/korean.py`(`josa`: 받침에 따라 은/는, 이/가, 을/를, 과/와. 한글이 아니면 "을(를)" 형태 유지). 엔진 설명 문장(`engine/explain.py`) 두 곳의 "은(는)"·"을(를)"을 이 함수로 바꿈(문장 표시만 변경, 판정 무관). 1-2 "사람 확인 필요"의 조사 항목 해소.
+- **화면**(`app/main.py`): 사이드바 프로필 선택·생성, 탭 3개(추천 / 프로필·선호 편집 / 알레르기). 보유 재료·선호 재료는 별칭 검색 → 추가 방식. 알레르기는 법정 표시 대상·자체 그룹·묶음을 나눠 선택, 고른 그룹에 안내가 있으면 표시. 추천 카드에 점수 내역(막대), 부족 재료, 대체 안내, 메모, 안내 문구, 성분표 확인, 아래에 제외 사유 요약, 화면 하단 면책 문구.
+- **bench**(`scripts/bench.py`): 실제 knowledge + 합성 레시피 1만 개(main 1~2, sub, 기본 양념, 고명, 1% 미매칭, 5% 필수 조리기구), 합성 사용자 300명(알레르기 0~3개, 선호, 매운맛 한도, 시간). 측정은 `Recommender.recommend` 한 번. 결과(seed 42): **p50 27.0ms, p95 101.6ms, 최대 135.7ms**, 엔진 조립 610ms, 평균 제외 280개. 기준 통과라 대체 역색인 캐시는 하지 않음.
+- **테스트 추가**: tests/api(11), tests/logic/test_korean.py(17), tests/storage/test_engine_source.py(1), tests/storage/test_users.py(1), tests/golden 회귀(1).
+
 ### 1-2 응답 예시(실제 knowledge, 예시용 레시피 6개)
 
 예시 레시피: 돼지고기 김치찌개, 삼겹살 구이, 김치볶음밥, 토마토 파스타(파르메산 선택), 크림 파스타, 카레라이스. 생성 스크립트는 저장소 밖(일회성).
@@ -317,10 +339,12 @@ Phase 1-4 완료(2026-10-03, 전체 287개 통과). 골든셋 상위 3개 적중
 
 ## 사람 확인 필요
 
-- (1-4, 선택) 남은 미적중 3건(low_spice 감자조림 동점 4위, western_lover 스테이크 4위, seafood_expert 오징어볶음)을 더 다룰지. 가중치는 그대로 둠.
+- (1-5) README "전체 실행 순서"대로 직접 실행해 화면이 뜨는지, 안내 문구(고등어·식용유·연어덮밥)와 면책 문구가 보이는지 확인.
+- (1-5, 선택) "제품 성분표를 확인하세요" 표시가 거의 모든 레시피에 붙는다. 소금·간장·식용유·물엿 등 기본 양념에 `confidence: low`가 많기 때문이다(재료 70개가 low). 기본 양념을 표시 대상에서 뺄지, low 기준을 유지할지 결정 필요.
+- (1-5, 선택) 부족 재료(missing)에 고명(garnish)이 들어가 "필요한 주재료와 부재료를 모두 갖고 있습니다"와 "부족한 재료: 대파가 없습니다"가 함께 나온다(예: 김치찌개 대파 고명). 엔진 규칙(missing = 비선택 미보유 전부, 1-1 승인)이라 1-5에서는 바꾸지 않음. 1-6에서 표시 방식을 정할지 결정.
 
 - (1-2, 선택) K에 선호 strength를 반영하지 않음(plan 표대로 1.0/0.5/0.1). 반영하려면 plan 4-4 수정이 필요하다.
-- (1-2, 선택) 템플릿 조사 표기("양파은(는)")가 어색하다. 1-5에서 이름 표기와 함께 받침 처리를 정한다.
+- (해결, 1-5) 템플릿 조사 표기: `engine/korean.py`로 받침 처리.
 
 ## 1-5 화면 요구사항
 
@@ -344,12 +368,13 @@ Phase 1-4 완료(2026-10-03, 전체 287개 통과). 골든셋 상위 3개 적중
 - (해결) `allergen_group.official/source` DB 저장: 마이그레이션 0002.
 - (해결) 1-1부터 `uv run pytest` 전체 통과.
 - 샌드박스 환경에서는 pytest의 기본 임시 폴더 접근이 막혀 `--basetemp`를 지정해 실행했다(일반 환경에서는 불필요).
+- (1-5) 화면 순위에서 다양성 보정 때문에 점수가 낮은 항목이 위에 올 수 있다(예: 한식 한도 5개를 채운 뒤 0.57 중식이 0.72 한식보다 위). 4-6 규칙대로다. 1-6에서 화면에 "다양성 보정" 표시가 필요한지 볼 것.
+- (1-5) FastAPI TestClient가 `httpx` 사용 관련 StarletteDeprecationWarning을 낸다(동작 영향 없음).
 - 정제 식용유(콩기름 등)의 대두 알레르기 처리 기준은 0-4 검수표에서 사람이 판단한다.
 
 ## 다음 할 일
 
-- Phase 1-5: FastAPI, Streamlit, bench. kb → 엔진 변환(`tests/support/engine_fixtures`의 snapshot_from_compiled, recipe_from_spec) 위치를 API·골든셋이 함께 쓰도록 옮긴다.
-- 1-5 bench 전에 후보 생성의 대체 역색인을 스냅샷 단위로 캐시할지 측정 후 결정.
+- Phase 1-6: 사람이 화면에서 여러 프로필로 사용해 보고 이상한 추천을 지시. 마무리 때 전체 테스트·골든셋·bench 재실행과 README 최종 정리.
 - 새 재료를 추가할 때는 status: draft로 넣고 검수표(`scripts/make_review.py`)로 사람 확인 후 reviewed.
 
 ## 다음 단계 제안 (범위 밖 아이디어)

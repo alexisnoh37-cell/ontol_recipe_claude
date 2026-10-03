@@ -4,7 +4,7 @@ expected_top3는 사람이 채운다. 비어 있는 페르소나는 적중률 �
 페르소나별 적중률 = (기대 레시피 중 상위 3개에 든 수) ÷ min(3, 기대 레시피 수). 전체는 기입된 페르소나의 평균.
 
 엔진은 실제 knowledge/, config/, data/recipes/(기본 설정: published만)로 만든다.
-kb → 엔진 변환은 tests/support/engine_fixtures를 쓴다(1-5에서 위치를 옮기면 함께 바꾼다).
+kb → 엔진 변환은 storage.engine_source(API·벤치와 같은 함수)를 쓴다.
 """
 
 from __future__ import annotations
@@ -25,9 +25,7 @@ from engine.model import (
     UserContext,
 )
 from engine.recommend import Recommender
-from kb import compile_paths
-from kb.recipes import load_recipe_specs
-from tests.support.engine_fixtures import build_recommender, recipe_from_spec
+from storage.engine_source import load_files
 
 ROOT = Path(__file__).resolve().parents[2]
 PERSONAS = Path(__file__).resolve().parent / "personas.yaml"
@@ -74,9 +72,8 @@ def load_personas(path: Path = PERSONAS) -> list[Persona]:
 
 def build_engine() -> tuple[Recommender, dict[str, str]]:
     """실제 데이터로 만든 엔진과 재료 id → 이름."""
-    ck = compile_paths(ROOT / "knowledge", ROOT / "config" / "pantry_staples.yaml")
-    specs = load_recipe_specs(ck, ROOT / "data" / "recipes", ROOT)
-    return build_recommender(ck, [recipe_from_spec(s) for s in specs]), {i.id: i.name for i in ck.ingredients}
+    data = load_files(ROOT)
+    return data.recommender(serve_draft_recipes=False), {i.id: i.name for i in data.knowledge.ingredients}
 
 
 def hit_rate(expected: tuple[str, ...], items: tuple[RecommendItem, ...], k: int = TOP_K) -> float | None:

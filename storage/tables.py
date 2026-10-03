@@ -172,6 +172,7 @@ user_profile = Table(
     Column("display_name", Text, nullable=False),
     Column("skill_level", SmallInteger, nullable=False),
     Column("household_size", SmallInteger, nullable=False),
+    Column("updated_at", DateTime(timezone=True)),
 )
 
 user_preference = Table(
@@ -182,6 +183,20 @@ user_preference = Table(
     Column("polarity", SmallInteger, nullable=False),
     Column("strength", Numeric(3, 2), nullable=False),
     Column("is_hard", Boolean, nullable=False),
+)
+
+user_taste = Table(
+    "user_taste", metadata,
+    Column("user_id", BigInteger, primary_key=True),
+    Column("dimension", Text, primary_key=True),
+    Column("preferred_level", SmallInteger),
+    Column("max_level", SmallInteger),
+)
+
+user_equipment = Table(
+    "user_equipment", metadata,
+    Column("user_id", BigInteger, primary_key=True),
+    Column("equipment", Text, primary_key=True),
 )
 
 user_pantry = Table(

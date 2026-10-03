@@ -329,12 +329,12 @@ engine/          순수 Python. DB·FastAPI와 무관
   recommend.py   파이프라인 조립(후보 → 필터 → 점수 → 다양성 → 설명)
 kb/              지식 컴파일러의 순수 로직(DB와 무관). 테스트, 벤치, 엔진 fixture가 공유
   load.py  schema.py  validate.py  graph.py  compiled.py
-storage/         SQLAlchemy 테이블, DB → 엔진 스냅샷 로더, 사용자 리포지토리, 컴파일 결과 writer
-api/             FastAPI (main.py, routers/, schemas.py)
+storage/         SQLAlchemy 테이블, 엔진 입력 변환·조립(engine_source.py: 파일·DB 공급원 공용), 사용자 저장소(users.py), 컴파일 결과 writer
+api/             FastAPI (main.py, schemas.py, present.py: 이름·안내 문구 표시 계층)
 app/             Streamlit (API를 HTTP로 호출)
 knowledge/       allergens.yaml, vocab.yaml, ingredients.yaml 또는 ingredients/*.yaml, substitutes.yaml, README.md
 data/recipes/    레시피 시드 YAML(레시피당 1파일)
-config/          weights.yaml, pantry_staples.yaml, engine.yaml(serve_draft_recipes 등 가중치 외 설정)
+config/          weights.yaml, pantry_staples.yaml, engine.yaml(serve_draft_recipes 등 가중치 외 설정), display.yaml(화면 안내·면책 문구, 표시 전용)
 scripts/         compile_knowledge.py, validate_data.py, load_recipes.py, bench.py (얇은 CLI, 로직은 kb/·storage/)
 migrations/      Alembic
 tests/           allergy/  logic/  golden/  kb/(컴파일러)  storage/(DB 통합, DATABASE_URL이 있을 때만)  support/(fixture 빌더)

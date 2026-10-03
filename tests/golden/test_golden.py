@@ -1,7 +1,7 @@
 """골든셋 구조와 평가기 검사 (Phase 1-4).
 
-기대 레시피(expected_top3)는 사람이 채운다. 여기서는 적중률 기준을 두지 않고, 페르소나가 올바른 데이터인지,
-평가기 계산이 맞는지, 결과가 안전 규칙을 지키는지만 본다.
+기대 레시피(expected_top3)는 사람이 채운다. 페르소나가 올바른 데이터인지, 평가기 계산이 맞는지,
+결과가 안전 규칙을 지키는지 본다. 1-5부터 상위 3개 적중률 회귀 기준(MIN_HIT_RATE)을 둔다.
 """
 
 from __future__ import annotations
@@ -113,3 +113,14 @@ def test_draft_renders_all_personas(results):
     text = render_draft(results, {})
     for r in results:
         assert f"`{r.persona.id}`" in text
+
+
+# 1-5: 1-4 조정 후 0.88. 남은 불일치 3건은 허용(docs/progress.md "1-4 허용된 불일치").
+# 가중치·데이터를 바꿔 이 아래로 떨어지면 실패한다. 기준을 바꾸려면 사람 승인이 필요하다.
+MIN_HIT_RATE = 0.85
+
+
+def test_top3_hit_rate_regression(results):
+    rate = overall(results)
+    detail = ", ".join(f"{r.persona.id} {r.hit_rate:.2f}" for r in results if r.hit_rate is not None)
+    assert rate is not None and rate >= MIN_HIT_RATE, f"골든셋 상위 3개 적중률 {rate} < {MIN_HIT_RATE} ({detail})"
