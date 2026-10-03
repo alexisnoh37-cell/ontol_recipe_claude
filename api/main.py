@@ -18,10 +18,11 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request, Response
 
 from api.present import TASTE_DIMENSIONS, Catalog, load_display
 from api.schemas import PreferencesIn, ProfileCreate, ProfileOut, ProfileUpdate, RecommendIn
+from api.viz import GraphCatalog, RecipeScope
 from engine.model import Preference, RecommendRequest, RecommendResult, TastePreference, UserContext
 from engine.recommend import Recommender
 from storage.engine_source import CONFIG_DIR, ROOT, EngineData
@@ -49,9 +50,11 @@ class State:
         data = self.loader()
         recommender = data.recommender(config_dir=self.config_dir)
         catalog = Catalog(data, load_display(self.config_dir))
+        graph = GraphCatalog(data)
         with self.lock:
             self.recommender: Recommender = recommender
             self.catalog: Catalog = catalog
+            self.graph: GraphCatalog = graph
 
 
 def user_context(p: Profile) -> UserContext:
@@ -142,6 +145,16 @@ def create_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir
     def search_ingredients(q: str = Query(..., min_length=1), limit: int = Query(20, ge=1, le=100),
                            include_concepts: bool = False) -> list[dict[str, Any]]:
         return state.catalog.search(q, limit=limit, include_concepts=include_concepts)
+
+    @app.get("/graph")
+    def graph(request: Request, response: Response, recipes: RecipeScope = "published",
+              max_recipes: int | None = Query(None, ge=0)) -> Any:
+        """3D 시각화용 노드·간선(부록 D). 데이터가 바뀌지 않으면 ETag가 같아 304로 응답한다."""
+        body, etag = state.graph.graph(recipes, max_recipes)
+        if request.headers.get("if-none-match") == etag:
+            return Response(status_code=304, headers={"ETag": etag})
+        response.headers["ETag"] = etag
+        return body
 
     # --- 프로필 ---------------------------------------------------------------------------------------
 

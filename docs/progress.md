@@ -252,7 +252,7 @@
 | 단계 | 상태 | 완료일 | 비고 |
 | --- | --- | --- | --- |
 | viz-0 설계 확정 | 완료 | 2026-10-03 | plan.md 부록 D |
-| viz-1 GET /graph | 대기 | | |
+| viz-1 GET /graph | 완료 | 2026-10-03 | tests/viz/test_graph.py 9개, 전체 332 통과 |
 | viz-2 trace·persona | 대기 | | |
 | viz-3 3D 온톨로지 화면 | 대기 | | 끝나면 멈추고 사람이 브라우저로 확인 |
 | viz-4 워크플로 재생 | 대기 | | |
@@ -266,6 +266,13 @@ viz-0에서 정한 것(2026-10-03, 사람 승인):
 - **trace 위치**: 엔진 파이프라인 본문을 공용 내부 함수로 옮겨 `recommend()`와 `trace()`가 같은 경로를 쓴다(판정 코드 무변경).
 - **규모 목표**: 레시피 1천 개. 2000개 초과 분기(Points 렌더링)는 구현하지 않음. 측정은 viz-5에서 합성 1천 개로 로딩 3초·30fps.
 - **진행 범위**: viz-0~3까지 이어서, viz-3 후 멈추고 사람 확인.
+
+viz-1에서 정한 것(2026-10-03):
+
+- `api/viz.py` `GraphCatalog`: 데이터 reload 때 만들어 `State.graph`에 둠. `(recipes, max_recipes)`별로 처음 만든 응답과 ETag(본문 sha256)를 캐시, `If-None-Match`가 같으면 304.
+- 재료 노드에 `allergens`(기본 그룹 closure: 그룹·certainty) 포함(클릭 시 정보 표시용, 묶음은 구성원의 합이라 뺌). 레시피 노드에 `has_unmapped`, `required_equipment`, `spicy`.
+- uses 링크 `line_no`는 엔진 `recipe_from_spec`과 같은 1부터 번호(trace path_links가 같은 id를 가리킴).
+- 테스트: 노드·간선 수가 컴파일 행 수와 같음, 층 규칙(콩나물 3층·is_processed false), 링크 끝점 존재·id 유일, **모든 기본 그룹 closure 경로의 연속 쌍이 is_a·derived_from 링크로 이어지고 마지막 재료에 allergen 링크가 있음**, recipes 범위·max_recipes, ETag 304.
 
 ### 1-2 응답 예시(실제 knowledge, 예시용 레시피 6개)
 
