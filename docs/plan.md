@@ -258,6 +258,8 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
 
 **이번 구축 범위는 Phase 0과 Phase 1(MVP)까지다.** Phase 1 관문(알레르기 테스트 100% 통과)은 일정과 관계없이 지킨다.
 
+부가 트랙 viz(mvp-v1 이후, 사람 요청·승인 2026-10-03): 지식그래프와 추천 과정 3D 시각화. Phase 2 기능(LLM·개인화·장보기)과 무관한 읽기 전용 화면이다. 상세는 부록 D.
+
 ## 7. 테스트와 검증
 
 알레르기 회귀 테스트는 통과율 100%가 배포 조건이다. 추천 품질은 페르소나 골든셋으로 측정한다.
@@ -595,3 +597,47 @@ ALTER TABLE allergen_group
 6. **리포트**: 개수, 경고, confidence: low 항목 수, build id를 출력한다.
 
 0-2 컴파일러 테스트에 넣을 불변식: 새우젓 ∈ closure(shrimp), 김치 ∈ closure(shrimp)(possible), 된장의 대두는 definite이고 밀은 possible, 새우 ∌ 오징어, 순환이 있으면 실패, 알 수 없는 키면 실패, 별칭이 충돌하면 실패.
+
+---
+
+## 부록 D. 시각화 부가 트랙 viz (2026-10-03 사람 승인)
+
+목표: API 서버가 `/viz`로 제공하는 정적 3D 페이지(HTML+JS 한 벌, 3d-force-graph CDN, 빌드 도구 없음)에서 컴파일된 지식+레시피를 4층 그래프로 탐색하고, 프로필(골든셋 페르소나 + 저장 프로필) 하나의 추천 과정을 6단계로 재생한다. **화면은 판정하지 않는다.** 엔진이 계산한 값(trace)을 색과 위치로만 바꾼다. 엔진 판정 로직과 `tests/allergy/`는 바꾸지 않는다.
+
+### D-1. 층 배치(서버가 `layer`로 내려줌)
+
+| 층 | 노드 | 규칙 |
+| --- | --- | --- |
+| 1 | 알레르기 그룹 | 기본 그룹 안쪽 원, 묶음 바깥 원. 법정/자체/묶음을 색·모양으로 구분 |
+| 2 | 원천 재료·분류 | derived_from이 **없는** 재료(concept 포함) |
+| 3 | 가공품 | derived_from이 **하나라도 있는** 재료(확정). `is_processed: false`인 재료(콩나물 등)는 툴팁에 "가공품 아님" |
+| 4 | 레시피 | cuisine별 구역, main 재료 쪽으로 당김 |
+
+y는 층으로 고정(`fy`), x·z만 force로 계산하고 warmup 뒤 시뮬레이션을 멈춘다.
+
+### D-2. 간선
+
+is_a(하위 → 상위), derived_from(가공품 → 원천, certainty), allergen(재료 → 기본 그룹, `ingredient_allergen` 직접 지정, certainty), bundle_member(묶음 → 기본 그룹), uses(레시피 → 재료, role·optional, 역할별 색). 링크 id는 `isa:a>b`, `der:a>b`, `alg:a>g`, `mem:b>g`, `use:recipe#line_no`. 노드 id는 `ing:`, `ag:`, `rcp:` 접두어.
+
+### D-3. API(읽기 전용)
+
+- `GET /graph?recipes=none|published|all&max_recipes=N`: 노드·간선. 데이터 reload 때 한 번 만들어 캐시, ETag(304).
+- `POST /recommend`: `profile_id` 또는 `persona_id` 중 정확히 하나(둘 다·없음 422, 모르는 persona 404). `trace: true`면 기존 응답 + `trace`(user 요약, pantry: input·staples·owned(상속 근거), candidates(후보 근거 줄), exclusions(사유, 재료, target, 묶음이면 실제 걸린 기본 그룹 `source_group`, certainty, via, `path_links`), excluded(레시피별 대표 사유), scored(통과 후보 전부: breakdown, weighted, score_rank, final_rank, moved_by_diversity), limit). `trace` 생략 시 응답은 기존과 같다.
+- `GET /personas`: 골든셋 페르소나 목록. 로더는 `storage/personas.py`(데이터 파일은 `tests/golden/personas.yaml`).
+- `GET /viz`: 정적 페이지.
+
+### D-4. trace 생성 위치
+
+`engine/recommend.py`의 파이프라인 본문을 하나의 내부 함수로 옮기고 `recommend()`(결과만)와 `trace()`(결과 + `engine/trace.py`의 `RecommendTrace`)가 같은 코드 경로를 쓴다. 판정·점수·정렬 코드는 이동만 한다. 추가 계산은 보유 재료의 `ancestors` 사전 조회뿐(재귀 탐색 없음). id 접두어·path_links·source_group·라벨은 `api/viz.py` 표시 계층이 컴파일 결과를 조회해 붙인다.
+
+### D-5. 6단계 재생
+
+1 보유 재료(상속 포함) 강조 → 2 후보 레시피 강조 → 3 제외: 알레르기는 그룹에서 via 경로를 따라 빛이 올라가고 레시피가 빨갛게 가라앉음, 절대 불선호는 주황, 매운맛·조리기구·시간·음식 종류는 회색 → 4 통과 레시피가 점수만큼 상승(hover: I·K·T·P·D·M) → 5 순위 표시(다양성 보정 이동 표시) → 6 추천 카드. 이전/다음/자동재생.
+
+### D-6. 성능(목표: 레시피 1천 개)
+
+레이아웃 고정, 레시피-재료 간선 기본 숨김, 강조는 재질만 변경(graphData 재설정 금지), 라벨은 hover·검색·상위 순위만, 입자는 현재 경로만, `/graph` 캐시·ETag. 측정: bench 합성 생성기로 레시피 1천 개 그래프 → 로딩 3초 이내, 회전 30fps 이상. 1만 개 대응(Points 렌더링 등)은 범위 밖.
+
+### D-7. 단계
+
+viz-0 설계 기록 → viz-1 `/graph` → viz-2 trace·persona → viz-3 3D 온톨로지 화면 → viz-4 워크플로 재생 → viz-5 성능 측정·문서. 테스트는 `tests/viz/`: 그래프 개수·층 규칙·closure 경로 걷기(via 연속 쌍이 링크로 이어짐), trace 제외 결과 = 일반 `/recommend` 제외 결과, 후보 = 통과 ∪ 제외, 순위 = items 순서.
