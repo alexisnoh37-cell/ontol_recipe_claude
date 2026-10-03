@@ -83,7 +83,9 @@ function renderInfo(scene, n) {
     rows.push(["걸리는 알레르기", n.allergens.length ? n.allergens.map((a) => {
       const tags = [a.certainty === "possible" ? "포함 가능" : "포함", ...(a.optional_only ? ["선택 재료 때문"] : [])];
       const hits = a.hits.map((h) => name(h.ingredient) + (h.certainty === "possible" ? "(가능)" : "") + (h.optional ? "(선택)" : ""));
-      return `<div class="path">${chip(a.group, a.certainty === "possible" || a.optional_only ? "possible" : "alert")}`
+      // 그래프와 같은 기준: 포함(definite)이면서 선택 재료가 아닌 줄이 있으면 진하게, 아니면 흐리게(점선 칩)
+      const strong = a.hits.some((h) => h.certainty === "definite" && !h.optional);
+      return `<div class="path">${chip(a.group, strong ? "alert" : "possible")}`
         + `<span class="tag">${tags.join(" · ")}</span> <span class="muted">${hits.join(", ")}</span></div>`;
     }).join("") : chips([])]);
     if (n.has_unmapped) rows.push(["미매칭", "정규 재료에 매핑되지 않은 재료가 있음(알레르기가 있으면 제외)"]);

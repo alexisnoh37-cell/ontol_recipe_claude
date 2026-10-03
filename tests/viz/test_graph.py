@@ -173,3 +173,27 @@ def test_recipe_allergens_join_lines_with_compiled_closure(client, data):
     shrimp = next(a for a in steam["allergens"] if a["group"] == "ag:shrimp")
     assert shrimp["optional_only"] and shrimp["hits"][0]["ingredient"] == "ing:saeujeot"
     assert any(a["group"] == "ag:egg" and not a["optional_only"] for a in steam["allergens"])
+
+
+def test_recipe_selection_paths_match_info_panel(client):
+    """레시피 선택 시 그래프가 그리는 그룹(재료 줄의 재료 노드 allergens 경로) = 정보 패널 "걸리는 알레르기".
+
+    화면(scene.js selectionFocus)과 같은 규칙: uses 링크마다 재료 노드 allergens를 따라가고,
+    possible이거나 선택 재료면 흐린 경로. 그룹이 진하게 그려지는 조건 = definite이면서 선택 재료가 아닌 줄이 있음.
+    """
+    g = get_graph(client, recipes="all")
+    nodes = {n["id"]: n for n in g["nodes"]}
+    links = {lk["id"] for lk in g["links"]}
+    for r in (n for n in g["nodes"] if n["kind"] == "recipe"):
+        drawn: dict[str, bool] = {}
+        for lk in (lk for lk in g["links"] if lk["type"] == "uses" and lk["source"] == r["id"]):
+            for a in nodes[lk["target"]]["allergens"]:
+                assert all(x in links for x in a["path_links"])
+                strong = a["certainty"] == "definite" and not lk["optional"]
+                drawn[a["group"]] = drawn.get(a["group"], False) or strong
+        panel = {a["group"]: any(h["certainty"] == "definite" and not h["optional"] for h in a["hits"])
+                 for a in r["allergens"]}
+        assert drawn == panel, r["id"]
+    tonkatsu = {nodes[a["group"]]["name"]: a["certainty"] for a in nodes["rcp:tonkatsu"]["allergens"]}
+    assert tonkatsu["알류(가금류)"] == "definite" and tonkatsu["밀"] == "definite"
+    assert all(tonkatsu[x] == "possible" for x in ("대두", "토마토", "아황산류"))

@@ -18,6 +18,8 @@ const RADIUS = { group: 120, bundle: 190, ingredient: 270, processed: 290, recip
 const CAMERA = { pitchDeg: 35, distance: 2100, targetY: -20 }; // 위에서 35도 내려다봄
 const LABEL_PX = { layer: 20, sector: 15, selected: 16, node: 12 };
 const MAX_NEIGHBOR_LABELS = 60;
+const FAINT_LINK = 0.28; // 선택 강조 안의 흐린 경로(포함 가능·선택 재료)
+const FAINT_NODE = 0.55;
 
 export function nodeStyle(n) {
   if (n.kind === "allergen_group") {
@@ -354,28 +356,48 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
       const other = l.s === id ? l.t : l.s;
       if (!ns.has(other)) { ns.set(other, {}); neighbors.push(other); }
     }
-    // 재료: 1단계 이웃 + 알레르기 경로 전체(closure via → 기본 그룹 → 그 그룹을 포함한 묶음)
+    // 알레르기 경로 전체(closure via → 기본 그룹 → 그 그룹을 포함한 묶음).
+    // 재료는 자기 경로, 레시피는 재료 줄마다의 경로. 포함 가능(possible)·선택 재료 경로는 흐린 선(FAINT).
+    // 같은 간선·노드가 진한 경로와 흐린 경로에 함께 있으면 진한 쪽을 따른다.
     const pathNodes = [];
-    if (n.kind === "ingredient") {
-      for (const a of n.allergens) {
+    const groups = new Map(); // 그려진 기본 그룹 → 진한 경로가 있는지(점검·디버깅용)
+    const mark = (x, faint) => {
+      const cur = ns.get(x);
+      if (!cur) { ns.set(x, faint ? { opacity: FAINT_NODE } : {}); pathNodes.push(x); }
+      else if (!faint && cur.opacity !== undefined) ns.set(x, {});
+    };
+    const markLink = (l, faint) => {
+      const cur = ls.get(l);
+      if (!cur) ls.set(l, faint ? { alpha: FAINT_LINK } : {});
+      else if (!faint && cur.alpha !== undefined) ls.set(l, {});
+    };
+    const addPaths = (ingId, optional) => {
+      for (const a of byId.get(ingId)?.allergens || []) {
+        const faint = optional || a.certainty === "possible";
+        groups.set(a.group, (groups.get(a.group) || false) || !faint);
         for (const lid of a.path_links) {
           const l = linkById.get(lid);
           if (!l) continue;
-          ls.set(l, {});
-          for (const x of [l.s, l.t]) if (!ns.has(x)) { ns.set(x, {}); pathNodes.push(x); }
+          markLink(l, faint);
+          mark(l.s, faint);
+          mark(l.t, faint);
         }
         for (const l of incident.get(a.group)) {
           if (l.type !== "bundle_member" || l.t !== a.group) continue;
-          ls.set(l, {});
-          if (!ns.has(l.s)) { ns.set(l.s, {}); pathNodes.push(l.s); }
+          markLink(l, faint);
+          mark(l.s, faint);
         }
       }
+    };
+    if (n.kind === "ingredient") addPaths(id, false);
+    if (n.kind === "recipe") {
+      for (const l of incident.get(id)) if (l.type === "uses" && l.s === id) addPaths(l.t, l.optional);
     }
     const order = (x) => (byId.get(x).kind === "recipe" ? 1 : 0); // 재료·그룹 라벨을 먼저
     const labeled = [...pathNodes, ...neighbors.sort((a, b) => order(a) - order(b))].slice(0, MAX_NEIGHBOR_LABELS);
     const labels = [{ id, text: n.name, px: LABEL_PX.selected, color: "#ffffff" },
       ...labeled.map((x) => ({ id: x, text: byId.get(x).name, color: "#c8cdd6" }))];
-    return { mode: "select", nodes: ns, links: ls, labels };
+    return { mode: "select", nodes: ns, links: ls, labels, groups };
   }
 
   function select(id) {
@@ -500,6 +522,8 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
     graph, nodes, links, byId, linkById, incident, timings, THREE,
     select, setView, setOffsets, flyTo, resetCamera, setLayer, setLinkType,
     get selected() { return state.selected; },
+    // 점검용: 선택 강조에 그려진 기본 그룹 id → 진한 경로 여부
+    get selectedGroups() { return state.selection ? Object.fromEntries(state.selection.groups) : null; },
   };
 }
 
