@@ -1,0 +1,48 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: samgyeopsal_gui
+title: 삼겹살 구이
+cuisine: 한식
+difficulty: 1
+cook_time_min: 20
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+note: 쌈장을 빼고 소금·후추로 간함(쌈장은 대두·밀 성분이라 넣지 않음)
+ingredients:
+- ingredient: pork_belly
+  raw_text: 삼겹살 400g
+  role: main
+- ingredient: garlic
+  raw_text: 통마늘 6쪽
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+  optional: true
+- ingredient: lettuce
+  raw_text: 상추 한 줌
+  role: garnish
+  optional: true
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 4
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 달군 팬에 삼겹살을 올려 앞뒤로 노릇하게 굽는다.
+  technique: 구이
+- text: 나온 기름에 마늘과 양파를 함께 굽는다.
+  technique: 구이
+- text: 소금, 후추로 간해 상추와 곁들인다.

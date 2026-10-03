@@ -1,0 +1,66 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: jukkumi_bokkeum
+title: 주꾸미볶음
+cuisine: 한식
+difficulty: 2
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: webfoot_octopus
+  raw_text: 주꾸미 400g(손질한 것)
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추 1/8통
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 1/2대
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 1개
+  role: sub
+  optional: true
+- ingredient: gochujang
+  raw_text: 고추장 1.5큰술
+  role: seasoning
+- ingredient: gochugaru
+  raw_text: 고춧가루 2큰술
+  role: seasoning
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1큰술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 약간
+  role: seasoning
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 2
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 주꾸미를 밀가루 대신 굵은소금으로 문질러 씻고 끓는 물에 살짝 데친다.
+  technique: 데치기
+- text: 고추장, 고춧가루, 간장, 설탕, 마늘을 섞어 양념장을 만든다.
+- text: 기름 두른 팬에 채소를 볶다가 주꾸미와 양념장을 넣고 센 불에 빠르게 볶는다.
+  technique: 볶음
+- text: 참기름을 둘러 마무리한다.
+  technique: 볶음

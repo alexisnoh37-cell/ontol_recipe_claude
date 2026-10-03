@@ -1,0 +1,46 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: sukju_namul
+title: 숙주나물
+cuisine: 한식
+difficulty: 1
+cook_time_min: 10
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+note: 소금 간(간장 없음)
+ingredients:
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주 300g
+  role: main
+- ingredient: green_onion
+  raw_text: 쪽파 또는 대파 약간
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2작은술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 1/2작은술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 1큰술
+  role: seasoning
+- ingredient: sesame
+  raw_text: 통깨 약간
+  role: garnish
+  optional: true
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 숙주를 끓는 물에 1분 데쳐 찬물에 헹구고 물기를 꼭 짠다.
+  technique: 데치기
+- text: 파, 마늘, 소금, 참기름, 깨를 넣고 무친다.
+  technique: 무침

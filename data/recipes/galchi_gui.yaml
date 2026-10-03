@@ -1,0 +1,35 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: galchi_gui
+title: 갈치구이
+cuisine: 한식
+difficulty: 1
+cook_time_min: 20
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+note: 밀가루를 입히지 않는 방식으로 작성(밀가루를 쓰면 밀 알레르기 대상)
+ingredients:
+- ingredient: hairtail
+  raw_text: 손질 갈치 4토막
+  role: main
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 2큰술
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 갈치에 칼집을 내고 소금을 뿌려 10분 둔 뒤 물기를 닦는다.
+- text: 기름 두른 팬에 중불로 앞뒤를 노릇하게 굽는다.
+  technique: 구이

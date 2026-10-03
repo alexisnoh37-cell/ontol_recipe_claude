@@ -1,0 +1,62 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: teriyaki_chicken_don
+title: 데리야키 치킨 덮밥
+cuisine: 일식
+difficulty: 1
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(닭다리살 권장) 300g
+  role: main
+- ingredient: rice
+  raw_text: 밥 2공기
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/4개
+  role: sub
+  optional: true
+- ingredient: green_onion
+  raw_text: 쪽파 또는 대파 약간
+  role: garnish
+  optional: true
+- ingredient: sesame
+  raw_text: 통깨 약간
+  role: garnish
+  optional: true
+- ingredient: soy_sauce
+  raw_text: 간장 3큰술
+  role: seasoning
+- ingredient: mirin
+  raw_text: 맛술 2큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1큰술
+  role: seasoning
+- ingredient: ginger
+  raw_text: 다진 생강 약간
+  role: seasoning
+  optional: true
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 3
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 간장, 맛술, 설탕, 생강을 섞어 데리야키 소스를 만든다.
+- text: 기름 두른 팬에 닭고기를 껍질 쪽부터 굽는다.
+  technique: 구이
+- text: 양파와 소스를 넣고 윤기가 날 때까지 조린다.
+  technique: 조림
+- text: 밥 위에 썬 닭고기를 올리고 소스를 끼얹은 뒤 파와 깨를 뿌린다.

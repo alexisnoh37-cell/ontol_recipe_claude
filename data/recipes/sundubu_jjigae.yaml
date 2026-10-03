@@ -1,0 +1,67 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: sundubu_jjigae
+title: 순두부찌개
+cuisine: 한식
+difficulty: 1
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: low
+note: 순두부(soft_tofu)는 이번에 추가한 draft 재료. 기존 두부 별칭에서 '순두부'를 옮김
+ingredients:
+- ingredient: soft_tofu
+  raw_text: 순두부 1봉(350g)
+  role: main
+- ingredient: pork
+  raw_text: 돼지고기(다진 것 또는 앞다리살) 80g
+  role: sub
+  optional: true
+- ingredient: onion
+  raw_text: 양파 1/4개
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 1/4개
+  role: sub
+  optional: true
+- ingredient: green_onion
+  raw_text: 대파 1/3대
+  role: sub
+- ingredient: egg
+  raw_text: 계란 1개
+  role: garnish
+  optional: true
+- ingredient: gochugaru
+  raw_text: 고춧가루 1.5큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: soy_sauce
+  raw_text: 국간장 1큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 1
+  sour: 0
+  umami: 4
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 냄비에 기름을 두르고 돼지고기, 고춧가루, 마늘을 약불에 볶아 고추기름을 낸다.
+  technique: 볶음
+- text: 물 1컵과 양파, 애호박을 넣고 끓인다.
+  technique: 끓이기
+- text: 순두부를 큼직하게 떠 넣고 국간장, 소금으로 간한다.
+  technique: 끓이기
+- text: 대파를 넣고 계란을 깨 넣어 한소끔 더 끓인다.
+  technique: 끓이기

@@ -8,6 +8,8 @@
 
 **부가 트랙 viz 완료**(2026-10-03, 태그 `viz-v1`, 3D 온톨로지 + 추천 워크플로 시각화, docs/plan.md 부록 D). 전체 테스트 390개 통과. 아래 "부가 트랙 viz" 참조.
 
+**데이터 확장 트랙 data-1**(2026-10-04, 브랜치 `feature/recipe-expansion`, 기준점 태그 `checkpoint/before-recipe-expansion`): 레시피 1차 초안 50개를 draft로 추가(합계 100개, published 50 그대로). 사람 검수 대기. 전체 테스트 394개 통과. 아래 "데이터 확장 트랙" 참조.
+
 ## 단계별 상태
 
 | 단계 | 상태 | 완료일 | 사람 확인 | 비고 |
@@ -463,8 +465,28 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
 }
 ```
 
+## 데이터 확장 트랙: 레시피 1차 확장 (브랜치 `feature/recipe-expansion`)
+
+### data-1 레시피 1차 초안 50개 (2026-10-04, 검수 대기)
+
+- **결정(사람, 2026-10-04)**: docs/decisions.md D3 보완. 1차로 50개를 추가해 합계 100개, 출처 `agent_draft` 유지(외부 본문 복제 금지), 신규 50개는 모두 `status: draft`이며 검수표 승인 전에는 published로 바꾸지 않는다.
+- **근거**: 공백 분석(김치볶음밥 0개, 매운맛 1 이하 닭 요리 1개, 햄 main 레시피 없음, multi_allergy·western_lover 상위 10 미달, 대두·밀 알레르기 안전 레시피 12·9개).
+- **구성**: 한식 30, 양식 8, 일식 6, 중식 6. 난이도 1: 33, 2: 15, 3: 2. 15분 이하 17개.
+  - main 기준: 닭 2 → 13(신규 11), 가공육 1 → 6(신규 5: 통조림햄 구이, 소시지 채소볶음, 햄 감자볶음, 햄치즈 샌드위치, 까르보나라(베이컨)), 해산물 4 → 11(신규 7). 매운맛 1 이하 닭(main) 1 → 10.
+  - 구성 조건(재료 목록·allergen_closure 기준, possible 포함): 계란·우유·갑각류 모두 없음 29개(조건 15 이상), 대두·밀 없음 14개(조건 5 이상), 매운맛 1 이하 44개(조건 40 이상).
+- **새 재료**: `soft_tofu`(순두부, derived_from soybean 확실, draft). 이름이 겹치지 않도록 `tofu`의 별칭 '순두부'를 soft_tofu로 옮김(tofu의 is_a·derived_from은 그대로). tofu와 is_a로 잇지 않아 두부 보유로 순두부찌개가 매칭되지 않는다. 건고추는 홍고추·청양고추로 대체해 추가하지 않음.
+- **검수표**: `docs/review/recipes_review.md`를 검수 대기(draft) → 검수 완료(published) 순으로 나누고, 각 묶음 안에서 confidence low를 맨 위에 두도록 `scripts/make_recipe_review.py` 수정. 재료 검수표(`ingredients_review.md`)도 재생성.
+- **테스트 수정(tests/kb, tests/api만)**:
+  - test_recipe_seed: 개수는 시드 폴더에서 셈. 1-3 검수 완료 50개 id 목록(`PUBLISHED_IDS`)이 그대로 published이고 한식 30·기타 20 구성 유지, published는 이 목록과 정확히 같고 필수 항목을 모두 갖춤, 목록 밖은 모두 draft. 김치 고정 3개 집합 → 김치류(배추김치·깍두기·열무김치)가 든 모든 레시피(published만 / draft 포함 두 경우)가 새우 알레르기로 제외되는지, 각 레시피가 실제로 후보가 되도록 main 재료를 보유로 넣고 제외 기록까지 확인. 기본 설정이 draft를 제공하지 않는지 추가.
+  - test_real_knowledge: "전부 reviewed" → `DRAFT_INGREDIENTS`({soft_tofu})만 draft, 나머지 전부 reviewed. soft_tofu 대두 definite·별칭 '순두부' 검사 추가.
+  - test_api: /health 레시피 수를 시드 파일 수(draft 포함)와 비교.
+- **결과**: validate_data 통과(재료 253개, 경고 3건, 레시피 100개 오류 0건, 미매칭 0). 전체 394개 통과(tests/allergy 118개, 무수정). 기본 설정(published만)이라 골든셋 적중률은 0.88 그대로.
+- **영향 미리보기**(draft 포함 가정, config 수정 없이 `serve_draft_recipes=True` 인자로만 계산, `.scratch/recipe_gap/preview.md`): 전체 적중률 0.88 → 0.58. beginner·few_ingredients 0.33, korean_lover·multi_allergy·japanese_lover 0.67. multi_allergy·western_lover 상위 10 미달 해소(9 → 18, 5 → 10 통과). 검수 후 published로 바꾸려면 골든셋 기대값 재검토 또는 회귀 기준(MIN_HIT_RATE 0.85) 결정이 먼저 필요하다.
+
 ## 사람 확인 필요
 
+- **(data-1) 레시피 1차 초안 50개 검수**: `docs/review/recipes_review.md` "검수 대기(draft)". confidence low 9개(가공육 4, 음식 종류 판단 3, 순두부 신규 재료 1, 깐풍기 매운맛 1). 신규 재료 `soft_tofu`(draft) 검수: `docs/review/ingredients_review.md`.
+- **(data-1) published 전환 전 골든셋 처리**: draft를 모두 published로 바꾸면 적중률 0.58로 회귀 기준(0.85) 아래. expected_top3 재기입·기준 조정·다양성 한도 중 무엇을 할지 사람이 정한다.
 - (선택) K에 선호 strength를 반영하지 않음(plan 4-4 표대로 1.0/0.5/0.1). 반영하려면 plan 4-4 수정이 필요하다. Phase 2 이후 검토.
 - (해결, 1-6) 성분표 확인 표시 범위, 부족 재료 표시 구분, 다양성 보정 역전 → 위 "1-6에서 정한 것".
 
@@ -500,6 +522,7 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
 - MVP(Phase 0~1) 완료. Phase 2는 사람이 범위를 정한 뒤 시작한다(아래 "다음 단계 제안").
 - 시각화 트랙 완료(viz-v1). 시연은 README 6-1 "시연 순서"(시연 프로필은 `scripts/seed_demo_profiles.py`).
 - 새 재료를 추가할 때는 status: draft로 넣고 검수표(`scripts/make_review.py`)로 사람 확인 후 reviewed.
+- 데이터 확장 트랙(data-1, `feature/recipe-expansion`): 신규 레시피 50개 draft 검수 대기. 승인된 레시피는 published로 바꾸고 `tests/kb/test_recipe_seed.py`의 `PUBLISHED_IDS`에 추가, soft_tofu 승인 시 reviewed로 바꾸고 `tests/kb/test_real_knowledge.py`의 `DRAFT_INGREDIENTS`에서 뺀다. published 전환 전에 골든셋 처리 방법을 정한다.
 
 ## 다음 단계 제안 (Phase 2 이후, 범위 밖)
 
@@ -509,7 +532,7 @@ Phase 2 할 일(plan.md 6장 로드맵 기준, 착수 전 사람이 범위 확�
 2. **LLM 설명 생성**(4-7): 엔진 결과(breakdown, 부족 재료, 대체, 제외 사유)만 근거로 문장을 다듬는다. 엔진 결과를 먼저 보여 주고 설명은 이어서 채운다(7-4). 근거 밖 내용 생성 금지 테스트.
 3. **식단 조건 필터**(채식 등, B2 결정으로 Phase 2): target_type 추가와 vocab, 필터 테스트.
 4. **별칭·미매칭 보강 흐름**: `unmapped_term` 누적 → 검수표 → knowledge 반영. 자동완성 품질을 위한 pg_trgm 인덱스.
-5. **데이터 확장**: 레시피 공백(김치볶음밥, 맵지 않은 닭 요리, 햄 활용 요리) 추가, `confidence: low` 재료 70개 재검수, substitutes.yaml(아직 draft) 검수.
+5. **데이터 확장**: 레시피 공백(김치볶음밥, 맵지 않은 닭 요리, 햄 활용 요리) 추가(→ data-1에서 초안 작성, 검수 대기), `confidence: low` 재료 70개 재검수, substitutes.yaml(아직 draft) 검수.
 6. **선호 축 확장**: 요리 유형(찌개·볶음·면) 선호, K에 선호 strength 반영 여부(plan 4-4).
 7. **운영 준비**: Supabase 배포 설정, API 인증 범위(D1은 개인용 기본값), 제외 로그(`logs/exclusions.jsonl`) 보존 정책, CI에서 tests/allergy 실패 시 배포 차단.
 

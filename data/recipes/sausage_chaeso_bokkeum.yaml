@@ -1,0 +1,54 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: sausage_chaeso_bokkeum
+title: 소시지 채소볶음
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: low
+note: 가공육(소시지) 제품마다 원료가 달라 알레르기 표시 확인 필요
+ingredients:
+- ingredient: sausage
+  raw_text: 비엔나소시지 200g
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카 1/2개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/4개
+  role: sub
+  optional: true
+- ingredient: ketchup
+  raw_text: 토마토케첩 3큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+- ingredient: soy_sauce
+  raw_text: 간장 1작은술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 3
+  sour: 1
+  umami: 2
+  savory: 2
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 소시지에 칼집을 내고 끓는 물에 살짝 데친다.
+  technique: 데치기
+- text: 기름 두른 팬에 채소를 볶다가 소시지를 넣는다.
+  technique: 볶음
+- text: 케첩, 설탕, 간장을 넣고 고루 볶는다.
+  technique: 볶음

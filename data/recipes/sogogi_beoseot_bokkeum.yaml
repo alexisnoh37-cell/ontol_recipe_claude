@@ -1,0 +1,57 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: sogogi_beoseot_bokkeum
+title: 소고기 버섯볶음
+cuisine: 한식
+difficulty: 1
+cook_time_min: 20
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(불고기용 또는 채 썬 것) 200g
+  role: main
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯 1팩
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 1/3대
+  role: garnish
+- ingredient: soy_sauce
+  raw_text: 간장 2큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 4
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 소고기에 간장 1큰술, 설탕, 마늘, 후추를 넣어 밑간한다.
+- text: 기름 두른 팬에 소고기를 볶다가 버섯과 양파를 넣는다.
+  technique: 볶음
+- text: 남은 간장으로 간하고 참기름과 대파를 넣어 마무리한다.
+  technique: 볶음

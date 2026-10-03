@@ -90,11 +90,20 @@
   status: reviewed
 - id: tofu
   name: 두부
-  aliases: [부침두부, 찌개두부, 순두부, 연두부]
+  aliases: [부침두부, 찌개두부, 연두부]
   derived_from: [soybean]
   is_processed: true
   category: 콩·두부
+  note: 2026-10-04 별칭 '순두부'를 soft_tofu로 옮김(이름 중복 방지)
   status: reviewed
+- id: soft_tofu
+  name: 순두부
+  aliases: [찌개용 순두부]
+  derived_from: [soybean]
+  is_processed: true
+  category: 콩·두부
+  note: 1차 레시피 확장(순두부찌개)용으로 추가. 두부(tofu)와 is_a로 잇지 않음(두부 보유로 순두부 레시피가 매칭되지 않음). 검수 필요
+  status: draft
 - id: fried_tofu
   name: 유부
   aliases: [유부초밥용 유부, 사각유부]
