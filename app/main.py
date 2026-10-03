@@ -271,7 +271,9 @@ with tab_rec:
                 for col, b in zip(cols, item["breakdown"]):
                     col.progress(min(max(b["value"], 0.0), 1.0), text=f"{b['label']} {b['value']:.2f}")
                 if item["missing_text"]:
-                    st.markdown(f"**부족한 재료**: {item['missing_text']}")
+                    st.markdown(f"**꼭 필요한 재료**: {item['missing_text']}")
+                if item["nice_to_have_text"]:
+                    st.markdown(f"**있으면 좋은 재료**: {item['nice_to_have_text']}")
                 for s in item["substitutions"]:
                     st.markdown(f"🔄 {s['text']}")
                 for note in item["notes"]:
@@ -281,7 +283,7 @@ with tab_rec:
                     st.warning(notice)
                 if item["label_check"]:
                     check = item["label_check"]
-                    st.warning(f"⚠️ {check['message']}: " + ", ".join(c["text"] for c in check["ingredients"]))
+                    st.warning(f"⚠️ {check['text']}")
         if result["exclusion_summary"]:
             with st.expander(f"제외된 레시피 {result['excluded_total']}개 — 사유 요약"):
                 for s in result["exclusion_summary"]:

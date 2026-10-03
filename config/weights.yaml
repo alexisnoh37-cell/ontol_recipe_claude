@@ -38,3 +38,4 @@ diversity:
   top_n: 10
   max_same_cuisine: 5          # 1-4 골든셋 반영(3 → 5)
   max_same_main_ingredient: 3
+  max_score_gap: 0.1           # 1-6: 점수 차가 이 값 이하인 레시피끼리만 순서를 바꾼다

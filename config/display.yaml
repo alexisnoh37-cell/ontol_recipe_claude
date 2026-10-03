@@ -13,7 +13,7 @@ ingredient_notices:
 recipe_notices:
   salmon_don: "횟감용 생연어 사용"
 
-# 포함 가능(possible) 알레르기가 있거나 confidence: low인 재료가 든 레시피 카드에 표시
+# 알레르기 설정이 있는 사용자에게만, 가공품(is_processed)이면서 confidence: low인 재료가 든 레시피 카드에 표시(1-6 결정)
 label_check: "제품 성분표를 확인하세요"
 
 # 화면 하단 면책 문구

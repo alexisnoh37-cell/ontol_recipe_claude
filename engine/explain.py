@@ -19,6 +19,7 @@ def build_item(snapshot: KnowledgeSnapshot, candidate: Candidate, score: float, 
     missing: list[str] = []
     substitutions: list[SubstitutionNote] = []
     notes: list[str] = []
+    optional_missing: list[str] = []
     for m in candidate.lines:
         line = m.line
         if m.status == "substitute":
@@ -31,6 +32,8 @@ def build_item(snapshot: KnowledgeSnapshot, candidate: Candidate, score: float, 
             if line.ingredient_id is None:
                 notes.append(f"확인되지 않은 재료가 있습니다: {line.raw_text}")
             elif line.optional:
+                if line.ingredient_id not in optional_missing:
+                    optional_missing.append(line.ingredient_id)
                 notes.append(f"{josa(names[line.ingredient_id], '은')} 선택 재료라 빼고 조리할 수 있습니다")
             elif line.ingredient_id not in missing:
                 missing.append(line.ingredient_id)
@@ -47,5 +50,6 @@ def build_item(snapshot: KnowledgeSnapshot, candidate: Candidate, score: float, 
         breakdown={k: round(v, 3) for k, v in breakdown.items()},
         missing=tuple(missing),
         substitutions=tuple(substitutions),
+        optional_missing=tuple(optional_missing),
         notes=tuple(notes),
     )

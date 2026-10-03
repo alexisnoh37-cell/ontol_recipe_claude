@@ -26,26 +26,14 @@ def load_display(config_dir: Path = CONFIG_DIR) -> dict[str, Any]:
     return yaml.safe_load((config_dir / "display.yaml").read_text(encoding="utf-8"))
 
 
-@dataclass(frozen=True)
-class LabelCheck:
-    ingredient_id: str
-    name: str
-    possible_groups: tuple[str, ...]  # 포함 가능(possible)인 기본 알레르기 그룹 표시 이름
-    low_confidence: bool
-
-    def text(self) -> str:
-        why = []
-        if self.possible_groups:
-            why.append("·".join(self.possible_groups) + " 포함 가능")
-        if self.low_confidence:
-            why.append("성분 정보 확인 필요")
-        return f"{self.name}({', '.join(why)})"
+REQUIRED_ROLES = ("main", "sub", "seasoning")  # 꼭 필요한 재료(기본 양념은 보유로 간주되어 missing에 오지 않음)
 
 
 @dataclass(frozen=True)
 class RecipeDisplay:
     notices: tuple[str, ...]
-    label_check: tuple[LabelCheck, ...]
+    label_check: tuple[str, ...]  # 성분표 확인 대상 재료 id(가공품이면서 confidence: low, 선택·고명 포함)
+    required_ids: frozenset[str]  # 선택이 아닌 main·sub·seasoning 줄에 쓰인 재료
 
 
 class Catalog:
@@ -137,25 +125,29 @@ class Catalog:
         for target, text in (self.display.get("ingredient_notices") or {}).items():
             if any(i == target or target in self.snapshot.contains.get(i, {}) for i in ids):
                 notices.append(text)
-        checks: list[LabelCheck] = []
-        for i in dict.fromkeys(ids):  # 순서 유지 중복 제거
-            possible = tuple(
-                self.groups[g].display_name
-                for g, hits in self.snapshot.allergen_closure.items()
-                if self.groups[g].kind == "base" and i in hits and hits[i].certainty == "possible"
-            )
-            low = self.ingredients[i].confidence == "low"
-            if possible or low:
-                checks.append(LabelCheck(i, self.names[i], possible, low))
-        return RecipeDisplay(tuple(notices), tuple(checks))
+        # 1-6 결정: 가공품(is_processed)이면서 confidence: low인 재료만. 소금·설탕 같은 단순 재료는 대상 아님
+        checks = tuple(i for i in dict.fromkeys(ids)
+                       if self.ingredients[i].is_processed and self.ingredients[i].confidence == "low")
+        required = frozenset(line.ingredient for line in r.ingredients
+                             if line.ingredient and not line.optional and line.role in REQUIRED_ROLES)
+        return RecipeDisplay(tuple(notices), checks, required)
 
     def recipe_display(self, recipe_id: str) -> RecipeDisplay:
         return self._recipe_display[recipe_id]
 
-    def item(self, item: RecommendItem) -> dict[str, Any]:
+    def item(self, item: RecommendItem, *, has_allergy: bool) -> dict[str, Any]:
+        """has_allergy: 사용자에게 알레르기 설정이 있을 때만 성분표 확인 표시를 붙인다(1-6 결정)."""
         spec = self.recipes.get(item.recipe_id)
         disp = self.recipe_display(item.recipe_id)
         labels = self.display["breakdown_labels"]
+        named = lambda ids: [{"id": i, "name": self.names.get(i, i)} for i in ids]  # noqa: E731
+        # 부족 재료 표시 구분(1-6, 판정 무관): 꼭 필요한 재료 = 선택이 아닌 main·sub·seasoning,
+        # 있으면 좋은 재료 = 고명(garnish)과 선택(optional) 재료
+        required = [m for m in item.missing if m in disp.required_ids]
+        nice = [m for m in item.missing if m not in disp.required_ids]
+        nice += [m for m in item.optional_missing if m not in nice and m not in required]
+        optional_notes = {f"{josa(self.names[m], '은')} 선택 재료라 빼고 조리할 수 있습니다"
+                          for m in item.optional_missing}
         return {
             "recipe_id": item.recipe_id,
             "title": item.title,
@@ -164,21 +156,25 @@ class Catalog:
             "cook_time_min": spec.cook_time_min if spec else None,
             "score": item.score,
             "breakdown": [{"key": k, "label": labels.get(k, k), "value": v} for k, v in item.breakdown.items()],
-            "missing": [{"id": m, "name": self.names.get(m, m)} for m in item.missing],
-            "missing_text": _missing_text([self.names.get(m, m) for m in item.missing]),
+            "missing": named(item.missing),
+            "required_missing": named(required),
+            "nice_to_have": named(nice),
+            "missing_text": _missing_text([self.names.get(m, m) for m in required]),
+            "nice_to_have_text": (", ".join(self.names.get(m, m) for m in nice) + " (없어도 조리할 수 있습니다)")
+            if nice else None,
             "substitutions": [
                 {"need_id": s.need_id, "need_name": self.names[s.need_id], "use_id": s.use_id,
                  "use_name": self.names[s.use_id],
                  "text": f"{self.names[s.need_id]} 대신 {josa(self.names[s.use_id], '을')} 쓸 수 있습니다"}
                 for s in item.substitutions
             ],
-            "notes": list(item.notes),
+            "notes": [n for n in item.notes if n not in optional_notes],
             "notices": list(disp.notices),
             "label_check": {
                 "message": self.display["label_check"],
-                "ingredients": [{"id": c.ingredient_id, "name": c.name, "possible_groups": list(c.possible_groups),
-                                 "low_confidence": c.low_confidence, "text": c.text()} for c in disp.label_check],
-            } if disp.label_check else None,
+                "ingredients": named(disp.label_check),
+                "text": f"{self.display['label_check']}: " + ", ".join(self.names[i] for i in disp.label_check),
+            } if has_allergy and disp.label_check else None,
         }
 
     def exclusion_summary(self, result: RecommendResult, examples: int = 3) -> list[dict[str, Any]]:

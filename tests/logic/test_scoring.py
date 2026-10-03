@@ -357,9 +357,11 @@ def test_engine_yaml_serve_draft_default_off():
 # --- 다양성 보정 (4-6) ----------------------------------------------------------------------------
 
 
-def _diversity_weights(weights, top_n=5, max_cuisine=2, max_main=2):
+def _diversity_weights(weights, top_n=5, max_cuisine=2, max_main=2, max_gap=1.0):
+    """max_gap 기본 1.0 = 점수 차 제한 없음(한도 규칙만 보는 테스트용). 1-6 실제 설정은 0.1."""
     w = copy.deepcopy(weights)
-    w["diversity"] = {"top_n": top_n, "max_same_cuisine": max_cuisine, "max_same_main_ingredient": max_main}
+    w["diversity"] = {"top_n": top_n, "max_same_cuisine": max_cuisine, "max_same_main_ingredient": max_main,
+                      "max_score_gap": max_gap}
     return w
 
 
@@ -396,3 +398,50 @@ def test_diversity_never_reintroduces_excluded(snapshot, weights):
     assert "shrimp_dish" not in order(result)
     assert set(order(result)) == {"ko", "ko2"}
     assert result.exclusion_summary == {"allergen": 1}
+
+
+def test_diversity_only_swaps_within_score_gap(snapshot, weights):
+    """1-6: 점수 차가 max_score_gap을 넘는 레시피는 한도 때문에 앞으로 올라오지 않는다."""
+    recipes = [recipe(f"ko{i}", (f"{m}", "main")) for i, m in enumerate(["onion", "tofu", "rice", "egg"])]
+    # 커버리지(부재료 부족)와 난이도(초급자에게 3) 차이로 한식보다 0.1 넘게 낮다
+    recipes += [recipe("ja", ("onion", "main"), ("carrot", "sub"), cuisine="일식", difficulty=3),
+                recipe("we", ("tofu", "main"), ("carrot", "sub"), cuisine="양식", difficulty=3)]
+    user = UserContext(pantry=frozenset({"onion", "tofu", "rice", "egg"}))
+    base = make(snapshot, recipes, _diversity_weights(weights, max_cuisine=99, max_main=99)).recommend(user, REQ)
+    scores = {i.recipe_id: i.score for i in base.items}
+    assert scores["ko2"] - scores["ja"] > 0.1  # 커버리지 차이로 0.1 넘게 벌어지는 상황
+    narrow = order(make(snapshot, recipes, _diversity_weights(weights, max_gap=0.1)).recommend(user, REQ))
+    assert narrow == order(base)  # 한도를 넘어도 큰 점수 차는 뒤집지 않는다
+    wide = order(make(snapshot, recipes, _diversity_weights(weights, max_gap=1.0)).recommend(user, REQ))
+    assert wide == ["ko0", "ko1", "ja", "we", "ko2", "ko3"]
+
+
+def test_diversity_swaps_close_scores_and_never_jumps_more_than_gap(snapshot, weights):
+    # 한식 3개와 일식 1개, 모두 커버리지 1.0. 일식만 난이도 2라 0.1 이내로 조금 낮다
+    recipes = [recipe(f"ko{i}", (m, "main")) for i, m in enumerate(["onion", "tofu", "rice"])]
+    recipes += [recipe("ja", ("egg", "main"), cuisine="일식", difficulty=2)]  # 난이도 차이만큼 조금 낮다
+    user = UserContext(pantry=frozenset({"onion", "tofu", "rice", "egg"}))
+    w = _diversity_weights(weights, top_n=4, max_cuisine=2, max_gap=0.1)
+    result = make(snapshot, recipes, w).recommend(user, REQ)
+    scores = {i.recipe_id: i.score for i in result.items}
+    assert 0 < scores["ko2"] - scores["ja"] <= 0.1
+    assert order(result) == ["ko0", "ko1", "ja", "ko2"]  # 점수 차 0.1 이내라 한도대로 일식이 앞으로
+    items = result.items
+    for i, a in enumerate(items):  # 앞선 레시피가 뒤 레시피보다 낮으면 그 차이는 gap 이하
+        for b in items[i + 1:]:
+            assert b.score - a.score <= 0.1 + 1e-9
+
+
+def test_real_config_has_score_gap():
+    from engine.config import ScoringConfig, load_engine_config
+
+    assert ScoringConfig.from_mapping(load_engine_config(CONFIG_DIR).weights).diversity_max_score_gap == 0.1
+
+
+def test_optional_missing_is_display_only(snapshot, weights):
+    """1-6: 선택 재료 미보유 목록(optional_missing)은 표시용. missing·점수에는 들어가지 않는다."""
+    recipes = [recipe("a", ("onion", "main"), ("rice", "sub", True), ("tofu", "garnish"))]
+    item = make(snapshot, recipes, weights).recommend(UserContext(pantry=frozenset({"onion"})), REQ).items[0]
+    assert item.optional_missing == ("rice",)
+    assert item.missing == ("tofu",)
+    assert item.breakdown["I"] == 1.0

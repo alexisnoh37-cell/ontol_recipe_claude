@@ -218,14 +218,15 @@ def create_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir
                                pantry=pantry, limit=body.limit)
         with state.lock:
             recommender, catalog = state.recommender, state.catalog
+        user = user_context(profile)
         try:
-            result = recommender.recommend(user_context(profile), req)
+            result = recommender.recommend(user, req)
         except ValueError as exc:  # 모르는 알레르기 그룹·재료 id 등(1-1 승인: 400)
             raise bad(str(exc)) from None
         log_exclusions(profile.id, result)
         return {
             "profile_id": profile.id,
-            "items": [catalog.item(i) for i in result.items],
+            "items": [catalog.item(i, has_allergy=bool(user.allergen_groups)) for i in result.items],
             "exclusion_summary": catalog.exclusion_summary(result),
             "excluded_total": len({e.recipe_id for e in result.exclusions}),
             "disclaimer": catalog.display["disclaimer"],

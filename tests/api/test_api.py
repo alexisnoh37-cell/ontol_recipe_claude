@@ -134,7 +134,7 @@ def test_recommend_response_shape_names_and_breakdown(client):
         assert [b["key"] for b in item["breakdown"]] == list("IKTPDM")
         for m in item["missing"]:
             assert m["name"] and m["name"] != m["id"]  # id 대신 이름
-        for note in item["notes"] + [item["missing_text"] or ""]:
+        for note in item["notes"] + [item["missing_text"] or "", item["nice_to_have_text"] or ""]:
             assert "(는)" not in note and "(를)" not in note and "(가)" not in note
 
 
@@ -170,18 +170,59 @@ def test_display_notices_salmon_and_cooking_oil(client):
     assert oil, "식용유가 들어간 레시피에 기름 종류 안내가 있어야 한다"
 
 
-def test_label_check_for_possible_allergen_or_low_confidence(client, data):
+def processed_low(data, recipe_id):
+    spec = next(r for r in data.recipes if r.id == recipe_id)
+    ing = {i.id: i for i in data.knowledge.ingredients}
+    return [i for i in dict.fromkeys(line.ingredient for line in spec.ingredients if line.ingredient)
+            if ing[i].is_processed and ing[i].confidence == "low"]
+
+
+def test_label_check_only_for_allergy_users_and_processed_low(client, data):
+    """1-6 결정: 알레르기 설정이 있을 때만, 가공품이면서 confidence: low인 재료가 있을 때만, 재료 이름과 함께."""
+    pantry = ["kimchi", "pork", "rice", "egg", "potato"]
+    pid = make_profile(client, pantry=pantry)
+    items = client.post("/recommend", json={"profile_id": pid}).json()["items"]
+    assert items and all(i["label_check"] is None for i in items)  # 알레르기 설정 없음 → 표시 없음
+
+    set_prefs(client, pid, [{"target_type": "allergen_group", "target_id": "peach"}])
+    items = client.post("/recommend", json={"profile_id": pid}).json()["items"]
+    ing = {i.id: i for i in data.knowledge.ingredients}
+    shown = 0
+    for item in items:
+        expected = processed_low(data, item["recipe_id"])
+        check = item["label_check"]
+        if not expected:
+            assert check is None
+            continue
+        shown += 1
+        assert [c["id"] for c in check["ingredients"]] == expected
+        assert check["text"] == "제품 성분표를 확인하세요: " + ", ".join(ing[i].name for i in expected)
+        for c in check["ingredients"]:  # 단순 재료(소금·설탕 등 비가공품)는 대상 아님
+            assert c["id"] not in {"salt", "sugar"} and ing[c["id"]].is_processed
+    assert shown, "가공품·low 재료가 든 레시피가 하나 이상 있어야 표시를 검사할 수 있다"
+    assert not ing["salt"].is_processed  # 소금이 제외되는 근거(데이터가 바뀌면 이 테스트로 알 수 있게)
+
+
+def test_missing_split_required_vs_nice_to_have(client, data):
+    """1-6: 꼭 필요한 재료(main·sub·비기본 seasoning) / 있으면 좋은 재료(garnish·optional). 판정·점수는 그대로."""
     pid = make_profile(client, pantry=["kimchi", "pork", "rice"])
     items = {i["recipe_id"]: i for i in client.post("/recommend", json={"profile_id": pid}).json()["items"]}
-    check = items["kimchi_jjigae"]["label_check"]
-    assert check["message"] == "제품 성분표를 확인하세요"
-    kimchi = [c for c in check["ingredients"] if c["id"] == "kimchi"][0]
-    assert "새우" in kimchi["possible_groups"]  # 김치 → 새우젓(possible)
-    low = {i.id for i in data.knowledge.ingredients if i.confidence == "low"}
-    for item in items.values():  # 표시가 없으면 해당 재료도 없어야 한다
-        if item["label_check"] is None:
-            spec = next(r for r in data.recipes if r.id == item["recipe_id"])
-            assert not {line.ingredient for line in spec.ingredients} & low
+    jj = items["kimchi_jjigae"]
+    spec = next(r for r in data.recipes if r.id == "kimchi_jjigae")
+    roles = {}
+    for line in spec.ingredients:
+        roles.setdefault(line.ingredient, set()).add("optional" if line.optional else line.role)
+    for m in jj["required_missing"]:
+        assert roles[m["id"]] & {"main", "sub", "seasoning"}
+    for m in jj["nice_to_have"]:
+        assert roles[m["id"]] <= {"garnish", "optional"}
+    nice = {m["id"] for m in jj["nice_to_have"]}
+    assert {"green_onion", "tofu"} <= nice  # 대파 고명, 두부 선택
+    assert jj["missing_text"] is None  # 꼭 필요한 재료는 다 있음 → "모두 갖고 있습니다"와 모순 없음
+    assert jj["nice_to_have_text"].endswith("(없어도 조리할 수 있습니다)")
+    assert not any("선택 재료라" in n for n in jj["notes"])  # 있으면 좋은 재료로 합쳐 표시
+    for item in items.values():  # 기존 missing(엔진 출력)은 그대로 = 꼭 필요한 재료 + 고명
+        assert {m["id"] for m in item["missing"]} <= {m["id"] for m in item["required_missing"] + item["nice_to_have"]}
 
 
 def test_vocab_and_health(client):

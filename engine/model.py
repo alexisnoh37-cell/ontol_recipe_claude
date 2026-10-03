@@ -175,6 +175,7 @@ class RecommendItem:
     breakdown: Mapping[str, float]  # I, K, T, P, D, M
     missing: tuple[str, ...] = ()
     substitutions: tuple[SubstitutionNote, ...] = ()
+    optional_missing: tuple[str, ...] = ()  # 보유하지 않은 선택(optional) 재료(표시용, 판정·점수와 무관)
     notes: tuple[str, ...] = ()
 
 

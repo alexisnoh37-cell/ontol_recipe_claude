@@ -68,6 +68,7 @@ class ScoringConfig:
     diversity_top_n: int
     diversity_max_same_cuisine: int
     diversity_max_same_main: int
+    diversity_max_score_gap: float  # 이 점수 차 이하인 레시피끼리만 순서를 바꾼다(1-6)
 
     @classmethod
     def from_mapping(cls, raw: Mapping[str, Any]) -> ScoringConfig:
@@ -96,6 +97,7 @@ class ScoringConfig:
                 diversity_top_n=int(div["top_n"]),
                 diversity_max_same_cuisine=int(div["max_same_cuisine"]),
                 diversity_max_same_main=int(div["max_same_main_ingredient"]),
+                diversity_max_score_gap=float(div["max_score_gap"]),
             )
         except (KeyError, TypeError, AttributeError) as e:
             raise ValueError(f"config/weights.yaml 형식 오류 또는 누락된 키: {e!r}") from e

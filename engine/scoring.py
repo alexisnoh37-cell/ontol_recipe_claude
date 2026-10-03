@@ -173,37 +173,42 @@ def missing_count(candidate: Candidate) -> int:
 
 
 def diversify(ranked: Sequence[Scored], cfg: ScoringConfig) -> list[Scored]:
-    """다양성 보정(4-6): 상위 top_n 안에 같은 음식 종류·같은 주재료가 한도를 넘지 않게 뒤로 미룬다.
+    """다양성 보정(4-6): 상위 top_n 안에 같은 음식 종류·같은 주재료가 한도를 넘지 않게 순서를 바꾼다.
 
-    main 재료가 여러 개면 각각 센다. 한도를 지키며 top_n을 다 채우지 못하면 미룬 항목을 점수 순으로 채운다.
-    top_n 밖의 순서는 점수 순 그대로다.
+    1-6부터 점수 차가 max_score_gap 이하인 레시피끼리만 순서를 바꾼다. 자리마다 남은 것 중 최고점(head)을 보고,
+    head가 한도를 넘으면 head와 점수 차가 gap 이하이면서 한도를 지키는 첫 레시피를 대신 올린다.
+    그런 레시피가 없으면 한도를 넘더라도 head를 올린다(점수가 크게 낮은 레시피가 앞서지 않게).
+    main 재료가 여러 개면 각각 센다. top_n 밖의 순서는 점수 순 그대로다.
     """
     top_n = cfg.diversity_top_n
+    gap = cfg.diversity_max_score_gap
+    remaining = list(ranked)
     picked: list[Scored] = []
-    deferred: list[Scored] = []
     cuisine_count: dict[str, int] = {}
     main_count: dict[str, int] = {}
-    rest_start = len(ranked)
-    for i, s in enumerate(ranked):
-        if len(picked) >= top_n:
-            rest_start = i
-            break
-        recipe = s.candidate.recipe
-        mains = _main_ids(s.candidate)
-        if cuisine_count.get(recipe.cuisine, 0) >= cfg.diversity_max_same_cuisine or any(
-            main_count.get(m, 0) >= cfg.diversity_max_same_main for m in mains
-        ):
-            deferred.append(s)
-            continue
+
+    def over_cap(s: Scored) -> bool:
+        return cuisine_count.get(s.candidate.recipe.cuisine, 0) >= cfg.diversity_max_same_cuisine or any(
+            main_count.get(m, 0) >= cfg.diversity_max_same_main for m in _main_ids(s.candidate)
+        )
+
+    while remaining and len(picked) < top_n:
+        head = remaining[0]
+        choice = 0
+        if over_cap(head):
+            for j, s in enumerate(remaining[1:], start=1):
+                if head.score - s.score > gap + 1e-9:
+                    break  # 점수 순이므로 이후는 모두 gap 밖
+                if not over_cap(s):
+                    choice = j
+                    break
+        s = remaining.pop(choice)
         picked.append(s)
+        recipe = s.candidate.recipe
         cuisine_count[recipe.cuisine] = cuisine_count.get(recipe.cuisine, 0) + 1
-        for m in mains:
+        for m in _main_ids(s.candidate):
             main_count[m] = main_count.get(m, 0) + 1
-    rest = list(ranked[rest_start:]) if len(picked) >= top_n else []
-    fill = top_n - len(picked)
-    head = picked + deferred[:fill]
-    tail = rank(deferred[fill:] + rest)
-    return head + tail
+    return picked + remaining
 
 
 def _main_ids(candidate: Candidate) -> frozenset[str]:
