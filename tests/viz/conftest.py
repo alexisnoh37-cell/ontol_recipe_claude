@@ -16,5 +16,10 @@ def data():
 
 
 @pytest.fixture()
-def client(data, tmp_path):
-    return TestClient(create_app(lambda: data, InMemoryUserStore(), exclusion_log=tmp_path / "exclusions.jsonl"))
+def store():
+    return InMemoryUserStore()
+
+
+@pytest.fixture()
+def client(data, store, tmp_path):
+    return TestClient(create_app(lambda: data, store, exclusion_log=tmp_path / "exclusions.jsonl"))

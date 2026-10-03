@@ -83,8 +83,16 @@ class ProfileOut(BaseModel):
 
 
 class RecommendIn(Strict):
-    profile_id: int
+    profile_id: int | None = None
+    persona_id: str | None = None  # 골든셋 페르소나(시각화용, 부록 D-3). profile_id와 정확히 하나
     pantry: list[str] | None = None  # 주면 프로필의 보유 재료 대신 사용
-    max_time_min: Annotated[int, Field(gt=0)] | None = None
+    max_time_min: Annotated[int, Field(gt=0)] | None = None  # 페르소나는 비우면 페르소나의 희망 시간
     time_is_hard: bool = False
     limit: Annotated[int, Field(ge=1, le=50)] = 10
+    trace: bool = False  # true면 단계별 추천 과정(trace)을 함께 돌려준다
+
+    @model_validator(mode="after")
+    def _one_subject(self) -> RecommendIn:
+        if (self.profile_id is None) == (self.persona_id is None):
+            raise ValueError("profile_id와 persona_id 중 정확히 하나를 주세요")
+        return self

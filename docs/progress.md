@@ -253,7 +253,7 @@
 | --- | --- | --- | --- |
 | viz-0 설계 확정 | 완료 | 2026-10-03 | plan.md 부록 D |
 | viz-1 GET /graph | 완료 | 2026-10-03 | tests/viz/test_graph.py 9개, 전체 332 통과 |
-| viz-2 trace·persona | 대기 | | |
+| viz-2 trace·persona | 완료 | 2026-10-03 | tests/viz 47개 + tests/logic 8개 추가, 전체 379 통과, 적중률 0.88 |
 | viz-3 3D 온톨로지 화면 | 대기 | | 끝나면 멈추고 사람이 브라우저로 확인 |
 | viz-4 워크플로 재생 | 대기 | | |
 | viz-5 성능·문서 | 대기 | | |
@@ -273,6 +273,14 @@ viz-1에서 정한 것(2026-10-03):
 - 재료 노드에 `allergens`(기본 그룹 closure: 그룹·certainty) 포함(클릭 시 정보 표시용, 묶음은 구성원의 합이라 뺌). 레시피 노드에 `has_unmapped`, `required_equipment`, `spicy`.
 - uses 링크 `line_no`는 엔진 `recipe_from_spec`과 같은 1부터 번호(trace path_links가 같은 id를 가리킴).
 - 테스트: 노드·간선 수가 컴파일 행 수와 같음, 층 규칙(콩나물 3층·is_processed false), 링크 끝점 존재·id 유일, **모든 기본 그룹 closure 경로의 연속 쌍이 is_a·derived_from 링크로 이어지고 마지막 재료에 allergen 링크가 있음**, recipes 범위·max_recipes, ETag 304.
+
+viz-2에서 정한 것(2026-10-03):
+
+- **엔진**: `engine/trace.py` `RecommendTrace`(정리된 보유 재료, 기본 양념, owned_from(is_a 조상 → 근거 재료, ancestors 조회만), 필터가 쓴 알레르기 그룹·절대 불선호·매운맛 한도·시간 제한, 후보, 점수 순 ranked, 다양성 후 ordered). `Recommender._run(collect)`에 기존 본문을 옮기고 `recommend()`·`trace()`가 같은 경로를 쓴다. 판정·점수·정렬 코드는 변경 없음(`rank`와 `diversify` 호출을 두 줄로 나눈 것뿐). `recommend()`는 trace를 만들지 않는다.
+- **페르소나**: `storage/personas.py`(Persona, load_personas, PERSONAS 경로). `tests/golden/golden.py`는 다시 내보냄.
+- **API**: `RecommendIn`에 `persona_id`(profile_id와 정확히 하나, 아니면 422, 모르면 404), `trace`. 페르소나는 `max_time_min`을 비우면 페르소나의 희망 시간, `time_is_hard`는 둘 중 하나라도 true면 true. 응답은 trace=false면 기존과 같은 키(페르소나일 때만 `persona_id` 추가). `GET /personas` 추가. 제외 로그에 페르소나 실행은 `profile_id: null, persona_id`.
+- **trace 표시(`GraphCatalog.trace`)**: 판정 없이 id 접두어·링크 id·라벨만 붙임. 알레르기 행 `path_links` = [묶음 → 기본 그룹] + 지정 링크 + via 쌍(역순) + 레시피 사용 링크(그룹에서 레시피 쪽으로 빛이 올라가는 순서). 묶음 target은 closure 행 조회로 `source_group`(같은 via를 가진 구성원) 결정. 후보 줄의 `basis`는 엔진 `CANDIDATE_ROLES`와 보유 근거로 표시(테스트가 후보마다 근거 줄이 있음을 확인). `excluded`는 대표 사유(알레르기 > 미매칭 > 절대 불선호 > 음식 종류 > 매운맛 > 조리기구 > 시간).
+- **테스트**: 페르소나 8 + 프로필 3(해산물 묶음·밀, 매운맛 한도·시간 절대, 돼지고기·일식 절대 불선호)으로 trace 결과 = 일반 응답(items, 요약, 제외 수), trace 제외 행 = 엔진 `recommend()` 제외 행, 후보 = 통과 ∪ 제외, 순위 = items, path_links가 /graph에 모두 있음, 묶음 경로(계란찜 새우젓), 상속 보유(삼겹살 → 돼지고기), 사유 6종 등장, 요청 검증, 로그.
 
 ### 1-2 응답 예시(실제 knowledge, 예시용 레시피 6개)
 

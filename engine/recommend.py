@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping
+
 from engine.candidates import generate_candidates
 from engine.config import EngineConfig, ScoringConfig
 from engine.explain import build_item
@@ -10,6 +12,7 @@ from engine.model import Exclusion, RecommendRequest, RecommendResult, UserConte
 from engine.normalize import clean_pantry
 from engine.ports import KnowledgeRepository, RecipeRepository
 from engine.scoring import UserScorer, diversify, rank
+from engine.trace import RecommendTrace
 
 
 class Recommender:
@@ -33,6 +36,16 @@ class Recommender:
 
         모르는 알레르기 그룹, 절대 불선호 재료, 선호 재료 id가 오면 ValueError(설정이 조용히 꺼지지 않게).
         """
+        return self._run(user, req, collect=False)[0]
+
+    def trace(self, user: UserContext, req: RecommendRequest) -> tuple[RecommendResult, RecommendTrace]:
+        """recommend()와 같은 결과 + 단계별 중간 결과(시각화용, 부록 D-4). 같은 코드 경로를 쓴다."""
+        result, trace = self._run(user, req, collect=True)
+        assert trace is not None
+        return result, trace
+
+    def _run(self, user: UserContext, req: RecommendRequest, *,
+             collect: bool) -> tuple[RecommendResult, RecommendTrace | None]:
         snapshot = self.knowledge.snapshot()
         constraints = UserConstraints(snapshot, user, req)
         scorer = UserScorer(snapshot, self.scoring, user, req)
@@ -52,9 +65,33 @@ class Recommender:
             else:
                 passed.append(candidate)
 
-        ordered = diversify(rank([scorer.score(c) for c in passed]), self.scoring)
+        ranked = rank([scorer.score(c) for c in passed])
+        ordered = diversify(ranked, self.scoring)
         items = tuple(build_item(snapshot, s.candidate, s.score, s.breakdown) for s in ordered[: req.limit])
-        return RecommendResult(items=items, exclusions=tuple(exclusions), exclusion_summary=_summary(exclusions))
+        result = RecommendResult(items=items, exclusions=tuple(exclusions), exclusion_summary=_summary(exclusions))
+        if not collect:
+            return result, None
+        return result, RecommendTrace(
+            pantry=pantry,
+            pantry_staples=snapshot.pantry_staples,
+            owned_from=_owned_from(snapshot.ancestors, pantry | snapshot.pantry_staples),
+            allergen_groups=constraints.allergen_groups,
+            hard_ingredients=constraints.hard_ingredients,
+            spicy_max=constraints.spicy_max,
+            max_time_min=constraints.max_time_min,
+            candidates=tuple(candidates),
+            ranked=tuple(ranked),
+            ordered=tuple(ordered),
+        )
+
+
+def _owned_from(ancestors: Mapping[str, Mapping[str, int]], base: frozenset[str]) -> dict[str, tuple[str, ...]]:
+    """컴파일된 ancestors 조회만(재귀 탐색 없음)."""
+    out: dict[str, list[str]] = {}
+    for ingredient_id in sorted(base):
+        for ancestor in ancestors.get(ingredient_id, {}):
+            out.setdefault(ancestor, []).append(ingredient_id)
+    return {k: tuple(v) for k, v in sorted(out.items())}
 
 
 def _summary(exclusions: list[Exclusion]) -> dict[str, int]:

@@ -5,69 +5,23 @@ expected_top3는 사람이 채운다. 비어 있는 페르소나는 적중률 �
 
 엔진은 실제 knowledge/, config/, data/recipes/(기본 설정: published만)로 만든다.
 kb → 엔진 변환은 storage.engine_source(API·벤치와 같은 함수)를 쓴다.
+페르소나 로딩(Persona, load_personas)은 viz-2에서 storage.personas로 옮기고 여기서 다시 내보낸다.
 """
 
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-import yaml
-
-from engine.model import (
-    Preference,
-    RecommendItem,
-    RecommendRequest,
-    RecommendResult,
-    TastePreference,
-    UserContext,
-)
+from engine.model import RecommendItem, RecommendResult
 from engine.recommend import Recommender
 from storage.engine_source import load_files
+from storage.personas import PERSONAS, Persona, load_personas  # noqa: F401 - 기존 import 경로 유지
 
 ROOT = Path(__file__).resolve().parents[2]
-PERSONAS = Path(__file__).resolve().parent / "personas.yaml"
 TOP_K = 3
-
-
-@dataclass(frozen=True)
-class Persona:
-    id: str
-    name: str
-    description: str
-    user: UserContext
-    request: RecommendRequest
-    expected_top3: tuple[str, ...] = ()
-    raw: dict[str, Any] = field(default_factory=dict, compare=False)
-
-
-def load_personas(path: Path = PERSONAS) -> list[Persona]:
-    data = yaml.safe_load(path.read_text(encoding="utf-8"))
-    out = []
-    for p in data["personas"]:
-        prefs = tuple(
-            Preference(x["type"], x["target"], x["polarity"], float(x.get("strength", 1.0)), bool(x.get("hard", False)))
-            for x in p.get("preferences", [])
-        )
-        tastes = tuple(
-            TastePreference(x["dimension"], x.get("preferred_level"), x.get("max_level")) for x in p.get("tastes", [])
-        )
-        user = UserContext(
-            skill_level=p["skill_level"],
-            allergen_groups=frozenset(p.get("allergen_groups", [])),
-            preferences=prefs,
-            tastes=tastes,
-            pantry=frozenset(p["pantry"]),
-            equipment=frozenset(p.get("equipment", [])),
-        )
-        req = p.get("request") or {}
-        request = RecommendRequest(max_time_min=req.get("max_time_min"), time_is_hard=bool(req.get("time_is_hard", False)),
-                                   limit=10)
-        out.append(Persona(p["id"], p["name"], p["description"], user, request,
-                           tuple(p.get("expected_top3") or ()), raw=p))
-    return out
 
 
 def build_engine() -> tuple[Recommender, dict[str, str]]:

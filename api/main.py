@@ -26,6 +26,7 @@ from api.viz import GraphCatalog, RecipeScope
 from engine.model import Preference, RecommendRequest, RecommendResult, TastePreference, UserContext
 from engine.recommend import Recommender
 from storage.engine_source import CONFIG_DIR, ROOT, EngineData
+from storage.personas import Persona, load_personas
 from storage.users import (
     DuplicateProfileName,
     PreferenceRow,
@@ -71,8 +72,9 @@ def user_context(p: Profile) -> UserContext:
 
 
 def create_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir: Path = CONFIG_DIR,
-               exclusion_log: Path | None = None) -> FastAPI:
+               exclusion_log: Path | None = None, personas: Callable[[], list[Persona]] = load_personas) -> FastAPI:
     state = State(loader, config_dir)
+    persona_index = {p.id: p for p in personas()}
     app = FastAPI(title="레시피 추천 엔진 API", version="0.1.0")
     app.state.engine_state = state
 
@@ -209,41 +211,75 @@ def create_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir
 
     # --- 추천 -----------------------------------------------------------------------------------------
 
-    def log_exclusions(profile_id: int, result: RecommendResult) -> None:
+    def log_exclusions(profile_id: int | None, result: RecommendResult, persona_id: str | None = None) -> None:
         path = exclusion_log
         if path is None or not result.exclusions:
             return
         path.parent.mkdir(parents=True, exist_ok=True)
         ts = datetime.now(UTC).isoformat(timespec="seconds")
+        subject: dict[str, Any] = {"profile_id": profile_id}
+        if persona_id is not None:
+            subject["persona_id"] = persona_id
         with path.open("a", encoding="utf-8") as fh:
             for e in result.exclusions:
                 fh.write(json.dumps({
-                    "ts": ts, "profile_id": profile_id, "recipe_id": e.recipe_id, "reason": e.reason.value,
+                    "ts": ts, **subject, "recipe_id": e.recipe_id, "reason": e.reason.value,
                     "ingredient_id": e.ingredient_id, "target": e.target, "certainty": e.certainty,
                     "via": list(e.via), "detail": e.detail,
                 }, ensure_ascii=False) + "\n")
 
+    @app.get("/personas")
+    def list_personas() -> list[dict[str, Any]]:
+        """골든셋 페르소나(시각화의 프로필 선택용, 부록 D-3)."""
+        names = state.catalog.names
+        groups = state.catalog.groups
+        return [{
+            "id": p.id, "name": p.name, "description": p.description, "skill_level": p.user.skill_level,
+            "allergen_groups": [{"id": g, "name": groups[g].display_name if g in groups else g}
+                                for g in sorted(p.user.allergen_groups)],
+            "pantry": [{"id": i, "name": names.get(i, i)} for i in sorted(p.user.pantry)],
+            "equipment": sorted(p.user.equipment), "max_time_min": p.request.max_time_min,
+        } for p in persona_index.values()]
+
     @app.post("/recommend")
     def recommend(body: RecommendIn) -> dict[str, Any]:
-        profile = get_profile(body.profile_id)
+        if body.persona_id is not None:
+            persona = persona_index.get(body.persona_id)
+            if persona is None:
+                raise HTTPException(status_code=404, detail=f"페르소나 {body.persona_id}이(가) 없습니다")
+            profile_id, user = None, persona.user
+            max_time = body.max_time_min if body.max_time_min is not None else persona.request.max_time_min
+            time_is_hard = body.time_is_hard or persona.request.time_is_hard
+        else:
+            assert body.profile_id is not None
+            profile = get_profile(body.profile_id)
+            profile_id, user = profile.id, user_context(profile)
+            max_time, time_is_hard = body.max_time_min, body.time_is_hard
         pantry = None if body.pantry is None else frozenset(check_pantry(body.pantry))
-        req = RecommendRequest(max_time_min=body.max_time_min, time_is_hard=body.time_is_hard,
-                               pantry=pantry, limit=body.limit)
+        req = RecommendRequest(max_time_min=max_time, time_is_hard=time_is_hard, pantry=pantry, limit=body.limit)
         with state.lock:
-            recommender, catalog = state.recommender, state.catalog
-        user = user_context(profile)
+            recommender, catalog, graph = state.recommender, state.catalog, state.graph
         try:
-            result = recommender.recommend(user, req)
+            if body.trace:
+                result, trace = recommender.trace(user, req)
+            else:
+                result, trace = recommender.recommend(user, req), None
         except ValueError as exc:  # 모르는 알레르기 그룹·재료 id 등(1-1 승인: 400)
             raise bad(str(exc)) from None
-        log_exclusions(profile.id, result)
-        return {
-            "profile_id": profile.id,
+        log_exclusions(profile_id, result, body.persona_id)
+        out: dict[str, Any] = {
+            "profile_id": profile_id,
             "items": [catalog.item(i, has_allergy=bool(user.allergen_groups)) for i in result.items],
             "exclusion_summary": catalog.exclusion_summary(result),
             "excluded_total": len({e.recipe_id for e in result.exclusions}),
             "disclaimer": catalog.display["disclaimer"],
         }
+        if body.persona_id is not None:
+            out["persona_id"] = body.persona_id
+        if trace is not None:
+            out["trace"] = graph.trace(result, trace, weights=dict(recommender.scoring.weights),
+                                       labels=catalog.display["exclusion_labels"], limit=req.limit)
+        return out
 
     @app.post("/admin/reload")
     def reload() -> dict[str, Any]:

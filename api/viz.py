@@ -17,9 +17,19 @@ import hashlib
 import json
 from typing import Any, Literal
 
+from engine.candidates import CANDIDATE_ROLES
+from engine.config import COMPONENTS
+from engine.model import Exclusion, ExclusionReason, RecommendResult
+from engine.trace import RecommendTrace
 from storage.engine_source import EngineData
 
 RecipeScope = Literal["none", "published", "all"]
+
+# 한 레시피에 제외 사유가 여러 개일 때 화면 색을 정하는 대표 사유 순서(표시 전용)
+REASON_PRIORITY = (
+    ExclusionReason.ALLERGEN, ExclusionReason.UNMAPPED_INGREDIENT, ExclusionReason.HARD_DISLIKE_INGREDIENT,
+    ExclusionReason.HARD_DISLIKE_CUISINE, ExclusionReason.SPICY_LIMIT, ExclusionReason.EQUIPMENT, ExclusionReason.TIME,
+)
 
 LAYERS = (
     {"layer": 1, "label": "알레르기 그룹"},
@@ -116,6 +126,16 @@ class GraphCatalog:
                                           "target": ag(m.member_id), "type": "bundle_member"})
         self._cache: dict[tuple[str, int | None], tuple[dict[str, Any], str]] = {}
 
+        # trace 표시용 조회 색인(요청 중 그래프 탐색 없이 링크 id를 찾는다)
+        self._link_ids = {lk["id"] for lk in self._knowledge_links}
+        self._lines: dict[tuple[str, str], list[int]] = {}  # (레시피, 재료) → line_no
+        for r in data.recipes:
+            for n, line in enumerate(r.ingredients, start=1):
+                if line.ingredient is not None:
+                    self._lines.setdefault((r.id, line.ingredient), []).append(n)
+        self._closure = {(c.allergen_group_id, c.ingredient_id): c for c in ck.allergen_closure}
+        self._isa = {(r.from_id, r.to_id) for r in ck.relations if r.type == "is_a"}
+
     def group_category(self, group_id: str) -> str:
         g = self.groups[group_id]
         if g.kind == "bundle":
@@ -156,4 +176,105 @@ class GraphCatalog:
             "nodes": nodes,
             "links": links,
             "stats": {"nodes": len(nodes), "links": len(links), "recipes": len(specs)},
+        }
+
+    # --- trace 표시(부록 D-3) -------------------------------------------------------------------------
+
+    def pair_link(self, a: str, b: str) -> str | None:
+        """via의 연속 두 재료를 잇는 링크 id. contains·closure 경로는 is_a 위·아래, derived_from 원천 방향으로만 움직인다."""
+        for link in (isa_link(a, b), isa_link(b, a), der_link(a, b)):
+            if link in self._link_ids:
+                return link
+        return None
+
+    def via_links(self, via: tuple[str, ...]) -> list[str]:
+        return [x for x in (self.pair_link(a, b) for a, b in zip(via, via[1:])) if x]
+
+    def source_group(self, target: str, ingredient_id: str, via: tuple[str, ...]) -> str:
+        """묶음 그룹으로 제외되었을 때 실제로 걸린 기본 그룹(컴파일된 closure 행 조회). 기본 그룹이면 그대로."""
+        if self.groups[target].kind != "bundle":
+            return target
+        members = sorted(self.members.get(target, []))
+        same = [m for m in members if (row := self._closure.get((m, ingredient_id))) and row.via == via]
+        hit = same or [m for m in members if (m, ingredient_id) in self._closure]
+        return hit[0] if hit else target
+
+    def exclusion(self, e: Exclusion, labels: dict[str, str]) -> dict[str, Any]:
+        out: dict[str, Any] = {
+            "recipe": rcp(e.recipe_id), "reason": e.reason.value, "label": labels.get(e.reason.value, e.reason.value),
+            "ingredient": ing(e.ingredient_id) if e.ingredient_id else None, "target": e.target, "target_node": None,
+            "source_group": None, "certainty": e.certainty, "via": [ing(x) for x in e.via], "path_links": [],
+            "detail": e.detail,
+        }
+        uses = [use_link(e.recipe_id, n) for n in self._lines.get((e.recipe_id, e.ingredient_id or ""), [])]
+        if e.reason == ExclusionReason.ALLERGEN and e.target and e.ingredient_id:
+            base = self.source_group(e.target, e.ingredient_id, e.via)
+            out["target_node"], out["source_group"] = ag(e.target), ag(base)
+            path = [alg_link(e.via[-1], base)] if e.via else []
+            if base != e.target:
+                path.insert(0, mem_link(e.target, base))
+            out["path_links"] = path + list(reversed(self.via_links(e.via))) + uses
+        elif e.reason == ExclusionReason.HARD_DISLIKE_INGREDIENT and e.target:
+            out["target_node"] = ing(e.target)
+            out["path_links"] = list(reversed(self.via_links(e.via))) + uses
+        elif e.reason == ExclusionReason.UNMAPPED_INGREDIENT:
+            out["path_links"] = uses
+        return out
+
+    def trace(self, result: RecommendResult, t: RecommendTrace, *, weights: dict[str, float],
+              labels: dict[str, str], limit: int) -> dict[str, Any]:
+        """엔진 trace → 화면 데이터. 판정은 하지 않고 id 접두어, 링크 id, 라벨만 붙인다."""
+        from_pantry = set(t.pantry) | {a for a, srcs in t.owned_from.items() if any(s in t.pantry for s in srcs)}
+        owned: list[dict[str, Any]] = [{"node": ing(i), "because": "pantry", "from": []} for i in sorted(t.pantry)]
+        owned += [{"node": ing(i), "because": "staple", "from": []}
+                  for i in sorted(t.pantry_staples - t.pantry)]
+        seen = set(t.pantry) | set(t.pantry_staples)
+        owned += [{"node": ing(a), "because": "ancestor", "from": [ing(s) for s in srcs]}
+                  for a, srcs in t.owned_from.items() if a not in seen]
+        all_owned = seen | set(t.owned_from)
+        owned_links = sorted(isa_link(c, p) for c, p in self._isa if c in all_owned and p in all_owned)
+
+        candidates = []
+        for c in t.candidates:
+            lines = []
+            for m in c.lines:
+                iid = m.line.ingredient_id
+                basis = m.line.role in CANDIDATE_ROLES and (
+                    m.status == "substitute" or (m.status == "owned" and iid in from_pantry))
+                lines.append({
+                    "line_no": m.line.line_no, "node": ing(iid) if iid else None, "role": m.line.role,
+                    "optional": m.line.optional, "status": m.status, "basis": basis,
+                    "use": ing(m.substitute.to_id) if m.substitute else None,
+                    "link": use_link(c.recipe.id, m.line.line_no) if iid else None,
+                })
+            candidates.append({"recipe": rcp(c.recipe.id), "lines": lines})
+
+        excluded: dict[str, str] = {}
+        for e in sorted(result.exclusions, key=lambda e: REASON_PRIORITY.index(e.reason)):
+            excluded.setdefault(rcp(e.recipe_id), e.reason.value)
+
+        score_rank = {s.candidate.recipe.id: n for n, s in enumerate(t.ranked, start=1)}
+        scored = []
+        for n, s in enumerate(t.ordered, start=1):
+            rid = s.candidate.recipe.id
+            scored.append({
+                "recipe": rcp(rid), "score": round(s.score, 3),
+                "breakdown": {k: round(v, 3) for k, v in s.breakdown.items()},
+                "weighted": {k: round(weights[k] * s.breakdown[k], 3) for k in COMPONENTS},
+                "score_rank": score_rank[rid], "final_rank": n, "moved_by_diversity": score_rank[rid] != n,
+                "shown": n <= limit,
+            })
+
+        return {
+            "user": {"allergen_groups": [ag(g) for g in t.allergen_groups],
+                     "hard_dislikes": [ing(i) for i in t.hard_ingredients],
+                     "spicy_max": t.spicy_max, "max_time_min": t.max_time_min},
+            "pantry": {"input": [ing(i) for i in sorted(t.pantry)], "staples": [ing(i) for i in sorted(t.pantry_staples)],
+                       "owned": owned, "owned_links": owned_links},
+            "candidates": candidates,
+            "exclusions": [self.exclusion(e, labels) for e in result.exclusions],
+            "excluded": excluded,
+            "scored": scored,
+            "weights": dict(weights),
+            "limit": limit,
         }
