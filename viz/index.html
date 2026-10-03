@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>레시피 지식 그래프</title>
+  <link rel="stylesheet" href="/viz/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>레시피 지식 그래프</h1>
+    <div class="search">
+      <input id="search" type="search" placeholder="재료·별칭·레시피 검색" autocomplete="off" aria-label="재료·레시피 검색">
+      <ul id="search-results" class="search-results" role="listbox" hidden></ul>
+    </div>
+    <fieldset class="toggles" aria-label="층 표시">
+      <legend>층</legend>
+      <label><input type="checkbox" data-layer="1" checked> 1 알레르기</label>
+      <label><input type="checkbox" data-layer="2" checked> 2 원천·분류</label>
+      <label><input type="checkbox" data-layer="3" checked> 3 가공품</label>
+      <label><input type="checkbox" data-layer="4" checked> 4 레시피</label>
+    </fieldset>
+    <fieldset class="toggles" aria-label="간선 표시">
+      <legend>간선</legend>
+      <label><input type="checkbox" data-link="is_a" checked> is_a</label>
+      <label><input type="checkbox" data-link="derived_from" checked> 파생</label>
+      <label><input type="checkbox" data-link="allergen" checked> 알레르기 지정</label>
+      <label><input type="checkbox" data-link="bundle_member" checked> 묶음</label>
+      <label><input type="checkbox" data-link="uses"> 레시피-재료</label>
+    </fieldset>
+  </header>
+
+  <main class="layout">
+    <section class="graph" aria-label="3D 지식 그래프">
+      <div id="graph" class="graph-canvas"></div>
+      <div id="loading" class="loading">그래프를 불러오는 중…</div>
+      <div id="hud" class="hud"></div>
+    </section>
+
+    <aside class="panel">
+      <section class="card">
+        <h2>노드 정보</h2>
+        <div id="info" class="info"><p class="muted">노드를 클릭하면 연결된 관계만 강조합니다. 빈 곳 클릭 또는 Esc로 해제.</p></div>
+      </section>
+      <section class="card">
+        <h2>추천 과정 재생</h2>
+        <p class="muted">프로필 선택과 6단계 재생은 다음 단계(viz-4)에서 추가합니다.</p>
+      </section>
+      <section class="card">
+        <h2>범례</h2>
+        <div id="legend" class="legend"></div>
+      </section>
+    </aside>
+  </main>
+
+  <script type="module" src="/viz/static/app.js"></script>
+</body>
+</html>

@@ -19,6 +19,8 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, Query, Request, Response
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from api.present import TASTE_DIMENSIONS, Catalog, load_display
 from api.schemas import PreferencesIn, ProfileCreate, ProfileOut, ProfileUpdate, RecommendIn
@@ -36,6 +38,9 @@ from storage.users import (
     TasteRow,
     UserStore,
 )
+
+
+VIZ_DIR = ROOT / "viz"  # 3D 시각화 정적 페이지(부록 D). 빌드 도구 없이 그대로 제공
 
 
 class State:
@@ -157,6 +162,12 @@ def create_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir
             return Response(status_code=304, headers={"ETag": etag})
         response.headers["ETag"] = etag
         return body
+
+    app.mount("/viz/static", StaticFiles(directory=VIZ_DIR), name="viz-static")
+
+    @app.get("/viz", include_in_schema=False)
+    def viz_page() -> FileResponse:
+        return FileResponse(VIZ_DIR / "index.html", media_type="text/html")
 
     # --- 프로필 ---------------------------------------------------------------------------------------
 
