@@ -42,9 +42,32 @@
         <h2>노드 정보</h2>
         <div id="info" class="info"><p class="muted">노드를 클릭하면 연결된 관계만 강조합니다. 빈 곳 클릭 또는 Esc로 해제.</p></div>
       </section>
-      <section class="card">
+      <section class="card" id="play-card">
         <h2>추천 과정 재생</h2>
-        <p class="muted">프로필 선택과 6단계 재생은 다음 단계(viz-4)에서 추가합니다.</p>
+        <label class="field">프로필 <select id="subject" aria-label="프로필 선택"><option>불러오는 중…</option></select></label>
+        <div id="subject-info" class="subject"></div>
+        <h4>보유 재료 <button type="button" id="pantry-reset" class="link" hidden>원래대로</button></h4>
+        <div id="pantry-chips" class="pantry"></div>
+        <div class="search small">
+          <input id="pantry-add" type="search" placeholder="보유 재료 추가(재료·별칭)" autocomplete="off" aria-label="보유 재료 추가">
+          <ul id="pantry-results" class="search-results" role="listbox" hidden></ul>
+        </div>
+        <div class="run-row"><button type="button" id="run" class="primary">추천 과정 보기</button><span id="run-status" class="muted"></span></div>
+        <div id="player" class="player" hidden>
+          <div id="step-dots" class="dots" aria-label="단계"></div>
+          <div class="controls">
+            <button type="button" id="prev">◀ 이전</button>
+            <button type="button" id="auto">▶ 자동재생</button>
+            <button type="button" id="next">다음 ▶</button>
+            <button type="button" id="stop" class="link">끝내기</button>
+          </div>
+          <h3 id="step-title" class="step-title"></h3>
+          <div id="step-body" class="step-body"></div>
+        </div>
+      </section>
+      <section class="card" id="cards-card" hidden>
+        <h2>추천 카드</h2>
+        <div id="cards" class="cards"></div>
       </section>
       <section class="card">
         <h2>범례</h2>

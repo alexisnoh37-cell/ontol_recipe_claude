@@ -11,7 +11,9 @@ def test_viz_page_and_static_files_are_served(client):
     r = client.get("/viz")
     assert r.status_code == 200 and r.headers["content-type"].startswith("text/html")
     assert "/viz/static/app.js" in r.text
-    for name in ("app.js", "scene.js", "palette.js", "style.css"):
+    for el in ('id="subject"', 'id="pantry-add"', 'id="run"', 'id="prev"', 'id="next"', 'id="auto"', 'id="cards"'):
+        assert el in r.text, el  # 재생 패널(viz-4)
+    for name in ("app.js", "scene.js", "palette.js", "playback.js", "style.css"):
         assert client.get(f"/viz/static/{name}").status_code == 200, name
 
 

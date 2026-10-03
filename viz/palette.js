@@ -55,6 +55,27 @@ export function linkRestAlpha(link) {
   return link.certainty === "possible" ? 0.09 : 0.15; // derived_from·알레르기 지정
 }
 
+// 재생(부록 D-5) 색: 제외 사유별(알레르기 빨강, 절대 불선호 주황, 나머지 회색)
+export const REASON_COLOR = {
+  allergen: "#ff4d55",
+  unmapped_ingredient: "#c2414b",
+  hard_dislike_ingredient: "#ff8b3e",
+  hard_dislike_cuisine: "#8b8d98",
+  spicy_limit: "#8b8d98",
+  equipment: "#8b8d98",
+  time: "#8b8d98",
+};
+export const REASON_SHORT = {
+  allergen: "알레르기",
+  unmapped_ingredient: "미매칭 재료",
+  hard_dislike_ingredient: "절대 불선호 재료",
+  hard_dislike_cuisine: "절대 불선호 음식 종류",
+  spicy_limit: "매운맛 한도",
+  equipment: "조리기구",
+  time: "조리시간",
+};
+export const PLAY_COLOR = { owned: "#3dd68c", staple: "#7fb59a", ancestor: "#a4e8c4", candidate: "#ffe08a", pass: "#e8dcc0", rank: "#ffb224", moved: "#ff8b3e" };
+
 export function linkBaseColor(link) {
   return link.type === "uses" ? LINK_COLOR[link.role] : LINK_COLOR[link.type];
 }

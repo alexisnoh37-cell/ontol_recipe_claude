@@ -1,9 +1,10 @@
-// 3D 장면: 층 배치, 노드·간선 표현, 강조(재질만 변경). 판정하지 않는다(docs/plan.md 부록 D).
+// 3D 장면: 층 배치, 노드·간선 표현, 강조(재질만 변경), 재생용 보기(view)·높이 이동·경로 빛. 판정하지 않는다(docs/plan.md 부록 D).
 //
 // 성능 규칙(부록 D-6, 목표 레시피 1천 개)
 //   - y는 층으로 고정(fy), x·z만 warmup 동안 계산하고 cooldownTicks(0)으로 멈춘다.
 //   - 레시피-재료 간선은 기본 숨김. 숨긴 간선은 three 객체를 만들지 않는다(3d-force-graph가 visible만 생성).
 //   - 강조는 노드 메시의 재질만 바꾼다(graphData 재설정 금지). 재질은 (색, 투명도)별로 공유한다.
+//   - 높이 이동은 node.y만 바꾸고 d3ReheatSimulation()으로 위치 동기화 한 번(cooldownTicks 0이라 force tick은 돌지 않음).
 //   - 텍스트 스프라이트는 층·구역 이름, 선택·재생 단계가 고른 노드만. 화면에서 일정한 크기(sizeAttenuation 끔).
 
 import ForceGraph3D from "https://cdn.jsdelivr.net/npm/3d-force-graph@1.80.1/+esm";
@@ -114,6 +115,7 @@ const GEOMETRY = {
 };
 const EDGES = { box: new THREE.EdgesGeometry(GEOMETRY.box), octa: new THREE.EdgesGeometry(GEOMETRY.octa) };
 const RING = new THREE.TorusGeometry(7, 0.5, 4, 16);
+const PULSE = new THREE.SphereGeometry(3.2, 10, 8);
 
 const materials = new Map();
 function material(kind, color, opacity) {
@@ -123,6 +125,7 @@ function material(kind, color, opacity) {
     const opts = { color, transparent: opacity < 1, opacity, depthWrite: opacity >= 1 };
     m = kind === "line" ? new THREE.LineBasicMaterial(opts)
       : kind === "wire" ? new THREE.MeshBasicMaterial({ ...opts, wireframe: true })
+      : kind === "glow" ? new THREE.MeshBasicMaterial(opts)
       : new THREE.MeshLambertMaterial(opts);
     materials.set(key, m);
   }
@@ -338,6 +341,7 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
     for (const n of nodes) paintNode(n);
     refreshLinks();
     applyLabels();
+    syncPulses();
   }
 
   function selectionFocus(id) {
@@ -381,6 +385,86 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
     onSelect?.(id === null ? null : byId.get(id));
   }
 
+  // 재생 단계 보기: { nodes: Map<id, {color, scale, opacity}>, links: Map<linkId, {color, alpha}>, labels, pulses }
+  function setView(view) {
+    if (view === null) {
+      state.view = null;
+    } else {
+      const ls = new Map();
+      for (const [lid, st] of view.links || []) {
+        const l = linkById.get(lid);
+        if (l) ls.set(l, st);
+      }
+      state.view = { mode: "play", nodes: view.nodes || new Map(), links: ls, labels: view.labels || [], pulses: view.pulses || [] };
+    }
+    repaint();
+  }
+
+  // --- 높이 이동(재생 3~6단계: 제외 레시피는 가라앉고 통과 레시피는 점수만큼 올라감) ---------
+
+  let moveAnim = null;
+  function setOffsets(offsets, ms = 700) {
+    // offsets: Map<id, dy>. 없는 노드는 원래 높이로.
+    const moving = [];
+    for (const n of nodes) {
+      const to = n.baseY + (offsets.get(n.id) || 0);
+      if (Math.abs(to - n.y) > 0.01) moving.push({ n, from: n.y, to });
+    }
+    if (moveAnim) cancelAnimationFrame(moveAnim);
+    if (!moving.length) return;
+    const t0 = performance.now();
+    const step = (now) => {
+      const k = ms <= 0 ? 1 : Math.min(1, (now - t0) / ms);
+      const e = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2;
+      for (const m of moving) m.n.y = m.n.fy = m.from + (m.to - m.from) * e;
+      graph.d3ReheatSimulation(); // cooldownTicks 0: force tick 없이 위치만 한 번 동기화
+      for (const entry of shownLabels) placeLabel(entry);
+      moveAnim = k < 1 ? requestAnimationFrame(step) : null;
+    };
+    moveAnim = requestAnimationFrame(step);
+  }
+
+  // --- 경로 빛(알레르기·절대 불선호 경로를 따라 그룹 → 레시피 쪽으로 이동) -------------------
+
+  let pulses = [];
+  let pulseAnim = null;
+  function syncPulses() {
+    for (const p of pulses) graph.scene().remove(p.mesh);
+    pulses = [];
+    const f = focus();
+    const want = f && f.mode === "play" ? f.pulses || [] : [];
+    for (const [i, p] of want.slice(0, 80).entries()) {
+      const path = p.nodes.filter((id) => byId.has(id) && nodeVisible(byId.get(id)));
+      if (path.length < 2) continue;
+      const mesh = new THREE.Mesh(PULSE, material("glow", p.color || "#ffffff", 0.95));
+      mesh.renderOrder = 15;
+      graph.scene().add(mesh);
+      pulses.push({ mesh, path, phase: (i * 0.137) % 1 });
+    }
+    if (pulses.length && !pulseAnim) pulseAnim = requestAnimationFrame(tickPulses);
+  }
+  function tickPulses(now) {
+    if (!pulses.length) { pulseAnim = null; return; }
+    for (const p of pulses) {
+      const pts = p.path.map((id) => byId.get(id));
+      const seg = [];
+      let total = 0;
+      for (let i = 1; i < pts.length; i++) {
+        const d = Math.hypot(pts[i].x - pts[i - 1].x, pts[i].y - pts[i - 1].y, pts[i].z - pts[i - 1].z);
+        seg.push(d);
+        total += d;
+      }
+      let at = ((now / 2200 + p.phase) % 1) * total;
+      let i = 0;
+      while (i < seg.length - 1 && at > seg[i]) { at -= seg[i]; i += 1; }
+      const k = seg[i] ? Math.min(1, at / seg[i]) : 0;
+      const a = pts[i];
+      const b = pts[i + 1];
+      p.mesh.position.set(a.x + (b.x - a.x) * k, a.y + (b.y - a.y) * k, a.z + (b.z - a.z) * k);
+    }
+    pulseAnim = requestAnimationFrame(tickPulses);
+  }
+
   // --- 카메라·토글 ------------------------------------------------------------------------------
 
   function flyTo(id) {
@@ -396,6 +480,7 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
     graph.nodeVisibility((n) => nodeVisible(n));
     refreshLinks();
     applyLabels();
+    syncPulses();
   }
 
   function setLinkType(type, on) {
@@ -413,7 +498,7 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
 
   return {
     graph, nodes, links, byId, linkById, incident, timings, THREE,
-    select, flyTo, resetCamera, setLayer, setLinkType,
+    select, setView, setOffsets, flyTo, resetCamera, setLayer, setLinkType,
     get selected() { return state.selected; },
   };
 }

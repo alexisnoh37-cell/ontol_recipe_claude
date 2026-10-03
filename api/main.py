@@ -290,6 +290,7 @@ def create_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir
         if trace is not None:
             out["trace"] = graph.trace(result, trace, weights=dict(recommender.scoring.weights),
                                        labels=catalog.display["exclusion_labels"], limit=req.limit)
+            out["trace"]["breakdown_labels"] = dict(catalog.display["breakdown_labels"])  # 재생 4단계 hover 표시용
         return out
 
     @app.post("/admin/reload")

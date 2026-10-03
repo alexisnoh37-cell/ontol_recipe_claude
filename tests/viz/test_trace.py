@@ -172,3 +172,19 @@ def test_persona_exclusion_log(client, tmp_path):
     post(client, {"persona_id": "multi_allergy"})
     rows = [json.loads(x) for x in (tmp_path / "exclusions.jsonl").read_text(encoding="utf-8").splitlines()]
     assert rows and all(r["profile_id"] is None and r["persona_id"] == "multi_allergy" for r in rows)
+
+
+def test_trace_carries_breakdown_labels_and_pantry_override(client):
+    """viz-4 재생: 4단계 hover 라벨(config/display.yaml)과, 보유 재료 편집(pantry 덮어쓰기)이 trace에 반영되는지."""
+    from engine.config import COMPONENTS
+
+    base = post(client, {"persona_id": "multi_allergy", "trace": True})["trace"]
+    assert set(base["breakdown_labels"]) == set(COMPONENTS)
+    assert "rcp:gyeranjjim" not in {c["recipe"] for c in base["candidates"]}  # 계란 없이는 후보 아님
+    persona = next(p for p in client.get("/personas").json() if p["id"] == "multi_allergy")
+    pantry = [x["id"] for x in persona["pantry"]] + ["egg"]
+    t = post(client, {"persona_id": "multi_allergy", "trace": True, "pantry": pantry})["trace"]
+    assert "ing:egg" in t["pantry"]["input"]
+    assert t["excluded"]["rcp:gyeranjjim"] == "allergen"
+    rows = [e for e in t["exclusions"] if e["recipe"] == "rcp:gyeranjjim"]
+    assert {(e["source_group"], e["target_node"]) for e in rows} == {("ag:egg", "ag:egg"), ("ag:shrimp", "ag:crustacean_bundle")}

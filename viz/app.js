@@ -1,7 +1,8 @@
-// 시각화 페이지 진입점: 데이터 로딩, 검색, 층·간선 토글, 노드 정보, 범례, HUD(로딩 시간·fps).
+// 시각화 페이지 진입점: 데이터 로딩, 검색, 층·간선 토글, 노드 정보, 범례, HUD(로딩 시간·fps), 추천 과정 재생 연결.
 // 데이터: GET /graph(기본). ?graph=<url>이면 그 JSON을, ?recipes=all|none이면 그 범위를 불러온다(viz-5 측정용).
 
-import { GROUP_CATEGORY_LABEL, LAYER_LABEL, LINK_COLOR, LINK_LABEL, NODE_COLOR, ROLE_LABEL } from "./palette.js";
+import { GROUP_CATEGORY_LABEL, LAYER_LABEL, LINK_COLOR, LINK_LABEL, NODE_COLOR, PLAY_COLOR, REASON_COLOR, ROLE_LABEL } from "./palette.js";
+import { setupPlayback } from "./playback.js";
 import { createScene } from "./scene.js";
 
 const $ = (sel) => document.querySelector(sel);
@@ -10,6 +11,7 @@ const norm = (s) => String(s ?? "").toLowerCase().replace(/\s+/g, "");
 
 const params = new URLSearchParams(location.search);
 const t0 = performance.now();
+let playback = null;
 
 async function loadGraph() {
   const url = params.get("graph") || `/graph?recipes=${encodeURIComponent(params.get("recipes") || "published")}`;
@@ -38,7 +40,8 @@ function tooltip(n) {
     if (n.layer === 3 && !n.is_processed) flags.push("가공품 아님");
     lines.push([esc(n.category || ""), ...flags].filter(Boolean).join(" · "));
   }
-  return `<div class="tip">${lines.join("<br>")}</div>`;
+  const extra = playback?.tooltipExtra(n) || "";
+  return `<div class="tip">${lines.join("<br>")}${extra}</div>`;
 }
 
 function chips(items) {
@@ -183,7 +186,7 @@ function setupToggles(scene) {
     el.addEventListener("change", () => scene.setLinkType(el.dataset.link, el.checked));
   }
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && document.activeElement !== $("#search")) scene.select(null);
+    if (e.key === "Escape" && !["search", "pantry-add"].includes(document.activeElement?.id)) scene.select(null);
   });
 }
 
@@ -203,6 +206,15 @@ function renderLegend() {
     "<h3>간선</h3>",
     ...Object.entries(LINK_LABEL).map(([k, v]) => ln(LINK_COLOR[k], v)),
     '<div class="row muted">흐린 간선 = 포함 가능(possible) 또는 선택 재료</div>',
+    "<h3>재생</h3>",
+    sw(PLAY_COLOR.owned, "보유 재료(입력)", "border-radius:50%"),
+    sw(PLAY_COLOR.ancestor, "is_a 상속으로 보유 간주", "border-radius:50%"),
+    sw(PLAY_COLOR.candidate, "후보 레시피"),
+    sw(REASON_COLOR.allergen, "제외: 알레르기(경로를 따라 빛, 가라앉음)"),
+    sw(REASON_COLOR.hard_dislike_ingredient, "제외: 절대 불선호 재료"),
+    sw(REASON_COLOR.spicy_limit, "제외: 매운맛·조리기구·시간·음식 종류"),
+    sw(PLAY_COLOR.rank, "최종 순위(높이 = 점수)"),
+    sw(PLAY_COLOR.moved, "다양성 보정으로 자리 이동"),
   ].join("");
 }
 
@@ -245,6 +257,10 @@ async function main() {
   setupSearch(scene);
   setupToggles(scene);
   renderLegend();
+  playback = setupPlayback({
+    scene, $, attachSearch,
+    ingredientIndex: searchIndex(scene, (n) => n.kind === "ingredient" && !n.is_concept),
+  });
   requestAnimationFrame(() => requestAnimationFrame(() => {
     const now = performance.now();
     window.__vizTimings = { fetch: tFetched - t0, scene: tScene - tFetched, firstFrame: now - tScene, ...scene.timings };
