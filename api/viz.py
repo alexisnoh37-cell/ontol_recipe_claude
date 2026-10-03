@@ -87,11 +87,18 @@ class GraphCatalog:
             if not a.is_primary:
                 aliases.setdefault(a.ingredient_id, []).append(a.alias)
         has_source = {r.from_id for r in ck.relations if r.type == "derived_from"}
-        # 재료 노드 정보용: 기본 그룹 closure(묶음은 구성원의 합이라 중복)
-        base_hits: dict[str, list[dict[str, str]]] = {}
-        for c in ck.allergen_closure:
+        self._link_ids = {isa_link(r.from_id, r.to_id) for r in ck.relations if r.type == "is_a"}
+        self._link_ids |= {der_link(r.from_id, r.to_id) for r in ck.relations if r.type == "derived_from"}
+        # 재료 노드 정보용: 기본 그룹 closure(묶음은 구성원의 합이라 중복). 경로는 컴파일된 via를 링크 id로 옮긴 것
+        self._base_closure: dict[str, list[Any]] = {}
+        base_hits: dict[str, list[dict[str, Any]]] = {}
+        for c in sorted(ck.allergen_closure, key=lambda c: (c.ingredient_id, c.allergen_group_id)):
             if self.groups[c.allergen_group_id].kind == "base":
-                base_hits.setdefault(c.ingredient_id, []).append({"group": ag(c.allergen_group_id), "certainty": c.certainty})
+                self._base_closure.setdefault(c.ingredient_id, []).append(c)
+                base_hits.setdefault(c.ingredient_id, []).append({
+                    "group": ag(c.allergen_group_id), "certainty": c.certainty, "via": [ing(x) for x in c.via],
+                    "path_links": self.via_links(c.via) + ([alg_link(c.via[-1], c.allergen_group_id)] if c.via else []),
+                })
 
         self._knowledge_nodes: list[dict[str, Any]] = []
         for g in ck.allergen_groups:
@@ -127,7 +134,7 @@ class GraphCatalog:
         self._cache: dict[tuple[str, int | None], tuple[dict[str, Any], str]] = {}
 
         # trace 표시용 조회 색인(요청 중 그래프 탐색 없이 링크 id를 찾는다)
-        self._link_ids = {lk["id"] for lk in self._knowledge_links}
+        self._link_ids |= {lk["id"] for lk in self._knowledge_links}
         self._lines: dict[tuple[str, str], list[int]] = {}  # (레시피, 재료) → line_no
         for r in data.recipes:
             for n, line in enumerate(r.ingredients, start=1):
@@ -164,6 +171,7 @@ class GraphCatalog:
                 "spicy": r.taste.spicy if r.taste else 0, "status": r.status, "confidence": r.confidence,
                 "required_equipment": sorted(e.name for e in r.equipment if e.required),
                 "has_unmapped": any(line.ingredient is None for line in r.ingredients),
+                "allergens": self.recipe_allergens(r),
             })
             for n, line in enumerate(r.ingredients, start=1):  # line_no는 엔진 recipe_from_spec과 같은 번호
                 if line.ingredient is None:
@@ -177,6 +185,24 @@ class GraphCatalog:
             "links": links,
             "stats": {"nodes": len(nodes), "links": len(links), "recipes": len(specs)},
         }
+
+    def recipe_allergens(self, recipe: Any) -> list[dict[str, Any]]:
+        """레시피 정보 패널의 "걸리는 알레르기": 재료 줄마다 컴파일된 기본 그룹 closure 행을 모은다(판정 없음, 표시용).
+
+        certainty는 그룹에 걸린 줄 중 하나라도 definite면 definite. optional_only는 선택 재료 줄로만 걸렸는지.
+        """
+        out: dict[str, dict[str, Any]] = {}
+        for n, line in enumerate(recipe.ingredients, start=1):
+            for c in self._base_closure.get(line.ingredient or "", []):
+                g = out.setdefault(c.allergen_group_id, {"group": ag(c.allergen_group_id), "certainty": "possible",
+                                                         "optional_only": True, "hits": []})
+                g["hits"].append({"ingredient": ing(line.ingredient), "certainty": c.certainty, "role": line.role,
+                                  "optional": line.optional, "line_no": n})
+                if c.certainty == "definite":
+                    g["certainty"] = "definite"
+                if not line.optional:
+                    g["optional_only"] = False
+        return [out[k] for k in sorted(out)]
 
     # --- trace 표시(부록 D-3) -------------------------------------------------------------------------
 

@@ -46,7 +46,7 @@ body { background: var(--bg); color: var(--text); font: 14px/1.5 var(--font); di
 }
 
 .panel {
-  width: 340px; flex: none; overflow: auto; padding: 12px; border-left: 1px solid var(--line);
+  width: 390px; flex: none; overflow: auto; padding: 12px; border-left: 1px solid var(--line);
   background: var(--panel); display: flex; flex-direction: column; gap: 12px;
 }
 .card { background: var(--card); border-radius: 8px; padding: 10px 12px; }
@@ -59,6 +59,10 @@ body { background: var(--bg); color: var(--text); font: 14px/1.5 var(--font); di
 .info dd { margin: 0; }
 .chip { display: inline-block; padding: 0 6px; border-radius: 10px; background: #2a2f3a; margin: 0 4px 4px 0; font-size: 12px; }
 .chip.possible { opacity: 0.7; border: 1px dashed #6f6e77; }
+.chip.alert { background: #4a1f24; color: #ffb4b8; }
+.info .path { margin-bottom: 3px; }
+.info .path .muted, .info .tag { font-size: 12px; }
+.info .tag { color: #ffcf8a; margin-right: 4px; }
 
 .legend { display: grid; gap: 3px; font-size: 12px; }
 .legend h3 { font-size: 12px; margin: 6px 0 2px; color: var(--muted); }

@@ -60,8 +60,9 @@ function renderInfo(scene, n) {
   if (n.kind === "ingredient") {
     rows.push(["층", LAYER_LABEL[n.layer]], ["종류", nodeKindText(n)], ["분류", esc(n.category || "-")]);
     rows.push(["별칭", chips(n.aliases.map((a) => `<span class="chip">${esc(a)}</span>`))]);
-    rows.push(["알레르기", chips(n.allergens.map((a) => chip(a.group, a.certainty === "possible" ? "possible" : "")
-      .replace("</span>", a.certainty === "possible" ? " (포함 가능)</span>" : "</span>")))]);
+    rows.push(["알레르기", n.allergens.length ? n.allergens.map((a) => `<div class="path">${chip(a.group, a.certainty === "possible" ? "possible" : "")
+      .replace("</span>", a.certainty === "possible" ? " (포함 가능)</span>" : "</span>")}`
+      + `<span class="muted">${a.via.map(name).join(" → ")}</span></div>`).join("") : chips([])]);
     rows.push(["상위(is_a)", chips(out("is_a").map((l) => chip(l.t)))]);
     rows.push(["하위", chips(into("is_a").map((l) => chip(l.s)))]);
     rows.push(["원천", chips(out("derived_from").map((l) => chip(l.t, l.certainty === "possible" ? "possible" : "")))]);
@@ -76,7 +77,13 @@ function renderInfo(scene, n) {
       if (ls.length) rows.push([ROLE_LABEL[role], chips(ls.map((l) => chip(l.t, l.optional ? "possible" : "")
         .replace("</span>", l.optional ? " (선택)</span>" : "</span>")))]);
     }
-    if (n.has_unmapped) rows.push(["미매칭", "정규 재료에 매핑되지 않은 재료가 있음"]);
+    rows.push(["걸리는 알레르기", n.allergens.length ? n.allergens.map((a) => {
+      const tags = [a.certainty === "possible" ? "포함 가능" : "포함", ...(a.optional_only ? ["선택 재료 때문"] : [])];
+      const hits = a.hits.map((h) => name(h.ingredient) + (h.certainty === "possible" ? "(가능)" : "") + (h.optional ? "(선택)" : ""));
+      return `<div class="path">${chip(a.group, a.certainty === "possible" || a.optional_only ? "possible" : "alert")}`
+        + `<span class="tag">${tags.join(" · ")}</span> <span class="muted">${hits.join(", ")}</span></div>`;
+    }).join("") : chips([])]);
+    if (n.has_unmapped) rows.push(["미매칭", "정규 재료에 매핑되지 않은 재료가 있음(알레르기가 있으면 제외)"]);
     if (n.status !== "published") rows.push(["상태", "검수 전"]);
   } else {
     rows.push(["구분", GROUP_CATEGORY_LABEL[n.category]]);
@@ -102,13 +109,15 @@ function focusNode(scene, id) {
 
 // --- 검색 ----------------------------------------------------------------------------------------
 
-function setupSearch(scene) {
-  const input = $("#search");
-  const list = $("#search-results");
-  const index = scene.nodes.map((n) => ({
-    id: n.id, name: n.name, kind: nodeKindText(n),
+function searchIndex(scene, filter = () => true) {
+  return scene.nodes.filter(filter).map((n) => ({
+    id: n.id, name: n.name, kind: nodeKindText(n), aliases: n.aliases || [],
     keys: [norm(n.name), ...(n.aliases || []).map(norm)],
   }));
+}
+
+// 이름·별칭 정규화(소문자·공백 제거) 후 정확 → 앞부분 → 포함 순, 12개. 방향키·Enter.
+function attachSearch(input, list, index, onChoose) {
   let results = [];
   let active = -1;
 
@@ -126,9 +135,9 @@ function setupSearch(scene) {
       let best = null;
       e.keys.forEach((k, i) => {
         const rank = k === key ? 0 : k.startsWith(key) ? 1 : k.includes(key) ? 2 : null;
-        if (rank !== null && (best === null || rank < best.rank)) best = { rank, alias: i > 0 ? e.keys[i] : null };
+        if (rank !== null && (best === null || rank < best.rank)) best = { rank, alias: i > 0 ? e.aliases[i - 1] : null };
       });
-      if (best) scored.push({ ...e, rank: best.rank, matched: best.alias ? (scene.byId.get(e.id).aliases[e.keys.indexOf(best.alias) - 1]) : null });
+      if (best) scored.push({ ...e, rank: best.rank, matched: best.alias });
     }
     scored.sort((a, b) => a.rank - b.rank || a.name.length - b.name.length || a.name.localeCompare(b.name));
     results = scored.slice(0, 12);
@@ -138,10 +147,9 @@ function setupSearch(scene) {
   function choose(i) {
     const r = results[i];
     if (!r) return;
-    input.value = r.name;
     results = [];
     render();
-    focusNode(scene, r.id);
+    onChoose(r);
   }
   input.addEventListener("input", () => search(input.value));
   input.addEventListener("keydown", (e) => {
@@ -155,6 +163,14 @@ function setupSearch(scene) {
     if (li) { e.preventDefault(); choose(Number(li.dataset.i)); }
   });
   input.addEventListener("blur", () => setTimeout(() => { list.hidden = true; }, 100));
+}
+
+function setupSearch(scene) {
+  const input = $("#search");
+  attachSearch(input, $("#search-results"), searchIndex(scene), (r) => {
+    input.value = r.name;
+    focusNode(scene, r.id);
+  });
 }
 
 // --- 토글·범례·HUD ------------------------------------------------------------------------------

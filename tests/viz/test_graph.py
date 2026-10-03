@@ -114,3 +114,62 @@ def test_etag_returns_304_when_unchanged(client):
     r2 = client.get("/graph", headers={"If-None-Match": etag})
     assert r2.status_code == 304 and r2.headers["etag"] == etag
     assert client.get("/graph", params={"recipes": "none"}).headers["etag"] != etag
+
+
+def test_ingredient_allergy_paths_walk_from_ingredient_to_group(client, data):
+    """재료 선택 시 강조할 알레르기 경로(viz-3 보완): via 순서대로 이어지고 마지막이 그룹 지정 링크다."""
+    g = get_graph(client)
+    links = {lk["id"]: lk for lk in g["links"]}
+    base = {gr.id for gr in data.knowledge.allergen_groups if gr.kind == "base"}
+    rows = {(c.ingredient_id, c.allergen_group_id): c for c in data.knowledge.allergen_closure
+            if c.allergen_group_id in base}
+    seen = 0
+    for n in g["nodes"]:
+        if n["kind"] != "ingredient":
+            continue
+        assert len(n["allergens"]) == sum(1 for i, _ in rows if i == n["id"][4:])
+        for a in n["allergens"]:
+            row = rows[(n["id"][4:], a["group"][3:])]
+            assert a["via"] == [f"ing:{x}" for x in row.via] and a["certainty"] == row.certainty
+            path = [links[x] for x in a["path_links"]]
+            assert len(path) == len(row.via)  # via 쌍 수 + 그룹 지정 1
+            assert path[-1]["type"] == "allergen" and path[-1]["target"] == a["group"]
+            assert path[-1]["source"] == a["via"][-1]
+            walked = [a["via"][0]]
+            for lk in path[:-1]:
+                walked.append(lk["target"] if lk["source"] == walked[-1] else lk["source"])
+            assert walked == a["via"]
+            seen += 1
+    assert seen == len(rows)
+    nodes = {n["id"]: n for n in g["nodes"]}
+    kimchi_shrimp = next(a for a in nodes["ing:kimchi"]["allergens"] if a["group"] == "ag:shrimp")
+    assert "ing:saeujeot" in kimchi_shrimp["via"] and kimchi_shrimp["certainty"] == "possible"
+    assert kimchi_shrimp["via"][0] == "ing:kimchi" and kimchi_shrimp["path_links"][-1].endswith(">shrimp")
+
+
+def test_recipe_allergens_join_lines_with_compiled_closure(client, data):
+    """레시피 정보 패널의 "걸리는 알레르기": 줄마다 기본 그룹 closure를 모은 것과 같다(선택 재료·possible 표시 포함)."""
+    g = get_graph(client)
+    base = {gr.id for gr in data.knowledge.allergen_groups if gr.kind == "base"}
+    closure: dict[str, list] = {}
+    for c in data.knowledge.allergen_closure:
+        if c.allergen_group_id in base:
+            closure.setdefault(c.ingredient_id, []).append(c)
+    specs = {r.id: r for r in data.recipes}
+    for n in (n for n in g["nodes"] if n["kind"] == "recipe"):
+        expected: dict[str, list[tuple]] = {}
+        for k, line in enumerate(specs[n["id"][4:]].ingredients, start=1):
+            for c in closure.get(line.ingredient or "", []):
+                expected.setdefault(f"ag:{c.allergen_group_id}", []).append(
+                    (f"ing:{line.ingredient}", c.certainty, line.optional, k))
+        got = {a["group"]: a for a in n["allergens"]}
+        assert set(got) == set(expected), n["id"]
+        for gid, hits in expected.items():
+            a = got[gid]
+            assert sorted((h["ingredient"], h["certainty"], h["optional"], h["line_no"]) for h in a["hits"]) == sorted(hits)
+            assert a["certainty"] == ("definite" if any(h[1] == "definite" for h in hits) else "possible")
+            assert a["optional_only"] == all(h[2] for h in hits)
+    steam = next(n for n in g["nodes"] if n["id"] == "rcp:gyeranjjim")
+    shrimp = next(a for a in steam["allergens"] if a["group"] == "ag:shrimp")
+    assert shrimp["optional_only"] and shrimp["hits"][0]["ingredient"] == "ing:saeujeot"
+    assert any(a["group"] == "ag:egg" and not a["optional_only"] for a in steam["allergens"])

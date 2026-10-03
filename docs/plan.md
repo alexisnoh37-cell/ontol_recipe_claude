@@ -613,7 +613,7 @@ ALTER TABLE allergen_group
 | 3 | 가공품 | derived_from이 **하나라도 있는** 재료(확정). `is_processed: false`인 재료(콩나물 등)는 툴팁에 "가공품 아님" |
 | 4 | 레시피 | cuisine별 구역, main 재료 쪽으로 당김 |
 
-y는 층으로 고정(`fy`), x·z만 force로 계산하고 warmup 뒤 시뮬레이션을 멈춘다.
+y는 층으로 고정(`fy`), x·z만 force로 계산하고 warmup 뒤 시뮬레이션을 멈춘다. 초기 카메라는 위에서 35도 내려다보는 각도이고, 그 각도에서 층이 덜 겹치도록 층 간격을 360으로 둔다. 3층 가공품은 원천 재료 쪽 인력보다 분류 구역 배치를 우선한다. 층·구역·노드 라벨은 화면에서 일정한 픽셀 크기다(viz-3 보완).
 
 ### D-2. 간선
 
@@ -621,7 +621,7 @@ is_a(하위 → 상위), derived_from(가공품 → 원천, certainty), allergen
 
 ### D-3. API(읽기 전용)
 
-- `GET /graph?recipes=none|published|all&max_recipes=N`: 노드·간선. 데이터 reload 때 한 번 만들어 캐시, ETag(304).
+- `GET /graph?recipes=none|published|all&max_recipes=N`: 노드·간선. 데이터 reload 때 한 번 만들어 캐시, ETag(304). 재료 노드 `allergens`는 기본 그룹 closure 행(certainty, via, `path_links`: 재료 → 그룹 순서 링크 id), 레시피 노드 `allergens`는 재료 줄 × 기본 그룹 closure 조인(certainty, `optional_only`, hits). 둘 다 표시용이며 판정하지 않는다(viz-3 보완).
 - `POST /recommend`: `profile_id` 또는 `persona_id` 중 정확히 하나(둘 다·없음 422, 모르는 persona 404). `trace: true`면 기존 응답 + `trace`(user 요약, pantry: input·staples·owned(상속 근거), candidates(후보 근거 줄), exclusions(사유, 재료, target, 묶음이면 실제 걸린 기본 그룹 `source_group`, certainty, via, `path_links`), excluded(레시피별 대표 사유), scored(통과 후보 전부: breakdown, weighted, score_rank, final_rank, moved_by_diversity), limit). `trace` 생략 시 응답은 기존과 같다.
 - `GET /personas`: 골든셋 페르소나 목록. 로더는 `storage/personas.py`(데이터 파일은 `tests/golden/personas.yaml`).
 - `GET /viz`: 정적 페이지.
