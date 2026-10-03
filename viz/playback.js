@@ -332,7 +332,8 @@ export function setupPlayback({ scene, $, attachSearch, ingredientIndex }) {
       for (const r of Object.keys(t.excluded)) nodes.set(r, { color: REASON_COLOR[t.excluded[r]], opacity: 0.35 });
       const byScore = [...t.scored].sort((a, b) => a.score_rank - b.score_rank);
       for (const s of byScore) nodes.set(s.recipe, { color: PLAY_COLOR.pass, scale: 1.2 + s.score * 0.4 });
-      const labels = byScore.slice(0, RANK_LABELS).map((s) => ({ id: s.recipe, text: `${name(s.recipe)} ${s.score.toFixed(3)}` }));
+      // 겹치면 점수 순위가 높은 라벨만 보이고 나머지는 마우스를 올리면 보인다(scene.js 겹침 정리)
+      const labels = byScore.slice(0, RANK_LABELS).map((s) => ({ id: s.recipe, text: `${name(s.recipe)} ${s.score.toFixed(3)}`, priority: s.score_rank }));
       const keys = Object.keys(t.breakdown_labels);
       const html = `<p>필터를 통과한 <b>${t.scored.length}</b>개가 점수만큼 위로 올라갑니다. 레시피에 마우스를 올리면 항목별 점수가 보입니다.</p>`
         + `<p class="muted">가중치: ${keys.map((k) => `${k} ${t.weights[k]}`).join(" · ")}</p>`
@@ -352,7 +353,7 @@ export function setupPlayback({ scene, $, attachSearch, ingredientIndex }) {
         if (!s.shown) { nodes.set(s.recipe, { color: PLAY_COLOR.pass, opacity: 0.4 }); continue; }
         const color = s.moved_by_diversity ? PLAY_COLOR.moved : PLAY_COLOR.rank;
         nodes.set(s.recipe, { color, scale: 1.5 });
-        labels.push({ id: s.recipe, color, px: 13,
+        labels.push({ id: s.recipe, color, px: 13, priority: s.final_rank,
           text: `${s.final_rank}위 ${name(s.recipe)}${s.moved_by_diversity ? ` (점수 ${s.score_rank}위)` : ""}` });
       }
       const moved = t.scored.filter((s) => s.moved_by_diversity).length;

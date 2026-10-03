@@ -295,7 +295,9 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
   // --- 라벨(화면 일정 크기) -------------------------------------------------------------------
 
   const labelCache = new Map(); // `${text}|${color}|${px}` → sprite
-  let shownLabels = []; // [{ sprite, id }]
+  let shownLabels = []; // [{ sprite, id, priority }] priority가 있으면 겹침 정리 대상(작을수록 우선)
+  let hovered = null; // 마우스를 올린 노드 id(겹쳐서 숨긴 라벨도 보임)
+  let declutterAnim = null;
 
   function pxToScale(px) {
     const cam = graph.camera();
@@ -324,16 +326,52 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
         labelCache.set(key, sprite);
       }
       rescale(sprite);
-      const entry = { sprite, id: lb.id };
+      sprite.visible = true;
+      const entry = { sprite, id: lb.id, priority: lb.priority };
       placeLabel(entry);
       graph.scene().add(sprite);
       shownLabels.push(entry);
     }
+    if (shownLabels.some((e) => e.priority !== undefined) && !declutterAnim) declutterAnim = requestAnimationFrame(declutter);
     if (labelCache.size > 600) { // 오래 쓰면 캐시를 비움(보이는 것은 다음 applyLabels에서 다시 만든다)
       const used = new Set(shownLabels.map((e) => e.sprite));
       for (const [k, sp] of labelCache) if (!used.has(sp)) { disposeSprite(sp); labelCache.delete(k); }
     }
   }
+
+  // 라벨 겹침 정리(재생 4·5단계): priority가 있는 라벨을 화면 좌표 상자로 바꿔 우선순위 순으로 놓고,
+  // 이미 놓인 라벨과 겹치면 숨긴다. 마우스를 올린 노드의 라벨은 항상 보인다. 카메라 회전·높이 이동을 따라
+  // 매 프레임 다시 계산한다(대상은 최대 수십 개).
+  const projected = new THREE.Vector3();
+  function labelBox(entry) {
+    const cam = graph.camera();
+    projected.copy(entry.sprite.position).project(cam);
+    if (projected.z > 1) return null; // 카메라 뒤
+    const w = el.clientWidth;
+    const h = el.clientHeight;
+    const sx = ((projected.x + 1) / 2) * w;
+    const sy = ((1 - projected.y) / 2) * h;
+    const ph = entry.sprite.userData.px;
+    const pw = ph * entry.sprite.userData.aspect;
+    const c = entry.sprite.center; // 기준점이 상자 안 어디인지(above: x 0.5, y -0.35)
+    const left = sx - c.x * pw;
+    const bottom = sy + c.y * ph;
+    return { l: left - 2, r: left + pw + 2, t: bottom - ph - 2, b: bottom + 2 };
+  }
+  function declutter() {
+    const ranked = shownLabels.filter((e) => e.priority !== undefined);
+    if (!ranked.length) { declutterAnim = null; return; }
+    ranked.sort((a, b) => (a.id === hovered ? -1 : b.id === hovered ? 1 : a.priority - b.priority));
+    const placed = [];
+    for (const e of ranked) {
+      const box = labelBox(e);
+      const free = box && !placed.some((p) => box.l < p.r && box.r > p.l && box.t < p.b && box.b > p.t);
+      e.sprite.visible = Boolean(free) || e.id === hovered;
+      if (e.sprite.visible && box) placed.push(box);
+    }
+    declutterAnim = requestAnimationFrame(declutter);
+  }
+  graph.onNodeHover((n) => { hovered = n ? n.id : null; });
 
   // --- 강조 ------------------------------------------------------------------------------------
 
@@ -522,6 +560,8 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
     graph, nodes, links, byId, linkById, incident, timings, THREE,
     select, setView, setOffsets, flyTo, resetCamera, setLayer, setLinkType,
     get selected() { return state.selected; },
+    // 점검용: 겹침 정리 대상 라벨의 표시 여부(viz-5)
+    get labelStates() { return shownLabels.filter((e) => e.priority !== undefined).map((e) => ({ id: e.id, priority: e.priority, visible: e.sprite.visible })); },
     // 점검용: 선택 강조에 그려진 기본 그룹 id → 진한 경로 여부
     get selectedGroups() { return state.selection ? Object.fromEntries(state.selection.groups) : null; },
   };
