@@ -118,6 +118,10 @@ const GEOMETRY = {
 const EDGES = { box: new THREE.EdgesGeometry(GEOMETRY.box), octa: new THREE.EdgesGeometry(GEOMETRY.octa) };
 const RING = new THREE.TorusGeometry(7, 0.5, 4, 16);
 const PULSE = new THREE.SphereGeometry(3.2, 10, 8);
+// 클릭·hover 판정용 보이지 않는 구. 기본 카메라(거리 2100)에서 재료 노드는 지름 약 2.5px라 직접 누르기 어렵다.
+// 반지름 12면 약 14px. 그리지 않고(visible: false) raycast에만 쓴다.
+const HIT = new THREE.SphereGeometry(12, 8, 6);
+const HIT_MATERIAL = new THREE.MeshBasicMaterial({ visible: false });
 
 const materials = new Map();
 function material(kind, color, opacity) {
@@ -214,6 +218,9 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
     const st = nodeStyle(n);
     const mesh = new THREE.Mesh(GEOMETRY[st.shape]);
     mesh.userData.style = st;
+    const hit = new THREE.Mesh(HIT, HIT_MATERIAL);
+    hit.userData.hit = true;
+    mesh.add(hit);
     if (st.hollow) {
       mesh.add(new THREE.LineSegments(EDGES[st.shape]));
     }
@@ -239,6 +246,7 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
     mesh.material = st.hollow && !over?.color ? material("solid", color, opacity * 0.18)
       : material(st.wire && !over?.color ? "wire" : "solid", color, opacity);
     for (const child of mesh.children) {
+      if (child.userData.hit) continue;
       child.material = child.userData.ring ? material("solid", NODE_COLOR.lowConfidence, opacity * 0.8)
         : material("line", color, opacity);
     }
