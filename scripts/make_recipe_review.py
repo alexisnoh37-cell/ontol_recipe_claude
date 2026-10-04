@@ -4,7 +4,7 @@
 
 data/recipes/*.yaml이나 knowledge/를 고친 뒤 다시 실행한다. 검수표는 손으로 고치지 않는다(덮어씀).
 "걸리는 알레르기 그룹"은 allergen_closure를 조회해 계산한다(선택 재료·고명·양념 포함, 엔진 필터와 같은 기준).
-confidence: low 레시피를 맨 위에 모은다.
+검수 대기(draft)와 검수 완료(published)를 나누어 draft를 먼저 두고, 각 묶음 안에서 confidence: low 레시피를 맨 위에 모은다.
 """
 
 from __future__ import annotations
@@ -23,6 +23,8 @@ from kb.recipes import RecipeSeedError, load_recipe_specs  # noqa: E402
 OUT = ROOT / "docs" / "review" / "recipes_review.md"
 COLUMNS = ["제목(id)", "종류", "난이도", "맛(매움/짠맛/단맛)", "주재료", "선택재료", "걸리는 알레르기 그룹", "confidence"]
 ROLE_NAMES = {"main": "주", "sub": "부", "seasoning": "양념", "garnish": "고명"}
+STATUS_ORDER = ("draft", "published")
+STATUS_TITLES = {"draft": "검수 대기(draft)", "published": "검수 완료(published)"}
 
 
 def _cell(text: str) -> str:
@@ -69,13 +71,24 @@ def render(ck: CompiledKnowledge, recipes: list[RecipeSpec]) -> str:
         return "| " + " | ".join(_cell(c) for c in cells) + " |"
 
     header = "| " + " | ".join(COLUMNS) + " |\n|" + "---|" * len(COLUMNS)
-    low = [r for r in recipes if r.confidence == "low"]
-    by_cuisine: dict[str, list[RecipeSpec]] = defaultdict(list)
-    for r in recipes:
-        if r.confidence != "low":
-            by_cuisine[r.cuisine].append(r)
     counts = Counter(r.cuisine for r in recipes)
     kimchi_like = {"kimchi", "kkakdugi", "young_radish_kimchi"}
+    # 검수 전(draft) 레시피를 먼저, 검수 완료(published)를 뒤에 둔다. 각 묶음 안에서는 confidence: low를 맨 위에 모은다.
+    status_groups = [(STATUS_TITLES[s], [r for r in recipes if r.status == s]) for s in STATUS_ORDER]
+    status_groups = [(title, items) for title, items in status_groups if items]
+
+    def table_sections(items: list[RecipeSpec], level: str) -> list[str]:
+        out: list[str] = []
+        low = [r for r in items if r.confidence == "low"]
+        if low:
+            out += [f"{level} confidence: low ({len(low)})", "", header, *[row(r) for r in low], ""]
+        by_cuisine: dict[str, list[RecipeSpec]] = defaultdict(list)
+        for r in items:
+            if r.confidence != "low":
+                by_cuisine[r.cuisine].append(r)
+        for cuisine in sorted(by_cuisine, key=lambda c: -counts[c]):
+            out += [f"{level} {cuisine} ({len(by_cuisine[cuisine])})", "", header, *[row(r) for r in by_cuisine[cuisine]], ""]
+        return out
 
     lines = [
         "# 레시피 검수표",
@@ -101,18 +114,19 @@ def render(ck: CompiledKnowledge, recipes: list[RecipeSpec]) -> str:
                     for r in recipes if any(i.ingredient in kimchi_like for i in r.ingredients)),
         "- 매운맛 강도, 난이도, 주재료와 선택재료 구분이 상식에 맞는지.",
         "",
-        f"## confidence: low ({len(low)})",
-        "",
-        header,
-        *[row(r) for r in low],
-        "",
     ]
-    for cuisine in sorted(by_cuisine, key=lambda c: -counts[c]):
-        items = by_cuisine[cuisine]
-        lines += [f"## {cuisine} ({len(items)})", "", header, *[row(r) for r in items], ""]
+    for title, items in status_groups:
+        lines += [f"## {title} ({len(items)})", "", *table_sections(items, "###")]
 
-    lines += ["## 부록: 레시피 상세", ""]
-    for r in recipes:
+    for title, items in status_groups:
+        lines += [f"## 부록: 레시피 상세 — {title}", ""]
+        lines += detail_lines(items)
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def detail_lines(items: list[RecipeSpec]) -> list[str]:
+    lines: list[str] = []
+    for r in items:
         t = r.taste
         lines += [
             f"### {r.title} (`{r.id}`)",
@@ -130,7 +144,7 @@ def render(ck: CompiledKnowledge, recipes: list[RecipeSpec]) -> str:
                                   for n, s in enumerate(r.steps, start=1)),
             "",
         ]
-    return "\n".join(lines).rstrip() + "\n"
+    return lines
 
 
 def main(argv: list[str] | None = None) -> int:

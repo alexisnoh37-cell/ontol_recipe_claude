@@ -1,0 +1,53 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: shrimp_mayo
+title: 새우마요
+cuisine: 중식
+difficulty: 2
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: low
+note: 음식 종류(한국식 중식 요리로 분류) 판단 필요
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 새우(중하) 300g, 손질한 것
+  role: main
+- ingredient: potato_starch
+  raw_text: 감자전분 1/2컵
+  role: sub
+- ingredient: egg
+  raw_text: 계란 흰자 1개
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 4큰술
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 1작은술
+  role: seasoning
+  optional: true
+- ingredient: sugar
+  raw_text: 설탕 1큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 튀김용 식용유
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 3
+  sour: 1
+  umami: 3
+  savory: 4
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 새우에 소금을 뿌리고 계란 흰자와 전분을 입힌다.
+- text: 170도 기름에 바삭하게 튀긴다.
+  technique: 튀김
+- text: 마요네즈, 설탕, 레몬즙을 섞은 소스에 튀긴 새우를 버무린다.
+  technique: 무침

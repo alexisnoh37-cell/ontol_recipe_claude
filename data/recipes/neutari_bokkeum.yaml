@@ -1,0 +1,54 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: neutari_bokkeum
+title: 느타리버섯볶음
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+note: 소금 간(간장 없음)
+ingredients:
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯 1팩(200g)
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/4개
+  role: sub
+- ingredient: green_onion
+  raw_text: 쪽파 또는 대파 약간
+  role: sub
+  optional: true
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2작은술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 1/3작은술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 약간
+  role: seasoning
+- ingredient: sesame
+  raw_text: 통깨 약간
+  role: garnish
+  optional: true
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 느타리버섯을 결대로 찢고 양파는 채 썬다.
+- text: 기름 두른 팬에 마늘과 양파를 볶다가 버섯을 넣고 센 불에 볶는다.
+  technique: 볶음
+- text: 소금으로 간하고 파, 참기름, 깨를 넣는다.
+  technique: 볶음

@@ -1,0 +1,50 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: chamchi_mayo_deopbap
+title: 참치마요 덮밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 10
+servings: 2
+source: agent_draft
+status: draft
+confidence: low
+note: 음식 종류(한식 분식 vs 일식) 판단이 애매함. 참치캔 성분 표시 확인 필요
+ingredients:
+- ingredient: canned_tuna
+  raw_text: 참치캔 1캔(150g, 기름 뺀 것)
+  role: main
+- ingredient: rice
+  raw_text: 밥 2공기
+  role: main
+- ingredient: mayonnaise
+  raw_text: 마요네즈 3큰술
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/4개(다진 것)
+  role: sub
+  optional: true
+- ingredient: laver
+  raw_text: 김가루 약간
+  role: garnish
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment: []
+steps:
+- text: 참치의 기름을 빼고 마요네즈, 양파, 후추와 섞는다.
+  technique: 무침
+- text: 간장과 설탕을 섞어 밥에 조금 뿌린다.
+- text: 밥 위에 참치마요와 김가루를 올린다.

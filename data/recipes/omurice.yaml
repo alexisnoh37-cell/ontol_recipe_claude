@@ -1,0 +1,59 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: omurice
+title: 오므라이스
+cuisine: 일식
+difficulty: 2
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: low
+note: 음식 종류(일식 양식 계열 vs 양식) 판단 필요
+ingredients:
+- ingredient: rice
+  raw_text: 밥 2공기
+  role: main
+- ingredient: egg
+  raw_text: 계란 4개
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/4개
+  role: sub
+  optional: true
+- ingredient: ham
+  raw_text: 햄 50g
+  role: sub
+  optional: true
+- ingredient: ketchup
+  raw_text: 토마토케첩 4큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 2큰술
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 1
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 양파, 당근, 햄을 잘게 썰어 기름 두른 팬에 볶는다.
+  technique: 볶음
+- text: 밥과 케첩 2큰술을 넣고 소금, 후추로 간해 볶는다.
+  technique: 볶음
+- text: 계란을 풀어 팬에 얇게 부치고 볶음밥을 올려 감싼다.
+  technique: 부침
+- text: 남은 케첩을 뿌린다.
