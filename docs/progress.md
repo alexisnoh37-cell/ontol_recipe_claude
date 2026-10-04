@@ -8,7 +8,7 @@
 
 **부가 트랙 viz 완료**(2026-10-03, 태그 `viz-v1`, 3D 온톨로지 + 추천 워크플로 시각화, docs/plan.md 부록 D). 전체 테스트 390개 통과. 아래 "부가 트랙 viz" 참조.
 
-**데이터 확장 트랙 data-1**(2026-10-04, 브랜치 `feature/recipe-expansion`, 기준점 태그 `checkpoint/before-recipe-expansion`): 레시피 1차 초안 50개를 draft로 추가(합계 100개, published 50 그대로). 사람 검수 대기. 전체 테스트 394개 통과. 아래 "데이터 확장 트랙" 참조.
+**데이터 확장 트랙 data-1**(2026-10-04, 브랜치 `feature/recipe-expansion`, 기준점 태그 `checkpoint/before-recipe-expansion`): 레시피 1차 초안 50개를 draft로 추가(합계 100개, published 50 그대로). 사람 검수 대기. data-2(2026-10-04): soft_tofu is_a tofu, 골든셋 재검토 자료 `docs/review/golden_review.md`. 전체 테스트 398개(DB 통합 9개는 Docker 미실행으로 건너뜀). 아래 "데이터 확장 트랙" 참조.
 
 ## 단계별 상태
 
@@ -483,8 +483,19 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
 - **결과**: validate_data 통과(재료 253개, 경고 3건, 레시피 100개 오류 0건, 미매칭 0). 전체 394개 통과(tests/allergy 118개, 무수정). 기본 설정(published만)이라 골든셋 적중률은 0.88 그대로.
 - **영향 미리보기**(draft 포함 가정, config 수정 없이 `serve_draft_recipes=True` 인자로만 계산, `.scratch/recipe_gap/preview.md`): 전체 적중률 0.88 → 0.58. beginner·few_ingredients 0.33, korean_lover·multi_allergy·japanese_lover 0.67. multi_allergy·western_lover 상위 10 미달 해소(9 → 18, 5 → 10 통과). 검수 후 published로 바꾸려면 골든셋 기대값 재검토 또는 회귀 기준(MIN_HIT_RATE 0.85) 결정이 먼저 필요하다.
 
+### data-2 soft_tofu is_a tofu, 골든셋 재검토 자료 (2026-10-04)
+
+- **결정(사람, 2026-10-04)**: `soft_tofu`에 `is_a: [tofu]` 추가(별칭·derived_from 그대로). 이유: 독립일 때 "두부" 절대 불선호 사용자에게 순두부찌개가 제외되지 않았고, 사용자가 "순두부"를 입력하면 data-1 전에는 두부로, data-1 후에는 순두부로 해석되어 절대 불선호 결과가 달라졌다.
+- **효과**(draft 포함 엔진): 두부 절대 불선호 → 순두부찌개 제외. 순두부 보유 → 된장찌개·두부조림·마파두부도 후보(순두부가 두부의 하위 재료라서). 두부 보유 → 순두부찌개는 여전히 후보 아님(상위 보유로 하위 충족 안 함). 대두 알레르기 판정(allergen_closure)과 골든셋 적중률(0.88 / draft 포함 0.58)은 변화 없음.
+- **"순두부" 절대 불선호의 범위(사람 결정 필요)**: 순두부를 절대 불선호로 두면 순두부찌개뿐 아니라 두부를 쓰는 된장찌개·두부조림·마파두부도 제외된다. 판정 경로: `engine/filters.py` `UserConstraints.dislike_hits` → 컴파일된 `ingredient_contains`(`kb/graph.py` `expand_contains`). plan.md 부록 C의 contains 규칙("x 자신에 is_a 하위 개념이 있으면 그 하위 개념도 possible로 포함")에 따라 두부는 순두부를 possible로 포함한다(경로 tofu → soft_tofu). 엔진은 부록 C대로 동작하지만, plan.md 4-3의 요약("is_a 하위와 derived_from 파생까지 제외")에는 이 규칙이 빠져 있다. 원하는 동작을 테스트로 고정하지 않았다(아래 "사람 확인 필요").
+- **테스트 추가**: `tests/kb/test_soft_tofu.py` 4개(soft_tofu contains 두부·대두 definite, 두부 절대 불선호 → 순두부찌개·두부 요리 제외, 순두부 절대 불선호 → 순두부찌개 제외, 대두 알레르기 → 순두부찌개 제외). 기존 테스트는 바꾸지 않음.
+- **골든셋 재검토 자료**: `docs/review/golden_review.md`. 적중률이 떨어진 5명의 draft 포함 상위 10(점수, 동점 묶음, 신규 여부, 동점이 갈린 기준, 다양성 보정 이동)과 참고 지표 "동점 인정 적중률"(기대 레시피 점수가 3위 점수와 같으면 적중: 전체 published만 0.92, draft 포함 0.83). 실제 평가 방식은 그대로이며 expected_top3는 사람이 고른다. 생성 도구는 커밋하지 않았다(`.scratch/`).
+- 원인 분석 요약(data-1 검토): 역전 9건 중 7건이 점수 완전 동점(소수 셋째 자리)이었고 조리시간 → id 순으로 갈렸다. 나머지는 시간 점수 M(감자조림 25분 > 희망 20분) 1건, 재료 점수 I(연어 소금구이 기본 양념 외 재료 1개) 1건.
+
 ## 사람 확인 필요
 
+- **(data-2) "순두부" 절대 불선호 범위**: 지금은 순두부 절대 불선호가 두부 요리(된장찌개·두부조림·마파두부)까지 제외한다(plan.md 부록 C의 contains 규칙). 순두부찌개만 제외하려면 엔진 판정 규칙(부록 C·`expand_contains`) 변경이 필요하고, 이 규칙은 "젓갈류 → 새우젓" 같은 넓은 재료의 안전 판정에도 쓰인다. 지금 동작을 유지할지, 규칙을 바꿀지 정한다. 어느 쪽이든 plan.md 4-3 문구를 부록 C와 맞춘다.
+- **(data-2) 골든셋 기대값**: `docs/review/golden_review.md`를 보고 expected_top3를 다시 고를지 정한다.
 - **(data-1) 레시피 1차 초안 50개 검수**: `docs/review/recipes_review.md` "검수 대기(draft)". confidence low 9개(가공육 4, 음식 종류 판단 3, 순두부 신규 재료 1, 깐풍기 매운맛 1). 신규 재료 `soft_tofu`(draft) 검수: `docs/review/ingredients_review.md`.
 - **(data-1) published 전환 전 골든셋 처리**: draft를 모두 published로 바꾸면 적중률 0.58로 회귀 기준(0.85) 아래. expected_top3 재기입·기준 조정·다양성 한도 중 무엇을 할지 사람이 정한다.
 - (선택) K에 선호 strength를 반영하지 않음(plan 4-4 표대로 1.0/0.5/0.1). 반영하려면 plan 4-4 수정이 필요하다. Phase 2 이후 검토.
@@ -537,5 +548,8 @@ Phase 2 할 일(plan.md 6장 로드맵 기준, 착수 전 사람이 범위 확�
 7. **운영 준비**: Supabase 배포 설정, API 인증 범위(D1은 개인용 기본값), 제외 로그(`logs/exclusions.jsonl`) 보존 정책, CI에서 tests/allergy 실패 시 배포 차단.
 
 8. **시각화 1만 개 대응**(viz 범위 밖, 사람 결정): 레시피가 2000개를 넘으면 레시피 층을 `THREE.Points` 한 번의 draw call로 그리고 hover는 화면 근접 검색으로 처리, 레시피 층 클러스터 요약(cuisine별 묶음 노드 → 확대 시 펼침), trace 제외 행 요약 모드. 먼저 로딩: 첫 화면 전 force warmup이 틱당 약 22ms(1천 개 1.6~2.5초)라 규모가 커지면 지배적이다 → `/graph` 생성 시 서버에서 x·z 배치를 미리 계산하고 화면은 warmup 0(1천 개 예상 약 1.1초, 같은 데이터 = 같은 배치). 대안: 브라우저 배치 캐시, warmup 틱 축소, Web Worker(장단점은 위 viz-5 기록).
+
+9. **동점이 많은 순위**(data-1 검토, 2026-10-04): 맛·음식 종류·재료 선호 입력이 적은 사용자는 T·K·P가 중립값으로 모여 점수 동점이 많고, 순위가 동점 처리 규칙(I → 부족 재료 수 → 조리시간 → id 순)으로 정해진다. id 순은 의미 없는 순서다. 동점 처리 기준 재검토(예: 다양성·최근 추천 반영) 필요. 근거: `docs/review/golden_review.md`.
+10. **다양성 한도의 상위 집중**(data-1 검토): 같은 main 재료 한도(3)는 4번째부터만 막으므로 상위 3개를 같은 main 재료가 모두 차지할 수 있다(draft 포함 multi_allergy: 감자전·감자볶음·감자조림이 1~3위, 니쿠자가는 점수 0.1 이내 대안이 없어 8위에 감자 4번째로 들어감). 상위 구간에 별도 한도를 둘지 검토.
 
 Phase 3 이후(참고): user_event 기반 개인화 재정렬(4-6 상위 50개), 유통기한(expires_on) 활용, 장보기 목록, React 화면.

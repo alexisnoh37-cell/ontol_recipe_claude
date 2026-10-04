@@ -99,10 +99,11 @@
 - id: soft_tofu
   name: 순두부
   aliases: [찌개용 순두부]
+  is_a: [tofu]
   derived_from: [soybean]
   is_processed: true
   category: 콩·두부
-  note: 1차 레시피 확장(순두부찌개)용으로 추가. 두부(tofu)와 is_a로 잇지 않음(두부 보유로 순두부 레시피가 매칭되지 않음). 검수 필요
+  note: 1차 레시피 확장(순두부찌개)용으로 추가. 2026-10-04 is_a tofu 결정(두부 절대 불선호가 순두부에도 적용되도록). 검수 필요
   status: draft
 - id: fried_tofu
   name: 유부
