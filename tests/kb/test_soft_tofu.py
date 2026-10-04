@@ -60,6 +60,17 @@ def test_hard_dislike_soft_tofu_excludes_sundubu_jjigae(engine):
     assert ("soft_tofu", "soft_tofu") in hits["sundubu_jjigae"]
 
 
+def test_hard_dislike_soft_tofu_also_excludes_tofu_dishes(engine):
+    # 사람 결정(2026-10-04): 지금 동작 유지. plan.md 부록 C의 contains 규칙 "x 자신에 is_a 하위 개념이 있으면
+    # 그 하위 개념도 possible로 포함"에 따라 두부(tofu)는 순두부(soft_tofu)를 포함 가능(경로 tofu → soft_tofu)으로 본다.
+    # 그래서 "순두부" 절대 불선호는 순두부찌개뿐 아니라 두부를 쓰는 레시피도 제외한다.
+    user = UserContext(pantry=PANTRY, preferences=(Preference("ingredient", "soft_tofu", -1, 1.0, True),))
+    hits = excluded(engine, user, ExclusionReason.HARD_DISLIKE_INGREDIENT)
+    assert "sundubu_jjigae" in hits
+    for recipe_id in TOFU_DISHES:
+        assert ("tofu", "soft_tofu") in hits[recipe_id], recipe_id
+
+
 def test_soybean_allergy_excludes_sundubu_jjigae(engine):
     user = UserContext(pantry=PANTRY, allergen_groups=frozenset({"soybean"}))
     hits = excluded(engine, user, ExclusionReason.ALLERGEN)

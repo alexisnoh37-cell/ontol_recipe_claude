@@ -1,6 +1,6 @@
 # 골든셋 기대값 재검토 자료 (data-1)
 
-> 생성: `.scratch/recipe_gap/make_golden_review.py`(일회성, 커밋 안 함), 기준 커밋 `fb00389` + 작업 중 변경, 2026-10-04.
+> `uv run python scripts/make_golden_review.py`로 생성한다. 손으로 고치지 않는다.
 > 신규 레시피(draft)를 모두 제공한다고 가정한 결과다(config 변경 없이 `serve_draft_recipes=True` 인자로만 계산).
 > **기대 레시피(expected_top3)는 사람이 고른다. 이 문서는 고르기 위한 자료이며 제안을 담지 않는다.**
 > 실제 평가 방식(`scripts/eval_golden.py`, `tests/golden/`)은 바꾸지 않았다.
