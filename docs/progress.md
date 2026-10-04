@@ -8,7 +8,7 @@
 
 **부가 트랙 viz 완료**(2026-10-03, 태그 `viz-v1`, 3D 온톨로지 + 추천 워크플로 시각화, docs/plan.md 부록 D). 전체 테스트 390개 통과. 아래 "부가 트랙 viz" 참조.
 
-**데이터 확장 트랙 data-1**(2026-10-04, 브랜치 `feature/recipe-expansion`, 기준점 태그 `checkpoint/before-recipe-expansion`): 레시피 1차 초안 50개를 draft로 추가(합계 100개, published 50 그대로). 사람 검수 대기. data-2(2026-10-04): soft_tofu is_a tofu, 골든셋 재검토 자료 `docs/review/golden_review.md`. data-3(2026-10-04): "순두부" 절대 불선호 범위 확정, 불선호 제외 범위 측정, `scripts/make_golden_review.py`. 전체 테스트 399개(DB 통합 9개는 DB 컨테이너 미실행으로 건너뜀). 아래 "데이터 확장 트랙" 참조.
+**데이터 확장 트랙 data-1**(2026-10-04, 브랜치 `feature/recipe-expansion`, 기준점 태그 `checkpoint/before-recipe-expansion`): 레시피 1차 초안 50개를 draft로 추가(합계 100개, published 50 그대로). 사람 검수 대기. data-2(2026-10-04): soft_tofu is_a tofu, 골든셋 재검토 자료 `docs/review/golden_review.md`. data-3(2026-10-04): "순두부" 절대 불선호 범위 확정, 불선호 제외 범위 측정, `scripts/make_golden_review.py`. 전체 테스트 399개. data-4(2026-10-04): 신규 레시피 draft 유지, 검수·골든셋 재선정 보류, PR로 올림. 아래 "데이터 확장 트랙" 참조.
 
 ## 단계별 상태
 
@@ -499,8 +499,19 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
 - **불선호 제외 범위 측정**: 하위 재료 26개를 하나씩 절대 불선호로 두면, 직접 들어간 레시피보다 "포함 가능"으로 제외되는 레시피가 훨씬 많다(draft 포함 100개 기준 직접 28 대 포함 가능만 269). 결과는 "다음 단계 제안" 11번.
 - **스크립트**: 골든셋 재검토 자료 생성 도구를 `scripts/make_golden_review.py`로 옮김(`.scratch`에서 이동, 경로 기준과 머리말만 수정). 다시 만든 `docs/review/golden_review.md`는 본문이 같고 머리말 한 줄만 바뀜(작업 시점 커밋 번호 → 생성 명령).
 
+### data-4 draft 상태로 정리, PR (2026-10-04)
+
+- **결정(사람, 2026-10-04)**: 신규 레시피 50개는 `status: draft` 유지(기본 설정에서 추천에 쓰이지 않음). 레시피 검수와 골든셋 기대 레시피 재선정은 **보류**한다. 브랜치는 draft 상태 그대로 PR로 올린다.
+- **보류를 풀 때 할 일(순서대로)**:
+  1. 검수표 확인: `docs/review/recipes_review.md` "검수 대기(draft)"(confidence low 9개 먼저), 재료 `soft_tofu`는 `docs/review/ingredients_review.md`.
+  2. expected_top3 재선정: `docs/review/golden_review.md`를 보고 사람이 고른다. 희망 시간·조리도구 입력은 빼고 판단한다(한끼살림 화면에서 받지 않을 예정, GitHub 이슈 alexisnoh37-cell/ontol_recipe_claude#1). 페르소나의 희망 시간(beginner 20분 등)·조리도구(western_lover 오븐 등) 처리도 함께 정한다.
+  3. published 전환: 승인한 레시피를 published로 바꾸고 `tests/kb/test_recipe_seed.py`의 `PUBLISHED_IDS`에 추가. soft_tofu 승인 시 reviewed로 바꾸고 `tests/kb/test_real_knowledge.py`의 `DRAFT_INGREDIENTS`에서 뺀다.
+  4. baseline 저장: `uv run python scripts/eval_golden.py --save-baseline "설명"`(사람 승인 후).
+- **관련 이슈**: 조리도구·조리시간 미입력 시 처리 방식(보류) — alexisnoh37-cell/ontol_recipe_claude#1.
+
 ## 사람 확인 필요
 
+- **(보류, data-4) 레시피 1차 확장 검수·골든셋 재선정**: 위 "data-4"의 "보류를 풀 때 할 일" 순서대로 진행. 아래 data-1·data-2 항목도 이때 함께 처리한다.
 - (해결, data-3) "순두부" 절대 불선호 범위: 지금 동작 유지(두부 요리도 제외). 불선호의 "포함 가능" 처리는 "다음 단계 제안" 11번에서 검토.
 - **(data-2) 골든셋 기대값**: `docs/review/golden_review.md`를 보고 expected_top3를 다시 고를지 정한다.
 - **(data-1) 레시피 1차 초안 50개 검수**: `docs/review/recipes_review.md` "검수 대기(draft)". confidence low 9개(가공육 4, 음식 종류 판단 3, 순두부 신규 재료 1, 깐풍기 매운맛 1). 신규 재료 `soft_tofu`(draft) 검수: `docs/review/ingredients_review.md`.
