@@ -1,0 +1,97 @@
+id: maeun_haemulramyeon_khc0dl
+title: 매운 해물라면
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 라면 제발 이렇게 드셔보세요. 진심 대존맛입니다.
+  video_url: https://www.youtube.com/watch?v=KhC0dLip_8o
+  published_at: '2026-08-09'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 너구리
+  raw_text: 너구리
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- name: 불닭볶음면
+  raw_text: 불닭볶음면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 양파
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 새우
+  raw_text: 냉동 새우 / 새우
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 분말 스프
+  raw_text: 분말 스프
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 청양고추
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 식용유
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 액젓
+  raw_text: 액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 식용유 두른 팬에 양파, 냉동새우를 볶는다.
+  technique: 볶음
+- text: 분말 스프, 액상 스프, 고춧가루 1스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 물 5컵 , 면, 건더기 스프, 액젓 1스푼을 더한 뒤 면이 완전히 익도록 끓인다.
+  technique: 끓이기
+- text: 청양고추, 후추를 뿌려 마친다.
+  technique: null

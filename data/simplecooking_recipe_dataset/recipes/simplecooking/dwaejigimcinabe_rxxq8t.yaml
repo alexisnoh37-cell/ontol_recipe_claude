@@ -1,0 +1,99 @@
+id: dwaejigimcinabe_rxxq8t
+title: 돼지김치나베
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 이건 너무 맛있어서 지금 당장 팔아도 됩니다.
+  video_url: https://www.youtube.com/watch?v=RXXQ8TvdGKM
+  published_at: '2026-02-12'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- name: 돼지고기
+  raw_text: 불고기용 돼지고기 300g / 돼지고기 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- name: 김치
+  raw_text: 김치 / 김치 2컵
+  role: sub
+  optional: false
+  amount: 2
+  unit: 컵
+- name: 사리곰탕 라면
+  raw_text: 사리곰탕 라면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 계란
+  raw_text: 계란
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 식용유
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 설탕
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 식용유 넉넉히 두르고 불고기용 돼지고기를 핏기가 사라질 때까지 굽는다.
+  technique: 구이
+- text: 자른 김치 2컵, 설탕 1스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 고추장 1/2스푼, 고춧가루 1스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 물 500ml, 면, 건더기스프, 분말스프 2/3봉 더한 뒤 1~2분만 끓인다.
+  technique: 끓이기
+- text: 계란물, 대파, 후추를 뿌려 마친다.
+  technique: null

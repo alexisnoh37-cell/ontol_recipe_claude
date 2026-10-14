@@ -1,0 +1,117 @@
+id: jabcaebab_sxprl6
+title: 잡채밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 제발 라면 먹지 말고 이거 드세요.
+  video_url: https://www.youtube.com/watch?v=sXPRl64K2ds
+  published_at: '2026-06-28'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 당면
+  raw_text: 당면 / 당면 한줌
+  role: main
+  optional: false
+  amount: 1
+  unit: 줌
+- name: 대패삼겹살
+  raw_text: 대패삼겹살 / 대패삼겹살 100g
+  role: sub
+  optional: false
+  amount: 100
+  unit: g
+- name: 양파
+  raw_text: 양파 / 양파 1/2개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 대파
+  raw_text: 대파 / 대파 한줌
+  role: sub
+  optional: false
+  amount: 1
+  unit: 줌
+- name: 계란
+  raw_text: 계란
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 마늘
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 굴소스
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 식용유
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 설탕
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 밥
+  raw_text: 밥
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 식용유 넉넉히 두른 팬에 계란 후라이를 튀기듯이 구워주고 덜어 둔다.
+  technique: 튀김
+- text: 대패삼겹살 100g, 대파 한줌, 양파 1/2개, 다진 마늘 1/2스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 고춧가루 1스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 불린 당면 한줌, 설탕 1스푼, 진간장 1스푼, 굴소스 1스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 밥 1공기, 계란 후라이, 후추를 흩뿌린다.
+  technique: null

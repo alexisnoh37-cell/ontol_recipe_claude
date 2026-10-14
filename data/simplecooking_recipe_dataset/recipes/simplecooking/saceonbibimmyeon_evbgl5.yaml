@@ -1,0 +1,79 @@
+id: saceonbibimmyeon_evbgl5
+title: 사천비빔면
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 비빔면 이렇게 먹으면 진짜 대존맛 (비밀 레시피)
+  video_url: https://www.youtube.com/watch?v=evbGL5tiByA
+  published_at: '2026-07-30'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 사천짜파게티
+  raw_text: 사천짜파게티
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- name: 비빔면
+  raw_text: 팔도 비빔면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 참치캔
+  raw_text: 참치캔
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 청양고추
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 마요네즈
+  raw_text: 마요네즈 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 조미유
+  raw_text: 조미유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 사천짜파게티 면과 비빔면의 면을 삶아서 찬물에 헹군다.
+  technique: 끓이기
+- text: 과립스프, 액상스프를 더한 뒤 고르게 비빈다.
+  technique: null
+- text: 청양참치마요를 만들어서 얹는다.
+  technique: null
+- text: 조미유, 후추를 뿌려 마친다.
+  technique: null

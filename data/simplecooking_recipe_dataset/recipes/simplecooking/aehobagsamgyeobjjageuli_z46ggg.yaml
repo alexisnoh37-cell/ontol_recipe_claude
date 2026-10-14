@@ -1,0 +1,97 @@
+id: aehobagsamgyeobjjageuli_z46ggg
+title: 애호박삼겹짜글이
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 이걸로 밥 2공기 이상 못먹으면 삭발하겠습니다.
+  video_url: https://www.youtube.com/watch?v=Z46GGGDSm6s
+  published_at: '2026-08-17'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- name: 삼겹살
+  raw_text: 삼겹살 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- name: 양파
+  raw_text: 양파 1/2개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 애호박
+  raw_text: 애호박 2/3개
+  role: sub
+  optional: false
+  amount: 0.6666666666666666
+  unit: 개
+- name: 마늘
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 청양고추
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 된장
+  raw_text: 된장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 삼겹살을 굽는다.
+  technique: 구이
+- text: 양파, 애호박, 고추장 1스푼, 된장 1스푼, 진간장 1스푼, 설탕 1스푼, 고춧가루 1스푼, 다진 마늘 1스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 물 200ml를 부어주고 5분 이상 끓인다.
+  technique: 끓이기
+- text: 청양고추 얹어 마친다.
+  technique: null

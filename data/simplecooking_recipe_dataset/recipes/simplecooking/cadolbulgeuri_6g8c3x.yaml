@@ -1,0 +1,83 @@
+id: cadolbulgeuri_6g8c3x
+title: 차돌불그리
+cuisine: 기타
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 주의! 이건 절대 섞지 마세요.
+  video_url: https://www.youtube.com/watch?v=6g8c3xfaSbI
+  published_at: '2026-04-19'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 불닭볶음면
+  raw_text: 불닭볶음면(혹은 까르보불닭)
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- name: 너구리
+  raw_text: 너구리
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 차돌박이
+  raw_text: 차돌박이 300g
+  role: sub
+  optional: false
+  amount: 300
+  unit: g
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 우유
+  raw_text: 우유
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 소금
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 물 3컵에 불닭볶음면의 면, 스프, 너구리의 면, 분말스프 1/2봉을 더한 뒤 끓인다.
+  technique: 끓이기
+- text: 체다치즈 2장, 후추를 흩뿌린다.
+  technique: null
+- text: 차돌박이, 대파에 소금간 해준 뒤 볶은 다음 너구리 분말스프 남은 1/2봉, 고춧가루 1스푼을 더한 뒤 볶은 다음 얹는다.
+  technique: 볶음

@@ -1,0 +1,83 @@
+id: yeolmu_bibimnaengmyeon_j8fkyu
+title: 열무 비빔냉면
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 너무 더워서 대존맛 치트키 갑니다.
+  video_url: https://www.youtube.com/watch?v=j8FkYU5Rm8s
+  published_at: '2026-08-05'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 비빔면
+  raw_text: 비빔면 2봉
+  role: main
+  optional: false
+  amount: 2
+  unit: 봉
+- name: 열무김치
+  raw_text: 열무김치
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 냉면 육수
+  raw_text: 냉면 육수
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 마늘
+  raw_text: 다진 마늘
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 참기름
+  raw_text: 참기름 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 통깨
+  raw_text: 통깨
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- name: 계란
+  raw_text: 계란
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 설탕
+  raw_text: 설탕 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 면은 삶아주고 찬물에 헹군다.
+  technique: 끓이기
+- text: 면에 액상스프 2봉, 냉면 육수를 부어 고르게 섞는다.
+  technique: 무침
+- text: 열무김치, 설탕 1/2스푼, 참기름 1스푼, 다진 마늘 조금, 통깨, 삶은 계란을 얹는다.
+  technique: 끓이기
