@@ -98,6 +98,10 @@ def check_recipes(ck: CompiledKnowledge, recipes: Iterable[tuple[str, Any]]) -> 
     techniques = set(ck.vocab["techniques"])
     for where, r in parsed:
         for n, line in enumerate(r.ingredients, start=1):
+            # draft 레시피의 미매칭(null)은 허용한다(검수표에 **미매칭**으로 표시, 엔진은 알레르기 사용자에게 제외).
+            # published는 계속 오류. 2026-10-16 승인(docs/plan.md 5-4)
+            if line.ingredient is None and r.status == "draft":
+                continue
             issue = _ingredient_issue(ck, line.ingredient, f"{where} 재료 {n}({line.raw_text})", "레시피 재료")
             if issue:
                 issues.append(issue)

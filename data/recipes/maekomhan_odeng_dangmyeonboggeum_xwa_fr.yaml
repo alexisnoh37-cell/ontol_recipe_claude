@@ -1,0 +1,126 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: maekomhan_odeng_dangmyeonboggeum_xwa_fr
+title: 매콤한 오뎅 당면볶음
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=xwa-fR__hYs
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- ingredient: glass_noodles
+  raw_text: 당면
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: fish_cake
+  raw_text: 오뎅 2장
+  role: sub
+  optional: false
+  amount: 2
+  unit: 장
+- ingredient: chive
+  raw_text: 부추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: onion
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: cooking_oil
+  raw_text: 식용유 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 통깨
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 식용유 2스푼을 두르고 대파, 양파를 먼저 볶는다.
+  technique: 볶음
+- text: 향이 올라오면 오뎅 2장을 더한 뒤 살짝 갈색이 돌 때까지 볶는다.
+  technique: 볶음
+- text: 물 1컵, 고추장 1스푼, 진간장 1스푼, 굴소스 1스푼, 설탕 1스푼, 고춧가루 1스푼, 다진 마늘 1스푼, 후추를 더한다.
+  technique: null
+- text: 양념이 끓기 시작하면 불린 당면을 더한 뒤 중불에서 볶듯이 졸인다.
+  technique: 볶음
+- text: 당면이 익고 양념을 거의 다 먹으면 부추를 더한 뒤 30초만 섞는다.
+  technique: 무침
+- text: 참기름과 통깨를 뿌리면 마친다.
+  technique: null

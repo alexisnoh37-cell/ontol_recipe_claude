@@ -1,0 +1,88 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: obun_gimcijjim_pvrcuh
+title: 5분 김치찜
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=pvrcuhpiAQc
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; id '5bun_gimcijjim_pvrcuh'→'obun_gimcijjim_pvrcuh'(시드 id 형식, 원본 파일 이름은 그대로)
+ingredients:
+- ingredient: pork_belly
+  raw_text: 삼겹살 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: kimchi
+  raw_text: 자른 김치 300g / 김치 300g
+  role: sub
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: onion
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: chicken_stock
+  raw_text: 치킨스톡 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 김가루
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sesame_oil
+  raw_text: 참기름 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 0
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 삼겹살과 대파를 볶는다.
+  technique: 볶음
+- text: 자른 김치, 양파를 더한 뒤 볶는다.
+  technique: 볶음
+- text: 고춧가루 1스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 물 1컵 , 다진 마늘 1스푼, 치킨스톡 1/2스푼을 더한 뒤 뚜껑 덮고 5분간 끓인다.
+  technique: 끓이기
+- text: 흰밥에 얹어 김가루와 참기름 1스푼을 곁들여 곁들인다.
+  technique: null

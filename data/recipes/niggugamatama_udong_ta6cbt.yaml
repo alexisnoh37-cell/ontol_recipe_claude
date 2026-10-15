@@ -1,0 +1,78 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: niggugamatama_udong_ta6cbt
+title: 니꾸가마타마 우동
+cuisine: 일식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=ta6cBTDzEWk
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리기구 '기타 조리도구'(선택) 제외(vocab에 없음)
+ingredients:
+- ingredient: null
+  raw_text: 생생우동
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: beef_brisket
+  raw_text: 냉동 차돌박이
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: shiitake
+  raw_text: 표고버섯
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: egg
+  raw_text: 계란
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: egg
+  raw_text: 노른자
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment: []
+steps:
+- text: 우동면은 뜨거운 물에 불린다.
+  technique: null
+- text: 우동면, 후레이크 1봉, 액상스프 1/2봉을 섞는다.
+  technique: 무침
+- text: 차돌박이 150g, 표고버섯 1개, 액상스프 1/2봉, 설탕 1/2스푼, 다진 마늘 1/2스푼 섞어준 뒤 굽는다.
+  technique: 구이
+- text: 우동면 위에 구운 고기, 대파, 계란 노른자를 얹는다.
+  technique: null

@@ -1,0 +1,112 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: dangmyeonboggi_cywtzi
+title: 당면볶이
+cuisine: 한식
+difficulty: 2
+cook_time_min: 6
+servings: null
+source: https://www.youtube.com/watch?v=CywTzIm9urk
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- ingredient: glass_noodles
+  raw_text: 당면
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: onion
+  raw_text: 양파 / 양파 1/2개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: pork_belly
+  raw_text: 대패삼겹살 / 대패삼겹살 150g
+  role: sub
+  optional: false
+  amount: 150
+  unit: g
+- ingredient: chive
+  raw_text: 부추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: cooking_oil
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 당면은 6분간 삶은 다음 덜어 둔다.
+  technique: 끓이기
+- text: 팬에 식용유 두르고 대파 1/2대, 양파 1/2개, 대패삼겹살 150g을 볶는다.
+  technique: 볶음
+- text: 다진 마늘 1/2스푼, 고춧가루 1스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 삶은 당면 사리, 진간장 1스푼, 굴소스 1스푼, 설탕 1스푼을 더한 뒤 약불에서 볶는다.
+  technique: 볶음
+- text: 부추, 후추, 참기름을 곁들인다.
+  technique: null

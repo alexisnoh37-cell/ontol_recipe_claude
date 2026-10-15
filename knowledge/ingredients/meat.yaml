@@ -17,9 +17,10 @@
   status: reviewed
 - id: pork_belly
   name: 삼겹살
-  aliases: [통삼겹, 대패삼겹살, 오겹살]
+  aliases: [통삼겹, 대패삼겹살, 오겹살, 통삼겹살]
   is_a: [pork]
   category: 육류
+  note: 2026-10-16 자취요리신 데이터 연결로 별칭 추가, 검수 필요('통삼겹살')
   status: reviewed
 - id: pork_neck
   name: 돼지고기 목살
@@ -72,6 +73,13 @@
   is_a: [beef]
   category: 육류
   status: reviewed
+- id: beef_plate
+  name: 우삼겹
+  aliases: [우삼겹살]
+  is_a: [beef]
+  category: 육류
+  note: 2026-10-16 자취요리신 데이터 연결로 추가(소 양지 쪽 얇게 썬 부위). 쇠고기 알레르기는 beef에서 상속. 검수 필요
+  status: draft
 - id: beef_bulgogi_cut
   name: 불고기용 소고기
   aliases: [불고기감, 소불고기감]
@@ -120,10 +128,11 @@
 # --- 닭고기·가금류 ---
 - id: chicken
   name: 닭고기
-  aliases: [닭, 생닭, 닭 한 마리]
+  aliases: [닭, 생닭, 닭 한 마리, 절단용 닭]
   is_a: [meat]
   category: 육류
   allergens: [{group: chicken, certainty: definite}]
+  note: 2026-10-16 자취요리신 데이터 연결로 별칭 추가, 검수 필요('절단용 닭')
   status: reviewed
 - id: chicken_breast
   name: 닭가슴살

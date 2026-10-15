@@ -1,0 +1,94 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: usamgyeob_dubujorim_vaatqh
+title: 우삼겹 두부조림
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=vAaTQHMeRM8
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- ingredient: tofu
+  raw_text: 두부
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: beef_plate
+  raw_text: 우삼겹 / 우삼겹 300g
+  role: sub
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: onion
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 우삼겹 300g을 익힌 다음 덜어 둔다.
+  technique: 구이
+- text: 기름을 키친타올로 닦는다.
+  technique: null
+- text: 양파, 대파, 두부를 깔아주고 진간장 2스푼, 굴소스 1스푼, 설탕 1스푼, 고춧가루 2스푼, 다진 마늘 1스푼, 후추, 물 1컵을 더한다.
+  technique: null
+- text: 수분이 거의 사라질 때까지 5분 이상 푹 끓인다.
+  technique: 조림
+- text: 구운 우삼겹을 얹어 마친다.
+  technique: null

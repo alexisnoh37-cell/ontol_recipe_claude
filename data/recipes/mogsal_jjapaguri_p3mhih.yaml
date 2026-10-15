@@ -1,0 +1,82 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: mogsal_jjapaguri_p3mhih
+title: 목살 짜파구리
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source: https://www.youtube.com/watch?v=p3MHIHFoltY
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 한국어 공개 자막 없음; 설명란 기준
+ingredients:
+- ingredient: null
+  raw_text: 짜파게티
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: null
+  raw_text: 너구리
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: pork_neck
+  raw_text: 돼지고기 목살 400g / 목살 400g
+  role: sub
+  optional: false
+  amount: 400
+  unit: g
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: pork
+  raw_text: 돼지고기
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: null
+  raw_text: 조미유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: cooking_oil
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 목살은 한입 크기로 썰어준 뒤 너구리 분말 가루 1/2봉을 흩뿌린다.
+  technique: null
+- text: 식용유 두른 팬에 목살을 충분히 익힌 다음 덜어 둔다.
+  technique: 구이
+- text: 남은 기름에 양파도 볶는다.
+  technique: 볶음
+- text: 물 600ml, 너구리, 짜파게티를 더한 뒤 수분이 거의 사라질 때까지 끓인다.
+  technique: 조림
+- text: 목살과 후추, 조미유를 뿌려 마친다.
+  technique: null

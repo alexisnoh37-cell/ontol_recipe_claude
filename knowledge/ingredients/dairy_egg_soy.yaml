@@ -3,8 +3,9 @@
 # --- 알 (법정: 알류(가금류)) ---
 - id: egg
   name: 계란
-  aliases: [달걀, 계란 노른자, 계란 흰자, 유정란]
+  aliases: [달걀, 계란 노른자, 계란 흰자, 유정란, 노른자]
   category: 알
+  note: 2026-10-16 자취요리신 데이터 연결로 별칭 추가, 검수 필요('노른자')
   allergens: [{group: egg, certainty: definite}]
   status: reviewed
 - id: quail_egg

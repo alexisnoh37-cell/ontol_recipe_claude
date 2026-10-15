@@ -1,4 +1,7 @@
-"""레시피 시드(data/recipes/) 검사 (Phase 1-3, 검수 완료): 형식·어휘 검증, 구성, 검수표 최신 여부, 알레르기 스모크."""
+"""레시피 시드(data/recipes/) 검사: 형식·어휘 검증, 구성, 검수표 최신 여부, 알레르기 스모크.
+
+1-3 검수 완료 50개(published) + 자취요리신 YouTube 데이터 변환 100개(draft, 2026-10-16). 개수는 시드에서 센다.
+"""
 
 from __future__ import annotations
 
@@ -32,8 +35,23 @@ def recommender(ck, specs):
     return build_recommender(ck, [recipe_from_spec(s) for s in specs])
 
 
+# 1-3에서 사람이 검수해 published로 바꾼 레시피(2026-10-03). 검수로 published가 늘면 이 목록에 추가한다.
+PUBLISHED_IDS = frozenset({
+    "aglio_olio", "beef_steak", "bibimbap", "bok_choy_stirfry", "budae_jjigae", "bulgogi", "cheese_omelet", "cream_pasta",
+    "dakbokkeumtang", "doenjang_jjigae", "dubu_jorim", "egg_fried_rice", "eomuk_bokkeum", "galbijjim", "gamja_jorim",
+    "gamjajeon", "gimbap", "gochu_japchae", "godeungeo_jorim", "gyeran_mari", "gyeranjjim", "gyudon", "haemul_pajeon",
+    "hobakjeon", "janchi_guksu", "jangjorim", "japanese_curry", "japchae", "jeyuk_bokkeum", "jjajang_deopbap", "kake_udon",
+    "kimchi_jjigae", "kimchijeon", "kongnamul_muchim", "mapo_tofu", "miso_soup", "miyeokguk", "musaengchae",
+    "myeolchi_bokkeum", "ojingeo_bokkeum", "oyakodon", "potato_gratin", "salmon_don", "sigeumchi_namul", "sogogi_muguk",
+    "tangsuyuk", "tomato_egg_stirfry", "tomato_pasta", "tonkatsu", "tteokbokki",
+})
+
+
 def test_seed_validates_without_issues(specs):
-    assert len(specs) == 50
+    # 개수는 시드 폴더에서 센다(파일 하나 = 레시피 하나). 검증 오류가 있으면 fixture에서 이미 실패한다.
+    files = sorted(RECIPES_DIR.glob("*.yaml"))
+    assert len(specs) == len(files) > len(PUBLISHED_IDS)
+    assert {s.id for s in specs} == {f.stem for f in files}
 
 
 def test_one_recipe_per_file_named_by_id():
@@ -42,16 +60,38 @@ def test_one_recipe_per_file_named_by_id():
 
 
 def test_cuisine_mix(specs):
+    # 1-3 검수 완료분의 구성(한식 30·기타 20)은 그대로 유지한다. 전체 구성은 시드에서 센다.
+    published = Counter(s.cuisine for s in specs if s.id in PUBLISHED_IDS)
+    assert published["한식"] == 30
+    assert sum(published.values()) - published["한식"] == 20
     counts = Counter(s.cuisine for s in specs)
-    assert counts["한식"] == 30
-    assert sum(counts.values()) - counts["한식"] == 20
-    assert {"일식", "양식", "중식"} <= set(counts)
+    assert sum(counts.values()) == len(specs)
+    assert {"한식", "일식", "양식", "중식"} <= set(published) <= set(counts)
 
 
-def test_all_recipes_published_after_review(specs):
-    # 1-3 사람 검수 완료(2026-10-03). 새 레시피는 draft로 넣고 검수 후 published로 바꾼다.
-    assert {s.status for s in specs} == {"published"}
-    assert {s.source for s in specs} == {"agent_draft"}
+def test_reviewed_recipes_stay_published(specs):
+    # 1-3 사람 검수 완료(2026-10-03). 검수한 50개는 그대로 published여야 한다.
+    by_id = {s.id: s for s in specs}
+    assert PUBLISHED_IDS <= set(by_id), sorted(PUBLISHED_IDS - set(by_id))
+    assert {by_id[i].status for i in PUBLISHED_IDS} == {"published"}
+    assert {by_id[i].source for i in PUBLISHED_IDS} == {"agent_draft"}
+
+
+def test_published_recipes_have_required_fields(specs):
+    published = [s for s in specs if s.status == "published"]
+    assert {s.id for s in published} == PUBLISHED_IDS  # 검수 목록 밖의 published 금지(사람 승인 없이 바꾸지 않음)
+    for s in published:
+        assert s.taste is not None and s.difficulty is not None, s.id
+        assert s.steps and s.cook_time_min > 0, s.id
+        assert any(i.role == "main" and not i.optional for i in s.ingredients), s.id
+        assert all(i.ingredient is not None for i in s.ingredients), s.id
+
+
+def test_new_recipes_are_draft(specs):
+    # 자취요리신 변환(2026-10-16) 등 검수 전 레시피는 draft로 둔다. 사람이 검수표로 승인한 뒤에만 published.
+    new = [s for s in specs if s.id not in PUBLISHED_IDS]
+    assert new
+    assert {s.status for s in new} == {"draft"}, sorted(s.id for s in new if s.status != "draft")
 
 
 def test_review_fixes_1_3(specs):
@@ -65,9 +105,10 @@ def test_every_recipe_is_complete(specs):
     for s in specs:
         assert s.taste is not None and s.difficulty is not None, s.id
         assert any(i.role == "main" and not i.optional for i in s.ingredients), f"{s.id}: 필수 주재료 없음"
-        assert all(i.ingredient is not None for i in s.ingredients), f"{s.id}: 미매칭 재료"
         assert s.steps, s.id
-        assert len({i.ingredient for i in s.ingredients}) == len(s.ingredients), f"{s.id}: 재료 중복"
+        if s.status == "published":  # draft(자취요리신 변환)는 미매칭·중복 매핑을 검수표·CONVERSION.md로 확인
+            assert all(i.ingredient is not None for i in s.ingredients), f"{s.id}: 미매칭 재료"
+            assert len({i.ingredient for i in s.ingredients}) == len(s.ingredients), f"{s.id}: 재료 중복"
 
 
 def test_bad_seed_is_rejected(ck, tmp_path):
@@ -93,14 +134,33 @@ def test_review_table_is_up_to_date(ck, specs):
 ALL_PANTRY = frozenset({"kimchi", "egg", "pork_belly", "pasta", "tofu", "rice", "potato", "squid", "tomato_sauce", "scallion"})
 
 
-def test_kimchi_recipes_excluded_for_shrimp_allergy(recommender, specs):
-    kimchi_recipes = {s.id for s in specs if any(i.ingredient == "kimchi" for i in s.ingredients)}
-    assert kimchi_recipes == {"kimchi_jjigae", "kimchijeon", "budae_jjigae"}
-    result = recommender.recommend(UserContext(allergen_groups=frozenset({"shrimp"}), pantry=ALL_PANTRY),
-                                   RecommendRequest(limit=100))
+@pytest.fixture(scope="module")
+def recommender_with_drafts(ck, specs):
+    return build_recommender(ck, [recipe_from_spec(s) for s in specs], serve_draft_recipes=True)
+
+
+KIMCHI_LIKE = frozenset({"kimchi", "kkakdugi", "young_radish_kimchi"})
+
+
+@pytest.mark.parametrize("serve_drafts", [False, True])
+def test_kimchi_recipes_excluded_for_shrimp_allergy(recommender, recommender_with_drafts, specs, serve_drafts):
+    """김치류가 들어간 모든 레시피(검수 전 draft 포함)가 새우 알레르기 사용자에게 제외된다."""
+    engine = recommender_with_drafts if serve_drafts else recommender
+    pool = [s for s in specs if serve_drafts or s.status == "published"]
+    kimchi_recipes = {s.id for s in pool if any(i.ingredient in KIMCHI_LIKE for i in s.ingredients)}
+    assert {"kimchi_jjigae", "kimchijeon", "budae_jjigae"} <= kimchi_recipes
+    # 모든 김치 레시피가 후보가 되도록 그 main 재료를 보유로 넣는다(후보가 아니면 제외 기록이 남지 않음).
+    mains = {i.ingredient for s in pool if s.id in kimchi_recipes for i in s.ingredients if i.role == "main"}
+    result = engine.recommend(UserContext(allergen_groups=frozenset({"shrimp"}), pantry=ALL_PANTRY | mains),
+                              RecommendRequest(limit=1000))
     served = {i.recipe_id for i in result.items}
     assert served and not served & (kimchi_recipes | {"gyeranjjim", "haemul_pajeon"})
-    reasons = {(e.recipe_id, e.ingredient_id, e.certainty) for e in result.exclusions if e.reason == ExclusionReason.ALLERGEN}
+    allergen = [e for e in result.exclusions if e.reason == ExclusionReason.ALLERGEN]
+    # 주재료가 모두 미매칭인 draft는 후보가 되지 않아 제외 기록도 없다(누구에게도 제공되지 않음, 위 served 검사로 확인).
+    candidates = {s.id for s in pool if s.id in kimchi_recipes
+                  and any(i.role == "main" and i.ingredient is not None for i in s.ingredients)}
+    assert candidates <= {e.recipe_id for e in allergen if e.ingredient_id in KIMCHI_LIKE and e.target == "shrimp"}
+    reasons = {(e.recipe_id, e.ingredient_id, e.certainty) for e in allergen}
     assert ("kimchi_jjigae", "kimchi", "possible") in reasons
     assert ("gyeranjjim", "saeujeot", "definite") in reasons
     assert ("haemul_pajeon", "shrimp_raw", "definite") in reasons  # 선택 재료여도 제외
@@ -114,6 +174,37 @@ def test_milk_allergy_excludes_optional_cheese(recommender):
     assert not any("검수 전 레시피입니다" in i.notes for i in result.items)
 
 
-def test_published_seed_served_by_default(recommender):
+def test_published_seed_served_by_default(recommender, specs):
     result = recommender.recommend(UserContext(pantry=ALL_PANTRY), RecommendRequest(limit=100))
     assert len(result.items) >= 20
+    drafts = {s.id for s in specs if s.status == "draft"}
+    assert not {i.recipe_id for i in result.items} & drafts  # 기본 설정은 검수 전 레시피를 제공하지 않는다
+
+
+# --- 자취요리신 데이터 변환(2026-10-16, docs/decisions.md D3 예외) ---------------------------------------------
+
+
+def test_simplecooking_recipes_are_draft_with_youtube_source(specs):
+    # 원본 100개가 모두 변환되고, 출처는 영상 URL, 검수 전이므로 draft·confidence low 그대로다.
+    dataset = ROOT / "data" / "simplecooking_recipe_dataset" / "recipes" / "simplecooking"
+    sc = [s for s in specs if s.source.startswith("https://www.youtube.com/watch?v=")]
+    assert len(sc) == len(list(dataset.glob("*.yaml"))) == 100
+    assert {s.status for s in sc} == {"draft"} and {s.confidence for s in sc} == {"low"}
+    assert {s.id for s in sc}.isdisjoint(PUBLISHED_IDS)
+    assert len(specs) == len(PUBLISHED_IDS) + len(sc)
+
+
+def test_unmapped_only_in_drafts(specs):
+    # 미매칭(null) 재료는 draft에만 있다(docs/plan.md 5-4). 미매칭 레시피는 알레르기 사용자에게 제외된다.
+    with_unmapped = {s.id: s.status for s in specs if any(i.ingredient is None for i in s.ingredients)}
+    assert with_unmapped and set(with_unmapped.values()) == {"draft"}
+
+
+def test_unmapped_draft_excluded_for_any_allergy(recommender_with_drafts, specs):
+    unmapped = {s.id for s in specs if any(i.ingredient is None for i in s.ingredients)}
+    mains = {i.ingredient for s in specs if s.id in unmapped for i in s.ingredients if i.role == "main" and i.ingredient}
+    ctx = UserContext(allergen_groups=frozenset({"peach"}), pantry=ALL_PANTRY | mains)
+    result = recommender_with_drafts.recommend(ctx, RecommendRequest(limit=1000))
+    assert not {i.recipe_id for i in result.items} & unmapped
+    excluded = {e.recipe_id for e in result.exclusions if e.reason == ExclusionReason.UNMAPPED_INGREDIENT}
+    assert excluded & unmapped

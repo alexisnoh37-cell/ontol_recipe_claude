@@ -1,0 +1,94 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: samgyeobsal_paseuta_gi7smc
+title: 삼겹살 파스타
+cuisine: 양식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source: https://www.youtube.com/watch?v=gi7smc7VwBc
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- ingredient: pork_belly
+  raw_text: 대패삼겹살 / 대패삼겹살 200g
+  role: main
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: pasta
+  raw_text: 냉동 스파게티면 / 스파게티면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: onion
+  raw_text: 양파 / 양파 1/4개
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 개
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: tonkatsu_sauce
+  raw_text: 돈가스 소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: parsley
+  raw_text: 파슬리
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 대패삼겹살 200g과 다진 마늘 1스푼을 더한 뒤 갈색이 돌 때까지 볶는다.
+  technique: 볶음
+- text: 양파 1/4개를 더한 뒤 설탕 1스푼, 돈가스 소스 1스푼, 굴소스 1스푼을 더해 함께 볶는다.
+  technique: 볶음
+- text: 냉동 스파게티면과 물 90ml를 더한 뒤 면이 완전히 풀릴 때까지 볶는다.
+  technique: 볶음
+- text: 청양고추를 더해 한 번 더 섞는다.
+  technique: 무침
+- text: 후추와 파슬리를 뿌려 마무리마친다.
+  technique: null
