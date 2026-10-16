@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3577
+title: 부추 배무침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3577. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chive
+  raw_text: 부추(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(15g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(8g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(8g)
+  role: sub
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓(6g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(3g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(10g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(4g)
+  role: sub
+steps:
+- text: 부추는 다듬어 5~6cm 크기로 썰고, 양파는 뿌리와 껍질을 제거해 얇게 채 썬다.
+- text: 배는 껍질을 제거해 여덟 등분하고 씨를 제거하여 편 썰기를 한다.
+- text: 다진 마늘, 고춧가루, 멸치액젓, 저염간장, 레몬즙, 통깨(2g)를 섞어 양념장을 만든다
+- text: 부추, 양파, 배의 물기를 제거한다.
+- text: 볼에 담고 양념장을 넣어 버무린다.
+- text: 접시에 담고 통깨(2g)를 뿌려 마무리한다.

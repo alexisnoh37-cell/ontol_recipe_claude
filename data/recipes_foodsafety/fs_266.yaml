@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_266
+title: 대구지리탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 266. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 대구(150g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(15g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(1g)
+  role: sub
+- ingredient: null
+  raw_text: 붉은 고추(1g)
+  role: sub
+- ingredient: soybean_sprouts
+  raw_text: 콩나물(25g)
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓(10g)
+  role: sub
+- ingredient: null
+  raw_text: 반죽 쑥가루(10g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 다시마(1g)
+  role: sub
+- ingredient: dried_pollock
+  raw_text: 북어(15g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(30g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 다진 마늘(10g)
+  role: sub
+- ingredient: ginger
+  raw_text: 다진 생강(3g)
+  role: sub
+steps:
+- text: 대구는 비늘과 내장을 제거하고 흐르는 물에 씻어 비린 향을 없앤다.
+- text: 미나리는 6cm 길이로 썰고, 청양고추, 붉은 고추는 어슷하게 썰고, 콩나물, 쑥갓을 씻어 준비한다.
+- text: 쑥가루와 밀가루를 섞고 물(15g)을 조금씩 넣어가며 매끈해지도록 반죽한 뒤 30분~1시간 정도 숙성시킨다.
+- text: 냄비에 육수 재료를 넣어 10분간 끓여 육수를 만든다.
+- text: 다진 마늘과 생강을 넣고 향이 우러나면 대구를 넣은 뒤 대구가 어느 정도 익으면 콩나물을 넣고, 끓어오르면 수제비 반죽을 떼어 넣는다.
+- text: 청양고추, 붉은 고추를 넣고 한소끔 더 끓이다가 미나리와 쑥갓을 얹은 뒤 바로 불을 꺼 마무리한다.

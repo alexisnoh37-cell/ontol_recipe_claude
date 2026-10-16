@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3189
+title: 단호박 호밀빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3189. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 통밀가루 200g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 강력분 200g
+  role: sub
+- ingredient: null
+  raw_text: 전립분 40g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 15g
+  role: sub
+- ingredient: null
+  raw_text: 드라이이스트 5g
+  role: sub
+- ingredient: null
+  raw_text: 베이킹파우더 10g
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박 20g
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨 10g
+  role: sub
+steps:
+- text: (속재료) 단호박은 쪄서 먹기 좋은 크기로 썰어둔다.
+- text: 통밀가루와 강력분, 전립분, 물, 소금을 섞어 5℃에서 반나절동안 1차 발효를 시킨다.
+- text: 반죽을 썰어 모양을 잡고, 중간발효를 15분동안 한다.
+- text: 반죽 가운데에 썰은 단호박과 참깨를 넣고 가볍게 접어서 말아 면포에 올린다.
+- text: 굽기 전에 쿠프(칼집내기)를 한다.
+- text: 230℃ 로 예열한 오븐에 넣고 스팀 후 210℃에서 25분 굽는다.

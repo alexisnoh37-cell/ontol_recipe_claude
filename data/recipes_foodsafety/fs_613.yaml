@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_613
+title: 인절미 무스와 수정과 아이스크림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 613. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: persimmon
+  raw_text: 홍시(1개)
+  role: sub
+- ingredient: null
+  raw_text: 콩가루(20g)
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피(10g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(20g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(10g)
+  role: sub
+- ingredient: dried_persimmon
+  raw_text: 곶감(2개)
+  role: sub
+- ingredient: null
+  raw_text: 자몽(1/6개)
+  role: sub
+- ingredient: null
+  raw_text: 판젤라틴(1장)
+  role: sub
+steps:
+- text: 곶감은 씨를 발라낸다.
+- text: 생강과 계피를 넣고 끓여 수정과를 만든 뒤 냉동한다.
+- text: 홍시는 믹서로 곱게 갈고 틀어 넣어 굳힌다.
+- text: 생크림은 차갑게 휘핑한다.
+- text: 불려 놓은 젤라틴을 굳혀 콩가루를 섞어 인절미를 만든다
+- text: 자몽을 껍질을 제거 후 갈아서 젤리를 만들고, 접시에 굳혀놓은 홍시와 아이스 수정과를 담는다

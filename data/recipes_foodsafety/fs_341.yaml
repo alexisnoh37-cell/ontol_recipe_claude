@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_341
+title: 바비큐리조또
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 341. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: pork_belly
+  raw_text: 통삼겹 200g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 30g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추 2g
+  role: sub
+- ingredient: null
+  raw_text: 발사믹식초 30g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: null
+  raw_text: 청국장리조뜨
+  role: sub
+- ingredient: rice
+  raw_text: 밥 150g
+  role: sub
+- ingredient: null
+  raw_text: 청국장가루 15g
+  role: sub
+- ingredient: null
+  raw_text: 야채육수 200g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 30g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 15g
+  role: sub
+- ingredient: chive
+  raw_text: 영양부추 20g
+  role: sub
+- ingredient: null
+  raw_text: 곁들이채소
+  role: sub
+- ingredient: cabbage
+  raw_text: 적양배추 30g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 70g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 25g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 10g
+  role: sub
+steps:
+- text: 사과와 적양배추는 먹기 좋은 크기로 잘라준다.
+- text: 감자를 작은 깍두기 모양으로 자르고 영양부추는 송송 잘라주어 청국장 리조또를 만들어준다.
+- text: 준비된 곁들이 채소를 올리브오일에 볶아준다.
+- text: 준비된 통삼겹은 물에 한번 80% 이상 데쳐준 후 조림장 재료에 물 200g을 넣고 은근히 졸여서 익혀준다.
+- text: 조림장에 졸여지는 통삼겹에 장이 한 큰술 남을 정도까지 졸여준다.
+- text: 접시에 곁들이 채소와 청국장 리조또를 함께 올려 셋팅한다.

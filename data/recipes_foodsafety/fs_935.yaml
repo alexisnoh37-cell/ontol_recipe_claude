@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_935
+title: 단호박 스프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 935. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: butter
+  raw_text: 버터 2g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 1g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리 5g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 1g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 100g
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박 50g
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마 15g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 10g
+  role: sub
+- ingredient: null
+  raw_text: 라임주스 1g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량
+  role: sub
+steps:
+- text: 냄비에 버터를 녹인 후 마늘, 양파, 셀러리, 생강을 넣고 볶는다.
+- text: 양파와 셀러리가 부드러워지면 닭육수를 넣는다.
+- text: 2에 단호박, 고구마를 넣고 단호박이 부드러워질 때까지 약한불로 끓인다.
+- text: 단호박이 다 익으면 믹서에 부드러운 상태가 되도록 간다.
+- text: 4를 다시 냄비에 넣고 중간불로 끓인다.
+- text: 5에 우유, 라임주스, 소금, 후추, 크림을 넣어 마무리한다.

@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_879
+title: 꽃게강정
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 879. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: crab
+  raw_text: 꽃게 120g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.3g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 1g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 1g
+  role: sub
+- ingredient: ketchup
+  raw_text: 토마토케첩 4g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 1.3g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 0.5g
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 4g
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루 8g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 10g
+  role: sub
+- ingredient: null
+  raw_text: 매운고추소스
+  role: sub
+- ingredient: null
+  raw_text: 매운 고춧가루 1.3g
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 8g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 10g
+  role: sub
+steps:
+- text: 꽃게를 잘 손질한다.
+- text: 손질한 꽃게에 생강즙과 후춧가루로 간을 한다.
+- text: 청·홍고추는 사방 0.7cm로 썰고 생강은 다진다.
+- text: 매운 고추소스의 재료들을 모두 섞고 냄비에 넣어 끓이다가 준비해둔 채소들을 넣고 한소큼 끓여준다.
+- text: 꽃게에 찹쌀가루를 묻혀 튀긴다.
+- text: 4의 소스에 넣고 섞는다.

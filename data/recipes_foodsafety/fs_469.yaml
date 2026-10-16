@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_469
+title: 닭고기파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 469. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(30g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: pasta
+  raw_text: 스파게티(70g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(5g)
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모짜렐라치즈(20g)
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살
+  role: sub
+- ingredient: null
+  raw_text: 닭살(100g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(40g)
+  role: sub
+- ingredient: tomato_sauce
+  raw_text: 토마토소스(20g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(10g)
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스(5g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(100g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(100g)
+  role: sub
+steps:
+- text: 닭살을 깎뚝 썰어 소금, 후춧가루, 밀가루 넣어 살살 털어 준비해 놓는다.
+- text: 마늘과 토마토, 양파는 입자있게 다져 놓는다.
+- text: 양송이는 껍질을 벗겨 다져 준비한다.
+- text: 냄비에 버터 넣고, 다진 마늘과 양파를 볶는다.
+- text: 볶아지는 냄비에 밀가루 뭍힌 닭살을 넣어 살짝 볶는다.
+- text: ⑤번에 양송이와 다진 토마토, 토마토 소스, 올리고당, 굴소스를 넣고 살짝 볶다가 육수를 넣어 끓인 후 다시 우유를 넣고 은근히 끓이고, 스파게티는 약 10분 정도 삶아 건져 접시에 담아, 끓인 소스를 붓고, 위에 모짜렐라치즈를 올려 오븐에 약 5분 정도 구어 완성한다.

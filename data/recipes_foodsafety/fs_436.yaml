@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_436
+title: 등심채소롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 436. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: pork_loin
+  raw_text: 돼지등심(100g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.05g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(30g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(30g)
+  role: sub
+- ingredient: null
+  raw_text: 파인애플(30g)
+  role: sub
+- ingredient: cheese
+  raw_text: 치즈(30g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(30g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(200g)
+  role: sub
+- ingredient: null
+  raw_text: 칠리소스(30g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: null
+  raw_text: 물녹말(녹말가루5g, 물 5g)
+  role: sub
+steps:
+- text: 등심은 넓게 펴서 소금과 후춧가루를 뿌려 준비한다.
+- text: 파프리카와 파인애플은 속을 제거하고 약 7cm 길이로 썰어놓는다.
+- text: 시금치는 끓는 물에 데쳐 찬물에 헹구어 준비한다.
+- text: 밑간을 해 놓은 등심에 준비한 파프리카와 시금치 파인애플을 넣는다.
+- text: 채소와 파인애플을 넣은 등심에 치즈를 넣고 돌돌말아 밀가루, 달걀물, 빵가루 순서로 입혀 튀김기름 170~180℃에서 약 3분 정도 튀겨 기름을 빼 놓는다.
+- text: 냄비에 칠리소소와 물, 설탕을 넣고 바글바글 끓이다가 물녹말을 넣고 한 번 더 끓인 후, 튀겨놓은 등심채소 롤에 함께 뿌려 완성한다.

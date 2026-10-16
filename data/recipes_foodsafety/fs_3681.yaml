@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3681
+title: 코코넛 수플레 치즈케이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3681. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: cream_cheese
+  raw_text: 크림치즈 90g
+  role: sub
+- ingredient: butter
+  raw_text: 무염버터 15g
+  role: sub
+- ingredient: null
+  raw_text: 코코넛우유 50ml
+  role: sub
+- ingredient: null
+  raw_text: 달걀노른자 70g
+  role: sub
+- ingredient: null
+  raw_text: 박력 밀가루 5g
+  role: sub
+- ingredient: corn_starch
+  raw_text: 옥수수전분 10g
+  role: sub
+- ingredient: null
+  raw_text: 머 랭
+  role: sub
+- ingredient: null
+  raw_text: 달걀흰자 130g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 1g
+  role: sub
+- ingredient: null
+  raw_text: 알룰로스 가루 20g
+  role: sub
+steps:
+- text: 볼에 크림치즈, 무염버터, 코코넛우유를 넣고 중탕하며 부드럽게 될 때까지 섞는다. 중탕물에서 내려 달걀노른자를 섞는다.
+- text: ①에 박력 밀가루, 옥수수전분을 체 쳐서 넣고 섞은 후 고운체로 한 번 더 거른다.
+- text: 달걀흰자에 레몬즙을 넣고 휘핑한다. 알룰로스 가루를 1/3씩 넣으며 섞어 약간 단단한 머랭을 만든다.
+- text: ②에 머랭을 1/3씩 넣고 섞어 반죽을 만든다. 케이크 틀에 유산지를 깔고 반죽을 넣는다.
+- text: 큰 팬에 뜨거운 물을 붓고 케이크 틀을 올려 중탕하여 150°C로 예열한 오븐에서 30분 동안 굽는다.
+- text: 케이크 틀에서 꺼내 유산지를 제거하고 마무리한다.

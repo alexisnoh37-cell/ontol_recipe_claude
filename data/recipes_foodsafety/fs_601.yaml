@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_601
+title: 관자버터구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 601. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: scallop
+  raw_text: 관자(2개)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(30g)
+  role: sub
+- ingredient: null
+  raw_text: 비트(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: pickled_cucumber
+  raw_text: 오이피클(20g)
+  role: sub
+- ingredient: null
+  raw_text: 고추피클(20g)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(20g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(20g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+steps:
+- text: 양파, 오이피클, 고추피클은 입자있게 다진다.
+- text: 다진 양파와 피클에 마요네즈를 넣고 골고루 섞어 소스를 만든다.
+- text: 마요네즈소스에 꿀을 넣고 섞는다
+- text: 관자의 앞뒤에 버터를 바른다.
+- text: 관자에는 버터를 발라 팬에 구워 접시에 담는다.
+- text: 비트, 양파, 데친 시금치를 넣고 갈아서 소스를 만들고 관자에 마요네즈소스와 시금치소스를 올린다

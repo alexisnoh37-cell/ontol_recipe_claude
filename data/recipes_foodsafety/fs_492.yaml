@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_492
+title: 토마토덮밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 492. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: rice
+  raw_text: 쌀(100g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(50g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: tomato_sauce
+  raw_text: 토마토소스(20g)
+  role: sub
+- ingredient: ketchup
+  raw_text: 케첩(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(80g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(5g)
+  role: sub
+- ingredient: null
+  raw_text: 곁들임채소
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(5g)
+  role: sub
+steps:
+- text: 쌀은 물에 불려 밥을 짓고, 가지는 길게 썰어 팬에 구워 놓는다.
+- text: 양파와 마늘은 잘게 다져 준비한다.
+- text: 토마토는 입자있게 다져 놓는다.
+- text: 새우는 정종을 넣어 데쳐 껍질을 벗겨 준비한다.
+- text: 팬에 올리브 오일을 넣고 양파와 마늘을 먼저 볶는다.
+- text: 볶아지는 양파와 마늘에 토마토소스와 케첩을 넣어 볶다가 토마토와 설탕을 넣어 볶다가 졸이고, 밥을 그릇에 담고, 구운 가지와 새우를 올린 후 졸여 놓은 토마토소스를 위에 올린 후 어린잎을 살짝 올려 완성한다.

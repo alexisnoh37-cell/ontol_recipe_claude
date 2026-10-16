@@ -1,0 +1,30 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_388
+title: 배숙구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 388. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: pear
+  raw_text: 배 750g
+  role: sub
+- ingredient: null
+  raw_text: 후르츠칵테일 150g
+  role: sub
+- ingredient: null
+  raw_text: 생강청 50g
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 60g
+  role: sub
+- ingredient: null
+  raw_text: 탄산수 200g
+  role: sub
+steps:
+- text: 뚜껑을 만들 배의 윗동을 자르고, 수저로 배 속을 판다.
+- text: 탄산수와 생강청을 미리 30분 전에 섞어준다.
+- text: 방울토마토를 먹기 좋게 잘라준 후 속을 파낸 배에 후르츠 칵테일과 방울토마토를 넣어준다.
+- text: 과일로 채워진 배에 미리 만든 생강탄산수를 부어준다.
+- text: 배를 뚜껑을 덮어 호일로 싼 후 팬에 구워준다.

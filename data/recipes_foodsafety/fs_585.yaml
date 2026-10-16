@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_585
+title: 닭고기 완자삼계죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 585. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(1마리)
+  role: sub
+- ingredient: null
+  raw_text: 인삼(1뿌리)
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀(50g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(10알)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(30g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추(10알)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+steps:
+- text: 닭은 깨끗이 씻고 포를 뜬다.
+- text: 닭고기는 15분 정도 삶아 식으면 곱게 다져 다진 마늘, 대파, 저염간장을 넣고 완자를 만든다.
+- text: 인삼은 뇌두를 제거하고 깨끗이 씻는다.
+- text: 찹쌀은 약 30분 정도 충분히 불린다
+- text: 대추는 소금물에 깨끗이 씻고 씨를 제거한다.
+- text: 믹서에 인삼과 대추, 불린 찹쌀, 물을 정도 넣고 곱게 간 뒤, 냄비에 담아 죽을 쑤다가 다 익으면 만들어 놓은 완자를 넣고 한소끔 더 끓인다.

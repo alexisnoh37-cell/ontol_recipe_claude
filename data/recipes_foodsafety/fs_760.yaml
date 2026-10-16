@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_760
+title: 죽순콩나물밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 760. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: rice
+  raw_text: 쌀 90
+  role: sub
+- ingredient: soybean_sprouts
+  raw_text: 콩나물 30
+  role: sub
+- ingredient: null
+  raw_text: 삶은 죽순 40
+  role: sub
+- ingredient: null
+  raw_text: '녹차 우린 물 90 양념장: 간장 4'
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 0.5
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1
+  role: sub
+- ingredient: sesame
+  raw_text: 깨소금 0.5
+  role: sub
+- ingredient: null
+  raw_text: 다진파 2.5
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 1.25
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 2.5
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 1.25
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 3.75
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1
+  role: sub
+steps:
+- text: 콩나물은 깨끗이 씻어 꼬리를 뗀다.
+- text: 죽순은 빗살무늬를 살려 한입 크기로 얄팍하게 썬다.
+- text: 양념장 재료를 모두 섞어 양념장을 만든다.
+- text: 솥에 씻은 쌀을 넣고 콩나물과 죽순을 올리고 녹차 우린 물을 부어 밥을 짓는다.
+- text: 밥이 다 되면 뜸을 들여준다.
+- text: 밥을 푸고 양념장을 넣어 비벼 먹는다.

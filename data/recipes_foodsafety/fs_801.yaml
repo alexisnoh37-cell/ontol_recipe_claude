@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_801
+title: 채소 팬케익
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 801. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 당근갈은것 40g
+  role: sub
+- ingredient: null
+  raw_text: 돼지호박갈은것 20g
+  role: sub
+- ingredient: null
+  raw_text: 셀러리다진것 10g
+  role: sub
+- ingredient: null
+  raw_text: 양파다진것 10g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 중력분 32g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.21g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨 베이킹 파우더 0.5g
+  role: sub
+- ingredient: null
+  raw_text: 머스터드 파우더 0.5g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 2g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 55g
+  role: sub
+- ingredient: milk
+  raw_text: 저지방우유 100g
+  role: sub
+- ingredient: null
+  raw_text: 메이플시럽 3g
+  role: sub
+steps:
+- text: 당근, 돼지호박은 큼직하게 썬다.
+- text: 셀러리와 양파는 곱게 다진다.
+- text: 믹서에 당근, 돼지호박, 저지방우유, 달걀, 중력분, 머스터드 파우더, 저나트륨 베이킹 파우더, 후춧가루를 넣고 간다.
+- text: 3을 그릇에 붓고 셀러리와 양파를 섞는다.
+- text: 팬에 식용유를 넣고 팬케이크를 부친다.
+- text: 메이플시럽을 곁들여 낸다.

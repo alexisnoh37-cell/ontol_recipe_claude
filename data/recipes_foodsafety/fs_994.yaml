@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_994
+title: 발사믹과 로즈마리로 향을 낸 오븐구이 야채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 994. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: kabocha
+  raw_text: 단호박 40g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 40g
+  role: sub
+- ingredient: null
+  raw_text: 비트 40g
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마 40g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 8g
+  role: sub
+- ingredient: null
+  raw_text: 발사믹식초 30g
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 적당량
+  role: sub
+steps:
+- text: 단호박, 비트, 고구마, 당근은 껍질을 벗긴다.
+- text: 1을 자연스럽게 2~2.5cm 두께로 썬다.
+- text: 볼에 2와 발사믹 식초, 꿀, 로즈마리 잎을 넣고 버무린다.
+- text: 소금, 후추로 간을 한다.
+- text: 150℃의 예열된 오븐에서 익을 때까지 굽는다.
+- text: 중간에 뒤집어 주어 고루 익히도록 한다.

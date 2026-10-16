@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_272
+title: 완자김치찌개
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 272. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 콩나물(30g)
+  role: sub
+- ingredient: kimchi
+  raw_text: 김치(50g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(40g)
+  role: sub
+- ingredient: null
+  raw_text: 붉은 고추(15g)
+  role: sub
+- ingredient: ground_pork
+  raw_text: 다진 돼지고기(등심, 60g)
+  role: sub
+- ingredient: saeujeot
+  raw_text: 새우젓(5g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 대파(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(5g)
+  role: sub
+- ingredient: beef
+  raw_text: 쇠고기(50g)
+  role: sub
+steps:
+- text: 대파, 마늘, 쇠고기를 물(300g)과 함께 끓인 뒤 면포에 걸러 육수를 만든다.
+- text: 콩나물, 김치를 물에 씻어 손질한다.
+- text: 두부는 물기를 빼고, 붉은 고추는 다진 뒤 돼지고기와 섞어 반죽해 동그랗게 빚어 완자를 만든다.
+- text: 김 오른 찜기에 완자를 넣어 찐다.
+- text: 육수를 끓이고 끓어오르면 김치, 콩나물, 새우젓을 넣는다.
+- text: 한소끔 더 끓이다가 완자를 넣고 조금 더 끓여 마무리한다.

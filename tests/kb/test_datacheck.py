@@ -98,3 +98,14 @@ def test_preference_targets_must_exist(ck):
         (1, "allergen_group", "sesame"),
     ]
     assert codes(check_preferences(ck, rows)) == ["bad_ref"] * 3
+
+
+def test_draft_may_omit_cook_time_and_use_unclassified_cuisine(ck):
+    """식품안전나라 가져오기(plan 5-3-1): draft에 한해 cook_time_min 없음, cuisine 미분류 허용."""
+    draft = recipe(status="draft", cuisine="미분류", cook_time_min=None, taste=None, difficulty=None)
+    assert check_recipes(ck, [("r.yaml", draft)]) == []
+
+
+def test_published_requires_cook_time_and_vocab_cuisine(ck):
+    bad = recipe(cuisine="미분류", cook_time_min=None)
+    assert sorted(codes(check_recipes(ck, [("r.yaml", bad)]))) == ["bad_vocab", "published_incomplete"]

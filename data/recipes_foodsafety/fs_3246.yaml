@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3246
+title: 가지 탕수육
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3246. 요리종류 일품, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(70g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(50g)
+  role: sub
+- ingredient: null
+  raw_text: 아삭이고추(30g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(60g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(100ml)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.2g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(20g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(30g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: null
+  raw_text: 전분(10g)
+  role: sub
+- ingredient: frying_mix
+  raw_text: 튀김가루(50g)
+  role: sub
+steps:
+- text: 돼지고기, 두부, 아삭이고추는 잘게 다지고, 가지는 어슷하게 4등분해 가운데 칼집을 넣는다.
+- text: 다진 돼지고기는 밑간한 뒤 다진 두부, 고추를 넣어 섞는다.
+- text: 칼집을 넣은 가지에 밑간한 돼지고기를 채운 뒤 튀김가루를 묻힌다.
+- text: 튀김가루를 묻힌 가지는 180℃로 예열한 식용유(100㎖)에 7~8분간 두 번 튀긴다.
+- text: 냄비에 가지소스 재료와 물(100㎖)을 넣어 4분간 끓인다.
+- text: 그릇에 튀긴 가지를 얹고 가지소스를 뿌린다.

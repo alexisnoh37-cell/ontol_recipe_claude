@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_907
+title: 감자를 곁들인 야채스튜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 907. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파 15
+  role: sub
+- ingredient: null
+  raw_text: 청피망 15g
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지 10g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 18g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯 8g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 2g
+  role: sub
+- ingredient: null
+  raw_text: 토마토콩카세 10g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 50g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 1g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 15g
+  role: sub
+- ingredient: tomato_paste
+  raw_text: 토마토페이스트 8g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 5g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 8g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 적당량
+  role: sub
+steps:
+- text: 마늘은 다지고, 양파, 청피망, 가지, 애호박, 양송이는 1cm 주사위모양으로 썬다.
+- text: 토마토는 끓는 물에 데쳐 껍질을 벗긴 뒤 씨를 제거하고 야채들과 같은 크기로 자른다.
+- text: 감자는 껍질을 벗겨 큼직하게 썰어 삶은 뒤 완전히 익으면 오븐서 수분을 제거하고 으깨 우유, 생크림, 소금, 후추를 넣는다.
+- text: 팬에 기름을 두르고 양파를 투명해질 때까지 볶은 뒤 마늘, 토마토 페이스트를 넣고 볶다가 청피망, 가지, 호박, 양송이, 토마토를 넣어 볶는다.
+- text: 야채가 부드러워지면 닭육수를 넣어 한번 더 끓이고 소금, 후추로 간 한다.
+- text: 접시에 완성된 으깬 감자를 깔고 그 위에 야채 스튜를 올려낸다.

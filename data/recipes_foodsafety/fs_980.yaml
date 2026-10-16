@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_980
+title: 참깨 오렌지 쇠고기
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 980. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 쇠고기사태 100g
+  role: sub
+- ingredient: null
+  raw_text: 전분 2g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: null
+  raw_text: 오렌지주스 10g
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스 2g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 3g
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨 1g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 1g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 1g
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지 20g
+  role: sub
+- ingredient: null
+  raw_text: 파인애플 28g
+  role: sub
+steps:
+- text: 소고기는 길이 6cm, 넓이 2cm, 두께 0.5cm 정도의 직사각형 모양으로 썬 뒤 전분과 간장을 섞어 재운다.
+- text: 생강은 다지고 오렌지는 껍질을 벗겨 속만 잘라내고 파인애플은 껍질과 속심을 제거하고 0.5cm 크기의 주사위모양으로 자른다.
+- text: 오렌지주스, 굴소스, 꿀, 전분을 섞어 소스를 만든다.
+- text: 기름을 두르지 않은 팬에 깨를 볶은 뒤 식히고 팬에 기름을 두르고 재운 소고기를 앞뒤로 골고루 익힌다.
+- text: 4에 소스를 넣고 저어주면서 끓여 농도가 나기 시작하면 오렌지와 파인애플을 넣고 살짝 익힌다.
+- text: 접시에 5를 담고 제공하기 직전에 깨를 뿌린다.

@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3181
+title: 시금치들깨무침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3181. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: spinach
+  raw_text: 시금치 70g
+  role: sub
+- ingredient: null
+  raw_text: 파 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 5g
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깨가루 15g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 5g
+  role: sub
+- ingredient: perilla_oil
+  raw_text: 들기름 5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금(데치는용) 5g
+  role: sub
+steps:
+- text: 파, 마늘은 다진다.
+- text: 냄비에 물과 소금을 넣고 끓인다.
+- text: 세척한 시금치를 데친다.
+- text: 데친 시금치는 찬물에 헹구어 물기를 짠 다음 먹기 좋게 썬다.
+- text: 시금치에 들깨가루, 파, 마늘, 통깨, 들기름을 넣고 무친다.
+- text: 접시에 담아서 완성한다.

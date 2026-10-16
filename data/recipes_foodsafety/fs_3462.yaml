@@ -1,0 +1,85 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3462
+title: 토마토 해물누룽지탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3462. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: napa_cabbage
+  raw_text: 알배추(40g)
+  role: sub
+- ingredient: null
+  raw_text: 우목심(50g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(5g)
+  role: sub
+- ingredient: bok_choy
+  raw_text: 청경채(25g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(5g)
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주(30g)
+  role: sub
+- ingredient: squid
+  raw_text: 오징어(30g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(40g)
+  role: sub
+- ingredient: mussel
+  raw_text: 홍합(164g)
+  role: sub
+- ingredient: null
+  raw_text: 베트남 건고추(10g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(250g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(4g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(50g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(흰 부분, 10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 편 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 시판 누룽지(50g)
+  role: sub
+- ingredient: tomato_paste
+  raw_text: 토마토 페이스트(20g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(10g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(5g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(6g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추(3g)
+  role: sub
+- ingredient: null
+  raw_text: 다시팩(20g)
+  role: sub
+steps:
+- text: 물에 다시팩을 넣고 20분간 중불에 끓여 육수를 만들고, 오징어는 껍질을 벗겨 솔방울 모양으로 썰고 홍합은 수염을 제거하고 새우는 몸통의 껍질을 벗긴다.
+- text: 토마토는 껍질을 벗겨 5×5mm 크기로 썰고, 알배추, 표고버섯, 청양고추, 양파, 우목심, 깻잎은 채 썰고 청경채는 어슷 썬다.
+- text: 팬에 토마토 페이스트를 볶다가 토마토를 넣고 끓이고 고춧가루, 다시마 육수(200ml)를 넣고 살짝 끓여 토마토 소스를 만든다.
+- text: 팬에 식용유를 두르고 대파, 편 마늘을 볶고, 우목심, 새우, 오징어, 홍합, 알배추, 양파, 표고버섯, 건고추를 넣어 볶다가 후추로 간하고, 간장을 넣는다.
+- text: 토마토 소스를 함께 넣어 5분간 끓인다.
+- text: 청경채, 팽이버섯, 숙주를 넣어 살짝 볶고, 깻잎과 누룽지를 올려 마무리한다.

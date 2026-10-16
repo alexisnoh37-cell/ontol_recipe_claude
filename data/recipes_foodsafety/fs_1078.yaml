@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1078
+title: 이태리튀밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1078. 요리종류 밥, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: rice
+  raw_text: 쌀(100g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(2개)
+  role: sub
+- ingredient: basil
+  raw_text: 바질(3g)
+  role: sub
+- ingredient: corn
+  raw_text: 옥수수(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(30g)
+  role: sub
+- ingredient: null
+  raw_text: 파마산치즈가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 생모짜렐라치즈(20g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(4g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(3g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(2g)
+  role: sub
+steps:
+- text: 냄비에 물 한 컵을 넣고 끓으면 소금을 조금 넣고 쌀을 넣어 끓인다.
+- text: 쌀이 물을 흡수하면 버터를 넣고 골고루 섞은 뒤 파마산치즈가루를 넣고 섞어 접시에 펼쳐 식힌다.
+- text: 방울토마토는 굵게 다진 뒤 물기를 제거하고 바질은 얇게 채 썬다.
+- text: 모짜렐라치즈는 손으로 작게 뜯어 반은 바질, 토마토와 섞어 소금과 올리브오일로 간을 하고, 나머지는 옥수수와 섞는다.
+- text: 식은 밥에 4번의 소를 각각 넣고 동그랗게 빚는다.
+- text: 달걀물, 빵가루 순으로 묻혀 170℃ 기름에서 튀긴다.

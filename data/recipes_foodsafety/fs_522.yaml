@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_522
+title: 단호박떡갈비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 522. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: kabocha
+  raw_text: 단호박(150g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(100g)
+  role: sub
+- ingredient: ground_beef
+  raw_text: 다진소고기(100g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 파(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 양파(30g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.2g)
+  role: sub
+- ingredient: null
+  raw_text: 매실액(10g)
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣(10g)
+  role: sub
+steps:
+- text: 단호박은 칼로 잘라, 수저를 이용하여 호박씨를 제거한다.
+- text: 손질이 된 단호박은 면보를 깔고, 김이 오른 찜통에서 약 15분 정도 쪄 준비한다.
+- text: 다진 소고기는 파, 마늘, 양파, 참기름, 간장, 후춧가루, 매실액을 넣고 양념을 한다.
+- text: 3번에 양념된 소고기에 찹쌀가루를 넣고 골고루 섞는다.
+- text: 쪄 놓은 호박에 양념된 소고기를 넣고 모양을 잡아 준다.
+- text: 육수가 한 소큼 끓으면 만들어 놓은 단호박떡갈비(⑤)를 넣어 약 20분 정도 은근히 쪄서 잣을 올려 완성한다.

@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3296
+title: 단호박 양파잼 샌드위치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3296. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파(3개)
+  role: sub
+- ingredient: null
+  raw_text: 미니 단호박(2개)
+  role: sub
+- ingredient: null
+  raw_text: 삶은 달걀(3개)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(½컵)
+  role: sub
+- ingredient: bread
+  raw_text: 식빵(4장)
+  role: sub
+- ingredient: null
+  raw_text: 슬라이스 체더치즈(2장)
+  role: sub
+- ingredient: null
+  raw_text: 말린 자두(½컵)
+  role: sub
+- ingredient: lettuce
+  raw_text: 청상추(2장)
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드 슬라이스(⅓컵)
+  role: sub
+- ingredient: wine
+  raw_text: 화이트와인(⅓컵)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(2Ts)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3Ts)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(약간)
+  role: sub
+steps:
+- text: 양파는 얇게 채 썰고, 단호박은 껍질과 씨를 제거한 뒤 큼직하게 썰고, 말린 자두는 굵게 다지고, 청상추는 깨끗하게 씻는다.
+- text: 종이포일 위에 단호박을 올리고, 식용유(1Ts)를 두른 뒤 180℃로 예열한 오븐에서 15분간 구워 꺼내고, 삶은 달걀의 노른자는 체에 거르고, 흰자는 곱게 다진다.
+- text: 중간 불로 달군 팬에 식용유(2Ts)를 두르고, 화이트와인을 조금씩 넣으며 양파가 갈색이 될 때까지 볶아 양파잼을 만든다.
+- text: 구운 단호박은 한 김 식힌 뒤 체에 곱게 거르고, 달걀노른자, 흰자, 우유, 꿀, 소금, 후춧가루를 넣어 고루 섞어 단호박샐러드를 만든다.
+- text: 약한 불로 달군 마른 팬에 아몬드 슬라이스를 넣어 노릇하게 볶는다.
+- text: 식빵(1장)에 단호박샐러드, 청상추, 슬라이스 체더치즈를 올리고, 다른 식빵(1장)에 양파잼을 넉넉하게 바른 뒤 덮고, 삼각형으로 잘라 마무리한다.

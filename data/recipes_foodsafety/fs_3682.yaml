@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3682
+title: 초코바나나 두부크림빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3682. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+ingredients:
+- ingredient: null
+  raw_text: 박력 쌀가루 56g
+  role: sub
+- ingredient: null
+  raw_text: 강력 밀가루 140g
+  role: sub
+- ingredient: null
+  raw_text: 무가당 코코아가루① 8g
+  role: sub
+- ingredient: null
+  raw_text: 드라이 이스트 16g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 4g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 8g
+  role: sub
+- ingredient: null
+  raw_text: 바닐라 에센스 30g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 16g
+  role: sub
+- ingredient: butter
+  raw_text: 무염버터 22g
+  role: sub
+- ingredient: null
+  raw_text: 두부크림
+  role: sub
+- ingredient: banana
+  raw_text: 바나나 98g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 33g
+  role: sub
+- ingredient: null
+  raw_text: 무가당 코코아가루② 12g
+  role: sub
+- ingredient: null
+  raw_text: 알룰로스 30g
+  role: sub
+- ingredient: null
+  raw_text: 달걀물 약간
+  role: sub
+- ingredient: butter
+  raw_text: 무염버터 약간
+  role: sub
+steps:
+- text: 볼에 박력 쌀가루, 강력 밀가루, 무가당 코코아가루①, 드라이 이스트, 소금, 설탕, 물, 바닐라 에센스, 달걀을 넣고 섞다가 무염버터를 넣으며 한 덩어리가 될 때까지 반죽한 후 상온에서 30분 동안 1차 발효한다.
+- text: 믹서에 바나나, 물기를 제거한 두부, 무가당 코코아가루②, 알룰로스를 넣고 큰 덩어리가 없어질 정도로 살짝 갈아 두부크림을 만든다.
+- text: 반죽을 40g씩 분할하여 둥굴리기한 후 상온에서 15분 동안 중간 발효한다.
+- text: 반죽을 성형하여 오븐 팬에 올리고 30°C에서 20분 동안 2차 발효한다.
+- text: 달걀물을 바르고 175°C로 예열한 오븐에 12분 동안 구운 후 꺼내 완전히 식힌다.
+- text: 두부크림을 짤주머니에 담아 40g씩 빵 속에 채우고 무염버터를 발라 마무리한다.

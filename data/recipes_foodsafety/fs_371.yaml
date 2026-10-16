@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_371
+title: 장어구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 371. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+ingredients:
+- ingredient: null
+  raw_text: 장어 250g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 100g
+  role: sub
+- ingredient: null
+  raw_text: 뿌리채소조림
+  role: sub
+- ingredient: burdock
+  raw_text: 우엉 60g
+  role: sub
+- ingredient: null
+  raw_text: 더덕 60g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 20g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 15g
+  role: sub
+- ingredient: null
+  raw_text: 생강청 15g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 15g
+  role: sub
+- ingredient: null
+  raw_text: 발사믹식초 30g
+  role: sub
+- ingredient: null
+  raw_text: 곁들이김치
+  role: sub
+- ingredient: null
+  raw_text: 명이김치 25g
+  role: sub
+- ingredient: null
+  raw_text: 백김치 25g
+  role: sub
+steps:
+- text: 장어는 손질해 우유에 담가 이물질을 빼준다.
+- text: 더덕과 우엉은 가늘게 채 썰어 냉수에 담가 준다.
+- text: 생강은 채 썰어 냉수에 담가준다.
+- text: 조림장을 만들어 더덕, 우엉, 생강을 각각 볶아 섞어준다.
+- text: 맛간장과 발사믹식초를 졸이다가 장어를 볶아준다.
+- text: 곁들이 김치를 준비하고 졸여진 뿌리채소와 장어를 섞어 완성한다.

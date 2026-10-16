@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3687
+title: 콩감태유자 스콘
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3687. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 삶은 병아리콩① 175g
+  role: sub
+- ingredient: soy_milk
+  raw_text: 두유 210g
+  role: sub
+- ingredient: null
+  raw_text: 코코넛오일 70g
+  role: sub
+- ingredient: null
+  raw_text: 유자필 56g
+  role: sub
+- ingredient: rice_flour
+  raw_text: 쌀가루 280g
+  role: sub
+- ingredient: null
+  raw_text: 아몬드가루 105g
+  role: sub
+- ingredient: null
+  raw_text: 감태가루 3.5g
+  role: sub
+- ingredient: null
+  raw_text: 앙 금
+  role: sub
+- ingredient: null
+  raw_text: 유자앙금 105g
+  role: sub
+- ingredient: null
+  raw_text: 삶은 병아리콩② 50g
+  role: sub
+steps:
+- text: 믹서에 삶은 병아리콩①, 두유, 코코넛오일을 넣고 곱게 간다.
+- text: 볼에 담고 유자필을 넣어 섞는다.
+- text: 쌀가루, 아몬드가루, 감태가루를 체 쳐서 넣고 섞어 반죽을 만든다.
+- text: 반죽은 10~12cm 크기의 원형으로 성형하고, 유자앙금과 삶은 병아리콩②를 섞어 반죽 위에 올린다
+- text: 4~5등분으로 자르고 오븐 팬에 올린다.
+- text: 175°C로 예열한 오븐에 170°C에서 20분 동안 구워 마무리한다.

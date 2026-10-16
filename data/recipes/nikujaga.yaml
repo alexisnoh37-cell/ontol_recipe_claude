@@ -1,0 +1,52 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: nikujaga
+title: 니쿠자가(소고기 감자조림)
+cuisine: 일식
+difficulty: 2
+cook_time_min: 40
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(얇게 썬 것) 150g
+  role: main
+- ingredient: potato
+  raw_text: 감자 2개
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/3개
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3큰술
+  role: seasoning
+- ingredient: mirin
+  raw_text: 맛술 2큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1.5큰술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 3
+  sour: 0
+  umami: 3
+  savory: 2
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 냄비에 기름을 두르고 소고기를 볶다가 감자, 당근, 양파를 넣어 볶는다.
+  technique: 볶음
+- text: 재료가 잠길 만큼 물을 붓고 설탕, 맛술을 넣어 10분 끓인다.
+  technique: 끓이기
+- text: 간장을 넣고 감자가 익고 국물이 반으로 줄 때까지 조린다.
+  technique: 조림

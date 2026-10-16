@@ -1,0 +1,79 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_825
+title: 잡채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 825. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: glass_noodles
+  raw_text: 당면 20g
+  role: sub
+- ingredient: null
+  raw_text: 등심얇게썬것 20g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 5g
+  role: sub
+- ingredient: null
+  raw_text: 표고버섯마른것 10g
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯 10g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: null
+  raw_text: 호부추 5g
+  role: sub
+- ingredient: bellflower_root
+  raw_text: 도라지 10g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 5g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 1g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 10g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.1g
+  role: sub
+- ingredient: sesame
+  raw_text: 깨소금 1g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 1g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨간장소스
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 1g
+  role: sub
+steps:
+- text: 당면은 물에 불렸다가 끓는 물에 충분히 삶아 부드러워지면 차가운 물에 헹구어 물기를 뺀다.
+- text: 표고버섯은 불려 꼭 짜 채썬 후 간장, 들기름에 무쳐 팬에 볶는다.
+- text: 양배추, 오이, 당근, 깻잎, 상추, 피망, 파프리카는 곱게 채썬다.
+- text: 배를 강판에 간다.
+- text: 배와 간장, 소금, 식초, 겨자, 설탕을 넣어 잡채 양념을 만든다.
+- text: 큰 접시에 준비된 채소를 예쁘게 돌려 담고 가운데 당면을 놓은 후 양념을 부어준다.

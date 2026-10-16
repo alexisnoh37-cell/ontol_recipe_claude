@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2970
+title: 두부해물완자
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2970. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: tofu
+  raw_text: 두부 50g
+  role: sub
+- ingredient: squid
+  raw_text: 오징어 14g
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 칵테일 새우 14g
+  role: sub
+- ingredient: potato_starch
+  raw_text: 감자전분 15g
+  role: sub
+- ingredient: buchimgaru
+  raw_text: 부침가루 10g
+  role: sub
+- ingredient: egg
+  raw_text: 계란 20g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 5g
+  role: sub
+- ingredient: null
+  raw_text: 새우가루 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2g
+  role: sub
+- ingredient: null
+  raw_text: 파 2g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: null
+  raw_text: 저염간장 5g
+  role: sub
+steps:
+- text: 두부를 으깨고 오징어와 새우는 잘게 다진다.
+- text: 볼에 1의 재료와 감자전분을 넣고 섞어 완자모양으로 만든다.
+- text: 감자전분과 부침가루를 섞어 완자에 묻힌다.
+- text: 가루를 묻힌 완자에 계란물을 입혀 기름 두른 팬에 굴려가며 익힌다.
+- text: 마늘과 파를 다진 뒤 새우가루, 꿀, 저염간장을 섞어 소스를 만든다.
+- text: 양파를 채 썰어 냄비에 소스와 함께 끓인 뒤 전분물을 넣어 농도를 맞추고 완자를 넣는다.

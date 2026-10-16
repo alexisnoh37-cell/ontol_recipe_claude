@@ -1,0 +1,73 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2972
+title: 코다리 뿌리채소 들깨탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2972. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: pollock
+  raw_text: 코다리 150g
+  role: sub
+- ingredient: radish
+  raw_text: 무 60g
+  role: sub
+- ingredient: lotus_root
+  raw_text: 연근 20g
+  role: sub
+- ingredient: null
+  raw_text: 호박 20g
+  role: sub
+- ingredient: burdock
+  raw_text: 우엉 10g
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯 10g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 10g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 5g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 2g
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓 1g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 1g
+  role: sub
+- ingredient: anchovy
+  raw_text: 다시멸치 1g
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마 1g
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깨가루 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 1.5g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 0.5g
+  role: sub
+- ingredient: null
+  raw_text: 후추가루 0.5g
+  role: sub
+- ingredient: salt
+  raw_text: 천일염 0.2g
+  role: sub
+steps:
+- text: 생강과 마늘을 잘게 다진다.
+- text: 코다리를 세척 후 다진마늘, 다진생강, 소금, 후추로 밑간한다.
+- text: 냄비에 다시멸치, 다시마를 넣고 끓여 육수를 우린 뒤 건져낸다.
+- text: 무, 대파, 양파, 연근, 우엉, 호박, 느타리버섯, 표고버섯, 청양고추를 깨끗이 씻어 먹기좋은 크기로 썬다.
+- text: 육수에 대파, 청양고추, 쑥갓을 뺀 야채를 넣고 끓이다가 들깨가루와 천일염을 넣어 간 한다.
+- text: 마지막으로 코다리를 넣고 거품을 걷어가며 끓인 뒤 대파, 청양고추, 쑥갓을 올린다.

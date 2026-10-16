@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_512
+title: 닭고기스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 512. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 닭고기살(120g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.1g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(5g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(5g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(50g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(20g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(80g)
+  role: sub
+- ingredient: null
+  raw_text: 흑임자(20g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(50g)
+  role: sub
+steps:
+- text: 닭고기살은 소금과 후춧가루, 생강즙과 정종을 뿌린 후 우유를 살짝 발라 숙성을 시킨다.
+- text: 오이는 길게 껍질째 썰어 놓는다.
+- text: 토마토는 반으로 잘라 편으로 썰어 준비한다.
+- text: 두부는 소창으로 물기를 꼭 짜 놓는다.
+- text: 물기를 제거 시킨 두부에 흑임자를 넣고 골고루 섞은 뒤 냄비에 넣고 우유와 함께 은근히 끓여 속을 만든다.
+- text: 팬에 토마토를 먼저 구워 접시에 담고, 숙성된 닭고기를 구워 올린 뒤, 그 위에 오이로 원형기둥을 만들고 구운 닭고기를 다시 올려 완성한다.

@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_515
+title: 연어허브스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 515. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: salmon
+  raw_text: 연어(150g)
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리(3g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(10g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(30g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(30g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(5g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(10g)
+  role: sub
+- ingredient: tomato_sauce
+  raw_text: 토마토 소스(50g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(150g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(50g)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(1장)
+  role: sub
+steps:
+- text: 연어에 로즈마리를 위에 올려 마리네이드를 한다.
+- text: 마리네이드를 해놓은 연어에 레몬즙을 뿌린다.
+- text: 당근, 양파는 썰고 마늘과 토마토는 다져 준비한다.
+- text: 냄비에 버터를 두르고, 채소(③)를 볶다가 밀가루를 넣고 볶으면서 다시 토마토소스를 넣어 볶다가 육수와 월계수잎을 넣어 끓인다.
+- text: 소스가 자작 하게 끓고 있을 때, 우유를 넣고 한 소끔 끓여준다.
+- text: 팬에 올리브 오일을 두르고, 연어 (①)를 올려 앞뒤로 구어 접시에 담고, 토마토소스를 올려 완성한다.

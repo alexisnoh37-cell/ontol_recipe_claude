@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_627
+title: 브로컬리 단호박스프와 완두콩퓨레
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 627. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: broccoli
+  raw_text: 브로콜리(100g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(200g)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(1/2개)
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마(1개)
+  role: sub
+- ingredient: null
+  raw_text: 완두콩(20g)
+  role: sub
+- ingredient: bread
+  raw_text: 식빵(1쪽)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(20g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(30g)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(1/6개)
+  role: sub
+steps:
+- text: 단호박, 고구마는 껍질을 벗겨 삶는다.
+- text: 고구마는 삶아 체에 내린다.
+- text: 완두콩은 삶아 간다.
+- text: 데친 브로컬리와 우유를 믹서에 넣어 간다.
+- text: 냄비에 버터와 밀가루를 넣고 볶아 화이트 루를 만든다.
+- text: 고구마와 단호박에 우유를 넣어 끓이다가 화이트 루, 완두콩, 생크림을 넣고 끓인 뒤 오렌지즙 한 방울을 떨어뜨리고 식빵을 작게 잘라 올린다.

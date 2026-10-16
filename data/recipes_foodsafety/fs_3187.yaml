@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3187
+title: 카카오 깜빠뉴
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3187. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 강력분 500g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 8g
+  role: sub
+- ingredient: null
+  raw_text: 코코아 30g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 38g
+  role: sub
+- ingredient: null
+  raw_text: 생이스트 8g
+  role: sub
+- ingredient: null
+  raw_text: 드라이이스트(레드) 4g
+  role: sub
+- ingredient: null
+  raw_text: 파트 페레멘테 95g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 114ml
+  role: sub
+- ingredient: null
+  raw_text: 카카오 닙스 94g
+  role: sub
+- ingredient: walnut
+  raw_text: 호두 94g
+  role: sub
+- ingredient: raisin
+  raw_text: 건포도 150g
+  role: sub
+steps:
+- text: 버터를 제외한 모든 재료를 넣어 반죽하다가 버터를 넣어 최종까지 믹스한다. 믹스된 반죽에 속재료를 넣어 골고루 섞는다.
+- text: 1차 발효 30분 후 punch 후 35분 발효 시킨다. ★punch는 가스를 빼는 과정을 얘기해요.
+- text: 200g 분할 후 중간발효 20분을 한다.
+- text: 중간 발효된 반죽은 둥글게 성형한다.
+- text: 스프레이를 뿌린 후 덧가루를 묻혀 50분 동안 2차 발효 한다.
+- text: X모양 칼집을 주고 195℃ 12분 스팀 5초로 설정하여 굽는다. ★칼집은 날이 얇은 면도칼 등을 이용하면 좋아요.

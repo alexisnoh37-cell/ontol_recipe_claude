@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_779
+title: 효종갱(曉鍾羹)
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 779. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: napa_cabbage
+  raw_text: 배추(20g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(10g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: '느타리버섯(20g) 육수: 쇠고기(양지 50g, 갈비 50g)'
+  role: sub
+- ingredient: onion
+  raw_text: 양파(40g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+steps:
+- text: 소고기는 핏물을 제거한 뒤 양파, 마늘을 넣고 물(300g)을 부어 1시간 이상 끓인 뒤 면포에 걸러 육수를 만든다.
+- text: 삶은 소고기는 건져내 결 반대 방향으로 썬다.
+- text: 배추, 무, 느타리버섯, 표고버섯은 먹기 좋은 크기로 썬다.
+- text: 전복은 깨끗이 손질한다.
+- text: 육수를 끓인 뒤 끓어오르면 무를 넣어 반투명해지면 배추, 버섯, 전복을 넣는다.
+- text: 전복이 익으면 소고기를 넣고 저염간장으로 간을 해 마무리한다.

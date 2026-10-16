@@ -1,0 +1,28 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_829
+title: 고구마 빠스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 829. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: sweet_potato
+  raw_text: 고구마 60g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 20g
+  role: sub
+- ingredient: null
+  raw_text: 검은깨 2g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 10g
+  role: sub
+steps:
+- text: 고구마를 깨끗이 씻어 껍질을 벗긴다.
+- text: 고구마를 길게 4등분 하여 4cm로 토막낸다.
+- text: 깊은 팬에 식용유를 넣고 160℃로 만든다.
+- text: 3에 고구마를 넣고 저어가며 4분 정도 노릇하게 튀긴다.
+- text: 팬에 식용유를 약간 넣고 뜨거워지면 설탕을 넣어 중불에 녹여 갈색나는 시럽을 만든다.
+- text: 튀긴 고구마를 시럽에 버무리고 검은깨를 뿌린다.

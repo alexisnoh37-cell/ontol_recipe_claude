@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_36
+title: 저염 된장으로 맛을 낸 황태해장국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 36. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 황태해장국
+  role: sub
+- ingredient: dried_pollock
+  raw_text: 황태(채) 15g(10개)
+  role: sub
+- ingredient: soybean_sprouts
+  raw_text: 콩나물 30g(1/6봉지)
+  role: sub
+- ingredient: radish
+  raw_text: 무 30g(5×3×2cm)
+  role: sub
+- ingredient: null
+  raw_text: 저염된장 10g(2작은술)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 5g(1/2개)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2g(1/3작은술)
+  role: sub
+steps:
+- text: 황태는 손질하여 물에 헹궈 건져 놓고 콩나물은 다듬어 씻고 청양고추는 어슷썰기 한다.
+- text: 냄비에 물을 붓고 황태와 무를 넣고 끓인 후 육수에서 물을 건져내고 저염 된장을 푼다.
+- text: 콩나물, 다진 마늘, 청양고추를 넣고 뚜껑을 덮어 김이 나게 끓 여준다.

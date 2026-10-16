@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_593
+title: 머쉬룸 닭스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 593. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(1마리)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(1/4개)
+  role: sub
+- ingredient: null
+  raw_text: 미니
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추(5개)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(1개)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(20g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: null
+  raw_text: 발사믹소스(100g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(20g)
+  role: sub
+steps:
+- text: 닭은 살만 발라낸다.
+- text: 준비한 닭살에 소금, 후춧가루, 올리브오일을 발라 마리네이드 한다
+- text: 양파와 버섯은 입자있게 다진다.
+- text: 냄비에 버터를 넣고 녹인다.
+- text: 녹인 버터에 다져 놓은 야채를 볶다가 발사믹소스를 넣고 바글바글 끓여 소스를 만든다.
+- text: 팬에 버터와 기름을 넣고 중불에서 마리네이드한 닭살을 익혀 스테이크를 만들고, 미니양배추를 팬에 굴려가며 익혀 접시에 담은 뒤 소스를 올린다

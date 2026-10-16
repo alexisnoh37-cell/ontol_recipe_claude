@@ -8,6 +8,10 @@
 
 **부가 트랙 viz 완료**(2026-10-03, 태그 `viz-v1`, 3D 온톨로지 + 추천 워크플로 시각화, docs/plan.md 부록 D). 전체 테스트 390개 통과. 아래 "부가 트랙 viz" 참조.
 
+**데이터 확장 트랙 data-1**(2026-10-04, 브랜치 `feature/recipe-expansion`, 기준점 태그 `checkpoint/before-recipe-expansion`): 레시피 1차 초안 50개를 draft로 추가(합계 100개, published 50 그대로). 사람 검수 대기. data-2(2026-10-04): soft_tofu is_a tofu, 골든셋 재검토 자료 `docs/review/golden_review.md`. data-3(2026-10-04): "순두부" 절대 불선호 범위 확정, 불선호 제외 범위 측정, `scripts/make_golden_review.py`. 전체 테스트 399개. data-4(2026-10-04): 신규 레시피 draft 유지, 검수·골든셋 재선정 보류, PR로 올림. 아래 "데이터 확장 트랙" 참조.
+
+**식품안전나라 가져오기 트랙 fs-1~2**(2026-10-16, 브랜치 `feature/foodsafety-import`, `feature/recipe-expansion`에서 분기): D3 보완 2(개인용·출처 표시)로 식품안전나라 조리식품 레시피 DB 내려받기·변환 도구 추가(fs-1), 실제 1153개 변환, 재료 줄 미매칭 28.9%(fs-2). fs-5: D3 보완 3으로 원본·변환 결과 커밋(공개 저장소, 사람 결정). 아래 "식품안전나라 가져오기 트랙" 참조.
+
 ## 단계별 상태
 
 | 단계 | 상태 | 완료일 | 사람 확인 | 비고 |
@@ -463,8 +467,103 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
 }
 ```
 
+## 데이터 확장 트랙: 레시피 1차 확장 (브랜치 `feature/recipe-expansion`)
+
+### data-1 레시피 1차 초안 50개 (2026-10-04, 검수 대기)
+
+- **결정(사람, 2026-10-04)**: docs/decisions.md D3 보완. 1차로 50개를 추가해 합계 100개, 출처 `agent_draft` 유지(외부 본문 복제 금지), 신규 50개는 모두 `status: draft`이며 검수표 승인 전에는 published로 바꾸지 않는다.
+- **근거**: 공백 분석(김치볶음밥 0개, 매운맛 1 이하 닭 요리 1개, 햄 main 레시피 없음, multi_allergy·western_lover 상위 10 미달, 대두·밀 알레르기 안전 레시피 12·9개).
+- **구성**: 한식 30, 양식 8, 일식 6, 중식 6. 난이도 1: 33, 2: 15, 3: 2. 15분 이하 17개.
+  - main 기준: 닭 2 → 13(신규 11), 가공육 1 → 6(신규 5: 통조림햄 구이, 소시지 채소볶음, 햄 감자볶음, 햄치즈 샌드위치, 까르보나라(베이컨)), 해산물 4 → 11(신규 7). 매운맛 1 이하 닭(main) 1 → 10.
+  - 구성 조건(재료 목록·allergen_closure 기준, possible 포함): 계란·우유·갑각류 모두 없음 29개(조건 15 이상), 대두·밀 없음 14개(조건 5 이상), 매운맛 1 이하 44개(조건 40 이상).
+- **새 재료**: `soft_tofu`(순두부, derived_from soybean 확실, draft). 이름이 겹치지 않도록 `tofu`의 별칭 '순두부'를 soft_tofu로 옮김(tofu의 is_a·derived_from은 그대로). tofu와 is_a로 잇지 않아 두부 보유로 순두부찌개가 매칭되지 않는다. 건고추는 홍고추·청양고추로 대체해 추가하지 않음.
+- **검수표**: `docs/review/recipes_review.md`를 검수 대기(draft) → 검수 완료(published) 순으로 나누고, 각 묶음 안에서 confidence low를 맨 위에 두도록 `scripts/make_recipe_review.py` 수정. 재료 검수표(`ingredients_review.md`)도 재생성.
+- **테스트 수정(tests/kb, tests/api만)**:
+  - test_recipe_seed: 개수는 시드 폴더에서 셈. 1-3 검수 완료 50개 id 목록(`PUBLISHED_IDS`)이 그대로 published이고 한식 30·기타 20 구성 유지, published는 이 목록과 정확히 같고 필수 항목을 모두 갖춤, 목록 밖은 모두 draft. 김치 고정 3개 집합 → 김치류(배추김치·깍두기·열무김치)가 든 모든 레시피(published만 / draft 포함 두 경우)가 새우 알레르기로 제외되는지, 각 레시피가 실제로 후보가 되도록 main 재료를 보유로 넣고 제외 기록까지 확인. 기본 설정이 draft를 제공하지 않는지 추가.
+  - test_real_knowledge: "전부 reviewed" → `DRAFT_INGREDIENTS`({soft_tofu})만 draft, 나머지 전부 reviewed. soft_tofu 대두 definite·별칭 '순두부' 검사 추가.
+  - test_api: /health 레시피 수를 시드 파일 수(draft 포함)와 비교.
+- **결과**: validate_data 통과(재료 253개, 경고 3건, 레시피 100개 오류 0건, 미매칭 0). 전체 394개 통과(tests/allergy 118개, 무수정). 기본 설정(published만)이라 골든셋 적중률은 0.88 그대로.
+- **영향 미리보기**(draft 포함 가정, config 수정 없이 `serve_draft_recipes=True` 인자로만 계산, `.scratch/recipe_gap/preview.md`): 전체 적중률 0.88 → 0.58. beginner·few_ingredients 0.33, korean_lover·multi_allergy·japanese_lover 0.67. multi_allergy·western_lover 상위 10 미달 해소(9 → 18, 5 → 10 통과). 검수 후 published로 바꾸려면 골든셋 기대값 재검토 또는 회귀 기준(MIN_HIT_RATE 0.85) 결정이 먼저 필요하다.
+
+### data-2 soft_tofu is_a tofu, 골든셋 재검토 자료 (2026-10-04)
+
+- **결정(사람, 2026-10-04)**: `soft_tofu`에 `is_a: [tofu]` 추가(별칭·derived_from 그대로). 이유: 독립일 때 "두부" 절대 불선호 사용자에게 순두부찌개가 제외되지 않았고, 사용자가 "순두부"를 입력하면 data-1 전에는 두부로, data-1 후에는 순두부로 해석되어 절대 불선호 결과가 달라졌다.
+- **효과**(draft 포함 엔진): 두부 절대 불선호 → 순두부찌개 제외. 순두부 보유 → 된장찌개·두부조림·마파두부도 후보(순두부가 두부의 하위 재료라서). 두부 보유 → 순두부찌개는 여전히 후보 아님(상위 보유로 하위 충족 안 함). 대두 알레르기 판정(allergen_closure)과 골든셋 적중률(0.88 / draft 포함 0.58)은 변화 없음.
+- **"순두부" 절대 불선호의 범위(사람 결정 필요)**: 순두부를 절대 불선호로 두면 순두부찌개뿐 아니라 두부를 쓰는 된장찌개·두부조림·마파두부도 제외된다. 판정 경로: `engine/filters.py` `UserConstraints.dislike_hits` → 컴파일된 `ingredient_contains`(`kb/graph.py` `expand_contains`). plan.md 부록 C의 contains 규칙("x 자신에 is_a 하위 개념이 있으면 그 하위 개념도 possible로 포함")에 따라 두부는 순두부를 possible로 포함한다(경로 tofu → soft_tofu). 엔진은 부록 C대로 동작하지만, plan.md 4-3의 요약("is_a 하위와 derived_from 파생까지 제외")에는 이 규칙이 빠져 있다. 원하는 동작을 테스트로 고정하지 않았다(아래 "사람 확인 필요").
+- **테스트 추가**: `tests/kb/test_soft_tofu.py` 4개(soft_tofu contains 두부·대두 definite, 두부 절대 불선호 → 순두부찌개·두부 요리 제외, 순두부 절대 불선호 → 순두부찌개 제외, 대두 알레르기 → 순두부찌개 제외). 기존 테스트는 바꾸지 않음.
+- **골든셋 재검토 자료**: `docs/review/golden_review.md`. 적중률이 떨어진 5명의 draft 포함 상위 10(점수, 동점 묶음, 신규 여부, 동점이 갈린 기준, 다양성 보정 이동)과 참고 지표 "동점 인정 적중률"(기대 레시피 점수가 3위 점수와 같으면 적중: 전체 published만 0.92, draft 포함 0.83). 실제 평가 방식은 그대로이며 expected_top3는 사람이 고른다. 생성 도구는 커밋하지 않았다(`.scratch/`).
+- 원인 분석 요약(data-1 검토): 역전 9건 중 7건이 점수 완전 동점(소수 셋째 자리)이었고 조리시간 → id 순으로 갈렸다. 나머지는 시간 점수 M(감자조림 25분 > 희망 20분) 1건, 재료 점수 I(연어 소금구이 기본 양념 외 재료 1개) 1건.
+
+### data-3 "순두부" 절대 불선호 범위 확정, 불선호 제외 범위 측정 (2026-10-04)
+
+- **결정(사람, 2026-10-04)**: 지금 동작 유지. "순두부" 절대 불선호는 순두부찌개와 함께 두부를 쓰는 된장찌개·두부조림·마파두부도 제외한다(plan.md 부록 C의 is_a 하위 possible 규칙). `tests/kb/test_soft_tofu.py`에 테스트 1개 추가.
+- **plan.md 4-3 수정**: 절대 불선호 문장을 부록 C와 맞춤(불선호 재료를 is_a 하위로 가진 넓은 재료도 포함 가능으로 제외). 규칙 자체는 바꾸지 않음.
+- **불선호 제외 범위 측정**: 하위 재료 26개를 하나씩 절대 불선호로 두면, 직접 들어간 레시피보다 "포함 가능"으로 제외되는 레시피가 훨씬 많다(draft 포함 100개 기준 직접 28 대 포함 가능만 269). 결과는 "다음 단계 제안" 11번.
+- **스크립트**: 골든셋 재검토 자료 생성 도구를 `scripts/make_golden_review.py`로 옮김(`.scratch`에서 이동, 경로 기준과 머리말만 수정). 다시 만든 `docs/review/golden_review.md`는 본문이 같고 머리말 한 줄만 바뀜(작업 시점 커밋 번호 → 생성 명령).
+
+### data-4 draft 상태로 정리, PR (2026-10-04)
+
+- **결정(사람, 2026-10-04)**: 신규 레시피 50개는 `status: draft` 유지(기본 설정에서 추천에 쓰이지 않음). 레시피 검수와 골든셋 기대 레시피 재선정은 **보류**한다. 브랜치는 draft 상태 그대로 PR로 올린다.
+- **보류를 풀 때 할 일(순서대로)**:
+  1. 검수표 확인: `docs/review/recipes_review.md` "검수 대기(draft)"(confidence low 9개 먼저), 재료 `soft_tofu`는 `docs/review/ingredients_review.md`.
+  2. expected_top3 재선정: `docs/review/golden_review.md`를 보고 사람이 고른다. 희망 시간·조리도구 입력은 빼고 판단한다(한끼살림 화면에서 받지 않을 예정, GitHub 이슈 alexisnoh37-cell/ontol_recipe_claude#1). 페르소나의 희망 시간(beginner 20분 등)·조리도구(western_lover 오븐 등) 처리도 함께 정한다.
+  3. published 전환: 승인한 레시피를 published로 바꾸고 `tests/kb/test_recipe_seed.py`의 `PUBLISHED_IDS`에 추가. soft_tofu 승인 시 reviewed로 바꾸고 `tests/kb/test_real_knowledge.py`의 `DRAFT_INGREDIENTS`에서 뺀다.
+  4. baseline 저장: `uv run python scripts/eval_golden.py --save-baseline "설명"`(사람 승인 후).
+- **관련 이슈**: 조리도구·조리시간 미입력 시 처리 방식(보류) — alexisnoh37-cell/ontol_recipe_claude#1.
+
+## 식품안전나라 가져오기 트랙 (브랜치 `feature/foodsafety-import`)
+
+### fs-1 내려받기·변환 도구 (2026-10-16)
+
+- **결정(사람, 2026-10-16)**: D3 보완 2. 이용 조건 확인 결과 API 안내에 공공누리 유형이 없고, 식약처 저작권정책은 공공누리 미부착 자료에 담당 부서 사전 협의와 출처 명시를 요구한다. 이를 확인한 상태에서 개인용 범위로 출처를 표시해 쓰기로 함. 별도 폴더, draft에 한해 cook_time_min 선택, cuisine `미분류`, role 모두 `sub`. plan.md 5-3, 5-3-1(신설), 5-4, 디렉터리 구조 수정.
+- **추가한 것**
+  - `scripts/fetch_foodsafety.py`: `.env`의 `FOODSAFETY_API_KEY`로 COOKRCP01을 1000건씩 받아 `data/external/foodsafety/raw/COOKRCP01.json`에 저장. 인증키는 출력·파일에 남기지 않음.
+  - `kb/foodsafety.py` + `scripts/convert_foodsafety.py`: 원본 → `data/recipes_foodsafety/fs_<일련번호>.yaml`, 검수표 `docs/review/foodsafety_unmatched.md`(미매칭 빈도, 미매칭 1~2개 레시피, 이름 중복, 건너뛴 레시피).
+  - 재료 매핑은 별칭 색인 **정확 일치만**(양 표기 앞 이름 → 원문 전체 순). concept 노드는 미매칭. 버리는 줄은 레시피 이름 줄과 고정 머리말 단어(`HEADER_WORDS`)뿐이다. 그 밖의 짧은 줄은 모두 재료로 남긴다(잘못 버리면 알레르기 판정에서 빠짐).
+  - 검증 규칙(`kb/datacheck.py`): draft는 cuisine `미분류`(`UNCLASSIFIED_CUISINE`, vocab에는 없음), cook_time_min 없음 허용. published는 cook_time_min 필수.
+  - 적재 차단(`kb/recipes.load_recipe_specs`): cuisine 미분류이거나 cook_time_min이 없으면 `not_loadable`로 거부. DB 컬럼은 NOT NULL 유지.
+  - `.gitignore`: `data/external/`, `data/recipes_foodsafety/`(재배포 방지).
+- **테스트**: DB 통합(tests/storage) 제외 408개 통과(allergy·logic·kb·golden 337, api 12, viz 59). tests/storage는 Docker Desktop이 꺼져 있어 DB 연결 대기로 실행하지 못함. 추가: `tests/kb/test_foodsafety.py` 14개(직접 만든 예시 행), `tests/kb/test_datacheck.py` 2개, `tests/kb/test_recipe_seed.py` 2개 추가. tests/allergy 무수정.
+- **실행 순서(인증키 입력 후)**:
+  1. `.env`에 `FOODSAFETY_API_KEY=<발급받은 키>`
+  2. `uv run python scripts/fetch_foodsafety.py`
+  3. `uv run python scripts/convert_foodsafety.py`
+  4. `docs/review/foodsafety_unmatched.md` 확인 → 별칭·재료 보강(knowledge에 draft) → 3번 다시 실행
+- **남은 일**: 실제 데이터 미수신. 미매칭률은 받은 뒤 측정. `data/recipes/`로 옮기는 기준(미매칭 0, cuisine·조리시간·role·맛·난이도 채움, 사람 검수)은 plan 5-3-1 4번.
+
+### fs-2 실제 데이터 내려받기·변환 (2026-10-16)
+
+- 인증키 입력 후 실행. 원본 1156건(`data/external/foodsafety/raw/COOKRCP01.json`, 인증키 미포함 확인), 변환 1153개(재료정보 없음 3개: fs_691, fs_692, fs_831). 사용자가 처음 준 목록(검색 가능 1153, 제외 3)과 같다.
+- **변환 규칙 보완**(실제 원문 확인 후): HTML 태그(`<br>` 등), `[ 2인분 ]`·`[추가 재료]` 대괄호 머리말, 줄 중간 `[소스소개]`, ` - 양념장 : …`, `크림치즈 > 우유` 구분, "소제목 : 재료" 형태(소제목은 따로 미매칭 항목으로 남김), 물 제외. plan 5-3-1 갱신. 테스트 4개 추가(`tests/kb/test_foodsafety.py` 18개). DB 통합(tests/storage, Docker 꺼짐) 제외 412개 통과.
+- 버려지는 줄 전수 확인: 머리말 15종(주재료, 2인분 기준, 양념, 고명, 레시피 이름 5개, "…재료" 3개 등)뿐, 재료 손실 없음. 변환 YAML에 `<`, `>`, `[`, `]`, `●`가 남은 재료 줄 0개.
+- **결과**: 재료 줄 13048개 중 미매칭 3769개(28.9%), 미매칭 없는 레시피 82개(나머지 1071개는 알레르기 사용자에게 제외 대상), 서로 다른 미매칭 표기 1492개. 상위: 저염간장 110, 전분 44, 흰 후추 42, 파 41, 유자청 37, 다진 양파 36, 마늘다진것 36, 맛간장 32, 매실액 30, 녹말가루 29.
+- 같은 이름 레시피 7쌍(가지볶음, 깻잎장아찌롤, 둥지튀김, 버섯 리조또, 봄주먹밥, 비타 오이 물김치, 양배추롤) — 검수 때 중복 여부 판단.
+- 검수표: `docs/review/foodsafety_unmatched.md`(커밋, 재료 표기 빈도만 담음). 원본·변환 YAML은 gitignore.
+
+### fs-3 미매칭 보강안 (2026-10-16, 검수 대기)
+
+- `docs/review/foodsafety_alias_proposal.md`: 미매칭 표기 중 5회 이상 나온 154개를 분류. **knowledge는 아직 바꾸지 않음**(제안만).
+  - A 확실한 별칭 60개(예: 저염간장 → 간장, 흑임자 → 참깨, 달걀흰자 → 계란, 브로컬리 → 브로콜리).
+  - B 새 재료 71개(draft, 알레르기 표시 포함). 알레르기가 걸리는 항목은 possible로 넓게 잡고 `confidence: low`: 맛간장(가쓰오부시 가능), 어간장, 발사믹식초(아황산 가능), 미숫가루(대두·참깨·밀 가능), 백김치(젓갈·굴 가능), 젤라틴(돼지·소 가능), 견과류(견과 그룹 모두 가능), 새싹채소·어린잎채소(메밀싹 가능), 베이킹파우더(밀 가능), 은행(기타 견과 가능).
+  - C 보류 12개: 파·다진 파(대파/쪽파), 깨(참깨/들깨 → 참깨 알레르기 판정이 갈려 미매칭 유지), 육수·국물(원료 불명), 호박, 칠리소스, 홍피망 등.
+  - D 변환 규칙 후보 4개: "재료 닭가슴살", "양념 다진 마늘", "육수 무"처럼 머리말 단어가 공백으로 붙은 경우 떼기, "장식"을 머리말에 추가.
+- 효과(시뮬레이션): 재료 줄 미매칭 28.9% → A 23.1% → A+B 15.5%. 미매칭 없는 레시피 82 → 127 → 272개(1153개 중).
+- 별칭·이름 충돌, 없는 id·그룹·분류 자동 검사 통과(분석 스크립트 `.scratch/fs/proposal.py`, 커밋 안 함).
+
+### fs-5 식품안전나라 원본·변환 결과 커밋 (2026-10-16)
+
+- 사람 결정 D3 보완 3: 공개 저장소임을 확인한 상태에서 원본 JSON(`data/external/foodsafety/raw/COOKRCP01.json`, 1156건)과 변환 YAML 1153개(`data/recipes_foodsafety/`)를 커밋. `.gitignore`에서 두 폴더를 빼고 정적 뷰어 산출물(`viewer.html`)만 제외.
+- 이 브랜치의 변환기로 다시 변환한 결과가 로컬 기존 파일과 동일(1153개, 미매칭 3769/13048줄 28.9%, 검수표 변화 없음). 원본·변환 결과에 API 인증키 없음 확인.
+- 적재 대상이 아닌 것(5-3-1 4번)과 knowledge 무변경은 그대로다. push는 하지 않음(push하면 공개됨).
+
 ## 사람 확인 필요
 
+- **(fs-3) 식품안전나라 보강안 검수**: `docs/review/foodsafety_alias_proposal.md`의 A·B 승인 열에 O/X, C 보류 처리, D 변환 규칙 적용 여부를 정한다. 승인분만 knowledge에 draft로 반영한다. 상업화 전에는 식약처에 이용 조건 문의(D3 보완 3).
+- **(보류, data-4) 레시피 1차 확장 검수·골든셋 재선정**: 위 "data-4"의 "보류를 풀 때 할 일" 순서대로 진행. 아래 data-1·data-2 항목도 이때 함께 처리한다.
+- (해결, data-3) "순두부" 절대 불선호 범위: 지금 동작 유지(두부 요리도 제외). 불선호의 "포함 가능" 처리는 "다음 단계 제안" 11번에서 검토.
+- **(data-2) 골든셋 기대값**: `docs/review/golden_review.md`를 보고 expected_top3를 다시 고를지 정한다.
+- **(data-1) 레시피 1차 초안 50개 검수**: `docs/review/recipes_review.md` "검수 대기(draft)". confidence low 9개(가공육 4, 음식 종류 판단 3, 순두부 신규 재료 1, 깐풍기 매운맛 1). 신규 재료 `soft_tofu`(draft) 검수: `docs/review/ingredients_review.md`.
+- **(data-1) published 전환 전 골든셋 처리**: draft를 모두 published로 바꾸면 적중률 0.58로 회귀 기준(0.85) 아래. expected_top3 재기입·기준 조정·다양성 한도 중 무엇을 할지 사람이 정한다.
 - (선택) K에 선호 strength를 반영하지 않음(plan 4-4 표대로 1.0/0.5/0.1). 반영하려면 plan 4-4 수정이 필요하다. Phase 2 이후 검토.
 - (해결, 1-6) 성분표 확인 표시 범위, 부족 재료 표시 구분, 다양성 보정 역전 → 위 "1-6에서 정한 것".
 
@@ -500,6 +599,7 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
 - MVP(Phase 0~1) 완료. Phase 2는 사람이 범위를 정한 뒤 시작한다(아래 "다음 단계 제안").
 - 시각화 트랙 완료(viz-v1). 시연은 README 6-1 "시연 순서"(시연 프로필은 `scripts/seed_demo_profiles.py`).
 - 새 재료를 추가할 때는 status: draft로 넣고 검수표(`scripts/make_review.py`)로 사람 확인 후 reviewed.
+- 데이터 확장 트랙(data-1, `feature/recipe-expansion`): 신규 레시피 50개 draft 검수 대기. 승인된 레시피는 published로 바꾸고 `tests/kb/test_recipe_seed.py`의 `PUBLISHED_IDS`에 추가, soft_tofu 승인 시 reviewed로 바꾸고 `tests/kb/test_real_knowledge.py`의 `DRAFT_INGREDIENTS`에서 뺀다. published 전환 전에 골든셋 처리 방법을 정한다.
 
 ## 다음 단계 제안 (Phase 2 이후, 범위 밖)
 
@@ -509,10 +609,28 @@ Phase 2 할 일(plan.md 6장 로드맵 기준, 착수 전 사람이 범위 확�
 2. **LLM 설명 생성**(4-7): 엔진 결과(breakdown, 부족 재료, 대체, 제외 사유)만 근거로 문장을 다듬는다. 엔진 결과를 먼저 보여 주고 설명은 이어서 채운다(7-4). 근거 밖 내용 생성 금지 테스트.
 3. **식단 조건 필터**(채식 등, B2 결정으로 Phase 2): target_type 추가와 vocab, 필터 테스트.
 4. **별칭·미매칭 보강 흐름**: `unmapped_term` 누적 → 검수표 → knowledge 반영. 자동완성 품질을 위한 pg_trgm 인덱스.
-5. **데이터 확장**: 레시피 공백(김치볶음밥, 맵지 않은 닭 요리, 햄 활용 요리) 추가, `confidence: low` 재료 70개 재검수, substitutes.yaml(아직 draft) 검수.
+5. **데이터 확장**: 레시피 공백(김치볶음밥, 맵지 않은 닭 요리, 햄 활용 요리) 추가(→ data-1에서 초안 작성, 검수 대기), `confidence: low` 재료 70개 재검수, substitutes.yaml(아직 draft) 검수.
 6. **선호 축 확장**: 요리 유형(찌개·볶음·면) 선호, K에 선호 strength 반영 여부(plan 4-4).
 7. **운영 준비**: Supabase 배포 설정, API 인증 범위(D1은 개인용 기본값), 제외 로그(`logs/exclusions.jsonl`) 보존 정책, CI에서 tests/allergy 실패 시 배포 차단.
 
 8. **시각화 1만 개 대응**(viz 범위 밖, 사람 결정): 레시피가 2000개를 넘으면 레시피 층을 `THREE.Points` 한 번의 draw call로 그리고 hover는 화면 근접 검색으로 처리, 레시피 층 클러스터 요약(cuisine별 묶음 노드 → 확대 시 펼침), trace 제외 행 요약 모드. 먼저 로딩: 첫 화면 전 force warmup이 틱당 약 22ms(1천 개 1.6~2.5초)라 규모가 커지면 지배적이다 → `/graph` 생성 시 서버에서 x·z 배치를 미리 계산하고 화면은 warmup 0(1천 개 예상 약 1.1초, 같은 데이터 = 같은 배치). 대안: 브라우저 배치 캐시, warmup 틱 축소, Web Worker(장단점은 위 viz-5 기록).
+
+9. **동점이 많은 순위**(data-1 검토, 2026-10-04): 맛·음식 종류·재료 선호 입력이 적은 사용자는 T·K·P가 중립값으로 모여 점수 동점이 많고, 순위가 동점 처리 규칙(I → 부족 재료 수 → 조리시간 → id 순)으로 정해진다. id 순은 의미 없는 순서다. 동점 처리 기준 재검토(예: 다양성·최근 추천 반영) 필요. 근거: `docs/review/golden_review.md`.
+10. **다양성 한도의 상위 집중**(data-1 검토): 같은 main 재료 한도(3)는 4번째부터만 막으므로 상위 3개를 같은 main 재료가 모두 차지할 수 있다(draft 포함 multi_allergy: 감자전·감자볶음·감자조림이 1~3위, 니쿠자가는 점수 0.1 이내 대안이 없어 8위에 감자 4번째로 들어감). 상위 구간에 별도 한도를 둘지 검토.
+11. **"포함 가능"을 알레르기와 불선호에서 다르게 다룰지 검토**(data-3 측정, 2026-10-04, 알레르기 판정은 바꾸지 않는 전제): 절대 불선호도 알레르기와 같은 `ingredient_contains`(부록 C)를 쓰므로, 넓은 재료(닭고기·돼지고기·쇠고기·두부·치즈 등)를 쓰는 레시피와 그 넓은 재료를 원천으로 둔 가공품(햄·소시지·통조림햄·카레가루 등) 레시피가 "포함 가능"으로 함께 제외된다. 하위 재료 26개를 하나씩 절대 불선호로 둔 측정(엔진 필터를 모든 레시피에 적용, 후보 여부 무관):
+
+    | 절대 불선호 | published 50: 직접 / 파생(확실) / 포함 가능만 / 합계 | draft 포함 100: 직접 / 파생(확실) / 포함 가능만 / 합계 |
+    |---|---|---|
+    | 닭가슴살 | 0 / 0 / 4 / 4 | 1 / 0 / 19 / 20 |
+    | 닭다리살 | 1 / 0 / 4 / 5 | 1 / 0 / 19 / 20 |
+    | 삼겹살 | 0 / 1 / 7 / 8 | 1 / 2 / 18 / 21 |
+    | 돼지고기 목살·앞다리살·안심·갈비(각각) | 0 / 0 / 7 / 7 | 0 / 0 / 18 / 18 |
+    | 불고기용 소고기 | 3 / 0 / 3 / 6 | 3 / 0 / 7 / 10 |
+    | 소고기 안심·차돌박이(각각) | 0 / 0 / 3 / 3 | 0 / 0 / 7 / 7 |
+    | 순두부 | 0 / 0 / 7 / 7 | 1 / 0 / 8 / 9 |
+    | 방울토마토 | 0 / 0 / 4 / 4 | 1 / 0 / 8 / 9 |
+    | 파마산치즈 | 2 / 0 / 1 / 3 | 5 / 0 / 1 / 6 |
+
+    26개 합계: published 직접 17 · 파생 1 · 포함 가능만 106, draft 포함 직접 28 · 파생 2 · 포함 가능만 269. 예: "닭가슴살 못 먹음"이면 닭가슴살이 직접 든 레시피는 1개인데 닭고기(넓은 재료)·햄·소시지·카레가루·돈가스소스 등으로 19개가 더 제외된다. 알레르기에서는 안전 쪽(포함 가능도 제외)이 맞지만, 부위 불선호에는 과하다. 검토안: 불선호 판정만 is_a 하위 방향 possible을 따르지 않는 별도 contains를 둘지, possible 불선호는 제외 대신 감점으로 둘지. 전체 표는 측정 스크립트 결과(재현: 분석용 `.scratch`, 커밋 안 함).
 
 Phase 3 이후(참고): user_event 기반 개인화 재정렬(4-6 상위 50개), 유통기한(expires_on) 활용, 장보기 목록, React 화면.

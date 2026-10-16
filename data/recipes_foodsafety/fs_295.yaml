@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_295
+title: 해물순두부된장찌개
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 295. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 바지락(5g)
+  role: sub
+- ingredient: webfoot_octopus
+  raw_text: 주꾸미(60g)
+  role: sub
+- ingredient: null
+  raw_text: 마른 미역(1g)
+  role: sub
+- ingredient: null
+  raw_text: 마른 표고버섯(10g)
+  role: sub
+- ingredient: soft_tofu
+  raw_text: 순두부(80g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(5g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 멸치(2g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 된장(7g)
+  role: sub
+- ingredient: null
+  raw_text: 콩가루(10g)
+  role: sub
+steps:
+- text: 물(250g)에 멸치를 넣고 육수를 낸다.
+- text: 바지락은 해감해 준비하고 주꾸미는 손질한다.
+- text: 마른 미역과 마른 표고버섯은 물에 불린다.
+- text: 육수에 된장을 풀고, 바지락과 주꾸미를 넣어 끓인다.
+- text: 해물이 어느 정도 익으면 미역, 표고버섯을 넣고 끓인다.
+- text: 끓어오르면 순두부를 넣고 콩가루를 넣어 더 끓이다가 송송 썬 대파를 올려 마무리한다.

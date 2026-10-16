@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_232
+title: 봄나물밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 232. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: brown_rice
+  raw_text: 현미(30g)
+  role: sub
+- ingredient: rice
+  raw_text: 멥쌀(60g)
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓(20g)
+  role: sub
+- ingredient: null
+  raw_text: 달래(10g)
+  role: sub
+- ingredient: null
+  raw_text: 두부양념장
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(5g)
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장(5g)
+  role: sub
+- ingredient: null
+  raw_text: 다시마 육수(60g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(15g)
+  role: sub
+steps:
+- text: 현미는 1시간 정도, 멥쌀은 30분 정도 각각 불린 뒤 섞는다.
+- text: 쑥갓과 달래는 줄기부분과 잎으로 나누어 1㎝ 길이로 썬다.
+- text: 쑥갓과 달래의 줄기부분은 불린 쌀과 함께 냄비에 넣고 밥물을 맞춰 센 불에서 끓어오르면 중약 불로 줄여 밥을 15분간 짓는다.
+- text: 약한 불로 줄여 밥을 뜸 들인다.
+- text: 다시마육수를 제외한 두부 양념장 재료를 믹서에 곱게 갈아 다시마 육수, 남겨둔 나물의 잎을 팬에 넣어 끓여 두부장을 만든다
+- text: 나물밥에 두부장을 곁들여 마무리한다.

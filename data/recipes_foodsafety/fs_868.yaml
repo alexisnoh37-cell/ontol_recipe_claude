@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_868
+title: 쇠고기 채소볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 868. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: beef
+  raw_text: 쇠고기 40g
+  role: sub
+- ingredient: null
+  raw_text: 생표고버섯 16g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯 9g
+  role: sub
+- ingredient: null
+  raw_text: 애느타리버섯 12g
+  role: sub
+- ingredient: null
+  raw_text: 흰목이버섯 0.4g
+  role: sub
+- ingredient: null
+  raw_text: 목이버섯 0.4g
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리 4g
+  role: sub
+- ingredient: null
+  raw_text: 홍피망 8g
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종 2g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: null
+  raw_text: 육수 10g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.2g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 9g
+  role: sub
+- ingredient: null
+  raw_text: 쇠고기밑간양념
+  role: sub
+- ingredient: null
+  raw_text: 전분 2g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 2g
+  role: sub
+steps:
+- text: 소고기는 굵게 채썬다.
+- text: 채썬 소고기에 전분과 달걀을 넣고 밑간을 한다.
+- text: 버섯과 채소는 씻은 후 0.3cm 두께로 채 썬다.
+- text: 후라이팬에 소고기를 넣고 볶는다.
+- text: 채소와 버섯을 넣고 한번 더 볶는다.
+- text: 육수에 간장, 정종, 후춧가루를 넣고 끓이다가 마지막에 참기름을 넣어 낸다.

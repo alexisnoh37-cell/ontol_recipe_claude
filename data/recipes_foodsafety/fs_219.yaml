@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_219
+title: 해물볶음밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 219. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 볶음밥 쌀(100g)
+  role: sub
+- ingredient: asparagus
+  raw_text: 아스파라거스(5g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(10g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(40g)
+  role: sub
+- ingredient: octopus
+  raw_text: 문어(20g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우살(20g)
+  role: sub
+- ingredient: webfoot_octopus
+  raw_text: 주꾸미(15g)
+  role: sub
+- ingredient: null
+  raw_text: 미나리볶음고추장 무(20g)
+  role: sub
+- ingredient: burdock
+  raw_text: 우엉(10g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(5g)
+  role: sub
+steps:
+- text: 쌀은 씻어서 체에 건져 1시간 이상 불린 후 동량의 물을 부어 밥을 짓는다.
+- text: 아스파라거스, 새송이버섯은 작게 깍둑 썰고, 무와 우엉, 미나리는 다진다.
+- text: 식용유(10g)를 두른 팬을 중간 불로 달궈 달걀을 넣고 스크램블로 볶는다.
+- text: 문어, 새우살, 주꾸미는 끓는 물에 살짝 데쳐 작게 자른다.
+- text: 식용유(15g)를 두른 팬을 중간 불로 달궈 밥을 넣어 볶다가 문어, 새우살, 주꾸미, 스크램블 에그를 넣고 조금 더 볶는다.
+- text: 무와 우엉에 고추장과 참기름, 물(40g)을 넣고 묽게 졸인 후 불을 끄고 미나리를 넣고 섞어 미나리볶음고추장을 만들어 밥에 곁들여 마무리한다.

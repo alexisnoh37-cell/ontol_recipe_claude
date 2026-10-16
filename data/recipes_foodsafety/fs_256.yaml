@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_256
+title: 대하조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 256. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 대하(4마리)
+  role: sub
+- ingredient: wine
+  raw_text: 화이트와인(15g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(50g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(40g)
+  role: sub
+- ingredient: null
+  raw_text: 매실액(10g)
+  role: sub
+- ingredient: null
+  raw_text: 아보카도(30g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(25g)
+  role: sub
+- ingredient: null
+  raw_text: 닭육수 닭다리(1개)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(1g)
+  role: sub
+steps:
+- text: 냄비에 닭육수 재료를 넣고 20분간 끓여 면포에 거른다.
+- text: 대하를 흐르는 물에 잘 헹구고 머리와 껍질을 제거한 뒤 화이트와인에 재운다.
+- text: 시금치를 손질한 후 끓는 물에 살짝 데친다.
+- text: 팬에 닭육수(100g)와 유자청과 매실액을 넣고 끓이다가 잘 섞이면 대하를 넣어 조린다.
+- text: 대하가 익어갈 때쯤 시금치를 넣고 1분간 더 조린다.
+- text: 그릇에 시금치를 올리고 그 위에 대하를 올린 후 아보카도와 토마토를 먹기 좋게 썰어 얹어 마무리한다.

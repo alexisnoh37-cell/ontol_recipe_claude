@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2978
+title: 곤약 감자조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2978. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 곤약 100g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 50g
+  role: sub
+- ingredient: green_chili
+  raw_text: 풋고추 5g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 5g
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마 10g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 15g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 10g
+  role: sub
+- ingredient: mirin
+  raw_text: 미림 15g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 3g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 10g
+  role: sub
+steps:
+- text: 곤약과 감자는 2cm ? 2cm 크기로 썰고 풋고추와 홍고추는 송송 썰어 씨를 제거한다.
+- text: 물(200g)에 다시마를 넣고 끓여 육수를 만든 뒤 다시마를 건진다.
+- text: 육수에 간장, 설탕, 미림을 섞어 조림장을 만든다.
+- text: 곤약과 감자를 끓는 물에 넣고 80% 정도 익힌 뒤 건져 식힌다.
+- text: 4에 조림장 50g을 넣고 살짝 졸인다.
+- text: 불을 끄고 참기름을 섞는다.

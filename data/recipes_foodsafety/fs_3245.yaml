@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3245
+title: 참나물페스토 파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3245. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 참나물(45g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(2개)
+  role: sub
+- ingredient: pasta
+  raw_text: 스파게티면(90g)
+  role: sub
+- ingredient: null
+  raw_text: 참나물 페스토
+  role: sub
+- ingredient: null
+  raw_text: 참나물(18g)
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣(4g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(4g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(2g)
+  role: sub
+steps:
+- text: 참나물은 얇게 썰고, 방울토마토는 2등분하고, 잣은 곱게 빻아 잣가루를 만든다.
+- text: 믹서에 참나물 페스토 재료를 넣고 갈아 페스토를 만든다.
+- text: 끓는 소금물(물 8컵과 소금 1g 비율)에 스파게티를 넣어 8분간 삶아 건진다.
+- text: 스파게티에 페스토를 넣어 버무린다.
+- text: 그릇에 스파게티를 담은 뒤 손질한 참나물을 올리고 올리브유, 잣가루를 뿌린다.
+- text: 손질한 방울토마토를 곁들여 마무리한다.

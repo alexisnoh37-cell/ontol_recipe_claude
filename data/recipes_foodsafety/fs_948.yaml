@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_948
+title: 고구마 경단
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 948. 요리종류 후식, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: sweet_potato
+  raw_text: 고구마 50g
+  role: sub
+- ingredient: null
+  raw_text: 카스텔라 20g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 5g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 2g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 3g
+  role: sub
+- ingredient: raisin
+  raw_text: 건포도 20g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 적당량
+  role: sub
+steps:
+- text: 고구마를 찜통에 찐다.
+- text: 고구마의 껍질을 벗기고 체에 곱게 내린다.
+- text: 카스텔라는 윗면의 갈색 부분을 잘라내고 믹서에 곱게 갈아 가루로 만든다.
+- text: 2에 우유와 버터, 꿀, 소금을 넣고 섞어 반죽한다.
+- text: 3의 반죽 속에 건포도를 1~2개 넣고 경단을 만든다.
+- text: 경단에 카스텔라 가루를 묻힌다.

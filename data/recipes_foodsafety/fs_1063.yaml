@@ -1,0 +1,82 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1063
+title: 곤드레 밥버거
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1063. 요리종류 밥, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: rice
+  raw_text: 쌀(80g)
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀(40g)
+  role: sub
+- ingredient: null
+  raw_text: 흑미(40g)
+  role: sub
+- ingredient: null
+  raw_text: 곤드레나물(50g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(30g)
+  role: sub
+- ingredient: iceberg_lettuce
+  raw_text: 양상추(30g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(50g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(5장)
+  role: sub
+- ingredient: banana
+  raw_text: 바나나(1/2개)
+  role: sub
+- ingredient: laver
+  raw_text: 김(10g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(10g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(1/4개)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(30g)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(50g)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(50g)
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장(30g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(30g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(15g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(15g)
+  role: sub
+- ingredient: perilla_oil
+  raw_text: 들기름(15g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+steps:
+- text: 곤드레나물에 들기름, 간장으로 양념하고 쌀, 찹쌀, 흑미와 밥을 지은 뒤 참기름, 소금 간 한다.
+- text: 식초와 식초2배의 물을 넣고 끓이다가 사과를 한 입 크기로 썰어 끓인다.
+- text: 감자를 삶아 으깨고, 다진 양파, 호두, 밀가루를 넣고 섞은 뒤 겉에 빵가루를 묻혀 팬에 굽는다.
+- text: 파프리카는 잘게 채 썬다.
+- text: 마요네즈, 깻잎, 바나나, 된장을 믹서에 갈아 소스를 만들고 피클을 다져 넣는다.
+- text: 종이호일을 깔고 중간중간 소스를 뿌리면서 김-양상추- 패티-파프리카-양상추-밥 순으로 얹어 버거를 만든다.

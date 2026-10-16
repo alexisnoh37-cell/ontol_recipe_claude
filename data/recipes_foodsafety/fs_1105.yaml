@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1105
+title: 콩가루 고구마 타르트
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1105. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 콩가루(15g)
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마(175g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 박력분(65g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(80g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(25g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1/2개)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(30g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(15g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+steps:
+- text: 박력분, 콩가루를 체에 내리고 버터(50g)를~ 잘게 잘라 섞은 뒤 소금 녹인 물을 조금씩 섞는다.
+- text: 반죽을 한 덩어리로 뭉쳐 냉장고에 1시간 정도 휴지키신 뒤 밀대로 0.3cm 두께로 밀고 표면에 구멍을 낸다.
+- text: 2번을 타르트 틀에 넣어 밀착시키고 냉장고에 20분 간 휴지시킨 뒤 누름돌을 올리고 150℃ 오븐에 8분 간 굽는다.
+- text: 버터(30g)를 풀어 꿀을 넣고 크림화 한 뒤 달걀을 섞고 휘핑한 생크림을 섞고 삶아 으깬 고구마와 콩가루를 섞는다.
+- text: 고구마를 주사위 모양으로 잘라 오븐에 굽는다.
+- text: 타르트에 콩가루 고구마 크림을 올리고 그 위에 구운 고구마와 꿀을 올린다.

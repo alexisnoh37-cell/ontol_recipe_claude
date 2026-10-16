@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_370
+title: 열무곤약국수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 370. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: young_radish_kimchi
+  raw_text: 열무김치 100g
+  role: sub
+- ingredient: null
+  raw_text: 실곤약 150g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 25g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: egg
+  raw_text: 계란 60g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 20g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 3g
+  role: sub
+steps:
+- text: 실곤약은 세척해 레몬즙을 뿌려 물기를 빼준다.
+- text: 오이는 채 썰어준다.
+- text: 당근, 양파를 채 썰어서 냉수에 담가준다.
+- text: 열무김치국물과 물200g에 섞어서 국물을 만들어준다
+- text: 달걀은 쪄서 반만 잘라 준비해준다.
+- text: 그릇에 곤약. 열무, 준비된 채소를 넣고 마지막에 국물을 넣어 완성한다

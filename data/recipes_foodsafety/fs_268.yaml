@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_268
+title: 토마토돼지고기해장국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 268. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 양파(40g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(3g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(250g)
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기(사태, 60g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(60g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 무(20g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(3g) 대파(10g)
+  role: sub
+- ingredient: null
+  raw_text: 마른 표고버섯(3g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 다진 마늘(5g)
+  role: sub
+- ingredient: null
+  raw_text: 바질가루(0.1g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(2.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.1g)
+  role: sub
+steps:
+- text: 냄비에 육수 재료를 넣고 10분 정도 끓여 체에 걸러 육수를 만든다.
+- text: 양파는 채 썰고, 고추는 어슷 썰고, 토마토는 잘게 다진다.
+- text: 돼지고기는 1.5cm 크기로 깍둑썰기 하고, 핏물을 제거한다.
+- text: 냄비에 육수를 붓고 다진 토마토와 다진 마늘, 바질가루를 넣고 끓인다.
+- text: 걸쭉해지면 설탕과 돼지고기를 넣고, 고기가 익으면 채 썬 양파, 어슷 썬 청양고추와 꼭지를 딴 방울토마토를 넣는다.
+- text: 방울토마토의 껍질이 벗겨질 때까지 끓이고 후춧가루를 넣어 마무리한다.

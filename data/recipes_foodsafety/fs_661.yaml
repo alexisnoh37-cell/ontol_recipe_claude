@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_661
+title: 새우보리죽 고등어스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 661. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: mackerel
+  raw_text: 고등어(1/2마리)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(3마리)
+  role: sub
+- ingredient: null
+  raw_text: 보리(100g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(10g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/4개)
+  role: sub
+- ingredient: null
+  raw_text: 막걸리(50g)
+  role: sub
+- ingredient: null
+  raw_text: 비트(50g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+steps:
+- text: 새우는 껍질을 벗겨 손질한다.
+- text: 보리는 깨끗이 씻어 불린다.
+- text: 불린 보리와 새우에 5배 정도 물을 넣고 죽을 쑨다.
+- text: 고등어는 포를 뜬다.
+- text: 포 뜬 고등어에 생강, 레몬, 막걸리를 넣고 비린맛을 제거한다.
+- text: 비트에 설탕, 식초, 소금을 넣고 피클을 만들고, 보리죽이 끓으면 포 뜬 고등어를 넣고 은근히 익힌다.

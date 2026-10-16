@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_820
+title: 아시아식 채소 두부 볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 820. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 해선장 2g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1.3g
+  role: sub
+- ingredient: null
+  raw_text: 녹말 5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2.5g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 5g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 2.5g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부1.2cm 90g
+  role: sub
+- ingredient: null
+  raw_text: 그린빈 10g
+  role: sub
+- ingredient: bok_choy
+  raw_text: 청경채 20g
+  role: sub
+- ingredient: null
+  raw_text: 영콘 15g
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤 20g
+  role: sub
+- ingredient: null
+  raw_text: 땅콩다진것 10g
+  role: sub
+steps:
+- text: 작은 불에 물과 해선장소스, 간장, 전분, 참기름, 녹말가루를 넣고 녹말가루가 잘 풀릴 때까지 섞는다.
+- text: 큰 소스팬을 중간불에 올린다. 식용유를 두르고 마늘을 15~20초간 타지않게 볶는다.
+- text: 두부를 넣고 옅은 골든 브라운 색이 날 때까지 3~4분간 익힌다.
+- text: 데친 그린빈, 청경채, 영콘, 밤을 넣고 섞어준다.
+- text: 볶은 두부에 소스를 끼얹는다.
+- text: 땅콩가루를 뿌려 완성한다.

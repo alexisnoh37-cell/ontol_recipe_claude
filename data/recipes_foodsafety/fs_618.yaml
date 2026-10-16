@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_618
+title: 닭가슴살 스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 618. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(가슴살, 150g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(100g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(1개)
+  role: sub
+- ingredient: cheese
+  raw_text: 치즈(1장)
+  role: sub
+- ingredient: null
+  raw_text: 오레가노(2g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.01g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(20g)
+  role: sub
+steps:
+- text: 닭가슴살을 소금과 후추로 밑간한다.
+- text: 토마토와 마늘은 입자있게 다진다
+- text: 다진 토마토와 마늘을 냄비에 담아 볶다가 물과 오레가노를 넣고 끓여 소스를 만든다.
+- text: 팬에 올리브오일을 두르고 밑간 한 닭가슴살을 노릇노릇하게 굽는다.
+- text: 가지는 길게 썬다.
+- text: 가지에 치즈를 감싸 익히고, 구운 닭 스테이크를 옆에 담고 소스를 옮긴다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_330
+title: 열무김치파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 330. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 파스타면 50g
+  role: sub
+- ingredient: young_radish_kimchi
+  raw_text: 열무김치 100g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 20g
+  role: sub
+- ingredient: null
+  raw_text: 청홍고추 각각 15g
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 노란 파프리카 30g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 30g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 25g
+  role: sub
+- ingredient: null
+  raw_text: 생들기름 30g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 2g
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 30g
+  role: sub
+steps:
+- text: 뜨거운 물에 파스타면을 삶아낸 뒤 물기를 빼준다.
+- text: 송송 썬 청양고추를 생들기름에 볶아주다 면을 볶는다.
+- text: 볶아준 청양고추에 삶아진 면을 볶아준다.
+- text: 열무김치는 송송 썰어서 들기름에 살짝 볶아준다.
+- text: 오이는 돌려깎기 해서 채 썰어주고 청고추, 2가지색 파프리카, 당근도 채 썰어 각각 볶아 준다.
+- text: 청양고추에 볶아진 파스타면을 볶은 채소와 한 번 더 볶아 완성한다.

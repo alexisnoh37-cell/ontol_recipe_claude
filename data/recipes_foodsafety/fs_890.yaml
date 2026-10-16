@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_890
+title: 오징어보쌈과 저나트륨 된장소스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 890. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 갑오징어 50g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 9g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 9g
+  role: sub
+- ingredient: lettuce
+  raw_text: 상추 7g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨된장소스
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 1.6g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1.3g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 0.4g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 0.2g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 0.2g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 0.2g
+  role: sub
+steps:
+- text: 오징어는 반으로 갈라 껍질을 제거하고 몸통 안쪽에 대각선으로 칼집을 넣는다.
+- text: 칼집 낸 오징어를 끓는 물에 데친다.
+- text: 데친 오징어는 한 입 크기로 썬다.
+- text: 오이는 돌려 깎아 3cm 길이로 채썰고 당근도 4cm 길이로 얇게 채썬다.
+- text: 드레싱에 들어갈 양파, 청·홍고추는 잘게 다져 분량의 재료와 섞어 저나트륨 된장소스를 만든다.
+- text: 상추에 준비된 오징어와 오이, 당근, 저나트륨 된장소스를 기호에 맞게 곁들여 먹는다.

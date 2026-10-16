@@ -1,0 +1,72 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_276
+title: 맑은부대찌개
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 276. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 느타리버섯(10g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(50g)
+  role: sub
+- ingredient: soybean_sprouts
+  raw_text: 콩나물(10g)
+  role: sub
+- ingredient: napa_cabbage
+  raw_text: 배추(40g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(20g)
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기(50g)
+  role: sub
+- ingredient: beef
+  raw_text: 쇠고기(50g)
+  role: sub
+- ingredient: null
+  raw_text: 불린 당면(10g)
+  role: sub
+- ingredient: null
+  raw_text: 조랭이떡(30g)
+  role: sub
+- ingredient: null
+  raw_text: 다시마육수 다시마(3g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(30g)
+  role: sub
+- ingredient: null
+  raw_text: 마른 고추(5g)
+  role: sub
+- ingredient: null
+  raw_text: 고기완자양념 생강즙(2g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 파(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.1g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.1g
+  role: sub
+steps:
+- text: 다시마육수재료를 물에 넣고 끓여 육수를 낸다.
+- text: 느타리버섯은 가닥가닥 떼고, 두부는 썰고, 콩나물은 머리와 꼬리를 떼 손질한다.
+- text: 배추와 미나리를 데친다.
+- text: 돼지고기, 쇠고기에 고기완자양념을 넣어 반죽한 뒤 빚어 완자를 만든다.
+- text: 냄비에 모든 재료를 돌려 담은 뒤 육수를 부어 끓인다.

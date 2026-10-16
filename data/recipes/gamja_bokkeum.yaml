@@ -1,0 +1,51 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: gamja_bokkeum
+title: 감자볶음
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+note: 소금 간(간장 없음)
+ingredients:
+- ingredient: potato
+  raw_text: 감자 2개
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/4개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/4개
+  role: sub
+  optional: true
+- ingredient: salt
+  raw_text: 소금 1/2작은술
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 2큰술
+  role: seasoning
+- ingredient: sesame
+  raw_text: 통깨 약간
+  role: garnish
+  optional: true
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 감자를 채 썰어 찬물에 헹궈 전분을 빼고 물기를 뺀다.
+- text: 기름 두른 팬에 감자를 중불로 볶다가 양파, 당근을 넣는다.
+  technique: 볶음
+- text: 감자가 투명해지면 소금, 후추로 간하고 깨를 뿌린다.
+  technique: 볶음

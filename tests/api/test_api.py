@@ -7,6 +7,7 @@ DB 저장소는 tests/storage/test_users.py가 같은 동작을 검사한다.
 from __future__ import annotations
 
 import json
+from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
@@ -225,7 +226,9 @@ def test_missing_split_required_vs_nice_to_have(client, data):
         assert {m["id"] for m in item["missing"]} <= {m["id"] for m in item["required_missing"] + item["nice_to_have"]}
 
 
-def test_vocab_and_health(client):
+def test_vocab_and_health(client, data):
     v = client.get("/vocab").json()
     assert "한식" in v["cuisines"] and "오븐" in v["equipment"] and v["disclaimer"]
-    assert client.get("/health").json()["recipes"] == 50
+    # 레시피 수는 시드에서 센다(draft 포함, 파일 하나 = 레시피 하나)
+    seed_files = sorted((Path(__file__).resolve().parents[2] / "data" / "recipes").glob("*.yaml"))
+    assert client.get("/health").json()["recipes"] == len(data.recipes) == len(seed_files) >= 50

@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_954
+title: 홍시 쉐이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 954. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 냉동홍시 70g
+  role: sub
+- ingredient: null
+  raw_text: 오미자 5g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 4g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 5g
+  role: sub
+- ingredient: null
+  raw_text: 민트 1g
+  role: sub
+steps:
+- text: 냉동 홍시의 껍질을 벗기고 씨를 뺀다.
+- text: 1을 잘게 자른다.
+- text: 오미자를 7배의 물에 8시간 이상 우려 맛과 색이 우러나오도록 한다.
+- text: 믹서에 홍시, 오미자물, 꿀, 레몬즙을 넣어 함께 갈아준다.
+- text: 4를 컵에 담는다.
+- text: 민트로 장식한다.

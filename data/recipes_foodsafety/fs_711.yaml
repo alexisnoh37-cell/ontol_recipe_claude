@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_711
+title: 갈치고추장구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 711. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 갈치구이
+  role: sub
+- ingredient: hairtail
+  raw_text: 갈치 50g
+  role: sub
+- ingredient: null
+  raw_text: '현미유 4g 고추장양념 : 고추장 5g'
+  role: sub
+- ingredient: onion
+  raw_text: 양파 5g
+  role: sub
+- ingredient: null
+  raw_text: 파 3g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: null
+  raw_text: 매실액 2g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 1g
+  role: sub
+- ingredient: ginger
+  raw_text: 다진 생강 0.5g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.3g
+  role: sub
+steps:
+- text: 갈치는 비늘을 벗기고 손질한 후 토막내어 3~4회 칼집을 넣는다.
+- text: 파는 다진다.
+- text: 고추장, 양파, 파, 다진 마늘, 간장, 매실액, 고춧가루, 다진 생강, 후춧가루를 섞어 양념장을 만든다.
+- text: 팬에 현미유를 두르고 갈치를 앞뒤로 애벌구이 한다.
+- text: 애벌구이된 갈치 위에 고추장양념을 발라 구운다.
+- text: 통깨를 뿌려 마무리한다.

@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_796
+title: 단호박 두부 포타주
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 796. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: kabocha
+  raw_text: 단호박 40g
+  role: sub
+- ingredient: null
+  raw_text: 두부작은것 40g
+  role: sub
+- ingredient: soy_milk
+  raw_text: 두유 40g
+  role: sub
+- ingredient: null
+  raw_text: 다시마국물 150g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.5g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.1g
+  role: sub
+steps:
+- text: 단호박은 속을 숟가락으로 깨끗하게 긁어낸다.
+- text: 껍질을 군데군데 깎은 후 작은 토막으로 잘라 물에 넣어 삶는다.
+- text: 식힌 단호박과 두부를 믹서에 넣고 간다.
+- text: 단호박 크기가 작아지면 멈추었다가 두유를 넣고 한번 더 간다.
+- text: 냄비에 넣고 다시마 국물을 조금씩 부어가며 잘 풀어주면서 약한 불에서 뭉근하게 끓인다.
+- text: 소금, 후춧가루로 간한다.

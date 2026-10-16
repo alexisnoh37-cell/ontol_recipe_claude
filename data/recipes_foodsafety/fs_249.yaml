@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_249
+title: 해산물두부샌드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 249. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 두부(80g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(20g)
+  role: sub
+- ingredient: scallop
+  raw_text: 관자(20g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: null
+  raw_text: 새싹채소(20g)
+  role: sub
+- ingredient: null
+  raw_text: 완두콩드레싱 삶은 완두콩(30g)
+  role: sub
+- ingredient: soy_milk
+  raw_text: 두유(40g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(15g)
+  role: sub
+- ingredient: null
+  raw_text: 검은깨(5g)
+  role: sub
+steps:
+- text: 두부는 두 덩어리로 잘라 넓게 편다.
+- text: 새우, 관자, 파프리카를 함께 갈아 속을 만든다.
+- text: 완두콩과 두유, 꿀, 검은깨를 섞은 뒤 갈아 완두콩드레싱을 만든다.
+- text: 두부 사이에 속을 넣은 뒤 먹기 편한 크기로 자른다.
+- text: 두부샌드를 김 오른 찜기에서 15분 정도 찐다.
+- text: 완두콩드레싱과 새싹채소를 올려 마무리한다.

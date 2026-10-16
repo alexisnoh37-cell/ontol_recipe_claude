@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1049
+title: 건강 마늘 꿀환
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1049. 요리종류 후식, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: garlic
+  raw_text: 마늘 50g
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣 2g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 10g
+  role: sub
+- ingredient: null
+  raw_text: 검은깨 5g
+  role: sub
+- ingredient: null
+  raw_text: 카스텔라가루 10g
+  role: sub
+steps:
+- text: 마늘은 꼭지를 떼고 찜통에 무르도록 찐다.
+- text: 쪄 낸 마늘을 손절구에 곱게 으깬다
+- text: 잣은 고깔을 떼고 겉면을 깨끗하게 닦은 뒤 가루를 만든다.
+- text: 2에 꿀, 검은깨, 잣가루를 넣고 잘 혼합한다.
+- text: 4에 카스텔라 가루를 넣어 농도를 맞춘다.
+- text: 반죽을 조금씩 떼어 동그랗게 굴려 꿀환을 만든다.

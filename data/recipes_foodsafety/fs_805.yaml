@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_805
+title: 새싹 비빔밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 805. 요리종류 밥, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: rice
+  raw_text: 밥 100g
+  role: sub
+- ingredient: null
+  raw_text: 각종 새싹 20g
+  role: sub
+- ingredient: null
+  raw_text: 무순 2g
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리 5g
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓 5g
+  role: sub
+- ingredient: null
+  raw_text: 래디쉬 15g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨 볶음고추장
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 7.5g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 50g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2.5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2g
+  role: sub
+- ingredient: null
+  raw_text: 쇠고기다진것 20g  고기양념(5인분):파다진것 2.5g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 1.3g
+  role: sub
+- ingredient: sesame
+  raw_text: 깨소금 1.3g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 2g
+  role: sub
+steps:
+- text: 새싹과 무순은 씻어 물기를 제거한다.
+- text: 셀러리는 껍질을 벗겨 3cm로 어슷썬다.
+- text: 쑥갓은 3cm로 썰고, 래디쉬는 채썬다.
+- text: 다진 소고기는 고기양념을 한다.
+- text: 팬에 식용유를 소량 넣고 양념한 소고기를 볶다가 분량의 소스 재료를 넣고 볶아 저나트륨 볶음고추장을 만든다.
+- text: 그릇에 밥을 담고 준비된 새싹과 채소를 돌려담고 저나트륨 볶음고추장을 곁들인다.

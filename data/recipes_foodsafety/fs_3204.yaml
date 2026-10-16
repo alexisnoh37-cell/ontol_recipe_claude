@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3204
+title: 삼색 브레드 스틱
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3204. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 강력분 300g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 3g
+  role: sub
+- ingredient: null
+  raw_text: 드라이이스트 12g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 36g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 6g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 50g
+  role: sub
+- ingredient: null
+  raw_text: 참나물 50g
+  role: sub
+- ingredient: lotus_root
+  raw_text: 연근 30g
+  role: sub
+- ingredient: null
+  raw_text: 견과류 10g
+  role: sub
+steps:
+- text: 강력분, 소금, 이스트, 물을 넣어 만든 반죽을 3등분 하여 각각 당근, 참나물, 연근을 다져 넣어 섞어준다.
+- text: 반죽에 글루텐이 형성되면 각각 식용유와 버터를 넣어 섞고, 연근을 넣은 반죽에는 마지막에 견과류를 넣어 섞는다. ★다른 반죽보다 향이 없는 연근 반죽에 견과류를 넣어 맛을 냈어요.
+- text: 반죽이 완료되면 3-40분 정도 1차 발효를 한다.
+- text: 1차 발효 후 30g씩 무게를 달아 둥글리기하고 중간 발효 후 길게 밀어 편다.
+- text: 20분 정도 2차 발효를 한다.
+- text: 아랫불 160, 윗불 180℃ 오븐에서 18분 동안 굽는다.

@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_458
+title: 소고기채소볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 458. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: beef_sirloin
+  raw_text: 소고기등심(150g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.3g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: null
+  raw_text: 브로컬리(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(30g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(30g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(10g)
+  role: sub
+- ingredient: null
+  raw_text: 포도주스(50g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(10g)
+  role: sub
+- ingredient: null
+  raw_text: 칠리소스(50g)
+  role: sub
+steps:
+- text: 소고기는 깍뚝썰어 준비한다.
+- text: 깍뚝썰은 소고기에 소금, 후추, 올리브 오일을 넣어 숙성시킨다.
+- text: 브로컬리는 살짝 데쳐 썰고 ,양파, 당근, 토마토, 파프리카도 같은 크기로 썰어 준비한다.
+- text: 포도주스에 올리고당과 칠리소스 넣어 은근히 졸여 소스를 만들어 놓는다.
+- text: 팬에 식용유를 두르고 채소를 먼저 볶는다.
+- text: 채소를 볶은 팬에 다시 숙성된 소고기를 익히고, 볶아놓은 채소를 넣고 소스를 넣어 살짝 더 졸여 완성한다.

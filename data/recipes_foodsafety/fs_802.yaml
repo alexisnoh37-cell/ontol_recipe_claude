@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_802
+title: 누룽지과자
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 802. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: rice
+  raw_text: 밥 20g
+  role: sub
+- ingredient: null
+  raw_text: 달걀흰자 20g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 8g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 2g
+  role: sub
+- ingredient: peanut
+  raw_text: 땅콩 10g
+  role: sub
+- ingredient: raisin
+  raw_text: 건포도 10g
+  role: sub
+- ingredient: walnut
+  raw_text: 호두 12g
+  role: sub
+- ingredient: null
+  raw_text: 딸기잼 40g
+  role: sub
+steps:
+- text: 찬밥에 달걀흰자, 밀가루를 넣고 되직하게 반죽한다.
+- text: 1cm두께로 민 뒤 둥근 모양 또는 하트 모양으로 만든다.
+- text: 땅콩, 호두는 잘게 다진다.
+- text: 팬에 식용유를 넣고 빚어 놓은 밥을 앞, 뒤로 노릇하게 굽는다.
+- text: 구워진 밥 과자 윗면에 딸기잼을 바른다.
+- text: 건포도, 호두, 땅콩을 고루 얹어준다.

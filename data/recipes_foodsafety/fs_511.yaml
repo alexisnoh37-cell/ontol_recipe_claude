@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_511
+title: 닭고기또띠아
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 511. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: tortilla
+  raw_text: 또띠아(50g)
+  role: sub
+- ingredient: null
+  raw_text: 닭고기살(100g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(20g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(20g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(20g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드(10g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(20g)
+  role: sub
+- ingredient: mustard
+  raw_text: 머스터드(20g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(20g)
+  role: sub
+steps:
+- text: 닭고기살은 끓는 물에 데쳐 손으로 찢고, 느타리버섯도 데쳐 손으로 찢어 준비한다.
+- text: 사과는 씨를 제거하고 약 6cm 길이로 채를 썰고, 오이와 파프리카도 같은 길이로 채를 썰어 놓는다.
+- text: 애호박은 반달로 썰어 식초에 살짝 절여서 볶고, 양파는 채를 썰어 물에 잠시 담가 놓는다.
+- text: 아몬드는 우유를 넣어 갈아 준비한다.
+- text: 머스터드에 올리고당을 넣어 잘 섞어 준다.
+- text: 또띠아를 팬에 기름 없이 굽고, 그 안에 닭고기 살과 느타리버섯, 오이, 사과, 파프리카와 호박을 넣어 속이 보이도록 말아놓고, ④번과 ⑤번은 섞어서 소스를 만들어 완성한다.

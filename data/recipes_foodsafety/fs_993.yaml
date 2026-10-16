@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_993
+title: 시금치 돼지고기 볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 993. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 돼지고기살코기 40g
+  role: sub
+- ingredient: null
+  raw_text: 물전분 10g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 적당량
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 25g
+  role: sub
+- ingredient: chive
+  raw_text: 부추 10g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 5g
+  role: sub
+- ingredient: null
+  raw_text: 파 5g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 3g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 2g
+  role: sub
+steps:
+- text: 돼지고기는 채 썬 뒤 소금, 물전분을 넣고 양념한다.
+- text: 양념한 고기를 기름 두른 팬에 볶으면서 달라붙지 않도록 저어준다.
+- text: 시금치와 부추를 4~5cm 가량으로 썬다.
+- text: 가열된 팬에 기름을 두르고 파, 생강, 팔각을 넣어 향을 낸다.
+- text: 4에 2와 간장을 넣고 볶는다.
+- text: 물 전분을 넣어 농도를 맞춘 뒤 마직막으로 부추, 시금치를 넣는다.

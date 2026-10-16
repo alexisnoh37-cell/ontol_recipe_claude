@@ -1,0 +1,62 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: bolognese
+title: 볼로네제 파스타
+cuisine: 양식
+difficulty: 2
+cook_time_min: 40
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: pasta
+  raw_text: 스파게티 200g
+  role: main
+- ingredient: ground_beef
+  raw_text: 소고기 다짐육 200g
+  role: main
+- ingredient: tomato_sauce
+  raw_text: 토마토소스 1.5컵
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/4개
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 1큰술
+  role: seasoning
+- ingredient: olive_oil
+  raw_text: 올리브유 1큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+- ingredient: parmesan
+  raw_text: 파마산치즈 약간
+  role: garnish
+  optional: true
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 4
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+- name: 프라이팬
+  required: false
+steps:
+- text: 양파와 당근을 잘게 다진다.
+- text: 팬에 올리브유를 두르고 마늘, 양파, 당근을 볶다가 다짐육을 넣어 볶는다.
+  technique: 볶음
+- text: 토마토소스를 넣고 약불에서 20분 끓이며 소금, 후추로 간한다.
+  technique: 끓이기
+- text: 삶은 스파게티에 소스를 버무리고 파마산치즈를 뿌린다.
+  technique: 볶음

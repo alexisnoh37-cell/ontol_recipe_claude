@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1039
+title: 브로콜리 쇠고기 볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1039. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: broccoli
+  raw_text: 브로콜리 70g
+  role: sub
+- ingredient: null
+  raw_text: 쇠고기안심 30g
+  role: sub
+- ingredient: null
+  raw_text: 물전분 6g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 3g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 3g
+  role: sub
+- ingredient: null
+  raw_text: 식물성기름 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 브로콜리는 소금물에 담궜다가 씻는다.
+- text: 브로콜리를 작은 송이로 자른 뒤 기름, 소금을 넣은 물에 데쳐 찬물에 헹군다.
+- text: 생강과 당근, 마늘, 소고기를 얇게 슬라이스 한다.
+- text: 소고기를 밑간 한 뒤 10분 정도 재웠다가 기름을 두르고 살짝 익힌다.
+- text: 마늘, 생강, 당근, 익혀둔 소고기를 팬에 넣고 브로콜리를 넣어 볶는다.
+- text: 물 전분을 이용해 소스의 농도를 맞춘다.

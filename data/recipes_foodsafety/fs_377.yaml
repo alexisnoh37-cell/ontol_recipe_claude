@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_377
+title: 실곤약냉파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 377. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 실곤약 150g
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 칵테일새우 100g
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리 100g
+  role: sub
+- ingredient: basil
+  raw_text: 바질 5g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 15g
+  role: sub
+- ingredient: null
+  raw_text: 잣 바질페이소스 15g
+  role: sub
+- ingredient: null
+  raw_text: 마늘오일 15g
+  role: sub
+- ingredient: null
+  raw_text: 드라이토마토 10g
+  role: sub
+steps:
+- text: 실 곤약은 세척 후에 물기를 빼준다.
+- text: 새우와 브로콜리는 데쳐 냉수에 헹궈 준비한다.
+- text: 드라이 토마토는 물에 데쳐 준 후 송송 다져 준 후 올리브 오일에 버무려주고 생 바질은 데친 후 송송 다져준다.
+- text: 볼에 실 곤약을 바질 페이스트에 버무려준다.
+- text: 다져 놓은 채소와 새우, 브로콜리를 섞어 버무려준다.
+- text: 마지막에 파마산 가루를 뿌려 완성한다.

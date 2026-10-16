@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_356
+title: 황태두부무국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 356. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: dried_pollock
+  raw_text: 황태 30g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 50g
+  role: sub
+- ingredient: null
+  raw_text: 함초 25g
+  role: sub
+- ingredient: radish
+  raw_text: 무 100g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 20g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 15g
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파 10g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: null
+  raw_text: 어간장 7g
+  role: sub
+- ingredient: null
+  raw_text: 대파뿌리 7g
+  role: sub
+steps:
+- text: 두부는 사방 1cm로 잘라주고, 무는 반은 나박썰기 하고 반은 국물을 낸다.
+- text: 두부는 사방 1cm로 잘라주고, 무는 반은 나박썰기 하고 반은 국물을 낸다.
+- text: 황태는 먹기 좋게 잘라준다.
+- text: 황태, 대파뿌리, 함초, 무를 넣고 국물을 만든다.
+- text: 만들어진 국물에 함초와 대파뿌리를 건져내고 어간장으로 간을 해준다. 국물을 만들고 남은 무는 나박썰기 해서 국에 넣어준다.
+- text: 마지막에 두부를 넣어 끓여주고 먹기 직전에 청홍고추와 쪽파를 올려 완성한다.

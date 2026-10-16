@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3070
+title: 한우굴라쉬
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3070. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 쇠고기 등심 17.5g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 7.5g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 15g
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카 3.2g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 25g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 1.7g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 1.7g
+  role: sub
+- ingredient: tomato_paste
+  raw_text: 토마토페이스트 13.7g
+  role: sub
+- ingredient: ketchup
+  raw_text: 케첩 9g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 5g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 1g
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎 0.1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.1g
+  role: sub
+steps:
+- text: 쇠고기 등심은 큐브 모양으로 썰어 소금, 후추 간을 하고 밀가루를 묻힌다.
+- text: 감자, 토마토는 한 입 크기로 썰고, 마늘은 편썰기, 파프리카는 채썰기, 양파는 다진다.
+- text: 팬에 버터와 올리브유를 넣고 양파, 마늘을 볶다가 쇠고기를 넣어 볶는다.
+- text: 쇠고기가 익으면 감자, 토마토, 파프리카를 넣는다.
+- text: 토마토 페이스트, 케찹을 넣어 볶다가 물과 월계수잎을 넣어 끓인다.
+- text: 소금, 후추로 간을 하고 푹 익혀준다.

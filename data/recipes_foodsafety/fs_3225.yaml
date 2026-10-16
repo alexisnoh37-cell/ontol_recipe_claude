@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3225
+title: 어묵 잡채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3225. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(70g)
+  role: sub
+- ingredient: fish_cake
+  raw_text: 어묵(100g)
+  role: sub
+- ingredient: null
+  raw_text: 아삭이고추(30g)
+  role: sub
+- ingredient: null
+  raw_text: 빨강 파프리카(25g)
+  role: sub
+- ingredient: null
+  raw_text: 노랑 파프리카(25g)
+  role: sub
+- ingredient: soybean_sprouts
+  raw_text: 콩나물(150g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.3g)
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스(5g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(1g)
+  role: sub
+steps:
+- text: 돼지고기, 어묵, 아삭이고추, 파프리카는 채 썬다.
+- text: 콩나물은 찬물에 헹궈 체에 밭친다.
+- text: 채 썬 돼지고기에 밑간을 한다.
+- text: 중간 불로 달군 팬에 밑간한 돼지고기를 넣어 3분간 볶는다.
+- text: 채 썬 재료와 어묵을 넣어 5분간 볶는다.
+- text: 굴소스를 넣어 1~2분간 볶고 참기름을 두른 뒤 고루 섞는다.

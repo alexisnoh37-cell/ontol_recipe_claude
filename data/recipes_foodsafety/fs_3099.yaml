@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3099
+title: 흑마늘견과류조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3099. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: garlic
+  raw_text: 통마늘 10g
+  role: sub
+- ingredient: null
+  raw_text: 마카다미아 5g
+  role: sub
+- ingredient: walnut
+  raw_text: 호두 5g
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드 5g
+  role: sub
+- ingredient: null
+  raw_text: 캐슈넛 2g
+  role: sub
+- ingredient: peanut
+  raw_text: 땅콩 2g
+  role: sub
+- ingredient: soybean_oil
+  raw_text: 대두유 5g
+  role: sub
+- ingredient: null
+  raw_text: 흑마늘진액 5g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 2g
+  role: sub
+- ingredient: null
+  raw_text: 깨 2g
+  role: sub
+steps:
+- text: 통마늘과 견과류들은 먹기 좋은 크기로 자른다.
+- text: 흑마늘 진액과 간장, 물엿, 물을 넣어 흑마늘 소스를 만든다.
+- text: 대두유를 두르고 마늘을 팬에 노릇하게 구워준다.
+- text: 구워진 마늘에 각종 견과류를 넣어 볶는다.
+- text: 소스를 넣어 조린다.
+- text: 그릇에 담고 깨를 뿌려 마무리한다.

@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3179
+title: 포항초사과샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3179. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 포항초 20g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 5g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 2g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 2g
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카 1g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(또는 식초) 0.2g
+  role: sub
+- ingredient: null
+  raw_text: 저염간장 0.4g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 0.2g
+  role: sub
+steps:
+- text: 포항초는 세척하고 3cm 크기로 자른다.
+- text: 당근은 얇게 채 썰어주고, 사과는 껍질 채로 채 썰어 설탕물에 담가 둔다.
+- text: 양파와 파프리카는 작은 큐브 모양으로 썬다.
+- text: 저염간장, 레몬즙, 설탕, 양파, 파프리카를 넣어 오리엔탈 드레싱을 만든다.
+- text: 포항초에 당근과 사과를 넣어 섞어준다.
+- text: 샐러드에 오리엔탈 드레싱을 곁들여 제공한다.

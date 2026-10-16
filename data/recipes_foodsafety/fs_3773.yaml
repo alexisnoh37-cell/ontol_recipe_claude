@@ -1,0 +1,85 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3773
+title: 고추장카르네와 K-쌈밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3773. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 근대 15g
+  role: sub
+- ingredient: null
+  raw_text: 호박잎 20g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 95g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 5g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 36g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 3g
+  role: sub
+- ingredient: beef
+  raw_text: 소고기 70g
+  role: sub
+- ingredient: null
+  raw_text: 캐슈넛 5g
+  role: sub
+- ingredient: soy_milk
+  raw_text: 무가당 두유 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 15g
+  role: sub
+- ingredient: null
+  raw_text: 강낭콩 20g
+  role: sub
+- ingredient: brown_rice
+  raw_text: 현미밥 130g
+  role: sub
+- ingredient: rice_flour
+  raw_text: 쌀가루 1g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 5g
+  role: sub
+- ingredient: null
+  raw_text: 파프리카가루 4g
+  role: sub
+- ingredient: null
+  raw_text: 표고버섯가루 3g
+  role: sub
+- ingredient: null
+  raw_text: 메주가루 2g
+  role: sub
+- ingredient: pear
+  raw_text: 배 25g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 10g
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루 0.5g
+  role: sub
+- ingredient: null
+  raw_text: 오레가노 1g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 3g
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨 1g
+  role: sub
+steps:
+- text: 근대, 호박잎은 1분간 데치고 근대 줄기는 한입 크기로 자른다. 칼집을 낸 토마토는 데친 뒤 껍질을 벗겨 2×2cm 크기로 자르고 홍고추는 얇게 자른다. 양파는 1×1cm 크기로 자르고 당근은 10cm 길이로 길게 잘라 끓는 물에 1분간 데친다.
+- text: 소고기는 키친타월로 핏물을 제거한다. 믹서에 캐슈넛, 무가당 두유를 넣고 갈아 캐슈넛 크림을 만든다.
+- text: 예열한 팬에 쌀가루, 물(25ml)을 넣어 중간 불로 30초간 끓이다 불을 끄고 고춧가루, 파프리카가루, 표고버섯가루, 메주가루, 강판에 곱게 간 배를 넣어 수제 고추장을 만든다.
+- text: 올리브유를 두른 팬에 손질한 소고기를 바싹 볶아 식힌다. 팬에 손질한 양파, 다진 마늘을 넣고 볶아 갈색빛이 나면 볶은 소고기, 손질한 토마토, 물(125ml), 카레가루, 오레가노, 수제 고추장을 넣고 센 불에서 10분간 끓인다. 강낭콩을 넣고 5분간 더 조려 고추장카르네를 만든다.
+- text: 볼에 따뜻한 현미밥, 참기름을 넣고 고루 섞는다. 한입 크기로 나눠 데친 근대와 호박잎으로 감싸고 데친 당근으로 묶어 쌈밥을 만든다.
+- text: 그릇에 고추장카르네, 쌈밥을 올린다. 캐슈넛크림을 뿌리고 손질한 근대 줄기, 홍고추, 참깨를 올려 마무리한다.

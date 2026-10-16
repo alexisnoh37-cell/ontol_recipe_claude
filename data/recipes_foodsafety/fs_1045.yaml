@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1045
+title: 차가운 당근 수프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1045. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: carrot
+  raw_text: 당근 80g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 2g
+  role: sub
+- ingredient: null
+  raw_text: 양파다진것 10g
+  role: sub
+- ingredient: null
+  raw_text: 생강다진것 1g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 2g
+  role: sub
+- ingredient: null
+  raw_text: 야채육수 50g
+  role: sub
+- ingredient: null
+  raw_text: 오렌지주스 20g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 5g
+  role: sub
+- ingredient: null
+  raw_text: 당근주스 30g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 버터를 녹인 냄비에 양파, 생강, 마늘 다진 것을 넣고 양파가 반투명해 질 때까지 볶는다.
+- text: 1에 얇게 썬 당근을 넣고 볶는다.
+- text: 2에 야채육수, 오렌지주스를 넣고 당근이 익을 때까지 끓인다.
+- text: 믹서에 3을 넣고 갈아준 뒤 차갑게 한다.
+- text: 제공하기 직전에 크림을 넣어 섞은 뒤 당근주스를 넣는다.
+- text: 소금, 후추로 마지막 간을 하고 차가운 볼에 담는다.

@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_826
+title: 참기름 드레싱의 즉석 샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 826. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: lettuce
+  raw_text: 상추 10g, 오이 10g, 당근 5g, 비타민 5g, 방울토마토 10g, 쑥갓 2g, 견과류
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드
+  role: sub
+- ingredient: walnut
+  raw_text: 호두 2g
+  role: sub
+- ingredient: null
+  raw_text: 참기름드래싱
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장2g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 2g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 4g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고운고춧가루 1g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2.5g
+  role: sub
+steps:
+- text: 샐러드 재료들을 잘 씻는다.
+- text: 체에 받쳐 물기를 제거한다.
+- text: 채소들을 한입 크기로 썰어둔다.
+- text: 드레싱 재료를 섞어 참기름 드레싱을 만든다.
+- text: 유리병에 모든 재료를 넣고, 참기름 드레싱을 넣고 섞은 후 접시에 담아 낸다.
+- text: 샐러드 위에 견과류를 뿌려 마무리 한다.

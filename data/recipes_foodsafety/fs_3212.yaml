@@ -1,0 +1,51 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3212
+title: 메밀면 샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3212. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: iceberg_lettuce
+  raw_text: 양상추(40g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(10g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(30g)
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(60g)
+  role: sub
+- ingredient: buckwheat_noodles
+  raw_text: 메밀면(90g)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎채소(10g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(20g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(15g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(15g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(3g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(5g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(10g)
+  role: sub
+steps:
+- text: 양상추는 한입 크기로 찢고, 당근은 채 썰고, 방울토마토는 4등분한다.
+- text: 끓는 물(2컵)에 닭가슴살을 넣어 10분간 익힌 뒤 건져 결대로 찢는다.
+- text: 끓는 물(2컵)에 메밀면을 넣어 5분간 삶아 건진 뒤 찬물에 헹궈 체에 밭쳐 물기를 제거한다.
+- text: 유자오리엔탈소스를 만든다.
+- text: 그릇에 준비한 재료와 어린잎채소를 담고 유자오리엔탈소스를 뿌린다.

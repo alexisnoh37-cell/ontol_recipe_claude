@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_375
+title: 쪽갈비구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 375. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 쪽갈비 400g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 30g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추 1g
+  role: sub
+- ingredient: null
+  raw_text: 건 로즈마리 1g
+  role: sub
+- ingredient: wine
+  raw_text: 와인 15g
+  role: sub
+- ingredient: null
+  raw_text: 곁들이채소
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 45g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: null
+  raw_text: 레몬껍질 10g
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 30g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+- ingredient: null
+  raw_text: 홀그레인 머스터즈 10g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 5g
+  role: sub
+- ingredient: null
+  raw_text: 백후추 1g
+  role: sub
+steps:
+- text: 쪽갈비는 물에 와인을 넣어 80% 이상을 삶아 냉수에 헹군다. 데쳐낸 쪽갈비를 올리브오일 과 로즈마리와 통후추를 뿌려서 구워준다.
+- text: 소스를 만들어준다.
+- text: 레몬껍질은 채 썰어준다.
+- text: 방울토마토는 먹기 좋게 자르고 양파도 먹기 좋게 잘라 팬에 구워준다.
+- text: 쪽갈비를 레몬껍질과 함께 굽는다.
+- text: 구워진 채소에 함께 쪽갈비를 굽고 소스와 함께 완성한다.

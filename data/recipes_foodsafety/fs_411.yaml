@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_411
+title: 카레감자전
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 411. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: potato
+  raw_text: 감자 150g
+  role: sub
+- ingredient: null
+  raw_text: 유기농 밀가루 50g
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루 15g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 70g
+  role: sub
+- ingredient: null
+  raw_text: 루콜라 3g
+  role: sub
+- ingredient: null
+  raw_text: 마늘기름 30g
+  role: sub
+- ingredient: null
+  raw_text: 발사믹식초 30g
+  role: sub
+- ingredient: null
+  raw_text: 저염간장 15g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 15g
+  role: sub
+steps:
+- text: 감자는 껍질을 벗겨서 1개를 채 썰고 물에 담가둔다.
+- text: 감자 1개는 강판에 갈아서 즙과 건지를 따로 분리해준다.
+- text: 양파를 곱게 채 썰어주고 볼에 강판에 간 건지와 채 썬 감자, 채 썬 양파를 섞어 반죽을 만들어 준다.
+- text: 소스를 만들어준다.
+- text: 팬에 한입 크기로 전을 부쳐준다.
+- text: 루콜라를 물에 살짝 헹궈주고 전과 함께 접시에 셋팅한다.

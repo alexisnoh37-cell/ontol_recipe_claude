@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_835
+title: 두부선과 저나트륨 겨자 간장소스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 835. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: tofu
+  raw_text: 두부 80g
+  role: sub
+- ingredient: null
+  raw_text: 표고버섯마른것 10g
+  role: sub
+- ingredient: beef
+  raw_text: 쇠고기 20g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 20g
+  role: sub
+- ingredient: null
+  raw_text: 쇠고기양념
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1.4g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨겨자간장소스
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 0.5g
+  role: sub
+- ingredient: mustard_powder
+  raw_text: 연겨자 0.5g
+  role: sub
+steps:
+- text: 두부는 4x4x2cm로 썰어 윗면에 대각선으로 칼집을 넣는다.
+- text: 호박은 3cm길이로 곱게 채썰고 표고버섯과 소고기도 곱게 채썰어 양념한다.
+- text: 팬에 채썬 호박을 볶아내고 양념해 둔 표고버섯과 소고기도 볶는다.
+- text: 칼집을 넣은 두부에 볶아둔 재료들을 칼집 사이에 끼워 속을 넣는다.
+- text: 준비된 두부를 찜통에 쪄낸다.
+- text: 저나트륨 겨자 간장소스를 곁들인다.

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_786
+title: 라비올리 토마토소스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 786. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 중력분 25g, 강력분 25g, 달걀 12g, 물 12g, 양파 25g, 당근 12g, 토마토 120g  토마토소스
+  role: sub
+- ingredient: celery
+  raw_text: 셀러리 8g
+  role: sub
+- ingredient: basil
+  raw_text: 바질 8g
+  role: sub
+- ingredient: null
+  raw_text: 오레가노 2.5g
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리 2.5g
+  role: sub
+- ingredient: null
+  raw_text: 물필요량
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 2g 리코타치즈:우유 125g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 8g
+  role: sub
+- ingredient: null
+  raw_text: 차이브 2.5g
+  role: sub
+- ingredient: parmesan
+  raw_text: 파마산치즈 1g
+  role: sub
+steps:
+- text: 반죽 재료를 섞어 라비올리 반죽을 만든 뒤 냉장고에 휴지 시킨다.
+- text: 우유가 끓이다 레몬즙을 넣고 응어리가 생기면 면보에 걸러 응고시킨다.
+- text: 우유가 차갑게 식으면 차이브와 파마산 치즈를 섞어 리코타치즈를 만든다.
+- text: 냉장 휴지시킨 라비올리 반죽을 1mm두께로 민 뒤 4x4cm 크기로 잘라 리코타치즈로 속을 채워 끎는 물에 삶는다.
+- text: 양파,당근,토마토은 슬라이스하고 셀러리와 마늘은 잘게 다져 냄비에 바질, 오레가노, 로즈마리, 물, 설탕과 함께 끓여 토마토소스를 만든다.
+- text: 라비올리와 토마토소스를 곁들여낸다.

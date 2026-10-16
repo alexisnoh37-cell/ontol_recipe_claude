@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_607
+title: 체리젤리를 곁들인 고구마무스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 607. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 체리(50g)
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마(150g)
+  role: sub
+- ingredient: null
+  raw_text: 화이트 초콜릿(50g)
+  role: sub
+- ingredient: null
+  raw_text: 판젤라틴(1장)
+  role: sub
+- ingredient: null
+  raw_text: 피스타치오(20g)
+  role: sub
+- ingredient: null
+  raw_text: 헤이즐넛(20g)
+  role: sub
+- ingredient: null
+  raw_text: 캐슈넛(20g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(20g)
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드(20g)
+  role: sub
+- ingredient: null
+  raw_text: 라즈베리(20g)
+  role: sub
+- ingredient: raisin
+  raw_text: 건포도(20g)
+  role: sub
+- ingredient: null
+  raw_text: 애플민트(2g)
+  role: sub
+steps:
+- text: 고구마는 깨끗이 씻어 찜통에 쪄낸다
+- text: 뜨거운 고구마는 식기 전에 으깬다.
+- text: 화이트 초콜릿은 중탕으로 녹여 으깬 고구마와 섞는다
+- text: 체리는 믹서에 곱게 간다.
+- text: 젤라틴은 물에 불려 중탕으로 녹이고 갈아 놓은 체리에 섞어 굳힌다
+- text: 견과류와 라즈베리, 건포도는 다져서 굳힌 체리젤리에 뿌리고 고구마 무스를 젤리 주위에 두르고 애플민트를 올린다.

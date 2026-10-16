@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1068
+title: 파인애플떡갈비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1068. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(갈빗살, 60g)
+  role: sub
+- ingredient: null
+  raw_text: 파인애플(45g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(8g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(7g)
+  role: sub
+- ingredient: null
+  raw_text: 전분(10g)
+  role: sub
+- ingredient: null
+  raw_text: 파(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(2g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 진간장(3g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(1g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(1.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.2g)
+  role: sub
+steps:
+- text: 파인애플은 7cm로 자르고 남은 자투리와 파, 마늘, 양파, 표고버섯은 곱게 다진다.
+- text: 갈빗살은 곱게 다져 간장, 설탕, 파, 마늘, 참기름, 추후로 양념한다.
+- text: 다진 파인애플, 양파, 표고버섯은 볶아 수분을 제거한다.
+- text: 전분 일부와 갈빗살, 다진 파인애플, 양파, 표고버섯을 섞고 치댄다.
+- text: 잘라둔 파인애플에 남은 전분을 묻힌 뒤 고기반죽으로 감싼다.
+- text: 팬 또는 오븐(180℃, 15분)에 노릇하게 굽는다.

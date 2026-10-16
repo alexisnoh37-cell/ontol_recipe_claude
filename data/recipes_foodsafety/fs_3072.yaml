@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3072
+title: 견과류문어떡갈비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3072. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 돈민찌 80g
+  role: sub
+- ingredient: null
+  raw_text: 우민찌 30g
+  role: sub
+- ingredient: null
+  raw_text: 떡 40g
+  role: sub
+- ingredient: octopus
+  raw_text: 문어 3g
+  role: sub
+- ingredient: pear
+  raw_text: 배 5g
+  role: sub
+- ingredient: walnut
+  raw_text: 호두 3g
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드 3g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 5g
+  role: sub
+- ingredient: null
+  raw_text: 다진파 5g
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루 5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 1g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 0.5g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 5g
+  role: sub
+- ingredient: jujube
+  raw_text: 대추 2g
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣 2g
+  role: sub
+steps:
+- text: 삶은 문어, 배, 호두, 아몬드는 작게 자르고, 파와 마늘은 다진다.
+- text: 대추는 돌려 깍기 하여 돌돌 말아 자른다.
+- text: 돈민찌, 우민찌는 잘 섞어주고 ①재료와 참기름, 후추, 찹쌀가루를 넣어 치대어 준다.
+- text: 데쳐서 익힌 떡에 밀가루를 얇게 입히고 ③의 반죽을 붙혀 떡갈비를 만든다.
+- text: 떡갈비를 팬에 올려 속이 익을 때까지 굽는다.
+- text: 잘라놓은 대추와 잣을 고명으로 올려 완성한다.

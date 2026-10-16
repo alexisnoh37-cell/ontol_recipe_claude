@@ -1,0 +1,42 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_309
+title: 삼겹살라면
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 309. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 라면(100g)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파(3g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 돼지고기(삼겹살, 60g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: null
+  raw_text: 얇게 썬 생강(5g)
+  role: sub
+- ingredient: katsuobushi
+  raw_text: 가다랑어포(3g)
+  role: sub
+- ingredient: null
+  raw_text: 조림양념 저염간장(3g)
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술(8g)
+  role: sub
+- ingredient: sugar
+  raw_text: 흑설탕(3g)
+  role: sub
+steps:
+- text: 돼지고기를 차가운 물로 헹구고 냄비에 물(300g), 대파, 생강과 같이 넣고 끓여 돼지고기가 익으면 면포에 거른다.
+- text: 냄비에 물(300g)을 넣어 끓으면 가다랑어포를 넣고 1분간 끓이고 불을 꺼 가다랑어포가 가라앉으면 면포에 거르고, 다시 물(300g)을 넣어 면포에 걸러낸 가다랑어포를 넣어 약한 불로 10분간 끓인 뒤 가다랑어포가 가라앉으면 면포에 거른다.
+- text: 돼지고기 육수와 가다랑어포 육수를 섞은 뒤 200g을 따로 덜어 조림양념을 넣고 끓이다가 돼지고기를 넣고 조린다.
+- text: 라면은 삶아 찬물에 헹궈 건지고, 쪽파는 송송 썬다.
+- text: 육수를 뜨겁게 끓인 뒤 그릇에 라면사리와 함께 담고, 돼지고기조림, 쪽파를 올리고 팬에 남은 조림 소스를 끼얹어 마무리한다.

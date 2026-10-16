@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_623
+title: 두부곤약파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 623. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 곤약(50g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(150g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(1/4개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(50g)
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추(20g)
+  role: sub
+- ingredient: cabbage
+  raw_text: 적양배추(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(50g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+steps:
+- text: 곤약은 5cm 길이로 썰어 가운데 칼집을 넣고 매작과 모양으로 만들어 뜨거운 물에 살짝 데친다.
+- text: 양배추, 적양배추는 채 썰고 배, 양파, 파프리카는 굵은 채를 썬다.
+- text: 두부는 얼려 수분을 뺀다
+- text: 얼린 두부는 3cm 주사위 모양으로 썬다.
+- text: 토마토는 슬라이스 한다.
+- text: 저염 간장에 설탕과 식초를 섞어 소스를 만들고, 곤약과 두부를 볶다가 야채를 넣어 한 번 더 볶은 뒤 소스를 뿌린다.,

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_499
+title: 황태리조또
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 499. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: tofu
+  raw_text: 두부(100g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: mussel
+  raw_text: 홍합(50g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(5g)
+  role: sub
+- ingredient: dried_pollock
+  raw_text: 황태(100g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(100g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(10g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(5g)
+  role: sub
+steps:
+- text: 두부는 김이 오르는 찜통에 소금을 넣고 약 5분 정도 쪄 놓는다.
+- text: 황태는 강판에 갈아 보프리를 만들어 놓는다.
+- text: 홍합은 끓는 육수에 데쳐 육수는 따로 걸러 놓고, 홍합은 살만 꺼내 따로 준비 한다.
+- text: 냄비에 버터를 녹이고, 두부와 홍합을 으깨어 볶는다.
+- text: 볶아지는 냄비에 만들어 놓은 육수와 생크림을 넣고, 골고루 섞어 가면서 볶는다.
+- text: 두부가 육수에 볶아지면, 마지막에 황태보프라기를 넣고, 달걀과 참기름 통깨를 넣어 살짝 익혀 완성한다.

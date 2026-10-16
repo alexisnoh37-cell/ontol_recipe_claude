@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_451
+title: 닭날개튀김
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 451. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: chicken_wing
+  raw_text: 닭봉(120g)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(30g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(20g)
+  role: sub
+- ingredient: null
+  raw_text: 생강즙(10g)
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루(30g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(400g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: peanut
+  raw_text: 땅콩(20g)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(20g)
+  role: sub
+- ingredient: null
+  raw_text: 파스리가루(0.3g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 요거트(30g)
+  role: sub
+- ingredient: null
+  raw_text: 곁들임채소
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(10g)
+  role: sub
+steps:
+- text: 닭날개는 끝을 잘라 뒤로 뒤집어 봉을 만든다.
+- text: 오렌지즙과 레몬즙을 짜서 섞어 주고, 생강을 갈아 소창에 걸러 즙을 낸다.
+- text: 닭봉(①)에 생강즙, 오렌지 ․ 레몬즙 (②)을 발라 숙성시킨 후 다시 카레 가루를 입힌다.
+- text: 땅콩은 물기 없이 입자있게 다진다.
+- text: 양파를 입자있게 다져 다진 땅콩과 마요네즈, 파슬리가루, 요거트를 넣고 골고루 섞어 소스를 만들어 놓는다.
+- text: 카레가루를 입힌 닭봉은 튀김기름 170~180℃ 온도에서 약 3분 정도 튀겨 기름을 빼고, 접시에 어린잎을 담고 만들어 놓은 소스와 닭봉을 함께 제공 하여 완성한다.

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_608
+title: 카레닭 룰라이드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 608. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(120g)
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리(1/2개)
+  role: sub
+- ingredient: asparagus
+  raw_text: 아스파라거스(3개)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(50g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(50g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(30g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.1g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.01g)
+  role: sub
+steps:
+- text: 닭살에 소금, 후추로 밑간을 한다.
+- text: 밑간한 닭살에 카레가루를 골고루 묻힌다.
+- text: 양파, 당근, 토마토, 샐러리는 주사위 모양으로 자른다
+- text: 냄비에 양파, 당근, 토마토, 샐러리를 볶다가 카레가루를 넣고 끓여 카레소스를 만든다.
+- text: 팬에 기름을 두르고 닭살을 익힌다.
+- text: 그릇에 익힌 닭살을 담고 카레소스를 올린다.

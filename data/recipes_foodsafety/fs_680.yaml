@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_680
+title: 수박즙돼지목심구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 680. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 돼지고기 목심 70g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 2g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.25g
+  role: sub
+- ingredient: null
+  raw_text: 수박 15g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 3g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.25g
+  role: sub
+steps:
+- text: 키친타월을 이용해 돼지고기의 핏물을 뺀다.
+- text: 돼지고기에 칼집을 내준다.
+- text: 칼집 낸 돼지고기에 올리브유, 후추를 뿌려 재워둔다.
+- text: 수박의 씨를 빼고 살만 발라 믹서에 간다.
+- text: 소스 재료를 모두 섞어 약불에서 살짝 졸여 식힌다.
+- text: 재워 놓은 고기에 소스를 끼얹어 팬에 굽는다.

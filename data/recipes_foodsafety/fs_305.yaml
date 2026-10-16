@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_305
+title: 닭갈비볶음면
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 305. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 마늘(20g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(2g)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파(1g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(60g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(40g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(50g)
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(30g)
+  role: sub
+- ingredient: null
+  raw_text: 이태리시즈닝(1g)
+  role: sub
+- ingredient: ramen_noodles
+  raw_text: 라면(110g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 카레가루(2g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(1g)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(10g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(2g)
+  role: sub
+steps:
+- text: 마늘 5g은 다지고, 나머지 마늘(15g)은 편 썰어 노릇하게 튀긴다.
+- text: 깻잎은 채 썰고, 쪽파는 송송 썰고, 파프리카는 주사위 모양으로 썰고, 양파와 대파는 채 썰고, 방울토마토는 반을 갈라 준비한다.
+- text: 닭가슴살은 어슷하게 납작 썰어 이태리시즈닝에 재운 뒤 팬에 구워 준비한다.
+- text: 다진 마늘, 양파, 대파를 팬에 넣고 향을 내다 파프리카와 방울토마토, 양념을 넣고 볶은 뒤 한 김 식혀 믹서에 곱게 갈아 소스를 만든다.
+- text: 팬에 소스와 구운 닭가슴살을 넣어 볶다가 삶은 라면을 넣고 재빠르게 볶는다.
+- text: 튀긴 마늘과 깻잎, 쪽파를 올려 마무리한다.

@@ -148,7 +148,7 @@ knowledge/*.yaml  ──(scripts/compile_knowledge.py)──▶  DB 테이블 + 
 ### 4-3. 제약 필터
 
 - **알레르기**: 사용자 알레르기 그룹의 원천 재료에서 is_a 하위와 derived_from 파생을 모두 모은 집합(`allergen_closure`)에 걸리는 재료가 하나라도 있으면 제외한다. 선택(optional) 재료와 고명도 제외 대상이다(D2).
-- **절대 불선호**: is_hard 재료는 `ingredient_contains`로 판정해 is_a 하위와 derived_from 파생까지 제외한다("새우 못 먹음"이면 새우젓, 김치도 제외). is_hard 음식 종류는 해당 cuisine을 제외한다.
+- **절대 불선호**: is_hard 재료는 `ingredient_contains`(부록 C)로 판정한다. 레시피 재료가 불선호 재료 자신이거나, 그 재료를 포함(가능)하면 제외한다. 포함에는 불선호 재료의 is_a 하위와 derived_from 파생("새우 못 먹음"이면 새우젓, 김치도 제외)뿐 아니라, 불선호 재료를 is_a 하위로 가진 넓은 재료도 possible로 들어간다("순두부 못 먹음"이면 순두부가 두부의 하위이므로 두부를 쓰는 레시피도 제외, 2026-10-04 확인). is_hard 음식 종류는 해당 cuisine을 제외한다.
 - **매운맛 한도**: 레시피 spicy가 사용자 max_level을 넘으면 제외한다.
 - **조리기구, 시간**: 필수 조리기구가 없거나, 사용자가 시간을 절대 조건(`time_is_hard`)으로 두고 초과한 경우 제외한다. 식단 조건은 Phase 2에서 추가한다.
 - **미매칭 재료**: 정규 ID로 매핑되지 않은 재료가 있는 레시피는 알레르기가 있는 사용자에게 제외한다.
@@ -231,10 +231,22 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
 
 ### 5-3. 레시피 수집과 검수
 
-1. 출처는 `docs/decisions.md`를 따른다. 외부 레시피 본문은 복제하지 않는다.
+1. 출처는 `docs/decisions.md`를 따른다. 외부 레시피 본문은 복제하지 않는다. 예외: 식품안전나라 조리식품 레시피 DB(D3 보완 2, 개인용 범위·출처 표시).
 2. 재료, 양, 역할, 맛 프로필, 난이도, 조리기구를 구조화한다.
 3. 재료를 별칭 테이블로 정규 ID에 매핑한다. 실패한 재료는 검수 큐로 보낸다.
 4. 사람이 검수표를 확인하고 승인하면 status를 published로 바꾼다.
+
+#### 5-3-1. 식품안전나라 레시피 가져오기 (D3 보완 2)
+
+1. `scripts/fetch_foodsafety.py`가 Open API(COOKRCP01)에서 원본을 내려받아 `data/external/foodsafety/raw/`에 저장한다. 인증키는 `.env`의 `FOODSAFETY_API_KEY`. 원본은 커밋한다(D3 보완 3).
+2. `scripts/convert_foodsafety.py`가 원본을 레시피 YAML(`data/recipes_foodsafety/fs_<일련번호>.yaml`, 커밋)로 바꾼다. 로더(`data/recipes/`)와 골든셋에는 들어가지 않는다.
+   - `source: foodsafety`, `status: draft`, `confidence: low`, note에 출처(식품의약품안전처 식품안전나라, 일련번호)와 요리종류·조리방법 원문.
+   - 재료: 재료정보(RCP_PARTS_DTLS)를 줄·쉼표(괄호 밖)로 나눠 `raw_text`에 원문을 두고, 양 앞까지의 이름이 별칭 색인과 정확히 일치할 때만 `ingredient`를 채운다. 나머지는 `null`(미매칭). `role`은 모두 `sub`(검수 때 정함).
+   - 줄 나누기: HTML 태그(`<br>`), 줄 중간 대괄호(`[소스소개]`), 공백 사이 하이픈(` - `), `>`는 줄바꿈·머리말 구분으로 본다. 버리는 것은 머리말(고정 단어, 레시피 이름, 분량 "2인분 기준", "…재료")과 이름이 정확히 "물"인 항목(시드 규칙)뿐이다. 머리말이 아닌 소제목("두부구이 : 두부 70g"의 "두부구이")은 버리지 않고 따로 한 항목(미매칭)으로 남긴다.
+   - `cuisine: 미분류`, `cook_time_min`·`difficulty`·`taste` 없음(API에 없음, 검수 때 채움). 조리 단계는 MANUAL01~20 원문.
+   - 재료정보가 없는 레시피는 만들지 않고 보고한다.
+3. 미매칭 재료 빈도와 레시피별 미매칭 수를 `docs/review/foodsafety_unmatched.md`로 만든다. 별칭·재료 보강은 knowledge에 draft로 추가한 뒤 다시 변환한다.
+4. `data/recipes/`로 옮기려면 미매칭 0, cuisine·cook_time_min 채움, 사람 검수가 필요하다(로더가 미분류·cook_time_min 없음을 거부).
 
 ### 5-4. 데이터 검증 스크립트
 
@@ -243,7 +255,8 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
 - 모든 published 레시피에 맛 프로필과 난이도가 있다.
 - is_a, derived_from, 그리고 두 그래프의 합집합에 순환 관계가 없다.
 - concept 노드가 레시피 재료나 보유 재료로 쓰이지 않는다.
-- 레시피의 cuisine, equipment, technique이 `knowledge/vocab.yaml` 어휘에 있다.
+- 레시피의 cuisine, equipment, technique이 `knowledge/vocab.yaml` 어휘에 있다. 예외: draft 레시피는 cuisine `미분류`를 쓸 수 있다(vocab에는 넣지 않는다).
+- cook_time_min은 published 레시피에 필수이고, draft는 비워 둘 수 있다. 다만 엔진·DB에 적재(`kb.recipes.load_recipe_specs`)할 때는 cuisine `미분류`이거나 cook_time_min이 없는 레시피를 거부한다(DB 컬럼은 NOT NULL 유지).
 - user_preference의 target_id가 실제로 존재한다.
 
 ## 6. 단계별 로드맵
@@ -336,6 +349,8 @@ api/             FastAPI (main.py, schemas.py, present.py: 이름·안내 문구
 app/             Streamlit (API를 HTTP로 호출)
 knowledge/       allergens.yaml, vocab.yaml, ingredients.yaml 또는 ingredients/*.yaml, substitutes.yaml, README.md
 data/recipes/    레시피 시드 YAML(레시피당 1파일)
+data/recipes_foodsafety/  식품안전나라 변환 결과 draft YAML. 적재 대상 아님(5-3-1)
+data/external/foodsafety/raw/  식품안전나라 API 원본 JSON
 config/          weights.yaml, pantry_staples.yaml, engine.yaml(serve_draft_recipes 등 가중치 외 설정), display.yaml(화면 안내·면책 문구, 표시 전용)
 scripts/         compile_knowledge.py, validate_data.py, load_recipes.py, bench.py (얇은 CLI, 로직은 kb/·storage/)
 migrations/      Alembic

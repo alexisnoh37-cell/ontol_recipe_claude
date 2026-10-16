@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_816
+title: 버섯 굴소스 볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 816. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: shiitake
+  raw_text: 표고버섯 5g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯 10g
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯 10g
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯 5g
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯 10g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 2g
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스 0.3g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 0.3g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 1g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 0.6g
+  role: sub
+- ingredient: null
+  raw_text: 부추 또는 실파 10g
+  role: sub
+steps:
+- text: 버섯들은 잘 씻어 건진다.
+- text: 팬에 식용유를 두르고 버섯을 넣어 175℃ 오븐에서 5분 가열한다.
+- text: 소스 양념을 모두 섞어 끓인다.
+- text: 오븐에 구운 버섯에 3의 소스를 뿌린다.
+- text: 부추를 버섯크기와 비슷하게 썬다.
+- text: 썬 부추나 실파로 장식한다.

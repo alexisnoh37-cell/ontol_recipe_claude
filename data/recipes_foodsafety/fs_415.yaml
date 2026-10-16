@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_415
+title: 매실동치미
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 415. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: radish
+  raw_text: 무 50g
+  role: sub
+- ingredient: lotus_root
+  raw_text: 연근 25g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 25g
+  role: sub
+- ingredient: pear
+  raw_text: 배 30g
+  role: sub
+- ingredient: null
+  raw_text: 함초소금 2g
+  role: sub
+- ingredient: null
+  raw_text: 국물
+  role: sub
+- ingredient: null
+  raw_text: 매실청 30g
+  role: sub
+- ingredient: null
+  raw_text: 생강청 15g
+  role: sub
+- ingredient: null
+  raw_text: 함초소금 1g
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 10g
+  role: sub
+steps:
+- text: 무는 모양 틀로 자른다.
+- text: 무와 연근을 손질해 놓은 후 소금에 살짝 절여준다.
+- text: 사과와 배는 먹기 좋게 잘라 레몬즙에 뿌려 갈변을 막아준다.
+- text: 물에 청양고추를 넣어 끓여서 식힌다.
+- text: 식힌 물에 국물 재료를 넣어 국물을 만든다.
+- text: 만들어진 국물에 절여진 무, 연근, 사과, 배를 넣어주어 완성한다. 24시간 이후부터 시원하게 먹는다.

@@ -1,0 +1,76 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_253
+title: 토마토오리볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 253. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: duck
+  raw_text: 오리고기(90g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(15g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(15g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(15g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(10g)
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리(15g)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(5g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(10g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(3g)
+  role: sub
+- ingredient: null
+  raw_text: 고기 밑간
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(1g)
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(3g)
+  role: sub
+- ingredient: null
+  raw_text: 토마토고추장소스
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(35g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(5g)
+  role: sub
+- ingredient: green_chili
+  raw_text: 풋고추(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(1g)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(5g)
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿(3g)
+  role: sub
+steps:
+- text: 오리고기에 고기 밑간을 해 재운다.
+- text: 가지, 양파, 파프리카, 새송이버섯, 브로콜리는 깍둑 썰고, 부추는 5㎝ 길이로 썰고, 방울토마토는 꼭지만 따서 씻은 뒤 2등분한다.
+- text: 토마토, 양파, 풋고추는 갈아둔다.
+- text: 팬에 기름을 두르고 다진 마늘을 넣고 볶다가 고추장과 갈아놓은 토마토, 양파, 풋고추와 물엿을 넣고 볶으면서 농도를 맞춰 토마토고추장소스를 만든다.
+- text: 오리고기와 가지, 양파, 파프리카, 새송이버섯, 브로콜리를 같이 볶다가 토마토고추장소스를 넣어준다.
+- text: 접시에 담은 뒤 부추와 방울토마토를 곁들여 마무리한다.

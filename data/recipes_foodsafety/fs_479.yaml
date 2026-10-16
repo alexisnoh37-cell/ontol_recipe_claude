@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_479
+title: 밥크로켓
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 479. 요리종류 밥, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(10g)
+  role: sub
+- ingredient: quail_egg
+  raw_text: 메추리알(100g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(100g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(10g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(400g)
+  role: sub
+- ingredient: null
+  raw_text: 칠리소스(50g)
+  role: sub
+steps:
+- text: 양파와 대파, 당근, 마늘은 입자있게 다져 준비한다.
+- text: 팬에 기름을 두르고, 팬이 따끈해 지면 준비한 채소(①)를 넣어 재빠르게 볶아 식힌다.
+- text: 메추리알은 찬물에 넣어 소금을 넣고 약 5분 정도 삶아 건져 찬물에 헹구어 껍질을 제거시켜 놓는다.
+- text: 준비한 밥에 볶아 놓은 채소와 소금을 넣어 골고루 섞은 후 준비한 메추리알을 감싸 준다.
+- text: 밥으로 감싼 메추리알을 밀가루와 녹말을 섞어 그 위에 굴리고, 다시 달걀물에 굴린 후 빵가루를 입혀준다.
+- text: 튀김 기름이 약 170℃ 정도 되면, 만들어 놓은 메추리알을 넣어 골고루 색이 나도록 튀겨 완성하고, 칠리소소와 함께 제공한다.

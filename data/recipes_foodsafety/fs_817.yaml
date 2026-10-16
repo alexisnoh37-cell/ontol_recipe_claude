@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_817
+title: 비트와 호두 요리
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 817. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 비트 80g
+  role: sub
+- ingredient: null
+  raw_text: 사워크림 15g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 1g
+  role: sub
+- ingredient: null
+  raw_text: 파슬리 다진것 약간
+  role: sub
+- ingredient: null
+  raw_text: 비트양념
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 7g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.1g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 1g 호두캐러멜:호두 12g
+  role: sub
+- ingredient: sugar
+  raw_text: 황설탕 24g
+  role: sub
+- ingredient: null
+  raw_text: 게피 0.5g
+  role: sub
+- ingredient: null
+  raw_text: 넛맥 0.5g
+  role: sub
+steps:
+- text: 비트는 물에 삶아 80%를 익힌다.
+- text: 껍질을 벗기고 모양내어 썬다.
+- text: 비트는 분량에 맞게 양념한다.
+- text: 양념한비트는 175℃ 오븐에서 굽는다.
+- text: 호두캐러멜을 만든다. (펜에 설탕과 물을 녹이고 계피, 넉맷을 넣은 뒤 호두를 넣는다.)
+- text: 그릇에 비트와 호두캐러멜을 담고 사워크림과 다진 파슬리로 장식한다.

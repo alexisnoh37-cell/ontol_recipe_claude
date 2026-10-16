@@ -1,0 +1,82 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_429
+title: 통삼겹스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 429. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+ingredients:
+- ingredient: pork_belly
+  raw_text: 통삼겹 200g
+  role: sub
+- ingredient: null
+  raw_text: 건로즈마리 1g
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리 2g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 15g
+  role: sub
+- ingredient: null
+  raw_text: 곁들이채소1
+  role: sub
+- ingredient: null
+  raw_text: 백일송이 30g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: null
+  raw_text: '곁들이채소2 : 2가지색 미니파프리카 30g'
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1g
+  role: sub
+- ingredient: null
+  raw_text: 매쉬포테이토
+  role: sub
+- ingredient: potato
+  raw_text: 감자 100g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 10g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 30g
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 15g
+  role: sub
+- ingredient: null
+  raw_text: 다진양파 15g
+  role: sub
+- ingredient: null
+  raw_text: 플레인요구르트 30g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 15g
+  role: sub
+- ingredient: null
+  raw_text: 볶은현미 25g
+  role: sub
+steps:
+- text: 통삼겹에 건로즈마리와 로즈마리, 올리브유를 넣고 마리네이드 해준다.
+- text: 양파는 먹기 좋게 썰어 식초, 설탕, 로즈마리에 살짝 버무려준다.
+- text: 양파, 2가지색 미니파프리카는 송송 다져서 설탕, 식초에 담가 꼭 짜서 수분을 빼준다.
+- text: 당근은 먹기 좋은 크기로 잘라서 버터에 살짝 볶아주다 백일송이 버섯도 함께 볶아준다.
+- text: 재워 놓은 통삼겹은 플레인요구르트에 다시 30분 정도 더 재워준 후 소스에 졸여준다.
+- text: 감자를 쪄서 버터에 매쉬포테이토를 만들어 담아주고, 구운 통삼겹과 준비된 채소와 볶은 현미를 올려 완성한다.

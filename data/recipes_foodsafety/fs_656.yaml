@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_656
+title: 버섯배추말이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 656. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: napa_cabbage
+  raw_text: 배추(5장)
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(2개)
+  role: sub
+- ingredient: null
+  raw_text: 만송이버섯(50g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(30g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+steps:
+- text: 버섯은 채썬다.
+- text: 끓는 물에 채썰어 놓은 버섯을 데쳐낸다.
+- text: 다시마는 물에 담궈 다시마 물을 만들어 식초와 설탕 저염간장을 넣고 골고루 섞어 소스를 만들어 놓는다.
+- text: 미나리는 끓는 물에 소금을 넣고 데친다.
+- text: 배추는 끓는 물에 양배추와 함께 데쳐 찬물에 헹구고 양배추는 채 썬다.
+- text: 김발에 데친 배추를 놓고 표고버섯, 만송이버섯, 미나리, 양배추 채를 넣고 돌돌 말아 먹기 좋게 썰어 접시에 담은 뒤 소스를 담는다.

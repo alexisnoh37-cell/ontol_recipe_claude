@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_621
+title: 두릅부추 소고기말이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 621. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(홍두깨살, 100g)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: null
+  raw_text: 두릅(50g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(30g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.01g)
+  role: sub
+steps:
+- text: 동량의 물과 저염간장에 대파, 양파, 마늘을 넣고 은근히 졸인다.
+- text: 마늘이 익을 정도로 끓으면 체에 거른다.
+- text: 부추는 길게 썰고, 양파는 채썬다
+- text: 두릅은 데친 후 찬물에 헹군다.
+- text: 졸인 간장에 요리술을 넣고 다시 졸인다.
+- text: 고기를 구운 뒤 준비한 야채와 두릅을 넣고 돌돌 말아 간장에 졸인다.

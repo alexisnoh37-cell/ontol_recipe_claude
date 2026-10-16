@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3185
+title: 배쨈 식빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3185. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 강력분 500g
+  role: sub
+- ingredient: null
+  raw_text: 인스턴트 이스트 5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 7g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 50g(1개)
+  role: sub
+- ingredient: milk
+  raw_text: 우유 250g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 포도씨유 50g
+  role: sub
+- ingredient: pear
+  raw_text: 배 1개
+  role: sub
+- ingredient: null
+  raw_text: 전분물 24g
+  role: sub
+- ingredient: pear
+  raw_text: 배 1개
+  role: sub
+steps:
+- text: (속재료) 배는 껍질을 제거하고 믹서기에 갈아 준 후 체에 걸러 배즙을 만든다. 배즙을 냄비에 넣고 전분과 함께 중불로 20분간 끓여서 배 시럽을 만든다.
+- text: (토핑) 배는 1개는 작게 잘라 건조시켜 배 크런치 10g을 만든다.
+- text: 강력분, 소금, 이스던트 이스트를 잘 섞다가 달걀과 미지근하게 데운 우유, 포도씨유를 조금씩 넣어가며 반죽한다.
+- text: 완성된 반죽을 1-2시간동안 실온에서 1차 발효 시킨 후, 세 덩어리로 나누어 15분 정도 2차 발효 해준다.
+- text: 2차 발효를 마친 반죽 세덩어리를 포도씨유가 발린 식빵틀에 나란히 담아서 180도로 예열한 오븐에 30분 정도 굽는다. ★꼬지로 찔렀을 때 반죽이 묻어나지 않으면 다 익은 거예요."
+- text: 구워진 식빵에 배시럽을 바르고 그 위에 건조시켜 만든 배 크런치를 뿌린다.

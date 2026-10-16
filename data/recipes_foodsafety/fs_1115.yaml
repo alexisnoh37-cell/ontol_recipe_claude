@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1115
+title: 바나나 생강 크림이 들어간 미숫가루 쿠키슈
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1115. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: banana
+  raw_text: 바나나(2개)
+  role: sub
+- ingredient: null
+  raw_text: 생강가루(2g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 휘핑크림(100g)
+  role: sub
+- ingredient: null
+  raw_text: 코코넛밀크(25g)
+  role: sub
+- ingredient: null
+  raw_text: 미숫가루(10g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 박력분(45g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(35g)
+  role: sub
+- ingredient: null
+  raw_text: 코코넛설탕(12g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+steps:
+- text: 실온의 버터(15g)와 코코넛설탕을 섞은 뒤 박력분(15g), 미숫가루를 체쳐 쿠키반죽을 만들어 냉장고에서 휴지시킨다.
+- text: 휴지시킨 쿠키반죽을 넓게 밀어 편 뒤 원형 커터로 자른다.
+- text: 바나나, 코코넛밀크, 생강가루를 믹서에서 곱게 갈아 퓌레를 만들고 휘핑한 생크림과 섞는다.
+- text: 버터(20g), 물, 소금을 끓인 후 체친 박력분(30g)을 넣고 반죽에 얇은 막이 생길 때 까지 볶아 호화시킨다.
+- text: 4를 식힌 뒤 달걀을 섞고 팬에 둥글게 짜준 뒤 분무기로 물을 뿌린다.
+- text: 5에 잘라둔 쿠키반죽을 올리고 190℃ 오븐에서 25분 정도 굽고 3번으로 속을 채운다.

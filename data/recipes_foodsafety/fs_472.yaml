@@ -1,0 +1,79 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_472
+title: 맥적구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 472. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(120g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(3g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(20g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(20g)
+  role: sub
+- ingredient: null
+  raw_text: 홍피망(20g)
+  role: sub
+- ingredient: null
+  raw_text: 된장소스
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장(10g)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(20g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(10g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 땅콩(20g)
+  role: sub
+steps:
+- text: 돼지고기에 생강즙과 소금, 후춧가루를 넣어 숙성한다.
+- text: 숙성된 돼지고기에 간장과 정종, 설탕, 파, 마늘, 양파, 참기름, 통깨 넣어 골고루 양념한다.
+- text: 새송이, 가지, 표고, 홍피망을 편으로 썰어 준비한다.
+- text: 된장에 마요네즈와 생크림, 다진 땅콩을 섞어놓는다.
+- text: 새송이와 가지, 표고, 홍피망은 팬에서 굽는다.
+- text: 팬이 따끈해지면 양념한 돼지고기를 구워 접시에 담고 그 위에 된장 소스를 올리고, 구워낸 채소를 다시 위에 올려 완성한다.

@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_738
+title: 찬밥김치달걀찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 738. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: egg
+  raw_text: 달걀 50g
+  role: sub
+- ingredient: rice
+  raw_text: 밥 30g(쌀 13g)
+  role: sub
+- ingredient: null
+  raw_text: 김장김치 20g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 5g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 5g
+  role: sub
+- ingredient: null
+  raw_text: 파 5g
+  role: sub
+- ingredient: null
+  raw_text: 새우젓국물 2g
+  role: sub
+steps:
+- text: 배추김치는 속을 털어낸다.
+- text: 1의 김치를 다진 다음 물기를 짠다.
+- text: 당근, 양파, 파는 잘게 다진다.
+- text: 달걀은 흰자와 노른자를 체에 거른다.
+- text: 달걀에 물 반컵을 넣고 잘 저은 후 1,2의 재료와 찬밥을 섞고 새우젓으로 간을 한다.
+- text: 5를 찜통에 넣고 찐다.

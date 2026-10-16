@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_719
+title: 건도토리묵버섯들깨국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 719. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 건도토리묵 30g(불린것 50g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 5g
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯 5g
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깨가루 5g
+  role: sub
+- ingredient: null
+  raw_text: 국멸치 3g
+  role: sub
+- ingredient: null
+  raw_text: 건다시마 3g
+  role: sub
+- ingredient: null
+  raw_text: 파 2g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2.5g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 국간장 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.5g
+  role: sub
+steps:
+- text: 물 1컵 반에 국멸치와 건다시마를 넣고 멸치다시마국물 1컵 정도를 내고 다시마는 미리 건져 채 썬다.
+- text: 건도토리묵은 물에 불려 5cm 길이로 썬다.
+- text: 표고버섯은 5cm 길이로 채 썰고 느타리버섯은 5cm 길이로 가늘게 찢는다.
+- text: 파는 씻어 어슷썰기 한다.
+- text: 멸치다시마국물 1컵에 도토리묵, 표고버섯, 느타리버섯을 넣고 한소끔 끓인다.
+- text: 5에 들깨가루, 파, 다진 마늘, 다시마를 넣고 국간장과 소금으로 간을 한다.

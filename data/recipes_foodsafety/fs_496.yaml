@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_496
+title: 단호박크림파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 496. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: kabocha
+  raw_text: 단호박(150g)
+  role: sub
+- ingredient: pasta
+  raw_text: 파스타(80g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(10g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: bacon
+  raw_text: 베이컨(20g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(100g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(50g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+steps:
+- text: 단호박은 잘라 씨를 제거하고 껍질을 벗겨 김이 오른 찜통에서 약 20분 정도 찐다.
+- text: 찐 단호박이 한 김 식으면, 채에 곱게 내려 준비하고, 스파게티는 소금을 넣고 삶아 건져놓는다.
+- text: 베이컨은 입자있게 썰고, 양송이버섯은 껍질을 벗겨 다지고, 양파도 입자있게 다진다.
+- text: 팬에 버터를 녹인 뒤 다진 마늘을 먼저 넣고 은근히 볶아 향을 만든다.
+- text: 볶은 마늘(④)에 베이컨과 양송이, 양파를 넣고 다시 볶는다.
+- text: 볶은 채소(⑤)에 육수를 붓고 끓이다가 으깬 단호박(②), 생크림, 우유를 넣어 한소끔 끓인 뒤 삶아놓은 스파게티면 (②)을 넣고 다시 한 번 더 끓여 완성 한다.

@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_450
+title: 조개크림파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 450. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: pasta
+  raw_text: 스파게티(100g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(3g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이(20g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(50g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(0.3g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(100g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(100g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: clam
+  raw_text: 조개(30g)
+  role: sub
+steps:
+- text: 스파게티는 끓는 물에 소금을 넣고 약 10분 정도 삶아 건져 올리브 오일에 살짝 발라 준비한다.
+- text: 양송이는 껍질을 벗겨 편으로 썰어 놓는다.
+- text: 마늘과 양파는 굵게 다져놓는다.
+- text: 조개는 끓는 물에 데쳐 해감을 씻고, 삶은 물을 소창에 걸러 육수를 만들어 놓는다.
+- text: 냄비에 버터를 넣고, 다진 마늘과 양파를 넣어 볶다가 밀가루를 넣고 은근히 볶는다.
+- text: 볶고 있는 채소(⑤)에 육수(④)를 부어 한소끔 끓인 뒤, 우유와 생크림을 넣고 다시 끓으면 새우와 삶은 조개를 넣고 살짝 끓인 후, 삶아놓은 스파게티면 (①)을 넣고 한 번 더 끓이고 그 위에 파슬리 가루를 살짝 뿌려 완성한다.

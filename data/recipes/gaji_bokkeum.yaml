@@ -1,0 +1,51 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: gaji_bokkeum
+title: 가지볶음
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: eggplant
+  raw_text: 가지 2개
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/4개
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 1/3대
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1.5큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 2큰술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 2
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 가지를 어슷하게 썬다.
+- text: 기름 두른 팬에 대파와 마늘을 볶아 향을 내고 가지를 넣어 숨이 죽을 때까지 볶는다.
+  technique: 볶음
+- text: 간장, 설탕으로 간하고 양파를 넣어 조금 더 볶은 뒤 참기름을 두른다.
+  technique: 볶음

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1076
+title: 유자 치킨 꿔바로우
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1076. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(가슴살,150g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(5g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말(50g)
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루(50g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(10g)
+  role: sub
+- ingredient: null
+  raw_text: 전분(5g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(1g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(45g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(10g)
+  role: sub
+steps:
+- text: 닭가슴살을 슬라이스하여 소금, 후춧가루로 밑간을 하고 다진 생강을 발라 잡냄새를 제거한다.
+- text: 밑간한 닭가슴살에 찹쌀가루를 묻힌다.
+- text: 녹말, 식용유, 물을 섞어 반죽을 만든다.
+- text: 2번에 반죽을 골고루 묻혀 170℃ 기름에서 튀긴다.
+- text: 식초와 유자청을 넣고 끓인 후 간장으로 간을 맞추고 전분을 풀어 농도를 맞춘다.
+- text: 튀긴 꿔바로우를 소스에 넣고 버무린다.

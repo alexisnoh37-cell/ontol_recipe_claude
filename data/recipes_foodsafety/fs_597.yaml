@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_597
+title: 배차와 주악
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 597. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: rice_flour
+  raw_text: 쌀가루(100g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(100g)
+  role: sub
+- ingredient: null
+  raw_text: 막걸리(100g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(1/2개)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추(20알)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(100g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(20g)
+  role: sub
+- ingredient: null
+  raw_text: 식용꽃(20g)
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(50g)
+  role: sub
+steps:
+- text: 쌀가루와 밀가루를 섞어 체에 내린다.
+- text: 냄비에 막걸리를 붓고 끓인다
+- text: 끓인 막걸리를 체 친 쌀가루와 밀가루에 섞어 반죽을 만들고 치대어 숙성시킨다.
+- text: 배는 1/8등분으로 썰어 양쪽모서리를 돌려 깎아 통후추를 꽂는다.
+- text: 1을 넓게 펴서 주먹밥을 얹고 감싼다.
+- text: 숙성시킨 반죽을 둥그렇게 빚어 팬에 굽고, 다 익으면 접시에 담은 뒤 꿀을 위에 올린다.

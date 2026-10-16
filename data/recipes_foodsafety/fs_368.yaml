@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_368
+title: 두부청국장죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 368. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 청국장가루 20g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 60g
+  role: sub
+- ingredient: rice
+  raw_text: 밥 150g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 12g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 20g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 25g
+  role: sub
+- ingredient: null
+  raw_text: 다진쇠고기 30g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 15g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 10g
+  role: sub
+- ingredient: null
+  raw_text: 버섯마늘소금 1g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 10g
+  role: sub
+- ingredient: null
+  raw_text: 다진대파 7g
+  role: sub
+- ingredient: null
+  raw_text: 흑임자 1g
+  role: sub
+steps:
+- text: 다진 쇠고기는 양념장에 버무려주고 두부는 으깨준다.
+- text: 애호박, 당근은 송송 다져준다.
+- text: 표고버섯은 불려준 뒤 채 썰어 참기름과 버섯마늘소금에 살짝 무쳐서 볶아준다.
+- text: 양념된 소고기는 팬에 볶아준다.
+- text: 소고기를 볶아주던 팬에 밥과 표고를 넣고 끓여주다 두부를 넣고 죽을 해준다.
+- text: 다진 애호박, 당근을 넣어서 끓여주고 불을 끄기 전에 청국장과 흑임자를 넣어 죽을 완성한다.

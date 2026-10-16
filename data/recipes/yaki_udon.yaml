@@ -1,0 +1,67 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: yaki_udon
+title: 야키우동
+cuisine: 일식
+difficulty: 1
+cook_time_min: 20
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: udon_noodles
+  raw_text: 우동면 2개
+  role: main
+- ingredient: pork
+  raw_text: 돼지고기(얇게 썬 것) 100g
+  role: main
+- ingredient: cabbage
+  raw_text: 양배추 1/8통
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/4개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/4개
+  role: sub
+  optional: true
+- ingredient: katsuobushi
+  raw_text: 가쓰오부시 약간
+  role: garnish
+  optional: true
+- ingredient: green_onion
+  raw_text: 쪽파 약간
+  role: garnish
+  optional: true
+- ingredient: soy_sauce
+  raw_text: 간장 2큰술
+  role: seasoning
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 4
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+- name: 냄비
+  required: false
+steps:
+- text: 우동면을 끓는 물에 1분 데쳐 풀어 둔다.
+  technique: 데치기
+- text: 기름 두른 팬에 돼지고기를 볶다가 채소를 넣어 볶는다.
+  technique: 볶음
+- text: 면과 간장, 굴소스, 설탕을 넣고 고루 볶는다.
+  technique: 볶음
+- text: 가쓰오부시와 쪽파를 올린다.

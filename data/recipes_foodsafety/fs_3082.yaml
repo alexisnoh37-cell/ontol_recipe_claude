@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3082
+title: 시래기닭조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3082. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(120g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(30g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(1g)
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추(1g)
+  role: sub
+- ingredient: null
+  raw_text: 무청시래기(삶은 것, 80g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추(1g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(5g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(3g)
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿(5g)
+  role: sub
+steps:
+- text: 닭고기는 부위별로 토막 내어 끓는 물에 살짝 데친다.
+- text: 데친 닭고기에 양념 재료를 섞어 30분 이상 재운다.
+- text: 무, 당근, 양파는 사각 썰고, 고추는 송송 썬다.
+- text: 무청시래기는 끓는 물에 한 번 더 살짝 데치고, 6cm 길이로 썬다.
+- text: 냄비에 물(30g)과 닭고기, 시래기를 넣고, 청홍고추를 제외한 손질한 채소를 넣어 조린다.
+- text: 홍고추와 청고추를 올려 마무리한다.

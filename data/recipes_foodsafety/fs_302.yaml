@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_302
+title: 바나나크림파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 302. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 바나나(150g)
+  role: sub
+- ingredient: null
+  raw_text: 아보카도(110g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(100g)
+  role: sub
+- ingredient: null
+  raw_text: 저염베이컨(46g, 3장)
+  role: sub
+- ingredient: null
+  raw_text: 바질가루(1g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 휘핑크림(80g)
+  role: sub
+- ingredient: null
+  raw_text: 저염치즈(40g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(200g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(2g)
+  role: sub
+- ingredient: pasta
+  raw_text: 스파게티면(60g)
+  role: sub
+steps:
+- text: 바나나를 반으로 잘라 반은 편 썰고 반은 으깨고, 아보카도는 껍질과 씨를 제거 한 후 ⅓은 편 썰고 ⅔는 으깬다.
+- text: 토마토는 끓는 물에 데쳐 껍질을 제거하고 얇게 썬다.
+- text: 베이컨 2장은 채 썰고, 1장은 구운 뒤 비슷한 크기로 채 썬다.
+- text: 베이컨을 구운 기름에 편 썬 바나나, 아보카도, 토마토를 넣고 바질가루를 뿌려 굽는다.
+- text: 팬에 채 썬 베이컨과 다진 마늘, 다진 양파를 볶은 후 휘핑크림, 저염치즈를 넣고 볶다가 으깬 아보카도, 바나나, 우유를 넣어 농도를 맞추고 소금으로 간해 바나나크림을 만든다.
+- text: 접시에 구운 바나나, 아보카도, 토마토를 깔고 삶은 스파게티면을 담은 후 바나나크림을 뿌리고 베이컨을 올려 장식해 마무리한다.

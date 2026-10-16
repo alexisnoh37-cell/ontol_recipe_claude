@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_485
+title: 유자등갈비구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 485. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: pork_ribs
+  raw_text: 등갈비(150g)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(2g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(10g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추(3g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)m 적양배추(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(30g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(20g)
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤(10g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+steps:
+- text: 등갈비는 찬물에 약 2시간 이상 담그어 핏물을 빼고, 월계수잎과 생강, 통훗추를 넣고 약 1시간 삶아 건져 놓는다.
+- text: 적양배추와 당근, 양파를 채를 썰어 찬물에 담그어 놓는다.
+- text: 유자청에 밤을 다져넣고 사과즙, 생크림, 설탕, 소금, 식초를 넣어 골고루 섞어 소스를 만든다.
+- text: 물에 담그어 놓은 채소는 채에 올려 물기를 빼 놓는다.
+- text: 팬에 기름을 두르고 다진마늘을 볶아 마늘기름을 만들어 놓는다.
+- text: 마늘기름으로 삶아 놓은 등갈비를 노릇노릇 하게 굽고, 접시에 담아 물기를 빼 놓은 채소를 담고 유자소스를 올려 완성한다.

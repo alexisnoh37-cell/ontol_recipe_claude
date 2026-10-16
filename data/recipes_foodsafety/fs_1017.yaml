@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1017
+title: 버섯을 넣은 가지 라자냐
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1017. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 돼지고기다진것 12g
+  role: sub
+- ingredient: null
+  raw_text: 느타리벗서 15g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 10g
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯 15g
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지 15g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 6g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 0.5g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 25g
+  role: sub
+- ingredient: parmesan
+  raw_text: 파마산치즈 3g
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모짜렐라 치즈 7g
+  role: sub
+- ingredient: tomato_sauce
+  raw_text: 토마토소스 20g
+  role: sub
+- ingredient: basil
+  raw_text: 바질 2g
+  role: sub
+- ingredient: null
+  raw_text: 오레가노 0.5g
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루 4g
+  role: sub
+steps:
+- text: 가지에 세로로 칼집을 넣어 소금을 뿌린다.
+- text: 표고버섯, 느타리버섯은 채 썰고 새송이버섯은 세로로 자른다.
+- text: 돼지고기를 곱게 다진 뒤 볶는다.
+- text: 팬에 버터를 넣어 녹으면 밀가루를 넣고 볶아서 루를 만든 뒤 우유를 넣어 화이트소스를 만든다.
+- text: 오븐용기에 화이트소스를 깔고 그 위에 가지를 올린 뒤 가지 사이에 버섯, 토마토소스, 화이트소스, 버섯을 넣는다.
+- text: 남은 화이트소스와 치즈, 빵가루 순으로 얹고 180℃로 예열된 오븐에서 윗면이 노릇한 색이 나도록 굽는다.

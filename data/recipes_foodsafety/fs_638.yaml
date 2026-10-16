@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_638
+title: 초계탕과 사색곤약
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 638. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(1마리)
+  role: sub
+- ingredient: null
+  raw_text: 가시오가피(10g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(10g)
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 건새우(20g)
+  role: sub
+- ingredient: null
+  raw_text: 실곤약(100g)
+  role: sub
+- ingredient: null
+  raw_text: 비트(30g)
+  role: sub
+- ingredient: null
+  raw_text: 치자가루(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.01g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(50g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(50g)
+  role: sub
+- ingredient: null
+  raw_text: 겨자가루(10g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+steps:
+- text: 닭을 깨끗이 손질하고, 부위별로 자른다.
+- text: 냄비에 가시오가피, 대파, 다시마, 마늘, 건새우를 넣고 은근히 끓인 후 닭을 넣고 약 20분 정도 삶아 건진 뒤 살을 찢어둔다.
+- text: 양파, 오이는 채썰고 식초, 설탕, 소금을 넣고 초절임한다
+- text: 겨자가루에 30℃ 정도의 물을 넣고 골고루 섞어 발효시키고, 설탕, 식초, 소금을 넣고 겨자소스를 만든다
+- text: 흰곤약과 비트, 치자가루를 섞은 곤약, 채썬 다시마를 접시에 담는다.
+- text: 양파, 오이 초절임과 닭살을 한쪽에 담아 먹기 직전에 겨자소스를 올린다.

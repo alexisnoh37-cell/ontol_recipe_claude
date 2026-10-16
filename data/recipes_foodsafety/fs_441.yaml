@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_441
+title: 삼색샌드위치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 441. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: bread
+  raw_text: 식빵(100g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(20g)
+  role: sub
+- ingredient: null
+  raw_text: 어린이치즈(20g)
+  role: sub
+- ingredient: iceberg_lettuce
+  raw_text: 양상추(30g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(30g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(60g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+steps:
+- text: 식빵은 가장 자리를 잘라 밀대를 이용 하여 얇게 밀어 준비한다.
+- text: 감자는 삶은 뒤 곱게 으깨어 올리고당을 넣고 골고루 섞는다.
+- text: 달걀은 약 13분 정도 삶아 껍질을 벗기고, 반으로 갈라 썰어놓는다.
+- text: 당근과 양파 오이도 얇게 썰어놓는다.
+- text: 토마토는 포를 떠서 준비한다.
+- text: 으깬 감자(②)에 준비한 달걀(③)과 채소(④)를 넣고 소금을 약간 넣은 뒤 골고루 섞어, 밀어 놓은 식빵에 토마토, 치즈, 양상추와 함께 넣어 돌돌 말아 완성한다.

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_501
+title: 광어스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 501. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 광어(150g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드(20g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(20g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(20g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 플레인요거트(50g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(10g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(20g)
+  role: sub
+steps:
+- text: 광어는 포를 길게 떠서 소금과 후춧가루에 밑간을 해 놓는다.
+- text: 아몬드와 호두는 입자있게 다져 준비한다.
+- text: 밑간이 되어 있는 광어포에 밀가루와 달걀물을 입힌다.
+- text: 달걀물을 입힌 광어살에 다시 다져 놓은 견과류를 입혀 준다.
+- text: 팬에 올리브 오일을 넣고, 팬이 따끈해 지면 광어 살을 조심스럽게 앞뒤로 익혀 접시에 담는다.
+- text: 플레인요거트에 꿀과 레몬즙을 넣고 골고루 섞어 광어스테이크소스를 만들어 완성한다.

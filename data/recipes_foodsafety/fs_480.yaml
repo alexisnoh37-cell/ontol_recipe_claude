@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_480
+title: 가지토마토구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 480. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: eggplant
+  raw_text: 가지(80g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(40g)
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모짜렐라치즈(30g)
+  role: sub
+- ingredient: tomato_sauce
+  raw_text: 토마토소스(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(40g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(20g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+steps:
+- text: 가지는 약 10cm 길이로 길고, 납작하게 썰어 준비한다.
+- text: 팬에 올리브 오일을 살짝 둘러 썰어놓은 가지를 소금을 넣고 살짝 익힌다.
+- text: 토마토는 반은 토마토 형태로 납작하게 썰어 놓는다.
+- text: 토마토반은 입자있게 다져 준비한다.
+- text: 다진 토마토를 준비한 토마토소스에 섞어 살짝 어우러지게 끓여 준비한다.
+- text: 구운 가지위에 토마토와 모짜렐라치즈를 올려 팬에 굽고, 별도로 팽이버섯에 후춧가루를 뿌려 살짝 구워 접시에 담고, 끓여 놓은 토마토소스를 올려 완성한다.

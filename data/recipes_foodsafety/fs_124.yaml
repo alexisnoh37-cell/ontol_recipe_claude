@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_124
+title: 북어비빔밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 124. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: rice
+  raw_text: 밥 210g(1컵)
+  role: sub
+- ingredient: dried_pollock
+  raw_text: 북어 15g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 15g(5cm)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 15g(5cm)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 100g(2개)
+  role: sub
+- ingredient: bracken
+  raw_text: 고사리 15g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 15g(2개)
+  role: sub
+- ingredient: null
+  raw_text: 우렁 25g(2큰술)
+  role: sub
+- ingredient: perilla_oil
+  raw_text: 들기름 5g(1작은술) 장식
+  role: sub
+- ingredient: null
+  raw_text: 베이비채소 5g
+  role: sub
+- ingredient: null
+  raw_text: 식용꽃 5g
+  role: sub
+steps:
+- text: 당근과 표고버섯, 고사리는 5cm로 채 썰고, 애호박도 돌려 깎아 5cm로 채 썬다.
+- text: 우렁은 3등분으로 자른 후 1의 재료와 함께 들기름에 볶고 달걀은 황백으로 나누어 지단을 부쳐 채 썬다.
+- text: 북어는 갈아 북어보푸라기를 만든다. 그릇에 밥을 담고 준비된 재료를 담고 베이비채소, 식용꽃, 북어보푸라기를 올려 완성한다.

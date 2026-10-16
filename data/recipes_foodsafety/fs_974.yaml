@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_974
+title: 아보카도 달걀 샌드위치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 974. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: egg
+  raw_text: 달걀 20g
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 1g
+  role: sub
+- ingredient: null
+  raw_text: 디존 머스타드 1g
+  role: sub
+- ingredient: null
+  raw_text: 레몬주스 2g
+  role: sub
+- ingredient: bread
+  raw_text: 식빵 35g
+  role: sub
+- ingredient: null
+  raw_text: 아보카도 6g
+  role: sub
+- ingredient: null
+  raw_text: 워터크레스 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 약간
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: sub
+steps:
+- text: 달걀을 완숙으로 삶아 찬물에 담궈 식혀 껍질을 벗긴 뒤 볼에 넣어 포크로 거칠게 으깬다.
+- text: 으깬 달걀에 머스타드, 레몬주스, 소금, 후춧가루, 마요네즈를 섞는다.
+- text: 아보카도는 껍질을 제거하고 얇게 슬라이스 한다.
+- text: 식빵은 노릇하게 양면을 굽는다.
+- text: 4에 아보카도를 얹고 그 위에 달걀 샐러드를 얹어 식빵으로 덮는다.
+- text: 샌드위치의 가장자리 부분은 잘라내고 원하는 적당한 크기로 자른다.

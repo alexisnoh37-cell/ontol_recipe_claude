@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1013
+title: 미니 그라탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1013. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: apple
+  raw_text: 사과 50g
+  role: sub
+- ingredient: null
+  raw_text: 참마 25g
+  role: sub
+- ingredient: null
+  raw_text: 레몬주스 10g
+  role: sub
+- ingredient: raisin
+  raw_text: 건포도 5g
+  role: sub
+- ingredient: almond
+  raw_text: 슬라이스아몬드 5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 6g
+  role: sub
+- ingredient: null
+  raw_text: 참마 25g
+  role: sub
+- ingredient: soy_milk
+  raw_text: 두유 40g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 5g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 3g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 적당량
+  role: sub
+steps:
+- text: 껍질을 벗기지 않은 사과와 반을 잘라 껍질을 벗긴 참마를 0.7cm 주사위모양으로 썬다.
+- text: 사과에 레몬주스, 소금을 넣고 부드러워질 때 까지 익힌 뒤 참마를 넣고 살짝 끓인다.
+- text: 나머지 참마는 껍질을 벗긴 뒤 토막내 두유, 물엿, 밀가루, 올리브오일과 같이 믹서에 간다.
+- text: 3이 퓨레 상태가 되면 약 불에서 걸쭉하게 졸인다.
+- text: 2에 건포도를 섞은 뒤 틀에 담고 4를 펴서 얹고 그 위에 슬라이스 아몬드와 설탕을 뿌린다.
+- text: 200℃로 예열한 오븐에서 표면이 노릇해 질 때 까지 약 10분 간 굽는다.

@@ -1,0 +1,53 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: buchujeon
+title: 부추전
+cuisine: 한식
+difficulty: 1
+cook_time_min: 20
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: chive
+  raw_text: 부추 1/2단
+  role: main
+- ingredient: wheat_flour
+  raw_text: 밀가루 1컵
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/4개
+  role: sub
+  optional: true
+- ingredient: red_chili
+  raw_text: 홍고추 1/2개
+  role: garnish
+  optional: true
+- ingredient: salt
+  raw_text: 소금 1/3작은술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 적당량
+  role: seasoning
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술(찍어 먹는 장)
+  role: seasoning
+- ingredient: vinegar
+  raw_text: 식초 1작은술(찍어 먹는 장)
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 2
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 부추를 4cm 길이로 썰고 양파는 채 썬다.
+- text: 밀가루, 물, 소금을 섞어 반죽하고 채소를 넣어 버무린다.
+- text: 기름 두른 팬에 얇게 펴 앞뒤로 바삭하게 부친다.
+  technique: 부침
+- text: 간장과 식초를 섞어 곁들인다.

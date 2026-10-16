@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_298
+title: 양배추롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 298. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 현미(50g)
+  role: sub
+- ingredient: rice
+  raw_text: 멥쌀(50g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(2g)
+  role: sub
+- ingredient: null
+  raw_text: 새우가루(15g)
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추(50g)
+  role: sub
+- ingredient: null
+  raw_text: 얇게 썬 쇠고기(부채살, 80g)
+  role: sub
+- ingredient: null
+  raw_text: 송송 썬 붉은 고추(5g)
+  role: sub
+- ingredient: null
+  raw_text: 달래무침 달래(10g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(10g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+steps:
+- text: 현미와 쌀을 씻어 30분간 불린 뒤 물기를 빼고, 다시마를 우려낸 물(불린 쌀 동량)로 밥을 지어 식힌 후 새우가루를 넣어 섞는다.
+- text: 양배추는 15~20분 정도 쪄서 준비한다.
+- text: 얇게 저민 쇠고기를 팬에 올려 익힌다.
+- text: 달래는 0.5㎝ 정도로 송송 썰어 간장, 참기름에 버무린다.
+- text: 김발에 양배추, 고기, 밥 순서대로 올려 돌돌 말아 양배추롤을 만든다.
+- text: 롤을 한입 크기로 썰어 담고 달래 무침을 얹은 뒤 송송 썬 붉은 고추를 올려 마무리한다.

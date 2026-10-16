@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_552
+title: 토마토소스닭갈비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 552. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭(120g)
+  role: sub
+- ingredient: null
+  raw_text: 생강즙(10g)
+  role: sub
+- ingredient: null
+  raw_text: 소주(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(5g)
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추(30g)
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(30g)
+  role: sub
+- ingredient: tomato_sauce
+  raw_text: 토마토소스(50g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(10g)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(20g)
+  role: sub
+- ingredient: null
+  raw_text: 매실청(10g)
+  role: sub
+steps:
+- text: 닭은 먹기 좋은 크기로 잘라 준비한다.
+- text: 토막 낸 닭 에 생강즙과 소주를 넣어 숙성한다.
+- text: 양파, 당근은 얇게 썰고, 양배추는 깍뚝 썰고, 깻잎은 4등분하여 잘라놓는다.
+- text: 작은 깍둑썰기로 자른 토마토와 고구마에 토마토소스, 마늘, 고춧가루, 고추장, 매실청을 넣어 골고루 섞는다.
+- text: 닭을 먼저 냄비에 볶는다.
+- text: 볶아지는 닭에 만들어 놓은 소스를 넣고, 볶다가 준비한 채소를 넣어 한 번 더 볶아 완성한다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2997
+title: 참치 두부 함박스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2997. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 캔참치 20g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 25g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 15g
+  role: sub
+- ingredient: null
+  raw_text: 청피망 20g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 7g
+  role: sub
+- ingredient: ketchup
+  raw_text: 케찹 15g
+  role: sub
+- ingredient: null
+  raw_text: 표고버섯가루 1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.5g
+  role: sub
+steps:
+- text: 양파, 피망은 반은 다지고 반은 작은 주사위모양으로 썰고 당근은 다진다.
+- text: 두부는 칼등으로 으깬 뒤 물기를 제거한다.
+- text: 2에 캔참치, 다진채소, 표고버섯가루, 밀가루, 후추를 넣어 반죽한 뒤 치대 모양을 만든다.
+- text: 팬에 식용유를 두르고 3을 노릇하게 굽고 1을 볶는다.
+- text: 토마토는 주사위모양으로 썰어 케찹과 함께 볶아 소스를 만든다.
+- text: 접시에 스테이크와 볶은 채소를 담고 토마토소스를 곁들인다.

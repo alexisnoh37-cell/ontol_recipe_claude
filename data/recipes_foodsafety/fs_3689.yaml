@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3689
+title: 초코타르트
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3689. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 11개'
+ingredients:
+- ingredient: null
+  raw_text: 아몬드가루 90g
+  role: sub
+- ingredient: null
+  raw_text: 무가당 코코아가루① 12g
+  role: sub
+- ingredient: null
+  raw_text: 귀리 30g
+  role: sub
+- ingredient: null
+  raw_text: 코코넛오일 20g
+  role: sub
+- ingredient: null
+  raw_text: 알룰로스① 20g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 1g
+  role: sub
+- ingredient: null
+  raw_text: 초코필링
+  role: sub
+- ingredient: null
+  raw_text: 무가당 코코아가루② 12g
+  role: sub
+- ingredient: peanut_butter
+  raw_text: 땅콩버터 12g
+  role: sub
+- ingredient: null
+  raw_text: 알룰로스② 55g
+  role: sub
+- ingredient: null
+  raw_text: 아몬드우유 60ml
+  role: sub
+- ingredient: null
+  raw_text: 그릭요거트 토핑
+  role: sub
+- ingredient: yogurt
+  raw_text: 그릭요거트 42g
+  role: sub
+- ingredient: null
+  raw_text: 알룰로스③ 2g
+  role: sub
+steps:
+- text: 볼에 아몬드가루, 무가당 코코아가루①을 체 쳐서 넣고 귀리, 코코넛오일, 알룰로스①, 소금을 넣고 섞어 반죽을 만든다.
+- text: 반죽은 냉장고에서 30분 동안 휴지한다.
+- text: 볼에 무가당 코코아가루②를 체 쳐서 넣고 땅콩버터, 알룰로스②를 넣는다. 완전히 섞이면 아몬드우유를 넣고 섞어 초코필링을 만든다.
+- text: 냉동실에서 30분 동안 굳힌 그릭요거트에 알룰로스③을 섞어 숟가락으로 모양을 잡아 그릭요거트 토핑을 만든다.
+- text: 머핀 틀에 코코넛오일을 바르고 반죽을 넣어 타르트지 모양을 잡는다. 170°C로 예열한 오븐에 20분 동안 구운 후 완전히 식힌다.
+- text: 초코필링을 채우고 그릭요거트 토핑을 올려 마무리한다.

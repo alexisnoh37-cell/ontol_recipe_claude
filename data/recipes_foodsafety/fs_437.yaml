@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_437
+title: 유부완자탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 437. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: fried_tofu
+  raw_text: 유부(50g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(30g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(50g)
+  role: sub
+- ingredient: napa_cabbage
+  raw_text: 배추(30g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(30g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염소금(0.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.05g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(20g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(200g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+steps:
+- text: 유부는 1/4 정도를 잘라 준비한다.
+- text: 잘라진 유부는 끓는 물에 약 20초 정도 데쳐 물기를 짜 놓는다.
+- text: 새우는 내장과 껍질을 제거 하고 곱게 으깨 준비한다.
+- text: 배추와 미나리는 끓는 물에 데치고, 표고버섯은 뜨거운 물에 불려 준비 한다.
+- text: 데친 배추와 표고버섯을 입자있게 다지고, 양파와 당근도 입자있게 다져 준비한다.
+- text: 두부는 물기를 짜 놓은 후 새우(③)와 다진 야채(⑤), 마늘, 소금, 후춧가루 를 넣고 골고루 섞는다. 유부(②)에 속을 넣고 미나리로 묶은 후, 끓는 육수에 유부주머니를 넣고 간장으로 간을 하여 완성한다.

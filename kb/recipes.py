@@ -12,7 +12,7 @@ from typing import Any
 import yaml
 
 from kb.compiled import CompiledKnowledge
-from kb.datacheck import RecipeSpec, check_recipes
+from kb.datacheck import UNCLASSIFIED_CUISINE, RecipeSpec, check_recipes
 from kb.validate import Issue
 
 
@@ -38,10 +38,20 @@ def read_recipe_dir(recipes_dir: Path, root: Path | None = None) -> list[tuple[s
 
 
 def load_recipe_specs(ck: CompiledKnowledge, recipes_dir: Path, root: Path | None = None) -> list[RecipeSpec]:
-    """검증을 통과한 레시피만 돌려준다. 오류가 하나라도 있으면 RecipeSeedError(일부만 적재하지 않는다)."""
+    """검증을 통과한 레시피만 돌려준다. 오류가 하나라도 있으면 RecipeSeedError(일부만 적재하지 않는다).
+
+    엔진·DB에 들어가는 레시피라서 draft라도 cuisine 미분류이거나 cook_time_min이 없으면 거부한다
+    (검증 규칙은 draft에 이를 허용한다, docs/plan.md 5-4).
+    """
     items = read_recipe_dir(recipes_dir, root)
     issues = check_recipes(ck, items)
     if issues:
         raise RecipeSeedError(issues)
     specs = [RecipeSpec.model_validate(item) for _, item in items]
+    issues = [Issue("not_loadable", s.id, "cuisine이 미분류라 적재할 수 없습니다") for s in specs
+              if s.cuisine == UNCLASSIFIED_CUISINE]
+    issues += [Issue("not_loadable", s.id, "조리시간(cook_time_min)이 없어 적재할 수 없습니다") for s in specs
+               if s.cook_time_min is None]
+    if issues:
+        raise RecipeSeedError(issues)
     return sorted(specs, key=lambda r: r.id)

@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_475
+title: 오렌지삼겹찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 475. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: pork_belly
+  raw_text: 삼겹살(100g)
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리(5g)
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마(30g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(10g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(20g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(200g)
+  role: sub
+- ingredient: null
+  raw_text: 브로컬리(30g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(50g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염소금(5g)
+  role: sub
+- ingredient: wasabi
+  raw_text: 와사비(5g)
+  role: sub
+steps:
+- text: 삼겹살은 로즈마리를 뿌려 숙성시킨다.
+- text: 고구마는 삶아 준비하고, 감자는 웨지 감자형으로 썰어 익힌 후 기름에 튀겨 놓는다.
+- text: 삶아진 고구마를 으깨어 생크림을 넣어 골고루 섞는다.
+- text: 오렌지는 즙을 짜 놓는다.
+- text: 숙성된 삼겹살은 오븐에 굽고, 브로컬리는 살짝 데쳐 올리브오일에 볶아놓는다.
+- text: 팬에 오렌지즙과 설탕, 정종, 소금을 넣고 바글바글 졸인 후 와사비를 넣어 소스를 만들고, 오븐에 구어진 삼겹살을 잘라 접시에 담고 그 위에 소스를 살짝 올리고, 한쪽에는 감자튀김(②), 고구마무스(③), 브로컬리(⑤)를 곁들여 완성한다.

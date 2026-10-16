@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_425
+title: 새콤한연어샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 425. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: salmon
+  raw_text: 연어 60g
+  role: sub
+- ingredient: null
+  raw_text: 어린잎 20g
+  role: sub
+- ingredient: null
+  raw_text: 말린 토마토 15g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 50g
+  role: sub
+- ingredient: null
+  raw_text: 2가지색 미니파프리카 70g
+  role: sub
+- ingredient: null
+  raw_text: 유자청 30g
+  role: sub
+- ingredient: null
+  raw_text: 감식초 15g
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종 100ml
+  role: sub
+- ingredient: null
+  raw_text: 볶은소금 0.5g
+  role: sub
+steps:
+- text: 연어는 얇게 모양을 살려 슬라이스 한 후 정종에 소금을 섞어 분무기에 넣어 냉장고에 넣어둔다.
+- text: 건조된 방울토마토는 올리브오일과 후추로 양념하여 사용한다.
+- text: 양상추는 먹기 좋은 크기로 뜯어 어린잎과 함께 찬물에 담가 물기를 제거한 후 사용한다.
+- text: 유자청과 감식초는 함께 섞어 믹서에 갈아 드레싱소스를 완성한다.
+- text: 양파는 모양을 살려 얇게 슬라이스 하여 찬물에 담가 물기를 제거한 뒤 사용한다.
+- text: 샐러드 접시에 준비된 모든 채소를 담고, 연어는 장미 모양으로 접어서 보기좋게 담아 드레싱 소스를 곁들여 완성한다.

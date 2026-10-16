@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3166
+title: 오미자저염나박김치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3166. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: napa_cabbage
+  raw_text: 배추 10g
+  role: sub
+- ingredient: null
+  raw_text: 콜라비 5g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 2g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 2g
+  role: sub
+- ingredient: scallion
+  raw_text: 실파 1g
+  role: sub
+- ingredient: null
+  raw_text: 청
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 1g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬 5g
+  role: sub
+- ingredient: null
+  raw_text: 오미자엑기스 5g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 30g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 5g
+  role: sub
+steps:
+- text: 배추, 콜라비, 오이, 당근을 나박모양으로 썬다.
+- text: 레몬은 은행잎썰기, 홍고추는 어슷썰기, 실파는 1.5cm 길이로 썬다.
+- text: 식초, 설탕, 오미자청으로 단촛물을 만든다.
+- text: 단촛물에 야채, 레몬, 고추, 실파를 넣고 숙성시킨다.
+- text: 숙성 후 색을 보고 오미자청을 더 첨가한다.
+- text: 숙성된 오미자 나박김치를 그릇에 담아준다.

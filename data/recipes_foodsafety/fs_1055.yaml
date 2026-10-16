@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1055
+title: 우유 생강차
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1055. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: milk
+  raw_text: 우유 180g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 10g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 6g
+  role: sub
+- ingredient: sesame
+  raw_text: 깨소금 3g
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피가루 1g
+  role: sub
+steps:
+- text: 생강을 깨끗이 씻는다.
+- text: 생강을 강판에 곱게 간다.
+- text: 냄비에 우유와 간 생강을 넣고 끓인다.
+- text: 가장자리가 보글보글 끓어 오르면 불에서 내린다.
+- text: 믹서에 4를 붓고 깨소금, 꿀을 넣어 간다.
+- text: 컵에 5를 붓고 계피가루를 살짝 뿌린다.

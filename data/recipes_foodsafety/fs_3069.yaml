@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3069
+title: 새우살토마토스튜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3069. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 새우살 30g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 15g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 15g
+  role: sub
+- ingredient: null
+  raw_text: 건다시마 3g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 3g
+  role: sub
+- ingredient: ketchup
+  raw_text: 케찹 5g
+  role: sub
+- ingredient: null
+  raw_text: 10g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+steps:
+- text: 다시마로 육수를 낸다.
+- text: 새우살은 데치고 토마토는 칼집을 내어 데친 후 껍질을 벗긴다.
+- text: 토마토, 양파, 당근, 호박은 먹기 좋은 크기로 썬다.
+- text: 새우살과 당근, 호박을 버터에 볶아 준다.
+- text: 기름을 두른 팬에 토마토와 양파를 넣고 조린다.
+- text: ⑤에 ④와 육수, 케첩을 넣고 끓인 후 후추를 넣고 소금으로 간을 하여 마무리한다.

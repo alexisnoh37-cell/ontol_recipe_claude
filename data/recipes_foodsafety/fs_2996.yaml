@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2996
+title: 퀴노아 팥수프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2996. 요리종류 기타, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 퀴노아 3g
+  role: sub
+- ingredient: red_bean
+  raw_text: 팥 10g
+  role: sub
+- ingredient: null
+  raw_text: 무가당 휘핑크림 25g
+  role: sub
+- ingredient: butter
+  raw_text: 무염 버터 10g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 15g
+  role: sub
+- ingredient: null
+  raw_text: 닭뼈 20g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 10g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: null
+  raw_text: 세발나물 10g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 3g
+  role: sub
+steps:
+- text: 세발나물을 살짝 데쳐 말린 뒤 가루를 내고 닭뼈를 이용해 육수를 만든다.
+- text: 퀴노아를 볶아 쓴맛을 제거하고 삶은 팥과 믹서에 곱게 간다.
+- text: 팬에 버터 일부를 녹인 뒤 밀가루를 넣어 루를 만든다.
+- text: 양파를 갈아 버터 녹인 냄비에 볶은 뒤 닭육수와 2를 넣어 끓인다.
+- text: 세발나물가루로 간을 맞추고 향을 낸 뒤 루를 넣어 농도를 맞춘다.
+- text: 우유와 휘핑을 넣어 고소함을 더하고 설탕을 소량 넣어 간을 한다.

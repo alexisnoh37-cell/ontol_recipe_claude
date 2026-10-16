@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_530
+title: 세가지샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 530. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: tofu
+  raw_text: 연두부(100g)
+  role: sub
+- ingredient: null
+  raw_text: 닭고기살(50g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추(1g)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(20g)
+  role: sub
+- ingredient: banana
+  raw_text: 바나나(20g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(20g)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(10g)
+  role: sub
+- ingredient: null
+  raw_text: 마(20g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 요거트(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(5g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: null
+  raw_text: 흑임자(5g)
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣(10g)
+  role: sub
+steps:
+- text: 연두부는 동글게 썰어 준비한다.
+- text: 호박은 갈라 씨를 제거 하고 껍질을 벗겨 쪄서 작은 깍둑썰기로 썰어 준비 한다.
+- text: 바나나와 파프리카 토마토는 호박과 같은 크기의 작은 깍두기로 썰어 놓는다.
+- text: 닭고기살은 통후추를 넣고 약 20분 정도 삶아 건져 작은 깍두기로 썰어 준비한다.
+- text: 마와 잣, 흑임자를 갈아 놓은 뒤 생크림, 요거트, 식초, 올리브오일, 설탕을 섞어 샐러드 소스를 만들어 놓는다.
+- text: 썰어 놓은 연두부 위에 호박 , 닭고기, 토마토, 파프리카를 각각 올린 뒤 어린 잎을 올리고 소스를 뿌려 완성한다.

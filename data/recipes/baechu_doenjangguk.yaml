@@ -1,0 +1,42 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: baechu_doenjangguk
+title: 배추된장국
+cuisine: 한식
+difficulty: 1
+cook_time_min: 20
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: napa_cabbage
+  raw_text: 배추 잎 4장
+  role: main
+- ingredient: green_onion
+  raw_text: 대파 1/3대
+  role: sub
+- ingredient: anchovy_stock
+  raw_text: 멸치육수 4컵
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 1.5큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 2
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 배추를 먹기 좋게 썬다.
+- text: 멸치육수에 된장을 풀어 끓인다.
+  technique: 끓이기
+- text: 배추를 넣고 10분 끓인 뒤 마늘과 대파를 넣는다.
+  technique: 끓이기

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_361
+title: 관자브로콜리스프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 361. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: scallop
+  raw_text: 관자 100g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 25g
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리 40g
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 10g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 25g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 200g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 15g
+  role: sub
+- ingredient: parmesan
+  raw_text: 파마산가루 3g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 5g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: null
+  raw_text: 마늘칩 2g
+  role: sub
+steps:
+- text: 관자 50g은 편으로 썰어준다.
+- text: 편으로 썰어준 관자를 다진마늘, 흰후추, 버터에 볶아준다.
+- text: 남은 관자 50g은 국물을 만들어준다.
+- text: 브로콜리와 시금치는 뜨거운 물에 데쳐낸 후 국물 낸 볶은관자와 브로콜리, 시금치는 믹서 에 간다.
+- text: 팬에 넣고 끓이고 우유를 넣고 한 번 더 끓여 준다.
+- text: 생크림과 파마산치즈로 농도를 맞춘 후 그릇에 담고 마늘칩을 올려서 완성한다.

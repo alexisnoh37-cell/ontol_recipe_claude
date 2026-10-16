@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_705
+title: 우엉들깨무침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 705. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: burdock
+  raw_text: 우엉(25g)
+  role: sub
+- ingredient: null
+  raw_text: 파(2g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깻가루(2g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(2g)
+  role: sub
+- ingredient: perilla_oil
+  raw_text: 들기름(1g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(3g)
+  role: sub
+steps:
+- text: 우엉은 껍질을 벗긴다.
+- text: 껍질을 벗긴 우엉은 4cm 길이로 가늘게 채 썬다.
+- text: 냄비에 물과 우엉을 넣어 3~5분간 삶는다.
+- text: 삶은 우엉을 체에 건진다.
+- text: 파를 어슷 썬다.
+- text: 삶은 우엉, 손질한 파, 양념 재료를 넣고 골고루 무쳐 마무리한다.

@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_470
+title: 토마토젤리
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 470. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: tomato
+  raw_text: 토마토(120g)
+  role: sub
+- ingredient: null
+  raw_text: 판젤라틴(10g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(10g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(20g)
+  role: sub
+- ingredient: null
+  raw_text: 블루베리(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+steps:
+- text: 판젤라틴을 얼음물에 담군 후 흐물흐물 해질 때까지 불려 둔다.
+- text: 토마토는 물을 넣고 갈아 준비한다.
+- text: 갈아 놓은 토마토에 올리고당과 레몬즙을 넣어 골고루 섞는다.
+- text: 레몬즙을 넣은 토마토를 은근히 끓인다.
+- text: 끓고 있는 토마토에 불린 젤라틴을 넣고 녹여주고, 젤라틴이 녹으면 불을 끄고, 접시에 담아 냉장고에 약 20분 정도 굳힌다.
+- text: 팬에 설탕을 넣고 설탕이 녹으면, 블루베리를 넣어 은근히 졸여진 후 굳어진 토마토젤리 위에 올려 완성한다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3238
+title: 연두부 카프레제
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3238. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: perilla_leaf
+  raw_text: 깻잎(2장)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(5개=50g)
+  role: sub
+- ingredient: tofu
+  raw_text: 연두부(100g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(100g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(10g)
+  role: sub
+- ingredient: cheese
+  raw_text: 치즈(40g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(8g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(30g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(15g)
+  role: sub
+steps:
+- text: 방울토마토는 3등분하고, 깻잎과 양파는 곱게 다진다.
+- text: 연두부와 두부를 크림 형태가 될 때까지 으깬다.
+- text: 다진 깻잎과 양파에 깻잎 드레싱 재료를 넣어 고루 섞는다.
+- text: 중간 불로 달군 팬에 다진 마늘을 볶아 마늘 플레이크를 만든다.
+- text: 그릇에 연두부 크림과 방울토마토, 치즈를 올린다.
+- text: 깻잎 드레싱을 뿌리고 마늘 플레이크를 올려 마무리한다.

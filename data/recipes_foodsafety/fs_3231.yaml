@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3231
+title: 과일 피클 젤리
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3231. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(50g)
+  role: sub
+- ingredient: banana
+  raw_text: 바나나(80g)
+  role: sub
+- ingredient: grape
+  raw_text: 청포도(50g)
+  role: sub
+- ingredient: null
+  raw_text: 젤라틴(7.5g)
+  role: sub
+- ingredient: null
+  raw_text: 한천가루(0.25g)
+  role: sub
+- ingredient: null
+  raw_text: 피클링 스파이스(5g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 사과식초(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(3g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(5g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+steps:
+- text: 과일은 한입 크기로 썬다.
+- text: 젤라틴은 찬물에 불린다.
+- text: 냄비에 물(100㎖), 양념을 넣어 끓인 뒤 피클링 스파이스를 체로 거른다.
+- text: ③에 불린 젤라틴과 한천가루를 넣어 녹인 뒤 한 김 식힌다.
+- text: 유리 용기에 손질한 과일을 담고 식힌 ④의 젤라틴 물을 붓는다.
+- text: 냉장실에서 1시간 30분간 굳혀 마무리한다.

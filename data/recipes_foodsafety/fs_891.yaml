@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_891
+title: 칠리새우
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 891. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 백새우 40g
+  role: sub
+- ingredient: ketchup
+  raw_text: 케첩 4g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 6g
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루 3g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 6g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 10g
+  role: sub
+- ingredient: null
+  raw_text: 완두콩 4g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 0.5g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨칠리소스
+  role: sub
+- ingredient: doubanjiang
+  raw_text: 두반장 1g
+  role: sub
+- ingredient: chili_oil
+  raw_text: 고추기름 3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 6g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 0.2g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 2g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 3g
+  role: sub
+steps:
+- text: 새우는 손질하여 물기를 제거한다.
+- text: 달걀, 녹말가루, 밀가루로 튀김옷을 만들어 새우에 묻힌다.
+- text: 튀김옷을 입힌 새우를 170℃ 식용유에 두 번 튀겨낸다.
+- text: 대파, 마늘, 생강은 다진다.
+- text: 팬에 고추기름을 두르고 2를 넣고 볶다가 청주, 두반장, 케첩을 첨가하여 볶은 후 물을 넣고 설탕, 식초로 간을 맞춘다.
+- text: 살짝 졸인 뒤 튀긴 새우와 완두콩을 넣고 물녹말로 농도를 맞추고 마지막으로 참기름을 넣는다.

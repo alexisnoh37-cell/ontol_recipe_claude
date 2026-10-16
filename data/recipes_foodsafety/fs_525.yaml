@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_525
+title: 허브닭스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 525. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(150g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(100g)
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리(5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: null
+  raw_text: 저염버터(10g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(50g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염버터(10g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이(20g)
+  role: sub
+- ingredient: ketchup
+  raw_text: 토마토케첩(50g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: null
+  raw_text: 곁들임채소
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(20g)
+  role: sub
+- ingredient: null
+  raw_text: 브로컬리(30g)
+  role: sub
+steps:
+- text: 닭가슴살에 로즈마리, 후춧가루를 넣고, 15분 정도 우유에 담그어 놓는다.
+- text: 당근과 감자는 사각으로 깎아 양 모서리를 칼로 다시 다듬어 주사위 모양으로 둥그스럼하게 만들어 준비한다.
+- text: 냄비에 물이 끓으면, 브로컬리와 깎아 놓은 당근과 감자를 데쳐 준비한다.
+- text: 양송이는 껍질을 제거하고 모양 그대로 편으로 썰어 준비하고, 토마토와 마늘은 잘게 다져 냄비에 버터를 두르고 볶다가 케첩을 넣어준다.
+- text: 볶아지는 4번에 썰어 놓은 양송이와 생크림을 넣고, 다시 살짝 한 번 더 볶아준다.
+- text: 팬에 버터를 녹이고, 재워놓은 닭가슴살 (①)을 속이 익도록 노릇노릇 하게 익혀 접시에 담고, 만들어 놓은 감자와 당근, 브로컬리로 장식을 하고, 소스를 함께 올려 완성한다.

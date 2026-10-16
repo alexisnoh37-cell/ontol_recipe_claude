@@ -1,0 +1,28 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_953
+title: 사과 포도주스 조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 953. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: apple
+  raw_text: 사과 60g
+  role: sub
+- ingredient: null
+  raw_text: 포도주스 60g
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피가루 2g
+  role: sub
+- ingredient: null
+  raw_text: 아이스크림 30g
+  role: sub
+steps:
+- text: 사과씨를 통째로 제거한다.
+- text: 1을 2cm 두께로 썬다.
+- text: 냄비에 사과와 포도주스를 넣고 중불에서 서서히 졸인다.
+- text: 졸여진 사과를 냉장고에 넣어 시원하게 한다.
+- text: 접시에 사과를 담고 계피가루를 뿌린다.
+- text: 5에 아이스크림을 떠서 위에 얹는다.

@@ -1,0 +1,79 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1015
+title: 바지락 볶음면
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1015. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: manila_clam
+  raw_text: 바지락살 20g
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 칵테일새우 20g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 5g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 5g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 10g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 3g
+  role: sub
+- ingredient: null
+  raw_text: 생강다진것 2g
+  role: sub
+- ingredient: kalguksu_noodles
+  raw_text: 칼국수면 80g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 적당량
+  role: sub
+- ingredient: null
+  raw_text: 물전분 4g
+  role: sub
+- ingredient: null
+  raw_text: 간장소스
+  role: sub
+- ingredient: anchovy_stock
+  raw_text: 멸치육수 50g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 5g
+  role: sub
+- ingredient: null
+  raw_text: 양파즙 5g
+  role: sub
+- ingredient: null
+  raw_text: 다진 파 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 3g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2g
+  role: sub
+- ingredient: sesame
+  raw_text: 깨소금 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 적당량
+  role: sub
+steps:
+- text: 바지락살과 새우는 소금물에 흔들어 씻어 체에 받쳐 물기를 제거한다.
+- text: 대파, 청, 홍고추는 송송 썰고, 마늘, 생강은 다진다.
+- text: 끓는 물에 칼국수 면을 삶아 냉수에 헹군 뒤 참기름으로 버무린다.
+- text: 멸치 육수에 분량의 재료를 넣고 간장 소스를 만든다.
+- text: 팬에 식용유를 두르고 다진 마늘, 생강, 고추를 넣어 볶다가 센 불에서 바지락살과 새우, 청주를 넣어 볶은 뒤 간장소스를 넣고 끓인다.
+- text: 5가 반정도 졸면 칼국수 면을 넣어 볶으면서 물전분으로 농도를 맞춘 뒤 송송 썬 파와 참기름을 넣고 마무리한다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2959
+title: 소고기 가라아게, 칠리소스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2959. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기 70g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 20g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 20g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 10g
+  role: sub
+- ingredient: egg
+  raw_text: 계란노른자 25g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 20g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 15g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 50g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 15g
+  role: sub
+- ingredient: null
+  raw_text: 전분 10g
+  role: sub
+steps:
+- text: 소고기는 채썰고 마늘, 대파는 다진 뒤 섞는다.
+- text: 1에 계란노른자와 밀가루, 물을 섞어 반죽하고 조그만 공 모양으로 만들어 튀긴다.
+- text: 토마토는 껍질을 제거한 뒤 다지고, 마늘도 다진다.
+- text: 식초, 설탕, 물을 끓이다가 다진 토마토, 마늘, 고춧가루를 넣어 끓인다.
+- text: 전분으로 소스의 농도를 맞춘다.
+- text: 소고기 가라야게에 칠리소스를 곁들인다.

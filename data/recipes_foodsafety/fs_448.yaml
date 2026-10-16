@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_448
+title: 홍합죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 448. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: rice
+  raw_text: 쌀(100g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: mussel
+  raw_text: 홍합(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(20g)
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 건새우(15g)
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 건새우(15g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(10g)
+  role: sub
+steps:
+- text: 쌀은 깨끗이 씻어 약 30분 이상 불려 물기를 빼고 절구에 빻아놓는다.
+- text: 냄비에 물을 넣고, 다시마와 건새우 반을 넣고 끓여 간단한 육수를 만들어 놓는다.
+- text: 건새우 반은 다져서 따로 준비하고, 양파와 당근은 입자있게 다지고, 버섯을 편으로 썰어 준비한다.
+- text: 홍합은 끓는 물에 소금을 넣고 데쳐 껍질을 제거해 놓는다.
+- text: 냄비에 참기름을 넣고 빻아 놓은 쌀을 넣어 은근히 볶는다.
+- text: 볶은 쌀(⑤)에 육수(②)를 붓고 끓이다가 양파, 당근, 버섯(③)과 홍합(④)을 넣고 어우러지게 나무 주걱으로 저어가면 끓이다가 죽이 다 익을 때쯤 다져 놓은 건새우 (③)를 넣고 한 번 더 끓인 후 완성 한다.

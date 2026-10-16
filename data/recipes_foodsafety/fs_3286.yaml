@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3286
+title: 타이거새우 현미볶음밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3286. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: broccoli
+  raw_text: 브로콜리(¼개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(¼개)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(빨강, 노랑 각 ¼개)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파(2대)
+  role: sub
+- ingredient: null
+  raw_text: 블랙타이거새우(8마리)
+  role: sub
+- ingredient: brown_rice
+  raw_text: 현미밥(2공기)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(2개)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(½개)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(3Ts)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(3Ts)
+  role: sub
+steps:
+- text: 브로콜리는 윗동만 분리해 다지고, 양파, 파프리카, 청양고추는 잘게 다지고, 쪽파는 송송 썰고, 레몬은 2등분한다.
+- text: 블랙타이거새우는 깨끗하게 씻은 뒤 머리를 제거한다.
+- text: 약한 불로 달군 팬에 식용유를 두르고, 다진 마늘을 넣어 튀기듯 볶은 뒤 양파를 넣어 볶는다.
+- text: 손질한 블랙타이거새우와 버터를 넣은 뒤 새우의 색이 변할 때까지 볶고, 다진 파프리카, 청양고추, 브로콜리를 넣어 2분간 볶는다.
+- text: 그릇에 현미밥을 담고, 볶은 블랙타이거 새우와 국물을 골고루 뿌린다.
+- text: 송송 썬 쪽파와 레몬을 올려 마무리한다.

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_578
+title: 초계탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 578. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(다리, 2개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(50g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(50g)
+  role: sub
+- ingredient: cabbage
+  raw_text: 적양배추(20g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(50g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(30g)
+  role: sub
+- ingredient: null
+  raw_text: 겨자가루(20g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+steps:
+- text: 냄비에 마늘과 대파를 넣고 끓이다가 닭다리를 넣고 삶는다
+- text: 닭을 삶아 놓은 육수는 걸러 기름을 제거 하고 차갑게 식힌다.
+- text: 삶아 놓은 닭고기는 결대로 찢는다.
+- text: 양파, 오이와 파프리카는 채썬다
+- text: 적채는 채를 썰어 찬물에 담궈 건져 물기를 빼 놓는다.
+- text: 차갑게 걸러 놓은 닭 육수에 발효된 겨자와 소금 .설탕, 식초를 넣어 육수 간을 하고, 그릇에 닭살과 오이 적채, 파프리카 양파를 올려 차가운 육수를 넣어 완성한다.

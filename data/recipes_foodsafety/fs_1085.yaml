@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1085
+title: 연근고구마샌드위치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1085. 요리종류 일품, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: lotus_root
+  raw_text: 연근(200g)
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마(200g)
+  role: sub
+- ingredient: null
+  raw_text: 견과류(30g)
+  role: sub
+- ingredient: frying_mix
+  raw_text: 튀김가루(100g)
+  role: sub
+- ingredient: null
+  raw_text: 백년초가루(30g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(500g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(5g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+steps:
+- text: 연근 껍질을 제거하고 0.5cm 두께로 끓는 물에 소금, 식초를 넣어 살짝 데친다.
+- text: 고구마는 껍질을 제거하고 삶아 으깬다.
+- text: 견과류는 잘게 다져 삶은 고구마에 섞어 동그랑땡 모양으로 만든다.
+- text: 튀김가루, 달걀, 소금을 넣고 튀김 반죽을 만든다.(백년초가루로 2가지 색의 반죽을 만든다)
+- text: 연근 사이에 으깬 고구마를 넣는다.
+- text: 연근 샌드위치를 만들어 170℃ 기름에 튀긴다.

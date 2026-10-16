@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_701
+title: 시래기리조또
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 701. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 무청시래기 불린 것 50g
+  role: sub
+- ingredient: rice
+  raw_text: 밥 180g
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 18g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2.5g
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 1.25g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 포도씨유
+  role: sub
+- ingredient: null
+  raw_text: 12g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 30g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 3g
+  role: sub
+steps:
+- text: 무청을 찬물에 담궈 잡냄새를 제거한다.
+- text: 무청의 물기를 짠다.
+- text: 물기를 뺀 무청은 적당한 크기로 송송 썰어준다.
+- text: 무청에 된장, 다진 마늘, 생강즙을 넣어 조물조물 무친다.
+- text: 팬에 포도씨유를 두르고 양념한 무청을 넣고 볶는다.
+- text: 밥을 넣고 함께 볶다가 생크림과 버터를 넣고 맛이 어우러지도록 잠시 더 볶아 완성한다.

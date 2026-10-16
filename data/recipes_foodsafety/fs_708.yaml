@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_708
+title: 마감자전
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 708. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: potato
+  raw_text: 감자 40g
+  role: sub
+- ingredient: null
+  raw_text: 마 40g
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루 15g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 5g
+  role: sub
+- ingredient: null
+  raw_text: '현미유 5g 간장양념장 : 간장 3g'
+  role: sub
+- ingredient: null
+  raw_text: 파 2g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 2g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.5g
+  role: sub
+steps:
+- text: 양파와 파는 씻어 곱게 다진다.
+- text: 감자와 마는 껍질을 벗긴 후 씻는다.
+- text: 2를 강판에 간다.
+- text: 1과 3을 섞은 후 찹쌀가루를 넣어 반죽한다.
+- text: 현미유를 두른 팬에 반죽을 떠서 지름 8cm 크기로 동그랗게 부친다.
+- text: 간장, 파, 식초, 통깨를 넣고 간장양념장을 만들어 곁들인다.

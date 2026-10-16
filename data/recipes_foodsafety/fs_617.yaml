@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_617
+title: 단호박생채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 617. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: kabocha
+  raw_text: 단호박(1/2개)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: sand_lance_fish_sauce
+  raw_text: 까나리액젓(20g)
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 건새우(20g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(10g)
+  role: sub
+- ingredient: null
+  raw_text: 매실액(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(1/4개)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(20g)
+  role: sub
+steps:
+- text: 다시마, 건새우, 물을 약 20분 정도 끓인 뒤 체에 걸러 육수를 만든다.
+- text: 단호박은 껍질을 벗기고, 속을 깨끗이 파내 슬라이스 한다
+- text: 슬라이스한 단호박을 까나리액젓에 20분 정도 절인 뒤 물로 씻는다.
+- text: 부추는 5cm 길이로 썰고, 양파는 채썰고, 배는 껍질을 벗겨 슬라이스로 썰어둔다.
+- text: 만들어 놓은 육수에 고춧가루, 매실액, 다진마늘을 섞어 양념장을 만든다
+- text: 단호박, 배, 양파, 부추를 양념장에 버무린다.

@@ -1,0 +1,76 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_551
+title: 과일갈비찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 551. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: pork_ribs
+  raw_text: 돼지갈비(150g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(5g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(2g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(20g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(20g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(20g)
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤(10g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(20g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(20g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 대파(10g)
+  role: sub
+- ingredient: ginger
+  raw_text: 다진 생강(5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.03g)
+  role: sub
+- ingredient: null
+  raw_text: 소주(10g)
+  role: sub
+steps:
+- text: 돼지갈비는 물에 담그어 핏물을 충분히 제거한다.
+- text: 홍고추는 어슷썰어 냄비에 볶는다.
+- text: 핏물을 제거한 돼지갈비를 홍고추와 함께 넣어 볶아준다.
+- text: 배는 강판에 갈고, 파, 마늘, 생강은 다진 뒤 간장과 올리고당, 설탕, 후춧가루, 소주와 함께 넣고 골고루 섞어서 양념장을 만든다.
+- text: 사과, 대추, 밤, 오이, 양파, 당근, 무는 사각 깍둑 썰기로 준비한다.
+- text: 볶아진 갈비(③)에 양념장(④)과 물을 넣고 은근히 갈비를 졸이다가, 국물이 자작하게 남으면, 손질한 과일과 채소 등(⑤)을 참기름과 함께 넣고, 한 번 더 졸여 완성한다.

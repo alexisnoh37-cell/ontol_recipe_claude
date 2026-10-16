@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2963
+title: 닭가슴살 두부선
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2963. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(가슴살) 50g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 120g
+  role: sub
+- ingredient: null
+  raw_text: 비트 10g
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 10g
+  role: sub
+- ingredient: null
+  raw_text: 베이비채소 1g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1.5g
+  role: sub
+- ingredient: null
+  raw_text: 흑임자 3g
+  role: sub
+- ingredient: yogurt
+  raw_text: 플레인요거트 15g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 0.5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+steps:
+- text: 닭가슴살, 두부, 소금을 믹서에 간다.
+- text: 1에 간 마늘과 소금, 참기름을 섞는다.
+- text: 반죽 1/3은 비트물, 1/3은 시금치물을 넣어 색을 입힌다.
+- text: 틀에 반죽을 층층이 쌓아 모양을 만든 뒤 오븐에 찐다.
+- text: 흑임자가루, 플레인요거트, 식초, 설탕을 섞어 드레싱을 만든다.
+- text: 접시에 담고 소스와 베이비채소를 얹는다.

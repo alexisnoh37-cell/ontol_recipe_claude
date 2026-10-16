@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_311
+title: 토마토라면
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 311. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 애호박(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(5g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(5g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(300g)
+  role: sub
+- ingredient: null
+  raw_text: 라면스프(3g)
+  role: sub
+- ingredient: ramen_noodles
+  raw_text: 라면(100g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 다시마(2.5g)
+  role: sub
+- ingredient: anchovy
+  raw_text: 멸치(2.5g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(10g)
+  role: sub
+steps:
+- text: 냄비에 육수 재료를 넣고 10분간 끓여 건더기를 건진다.
+- text: 애호박은 돌려 깎아 채 썰고, 양파도 채 썰고, 청양고추와 대파는 어슷 썬다.
+- text: 토마토는 200g은 잘게 다지고, 100g은 두툼하게 썬다.
+- text: 육수에 라면스프와 라면을 넣고 살짝 익힌 뒤 양파, 애호박, 다진 토마토를 넣고 끓인다.
+- text: 면이 다 익으면 두툼하게 썬 토마토를 넣고 10초간 더 끓인다.
+- text: 대파와 청양고추를 올려 마무리한다.

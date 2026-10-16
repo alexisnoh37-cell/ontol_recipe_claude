@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3097
+title: 낙지모듬초말이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3097. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: small_octopus
+  raw_text: 낙지 30g
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지 12g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 7g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 24g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: minari
+  raw_text: 미나리 12g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 0.1g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 15g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 25g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 10g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장10g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 1g
+  role: sub
+- ingredient: null
+  raw_text: 깨 1g
+  role: sub
+steps:
+- text: 낙지는 살짝 데치고 한입 크기로 썬다.
+- text: 오이와 당근, 표고, 가지는 얇게 동그란 모양으로 썰고 가지와 표고를 살짝 구워준다.
+- text: 설탕, 식초, 물로 초절이 양념을 만들어 오이, 당근, 구운 가지와 표고를 절인다.
+- text: ③의 재료에 낙지를 올린 후 데친 미나리로 감싼다.
+- text: 사과를 잘게 다져서 준비한다.
+- text: 사과, 간장, 고춧가루, 설탕, 식초, 깨로 소스를 만들어 초말이와 제공한다.

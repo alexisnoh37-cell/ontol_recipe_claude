@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_354
+title: 가지말이샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 354. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: eggplant
+  raw_text: 가지 250g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 50g
+  role: sub
+- ingredient: null
+  raw_text: 미니파프리카 30g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 40g
+  role: sub
+- ingredient: null
+  raw_text: 마늘튀김 15g
+  role: sub
+- ingredient: mustard
+  raw_text: 홀그레인머스터드 15g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 30g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 15g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 5g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 15g
+  role: sub
+- ingredient: wine
+  raw_text: 레드와인 30g
+  role: sub
+- ingredient: null
+  raw_text: 곁들이채소
+  role: sub
+- ingredient: null
+  raw_text: 어린채소 30g
+  role: sub
+- ingredient: parmesan
+  raw_text: 파마산치즈
+  role: sub
+steps:
+- text: 가지는 길이로 포를 떠 준다. 이때 필러를 이용하면 간편하게 할 수가 있다.
+- text: 감자는 채 썰어 냉수에 담가 전분기를 완전히 빼준다.
+- text: 파프리카, 양파, 청고추는 감자와 같은 길이로 채 썰어준다.
+- text: 소스를 만들어준다.
+- text: 가지를 기름 없이 구워준다.
+- text: 구운 가지를 펴 놓고 준비된 채소를 말아서 가지말이를 만들고, 마늘튀김을 올려 소스랑 완성한 뒤 파마산치즈를 다져서 먹기 직전에 뿌려준다.

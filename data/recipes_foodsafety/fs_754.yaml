@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_754
+title: 대구버섯구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 754. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: cod
+  raw_text: 대구살 60
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.3
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 0.02
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루 12
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯 40
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 6
+  role: sub
+- ingredient: null
+  raw_text: '베이비채소 5 소스: 마요네즈 4'
+  role: sub
+- ingredient: null
+  raw_text: 와사비 갠 것1
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 2
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.02
+  role: sub
+steps:
+- text: 대구살에 소금, 흰후추를 뿌려 밑간 한 뒤 찹쌀가루를 가볍게 묻힌다. (a)
+- text: 버섯과 마늘을 얇게 썬다. (b)
+- text: 팬에 기름을 두르고 마늘을 볶아 향을 낸 뒤 마늘은 따로 건져두고 버섯을 굽는다. (c)
+- text: 팬에 기름을 두르고 1을 앞뒤로 노릇하게 굽는다. (d)
+- text: 분량의 재료를 섞어 소스를 만든다.
+- text: 접시에 대구, 버섯, 마늘을 켜켜이 담아 소스를 뿌리고 베이비채소를 곁들여 낸다.

@@ -1,0 +1,28 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1121
+title: 자색고구마찹쌀푸딩
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1121. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 자색고구마(40g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(120g)
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루(4g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.1g)
+  role: sub
+steps:
+- text: 자색고구마는 솔로 문질러 깨끗하게 씻는다.
+- text: 껍질을 벗기고 찐다.
+- text: 찐 자색고구마와 우유, 소금을 믹서에 곱게 간다.
+- text: 3번을 고운 체에 걸러 덩어리를 없앤다.
+- text: 볼에 4번을 넣고 찹쌀가루를 넣어 잘 풀리도록 젓는다.
+- text: 5번을 끓이다가 엉기기 시작하면 그릇에 담아 차게 식힌다.

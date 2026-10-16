@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_493
+title: 표고크림파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 493. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: button_mushroom
+  raw_text: 양송이(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(80g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: pasta
+  raw_text: 스파게티(100g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: null
+  raw_text: 크림소스
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(10g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(200g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+steps:
+- text: 양송이는 껍질을 벗겨 형태 그대로 썰고, 표고버섯은 기둥을 제거하고 편으로 썰어놓는다.
+- text: 팬에 버터를 살짝 넣고 썰어놓은 버섯을 소금을 살짝 뿌려 볶아 준비한다.
+- text: 냄비에 버터와 밀가루를 넣고, 은근히 볶아 화이트루를 만든다.
+- text: 화이트 루에 우유를 조금씩 넣고 뭉치지 않게 풀어 끓이다가 다시 생크림을 넣고 한 소큼 끓여 놓는다.
+- text: 스파게티는 끓는 물에 약 10분 정도 삶아 건져 올리브 오일에 볶아 접시에 담는다.
+- text: 끓여 놓은 크림소스에 볶아진 버섯과 후춧가루를 넣고 한 소큼 더 끓여 스파게티를 담은 접시에 넣고 완성한다.

@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_594
+title: 미역소스와 타르타르
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 594. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: scallop
+  raw_text: 관자(2개)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(3마리)
+  role: sub
+- ingredient: seaweed
+  raw_text: 미역(20g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(1개)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(30g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(50g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 블랙올리브(3알)
+  role: sub
+- ingredient: quail_egg
+  raw_text: 메추리알(5개)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/4개)
+  role: sub
+- ingredient: soy_milk
+  raw_text: 두유(100g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(50g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(200g)
+  role: sub
+steps:
+- text: 미역은 찬물에 충분히 불린다.
+- text: 새우는 껍질을 벗겨 관자 한 개와 다져 완자를 만든다.
+- text: 나머지 관자 한 개는 썰어 팬에 굽는다
+- text: 버섯, 토마토, 블랙올리브는 곱게 다진다.
+- text: 시금치와 미역은 끓는 물에 데쳐 잘게 썬다.
+- text: 마늘을 다져 우유와 함께 끓이다가 썰어 놓은 미역과 시금치, 새우완자를 넣고 한소끔 끓인다.

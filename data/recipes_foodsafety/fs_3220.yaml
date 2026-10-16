@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3220
+title: 참나물 소보로덮밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3220. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 건취나물(10g)
+  role: sub
+- ingredient: null
+  raw_text: 건표고버섯(20g)
+  role: sub
+- ingredient: null
+  raw_text: 불린 쌀(80g)
+  role: sub
+- ingredient: null
+  raw_text: 불린 곤약쌀(60g)
+  role: sub
+- ingredient: ground_pork
+  raw_text: 다진 돼지고기(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: null
+  raw_text: 참나물(10g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(7g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(3g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(3㎖)
+  role: sub
+steps:
+- text: 건취나물과 건표고버섯은 뜨거운 물(200㎖)에 담가 30분간 불린다.
+- text: 밥솥에 불린 쌀과 곤약쌀, 불린 건취나물, 물(100㎖)을 넣어 취사 버튼을 눌러 밥을 짓는다.
+- text: 불린 표고버섯은 잘게 다져 중간 불로 달군 팬에 넣고 다진 돼지고기, 간장(5g), 참기름(2g)을 넣어 3분간 볶아 꺼낸다.
+- text: 중간 불로 달군 다른 팬에 식용유(3㎖)를 두른 뒤 달걀을 넣어 스크램블드에그를 만든다.
+- text: 끓는 물(300㎖)에 참나물을 넣고 1분간 데쳐 찬물에 헹군 뒤 소금(1g), 간장(2g), 참기름(1g)을 넣어 버무린다.
+- text: 그릇에 취나물 곤약밥을 담은 뒤 볶은 버섯과 고기, 스크램블드에그, 양념한 참나물을 얹는다.

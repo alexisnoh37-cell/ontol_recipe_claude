@@ -1,0 +1,68 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: dakgalbi
+title: 닭갈비
+cuisine: 한식
+difficulty: 2
+cook_time_min: 30
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(닭다리살 권장) 400g
+  role: main
+- ingredient: cabbage
+  raw_text: 양배추 1/6통
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마 1/2개
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 1/2대
+  role: sub
+- ingredient: rice_cake
+  raw_text: 가래떡 한 줌
+  role: sub
+  optional: true
+- ingredient: perilla_leaf
+  raw_text: 깻잎 5장
+  role: garnish
+  optional: true
+- ingredient: gochujang
+  raw_text: 고추장 2큰술
+  role: seasoning
+- ingredient: gochugaru
+  raw_text: 고춧가루 1큰술
+  role: seasoning
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1큰술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 고추장, 고춧가루, 간장, 설탕, 마늘을 섞어 닭고기에 버무려 20분 재운다.
+- text: 팬에 기름을 두르고 고구마, 양배추, 양파를 깐 뒤 닭고기를 올린다.
+  technique: 볶음
+- text: 뒤적이며 닭고기와 고구마가 익을 때까지 볶고 대파와 떡, 깻잎을 넣어 마무리한다.
+  technique: 볶음

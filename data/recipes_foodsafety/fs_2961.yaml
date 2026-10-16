@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2961
+title: 유부초절임
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2961. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: apple
+  raw_text: 사과 20g
+  role: sub
+- ingredient: fried_tofu
+  raw_text: 유부 5g
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추 15g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 3g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 15g
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마 5g
+  role: sub
+steps:
+- text: 유부와 다시마를 데친다.
+- text: 데친 유부의 물기를 짜내고 채썬다.
+- text: 데친 다시마를 채썬다.
+- text: 양배추와 당근, 사과, 오이를 채썬다.
+- text: 설탕과 식초, 후추를 섞어 소스를 만든다.
+- text: 채썬 재료와 소스를 섞어 버무린다.

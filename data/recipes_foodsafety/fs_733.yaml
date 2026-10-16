@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_733
+title: 옥수수감자샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 733. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: potato
+  raw_text: 감자 70g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 60g
+  role: sub
+- ingredient: null
+  raw_text: 옥수수알 10g
+  role: sub
+- ingredient: null
+  raw_text: 완두콩알 5g
+  role: sub
+- ingredient: null
+  raw_text: 빨강파프리카 5g
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 12g
+  role: sub
+- ingredient: null
+  raw_text: 호상요구르트 10g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.15g
+  role: sub
+steps:
+- text: 감자는 익기 쉽도록 토막 내고 완두콩과 옥수수알과 함께 김이 오른 찜통에 10~15분간 찐다.
+- text: 찐 감자를 으깬다.
+- text: 달걀은 삶아 흰자는 굵게 다지고 노른자는 체에 곱게 내린다.
+- text: 파프리카는 옥수수알 크기로 썬다.
+- text: 2에 완두콩, 옥수수, 파프리카, 달걀 흰자를 넣어 섞는다.
+- text: 마요네즈, 호상요구르트, 달걀노른자, 소금을 넣어 샐러드드레싱을 만들어 5와 곁들인다.

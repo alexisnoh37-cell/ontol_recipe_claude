@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_419
+title: 연근초무침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 419. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: lotus_root
+  raw_text: 연근 200g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 40g
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤 60g
+  role: sub
+- ingredient: null
+  raw_text: 유자청 25g
+  role: sub
+- ingredient: null
+  raw_text: 강황가루 2g
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 5g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+steps:
+- text: 양파는 채 썰어 물에 담가주고, 오이는 돌려 깎기 해서 물에 담가준다.
+- text: 연근은 껍질을 까고 얇게 썰어서 식초 2방울을 넣은 물에 데쳐준다.
+- text: 밤도 아주 얇게 썰어서 물에 담가준다.
+- text: 소스 재료를 모두 넣고 믹서에 간다.
+- text: 물에 데쳐낸 연근은 키친타월에 올려서 물기를 완전히 제거한다.
+- text: 모든 재료를 넣고 소스에 버무려준다.

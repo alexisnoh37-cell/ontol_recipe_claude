@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_587
+title: 두부 카프리제
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 587. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(100g)
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기(100g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(2개)
+  role: sub
+- ingredient: null
+  raw_text: 마(100g)
+  role: sub
+- ingredient: lotus_root
+  raw_text: 연근(20g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(60g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(3장)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(1/3개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: soy_milk
+  raw_text: 두유(100g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+steps:
+- text: 토마토는 깨끗이 씻어 슬라이스한다.
+- text: 두부는 원형틀을 이용해서 토마토와 같은 크기로 만들고 소금을 살짝 뿌린 뒤 물기를 제거한다.
+- text: 팬에 올리브오일을 두르고 두부를 살짝 굽는다.
+- text: 어린잎은 찬물에 담근다.
+- text: 발사믹소스에 설탕과 레몬즙을 넣고 골고루 섞어 소스를 만든다.
+- text: 두부와 준비한 토마토를 접시에 돌려 담고 어린잎을 위에 올린 뒤 먹기 직전에 발사믹소스와 파마산치즈를 뿌려 완성한다.

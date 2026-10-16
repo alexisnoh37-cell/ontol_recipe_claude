@@ -1,0 +1,73 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3210
+title: 깻잎퓌레를 곁들인 삼치새우
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3210. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: perilla_leaf
+  raw_text: 깻잎(20장)
+  role: sub
+- ingredient: bok_choy
+  raw_text: 청경채(1단)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(3마리)
+  role: sub
+- ingredient: spanish_mackerel
+  raw_text: 삼치(75g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(230㎖)
+  role: sub
+- ingredient: null
+  raw_text: 식용 꽃(약간)
+  role: sub
+- ingredient: null
+  raw_text: 삶은 감자(150g)
+  role: sub
+- ingredient: null
+  raw_text: 녹인 무염 버터(15㎖)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(15㎖)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(3g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(3g)
+  role: sub
+- ingredient: null
+  raw_text: 건로즈메리(2g)
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루(3g)
+  role: sub
+- ingredient: null
+  raw_text: 전분(12g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(3㎖)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(3g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(185㎖)
+  role: sub
+steps:
+- text: 깻잎은 깨끗이 씻고, 청경채는 2등분하고, 새우는 머리를 제거한 뒤 껍질을 벗기고, 삼치는 밑간한다.
+- text: 냄비에 깻잎과 생크림, 올리브유(3㎖)를 넣어 끓어오르면 믹서에 넣어 곱게 간 뒤 체에 걸러 퓌레를 만든다.
+- text: 삶은 감자는 으깬 뒤 녹인 무염 버터와 설탕(3g),후춧가루(3g)를 고루 섞고 체에 한 번 걸러 우유를 섞어 매시드 포테이토를 만든다.
+- text: 손질한 새우에 튀김옷을 입혀 180℃로 달군 식용유(180㎖)에 3분간 튀겨 건지고, 마른 팬에 손질한 청경채를 볶은 뒤 토치로 불맛을 낸다.
+- text: 중간 불로 달군 팬에 식용유(5㎖)를 두른 뒤 밑간한 삼치를 5분간 앞뒤로 노릇하게 구워 꺼낸다.
+- text: 그릇에 깻잎퓌레 → 구운 삼치 → 매시드 포테이토 → 청경채 → 튀긴 새우 → 꽃잎 순으로 올린다.

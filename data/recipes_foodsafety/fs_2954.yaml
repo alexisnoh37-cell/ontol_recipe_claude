@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2954
+title: 단호박견과류샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2954. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: kabocha
+  raw_text: 단호박(25g)
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마(25g)
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드(5g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(5g)
+  role: sub
+- ingredient: null
+  raw_text: 건블루베리(5g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(10g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(15g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(5g)
+  role: sub
+steps:
+- text: 단호박과 고구마는 껍질을 벗긴다
+- text: 냄비에 우유를 붓고 단호박과 고구마를 넣어 삶는다.
+- text: 끓인 우유를 식힌 뒤 단호박과 고구마와 함께 믹서에 넣어 간다.
+- text: 견과류와 건블루베리, 당근을 잘게 썬다.
+- text: 믹서에 간 우유에 손질한 견과류와 건블루베리, 당근을 넣어 섞는다.
+- text: 올리고당으로 농도와 간을 맞춰 마무리한다.

@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_927
+title: 완두콩 스프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 927. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 양파다진것 10g
+  role: sub
+- ingredient: null
+  raw_text: 샐러리다진것 5g
+  role: sub
+- ingredient: bacon
+  raw_text: 베이컨 13g
+  role: sub
+- ingredient: null
+  raw_text: 완두콩 80g
+  role: sub
+- ingredient: null
+  raw_text: 육수 120g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 적당량
+  role: sub
+steps:
+- text: 양파와 셀러리는 다지고, 베이컨은 적당한 크기로 자른다.
+- text: 팬에 베이컨을 넣고 볶다가 양파, 셀러리를 넣고 색이 나지 않게 볶는다.
+- text: 야채가 볶아지면 완두콩을 넣고 충분히 볶아준다.
+- text: 완두콩이 반 정도 익으면 육수를 넣고 푹 끓여준다.
+- text: 완두콩이 다 익으면 믹서에 간 뒤 체에 걸러낸다.
+- text: 5를 냄비에 옮기고 기호에 맞게 소금, 후춧가루, 생크림을 넣는다.

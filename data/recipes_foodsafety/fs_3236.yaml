@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3236
+title: 요거트 단호박 샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3236. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: kabocha
+  raw_text: 단호박(100g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(5g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(5g)
+  role: sub
+- ingredient: null
+  raw_text: 불린 곤드레나물(10g)
+  role: sub
+- ingredient: null
+  raw_text: 불린 쌀(30g)
+  role: sub
+- ingredient: raisin
+  raw_text: 건포도(5g)
+  role: sub
+- ingredient: null
+  raw_text: 건무화과(5g)
+  role: sub
+- ingredient: null
+  raw_text: 볶은 호두(5g)
+  role: sub
+- ingredient: null
+  raw_text: 볶은 아몬드 슬라이스(5g)
+  role: sub
+- ingredient: null
+  raw_text: 라즈베리(5g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 요거트(20g)
+  role: sub
+steps:
+- text: 단호박은 껍질을 벗겨 찜기에 넣어 5분간 찐 뒤 으깬다.
+- text: 감자와 표고버섯은 채 썰고, 불린 곤드레나물은 잘게 썬다.
+- text: 냄비에 불린 쌀, 채 썬 감자와 표고버섯, 불린 곤드레나물, 물(20㎖)을 넣어 센 불로 5분 30초간 끓인다.
+- text: 오븐 팬에 감자곤드레밥을 얇게 편 뒤 180℃로 예열한 오븐에 구워 누룽지를 만든다.
+- text: 으깬 단호박에 건과일과 볶은 호두, 볶은 아몬드 슬라이스를 넣어 고루 섞는다.
+- text: 그릇에 건과일과 견과류를 섞은 단호박을 예쁘게 담고 곤드레 누룽지와 라즈베리, 요거트를 올린다.

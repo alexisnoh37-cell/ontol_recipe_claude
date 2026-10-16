@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1119
+title: 고구마치즈크로켓
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1119. 요리종류 후식, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: sweet_potato
+  raw_text: 호박고구마(200g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우살(80g)
+  role: sub
+- ingredient: null
+  raw_text: 삼색파프리카(80g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(40g)
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모짜렐라치즈(40g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(20g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(15g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(5g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(40g)
+  role: sub
+steps:
+- text: 고구마는 찜통에 찐 후 껍질을 제거하고 으깨 생크림, 꿀을 넣고 섞는다.
+- text: 새우살, 파프리카, 양파는 잘게 다진 뒤 팬에 버터를 두르고 볶는다.
+- text: 볼에 1번과 2번을 넣고 서로 잘 섞이도록 치댄다.
+- text: 3번을 한입 크기로 떼어낸 후 가운데 모짜렐라 치즈를 넣고 공모양으로 만든다.
+- text: 크로켓에 밀가루, 달걀물, 빵가루 순으로 묻힌다.
+- text: 180℃의 기름에 크로켓을 튀긴다.

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_660
+title: 삼색채소 냉파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 660. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(가슴살, 100g)
+  role: sub
+- ingredient: pasta
+  raw_text: 파스타(100g)
+  role: sub
+- ingredient: null
+  raw_text: 쥬키니호박(50g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(1/4개)
+  role: sub
+- ingredient: null
+  raw_text: 비트(50g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/4개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(30g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(20g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(20g)
+  role: sub
+steps:
+- text: 끓는 물에 파스타를 넣고 약 10분 정도 삶아 건져 올리브오일을 살짝 바른다.
+- text: 쥬키니 호박은 채썰어 소금에 절인 뒤 볶는다.
+- text: 닭가슴살은 마늘을 넣고 삶은 뒤 먹기 좋게 찢는다.
+- text: 사과와 비트, 레몬을 믹서에 갈아 소스를 만든다.
+- text: 소스에 꿀을 넣어 맛을 내고 차갑게 보관한다.
+- text: 팬에 삶아 놓은 파스타를 넣고 볶다가 닭살과 호박채, 시금치를 넣고 볶은 뒤 접시에 담고 차갑게 보관한 소스를 올린다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_875
+title: 굴 두부 국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 875. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: oyster
+  raw_text: 굴 20g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 20g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 1g
+  role: sub
+- ingredient: scallion
+  raw_text: 실파 2g
+  role: sub
+- ingredient: laver
+  raw_text: 김 0.3g
+  role: sub
+- ingredient: saeujeot
+  raw_text: 새우젓 0.5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: null
+  raw_text: 다시마 육수 100g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 1g
+  role: sub
+steps:
+- text: 굴은 소금으로 깨끗이 씻어 물기를 뺀다.
+- text: 두부는 2x2x1cm 크기로 썰고, 실파는 2cm 길이로 자른다.
+- text: 김은 구워서 잘게 찢거나 가위로 자른다.
+- text: 고추는 채썰어 씨를 제거한다.
+- text: 다시마 육수를 끓이다가 두부와 굴을 넣고 뭉근히 끓인 뒤 새우젓과 다진 마늘을 넣고 한소끔 끓인다.
+- text: 실파와 홍고추를 넣고 마지막에 김과 참기름을 넣는다.

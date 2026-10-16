@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_248
+title: 떡갈비찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 248. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 다진 돼지고기(50g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 쇠고기(30g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(10g)
+  role: sub
+- ingredient: rice_cake
+  raw_text: 가래떡(60g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(15g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(5g)
+  role: sub
+- ingredient: lotus_root
+  raw_text: 연근(4g)
+  role: sub
+- ingredient: null
+  raw_text: 고기 밑간 다진 파(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(5g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 양파(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(1g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(3g)
+  role: sub
+steps:
+- text: 돼지고기와 쇠고기는 고기 밑간을 넣고 반죽을 만든다.
+- text: 가지를 길고 얇게 썬다.
+- text: 깨끗이 씻은 떡을 가지로 돌돌 말고 그 위에 고기를 말아 떡갈비를 만들고 팬에서 겉면이 노릇해질 때까지만 익힌 뒤 김 오른 찜기에 넣어 10분~15분 정도 찐다.
+- text: 유자청과 간장을 섞고 팬에서 농도를 맞춰주며 살짝 졸여 유자소스를 만든다.
+- text: 연근은 모양대로 얇게 썰어 기름에 튀겨 연근칩을 만든다.
+- text: 떡갈비에 유자소스를 바르고 연근칩을 올려 마무리한다.

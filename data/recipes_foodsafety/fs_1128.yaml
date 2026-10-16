@@ -1,0 +1,25 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1128
+title: 자두 라떼
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1128. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 자두(200g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(250g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(10g)
+  role: sub
+steps:
+- text: 자두를 깨끗이 씻어 얼린다.
+- text: 얼린 자두와 꿀, 물을 믹서에 넣고 간다.
+- text: 믹서에 간 자두의 일부를 얼음틀에 넣고 얼린다.
+- text: 믹서에 간 자두를 컵에 담는다.
+- text: 3번을 컵에 담는다.
+- text: 우유를 붓는다.

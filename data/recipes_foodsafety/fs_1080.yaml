@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1080
+title: 시금치 볶음 쌀국수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1080. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 새우(100g)
+  role: sub
+- ingredient: null
+  raw_text: 쌀국수(150g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(40g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: quail_egg
+  raw_text: 메추리알(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(30g)
+  role: sub
+- ingredient: peanut
+  raw_text: 땅콩(3g)
+  role: sub
+- ingredient: null
+  raw_text: 전분(10g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주(5g)
+  role: sub
+- ingredient: chili_oil
+  raw_text: 고추기름(15g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(3g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(15g)
+  role: sub
+steps:
+- text: 미지근한 물에 쌀국수 면을 부드러워질 때까지 불린다.
+- text: 새우는 소금, 청주, 달걀 흰자, 전분물로 반죽한 뒤 튀긴다.
+- text: 팬에 메추리알을 부친다.
+- text: 팬에 올리브오일과 고추기름을 두르고 마늘을 살짝 볶은 뒤 튀긴새우와 쌀국수 면을 넣는다.
+- text: 굴소스와 식초로 간을 하고 재료가 다 익어갈 때 시금치를 넣고 불을 끈다.
+- text: 땅콩가루와 메추리알을 올려 마무리한다.

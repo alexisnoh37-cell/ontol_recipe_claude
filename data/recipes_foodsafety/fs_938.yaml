@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_938
+title: 생강향의 고구마 크로켓
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 938. 요리종류 후식, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: sweet_potato
+  raw_text: 고구마 60g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 2g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 3g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 2g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 2g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 3g
+  role: sub
+- ingredient: null
+  raw_text: 달걀물 5g
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루 3g
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름 8g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량
+  role: sub
+steps:
+- text: 고구마를 삶아 껍질을 제거하고 오븐에 넣어 수분을 제거한다.
+- text: 생강을 편으로 썰어 생크림과 섞어 생강향이 우러나도록 살짝 끓인 후 체에 거른다.
+- text: 볼에 1을 넣고 으깬다.
+- text: 3에 2를 넣고 골고루 섞어준다.
+- text: 버터, 꿀, 소금, 후추를 넣어 맛을 내고 원하는 모양으로 빚는다.
+- text: 5에 밀가루, 달걀물, 빵가루 순으로 묻혀 180℃ 기름에 튀긴다.

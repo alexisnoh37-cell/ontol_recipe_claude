@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_487
+title: 닭고기라이스롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 487. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(100g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(50g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: null
+  raw_text: 수수(20g)
+  role: sub
+- ingredient: rice
+  raw_text: 쌀(50g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(5g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(10g)
+  role: sub
+- ingredient: ketchup
+  raw_text: 케첩(20g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(100g)
+  role: sub
+steps:
+- text: 닭고기살은 넓게 펴서, 약 10분 정도 우유에 담그어 놓는다.
+- text: 수수와 쌀은 깨끗이 씻어 찬물에 약 30분 정도 불려 밥을 지어 놓는다.
+- text: 파프리카는 가운데 씨를 제거하고 채를 썰고, 당근과 양파도 파프리카 길이로 채를 썰고, 애호박은 껍질 부분만 돌려 깎아 채를 썰어 준비한다.
+- text: 팬에 기름을 살짝 둘러 준비한 채소(③)에 소금을 넣고 볶아 놓는다.
+- text: 우유에서 닭고기를 건져 후춧가루를 살짝 뿌린 후 잡곡밥(②)과 볶아 놓은 채소(④)를 넣어 돌돌 말아 준다.
+- text: 토마토는 입자있게 다져 다진 마늘과 함께 볶다가 케첩과 육수를 넣고 끓인 뒤 말아놓은 닭고기를 넣고 은근히 졸이듯 익혀 완성한다.

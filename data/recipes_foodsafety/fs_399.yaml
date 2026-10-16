@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_399
+title: 고추김치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 399. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: green_chili
+  raw_text: 오이고추(40g)
+  role: sub
+- ingredient: chive
+  raw_text: 영양부추(5g)
+  role: sub
+- ingredient: lotus_root
+  raw_text: 연근(5g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(5g)
+  role: sub
+- ingredient: null
+  raw_text: 해물육수(8g)
+  role: sub
+- ingredient: null
+  raw_text: 어간장(3g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(3g)
+  role: sub
+- ingredient: null
+  raw_text: 생강청(3g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(1g)
+  role: sub
+steps:
+- text: 오이고추는 배를 갈라 씨를 제거하고 세척 후 절임물에 절여준다.
+- text: 영양부추, 연근은 송송 다지고 무는 채 썬다.
+- text: 손질한 부추와 연근, 무에 절임물을 조금 넣고 절인다.
+- text: 고춧가루, 생강청, 통깨를 절임채소에 섞어 소를 만든다.
+- text: 오이고추 속에 소를 채워 넣는다.
+- text: 오이고추를 그릇에 담고 남은 물을 부어 마무리한다.

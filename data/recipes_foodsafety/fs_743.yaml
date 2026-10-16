@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_743
+title: 매생이조랭이떡국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 743. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 조랭이떡 140g
+  role: sub
+- ingredient: null
+  raw_text: 매생이 15g
+  role: sub
+- ingredient: oyster
+  raw_text: 굴 30g
+  role: sub
+- ingredient: null
+  raw_text: 파 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2g
+  role: sub
+- ingredient: null
+  raw_text: 국멸치 3g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 국간장 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+steps:
+- text: 냄비에 물 1컵 반과 국멸치를 넣고 끓여 멸치국물 1컵을 낸다.
+- text: 매생이는 물로 서너 번 헹궈 고운체에 받쳐 물기를 제거한다.
+- text: 굴에 소금을 넣고 으깨지지 않도록 살살 주무른 후 물로 서너 번 헹궈 체에 받친다.
+- text: 파는 얇게 어슷썰고, 마늘은 다진다.
+- text: 멸치국물에 조랭이떡, 매생이, 굴을 넣고 끓인다.
+- text: 파와 다진 마늘을 넣고 한소끔 끓이고, 국간장과 소금으로 간하여 마무리한다.

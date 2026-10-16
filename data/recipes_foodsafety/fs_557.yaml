@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_557
+title: 들깨죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 557. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: beef_bone_broth
+  raw_text: 사골육수(800g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깨가루(200g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(5g)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(20g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(1개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(15g)
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀(50g)
+  role: sub
+steps:
+- text: 찹쌀은 깨끗이 씻어 물에 약 30분 간 충분히 불린다.
+- text: 부추, 홍고추, 양파 및 당근을 잘게 다진다.
+- text: 마늘은 곱게 다진다.
+- text: 냄비에 기름을 두르고 마늘을 볶다가 불린 찹쌀을 넣고 볶는다.
+- text: 어느 정도 볶아지면 사골육수와 들깨가루를 넣고 은근히 끓인다.
+- text: 찹쌀이 어느 정도 익으면 홍고추와 부추를 넣고 살짝 끓인다

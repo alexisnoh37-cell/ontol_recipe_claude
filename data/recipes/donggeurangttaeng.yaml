@@ -1,0 +1,63 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: donggeurangttaeng
+title: 동그랑땡
+cuisine: 한식
+difficulty: 2
+cook_time_min: 40
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: ground_pork
+  raw_text: 돼지고기 다짐육 300g
+  role: main
+- ingredient: tofu
+  raw_text: 두부 1/2모
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/4개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/4개
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 1/3대
+  role: sub
+- ingredient: egg
+  raw_text: 계란 2개
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 3큰술
+  role: sub
+- ingredient: salt
+  raw_text: 소금 1/2작은술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 1작은술
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 적당량
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 1
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 두부는 물기를 짜고 채소는 잘게 다진다.
+- text: 다짐육, 두부, 채소, 소금, 마늘, 후추, 참기름을 치대어 반죽을 만든다.
+- text: 동그랗게 빚어 밀가루, 계란물을 차례로 입힌다.
+- text: 기름 두른 팬에 약불로 앞뒤를 노릇하게 부친다.
+  technique: 부침

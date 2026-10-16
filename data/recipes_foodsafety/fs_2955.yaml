@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2955
+title: 함박스테이크&토마토카레소스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2955. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(다짐육) 50g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯 5g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 40g
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루 25g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 5g
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루 15g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 25g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 15g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 15g
+  role: sub
+- ingredient: egg
+  raw_text: 계란노른자 5g
+  role: sub
+steps:
+- text: 양파, 양송이버섯, 당근, 감자, 토마토를 잘게 다진다.
+- text: 다진 소고기와 다진 양파, 다진 양송이버섯, 다진 마늘, 빵가루, 계란노른자를 넣고 치댄다.
+- text: 반죽을 70g씩 나눠 스테이크 모양을 만들어 굽는다.
+- text: 다진 당근, 감자, 양파, 토마토, 마늘과 카레가루를 물에 넣고 끓인다.
+- text: 카레 소스가 농도가 날 때 까지 끓인다.
+- text: 스테이크와 카레소스를 곁들여 담는다.

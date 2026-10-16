@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_981
+title: 치킨 버거 스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 981. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 80g
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루 5g
+  role: sub
+- ingredient: null
+  raw_text: 차이브 2g
+  role: sub
+- ingredient: basil
+  raw_text: 바질 1g
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량[양송이 속양파다진것 10g, 버터적당량, 양송이 30g, 빵가루 5g, 생크림 적당량
+  role: sub
+steps:
+- text: 양파는 곱게 다지고 양송이는 0.5cm로 슬라이스 한다.
+- text: 팬에 버터를 넣고 녹으면 양파를 볶다가 양송이를 넣어 볶는다.
+- text: 생크림, 소금, 후추로 간을 하고 양송이에서 물이 빠져나오면 빵가루를 넣어 되직하게 농도를 맞춘 뒤 그릇에 옮겨 식힌다.
+- text: 차이브, 오레가노, 바질, 파슬리를 잘게 다진다.
+- text: 간 닭고기와 3, 4를 볼에 넣고 섞어 치대 찰지게 만든 뒤 지름 10cm 정도의 원형 모양이나 럭비공 모양으로 만든다.
+- text: 팬에 기름을 두른 뒤 치킨 스테이크를 익혀주거나 팬에서 색만 내고 오븐에서 익힌다.

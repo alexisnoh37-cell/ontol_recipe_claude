@@ -1,0 +1,28 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_772
+title: 딸기연두부쉐이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 772. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: strawberry
+  raw_text: 딸기 100g
+  role: sub
+- ingredient: tofu
+  raw_text: 연두부 50g
+  role: sub
+- ingredient: banana
+  raw_text: 바나나 50g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 10g
+  role: sub
+steps:
+- text: 딸기를 깨끗이 씻는다.
+- text: 딸기의 꼭지를 뗀다.
+- text: 딸기, 바나나를 잘게 썰어 믹서에 넣는다.
+- text: 연두부를 믹서에 넣고 함께 간다.
+- text: 올리고당을 넣는다.
+- text: 컵에 담아 완성한다.

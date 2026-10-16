@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1023
+title: 씨앗죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1023. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: rice
+  raw_text: 쌀 30g
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨 3g
+  role: sub
+- ingredient: null
+  raw_text: 통아몬드 4g
+  role: sub
+- ingredient: peanut
+  raw_text: 땅콩 4g
+  role: sub
+- ingredient: null
+  raw_text: 호박씨 4g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 적당량
+  role: sub
+steps:
+- text: 쌀을 깨끗이 씻어 5시간 정도 불린다.
+- text: 불린 쌀을 절구에 넣어 쌀알이 반 정도 부서지도록 간다.
+- text: 참깨, 아몬드, 땅콩, 호박씨를 믹서기에 간다.
+- text: 냄비에 쌀과 물을 넣고 끓인다.
+- text: 쌀알이 익으면 3의 씨앗가루를 넣고 끓인다.
+- text: 소금간을 하고 준비한 그릇에 담아낸다.

@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_387
+title: 오징어구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 387. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: squid
+  raw_text: 오징어 300g
+  role: sub
+- ingredient: null
+  raw_text: 미니파프리카 40g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 50g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 15g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 15g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 15g
+  role: sub
+- ingredient: null
+  raw_text: 홀토마토 50g
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 15g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 15g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 15g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 1g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 15g
+  role: sub
+- ingredient: null
+  raw_text: 볶은 현미 15g
+  role: sub
+steps:
+- text: 오징어는 솔방울 모양으로 잘라준다.
+- text: 미니 파프리카, 양파, 청홍고추는 적당한 크기로 잘라준다.
+- text: 다진마늘을 볶다가 오징어를 넣어 볶는다.
+- text: 홀토마토와 양념장 재료를 넣어 볶는다.
+- text: 팬을 약간 태우는 듯 해서 불맛과 매운맛을 더해준다.
+- text: 접시에 담아주고 볶은 현미를 뿌려 완성한다.

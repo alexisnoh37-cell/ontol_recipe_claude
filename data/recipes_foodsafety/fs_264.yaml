@@ -1,0 +1,47 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_264
+title: 견과류들깨해장탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 264. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 느타리버섯(20g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(20g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(40g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(40g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤(30g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(10g)
+  role: sub
+- ingredient: anchovy_stock
+  raw_text: 멸치다시마육수(300g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 들기름(10g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깻가루(30g)
+  role: sub
+steps:
+- text: 느타리버섯, 양송이버섯, 표고버섯, 두부, 애호박, 양파, 껍질 벗긴 밤은 사방 1cm로 깍뚝 썰고, 호두는 반으로 가른다.
+- text: 뚝배기에 들기름을 두르고 호두와 밤을 살짝 볶은 후 두부를 제외한 재료를 넣고 볶는다.
+- text: 멸치다시마육수를 넣고 끓인다.
+- text: 들깻가루와 두부를 넣고 걸쭉하게 끓여 마무리한다.

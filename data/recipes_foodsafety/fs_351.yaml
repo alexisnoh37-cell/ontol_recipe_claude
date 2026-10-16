@@ -1,0 +1,73 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_351
+title: 통삼겹맥적구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 351. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: pork_belly
+  raw_text: 통삼겹 250g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 400g
+  role: sub
+- ingredient: null
+  raw_text: 구이소스
+  role: sub
+- ingredient: null
+  raw_text: 저염된장 15g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 30g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 15g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 10g
+  role: sub
+- ingredient: null
+  raw_text: 다진대파 5g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 10g
+  role: sub
+- ingredient: null
+  raw_text: 샐러드
+  role: sub
+- ingredient: null
+  raw_text: 수삼 1개(20g)
+  role: sub
+- ingredient: napa_cabbage
+  raw_text: 알배추 35g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 30g
+  role: sub
+- ingredient: null
+  raw_text: 샐러드소스
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 30g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 15g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 15g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 15g
+  role: sub
+steps:
+- text: 구이소스 재료를 이용해 소스를 만든다.
+- text: 통삼겹은 닭육수에 삶아 냉수에 헹궈 물기를 빼준다.
+- text: 통삼겹에 만들어진 소스를 발라 준 뒤 10분 정도 숙성시켜준다.
+- text: 샐러드재료는 곱게 채 썰고 냉수에 담가 각각의 맛을 중화시켜준다.
+- text: 샐러드소스를 만들어 샐러드를 버무려준다.
+- text: 양념에 재워진 통삼겹을 구워주고 샐러드를 담아 완성한다.

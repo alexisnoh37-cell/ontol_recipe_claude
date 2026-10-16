@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2995
+title: 삼색 꽃 화전
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2995. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루 60g
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 30g
+  role: sub
+- ingredient: null
+  raw_text: 치자 5g
+  role: sub
+- ingredient: null
+  raw_text: 식용꽃 5g
+  role: sub
+- ingredient: null
+  raw_text: 타임 5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 15g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 20g
+  role: sub
+steps:
+- text: 시금치는 데친 뒤 믹서에 곱게 갈고 치자는 따뜻한 물에 불린다.
+- text: 곱게 간 시금치에 데쳤던 물을 넣고 가열한 뒤 찹쌀가루 절반에 조금씩 부어 익반죽 한다.
+- text: 남은 절반의 찹쌀가루에 가열한 치자물을 조금씩 부어 익반죽 한다.
+- text: 30분 간 휴지시킨 뒤 팬에 기름을 두르고 적당한 크기로 빚은 화전을 지진다.
+- text: 한쪽 면을 익힐 때 위에 꽃을 올린 뒤 뒤집어 살짝만 지진다.
+- text: 꿀과 설탕, 물을 1:2:3 비율로 섞어 끓여 시럽을 만들어 화전 위에 끼얹고 타임으로 장식한다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_455
+title: 마마무스프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 455. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: radish
+  raw_text: 무(50g)
+  role: sub
+- ingredient: null
+  raw_text: 마(50g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(50g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(30g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(50g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금( 0.2g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g
+  role: sub
+steps:
+- text: 양파와 파는 다져 준비한다.
+- text: 무는 채를 썰어 놓는다.
+- text: 시금치는 끓는 물에 소금을 넣고 데쳐, 우유와 함께 갈아 준비한다.
+- text: 마는 강판에 갈아 시금치 우유(③)에 섞는다.
+- text: 다져 놓은 양파와 파는 냄비에 버터를 넣고 볶는다.
+- text: 볶아지는 채소(⑤)에 무(②)와 육수를 붓고 끓여서 무가 익으면 충분히 식힌 뒤, 준비한 우유(④)와 함께 믹서에 갈고, 생크림을 올려 완성한다.

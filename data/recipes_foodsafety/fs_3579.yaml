@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3579
+title: 배추겉절이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3579. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: napa_cabbage
+  raw_text: 알배추(23g)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파(5g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(2g)
+  role: sub
+- ingredient: null
+  raw_text: 겉절이 양념(15g)
+  role: sub
+- ingredient: null
+  raw_text: 겉절이 양념(124g분량
+  role: sub
+- ingredient: null
+  raw_text: '] 찐 감자(20g)'
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(25g)
+  role: sub
+- ingredient: null
+  raw_text: 매실청(5g)
+  role: sub
+- ingredient: sand_lance_fish_sauce
+  raw_text: 까나리액젓(10g)
+  role: sub
+- ingredient: saeujeot
+  raw_text: 새우젓(3g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(1g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+steps:
+- text: 알배추는 한입 크기로 자른다.
+- text: 쪽파는 3cm 길이로 썰고, 찐 감자는 한입 크기로 자른다
+- text: 마늘, 생강, 무, 양파는 깨끗이 씻어 한입 크기로 자른다.
+- text: 믹서에 찐 감자, 고춧가루, 매실청, 까나리액젓, 새우젓, 무, 양파, 생강, 마늘을 넣고 갈아 겉절이 양념을 만든다.
+- text: 손질한 알배추, 쪽파, 겉절이 양념(15g)을 버무린다.
+- text: 접시에 담고 통깨를 뿌려 마무리한다.

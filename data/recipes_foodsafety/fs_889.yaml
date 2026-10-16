@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_889
+title: 오징어말이 케첩조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 889. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: squid
+  raw_text: 오징어 80g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 17g
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 17g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 19g
+  role: sub
+- ingredient: null
+  raw_text: 표고버섯마른것 7g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 1.4g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 1.1g
+  role: sub
+- ingredient: null
+  raw_text: 토마토케첩소스
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 1.1g
+  role: sub
+- ingredient: null
+  raw_text: 양파다진것 1.1g
+  role: sub
+- ingredient: ketchup
+  raw_text: 토마토케첩 2g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루0.1g
+  role: sub
+steps:
+- text: 오징어는 껍질을 벗긴 후 안쪽에 대각선으로 칼집을 넣어 데친다.
+- text: 당근, 시금치, 불린 표고버섯은 0.5cm 두께로 썬다.
+- text: 시금치는 끓는 물에 데쳐 찬물에 헹군 뒤 물기를 제거한다.
+- text: 달걀은 잘 풀어 도톰하게 달걀말이를 만 후 당근처럼 썬다.
+- text: 오징어의 물기를 제거하고 밀가루를 살짝 뿌린후 2, 3의 재료를 모두 넣어 김밥 말듯이 돌돌말아 꼬치로 두군데를 고정시킨다.
+- text: 토마토케첩소스의 재료를 섞어 팬에서 졸이다가 4의 오징어를 넣고 소스를 끼얹어가며 졸여 1.5cm의 두께로 썬다.

@@ -1,0 +1,73 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_223
+title: 닭봉주먹밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 223. 요리종류 밥, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 닭봉(80g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(20g)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(10g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(5g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(15g)
+  role: sub
+- ingredient: null
+  raw_text: 주키니호박(15g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(15g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: null
+  raw_text: 시래기(20g)
+  role: sub
+- ingredient: cheese
+  raw_text: 치즈(20g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(150g)
+  role: sub
+- ingredient: null
+  raw_text: 새싹채소(10g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 후춧가루(3g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(20g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(5g)
+  role: sub
+- ingredient: null
+  raw_text: 소스 레몬즙(5g)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(12g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(5g)
+  role: sub
+- ingredient: null
+  raw_text: 부순 참깨(2g)
+  role: sub
+steps:
+- text: 닭봉은 손질한 뒤 후춧가루를 섞은 우유에 담가두었다가 구워 준비한다.
+- text: 단호박, 새송이버섯은 구워서 준비한다.
+- text: 소스를 만든다.
+- text: 가지, 주키니호박, 당근, 양파, 시래기는 잘게 다진 뒤 볶는다.
+- text: 볶은 채소와 치즈를 참기름, 간장과 함께 밥에 넣고 섞는다.
+- text: 구운 닭봉을 밥으로 감싼 뒤 구운 단호박, 새송이버섯, 새싹채소와 함께 담아 소스를 곁들여 마무리한다.

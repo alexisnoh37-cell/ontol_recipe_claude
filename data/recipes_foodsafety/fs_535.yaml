@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_535
+title: 닭고기월남쌈
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 535. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 닭고기살(100g)
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리(5g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(30g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(30g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(30g)
+  role: sub
+- ingredient: null
+  raw_text: 라이스페이퍼(20g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(30g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(10g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(20g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(10g)
+  role: sub
+steps:
+- text: 닭고기살에 로즈마리를 뿌려 약 3시간 이상 숙성을 시킨다.
+- text: 냄비에 물을 1/3쯤 넣고, 양파채를 썰어 넣어 끓으면, 숙성된 닭고기살을 넣고 약 20분 정도 삶아 건진다.
+- text: 삶아 건진 닭고기살을 한 김 빼고, 길게 손으로 찢어 소금과 후춧가루에 살짝 무치고, 오이와 파프리카는 씨를 제거 하고 채를 썰고, 당근도 오이채의 길이에 맞게 채를 썰어 준비해 놓는다.
+- text: 마늘을 다지고, 고춧가루와 설탕, 식초, 레몬즙을 넣어 소스를 만든다.
+- text: 뜨거운 물에 라이스페이퍼를 살짝 넣어 바로 건진다.
+- text: 건져 놓은 라이스페이퍼에 준비한 닭고기살과 파프리카, 오이, 당근 넣고 돌돌 말아, 녹말가루를 살짝 입혀, 팬에 굴리듯 익혀 완성하고, 준비해 놓은 소스와 함께 제공한다.

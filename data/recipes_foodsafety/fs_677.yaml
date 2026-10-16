@@ -1,0 +1,82 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_677
+title: 민어매운탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 677. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 민어 50g
+  role: sub
+- ingredient: null
+  raw_text: 쇠고기 양지15g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 1.25g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.25g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 0.5g
+  role: sub
+- ingredient: radish
+  raw_text: 무 40g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 20g
+  role: sub
+- ingredient: null
+  raw_text: 애느타리버섯 20g
+  role: sub
+- ingredient: green_chili
+  raw_text: 풋 고추 5g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 2.5g
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓 10g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 5g
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 0.5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.5g
+  role: sub
+- ingredient: null
+  raw_text: 간 홍고추 10g
+  role: sub
+- ingredient: null
+  raw_text: 간 양파 10g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 국간장 2.5g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2.5g
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 5g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 굵은 고춧가루 5g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고운 고춧가루 1.25g
+  role: sub
+steps:
+- text: 양념장 재료를 모두 섞어 냉장고에서 하루 숙성시킨다.
+- text: 민어는 비늘을 긁고 지느러미, 내장을 제거하여 흐르는 물에 씻어 5cm 길이로 토막 낸다.
+- text: 소고기는 채 썰어 다진 마늘, 후추로 밑간한다.
+- text: 무는 나박 썰기, 애호박은 반달 썰기, 애느타리는 한입 크기로 찢고 고추와 대파는 어슷 썬다.
+- text: 냄비에 참기름을 두르고 소고기를 볶다가 물 1컵 반과 무를 넣고 양념장을 풀어 끓인다.
+- text: 무가 반 정도 익으면 민어와 채소를 넣고 한소끔 끓인 뒤 어슷 썬 대파와 생강즙을 넣어 살짝 끓이고 소금 간하고 쑥갓을 넣는다.

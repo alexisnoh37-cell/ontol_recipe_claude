@@ -52,10 +52,22 @@ def test_ambiguous_alias_removed_and_soybean_oil_separate(ck):
     assert ck.closure_of("soybean")["soybean_oil"].certainty == "possible"
 
 
+# 검수 대기 중인 재료. 사람이 검수표로 승인하면 reviewed로 바꾸고 여기서 뺀다.
+DRAFT_INGREDIENTS = frozenset({"soft_tofu"})  # 레시피 1차 확장(2026-10-04)
+
+
 def test_all_knowledge_is_reviewed(ck):
     # 0-4 사람 검수 완료(2026-10-03). 새로 추가하는 항목은 draft로 넣고 검수 후 reviewed로 바꾼다.
-    assert all(i.status == "reviewed" for i in ck.ingredients)
+    assert {i.id for i in ck.ingredients if i.status != "reviewed"} == DRAFT_INGREDIENTS
+    assert all(ck_i.status == "draft" for ck_i in ck.ingredients if ck_i.id in DRAFT_INGREDIENTS)
     assert all(g.status == "reviewed" for g in ck.allergen_groups)
+
+
+def test_soft_tofu_is_soybean(ck):
+    # 1차 확장: 순두부는 대두 가공품(확실). 이름 '순두부'는 soft_tofu로 옮겼다(두부 별칭에서 제외).
+    assert ck.closure_of("soybean")["soft_tofu"].certainty == "definite"
+    by_norm = {a.alias_norm: a.ingredient_id for a in ck.aliases}
+    assert by_norm["순두부"] == "soft_tofu"
 
 
 # --- D4 알레르기 그룹 확정 내용 (docs/decisions.md) -------------------------

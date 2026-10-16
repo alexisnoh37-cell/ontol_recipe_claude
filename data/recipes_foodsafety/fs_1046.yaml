@@ -1,0 +1,72 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1046
+title: 태국식 불고기 샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1046. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: beef
+  raw_text: 쇠고기 30g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 20g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 25g
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지 15g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 8g
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯 15g
+  role: sub
+- ingredient: null
+  raw_text: 그린 샐러드적당량
+  role: sub
+- ingredient: null
+  raw_text: 불고기 드래싱
+  role: sub
+- ingredient: green_chili
+  raw_text: 풋고추 3g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 3g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 1g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 1g
+  role: sub
+- ingredient: null
+  raw_text: 레몬주스 3g
+  role: sub
+- ingredient: null
+  raw_text: 타바스코 1g
+  role: sub
+- ingredient: null
+  raw_text: 카레오일
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 1g
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리 1g
+  role: sub
+- ingredient: null
+  raw_text: 민트 1g
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루 2g
+  role: sub
+steps:
+- text: 소고기는 불고기용으로 손질하여 소금, 후추로 밑간한다.
+- text: 애호박, 토마토, 가지, 양파, 새송이버섯을 채 썬 뒤 볶는다.
+- text: 밑간해 둔 소고기를 굽는다.
+- text: 접시에 밥을 깔고 그 위에 그린샐러드를 올린 뒤 익혀놓은 고기와 볶아놓은 야채들을 올린다.
+- text: 마지막으로 드래싱을 뿌린다.

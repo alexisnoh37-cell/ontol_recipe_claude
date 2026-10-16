@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_830
+title: 검은콩 스프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 830. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 콩 30g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 70g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 30g
+  role: sub
+- ingredient: null
+  raw_text: 큐민파우더 1g
+  role: sub
+- ingredient: null
+  raw_text: 파슬리말린것 1g
+  role: sub
+- ingredient: null
+  raw_text: 카엔패퍼 2g
+  role: sub
+- ingredient: null
+  raw_text: 사워크림 2g
+  role: sub
+- ingredient: soy_milk
+  raw_text: 두유 70g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 4g
+  role: sub
+- ingredient: null
+  raw_text: 양파다진것 7g
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리 3g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 1g
+  role: sub
+steps:
+- text: 양파, 셀러리, 마늘, 토마토를 굵게 다진다.
+- text: 팬에 양파를 볶다가 셀러리와 마늘을 볶는다.
+- text: 콩과 두유를 넣은 뒤 토마토, 육수, 큐민, 파슬리, 카엔패퍼를 넣는다.
+- text: 볶은 재료들을 모두 믹서로 간다.
+- text: 믹서에 간 재료들을 체에 거른다.
+- text: 체에 거른 것을 끓여주고 사워크림으로 장식한다

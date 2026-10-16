@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_814
+title: 도라지 검은깨 튀김
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 814. 요리종류 후식, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: bellflower_root
+  raw_text: 도라지 25g
+  role: sub
+- ingredient: null
+  raw_text: 검은깨 1.25g
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루 8.75g
+  role: sub
+- ingredient: frying_mix
+  raw_text: 튀김가루 10g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 3g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨 간장소스
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2g
+  role: sub
+- ingredient: wasabi
+  raw_text: 고추냉이 0.5g
+  role: sub
+steps:
+- text: 통 도라지는 껍질을 벗기고 0.3cm 두께로 썬다.
+- text: 손질한 도라지는 옅은 소름물에 잠시 담가 쓴맛을 없애고 차가운 물에 헹궈 물기를 닦는다. (3% 소금물)
+- text: 그릇에 찹쌀가루와 튀김가루를 넣어 걸쭉한 농도가 되도록 물을 부어 튀김옷의 농도를 맞춘다.
+- text: 농도를 맞춘 튀김옷 반죽에 검은깨를 섞는다.
+- text: 손질한 도라지에 튀김옷을 입혀 170℃의 식용유에 튀긴다.
+- text: 저나트륨 간장소스를 곁들인다.

@@ -1,0 +1,73 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_218
+title: 청국장볶음밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 218. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 쌀(100g)
+  role: sub
+- ingredient: brown_rice
+  raw_text: 현미(30g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(30g)
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마(15g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(15g)
+  role: sub
+- ingredient: lotus_root
+  raw_text: 연근(15g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(15g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(15g)
+  role: sub
+- ingredient: burdock
+  raw_text: 우엉(15g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(5g)
+  role: sub
+- ingredient: null
+  raw_text: 참나물(10g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(5g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(5g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 다시마(2g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 생청국장(30g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깻가루(2g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(10g)
+  role: sub
+- ingredient: perilla_oil
+  raw_text: 들기름(8g)
+  role: sub
+steps:
+- text: 쌀과 현미는 물에 깨끗이 씻어 불린 후 밥을 고슬고슬하게 짓는다.
+- text: 감자, 고구마, 우엉, 양파, 당근, 애호박, 연근은 작게 깍둑 썰고, 마늘은 편 썬다.
+- text: 시금치와 참나물, 깻잎은 굵게 채 썰고, 미나리는 2.5㎝ 길이로 썬다.
+- text: 물(50g)에 다시마를 우려내 육수를 내고 청국장을 넣어 잘 푼 뒤 들깻가루를 넣고 잘 저어주며 졸여 청국장소스를 만든다.
+- text: 팬에 올리브유와 들기름을 두르고 양파, 마늘을 약한 불에 볶다가 감자, 고구마, 우엉, 연근, 당근, 애호박을 넣고 같이 볶는다.
+- text: 밥과 청국장소스를 부어 80% 정도 볶다가 시금치, 참나물, 미나리를 넣고 한 번 더 볶고 채 썬 깻잎을 올려 마무리한다.

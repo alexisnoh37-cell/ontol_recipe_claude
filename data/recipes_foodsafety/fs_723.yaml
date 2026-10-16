@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_723
+title: 참나물돼지고기샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 723. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 돼지고기사태 60g
+  role: sub
+- ingredient: null
+  raw_text: 참나물 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 15g
+  role: sub
+- ingredient: null
+  raw_text: 파 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 통마늘 3g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 2g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.5g 양파 10g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 4g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 4g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 3g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 3g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 1g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 1g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.5g
+  role: sub
+steps:
+- text: 냄비에 물 2컵을 넣고 돼지고기, 양파, 파, 통마늘, 생강, 후춧가루를 넣고 삶는다.
+- text: 삶은 돼지고기는 2cm × 3cm × 0.3cm 가량의 크기로 썬다.
+- text: 참나물은 먹기 좋은 크기로 자른다.
+- text: 양파는 다져준다.
+- text: 다진양파, 설탕, 간장, 고춧가루, 올리브유, 식초, 마늘, 통깨를 넣어 샐러드드레싱을 만든다.
+- text: 2의 돼지고기와 3의 참나물을 그릇에 담고 샐러드드레싱을 곁들인다.

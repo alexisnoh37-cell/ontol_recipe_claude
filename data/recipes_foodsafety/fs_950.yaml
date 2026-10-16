@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_950
+title: 두부양갱
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 950. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 치자 2g
+  role: sub
+- ingredient: null
+  raw_text: 백련초가루 1g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 30g
+  role: sub
+- ingredient: null
+  raw_text: 한천 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 10g
+  role: sub
+steps:
+- text: 치자를 따뜻한 물에 담궈 색을 우려내고, 백련초가루는 물에 푼다.
+- text: 두부는 면보에 물기를 짠 뒤 칼로 으깬다.
+- text: 두 개의 냄비에 한천을 필요량 만큼 넣고 1을 각각 넣고 30분 정도 불린다.
+- text: 3에 으깬 두부를 반씩 나누어 넣고 설탕을 넣은 뒤 골고루 섞는다.
+- text: 4를 모양 틀에 넣고 냉장고에서 굳힌다.
+- text: 양갱이 굳으면 틀 째 미지근한 물에 담궈 뒤집어 뺸다.

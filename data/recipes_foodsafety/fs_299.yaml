@@ -1,0 +1,39 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_299
+title: 생선베이컨말이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 299. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 피망(5g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(10g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(15g)
+  role: sub
+- ingredient: null
+  raw_text: 저염베이컨(60g)
+  role: sub
+- ingredient: null
+  raw_text: 동태포(30g)
+  role: sub
+- ingredient: null
+  raw_text: 저염버터(10g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(10g)
+  role: sub
+- ingredient: null
+  raw_text: 새싹채소(0.1g)
+  role: sub
+steps:
+- text: 피망, 파프리카는 5㎝ 길이로 채 썰고, 시금치는 갈아둔다.
+- text: 베이컨 위에 동태포를 올리고 그 위에 피망과 파프리카를 올려 돌돌 만다.
+- text: 저염버터에 생크림을 넣어서 농도를 맞춘 후 갈아놓은 시금치를 넣어 시금치소스를 만든다.
+- text: 달군 팬에 흰살생선베이컨말이를 올려 완전히 익힌다.
+- text: 접시에 담아 시금치소스를 곁들인 뒤 새싹채소로 장식하여 마무리한다.

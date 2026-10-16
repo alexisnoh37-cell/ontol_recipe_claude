@@ -1,0 +1,28 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1000
+title: 수삼당근정과
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1000. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: carrot
+  raw_text: 당근 50g
+  role: sub
+- ingredient: null
+  raw_text: 수삼 30g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 20g
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피가루 2g
+  role: sub
+steps:
+- text: 당근과 수삼을 깨끗하게 씻는다.
+- text: 1을 믹서에 넣고 곱게 간다.
+- text: 냄비에 2를 붓고 꿀을 넣어 졸인다.
+- text: 계피가루를 섞는다.
+- text: 빵이나 크래커를 준비한다.
+- text: 5의 위에 수삼 당근 정과를 올린다.

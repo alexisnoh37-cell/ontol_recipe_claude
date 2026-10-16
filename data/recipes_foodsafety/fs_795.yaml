@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_795
+title: 감자 팬케익
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 795. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: potato
+  raw_text: 감자 100g
+  role: sub
+- ingredient: null
+  raw_text: 양파다진것 15g
+  role: sub
+- ingredient: null
+  raw_text: 체리 20g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 20g
+  role: sub
+- ingredient: grape
+  raw_text: 청포도 35g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 1g
+  role: sub
+- ingredient: null
+  raw_text: 달걀흰자 80g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 16g
+  role: sub
+- ingredient: null
+  raw_text: 베이킹 파우더 1g
+  role: sub
+- ingredient: null
+  raw_text: 마늘가루 1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.1g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 4g
+  role: sub
+- ingredient: null
+  raw_text: 과일조림
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 30g
+  role: sub
+- ingredient: null
+  raw_text: 포도주스 50g
+  role: sub
+- ingredient: null
+  raw_text: 레몬주수 15g
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피가루 0.1g
+  role: sub
+steps:
+- text: 감자는 껍질을 벗긴 후 곱게 채썰어 식초를 살짝 탄 물에 담가 갈변을 방지한다.
+- text: 달걀흰자에 밀가루, 베이킹 파우더를 넣어 덩어리 지지 않게 푼다.
+- text: 마늘가루, 후춧가루를 넣어 잘 섞어 반죽을 만든다.
+- text: 썰어 둔 감자를 체에 받쳐 물기를 뺀 후 키친타올을 이용해 완전히 물기를 제거한 후 만들어 둔 반죽에 넣어 섞는다.
+- text: 팬에 식용유를 넣고 반죽을 부어 지름 6cm 정도로 둥글게 편 뒤 양면을 노릇하게 굽는다.
+- text: 체리, 사과, 청포도 등의 제철 과일을 설탕물에 졸여 팬케익에 곁들인다.

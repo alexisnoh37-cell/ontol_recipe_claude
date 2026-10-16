@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_871
+title: 지중해 소스를 곁들인 도미스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 871. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 도미 100g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.1g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 4g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 12g
+  role: sub
+- ingredient: wine
+  raw_text: 화이트와인 50g
+  role: sub
+- ingredient: null
+  raw_text: 파슬리다진것 1g
+  role: sub
+- ingredient: null
+  raw_text: 지중해소스
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 20g
+  role: sub
+- ingredient: null
+  raw_text: 올리브 10g
+  role: sub
+- ingredient: null
+  raw_text: 케이퍼 3g
+  role: sub
+- ingredient: null
+  raw_text: 양파다진것 5g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 2g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 15g
+  role: sub
+- ingredient: basil
+  raw_text: 바질 3g
+  role: sub
+steps:
+- text: 도미에 후춧가루와 밀가루를 묻혀 놓는다.
+- text: 토마토는 껍질을 벗겨 썰고 올리브는 0.8cm 주사위모양으로 썬다.
+- text: 팬에 식용유를 넣고 도미를 넣어 익히다가 화이트와인을 넣는다.
+- text: 소스 재료들과 물을 넣어 끓이면서 반으로 졸인다.
+- text: 도미는 건져내고 팬에 남은 소스에 다진 파슬리가루를 뿌린다.
+- text: 접시에 도미와 소스를 함께 곁들여 낸다.

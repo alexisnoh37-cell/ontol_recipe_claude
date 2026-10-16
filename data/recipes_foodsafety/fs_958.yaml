@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_958
+title: 누룽지 피자
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 958. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 잡곡밥흑미 검은콩 50g
+  role: sub
+- ingredient: mozzarella
+  raw_text: 피자치즈 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: null
+  raw_text: 청 피망 8g
+  role: sub
+- ingredient: null
+  raw_text: 홍 피망 8g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이 10g
+  role: sub
+- ingredient: ham
+  raw_text: 햄 5g
+  role: sub
+- ingredient: null
+  raw_text: 캔옥수수 10g
+  role: sub
+- ingredient: scallion
+  raw_text: 실파 5g
+  role: sub
+- ingredient: null
+  raw_text: 피자소스
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 2g
+  role: sub
+- ingredient: null
+  raw_text: 양파다진것 5g
+  role: sub
+- ingredient: null
+  raw_text: 쇠고기다진것 5g
+  role: sub
+- ingredient: ketchup
+  raw_text: 토마토케첩 8g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 3g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 적당량
+  role: sub
+steps:
+- text: 잡곡밥에 소량의 물을 넣고 밥알을 풀어준다.
+- text: 기름을 두르지 않은 팬에 1을 0.4cm두께로 노릇하게 양면을 굽는다.
+- text: 양파와 청, 홍피망, 햄은 적당한 크기로 썰고 캔 옥수수는 물기를 뺀다.
+- text: 냄비에 식용유를 두르고 다진 마늘과 다진 양파, 다진 소고기를 넣고 볶은 뒤 토마토 케첩과 물을 약간 넣어 졸이면서 설탕, 간장, 후춧가루로 간한다.
+- text: 누룽지에 4를 골고루 펴 바르고 그 위에 토핑 재료, 피자치즈, 송송 썬 실파를 뿌린다.
+- text: 5번을 예열된 오븐에 굽는다.

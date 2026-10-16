@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_942
+title: 야채빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 942. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 밀가루 30g
+  role: sub
+- ingredient: null
+  raw_text: 베이킹파우더 1g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 2g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 12g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 5g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: null
+  raw_text: 캔옥수수 10g
+  role: sub
+- ingredient: null
+  raw_text: 완두콩 10g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 10g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 밀가루와 베이킹파우더를 섞어 체에 내린다.
+- text: 녹인 버터에 달걀, 소금, 설탕을 넣고 1을 넣어 골고루 섞는다.
+- text: 당근, 양파는 0.5cm 주사위모양으로 썰어 데친다.
+- text: 옥수수, 완두콩을 물에 헹군다.
+- text: 2에 당근, 양파, 옥수수, 완두콩, 우유를 넣고 섞는다.
+- text: 모양 틀에 넣어 김이 오른 찜통에서 10분간 찐다.

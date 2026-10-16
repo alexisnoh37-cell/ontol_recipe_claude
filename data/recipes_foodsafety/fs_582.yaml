@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_582
+title: 해물아란치니
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 582. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: squid
+  raw_text: 오징어(100g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(3마리)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리(20g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(100g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/4개)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(20g)
+  role: sub
+steps:
+- text: 새우는 껍질을 벗겨 다진다.
+- text: 오징어는 썰어서 다진다.
+- text: 양파, 샐러리, 마늘은 다져 팬에 볶아 식힌다.
+- text: 토마토는 껍질을 벗겨 다진다.
+- text: 다진 토마토를 팬에 볶다가 다진 새우와 오징어, 밥을 넣어 볶고, 3번을 넣고 볶아 동그랗게 모양을 만든다
+- text: 동그란 밥에 레몬을 섞은 달걀노른자를 묻히고 빵가루 옷을 입혀 팬에 기름을 둘러 굴려가며 익힌 후 접시에 담고 어린잎을 올린다.

@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_912
+title: 대구 크림스튜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 912. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 양파다진것 10g
+  role: sub
+- ingredient: null
+  raw_text: 청피망다진것 10g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 2g
+  role: sub
+- ingredient: null
+  raw_text: 청고추다진것 2g
+  role: sub
+- ingredient: cod
+  raw_text: 대구살 35g
+  role: sub
+- ingredient: null
+  raw_text: 토마토콩카세 30g
+  role: sub
+- ingredient: peanut_butter
+  raw_text: 땅콩버터 1g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 13g
+  role: sub
+- ingredient: null
+  raw_text: 파프리카가루 1g
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우 20g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량
+  role: sub
+steps:
+- text: 양파, 청피망, 마늘, 고추는 다지고, 대구살은 굵직하게 썬다.
+- text: 토마토는 데친 뒤 껍질을 벗기고 씨를 제거해 과육만 썬다.
+- text: 기름을 두른 팬에 양파, 고추를 넣고 볶다가 마늘을 넣고 볶는다.
+- text: 생크림과 땅콩버터를 넣은 후 토마토, 파프리카, 새우 순서대로 넣어 끓인다.
+- text: 썰어둔 대구살을 넣는다.
+- text: 소금, 후추로 간을 한다.

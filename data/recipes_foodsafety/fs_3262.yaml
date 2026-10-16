@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3262
+title: 단호박 양고기볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3262. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 콜리플라워(50g)
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마(1개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(1개)
+  role: sub
+- ingredient: lamb
+  raw_text: 양고기(부채살, 250g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(7~8쪽)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(1개)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(5ts)
+  role: sub
+- ingredient: null
+  raw_text: 바질럽드(3Ts)
+  role: sub
+- ingredient: null
+  raw_text: 바질페스토(3ts)
+  role: sub
+- ingredient: mustard
+  raw_text: 홀그레인 머스터드(2ts)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(2ts)
+  role: sub
+steps:
+- text: 콜리플라워는 송이 부분만 떼어내고, 고구마와 양파는 한입 크기로 썬다.
+- text: 양고기는 한입 크기로 썰어 밑간한 뒤 15분간 재운다.
+- text: 재워둔 고기에 손질한 채소와 마늘을 넣어 고루 버무리고, 중간 불로 달군 팬에 올려 고구마가 약간 익을 때까지 볶는다.
+- text: 양념을 넣어 재료와 고루 섞는다.
+- text: 단호박은 전자레인지에 5분간 돌리고, 익으면 윗부분을 약간 잘라낸 뒤 씨를 제거하고, 양고기와 볶은 재료를 단호박 속에 채운다.
+- text: 찜기에 넣어 25분간 쪄낸 뒤 8등분하여 마무리한다.

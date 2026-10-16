@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_381
+title: 연어스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 381. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: salmon
+  raw_text: 연어 150g
+  role: sub
+- ingredient: null
+  raw_text: 건조다시마 사방 10cm 1장
+  role: sub
+- ingredient: null
+  raw_text: 잎녹차 5g
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리 15g
+  role: sub
+- ingredient: walnut
+  raw_text: 호두10g
+  role: sub
+- ingredient: null
+  raw_text: 귀리 20g
+  role: sub
+- ingredient: rice
+  raw_text: 쌀 20g
+  role: sub
+- ingredient: miso
+  raw_text: 미소된장 5g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: wine
+  raw_text: 화이트와인 15g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 50g
+  role: sub
+- ingredient: null
+  raw_text: 수제조미료 10g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 150g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 5g
+  role: sub
+steps:
+- text: 연어는 불려준 다시마에 싸주어 24시간 염지 시켜준다.
+- text: 잎 녹차는 물에 불려준다.
+- text: 뒤 수분을 빼주고 팬에 올려서 연어를 약불 에서 구워내 준다.
+- text: 브로콜리, 호두도 먹기 좋게 잘라준다.
+- text: 귀리와 쌀은 1시간정도 불려준다.
+- text: 닭 육수와 미소된장을 넣어 볶아주다가 불린 쌀을 넣어 볶아주어 리조또를 완성하고 접시에 리조또를 담고 구운 연어를 올려 완성한다.

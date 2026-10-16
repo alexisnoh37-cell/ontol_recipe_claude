@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_308
+title: 라면월남쌈튀김
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 308. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 라면(20g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(12g)
+  role: sub
+- ingredient: null
+  raw_text: 파인애플(15g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(10g)
+  role: sub
+- ingredient: beef
+  raw_text: 쇠고기(우둔살, 20g)
+  role: sub
+- ingredient: wine
+  raw_text: 레드와인(20g)
+  role: sub
+- ingredient: null
+  raw_text: 매실청(20g)
+  role: sub
+- ingredient: null
+  raw_text: 라이스페이퍼(8g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(30g)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(25g)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎채소(10g)
+  role: sub
+- ingredient: null
+  raw_text: 쇠고기 양념장 생강즙(1g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(15g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 양파(10g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 파(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(5g)
+  role: sub
+steps:
+- text: 라면을 살짝 익힌다.
+- text: 배와 파인애플을 한입 크기로 썰고, 파프리카는 깍둑 썬다.
+- text: 팬에 쇠고기 양념장과 파인애플을 넣어 끓이다가 채 썬 쇠고기를 넣는다.
+- text: 레드와인을 넣고 알코올을 날린 뒤 매실청을 넣고 조린다.
+- text: 라면과 파프리카, 배를 섞은 후 라이스페이퍼에 올려 만다.
+- text: 달걀물을 묻힌 후 빵가루를 입혀 튀긴 뒤 그릇에 어린잎채소와 함께 담아 조린 쇠고기를 곁들여 마무리 한다.

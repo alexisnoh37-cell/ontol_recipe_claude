@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3691
+title: 초코치즈크림케이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3691. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: cream_cheese
+  raw_text: 크림치즈
+  role: sub
+- ingredient: milk
+  raw_text: 우유 875ml
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 20ml
+  role: sub
+- ingredient: null
+  raw_text: 알룰로스① 56g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 1g
+  role: sub
+- ingredient: null
+  raw_text: '초코크림 : 아몬드가루 85g'
+  role: sub
+- ingredient: null
+  raw_text: 무가당 코코아가루① 20g
+  role: sub
+- ingredient: null
+  raw_text: 알룰로스② 70g
+  role: sub
+- ingredient: null
+  raw_text: 두유① 25ml
+  role: sub
+- ingredient: banana
+  raw_text: 바나나 175g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 105g
+  role: sub
+- ingredient: null
+  raw_text: 두유② 25ml
+  role: sub
+- ingredient: null
+  raw_text: 무가당 코코아가루② 45g
+  role: sub
+- ingredient: peanut_butter
+  raw_text: 땅콩버터 18g
+  role: sub
+steps:
+- text: 냄비에 우유를 넣고 중불로 끓이다 약한 불에서 식초를 넣어 젓는다. 면보로 유청을 거른 덩어리를 믹서에 넣고 알룰로스①, 소금을 넣고 곱게 갈아 크림치즈를 만든다.
+- text: 볼에 아몬드가루, 무가당 코코아가루①을 체 쳐서 넣고 알룰로스②, 두유①을 섞어 초코크림을 만든다.
+- text: 믹서에 바나나, 달걀, 두유②, 무가당 코코아가루②, 땅콩버터를 넣고 갈아 반죽을 만들어 종이컵 높이의 50% 정도 채운다.
+- text: 전자레인지에서 4~5분 동안 구워 시트를 만든다. 구운 시트는 가로로 3등분한다.
+- text: 크림치즈와 초코크림을 섞어 시트 위에 올린다.
+- text: 시트를 겹쳐 케이크를 만들고 무가당 코코아가루를 뿌려 마무리한다

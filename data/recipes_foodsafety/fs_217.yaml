@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_217
+title: 미역볶음밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 217. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 쌀(80g)
+  role: sub
+- ingredient: null
+  raw_text: 완두콩(10g)
+  role: sub
+- ingredient: chicken
+  raw_text: 닭고기(100g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(10g)
+  role: sub
+- ingredient: null
+  raw_text: 수삼(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(10g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 강황가루(3g)
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술(15g)
+  role: sub
+steps:
+- text: 쌀과 다시마를 넣고 쌀과 동량의 물을 부어 밥을 고슬고슬하게 짓는다.
+- text: 양파는 굵게 다지고, 쪽파와 고추는 송송 썰고, 오징어와 주꾸미는 먹기 좋은 크기로 썬다.
+- text: 달군 팬에 들기름을 두르고 다진 마늘을 볶아 향을 낸다.
+- text: 미역을 넣고 볶다가 손질해둔 오징어, 주꾸미, 새우살, 양파를 넣어 볶는다.
+- text: 밥을 넣고 소금을 넣어 볶다가 들깻가루를 넣어 볶는다.
+- text: 송송 썬 쪽파와 청양고추, 붉은 고추를 넣어 조금 더 볶아 마무리한다.

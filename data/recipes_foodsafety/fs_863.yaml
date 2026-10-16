@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_863
+title: 헝가리안 폭찹
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 863. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: pork_loin
+  raw_text: 돼지등심 100g
+  role: sub
+- ingredient: null
+  raw_text: 사워크림 30g
+  role: sub
+- ingredient: null
+  raw_text: 실파다진것 4g
+  role: sub
+- ingredient: null
+  raw_text: 파프리카가루 3g
+  role: sub
+- ingredient: null
+  raw_text: 머스터드 씨드 2.5g
+  role: sub
+- ingredient: null
+  raw_text: 코리앤더 씨드 1g
+  role: sub
+- ingredient: null
+  raw_text: 양파즙 13g
+  role: sub
+- ingredient: null
+  raw_text: 마늘가루 1g
+  role: sub
+steps:
+- text: 작은 불에 양념 재료를 넣고 섞어 절반은 돼지고기에 밑간한다.
+- text: 달라붙지 않는 팬을 중간불고 가열한다.
+- text: 양념한 돼지고기의 앞·뒷면을 익혀 고기의 중간이 핑크빛이 날 때까지 익히고 그릇에 옮겨담아 뚜껑을 덮어둔다.
+- text: 강한불에 팬을 놓고 물 1컵을 부어 팬 바닥에 남아 있는 성분들을 녹여 2분정도 끓인다.
+- text: 물이 1/4컵으로 줄어들면 불을 낮추고 사워크림을 넣고 거품기로 저으면서 끓지 않게 2~3분 간 조리한다.
+- text: 접시에 돼지고기 폭찹을 담고 스푼으로 소스를 위에 얹고 실파를 뿌려준다.

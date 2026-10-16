@@ -1,0 +1,51 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3271
+title: 해조비빔국수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3271. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: cucumber
+  raw_text: 오이(⅓개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(⅓개)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(빨강, 노랑 각 ½개)
+  role: sub
+- ingredient: null
+  raw_text: 도토리묵(250g)
+  role: sub
+- ingredient: null
+  raw_text: 해조국수(1팩=180g)
+  role: sub
+- ingredient: null
+  raw_text: 스테비아(0.3Ts)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(1Ts)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(0.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 스리라차소스(1Ts)
+  role: sub
+- ingredient: null
+  raw_text: 매실청(0.5Ts)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(1.5Ts)
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨(0.5Ts)
+  role: sub
+steps:
+- text: 오이, 양파, 파프리카는 같은 길이로 채 썰고, 도토리묵은 2~3cm 두께로 채 썬다.
+- text: 양파는 찬물에 5분간 담가 매운맛을 제거하고, 해조국수는 찬물에 헹궈 건진다.
+- text: 양념장을 만든다.
+- text: 그릇에 해조국수를 가운데 담고, 손질한 채소와 묵을 올린다.
+- text: 양념장을 곁들여 마무리한다.
