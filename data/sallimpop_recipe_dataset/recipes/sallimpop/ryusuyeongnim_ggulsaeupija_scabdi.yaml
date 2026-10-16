@@ -1,0 +1,67 @@
+id: ryusuyeongnim_ggulsaeupija_scabdi
+title: 류수영님 꿀새우피자
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 이거 안먹어 본 사람 없게 해주세요(류수영님 꿀새우피자)
+  video_url: https://www.youtube.com/watch?v=sCAbdIKQA18
+  published_at: '2024-01-18'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 버터
+  raw_text: 버터 40g
+  role: seasoning
+  optional: false
+  amount: 40
+  unit: g
+- name: 간마늘
+  raw_text: 간마늘 한스푼
+  role: main
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 또띠아
+  raw_text: 또띠아
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 큼지막한 새우
+  raw_text: 큼지막한 새우 8마리 / 새우 8마리 / 새우
+  role: sub
+  optional: false
+  amount: 8
+  unit: 마리
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 등쪽에 칼집한번 넣는다.
+  technique: null
+- text: 간마늘, 새우 넣는다. 5분 정도 카라멜라이징하면서 잘 익히고 새우와.
+  technique: null
+- text: 기름은 따로 담아주세요.
+  technique: null
+- text: 이 위에 또띠아를 올려 굽는다.
+  technique: 구이
+- text: 한번 뒤집어서 토마토 가위로 잘라주세요.
+  technique: null
+- text: 토마토 채즙도 같이 먹으려고 가위로 자르는거에요. 치즈 듬뿍 올려주고 마무리로 가는소금.
+  technique: null
+- text: 플레이팅하고 꿀 넉넉히 뿌려서 먹어보면.
+  technique: null

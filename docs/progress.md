@@ -637,6 +637,14 @@ ui-1은 고른 재료를 추천 엔진에 넣는 방식이라 사람의 의도(�
 - 주재료가 미매칭인 draft(예: 열무비빔냉면, 주재료가 냉면 제품)는 후보 생성 근거가 없어 누구에게도 추천되지 않는다(안전 문제는 아님).
 - 새 100개는 기본 설정(published만 제공)에서는 추천에 나오지 않는다. 그래프(`/graph?recipes=all`)와 `serve_draft_recipes` 설정에서만 보인다.
 
+## 부가 트랙 살림팝 레시피 뷰어 (2026-10-16)
+
+- 브랜치 `feature/sallimpop-recipe-viewer`(기준 `main` ae7014b — 살림팝 데이터셋이 들어 있는 브랜치가 없어 자취요리신 데이터셋과 같은 방식으로 main에서 분기).
+- `data/sallimpop_recipe_dataset/`: 살림팝 YouTube 레시피 169개(YAML, 전부 `status: draft`)와 index·ingredient_names·classification CSV, `validate.py`, README, REPORT. 전달받은 ZIP 내용을 그대로 복사했고 사실값·URL·ID·confidence·note·status는 바꾸지 않았다.
+- `data/sallimpop_recipe_viewer/`: 정적 웹 뷰어(`dist/`)와 `build_viewer.py`(`../sallimpop_recipe_dataset/recipes/sallimpop/*.yaml` → `dist/recipes-data.js`). 경로 조정 없이 그대로 동작한다.
+- 검증: `validate.py` 169개 통과, `build_viewer.py` 169개 생성(전달본과 바이트 동일), `node --check dist/app.js` 통과, 로컬 정적 서버에서 검색·분류·필터·정렬·더 보기·상세 창·체크리스트·모바일(375px) 확인.
+- 엔진·지식·DB와 연결하지 않은 독립 자료다. 추천 엔진 시드로 쓰려면 재료 정규 ID 매핑과 사람 검수가 먼저 필요하다.
+
 ## 사람 확인 필요
 
 - **(adhoc-1) 외부 레시피 분석 확인**: `/viz` "외부 레시피 분석"에서 예시 넣기 → 분석. 안전 관련 판정 테스트(possible·미매칭·concept 제외)를 `tests/api/`에 두었다. `tests/allergy/`로 옮겨 승인 대상으로 둘지 정한다.

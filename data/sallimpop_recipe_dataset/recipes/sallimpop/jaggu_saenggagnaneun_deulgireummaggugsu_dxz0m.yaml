@@ -1,0 +1,77 @@
+id: jaggu_saenggagnaneun_deulgireummaggugsu_dxz0m
+title: 자꾸 생각나는 들기름막국수
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: 2
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 자꾸 생각나는 들기름막국수
+  video_url: https://www.youtube.com/watch?v=-DxZ0MJDb0Q
+  published_at: '2025-08-12'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 막국수
+  raw_text: 막국수 2인분
+  role: main
+  optional: false
+  amount: 2
+  unit: 인분
+- name: 들깨가루
+  raw_text: 들깨가루 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 쯔유
+  raw_text: 쯔유 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 들기름
+  raw_text: 들기름 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 김가루
+  raw_text: 김가루 넉넉히 / 김가루
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- name: 상추
+  raw_text: 상추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 아니 저는
+  raw_text: 1인분 아니 저는 2인분
+  role: sub
+  optional: false
+  amount: 1
+  unit: 인분
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 1인분 아니 저는 2인분 끓는 물에 5분간 삶아 줄게요. 삶는 동안 소스 만들어볼게요.
+  technique: 끓이기
+- text: 넣고 잘 섞는다. 완성 된 막국수는 찬물에 3-4번 샤워시켜주고 소스에 넣고.
+  technique: 무침
+- text: 넣고 김가로 넉넉히 뿌린 후 같이 섞어서 먹어보면.
+  technique: 무침

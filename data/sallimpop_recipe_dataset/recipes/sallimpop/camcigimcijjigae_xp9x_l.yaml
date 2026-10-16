@@ -1,0 +1,97 @@
+id: camcigimcijjigae_xp9x_l
+title: 참치김치찌개
+cuisine: 한식
+difficulty: 2
+cook_time_min: 17
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 참치김치찌개 황금레시피
+  video_url: https://www.youtube.com/watch?v=Xp9x-lB_FBE
+  published_at: '2024-05-24'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 참치
+  raw_text: 참치 150g
+  role: main
+  optional: false
+  amount: 150
+  unit: g
+- name: 큰 감자
+  raw_text: 큰 감자 1개 / 감자 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 애호박
+  raw_text: 애호박 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 청양고추
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 고춧가루
+  raw_text: 고춧가루 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 국간장
+  raw_text: 국간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 코인육수
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 2
+  umami: 3
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 참치김치찌개 황금레시피🥰🥰 이렇게만 끓이면.
+  technique: 끓이기
+- text: 썰어줄게요. 칼칼한 맛을 위해 청양고추 2개도 썰고 두부 한모도 한입크기로 잘라주세요.
+  technique: null
+- text: 준비한 냄비에 참치 기름 부은 후 김치 넣고 중불에 3분정도 볶아줄게요. 여기에 고춧가루.
+  technique: 볶음
+- text: 3스푼, 고추장 반스푼 넣고 1분 정도만 더 볶는다. 물 1L 부은 후 멸치액젓 1스푼.
+  technique: 볶음
+- text: 국간장 1스푼, 코인육수 2알 넣어줄게요. 물이 끓기 시작하면 참치, 감자, 애호박 넣은 후.
+  technique: 끓이기
+- text: 뚜껑닫고 10분간 푹 끓여줄게요. 마무리로 청양고추 2개 두부 한모 넣은 후 3분.
+  technique: 끓이기
+- text: 더 끓여주면 완성이에요.
+  technique: 끓이기

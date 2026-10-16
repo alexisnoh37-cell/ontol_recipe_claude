@@ -1,0 +1,93 @@
+id: maneulpogtandwaejijjigae_aq_g_8
+title: 마늘폭탄돼지찌개
+cuisine: 한식
+difficulty: 1
+cook_time_min: 10
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 마늘폭탄돼지찌개
+  video_url: https://www.youtube.com/watch?v=Aq_g-89tjso
+  published_at: '2026-06-30'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 돼지고기 앞다리살
+  raw_text: 돼지고기 앞다리살 300g / 앞다리살 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- name: 마늘
+  raw_text: 다진마늘 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 애호박
+  raw_text: 애호박 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 양파
+  raw_text: 양파 반쪽 / 양파
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 쪽
+- name: 대파
+  raw_text: 대파 반쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 쪽
+- name: 국간장
+  raw_text: 국간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 맛술
+  raw_text: 맛술 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 가루육수
+  raw_text: 가루육수 1포
+  role: sub
+  optional: false
+  amount: 1
+  unit: 포
+- name: 고춧가루
+  raw_text: 고춧가루 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 마늘 듬뿍 넣고 돼지찌개 끓이잖아요? 풍미가 찌개요리는 대부분 재료 넣고 끓이기만 하면 되는.
+  technique: 끓이기
+- text: 오늘은 마늘 듬뿍 넣고 돼지찌개 어떠세요.
+  technique: null

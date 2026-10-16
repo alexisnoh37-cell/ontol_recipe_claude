@@ -1,0 +1,95 @@
+id: ggocgedoenjangjjigae_tfywy2
+title: 꽃게된장찌개
+cuisine: 한식
+difficulty: 2
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 꽃게된장찌개
+  video_url: https://www.youtube.com/watch?v=tFywy2aucZo
+  published_at: '2025-09-17'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 꽃게
+  raw_text: 꽃게 3마리 / 꽃게
+  role: main
+  optional: false
+  amount: 3
+  unit: 마리
+- name: 양파
+  raw_text: 양파 반개 / 양파 반쪽
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 대파
+  raw_text: 대파 반쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 쪽
+- name: 청양고추
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 된장
+  raw_text: 된장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 코인육수
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- name: 소고기 다시다
+  raw_text: 소고기 다시다 반스푼
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 다시다
+  raw_text: 다시다 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 꽃게된장찌개 푹 졸여서 먹어보면🤔🤔 졸인 국물과 채소 밥에 슥슥 비비고.
+  technique: 조림
+- text: 꽃게 3마리는 손질해서 먹기 좋은 사이즈로 잘라줄게요. 냄비에 물 700ml 넣고 물이.
+  technique: null
+- text: 끓으면 애호박 1/3개, 양파 반쪽 넣는다.
+  technique: 끓이기
+- text: 코인육수 2알, 소고기 다시다 반스푼 넣고 5분간 끓여주다가 꽃게 넣어 줄게요.
+  technique: 끓이기
+- text: 이대로 5분 더 끓여주고 마무리 대파 반쪽, 청양고추 2개 넣어 칼칼 한 맛 올려준 다음.
+  technique: 끓이기
+- text: 5분만 더 졸여조면 완성입니다.
+  technique: 조림

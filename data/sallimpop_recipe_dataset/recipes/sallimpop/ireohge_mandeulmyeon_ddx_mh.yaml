@@ -1,0 +1,65 @@
+id: ireohge_mandeulmyeon_ddx_mh
+title: 이렇게 만들면
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 새우볶음밥 이렇게 만들면 GOOD :)
+  video_url: https://www.youtube.com/watch?v=DDx_mh7PCsg
+  published_at: '2024-02-21'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 새우
+  raw_text: 새우 5마리 / 새우
+  role: main
+  optional: false
+  amount: 5
+  unit: 마리
+- name: 계란
+  raw_text: 계란2알 / 계란
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- name: 굴소스
+  raw_text: 굴소스 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 대파
+  raw_text: 대파 반쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 쪽
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 해 준 새우 계란 볶음밥 순식간에 갈라서 얇게 자른다 새우도 빨리.
+  technique: null
+- text: 익혀야 하니 잘게 썰어 줄게요 30초간 익혀 줄게요 이때 굴소스 한.
+  technique: null
+- text: 스푼 멸치 액젓 두 스푼 넣어서 파 넣어 줄게요 잘 섞어주고 밥 양쪽으로.
+  technique: 무침

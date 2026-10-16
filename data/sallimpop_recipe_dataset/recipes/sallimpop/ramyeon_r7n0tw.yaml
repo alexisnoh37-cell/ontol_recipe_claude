@@ -1,0 +1,89 @@
+id: ramyeon_r7n0tw
+title: 라면
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 라면은 이렇게 끓여야
+  video_url: https://www.youtube.com/watch?v=r7n0tWVh9E0
+  published_at: '2025-06-18'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 신라면
+  raw_text: 신라면 1개
+  role: main
+  optional: false
+  amount: 1
+  unit: 개
+- name: 올리브유
+  raw_text: 올리브유 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 양파
+  raw_text: 양파 1/4개
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 개
+- name: 마늘
+  raw_text: 다진마늘 1스푼 / 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 굴소스
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 파란부분 올리브유
+  raw_text: 파란부분 올리브유 5스푼
+  role: sub
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 만두 소
+  raw_text: 만두 소 3개 / 만두 3개
+  role: sub
+  optional: false
+  amount: 3
+  unit: 개
+- name: 라면스프
+  raw_text: 라면스프 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 신라면 1개 면부터 삶아주고 이때 만두 3개도 같이 삶아 줄게요. 파기름이 중요해서 파.
+  technique: 끓이기
+- text: 파란부분 올리브유 5스푼 넣고 중불에 넣어서 잘 섞는다. 면사리 올리고 양파.
+  technique: 무침
+- text: 소스 부은 후 옥수수 콘 좀 올려주면 더.
+  technique: null

@@ -1,0 +1,103 @@
+id: jeyugboggeum_awebqw
+title: 제육볶음
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 제육볶음 치트키
+  video_url: https://www.youtube.com/watch?v=AwEBqwlBxB8
+  published_at: '2025-03-18'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 돼지앞다리살
+  raw_text: 돼지앞다리살 500g
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- name: 대파
+  raw_text: 대파 1쪽 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 쪽
+- name: 양파
+  raw_text: 양파 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 갈배음료
+  raw_text: 갈배음료 1캔
+  role: sub
+  optional: false
+  amount: 1
+  unit: 캔
+- name: 설탕
+  raw_text: 설탕 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 간장
+  raw_text: 간장 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 듬뿍 3스푼 / 고추장
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 마늘
+  raw_text: 다진마늘 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 식초
+  raw_text: 식초 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 참기름
+  raw_text: 참기름 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 돼지고기 앞다리살
+  raw_text: 돼지고기 앞다리살 500g / 앞다리살 500g
+  role: sub
+  optional: false
+  amount: 500
+  unit: g
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 제육볶음은 소울푸드죠 :) 어슷썰어줄게요. 양파 1개도 반으로 갈라.
+  technique: null
+- text: 잘게 자른다. 이제 준비한고기 넣고 참기름 1스푼 넣고 이 위에 킥인 갈아만든 배.
+  technique: null
+- text: 1캔 부어준 후 양념을 잘 섞는다.
+  technique: 무침
+- text: 볶아주고 야채 넣은 후 2분만 더 볶아주면.
+  technique: 볶음

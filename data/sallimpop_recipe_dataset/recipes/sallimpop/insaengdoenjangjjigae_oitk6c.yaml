@@ -1,0 +1,105 @@
+id: insaengdoenjangjjigae_oitk6c
+title: 인생된장찌개
+cuisine: 한식
+difficulty: 2
+cook_time_min: 13
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 인생된장찌개
+  video_url: https://www.youtube.com/watch?v=OitK6C4uH4Y
+  published_at: '2025-01-08'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 두부
+  raw_text: 두부 반모
+  role: main
+  optional: false
+  amount: 0.5
+  unit: 모
+- name: 애호박
+  raw_text: 애호박 1/5 개
+  role: sub
+  optional: false
+  amount: 0.2
+  unit: 개
+- name: 양파
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 감자 작은거
+  raw_text: 감자 작은거 한개 / 작은거 한개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 청양고추
+  raw_text: 청양고추 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 된장
+  raw_text: 된장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 소고기다시다
+  raw_text: 소고기다시다 반스푼
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 두르고 된장
+  raw_text: 2스푼 두르고 된장 1스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 다시다
+  raw_text: 다시다 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 된장찌개 하나만 잘 끓여도 🥰🥰 부채꼴 모양으로 썰어줄게요. 양파.
+  technique: 끓이기
+- text: 어슷자른다. 준비한 냄비에 올리브유 고춧가루 반스푼 넣고 잘 섞는다.
+  technique: 무침
+- text: 양파, 감자 넣고 코인육수 2알, 소고기 다시다 반스푼 넣는다. 이대로 감자가.
+  technique: null
+- text: 익을때까지 중불에 10분간 끓여주시면.
+  technique: 끓이기
+- text: 됩니다. 마무리로 청양고추 넣고 3분간 더 끓여주면 칼칼하면서 구수한 인생된장찌개.
+  technique: 끓이기

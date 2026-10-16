@@ -1,0 +1,89 @@
+id: usamgyeobdoenjangsulbab_lchbmk
+title: 우삼겹된장술밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 8
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 우삼겹된장술밥
+  video_url: https://www.youtube.com/watch?v=LcHbmKEcVaA
+  published_at: '2025-12-10'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 우삼겹
+  raw_text: 우삼겹 100g
+  role: main
+  optional: false
+  amount: 100
+  unit: g
+- name: 양파
+  raw_text: 양파반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 대파
+  raw_text: 대파 반쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 쪽
+- name: 청양고추
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 된장
+  raw_text: 된장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 소고기다시다
+  raw_text: 소고기다시다 반스푼
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 먼저 익히면서 우상겹에 있는 기름을 한 스푼, 양념 고기랑 살짝 섞어.
+  technique: 무침
+- text: 놓은 다음에 여기에 밥 한 공기 넣어 맛이 진해. 그냥 이렇게 섞어 줘.
+  technique: 무침
+- text: 끓이기만 하면 끝이야. 물 600 넣어 주고. 고추장이나 된장을.
+  technique: 끓이기
+- text: 넣잖아. 여기서 지금 부족한게 뭐야.
+  technique: null
+- text: 반스푼만 넣어 줘. 된장에는 조미를 >> 8분 정도 끓이기만 하면 살짝 이제.
+  technique: 끓이기
+- text: 600 넣은 거야. 일부러 꾸덕하게만 먹으려면 물 한 400만 넣어도.
+  technique: null

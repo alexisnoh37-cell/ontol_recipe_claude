@@ -1,0 +1,95 @@
+id: gguuuudeoghan_keurimpaseuta_y2lcm0
+title: 꾸우우우덕한 크림파스타
+cuisine: 양식
+difficulty: 2
+cook_time_min: 22
+servings: 1
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 꾸우우우덕한 크림파스타
+  video_url: https://www.youtube.com/watch?v=y2lCM0XJX4k
+  published_at: '2025-01-31'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 파스타면
+  raw_text: 파스타면 1인분 / 파스타면
+  role: main
+  optional: false
+  amount: 1
+  unit: 인분
+- name: 새우
+  raw_text: 새우 7마리 / 새우
+  role: sub
+  optional: false
+  amount: 7
+  unit: 마리
+- name: 버터
+  raw_text: 버터 20g
+  role: seasoning
+  optional: false
+  amount: 20
+  unit: g
+- name: 마늘
+  raw_text: 마늘 5쪽 / 마늘
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 쪽
+- name: 청양고추
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 체다 치즈
+  raw_text: 체다치즈 2장
+  role: sub
+  optional: false
+  amount: 2
+  unit: 장
+- name: 코인육수
+  raw_text: 코인육수 1알
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+- name: 우유
+  raw_text: 우유 400ml
+  role: sub
+  optional: false
+  amount: 400
+  unit: ml
+- name: 토핑으로 사용할 쪽파
+  raw_text: 토핑으로 사용할 쪽파 3쪽 / 쪽파 3쪽 / 쪽파
+  role: sub
+  optional: false
+  amount: 3
+  unit: 쪽
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 코스트코에서 사온 냉동새우 꼬리껍질 마늘 5쪽은 얇게 편 썰어주고 마지막.
+  technique: null
+- text: 썰어줄게요.느끼함 방지 청양고추 2개도 어슷 썰어줄게요. 중약불로.
+  technique: null
+- text: 예열한 프라이팬에 버터 20g 넣고 새우, 마늘 넣은 후 2분간 잘 익혀줄게요.
+  technique: null
+- text: 2분 후 익힌 새우와 마늘은 옆에 잠시 부어주세요. 끓기 시작하면 파스타면.
+  technique: 끓이기
+- text: 1인분 넣고 감칠맛을 올려줄 코인육수 1알도 넣어줄게요. 이대로 9분간 가끔.
+  technique: null
+- text: 저어가며 끓여주고 9분 후 체다치즈 2장, 미리 준비한 새우, 마늘, 청양고추 넣어서.
+  technique: 끓이기

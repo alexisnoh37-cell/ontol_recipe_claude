@@ -1,0 +1,87 @@
+id: dalggomtang_cyure2
+title: 닭곰탕
+cuisine: 한식
+difficulty: 3
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 초간단 닭곰탕
+  video_url: https://www.youtube.com/watch?v=CyURe2GsRDI
+  published_at: '2024-07-30'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 닭다리살
+  raw_text: 닭다리살 700g
+  role: main
+  optional: false
+  amount: 700
+  unit: g
+- name: 대파
+  raw_text: 대파 1쪽 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 쪽
+- name: 마늘
+  raw_text: 다진마늘 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 코인육수
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- name: 국간장
+  raw_text: 국간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 치킨스톡
+  raw_text: 치킨스톡 반 스푼 / 치킨스톡 1스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 추가로 팁이 있다면 닭다리살 반은 껍질을 제거한다. 700g 다 끓이니 기름이 많은 느낌이여서.
+  technique: 끓이기
+- text: 추가해가며 끓이시면 돼요. 🤗🤗 큼지막하게 자른다. 마늘 15쪽은 잘게.
+  technique: 끓이기
+- text: 간단하죠? 물 1500ml 냄비에 넣고 끓인다.
+  technique: 끓이기
+- text: 물을 많이 넣는 이유는 육수가 넉넉해야 몇번 물이 끓으면 닭다리살 다 넣어주고 대파.
+  technique: 끓이기
+- text: 마늘도 넣는다. 여기에 코인육수 2알, 넣어줄게요. 불순물 나오는거 있으면 걷어주고.
+  technique: null
+- text: 더 이상 안나오면 뚜껑닫고 15분간 닭껍질에서 기름이 충분히 나올때까지 끓여줄게요.
+  technique: 끓이기
+- text: 찢어주세요. 원하는 사이즈의 뚝배기에 담아 닭다리살 넣고 육수 부은 후 와르르 끓여주고.
+  technique: 끓이기
+- text: 취향껏 팽이버섯, 대파 잔뜩 넣은 후 후추툭툭 뿌려서 먹으면 집에서도 훌륭한 닭곰탕 만들 수.
+  technique: null

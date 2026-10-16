@@ -1,0 +1,91 @@
+id: maneulbab_moninggeulrori_7x2rzp
+title: 마늘밥 + 모닝글로리
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 마늘밥 + 모닝글로리
+  video_url: https://www.youtube.com/watch?v=7X2Rzp7iw18
+  published_at: '2024-03-01'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 마늘
+  raw_text: 마늘 10개 / 마늘 4개
+  role: seasoning
+  optional: false
+  amount: 10
+  unit: 개
+- name: 공심채
+  raw_text: 공심채 150g
+  role: main
+  optional: false
+  amount: 150
+  unit: g
+- name: 페페론치노
+  raw_text: 페페론치노 5개
+  role: sub
+  optional: false
+  amount: 5
+  unit: 개
+- name: 올리브오일
+  raw_text: 올리브오일 5스푼
+  role: sub
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 된장
+  raw_text: 된장 반 스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 굴소스
+  raw_text: 굴소스 1스푼 / 굴소스 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 볶을때 단단
+  raw_text: 볶을때 단단한 줄
+  role: sub
+  optional: false
+  amount: 1
+  unit: 줄
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 쪽파 2뿌리도 얇게 썰어줄게요. 색이 갈색으로 변하면 쪽파 넣고 멸치액젓.
+  technique: null
+- text: 2스푼 넣어줄게요. 재료 잘 섞어주고 밥 한공기 넣어서 잘 볶아주면 동남아식.
+  technique: 볶음
+- text: 마늘볶음밥은 완성이에요. 모닝글로리도 만들어볼게요. 잘 씻은 볶을때 단단한 줄기 먼저 볶고 그 다음.
+  technique: 볶음
+- text: 중간줄기 그 다음 가는 잎부분 넣어서 볶아야 일정한 식감을 얻을 수 있어요.
+  technique: 볶음
+- text: 페페론치노 5개 부셔서 넣고 중약불로 굴소스 한스푼 물 2스푼 넣고 잘 섞는다.
+  technique: 무침
+- text: 공심채 굵은 줄기 먼저 볶고 1분뒤 가는 잎 부분 넣고 소스 부어줄게요.
+  technique: 볶음
+- text: 강불에 빠르게 30초 정도 볶으면 완성이에요.
+  technique: 볶음

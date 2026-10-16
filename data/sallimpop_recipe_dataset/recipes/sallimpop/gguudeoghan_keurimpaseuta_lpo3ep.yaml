@@ -1,0 +1,95 @@
+id: gguudeoghan_keurimpaseuta_lpo3ep
+title: 꾸우덕한 크림파스타
+cuisine: 양식
+difficulty: 2
+cook_time_min: 18
+servings: 1
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 꾸우덕한 크림파스타
+  video_url: https://www.youtube.com/watch?v=lPo3EpczGBs
+  published_at: '2024-02-02'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 파스타면
+  raw_text: 파스타면 1인분 / 파스타 면 1인분 / 파스타면
+  role: main
+  optional: false
+  amount: 1
+  unit: 인분
+- name: 새우
+  raw_text: 새우 7마리 / 새우
+  role: sub
+  optional: false
+  amount: 7
+  unit: 마리
+- name: 버터
+  raw_text: 버터 20g
+  role: seasoning
+  optional: false
+  amount: 20
+  unit: g
+- name: 마늘
+  raw_text: 마늘 5쪽 / 마늘
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 쪽
+- name: 청양고추
+  raw_text: 청양고추 1개 / 청양고추 한개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 느타리버섯
+  raw_text: 느타리버섯
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 체다 치즈
+  raw_text: 체다치즈2장 / 체다치즈 2장
+  role: sub
+  optional: false
+  amount: 2
+  unit: 장
+- name: 코인육수
+  raw_text: 코인육수 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 우유
+  raw_text: 우유 300ml
+  role: sub
+  optional: false
+  amount: 300
+  unit: ml
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 넓은 면이여서 12분간 삶아 줄게요. 면을 삶는 동안 냉동새우 잘 해동해서.
+  technique: 끓이기
+- text: 프라이팬에 버터 20g넣고 넣고 색이 날때까지 잘 볶는다.
+  technique: 볶음
+- text: 우유 300ml, 물 100ml 넣고 끓인다.
+  technique: 끓이기
+- text: 코인육수 한알 넣어줄게요. 5분후 쯤 어느 정도 졸아들면.
+  technique: 조림
+- text: 체다치즈 2장 넣고 나머지 재료 넣고 1분간 끓여주시면 되요. 여기에 완성 된 면 넣고 면수 5스푼.
+  technique: 끓이기
+- text: 정도 넣고 잠깐 졸여줄게요.
+  technique: 조림

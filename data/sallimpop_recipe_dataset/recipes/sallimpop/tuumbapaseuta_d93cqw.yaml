@@ -1,0 +1,121 @@
+id: tuumbapaseuta_d93cqw
+title: 투움바파스타
+cuisine: 양식
+difficulty: 1
+cook_time_min: 8
+servings: 2
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 투움바파스타 좋아하세요?
+  video_url: https://www.youtube.com/watch?v=d93CqWo4zOE
+  published_at: '2026-03-31'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 파스타면
+  raw_text: 파스타면 2인분 / 파스타면
+  role: main
+  optional: false
+  amount: 2
+  unit: 인분
+- name: 새우
+  raw_text: 새우 10마리 / 새우
+  role: sub
+  optional: false
+  amount: 10
+  unit: 마리
+- name: 고춧가루
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 베이컨
+  raw_text: 베이컨 2줄
+  role: sub
+  optional: false
+  amount: 2
+  unit: 줄
+- name: 양파
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 마늘
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 체다 치즈
+  raw_text: 체다치즈 2장
+  role: sub
+  optional: false
+  amount: 2
+  unit: 장
+- name: 생크림
+  raw_text: 생크림 300ml
+  role: sub
+  optional: false
+  amount: 300
+  unit: ml
+- name: 우유
+  raw_text: 우유 200ml
+  role: sub
+  optional: false
+  amount: 200
+  unit: ml
+- name: 굴소스
+  raw_text: 굴소스 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 치킨스톡 가루
+  raw_text: 치킨스톡 가루 반스푼
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 치킨스톡
+  raw_text: 치킨스톡
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 6대 4 비율로 섞어서 불스, 진간장, 치킨스토로 넣어 잘 섞어주고.
+  technique: 무침
+- text: 마늘 볶아 주다가 베이컨 먹고 새우는 코팅 같이 볶아 줄게요. 입사가 색이.
+  technique: 볶음
+- text: 끓으면 미리 8분간 삶은 파스타면만 넣어서 조여 주다가 꾸덕해지면 세워.
+  technique: 끓이기
+- text: 마무리 크러시드 페퍼 후추 툭툭 뿌려 잘 섞어서 먹어 보면 와 이건 진짜.
+  technique: 무침

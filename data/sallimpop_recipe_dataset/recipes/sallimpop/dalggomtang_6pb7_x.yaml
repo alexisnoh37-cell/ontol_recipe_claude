@@ -1,0 +1,75 @@
+id: dalggomtang_6pb7_x
+title: 닭곰탕
+cuisine: 한식
+difficulty: 3
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 이제 사골 말고 '닭다리살'로 '닭곰탕' 끓이고 여행 떠나세요!
+  video_url: https://www.youtube.com/watch?v=6Pb7-X58PVM
+  published_at: '2024-10-17'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 닭다리살
+  raw_text: 닭다리살 700g
+  role: main
+  optional: false
+  amount: 700
+  unit: g
+- name: 대파
+  raw_text: 대파 1쪽 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 쪽
+- name: 코인육수
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- name: 국간장
+  raw_text: 국간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 가시기 전에 항상 곰탕을 끓여 놓고 다 껍질들이 붙어 있죠 이쪽에 350.
+  technique: 끓이기
+- text: 은 그대로 두고 350g이 닭 껍질을 끓였을 때 너무 느끼한다 껍질을.
+  technique: 끓이기
+- text: 썰어주시면 돼요 그리고이 요리에는 자 이제 물이 끓습니다 물이 끓으면.
+  technique: 끓이기
+- text: 닭다리살 넣어 주고요 여기에 육수용 대파 넣어 주겠습니다 그리고 마늘 넣어.
+  technique: null
+- text: 줄게요 여기에서 바로 조미를 넣어 넣어 줄게요 그다음에 국간장 한 스푼.
+  technique: null
+- text: 두 스푼 넣어주고요 위에서 치킨 스톡을 저는 한 스푼을 넣었는데 좀.
+  technique: null
+- text: 반 스푼만 넣어 주셔도 돼요 저 좀 넣겠습니다 그다음에 하다 보면 이런.
+  technique: null
+- text: 15분 동안 푹 삶아 너무 뜨겁잖아요 한김 식히고 찢어 헹구신 다음에 찢어 주셔도 마친다.
+  technique: 끓이기

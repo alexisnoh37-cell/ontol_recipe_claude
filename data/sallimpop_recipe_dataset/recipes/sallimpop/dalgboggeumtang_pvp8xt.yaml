@@ -1,0 +1,119 @@
+id: dalgboggeumtang_pvp8xt
+title: 닭볶음탕
+cuisine: 일식
+difficulty: 2
+cook_time_min: 70
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 초간단 닭볶음탕
+  video_url: https://www.youtube.com/watch?v=PVp8XtdLgaU
+  published_at: '2024-10-31'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 닭고기
+  raw_text: 닭볶음탕용 닭 1마리
+  role: main
+  optional: false
+  amount: 1
+  unit: 마리
+- name: 감자
+  raw_text: 감자 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 대파
+  raw_text: 대파 1쪽 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 쪽
+- name: 청양고추
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 고추장
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 된장
+  raw_text: 된장 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 국간장
+  raw_text: 국간장 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 참치액
+  raw_text: 참치액 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 맛술
+  raw_text: 맛술 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 카레가루
+  raw_text: 카레가루 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 마늘
+  raw_text: 다진마늘 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 간편하게 닭볶음탕 만드는 방법입니다 🤗 닭볶음탕용 닭 1마리 닭볶음탕용 닭 1마리 볼에 넣고 고추장 1스푼.
+  technique: null
+- text: 카레가루 1스푼 , 다진마늘 2스푼 넣고 양념이 잘 묻을 수 있도록 충분히 섞는다. 이대로.
+  technique: 무침
+- text: 상온에 10분간 두고 재료 손질 할게요. 청양고추 2개는 얇게 어슷 썰어줄게요.
+  technique: null
+- text: 준비한 냄비에 양념된 닭 넣고 물 600ml 부어주세요. 물이 끓기 시작하고 불순물이.
+  technique: 끓이기
+- text: 대파 넣고 30분간 푹 끓여주시면 됩니다.
+  technique: 끓이기
+- text: 30분 후 마무리로 청양고추 넣어주면 완성이에요.
+  technique: null
