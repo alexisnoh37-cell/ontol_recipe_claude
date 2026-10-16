@@ -23,13 +23,19 @@ MANUAL_COUNT = 20
 # 재료정보에서 재료가 아니라 묶음 머리말로 쓰이는 단어(정확히 일치할 때만 버린다)
 HEADER_WORDS = frozenset(normalize_term(w) for w in (
     "재료", "주재료", "부재료", "필수재료", "선택재료", "기본재료", "고명", "고명재료", "양념", "양념장", "양념재료",
-    "소스", "소스재료", "드레싱", "육수", "반죽", "속재료", "토핑", "곁들임", "밑간", "절임물", "조림장",
+    "소스", "소스재료", "드레싱", "육수", "반죽", "속재료", "토핑", "곁들임", "밑간", "절임물", "조림장", "소스소개",
 ))
 _BULLET = re.compile(r"^[\s●•·○◎■□◆◇▶▷★☆※*\-]+")
 _BRACKET_HEAD = re.compile(r"^[\[［【<〈(（]([^\]］】>〉)）]{1,15})[\]］】>〉)）]\s*")
 # 양 표기가 시작되는 지점: 숫자, 여는 괄호, 분수 문자, 양 단어
 _AMOUNT_START = re.compile(r"[0-9０-９½⅓⅔¼¾(（]|약간|적당량|적당히|조금|소량|한줌|한꼬집")
 _PAREN = re.compile(r"[(（][^)）]*[)）]")
+_HTML_TAG = re.compile(r"<\s*/?\s*[a-zA-Z]+[^>]{0,10}>")
+_MID_BRACKET = re.compile(r"\[([^\[\]\n]{1,15})\]")
+_DASH_SEP = re.compile(r"(?:^|\s)-\s+", re.MULTILINE)  # 공백 사이 하이픈만(재료 이름 속 "-"는 그대로)
+_SERVING = re.compile(r"^\d+(?:~\d+)?인분(?:기준|분량)?$")  # "2인분", "2인분 기준"(정규화 후)
+# 재료로 적지 않는 것(data/recipes/README.md "물은 재료로 적지 않는다"). 이름이 정확히 일치할 때만
+NOT_INGREDIENTS = frozenset(normalize_term(w) for w in ("물",))
 _STEP_NO = re.compile(r"^\s*\d+\s*[.)]\s*")
 _STEP_TAIL = re.compile(r"[a-zA-Z]\s*$")
 
@@ -71,26 +77,44 @@ def split_outside_parens(text: str) -> list[str]:
     return [s.strip() for s in out if s.strip()]
 
 
+def _is_label(norm: str, title_norm: str) -> bool:
+    """버려도 되는 묶음 머리말: 고정 단어, 레시피 이름, 분량("2인분 기준"), "…재료"(예: 추가 재료)."""
+    return (not norm or norm in HEADER_WORDS or norm == title_norm
+            or bool(_SERVING.match(norm)) or norm.endswith("재료"))
+
+
 def ingredient_segments(parts: str, title: str) -> list[str]:
-    """재료정보 원문 → 재료 표기 목록(원문 순서). 레시피 이름 줄과 머리말만 버린다."""
+    """재료정보 원문 → 재료 표기 목록(원문 순서).
+
+    버리는 것은 머리말(_is_label)과 물뿐이다. 머리말이 아닌 소제목("●두부구이 : 두부 70g"의 "두부구이",
+    "[소스] …"의 "소스" 외 값)은 버리지 않고 따로 한 항목으로 남긴다(미매칭으로 검수표에 오른다).
+    """
     title_norm = normalize_term(title)
     out: list[str] = []
-    for raw_line in parts.replace("\r", "\n").split("\n"):
+    text = _HTML_TAG.sub("\n", parts).replace("\r", "\n")
+    text = _MID_BRACKET.sub(r"\n[\1]", text)  # "… 9g [소스소개] 소스" → 대괄호부터 새 줄
+    text = _DASH_SEP.sub("\n", text).replace(">", ":").replace("＞", ":")  # " - 양념장 : …", "크림치즈 > 우유"
+    for raw_line in text.split("\n"):
         line = _BULLET.sub("", raw_line).strip()
+        labels: list[str] = []
         if m := _BRACKET_HEAD.match(line):
-            if normalize_term(m.group(1)) in HEADER_WORDS or not line[m.end():].strip():
-                line = line[m.end():]
+            labels.append(m.group(1).strip())
+            line = _BULLET.sub("", line[m.end():]).strip()
         if ":" in line or "：" in line:
             head, _, rest = line.replace("：", ":").partition(":")
-            # "양념장 : 간장 1큰술", "재료(2인분) :" → 머리말을 뗀다. 머리말이 아니면("땅콩: 10g") 줄을 그대로 둔다
-            head_norm = normalize_term(_PAREN.sub("", head))
-            if not head_norm or head_norm in HEADER_WORDS or head_norm == title_norm:
+            rest = rest.strip()
+            if not rest:
+                line = head
+            elif _AMOUNT_START.match(rest) is None:
+                # "양념장 : 간장 1큰술", "두부구이 : 두부 70g" → 소제목과 재료를 나눈다.
+                # "땅콩: 10g"처럼 오른쪽이 양으로 시작하면 한 재료이므로 그대로 둔다
+                labels.append(_PAREN.sub("", head).strip())
                 line = rest
-        line = line.strip()
-        norm = normalize_term(line)
-        if not norm or norm == title_norm or norm in HEADER_WORDS:
-            continue
-        out.extend(split_outside_parens(line))
+        for item in labels + split_outside_parens(line.strip()):
+            norm = normalize_term(item)
+            if _is_label(norm, title_norm) or normalize_term(ingredient_name(item)) in NOT_INGREDIENTS:
+                continue
+            out.append(item)
     return out
 
 

@@ -80,7 +80,23 @@ def test_non_header_colon_line_is_kept_whole():
 
 def test_short_unknown_line_is_not_dropped():
     """머리말 목록에 없는 짧은 줄(예: 재료 이름만 있는 줄)은 재료로 남는다."""
-    assert ingredient_segments("고명\n새우", "예") == ["새우"]
+    assert ingredient_segments("고명\n땅콩", "예") == ["땅콩"]
+
+
+def test_html_serving_and_bracket_headers_are_removed():
+    parts = "2인분 기준<br>\n• [추가 재료] 두부(100g), 부추(10g)<br />\n[ 1인분 ] 소금 약간"
+    assert ingredient_segments(parts, "예") == ["두부(100g)", "부추(10g)", "소금 약간"]
+
+
+def test_sub_dish_label_is_kept_as_its_own_line():
+    """"●두부구이 : 두부 70g"의 "두부구이"는 머리말 목록에 없으므로 버리지 않고 따로 남긴다(정보 손실 없음)."""
+    assert ingredient_segments("●두부구이 : 두부 70g, 전분 10g", "예") == ["두부구이", "두부 70g", "전분 10g"]
+    assert ingredient_segments("[땅콩소스] 간장 1큰술", "예") == ["땅콩소스", "간장 1큰술"]
+
+
+def test_water_is_not_an_ingredient():
+    """data/recipes/README.md: 물은 재료로 적지 않는다. 이름이 정확히 "물"일 때만 뺀다."""
+    assert ingredient_segments("물 30ml(2큰술), 물전분 1큰술", "예") == ["물전분 1큰술"]
 
 
 def test_ingredient_name_and_exact_match(index, ck):
@@ -176,3 +192,10 @@ def test_fetch_pages_until_total_and_never_saves_key(monkeypatch, tmp_path):
     text = out.read_text(encoding="utf-8")
     assert "secret-key" not in text
     assert [r["RCP_SEQ"] for r in json.loads(text)["rows"]] == ["1", "2", "3"]
+
+
+def test_inline_separators_start_new_lines():
+    assert ingredient_segments("소금 0.5g - 양념장 : 간장 3g", "예") == ["소금 0.5g", "간장 3g"]
+    assert ingredient_segments("크림치즈 > 우유 875ml", "예") == ["크림치즈", "우유 875ml"]
+    assert ingredient_segments("닭가슴살 60g [소스소개] 매운소스", "예") == ["닭가슴살 60g", "매운소스"]
+    assert ingredient_segments("치킨-스톡 1큰술", "예") == ["치킨-스톡 1큰술"]
