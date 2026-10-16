@@ -1,0 +1,93 @@
+id: aesuni_ojingeogug_b1h_t
+title: 애순이 오징어국
+cuisine: 한식
+difficulty: 2
+cook_time_min: 8
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 애순이 오징어국
+  video_url: https://www.youtube.com/watch?v=b1h__T2JyIo
+  published_at: '2025-04-23'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 대파
+  raw_text: 대파 1/4쪽 / 대파
+  role: main
+  optional: false
+  amount: 0.25
+  unit: 쪽
+- name: 마늘
+  raw_text: 다진마늘 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 청양고추
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 코인육수
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- name: 국간장
+  raw_text: 국간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 참치액
+  raw_text: 참치액 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 고운고춧가루
+  raw_text: 고운고춧가루 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 냉동오징어
+  raw_text: 냉동오징어 한마리 / 오징어 1마리 / 오징어
+  role: sub
+  optional: false
+  amount: 1
+  unit: 마리
+- name: 고운 고춧가루로
+  raw_text: 고운 고춧가루로 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 됐어요. 오삼불고기, 오징어볶음, 오징어국 한번 끓여보시면 어떨까요? 🤗🤗.
+  technique: 끓이기
+- text: 어슷 자른다. 냄비에 물 600ml 부어주고 무 넣은 후 코인육수 2알.
+  technique: null
+- text: 고운 고춧가루로 1스푼 넣어주고 없으면.
+  technique: null
+- text: 채에 걸러서 넣어주면 더 곱게 들어가요. 5분정도 끓여주다가 오징어.
+  technique: 끓이기
+- text: 2개 넣어준 후 3분 정도 더 끓여주면 완성입니다.
+  technique: 끓이기

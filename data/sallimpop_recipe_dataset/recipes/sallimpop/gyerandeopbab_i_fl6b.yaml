@@ -1,0 +1,91 @@
+id: gyerandeopbab_i_fl6b
+title: 계란덮밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 5분컷 계란덮밥
+  video_url: https://www.youtube.com/watch?v=i-fL6biU6Ek
+  published_at: '2024-01-21'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 계란
+  raw_text: 계란2알 / 계란 2알 / 계란
+  role: main
+  optional: false
+  amount: 2
+  unit: 알
+- name: 크래미
+  raw_text: 크래미 하나 / 크래미
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 소금
+  raw_text: 소금 한꼬집 / 소금
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 꼬집
+- name: 맛술
+  raw_text: 맛술2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 굴소스
+  raw_text: 굴소스1스푼 / 굴소스 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 한스푼 / 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 전분
+  raw_text: 전분 1스푼 / 전분 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 기타 조리도구
+  required: false
+steps:
+- text: 계란 2알 톡 깨서 넣고 크래미 하나 찢어서 넣는다.
+  technique: null
+- text: 넣은 후 섞는다.
+  technique: 무침
+- text: 물 200ml 넣고 맛술 2스푼, 설탕 반스푼 넣는다.
+  technique: null
+- text: 전분 한스푼에 물 2스푼 넣고.
+  technique: null

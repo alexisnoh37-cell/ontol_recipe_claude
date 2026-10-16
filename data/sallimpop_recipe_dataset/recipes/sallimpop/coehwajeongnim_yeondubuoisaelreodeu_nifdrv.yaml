@@ -1,0 +1,77 @@
+id: coehwajeongnim_yeondubuoisaelreodeu_nifdrv
+title: 최화정님 연두부오이샐러드
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 최화정님 연두부오이샐러드
+  video_url: https://www.youtube.com/watch?v=NiFdRvxM_M0
+  published_at: '2025-08-21'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 오이
+  raw_text: 오이 2개
+  role: main
+  optional: false
+  amount: 2
+  unit: 개
+- name: 진간장
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 알룰로스
+  raw_text: 알룰로스 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 화이트발사믹식초
+  raw_text: 화이트발사믹식초 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 올리브오일
+  raw_text: 올리브오일 3스푼
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 통깨
+  raw_text: 통깨 1스푼
+  role: garnish
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 연두부
+  raw_text: 연두부 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 2
+  umami: 1
+  savory: 3
+equipment:
+- name: 기타 조리도구
+  required: false
+steps:
+- text: 하죠. 오이 두 개 깨끗이 씻순 체칼로 얇게 자른다. 슬라이스.
+  technique: null
+- text: 한 오이에 소금 반스푼 정도 넣고 오일 세 스푼. 통깨 한 스푼 넣고.
+  technique: null
+- text: 잘 섞어 주시면 됩니다. 절여진 오이.
+  technique: 무침

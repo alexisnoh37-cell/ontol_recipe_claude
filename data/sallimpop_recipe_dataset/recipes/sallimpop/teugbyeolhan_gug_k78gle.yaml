@@ -1,0 +1,129 @@
+id: teugbyeolhan_gug_k78gle
+title: 특별한 국
+cuisine: 한식
+difficulty: 2
+cook_time_min: 10
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 특별한 국물제육
+  video_url: https://www.youtube.com/watch?v=K78gLEH5w6c
+  published_at: '2024-04-23'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 돼지 앞다리살
+  raw_text: 돼지 앞다리살 400g
+  role: main
+  optional: false
+  amount: 400
+  unit: g
+- name: 콩나물
+  raw_text: 콩나물 200g
+  role: sub
+  optional: false
+  amount: 200
+  unit: g
+- name: 양파
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 대파
+  raw_text: 대파 반쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 쪽
+- name: 깻잎
+  raw_text: 깻잎 5장
+  role: sub
+  optional: false
+  amount: 5
+  unit: 장
+- name: 부침두부
+  raw_text: 부침두부 1모
+  role: sub
+  optional: false
+  amount: 1
+  unit: 모
+- name: 고춧가루
+  raw_text: 고춧가루 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- name: 후추
+  raw_text: 후추 0.5 스푼 / 후추 반 스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 3 스푼 / 진간장 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 맛술
+  raw_text: 맛술 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 소고기다시다
+  raw_text: 소고기다시다 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 마늘
+  raw_text: 다진마늘 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 돼지고기 앞다리살
+  raw_text: 앞다리살 400g
+  role: sub
+  optional: false
+  amount: 400
+  unit: g
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 씻어서 준비해 놓을게요. 양파 반개 채썰고 대파 반쪽도 어슷 썰어줄게요. 깻잎 5장은 둥글게 말아.
+  technique: null
+- text: 얇게 썰어주고 부침두부 1모도 크게 썰어 놓을게요. 넣고 잘 섞는다. 예열 된 팬에 앞다리살, 콩나물.
+  technique: 부침
+- text: 양파 넣고 준비한 양념 부어주세요.
+  technique: null
+- text: 물 400ml 넣고 그냥 10분 끓여주시면 돼요.
+  technique: 끓이기
+- text: 제육에 대파, 깻잎 넣어 잘 섞어주고 마무리로 부친 두부 사이드에 올려주면 완성이에요.
+  technique: 무침

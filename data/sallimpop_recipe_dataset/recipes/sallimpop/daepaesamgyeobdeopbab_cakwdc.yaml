@@ -1,0 +1,103 @@
+id: daepaesamgyeobdeopbab_cakwdc
+title: 대패삼겹덮밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 대패삼겹덮밥
+  video_url: https://www.youtube.com/watch?v=cAKwDcML8pE
+  published_at: '2025-04-15'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 대패삼겹살
+  raw_text: 대패삼겹살 100g / 삼겹살 100g
+  role: main
+  optional: false
+  amount: 100
+  unit: g
+- name: 느타리버섯
+  raw_text: 느타리버섯 반팩
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 팩
+- name: 굴소스
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 참치액
+  raw_text: 참치액 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 참기름
+  raw_text: 참기름 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 대패 삼겹살
+  raw_text: 대패 삼겹살 100g
+  role: sub
+  optional: false
+  amount: 100
+  unit: g
+- name: 적당히 나오기 시작하면 대파
+  raw_text: 적당히 나오기 시작하면 대파 1/4쪽 / 대파 1/4쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 쪽
+- name: 잘게 찢은 느타리
+  raw_text: 잘게 찢은 느타리 반팩
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 팩
+- name: 재료 잘 모아서 계란후라이
+  raw_text: 재료 잘 모아서 계란후라이 한알 / 달걀 1알 / 달걀
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 대패삼겹과 느타리버섯으로 덮밥을 적당히 나오기 시작하면 대파 1/4쪽 넣고.
+  technique: null
+- text: 잘게 찢은 느타리 반팩 넣어서 2분간 같이 볶아주다가 여기에 굴소스 1스푼, 참치액 1스푼.
+  technique: 볶음
+- text: 고춧가루 1스푼 넣어 잘 섞는다.
+  technique: 무침
+- text: 재료 잘 모아서 계란후라이 한알 올려주고.
+  technique: null

@@ -1,0 +1,69 @@
+id: ddeoggug_xmvwdd
+title: 떡국
+cuisine: 한식
+difficulty: 2
+cook_time_min: 8
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 떡국떡볶이
+  video_url: https://www.youtube.com/watch?v=xmvWdDDnw5U
+  published_at: '2024-02-27'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 어묵
+  raw_text: 어묵 2장
+  role: main
+  optional: false
+  amount: 2
+  unit: 장
+- name: 고추장
+  raw_text: 고추장 가득 1스푼 / 고추장
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 다시다
+  raw_text: 다시다 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 물엿
+  raw_text: 물엿 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 2
+  sour: 0
+  umami: 1
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 5분이면 순식간에 만들어지는 떡볶이 한번 만들어 썰어줄게요. 대파도 어긋썰기한다.
+  technique: null
+- text: 팬에 물 200ml 부어주고 떡국떡 넣는다.
+  technique: null
+- text: 다시다 반스푼 넣고 잘 섞는다.
+  technique: 무침
+- text: 잘라놓은 어묵, 대파 넣는다.
+  technique: null
+- text: 물엿 4스푼 넣어 단맛과 윤기 올려줄게요. 3분 정도 잘 섞으며 졸여주면.
+  technique: 조림

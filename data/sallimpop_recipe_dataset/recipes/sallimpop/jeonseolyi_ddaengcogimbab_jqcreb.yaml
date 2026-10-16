@@ -1,0 +1,53 @@
+id: jeonseolyi_ddaengcogimbab_jqcreb
+title: 전설의 땡초김밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: 5
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 전설의 땡초김밥
+  video_url: https://www.youtube.com/watch?v=JQCReBirUDE
+  published_at: '2025-09-26'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 밥
+  raw_text: 밥 5인분 / 밥
+  role: main
+  optional: false
+  amount: 5
+  unit: 인분
+- name: 스팸
+  raw_text: 스팸 170g
+  role: sub
+  optional: false
+  amount: 170
+  unit: g
+- name: 청양고추
+  raw_text: 청양고추 20개
+  role: sub
+  optional: false
+  amount: 20
+  unit: 개
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 땡초 김밥은 밥에 스팸, 땡초 섞어서 갈아서 준비한다. 추가가는 필요.
+  technique: 무침
+- text: 넣어온 후 중간불에 오분간 볶아 줄게요. 볶은제료 밥과 섞어 준비해.
+  technique: 볶음
+- text: 단무지, 우엉, 오이 올려서 돌돌 후 잘라주고 손깨 솔솔 뿌려 먹어.
+  technique: null

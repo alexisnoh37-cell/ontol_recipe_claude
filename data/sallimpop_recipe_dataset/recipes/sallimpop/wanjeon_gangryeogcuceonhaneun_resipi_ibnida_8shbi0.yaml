@@ -1,0 +1,93 @@
+id: wanjeon_gangryeogcuceonhaneun_resipi_ibnida_8shbi0
+title: 완전 강력추천하는 레시피 입니다 🤗🤗
+cuisine: 중식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 최고의 간짜장밥
+  video_url: https://www.youtube.com/watch?v=8SHbi0lai9A
+  published_at: '2024-09-12'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 애호박
+  raw_text: 애호박 반개
+  role: main
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 돼지고기 앞다리살
+  raw_text: 돼지고기 앞다리살 100g / 앞다리살 100g
+  role: sub
+  optional: false
+  amount: 100
+  unit: g
+- name: 새우 취향껏
+  raw_text: 새우 취향껏 10마리
+  role: sub
+  optional: true
+  amount: 10
+  unit: 마리
+- name: 계란
+  raw_text: 계란 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 올리브유
+  raw_text: 올리브유 100ml
+  role: seasoning
+  optional: false
+  amount: 100
+  unit: ml
+- name: 생강
+  raw_text: 생강 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 간장
+  raw_text: 간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 짜장분말소스
+  raw_text: 짜장분말소스 50g
+  role: sub
+  optional: false
+  amount: 50
+  unit: g
+- name: 열이 충분히 올라오면 양파
+  raw_text: 열이 충분히 올라오면 양파 한줌 / 양파 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 큼지막하게 야채손질해서 먹으면 좋고 양파 2개 반으로 갈라 깍뚝썰기 해주고 애호박.
+  technique: null
+- text: 반개도 4등분 후 부채꼴 모양으로 썰어줄게요. 예열된 프라이팬에 올리브유 100ml 넣고.
+  technique: null
+- text: 생강 반스푼 넣고 2분정도 볶다가 간장 1스푼 웍 주위에 부어주고 한번 섞어준 후 나머지.
+  technique: 볶음
+- text: 재료들 다 넣고 2분 정도 볶다가 짜장 가루 50g 넣는다. 양념 한번 잘 섞어준 후 물 80ml.
+  technique: 볶음
+- text: 넣은 후 강불에 빠르게 볶으면서 수분.
+  technique: 볶음

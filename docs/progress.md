@@ -463,6 +463,14 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
 }
 ```
 
+## 부가 트랙 살림팝 레시피 뷰어 (2026-10-16)
+
+- 브랜치 `feature/sallimpop-recipe-viewer`(기준 `main` ae7014b — 살림팝 데이터셋이 들어 있는 브랜치가 없어 자취요리신 데이터셋과 같은 방식으로 main에서 분기).
+- `data/sallimpop_recipe_dataset/`: 살림팝 YouTube 레시피 169개(YAML, 전부 `status: draft`)와 index·ingredient_names·classification CSV, `validate.py`, README, REPORT. 전달받은 ZIP 내용을 그대로 복사했고 사실값·URL·ID·confidence·note·status는 바꾸지 않았다.
+- `data/sallimpop_recipe_viewer/`: 정적 웹 뷰어(`dist/`)와 `build_viewer.py`(`../sallimpop_recipe_dataset/recipes/sallimpop/*.yaml` → `dist/recipes-data.js`). 경로 조정 없이 그대로 동작한다.
+- 검증: `validate.py` 169개 통과, `build_viewer.py` 169개 생성(전달본과 바이트 동일), `node --check dist/app.js` 통과, 로컬 정적 서버에서 검색·분류·필터·정렬·더 보기·상세 창·체크리스트·모바일(375px) 확인.
+- 엔진·지식·DB와 연결하지 않은 독립 자료다. 추천 엔진 시드로 쓰려면 재료 정규 ID 매핑과 사람 검수가 먼저 필요하다.
+
 ## 사람 확인 필요
 
 - (선택) K에 선호 strength를 반영하지 않음(plan 4-4 표대로 1.0/0.5/0.1). 반영하려면 plan 4-4 수정이 필요하다. Phase 2 이후 검토.

@@ -1,0 +1,85 @@
+id: insaeng_gimci_5jsomc
+title: 인생 김치
+cuisine: 한식
+difficulty: 2
+cook_time_min: 8
+servings: 2
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 인생 김치볶음밥 (초간단)
+  video_url: https://www.youtube.com/watch?v=5jsOmCWTFHg
+  published_at: '2024-11-19'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 햇반
+  raw_text: 햇반 2개
+  role: main
+  optional: false
+  amount: 2
+  unit: 개
+- name: 계란
+  raw_text: 달걀 2알 / 달걀
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- name: 참치액
+  raw_text: 참치액 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 1스푼 / 설탕1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 올리브유
+  raw_text: 올리브유 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 마요네즈
+  raw_text: 마요네즈 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 참기름
+  raw_text: 참기름 1스푼 / 참기름 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 전자레인지
+  required: true
+- name: 프라이팬
+  required: false
+steps:
+- text: 햇반 2개는 전자레인지에 1분간만 돌려줄게요. 올리브유 3스푼, 마요네즈 1스푼 넣어서 잘.
+  technique: null
+- text: 비벼주세요. 예열 된 프라이팬에 잘 섞인 김치 넣고 중불에 3분간 잘 볶아줄게요. 3분 후.
+  technique: 볶음
+- text: 햇반 2개 넣고 1분간 잘 섞어주다가 마무리로 참기름 한스푼, 통깨 넉넉히 뿌려주면 완성이에요.
+  technique: 무침

@@ -1,0 +1,91 @@
+id: ryusuyeongnim_uyubeoteopaseuta_43ruep
+title: 류수영님 우유버터파스타
+cuisine: 양식
+difficulty: 1
+cook_time_min: 12
+servings: 1
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 류수영님 우유버터파스타
+  video_url: https://www.youtube.com/watch?v=43rUEP9zVgY
+  published_at: '2024-04-07'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 우유
+  raw_text: 우유 300ml
+  role: main
+  optional: false
+  amount: 300
+  unit: ml
+- name: 버터
+  raw_text: 버터 40g
+  role: seasoning
+  optional: false
+  amount: 40
+  unit: g
+- name: 소금
+  raw_text: 소금 한꼬집 / 소금
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 꼬집
+- name: 참치액
+  raw_text: 참치액 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 코인육수
+  raw_text: 코인육수 한알
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+- name: 마늘
+  raw_text: 마늘 1개
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 개
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 파스타면 백원동전 크기
+  raw_text: 파스타면 백원동전 크기 1인분 / 파스타면 1인분 / 파스타면
+  role: sub
+  optional: false
+  amount: 1
+  unit: 인분
+- name: 졸아 들었다 싶으면 마늘
+  raw_text: 졸아 들었다 싶으면 마늘 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 마지막 후추는 넉넉히 뿌려주면 더 풍미가 냄비에 물 350ml, 우유 300ml 넣어줄게요.
+  technique: null
+- text: 파스타면 백원동전 크기 1인분 넣어주고 버터 40g 넣어줄게요. 이대로 12분간 중강불에.
+  technique: 부침
+- text: 끓여주면 돼요. 간은 소금 한꼬집 뿌려주고 참치액 한스푼, 코인육수 한알 넣어줄게요.
+  technique: 끓이기
+- text: 졸아 들었다 싶으면 마늘 1개 갈아서 넣어줄게요.
+  technique: 조림

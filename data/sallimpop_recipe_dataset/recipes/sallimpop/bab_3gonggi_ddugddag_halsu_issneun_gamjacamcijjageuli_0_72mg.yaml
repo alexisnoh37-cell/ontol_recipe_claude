@@ -1,0 +1,131 @@
+id: bab_3gonggi_ddugddag_halsu_issneun_gamjacamcijjageuli_0_72mg
+title: 밥 3공기 뚝딱 할수 있는 감자참치짜글이
+cuisine: 한식
+difficulty: 2
+cook_time_min: 12
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 밥 3공기 뚝딱 할수 있는 감자참치짜글이
+  video_url: https://www.youtube.com/watch?v=0_72MGLlwxU
+  published_at: '2024-03-11'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 감자 큰거
+  raw_text: 감자 큰거 2개
+  role: main
+  optional: false
+  amount: 2
+  unit: 개
+- name: 대파
+  raw_text: 대파 1쪽 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 쪽
+- name: 양파
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 마늘
+  raw_text: 다진마늘 3큰술 / 마늘 3큰술
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 큰술
+- name: 참치캔
+  raw_text: 참치 1캔
+  role: sub
+  optional: false
+  amount: 1
+  unit: 캔
+- name: 고추장 1 크게
+  raw_text: 고추장 1 크게 한큰술
+  role: sub
+  optional: false
+  amount: 1
+  unit: 큰술
+- name: 고춧가루
+  raw_text: 고춧가루 2스푼 / 고춧가루 2큰술
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 2스푼 / 진간장 2큰술
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 2스푼 / 멸치액젓 2큰술
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 물엿
+  raw_text: 물엿 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 코인육수
+  raw_text: 코인육수 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 참기름
+  raw_text: 참기름 1스푼 / 참기름 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 올리브유
+  raw_text: 올리브유 3큰술
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 큰술
+- name: 고추장 크게
+  raw_text: 고추장 크게 한큰술
+  role: sub
+  optional: false
+  amount: 1
+  unit: 큰술
+- name: 고추장
+  raw_text: 고추장
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 감자 큰거 2개 깍뚝썰기 해주고 대파 1쪽 어긋 썰어줄게요. 양파 반 개 썰어주고 아.
+  technique: null
+- text: 음식에 양파 많이 넣으면 음식이 달아져요. 올리브유 3큰술 넣어줄게요.
+  technique: null
+- text: 감자 양파 대파 넣어서 2분간 중불에 살짝 볶는다.
+  technique: 볶음
+- text: 물 400ml 넣고 참치, 마늘 3큰술 넣고 넣는다. 마무리로 코인육수 한알.
+  technique: null
+- text: 넣어줄게요. 잘 섞어 준 후 중강불에 뚜껑닫고 10분 끓인다.
+  technique: 끓이기
+- text: 감자 익었는지 확인하고 익었으면.
+  technique: null

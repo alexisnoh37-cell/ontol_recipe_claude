@@ -1,0 +1,99 @@
+id: koseuteukonaengdongojingeoreul_hwalyonghan_kongnamulgugbab_hwrloz
+title: 코스트코냉동오징어를 활용한 콩나물국밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 코스트코냉동오징어를 활용한 콩나물국밥 :)
+  video_url: https://www.youtube.com/watch?v=HWRlOZAEsdo
+  published_at: '2024-01-17'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 콩나물
+  raw_text: 콩나물 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- name: 마늘
+  raw_text: 다진마늘 1스푼 / 다진마늘 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 코인육수
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- name: 진간장
+  raw_text: 진간장1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓1스푼 / 멸치액젓 2 스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 청양고추
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 자른김
+  raw_text: 자른김1장
+  role: sub
+  optional: false
+  amount: 1
+  unit: 장
+- name: 2인 기준으로 물
+  raw_text: 2인 기준으로 물 1L
+  role: sub
+  optional: false
+  amount: 1
+  unit: L
+- name: 다시다
+  raw_text: 다시다 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 2인 기준으로 물 1L 끓인다.
+  technique: 끓이기
+- text: 다시다 한스푼 넣으셔도 되요. 진간장 1스푼, 멸치액젓 2 스푼, 다진마늘 한스푼 넣는다.
+  technique: null
+- text: 물이 끓으면 오징어 한마리 1분정도 데쳐줄게요. 여기에 콩나물 300g 30초 삶아줄게요.
+  technique: 끓이기
+- text: 콩나물 올려주세요.
+  technique: null
+- text: 끓기 시작하면 계란 한알 툭 깨서 넣어주고 새우젓과 자른김으로 추가.
+  technique: 끓이기

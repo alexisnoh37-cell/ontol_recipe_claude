@@ -1,0 +1,79 @@
+id: musubun_suyug_nztd5m
+title: 무수분 수육
+cuisine: 한식
+difficulty: 1
+cook_time_min: 40
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 무수분 수육
+  video_url: https://www.youtube.com/watch?v=nztd5mBAYCg
+  published_at: '2026-01-20'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 돼지고기 앞다리살
+  raw_text: 앞다리살 1kg
+  role: main
+  optional: false
+  amount: 1
+  unit: kg
+- name: 양파 큰거
+  raw_text: 양파 큰거 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 대파
+  raw_text: 대파 2쪽 / 대파
+  role: sub
+  optional: false
+  amount: 2
+  unit: 쪽
+- name: 마늘
+  raw_text: 통마늘 10개
+  role: seasoning
+  optional: false
+  amount: 10
+  unit: 개
+- name: 통후추
+  raw_text: 통후추 한 스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 소주
+  raw_text: 소주 3스푼
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 깔아주고 고기 올려 주세요. 위에 자른 대파 두 쪽 통마늘 열 개 넣고.
+  technique: null
+- text: 소주 세 스푼 넣어 주고 이게 또 돌거든요. 진간장 세 스푼 넣어.
+  technique: null
+- text: 냄비로 40분간 익혀 주시면 됩니다.
+  technique: null
+- text: 잘 익었죠? 진짜 다른 건 필요 없이.
+  technique: null

@@ -1,0 +1,93 @@
+id: weonpaen_saeubajilpaseuta_hk_aqu
+title: 원팬 새우바질파스타
+cuisine: 양식
+difficulty: 2
+cook_time_min: 14
+servings: 1
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 원팬 새우바질파스타
+  video_url: https://www.youtube.com/watch?v=hk-aqUWEbi4
+  published_at: '2024-05-11'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 코스트코 새우
+  raw_text: 코스트코 새우 7마리
+  role: main
+  optional: false
+  amount: 7
+  unit: 마리
+- name: 양파
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 느타리버섯
+  raw_text: 느타리버섯
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 버터
+  raw_text: 버터 20g
+  role: seasoning
+  optional: false
+  amount: 20
+  unit: g
+- name: 통밀파스타
+  raw_text: 통밀파스타 1인분
+  role: sub
+  optional: false
+  amount: 1
+  unit: 인분
+- name: 굴소스
+  raw_text: 굴소스 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 바질페스토
+  raw_text: 바질페스토 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 올리브유
+  raw_text: 올리브유 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 바질페스토 넣어서 꼭 해드셔보세요.
+  technique: null
+- text: 양파 반개 얇게 채썰어 줄게요. 느타리 버섯 통밀파스타면 백원 동전크기 넣어주고 새우.
+  technique: null
+- text: 채썬양파, 느타리버섯, 버터넣어줄게요. 여기에 굴소스 한스푼, 멸치액젓 반스푼 넣어주고.
+  technique: null
+- text: 물 700ml 넣는다. 이대로 14분간 끓이면서 올리브유 2스푼 넣고 면을 잘 섞는다.
+  technique: 끓이기
+- text: 잘 섞어줘야 면에 바질페스토가 잘 달라붙어요. 이제 접시에 담아주면 완성이에요.
+  technique: 무침

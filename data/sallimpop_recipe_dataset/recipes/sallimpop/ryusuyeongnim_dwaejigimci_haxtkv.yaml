@@ -1,0 +1,91 @@
+id: ryusuyeongnim_dwaejigimci_haxtkv
+title: 류수영님 돼지김치
+cuisine: 한식
+difficulty: 1
+cook_time_min: 31
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 류수영님 돼지김치찜
+  video_url: https://www.youtube.com/watch?v=haxTkVYyrPQ
+  published_at: '2025-04-22'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 돼지고기 앞다리살
+  raw_text: 앞다리살 500g
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- name: 대파
+  raw_text: 대파 1대 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 대
+- name: 마늘
+  raw_text: 통마늘 한줌
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 줌
+- name: 올리브유
+  raw_text: 올리브유 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 참치액
+  raw_text: 참치액 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 코인육수
+  raw_text: 코인육수 1알
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+- name: 더해줄 김치국물
+  raw_text: 더해줄 김치국물 3스푼 / 김치국물 3스푼 / 김치 반포
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 포
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 익혀줄게요. 여기에 김치 반포기 넣고 감칠맛 더해줄 김치국물 3스푼 넣는다. 김치.
+  technique: null
+- text: 국물이 고기에 들어가록 1분간 끓여주다가 물 750ml 넣고 이 요리에 핵심은 마늘 한줌.
+  technique: 끓이기
+- text: 넣어줄게요. 여기에 진간장 1스푼, 참치액 2스푼, 설탕 2스푼, 코인육수 1알 넣고 뚜껑 닫은 후.
+  technique: null
+- text: 10분간 중불에 끓여주다가 대파 넣고 중약불에 20분만 더 졸여줄게요.
+  technique: 조림

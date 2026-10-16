@@ -1,0 +1,93 @@
+id: yeongsang_bosimyeon_asigessjiman_2dp9ic
+title: 영상 보시면 아시겠지만
+cuisine: 한식
+difficulty: 1
+cook_time_min: 10
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 진정 밥도둑
+  video_url: https://www.youtube.com/watch?v=2DP9iCPSRTo
+  published_at: '2025-05-13'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 적절
+  raw_text: 적절한 단
+  role: main
+  optional: false
+  amount: 1
+  unit: 단
+- name: 삼겹살
+  raw_text: 삼겹살 300g
+  role: sub
+  optional: false
+  amount: 300
+  unit: g
+- name: 소금
+  raw_text: 소금 2꼬집 / 소금
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 꼬집
+- name: 맛술
+  raw_text: 맛술 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 대파
+  raw_text: 대파 1쪽 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 쪽
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 된장
+  raw_text: 된장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 마늘
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 양면이 다 노릇해지면 고춧가루
+  raw_text: 양면이 다 노릇해지면 고춧가루 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 기타 조리도구
+  required: false
+steps:
+- text: 소금 2꼬집, 맛술 2스푼, 잘게 썰은 대파 1쪽 넣은 후 잘 섞어서 익혀주다가.
+  technique: 무침
+- text: 다진마늘 1스푼 넣고 잘 섞어서 익힌다.
+  technique: 무침

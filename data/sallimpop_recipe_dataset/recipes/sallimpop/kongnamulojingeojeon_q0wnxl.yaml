@@ -1,0 +1,89 @@
+id: kongnamulojingeojeon_q0wnxl
+title: 콩나물오징어전
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 콩나물오징어전
+  video_url: https://www.youtube.com/watch?v=q0WNxLQXE3c
+  published_at: '2026-10-14'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 콩나물
+  raw_text: 콩나물 150g
+  role: main
+  optional: false
+  amount: 150
+  unit: g
+- name: 오징어
+  raw_text: 오징어 한 마리 / 오징어
+  role: sub
+  optional: false
+  amount: 1
+  unit: 마리
+- name: 청양고추
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 부침가루
+  raw_text: 부침가루 100g
+  role: seasoning
+  optional: false
+  amount: 100
+  unit: g
+- name: 계란
+  raw_text: 달걀 1알 / 달걀
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+- name: 간장
+  raw_text: 간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 식초
+  raw_text: 식초 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 참기름
+  raw_text: 참기름 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 기타 조리도구
+  required: false
+steps:
+- text: 일이 벌어집니다. 거기에 오징어 넣어 썰어서 넣어주면 느끼한 맛도 잡고.
+  technique: null
+- text: 달걀 하나를 넣은 후 잘 섞는다. 여기에 물 100ml 넣어.
+  technique: 무침
+- text: 구워 주기만 하면 완성인데 익혀야 한 스푼 넣은 양념에 찍어서 먹어.
+  technique: 구이

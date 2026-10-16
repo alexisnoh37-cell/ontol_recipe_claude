@@ -1,0 +1,107 @@
+id: dalgboggeumtang_s9je9d
+title: 닭볶음탕
+cuisine: 한식
+difficulty: 2
+cook_time_min: 22
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 50번 넘게 요청한 닭볶음탕
+  video_url: https://www.youtube.com/watch?v=s9Je9DsL19c
+  published_at: '2026-05-26'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 닭고기
+  raw_text: 닭볶음탕용 닭 1마리 1kg
+  role: main
+  optional: false
+  amount: 1
+  unit: 마리
+- name: 감자
+  raw_text: 감자 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 대파
+  raw_text: 대파 1쪽 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 쪽
+- name: 청양고추
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 고춧가루
+  raw_text: 고춧가루 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 참치액
+  raw_text: 참치액 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 맛술
+  raw_text: 맛술 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 마늘
+  raw_text: 다진마늘 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 감자 듬뿍 넣어 닭볶음탕을 끓이면 알려 드릴게요. 닭볶음탕용 닭 1kg.
+  technique: 끓이기
+- text: 보래 넣고 고춧가루 다섯 스푼, 고추장 한 스푼 넣어 양념찰 섞어.
+  technique: 무침
+- text: 닭볶음탕에 들어갈 감자 두 개 먹기 매콤한 맛으로 올려줄 청양고추 두.
+  technique: null
+- text: 닭 감자 넣어주고 양념볼에 물ml 냄비에 넣어 줄게요. 이대로 15분간.
+  technique: null
+- text: 푹 끓여 주는데 중간에 불순물 잘 대파, 청양고추 넣어주고 5분간.
+  technique: 끓이기
+- text: 끓이다가 마무리 다진마늘 두 스푼 넣어 2분만 더 끓여주면 완성입니다.이 방식으로 끓이면 양념이.
+  technique: 끓이기

@@ -1,0 +1,97 @@
+id: saelreodeuneun_maseobsda_l_qpzv
+title: 샐러드는 맛없다?
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 샐러드는 맛없다?
+  video_url: https://www.youtube.com/watch?v=l-QpzvSXPo0
+  published_at: '2025-03-04'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 파프리카
+  raw_text: 파프리카 1개
+  role: main
+  optional: false
+  amount: 1
+  unit: 개
+- name: 오이
+  raw_text: 오이 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 토마토
+  raw_text: 토마토 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 병아리콩
+  raw_text: 병아리콩 5스푼
+  role: sub
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 옥수수콘
+  raw_text: 옥수수콘 4스푼
+  role: sub
+  optional: false
+  amount: 4
+  unit: 스푼
+- name: 양파
+  raw_text: 양파 한개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 올리브유
+  raw_text: 올리브유 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 발사믹식초
+  raw_text: 발사믹식초 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 알룰로스
+  raw_text: 알룰로스 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 레몬즙
+  raw_text: 레몬즙 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 0
+  sour: 2
+  umami: 1
+  savory: 3
+equipment:
+- name: 기타 조리도구
+  required: false
+steps:
+- text: 파프리카 한 개 잘게 썰어주고 오이 제거해서 자른다 토마토 한 개도.
+  technique: null
+- text: 찹찹 잘게 썰고 양파 한 개도 자게 썰어 줄게요 준비한 야채 다 넣고.
+  technique: null
+- text: 아니지만 여기에 루꼴라 넣어 주면 더 넣고 아래 위 잘 섞어 주기만 하면.
+  technique: 무침
+- text: 완성이에요 취향껏 이렇게 치즈 갈아서.
+  technique: null
