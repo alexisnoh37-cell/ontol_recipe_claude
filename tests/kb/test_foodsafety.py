@@ -99,6 +99,14 @@ def test_water_is_not_an_ingredient():
     assert ingredient_segments("물 30ml(2큰술), 물전분 1큰술", "예") == ["물전분 1큰술"]
 
 
+def test_skipped_items_are_reported_in_order():
+    """외부 레시피 분석(부록 E)은 버린 항목을 화면에 보여 준다. 버리는 규칙은 그대로다."""
+    skipped: list[str] = []
+    segs = ingredient_segments("[양념장] 간장 1큰술\n2인분 기준\n물 200ml, 두부 1모", "예", skipped)
+    assert segs == ["간장 1큰술", "두부 1모"]
+    assert skipped == ["양념장", "2인분 기준", "물 200ml"]
+
+
 def test_ingredient_name_and_exact_match(index, ck):
     assert ingredient_name("연두부 75g(3/4모)") == "연두부"
     assert ingredient_name("소금 약간") == "소금"

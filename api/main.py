@@ -22,8 +22,9 @@ from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
+from api.adhoc import analyze as analyze_adhoc
 from api.present import TASTE_DIMENSIONS, Catalog, load_display
-from api.schemas import PreferencesIn, ProfileCreate, ProfileOut, ProfileUpdate, RecommendIn
+from api.schemas import AnalyzeRecipeIn, PreferencesIn, ProfileCreate, ProfileOut, ProfileUpdate, RecommendIn
 from api.viz import GraphCatalog, RecipeScope
 from engine.model import Preference, RecommendRequest, RecommendResult, TastePreference, UserContext
 from engine.recommend import Recommender
@@ -291,6 +292,32 @@ def create_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir
             out["trace"] = graph.trace(result, trace, weights=dict(recommender.scoring.weights),
                                        labels=catalog.display["exclusion_labels"], limit=req.limit)
             out["trace"]["breakdown_labels"] = dict(catalog.display["breakdown_labels"])  # 재생 4단계 hover 표시용
+        return out
+
+    @app.post("/analyze-recipe")
+    def analyze_recipe(body: AnalyzeRecipeIn) -> dict[str, Any]:
+        """DB에 없는 레시피의 재료·알레르기 구조(부록 E). 저장하지 않는다. 사용자를 주면 추천 필터와 같은 기준으로 판정."""
+        profile_id: int | None = None
+        user: UserContext | None = None
+        if body.persona_id is not None:
+            persona = persona_index.get(body.persona_id)
+            if persona is None:
+                raise HTTPException(status_code=404, detail=f"페르소나 {body.persona_id}이(가) 없습니다")
+            user = persona.user
+        elif body.profile_id is not None:
+            profile = get_profile(body.profile_id)
+            profile_id, user = profile.id, user_context(profile)
+        elif body.allergen_groups is not None:
+            user = UserContext(allergen_groups=frozenset(body.allergen_groups))
+        with state.lock:
+            catalog, graph = state.catalog, state.graph
+        try:
+            out, exclusions = analyze_adhoc(graph, catalog.snapshot, title=body.title.strip(), text=body.source_text(),
+                                            user=user, exclusion_labels=catalog.display["exclusion_labels"])
+        except ValueError as exc:  # 재료 없음, 모르는 알레르기 그룹·재료 id
+            raise bad(str(exc)) from None
+        log_exclusions(profile_id, RecommendResult(items=(), exclusions=tuple(exclusions)), body.persona_id)
+        out["disclaimer"] = catalog.display["disclaimer"]
         return out
 
     @app.post("/admin/reload")

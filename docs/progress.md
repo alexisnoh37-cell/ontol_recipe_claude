@@ -12,6 +12,8 @@
 
 **식품안전나라 가져오기 트랙 fs-1~2**(2026-10-16, 브랜치 `feature/foodsafety-import`, `feature/recipe-expansion`에서 분기): D3 보완 2(개인용·출처 표시)로 식품안전나라 조리식품 레시피 DB 내려받기·변환 도구 추가(fs-1), 실제 1153개 변환, 재료 줄 미매칭 28.9%(fs-2). 아래 "식품안전나라 가져오기 트랙" 참조.
 
+**외부 레시피 분석 트랙 adhoc-1**(2026-10-16, 브랜치 `feature/adhoc-recipe-analysis`, `feature/foodsafety-import`에서 분기, 사람 요청·승인): AI가 만든 레시피처럼 DB에 없는 레시피의 재료를 붙여 넣으면 재료 매핑·is_a·원천·알레르기 경로를 보여 주고 `/viz` 그래프에 임시 노드로 겹쳐 그린다. 저장 안 함, LLM 없음. docs/plan.md 부록 E. 아래 "외부 레시피 분석 트랙" 참조.
+
 ## 단계별 상태
 
 | 단계 | 상태 | 완료일 | 사람 확인 | 비고 |
@@ -550,7 +552,21 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
 - 효과(시뮬레이션): 재료 줄 미매칭 28.9% → A 23.1% → A+B 15.5%. 미매칭 없는 레시피 82 → 127 → 272개(1153개 중).
 - 별칭·이름 충돌, 없는 id·그룹·분류 자동 검사 통과(분석 스크립트 `.scratch/fs/proposal.py`, 커밋 안 함).
 
+## 외부 레시피 분석 트랙 (브랜치 `feature/adhoc-recipe-analysis`)
+
+### adhoc-1 일회성 분석 API와 그래프 겹쳐 보기 (2026-10-16)
+
+- 사람이 정한 범위: 일회성 분석만(저장 안 함), 화면은 `/viz` 입력 카드, 사용자 판정은 선택 입력, 분기는 `feature/foodsafety-import`(재료 줄 파서 재사용). 설계는 docs/plan.md 부록 E(이번에 추가).
+- `POST /analyze-recipe`(`api/adhoc.py`): 재료 줄 분리는 `kb.foodsafety.ingredient_segments`(식품안전나라 변환과 같은 규칙, 버린 항목은 `skipped`로 응답), 별칭 색인 정확 일치 매핑, concept에 맞은 줄은 미매칭과 같이 처리(A1). 줄별 is_a 조상·derived_from 원천·기본 그룹 알레르기 행(certainty·via·path_links)은 컴파일 결과 조회만. 사용자를 주면 임시 `Recipe`로 엔진 `UserConstraints.check`(추천 필터와 같은 기준) → possible·미매칭도 제외. 매운맛·조리기구·조리시간·음식 종류는 판정하지 않는다고 응답에 표시. 제외 시 `logs/exclusions.jsonl` 기록(recipe_id `adhoc_<해시>`).
+- 표시 계층 재사용을 위해 `api/viz.py`의 레시피 알레르기 모음을 `lines_allergens`로 뺐고, `exclusion()`에 줄 색인 인자를 더했다(기존 동작 같음). `ingredient_segments`에 버린 항목을 모으는 선택 인자 `skipped` 추가(기존 동작 같음).
+- `/viz`: "외부 레시피 분석" 카드(`viz/adhoc.js`), 결과 표(줄별 매핑·분류·알레르기 경로, 판정, 버린 항목), 그래프에 청록 임시 레시피 노드(레시피 층 위 가운데 고정)와 빨간 사면체 미매칭 줄 노드. 다시 분석·지우기 때 이전 임시 노드를 뺀다. `scene.setOverlay`는 warmup 없이 graphData를 다시 넣어 기존 배치가 움직이지 않음(브라우저에서 확인: 두부 노드 좌표 불변, 지우기 후 노드 330개로 복귀).
+- 엔진(`engine/`)과 `tests/allergy/`는 바꾸지 않았다.
+- 테스트: `tests/api/test_analyze_recipe.py` 19개, `tests/kb/test_foodsafety.py` 1개 추가, `tests/viz/test_page.py` 카드 요소 확인 추가. DB 없이 432개 통과(`--ignore=tests/storage`). `tests/storage/`는 로컬 DB(docker)가 꺼져 있어 이번에 실행하지 못함(연결 시간 초과).
+- 브라우저 확인(ENGINE_SOURCE=files): 예시(마파두부, multi_allergy 페르소나) → 7줄 중 6줄 매핑, 굴소스 → 굴 → 조개 경로, 트러플 오일 미매칭으로 제외, 콘솔 오류 없음.
+
 ## 사람 확인 필요
+
+- **(adhoc-1) 외부 레시피 분석 확인**: `/viz` "외부 레시피 분석"에서 예시 넣기 → 분석. 안전 관련 판정 테스트(possible·미매칭·concept 제외)를 `tests/api/`에 두었다. `tests/allergy/`로 옮겨 승인 대상으로 둘지 정한다.
 
 - **(fs-3) 식품안전나라 보강안 검수**: `docs/review/foodsafety_alias_proposal.md`의 A·B 승인 열에 O/X, C 보류 처리, D 변환 규칙 적용 여부를 정한다. 승인분만 knowledge에 draft로 반영한다. 외부 공개·상업화 전에는 식약처에 이용 조건 문의(D3 보완 2).
 - **(보류, data-4) 레시피 1차 확장 검수·골든셋 재선정**: 위 "data-4"의 "보류를 풀 때 할 일" 순서대로 진행. 아래 data-1·data-2 항목도 이때 함께 처리한다.
@@ -596,6 +612,8 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
 - 데이터 확장 트랙(data-1, `feature/recipe-expansion`): 신규 레시피 50개 draft 검수 대기. 승인된 레시피는 published로 바꾸고 `tests/kb/test_recipe_seed.py`의 `PUBLISHED_IDS`에 추가, soft_tofu 승인 시 reviewed로 바꾸고 `tests/kb/test_real_knowledge.py`의 `DRAFT_INGREDIENTS`에서 뺀다. published 전환 전에 골든셋 처리 방법을 정한다.
 
 ## 다음 단계 제안 (Phase 2 이후, 범위 밖)
+
+외부 레시피 분석(adhoc) 후속(범위 밖, 사람 결정): 분석한 레시피를 draft YAML로 저장(source: ai_generated) → 기존 검수 절차, 미매칭 표기를 `unmapped_term`에 누적해 검수표로 연결, 줄별 역할·선택 재료 지정 입력.
 
 Phase 2 할 일(plan.md 6장 로드맵 기준, 착수 전 사람이 범위 확정):
 
