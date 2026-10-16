@@ -55,3 +55,10 @@ breakdown_labels:
   P: 재료 선호
   D: 난이도 적합
   M: 조리시간 적합
+
+# 레시피 상세의 재료 역할 표기(GET /recipes/{id})
+role_labels:
+  main: 주재료
+  sub: 부재료
+  seasoning: 양념
+  garnish: 고명

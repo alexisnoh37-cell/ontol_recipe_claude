@@ -232,3 +232,57 @@ def test_vocab_and_health(client, data):
     # 레시피 수는 시드에서 센다(draft 포함, 파일 하나 = 레시피 하나)
     seed_files = sorted((Path(__file__).resolve().parents[2] / "data" / "recipes").glob("*.yaml"))
     assert client.get("/health").json()["recipes"] == len(data.recipes) == len(seed_files) >= 50
+
+
+# --- 레시피 상세 (ui-1) -----------------------------------------------------------------------------
+
+
+def test_recipe_detail_lists_all_lines_by_role(client, data):
+    body = client.get("/recipes/kimchi_jjigae").json()
+    spec = next(r for r in data.recipes if r.id == "kimchi_jjigae")
+    assert body["title"] == spec.title and body["cuisine"] == spec.cuisine
+    assert [x["raw_text"] for x in body["ingredients"]] == [line.raw_text for line in spec.ingredients]
+    labels = {"main": "주재료", "sub": "부재료", "seasoning": "양념", "garnish": "고명"}
+    for x in body["ingredients"]:
+        assert x["role_label"] == labels[x["role"]]
+        assert x["have"] is None  # 보유 기준이 없으면 판단하지 않는다
+        if x["id"]:
+            assert x["name"] != x["id"]
+    assert [s for s in body["steps"]] == [s.text for s in spec.steps]
+    assert body["label_check"] is None
+
+
+def test_recipe_detail_have_follows_engine_rule(client):
+    """보유 = 보유 재료·기본 양념과 is_a 조상. 삼겹살 보유 → '돼지고기' 줄 충족, 반대 방향은 아님."""
+    have = {x["id"]: x["have"] for x in
+            client.get("/recipes/kimchi_jjigae", params={"pantry": ["pork_belly", "kimchi"]}).json()["ingredients"]}
+    assert have["pork"] is True and have["kimchi"] is True
+    assert have["garlic"] is True  # 기본 양념
+    assert have["tofu"] is False
+    pid = make_profile(client, pantry=["kimchi"])
+    have = {x["id"]: x["have"] for x in
+            client.get("/recipes/kimchi_jjigae", params={"profile_id": pid}).json()["ingredients"]}
+    assert have["kimchi"] is True and have["pork"] is False
+    # pantry를 주면 프로필 보유 재료 대신 쓴다
+    have = {x["id"]: x["have"] for x in
+            client.get("/recipes/kimchi_jjigae", params={"profile_id": pid, "pantry": ["pork"]}).json()["ingredients"]}
+    assert have["kimchi"] is False and have["pork"] is True
+
+
+def test_recipe_detail_errors(client):
+    assert client.get("/recipes/no_such").status_code == 404
+    assert client.get("/recipes/kimchi_jjigae", params={"profile_id": 999}).status_code == 404
+    assert client.get("/recipes/kimchi_jjigae", params={"pantry": ["nope"]}).status_code == 400
+    assert client.get("/recipes/kimchi_jjigae", params={"pantry": ["seafood"]}).status_code == 400  # concept
+
+
+def test_recipe_detail_label_check_only_with_allergy(client, data):
+    ing = {i.id: i for i in data.knowledge.ingredients}
+    rid = next(r.id for r in data.recipes
+               if any(line.ingredient and ing[line.ingredient].is_processed and ing[line.ingredient].confidence == "low"
+                      for line in r.ingredients))
+    pid = make_profile(client)
+    assert client.get(f"/recipes/{rid}", params={"profile_id": pid}).json()["label_check"] is None
+    set_prefs(client, pid, [{"target_type": "allergen_group", "target_id": "shrimp"}])
+    check = client.get(f"/recipes/{rid}", params={"profile_id": pid}).json()["label_check"]
+    assert check and check["ingredients"]

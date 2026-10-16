@@ -13,6 +13,7 @@ from typing import Any
 
 import yaml
 
+from engine.candidates import owned_ingredients
 from engine.korean import josa
 from engine.model import KnowledgeSnapshot, RecommendItem, RecommendResult
 from kb.datacheck import RecipeSpec
@@ -134,6 +135,50 @@ class Catalog:
 
     def recipe_display(self, recipe_id: str) -> RecipeDisplay:
         return self._recipe_display[recipe_id]
+
+    def recipe_detail(self, recipe_id: str, *, pantry: frozenset[str] | None, has_allergy: bool) -> dict[str, Any]:
+        """레시피 상세: 역할별 전체 재료와 조리 단계. pantry를 주면 줄마다 보유 여부를 붙인다.
+
+        보유 판정은 추천 엔진과 같은 기준(owned_ingredients: 보유 재료·기본 양념과 그 is_a 조상)이다.
+        대체재는 사용자의 알레르기·불선호 확인이 필요해 여기서는 보지 않는다(추천 카드의 대체 안내를 따른다).
+        """
+        r = self.recipes[recipe_id]
+        disp = self.recipe_display(recipe_id)
+        owned = None if pantry is None else owned_ingredients(self.snapshot, pantry)
+        role_labels = self.display["role_labels"]
+        lines = []
+        for line in r.ingredients:
+            ing = line.ingredient
+            lines.append({
+                "id": ing,
+                "name": self.names.get(ing, ing) if ing else line.raw_text,
+                "raw_text": line.raw_text,
+                "role": line.role,
+                "role_label": role_labels.get(line.role, line.role),
+                "optional": line.optional,
+                "amount": line.amount,
+                "unit": line.unit,
+                "unmapped": ing is None,
+                "is_pantry_staple": ing in self.snapshot.pantry_staples if ing else False,
+                "have": None if owned is None else (ing is not None and ing in owned),
+            })
+        return {
+            "recipe_id": r.id,
+            "title": r.title,
+            "cuisine": r.cuisine,
+            "difficulty": r.difficulty,
+            "cook_time_min": r.cook_time_min,
+            "servings": r.servings,
+            "status": r.status,
+            "ingredients": lines,
+            "steps": [s.text for s in r.steps],
+            "notices": list(disp.notices),
+            "label_check": {
+                "message": self.display["label_check"],
+                "ingredients": [{"id": i, "name": self.names[i]} for i in disp.label_check],
+                "text": f"{self.display['label_check']}: " + ", ".join(self.names[i] for i in disp.label_check),
+            } if has_allergy and disp.label_check else None,
+        }
 
     def item(self, item: RecommendItem, *, has_allergy: bool) -> dict[str, Any]:
         """has_allergy: 사용자에게 알레르기 설정이 있을 때만 성분표 확인 표시를 붙인다(1-6 결정)."""

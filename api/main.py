@@ -153,6 +153,22 @@ def create_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir
                            include_concepts: bool = False) -> list[dict[str, Any]]:
         return state.catalog.search(q, limit=limit, include_concepts=include_concepts)
 
+    @app.get("/recipes/{recipe_id}")
+    def recipe_detail(recipe_id: str, profile_id: int | None = None,
+                      pantry: list[str] | None = Query(None)) -> dict[str, Any]:
+        """레시피 상세(역할별 전체 재료·조리 단계). 보유 여부 기준: pantry를 주면 그것, 아니면 profile_id의 보유 재료.
+        둘 다 없으면 보유 여부(have)는 null이다."""
+        catalog = state.catalog
+        if recipe_id not in catalog.recipes:
+            raise HTTPException(status_code=404, detail=f"레시피 {recipe_id}이(가) 없습니다")
+        profile = get_profile(profile_id) if profile_id is not None else None
+        if pantry is not None:
+            owned: frozenset[str] | None = frozenset(check_pantry(pantry))
+        else:
+            owned = frozenset(profile.pantry) if profile is not None else None
+        has_allergy = profile is not None and any(r.target_type == "allergen_group" for r in profile.preferences)
+        return catalog.recipe_detail(recipe_id, pantry=owned, has_allergy=has_allergy)
+
     @app.get("/graph")
     def graph(request: Request, response: Response, recipes: RecipeScope = "published",
               max_recipes: int | None = Query(None, ge=0)) -> Any:

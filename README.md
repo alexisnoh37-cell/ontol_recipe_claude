@@ -88,6 +88,7 @@ uv run uvicorn api.main:default_app --factory --port 8000
 - 브라우저에서 `http://127.0.0.1:8000/docs`를 열면 엔드포인트를 직접 호출해 볼 수 있습니다.
   - `POST /profiles`, `PATCH /profiles/{id}`(기본 정보·맛·보유 재료·조리기구), `PUT /profiles/{id}/preferences`(음식 종류·재료 선호, 알레르기)
   - `POST /recommend`, `GET /ingredients/search?q=달걀`(별칭 검색), `GET /allergen-groups`(법정/자체/묶음 구분), `GET /vocab`
+  - `GET /recipes/{id}?profile_id=1`(또는 `&pantry=egg&pantry=rice`): 레시피 전체 재료(역할별, 보유 여부 표시)와 조리 순서
 - 제외된 레시피의 사유는 `logs/exclusions.jsonl`에 한 줄씩 쌓입니다(경로는 환경변수 `EXCLUSION_LOG`).
 - DB 없이 지식·레시피를 파일에서 직접 읽으려면 `$env:ENGINE_SOURCE = "files"` 후 실행합니다(프로필 저장에는 여전히 DB가 필요).
 
@@ -99,7 +100,7 @@ API를 띄운 상태에서 또 다른 PowerShell 창에서:
 uv run streamlit run app/main.py
 ```
 
-브라우저가 `http://localhost:8501`로 열립니다. 왼쪽에서 프로필을 만들고, "프로필·선호 편집" 탭에서 보유 재료(별칭 검색)와 맛·선호를, "알레르기" 탭에서 알레르기를 저장한 뒤 "추천" 탭에서 추천을 받습니다. API 주소가 다르면 `$env:API_URL = "http://127.0.0.1:8000"`.
+브라우저가 `http://localhost:8501`로 열립니다. 왼쪽에서 프로필을 만들고, "프로필·선호 편집" 탭에서 보유 재료(별칭 검색)와 맛·선호를, "알레르기" 탭에서 알레르기를 저장한 뒤 "추천" 탭에서 추천을 받습니다. "추천" 탭에서 "이번만 재료 직접 고르기"를 고르면 프로필을 바꾸지 않고 고른 재료로 추천받고, 카드의 "전체 재료·조리 순서 보기"를 펼치면 레시피 재료 전체가 보유(✅)/없음(⬜)으로 표시됩니다. API 주소가 다르면 `$env:API_URL = "http://127.0.0.1:8000"`.
 
 ### 6-1. 3D 지식 그래프 (시각화, 부록 D)
 
