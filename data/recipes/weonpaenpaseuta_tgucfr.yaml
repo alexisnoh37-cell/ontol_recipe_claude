@@ -1,0 +1,80 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: weonpaenpaseuta_tgucfr
+title: 원팬파스타
+cuisine: 양식
+difficulty: 1
+cook_time_min: 13
+servings: 1
+source: https://www.youtube.com/watch?v=tgUCfRTGGtQ
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: butter
+  raw_text: 버터 20g
+  role: seasoning
+  optional: false
+  amount: 20
+  unit: g
+- ingredient: sliced_cheese
+  raw_text: 체다치즈 2장
+  role: main
+  optional: false
+  amount: 2
+  unit: 장
+- ingredient: onion
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: null
+  raw_text: 불닭소스 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: tomato_sauce
+  raw_text: 토마토소스 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: milk
+  raw_text: 우유 300ml
+  role: sub
+  optional: false
+  amount: 300
+  unit: ml
+- ingredient: null
+  raw_text: 잘 해동한 새우 7마리 / 새우 7마리 / 새우
+  role: sub
+  optional: false
+  amount: 7
+  unit: 마리
+- ingredient: null
+  raw_text: 파스타면 백원동전크기 1인분 / 파스타면 1인분 / 파스타면
+  role: sub
+  optional: false
+  amount: 1
+  unit: 인분
+taste:
+  spicy: 4
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 잘 해동한 새우 7마리 꼬리껍질 벗겨 준비해 주고 양파 반개는 얇게 채썰어 줄게요. 이제 준비한 팬에.
+  technique: null
+- text: 파스타면 백원동전크기 1인분 넣어주고 준비한 새우 7마리, 양파 반개 넣는다. 버터 20g.
+  technique: null
+- text: 체다치즈 2장 넣어줄게요. 여기에 붉닭소스 2스푼, 부어주세요. 이대로 중강불에 13분 정도 끓여주시면.
+  technique: 끓이기
+- text: 돼요. 중간에 면이 익었는지 수분이 부족한지 체크 플레이팅하고 파슬리 가루 솔솔 뿌려보면 비쥬얼.
+  technique: null

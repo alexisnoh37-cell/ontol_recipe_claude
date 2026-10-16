@@ -247,6 +247,7 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
    - 재료정보가 없는 레시피는 만들지 않고 보고한다.
 3. 미매칭 재료 빈도와 레시피별 미매칭 수를 `docs/review/foodsafety_unmatched.md`로 만든다. 별칭·재료 보강은 knowledge에 draft로 추가한 뒤 다시 변환한다.
 4. `data/recipes/`로 옮기려면 미매칭 0, cuisine·cook_time_min 채움, 사람 검수가 필요하다(로더가 미분류·cook_time_min 없음을 거부).
+5. 그래프 표시 전용(int-2, D3 통합): 엔진에 적재하지 않고 `GET /graph?display=true`에서만 같은 지식으로 연결해 보여 준다(부록 D-8).
 5. 열람용 정적 HTML 뷰어: `scripts/make_foodsafety_viewer.py`(템플릿 `scripts/foodsafety_viewer_template.html`)가 원본과 같은 변환 규칙으로 `data/recipes_foodsafety/viewer.html`(gitignore)을 만든다. 사진·영양 정보·저감 조리 팁, 재료별 매칭 여부를 보여 준다. 개인용 열람 전용, 외부 게시 금지.
 
 ### 5-4. 데이터 검증 스크립트
@@ -362,7 +363,7 @@ api/             FastAPI (main.py, schemas.py, present.py: 이름·안내 문구
 app/             Streamlit (API를 HTTP로 호출)
 knowledge/       allergens.yaml, vocab.yaml, ingredients.yaml 또는 ingredients/*.yaml, substitutes.yaml, README.md
 data/recipes/    레시피 시드 YAML(레시피당 1파일)
-data/recipes_foodsafety/  식품안전나라 변환 결과 draft YAML. 적재 대상 아님(5-3-1)
+data/recipes_foodsafety/  식품안전나라 변환 결과 draft YAML. 적재 대상 아님, 그래프 표시 전용(5-3-1, 부록 D-8)
 data/external/foodsafety/raw/  식품안전나라 API 원본 JSON
 config/          weights.yaml, pantry_staples.yaml, engine.yaml(serve_draft_recipes 등 가중치 외 설정), display.yaml(화면 안내·면책 문구, 표시 전용)
 scripts/         compile_knowledge.py, validate_data.py, load_recipes.py, bench.py (얇은 CLI, 로직은 kb/·storage/)
@@ -671,6 +672,13 @@ viz-5 결과(2026-10-03, 사람 결정): 회전 111fps 통과, 로딩 3.1~4.9초
 ### D-7. 단계
 
 viz-0 설계 기록 → viz-1 `/graph` → viz-2 trace·persona → viz-3 3D 온톨로지 화면 → viz-4 워크플로 재생 → viz-5 성능 측정·문서. 테스트는 `tests/viz/`: 그래프 개수·층 규칙·closure 경로 걷기(via 연속 쌍이 링크로 이어짐), trace 제외 결과 = 일반 `/recommend` 제외 결과, 후보 = 통과 ∪ 제외, 순위 = items 순서.
+
+### D-8. 레시피 출처 구분과 표시 전용 레시피 (int-2, 2026-10-16 사람 승인)
+
+- 레시피 노드에 `origin`(출처 id), `engine`(엔진 적재 여부), `lines`(재료 줄 수), `unmapped_lines`(미매칭 줄 번호·원문)를 싣는다. 출처 규칙은 `config/display.yaml` `graph_recipe_origins`(위에서부터 처음 맞는 것: `source` 값 일치, 또는 `dataset` 원본의 영상 URL 일치). 표시 전용이며 판정에 쓰지 않는다.
+- `GET /graph?display=true`: `display_dir`가 있는 출처(식품안전나라)의 레시피를 `kb.recipes.load_display_specs`로 읽어(draft 검증만, 적재 거부 규칙 없음, 지식과 맞지 않는 파일만 건너뜀) 같은 컴파일 closure로 재료·알레르기에 연결해 함께 싣는다(`engine: false`). 처음 요청 때만 읽고 캐시한다. 응답에 출처별 레시피 수(`origins`)와 `stats.display_recipes`.
+- 맛 정보가 없는 레시피는 `spicy: null`. 추천·trace·재료로 찾기는 적재된 레시피만 쓴다(표시 전용 레시피는 추천에 나오지 않음).
+- 화면: 레시피 원기둥 색 = 출처, 상단 "출처" 토글(출처별 표시·숨김), "표시 전용 포함"(`?display=1`로 다시 불러옴). 정보 패널에 출처·추천 사용 여부·미매칭 줄 원문.
 
 ## 부록 E. 외부 레시피 일회성 분석 adhoc (2026-10-16 사람 승인)
 

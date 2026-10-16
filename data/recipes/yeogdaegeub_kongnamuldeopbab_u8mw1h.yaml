@@ -1,0 +1,78 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: yeogdaegeub_kongnamuldeopbab_u8mw1h
+title: 역대급 콩나물덮밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source: https://www.youtube.com/watch?v=U8Mw1HcadV0
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pork_belly
+  raw_text: 대패삼겹살 100g
+  role: main
+  optional: false
+  amount: 100
+  unit: g
+- ingredient: soybean_sprouts
+  raw_text: 콩나물 100g
+  role: sub
+  optional: false
+  amount: 100
+  unit: g
+- ingredient: green_onion
+  raw_text: 대파 반쪽 / 대파 2/3쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.6666666666666666
+  unit: 쪽
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 1스푼 / 한스푼 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 가운데에 계란 한알 / 계란 1알 / 계란
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 콩나물덮밥 이렇게 꼭!! 드셔보세요 :) 콩나물 100g은 잘게 가위로 썰어줄게요.
+  technique: null
+- text: 기름 살짝 두른 프라이팬에 삼겹살 넣고 준비한 대파 넣어줄게요. 고기 잡내 잡고.
+  technique: null
+- text: 파기름 내면서 볶다가 고기가 익으면.
+  technique: 볶음
+- text: 콩나물 넣어줄게요. 잘 섞어서 볶다가 넣도 잘 섞어줄게요. 이제 재료 잘 펴주고.
+  technique: 볶음
+- text: 가운데에 계란 한알 툭 깨서 넣어주고 접시에 흰쌀밥 넉넉히 올려주고 재료.
+  technique: null
+- text: 후추 툭툭 참깨 넉넉히 뿌려주면 완성.
+  technique: null

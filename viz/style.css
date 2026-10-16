@@ -35,6 +35,7 @@ body { background: var(--bg); color: var(--text); font: 14px/1.5 var(--font); di
 .toggles { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
 .toggles legend { float: left; color: var(--muted); margin-right: 6px; font-size: 12px; }
 .toggles label { font-size: 13px; white-space: nowrap; cursor: pointer; }
+.toggles .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
 
 .layout { flex: 1; display: flex; min-height: 0; }
 .graph { position: relative; flex: 1; min-width: 0; overflow: hidden; }

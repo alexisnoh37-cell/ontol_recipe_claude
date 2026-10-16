@@ -1,0 +1,68 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: gyeranoibibimbab_mh4ukp
+title: 계란오이비빔밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 10
+servings: null
+source: https://www.youtube.com/watch?v=mH4uKPAodZk
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에 없음)
+ingredients:
+- ingredient: egg
+  raw_text: 달걀 3알 / 달걀
+  role: main
+  optional: false
+  amount: 3
+  unit: 알
+- ingredient: cucumber
+  raw_text: 오이 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: salt
+  raw_text: 맛소금 3꼬집 / 맛소금
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 꼬집
+- ingredient: null
+  raw_text: 미원 3꼬집
+  role: sub
+  optional: false
+  amount: 3
+  unit: 꼬집
+- ingredient: gochujang
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 깨소금
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 3
+equipment: []
+steps:
+- text: 미원 3꼬집 넣어 간 한 후 잘 섞는다.
+  technique: 무침
+- text: 익혀질 때까지 익해주면 끝! 밥 넣고 고추장 1스푼, 비벼주세요. 이 위에 달걀 오이 넣은 후 슥슥.
+  technique: null

@@ -1,0 +1,64 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: mecurial_yangpa_kare_osfrbb
+title: 메추리알 양파 카레
+cuisine: 일식
+difficulty: 3
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=oSFrbBWnhZ0
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: onion
+  raw_text: 양파 2개
+  role: main
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: quail_egg
+  raw_text: 메추리알 500g
+  role: sub
+  optional: false
+  amount: 500
+  unit: g
+- ingredient: null
+  raw_text: 고형카레 큰거 하나
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: null
+  raw_text: 기름 5스푼
+  role: sub
+  optional: false
+  amount: 5
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 채썰어 주시면 돼요 로 갈라서 최대한 넣어서 반 주고서 물 이렇게 따라주면.
+  technique: null
+- text: 편입니다 물 버리고 한번 씻고 올게요 씻는 이유는이 안에 보존재.
+  technique: null
+- text: 한번 깨끗이 씻어 주는게 먹을 때도 워에 볶으면 매출이 폭탄입니다.
+  technique: 볶음
+- text: 올리브유 다섯 스푼 뿌려 구워 줄게요 너무 오래 볶으면 안 바삭하게 익었고 양파 넣어 줄게요네.
+  technique: 구이
+- text: 볶아 주시면 돼요 갈색으로 변하고 끓일 때 충분히 거기에서 단맛.
+  technique: 볶음
+- text: 볶아주면 됩니다 이제 이렇게 양파이 700ml 넣어 줄게요 여기 이런.
+  technique: 볶음
+- text: 하나 넣어 주면 됩니다 고형카레 있는데 반 잘라서이 반만 넣어 주시면.
+  technique: null
+- text: 끓기 시작하면 한 3분 정도만 더 끓여 주시면 됩니다 카레가 충분히.
+  technique: 끓이기

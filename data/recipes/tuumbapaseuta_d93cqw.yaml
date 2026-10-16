@@ -1,0 +1,116 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: tuumbapaseuta_d93cqw
+title: 투움바파스타
+cuisine: 양식
+difficulty: 1
+cook_time_min: 8
+servings: 2
+source: https://www.youtube.com/watch?v=d93CqWo4zOE
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pasta
+  raw_text: 파스타면 2인분 / 파스타면
+  role: main
+  optional: false
+  amount: 2
+  unit: 인분
+- ingredient: shrimp_raw
+  raw_text: 새우 10마리 / 새우
+  role: sub
+  optional: false
+  amount: 10
+  unit: 마리
+- ingredient: gochugaru
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: bacon
+  raw_text: 베이컨 2줄
+  role: sub
+  optional: false
+  amount: 2
+  unit: 줄
+- ingredient: onion
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: garlic
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sliced_cheese
+  raw_text: 체다치즈 2장
+  role: sub
+  optional: false
+  amount: 2
+  unit: 장
+- ingredient: heavy_cream
+  raw_text: 생크림 300ml
+  role: sub
+  optional: false
+  amount: 300
+  unit: ml
+- ingredient: milk
+  raw_text: 우유 200ml
+  role: sub
+  optional: false
+  amount: 200
+  unit: ml
+- ingredient: oyster_sauce
+  raw_text: 굴소스 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: null
+  raw_text: 치킨스톡 가루 반스푼
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: chicken_stock
+  raw_text: 치킨스톡
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 6대 4 비율로 섞어서 불스, 진간장, 치킨스토로 넣어 잘 섞어주고.
+  technique: 무침
+- text: 마늘 볶아 주다가 베이컨 먹고 새우는 코팅 같이 볶아 줄게요. 입사가 색이.
+  technique: 볶음
+- text: 끓으면 미리 8분간 삶은 파스타면만 넣어서 조여 주다가 꾸덕해지면 세워.
+  technique: 끓이기
+- text: 마무리 크러시드 페퍼 후추 툭툭 뿌려 잘 섞어서 먹어 보면 와 이건 진짜.
+  technique: 무침

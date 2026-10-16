@@ -197,3 +197,41 @@ def test_recipe_selection_paths_match_info_panel(client):
     tonkatsu = {nodes[a["group"]]["name"]: a["certainty"] for a in nodes["rcp:tonkatsu"]["allergens"]}
     assert tonkatsu["알류(가금류)"] == "definite" and tonkatsu["밀"] == "definite"
     assert all(tonkatsu[x] == "possible" for x in ("대두", "토마토", "아황산류"))
+
+
+# --- 출처 구분·표시 전용 레시피 (int-2) ------------------------------------------------------------------
+
+
+def test_recipe_origins_cover_all_seed_recipes(client, data):
+    g = get_graph(client, recipes="all")
+    recipes = [n for n in g["nodes"] if n["kind"] == "recipe"]
+    assert all(n["engine"] is True for n in recipes)
+    counts = Counter(n["origin"] for n in recipes)
+    assert None not in counts  # 모든 시드 레시피가 config의 출처 규칙에 맞는다
+    assert {o["id"]: o["recipes"] for o in g["origins"]} == dict(counts)
+    assert {"seed", "simplecooking", "sallimpop"} <= set(counts)
+    for n in recipes:
+        assert len(n["unmapped_lines"]) == sum(1 for x in next(r for r in data.recipes if f"rcp:{r.id}" == n["id"]).ingredients
+                                               if x.ingredient is None)
+        assert n["has_unmapped"] == bool(n["unmapped_lines"])
+
+
+def test_display_recipes_join_graph_but_not_engine(client, data):
+    """display=true면 식품안전나라(엔진 미적재)가 같은 지식으로 연결되어 실린다. 추천 엔진은 그 레시피를 모른다."""
+    base = get_graph(client, recipes="all")
+    g = get_graph(client, recipes="all", display="true")
+    shown = [n for n in g["nodes"] if n["kind"] == "recipe" and n["engine"] is False]
+    assert shown and {n["origin"] for n in shown} == {"foodsafety"}
+    assert g["stats"]["display_recipes"] == len(shown)
+    assert g["stats"]["recipes"] == base["stats"]["recipes"] + len(shown)
+    assert all(n["cuisine"] == "미분류" and n["status"] == "draft" and n["spicy"] is None for n in shown)
+    shown_ids = {n["id"] for n in shown}
+    uses = [lk for lk in g["links"] if lk["type"] == "uses" and lk["source"] in shown_ids]
+    node_ids = {n["id"] for n in g["nodes"]}
+    assert uses and all(lk["target"] in node_ids for lk in uses)  # 매핑된 줄은 기존 재료 노드에 연결
+    assert any(n["allergens"] for n in shown)  # 같은 컴파일 closure로 걸리는 알레르기를 보여 준다
+    engine_ids = {f"rcp:{r.id}" for r in data.recipes}
+    assert shown_ids.isdisjoint(engine_ids)
+    r1 = client.get("/graph", params={"recipes": "all"})
+    r2 = client.get("/graph", params={"recipes": "all", "display": "true"})
+    assert r1.headers["etag"] != r2.headers["etag"]

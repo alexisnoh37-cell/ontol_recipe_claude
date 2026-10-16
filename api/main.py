@@ -25,9 +25,10 @@ from fastapi.staticfiles import StaticFiles
 from api.adhoc import analyze as analyze_adhoc
 from api.present import TASTE_DIMENSIONS, Catalog, load_display
 from api.schemas import AnalyzeRecipeIn, PreferencesIn, ProfileCreate, ProfileOut, ProfileUpdate, RecommendIn
-from api.viz import GraphCatalog, RecipeScope
+from api.viz import GraphCatalog, RecipeOrigins, RecipeScope
 from engine.model import Preference, RecommendRequest, RecommendResult, TastePreference, UserContext
 from engine.recommend import Recommender
+from kb.recipes import load_display_specs
 from storage.engine_source import CONFIG_DIR, ROOT, EngineData
 from storage.personas import Persona, load_personas
 from storage.users import (
@@ -56,8 +57,14 @@ class State:
     def reload(self) -> None:
         data = self.loader()
         recommender = data.recommender(config_dir=self.config_dir)
-        catalog = Catalog(data, load_display(self.config_dir))
-        graph = GraphCatalog(data)
+        display = load_display(self.config_dir)
+        catalog = Catalog(data, display)
+        origins = RecipeOrigins(display.get("graph_recipe_origins") or [], ROOT)
+
+        def display_loader() -> list[Any]:  # 표시 전용 레시피(엔진·DB 미적재), 처음 요청 때만 읽는다
+            return [s for _, d in origins.display_dirs for s in load_display_specs(data.knowledge, ROOT / d, ROOT)[0]]
+
+        graph = GraphCatalog(data, origins, display_loader)
         with self.lock:
             self.recommender: Recommender = recommender
             self.catalog: Catalog = catalog
@@ -198,9 +205,10 @@ def create_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir
 
     @app.get("/graph")
     def graph(request: Request, response: Response, recipes: RecipeScope = "published",
-              max_recipes: int | None = Query(None, ge=0)) -> Any:
-        """3D 시각화용 노드·간선(부록 D). 데이터가 바뀌지 않으면 ETag가 같아 304로 응답한다."""
-        body, etag = state.graph.graph(recipes, max_recipes)
+              max_recipes: int | None = Query(None, ge=0), display: bool = False) -> Any:
+        """3D 시각화용 노드·간선(부록 D). display=true면 표시 전용 레시피(식품안전나라 등)도 싣는다.
+        데이터가 바뀌지 않으면 ETag가 같아 304로 응답한다."""
+        body, etag = state.graph.graph(recipes, max_recipes, display)
         if request.headers.get("if-none-match") == etag:
             return Response(status_code=304, headers={"ETag": etag})
         response.headers["ETag"] = etag

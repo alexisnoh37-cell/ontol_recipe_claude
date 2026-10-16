@@ -1,0 +1,74 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: ryusuyeongnimyi_seolmaganjanggugsu_fjpnqg
+title: 류수영님의 설마간장국수
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: 2
+source: https://www.youtube.com/watch?v=fJPNqGYXV-s
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: null
+  raw_text: 국수 2인분
+  role: main
+  optional: false
+  amount: 2
+  unit: 인분
+- ingredient: null
+  raw_text: 김가루 2스푼
+  role: garnish
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 깨소금 1스푼
+  role: garnish
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 양조간장 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 물에 씻은 묵은지 적당량 국수 2인분 끓는 물에 2분 30초 삶아줄게요.
+  technique: 끓이기
+- text: 국수는 이렇게 물이 끓어오르면서 넘치는데 이때 찬물 아주 조금씩 부어주면서 끓이면.
+  technique: 끓이기
+- text: 넘치지 않아요. 삶은 국수는 찬물에 2-3번 물에 잘 씻어서 잘게 잘라줄게요. 양념장이.
+  technique: 끓이기
+- text: 다진마늘 1스푼, 설탕 2스푼 넣고 설탕이 녹을 때까지 잘 섞는다. 접시에 국수.
+  technique: 무침

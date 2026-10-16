@@ -1,0 +1,92 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: insaengganjanggugsu_bi0ceo
+title: 인생간장국수
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: 2
+source: https://www.youtube.com/watch?v=bI0ceoR9TtQ
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: null
+  raw_text: 깨소금이 핵심이에요 영상에서는 2스푼
+  role: main
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 마지막에 한스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: soy_sauce
+  raw_text: 양조간장 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 매실액 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 소면을 삶는 동안 계란 1알 / 소면 2인분 / 소면 / 계란 1알 / 계란
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+- ingredient: null
+  raw_text: 통깨를 갈아만든 깨소금 2스푼 / 깨소금 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 소면 2인분 끓는 물에 2분 30초간 삶아줄게요. 소면을 삶는 동안 계란 1알 노른자 분리해주고.
+  technique: 끓이기
+- text: 청양고추 2개도 어슷 썰어줄게요. 삶은 소면은 통깨를 갈아만든 깨소금 2스푼 넣어서 설탕이.
+  technique: 끓이기
+- text: 녹을때까지 잘 섞는다. 국수는 많이 소면은 소스에 넣고 잘 섞어준 후 접시에 담아.
+  technique: 무침
+- text: 노른자 가운데에 하나 올려주고 청양고추 넣어주면 완성이에요.
+  technique: null

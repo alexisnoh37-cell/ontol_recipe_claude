@@ -1,0 +1,98 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: babdodugingayo_1v9dh1
+title: 밥도둑인가요?
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=1V9dH1c56Zk
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: onion
+  raw_text: 양파 한개
+  role: main
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: green_onion
+  raw_text: 대파 반쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 쪽
+- ingredient: red_chili
+  raw_text: 홍고추 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: soy_sauce
+  raw_text: 양조간장 200ml
+  role: seasoning
+  optional: false
+  amount: 200
+  unit: ml
+- ingredient: tuna_extract
+  raw_text: 참치액 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 매실청 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 통깨 2스푼
+  role: garnish
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 깐매추리알 500g / 매추리알 500g
+  role: sub
+  optional: false
+  amount: 500
+  unit: g
+- ingredient: null
+  raw_text: 맛을 위해 청양고추 1개 / 청양고추 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 따로 삶는게 아니여서 남아있는 보존제 제거 반으로 잘라 최대한 잘게 썰어주고 대파 반쪽도.
+  technique: 끓이기
+- text: 반으로 갈라 잘게 자른다. 살짝 매콤한 썰어줄게요. 황금비율 양념간장 만들어볼게요.
+  technique: null
+- text: 매실청 2스푼, 설탕 반스푼 넣고 한번 와르르 끓인다. 한번 끓고나면 바로 불 끄면 됩니다.
+  technique: 끓이기
+- text: 넣은 후 참기름 2스푼, 통깨 2스푼 넣은 후.
+  technique: null

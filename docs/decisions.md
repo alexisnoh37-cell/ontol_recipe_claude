@@ -33,6 +33,10 @@
   - 출처 표시는 유지한다(레시피마다 `source: foodsafety`, note에 식품의약품안전처 식품안전나라·일련번호, 원본 JSON의 `source`). 상업화 전에는 식약처에 이용 조건을 문의한다.
   - 커밋에 API 인증키가 들어가지 않는다(`.env`만 사용, 원본 JSON에 키 없음 확인).
 - 예외(2026-10-16, 사람 결정): 자취요리신 YouTube 데이터셋(`data/simplecooking_recipe_dataset/`) 100개는 설명란 원문(raw_text·조리 단계)을 유지한 채 `data/recipes/`에 draft로만 넣는다. `source`에 영상 URL을 남긴다. published로 바꾸기 전에 출처 이용 조건과 본문 표현을 다시 검토한다.
+- 통합(2026-10-16, 사람 승인, 브랜치 `feature/ontology-integration` int-2, 추천안 `docs/review/ontology_integration_proposal.md`):
+  - 살림팝 YouTube 데이터셋(`data/sallimpop_recipe_dataset/`) 169개에도 위 예외를 그대로 적용한다(원문 유지, draft, source는 영상 URL, published 전 재검토).
+  - 식품안전나라 1153개는 엔진·DB에 적재하지 않고 그래프 표시 전용으로만 연결한다(요리권·조리시간·난이도·맛이 없어 추측값이 필요하기 때문). `GET /graph?display=true`.
+  - 출처가 다른 같은 이름의 요리는 합치지 않는다(재료·분량이 달라 알레르기 결과가 다를 수 있음).
 
 ## D4. 알레르기 그룹 기준
 

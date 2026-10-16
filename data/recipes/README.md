@@ -33,7 +33,7 @@ steps:
 - 외부 레시피 본문을 복제하지 않는다. 일반적인 가정식 조리법으로 직접 쓴다(docs/decisions.md D3).
 - 재료는 knowledge의 id만 쓴다. 없는 재료는 knowledge에 `status: draft`로 먼저 추가하고 검수표에 올린다.
 - 미매칭(`ingredient: null`)은 draft 레시피에만 허용한다(검수표에 **미매칭** 표시, 알레르기 사용자에게 제외). published로 바꾸기 전에 모두 매핑한다.
-- 예외(D3, 2026-10-16): 자취요리신 YouTube 데이터에서 변환한 draft 100개는 원문을 유지하고 `source`에 영상 URL을 둔다. 원본은 `data/simplecooking_recipe_dataset/`, 변환은 `scripts/convert_simplecooking.py`(다시 실행하면 덮어씀).
+- 예외(D3, 2026-10-16): 자취요리신 YouTube 데이터에서 변환한 draft 100개는 원문을 유지하고 `source`에 영상 URL을 둔다. 원본은 `data/simplecooking_recipe_dataset/`, 변환은 `scripts/convert_simplecooking.py`(다시 실행하면 덮어씀). 살림팝 169개도 같은 예외로 `data/sallimpop_recipe_dataset/` → `scripts/convert_sallimpop.py`(int-2, 두 스크립트 모두 `kb/youtube_seed.py` 규칙).
 - 부위가 상관없는 고기는 넓은 재료(`pork`, `beef`)로 쓴다. 삼겹살 등 하위 재료를 가진 사용자도 매칭된다.
   특정 부위가 필요하면 하위 재료(`pork_loin`)를 쓴다(이때 다른 부위 보유로는 매칭되지 않음).
 - 기본 양념(config/pantry_staples.yaml)도 빠짐없이 적는다. 커버리지에서는 보유로 간주되지만 알레르기 판정에는 쓰인다.

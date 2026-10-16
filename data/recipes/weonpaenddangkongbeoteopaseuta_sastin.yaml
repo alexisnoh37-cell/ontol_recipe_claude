@@ -1,0 +1,102 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: weonpaenddangkongbeoteopaseuta_sastin
+title: 원팬땅콩버터파스타
+cuisine: 양식
+difficulty: 1
+cook_time_min: 13
+servings: 1
+source: https://www.youtube.com/watch?v=SasTinxCwVY
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: null
+  raw_text: 간 돼지고기 100g / 돼지고기 100g
+  role: main
+  optional: false
+  amount: 100
+  unit: g
+- ingredient: bok_choy
+  raw_text: 청경채 3쪽 / 청경채
+  role: sub
+  optional: false
+  amount: 3
+  unit: 쪽
+- ingredient: olive_oil
+  raw_text: 올리브유 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: mirin
+  raw_text: 맛술 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 페퍼론치노 3개
+  role: sub
+  optional: false
+  amount: 3
+  unit: 개
+- ingredient: gochujang
+  raw_text: 고추장 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: tuna_extract
+  raw_text: 참치액 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 코인육수 1알
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+- ingredient: null
+  raw_text: 땅콩버터 크게 한스푼 / 크게 한스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 볶다가 맛술 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 부은 후 백원동전크기 파스타면 1인분 / 파스타면 1인분 / 파스타면
+  role: sub
+  optional: false
+  amount: 1
+  unit: 인분
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 볶다가 맛술 2스푼, 페퍼론치노 3개 넣고 1분간 더 볶아줄게요. 여기에 물 600ml.
+  technique: 볶음
+- text: 청경채 넣어줄게요. 양념으로 고추장 반스푼, 넣은 후 면이 익고 수분이 증발 될때까지 12분간.
+  technique: null
+- text: 끓인다. 농도가 이정도로 되면 땅콩버터 크게 한스푼 넣은 후 잘 섞는다. 완성이에요.
+  technique: 끓이기

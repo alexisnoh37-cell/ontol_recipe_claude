@@ -1,0 +1,64 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: gajigui_dtitg8
+title: 가지구이
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=dTitg8ZFXFw
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에 없음)
+ingredients:
+- ingredient: eggplant
+  raw_text: 가지 1개 / 가지 한개
+  role: main
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: null
+  raw_text: 파 1/4 쪽
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 쪽
+- ingredient: soy_sauce
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼 / 굴소스 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: corn_syrup
+  raw_text: 물엿 1스푼 / 물엿 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment: []
+steps:
+- text: 한번 더 반으로 자르고 세로로 길게 칼집 두번 물엿 한스푼, 참기름 1스푼, 후추 툭툭 뿌려서.
+  technique: null
+- text: 정도 둘러주고 파, 가지 넣는다. 가지 위에 소스 골고루 뿌려주고 중불에 3분정도 잘.
+  technique: null
+- text: 가지 올려주고 남은 소스 부어준 후 계란 올려주세요.
+  technique: null

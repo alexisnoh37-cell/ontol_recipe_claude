@@ -1,0 +1,98 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: suyug_dbjoju
+title: 수육
+cuisine: 한식
+difficulty: 1
+cook_time_min: 45
+servings: null
+source: https://www.youtube.com/watch?v=dbJojuX_-Vs
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pork_ribs
+  raw_text: 돼지갈비 1kg
+  role: main
+  optional: false
+  amount: 1
+  unit: kg
+- ingredient: onion
+  raw_text: 양파 2개 / 파 4쪽
+  role: sub
+  optional: false
+  amount: 4
+  unit: 쪽
+- ingredient: mirin
+  raw_text: 맛술 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: salt
+  raw_text: 굵은소금 2꼬집
+  role: sub
+  optional: false
+  amount: 2
+  unit: 꼬집
+- ingredient: saeujeot
+  raw_text: 새우젓 한스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 1/3스푼
+  role: seasoning
+  optional: false
+  amount: 0.3333333333333333
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 반스푼
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 깨소금 반스푼
+  role: garnish
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 돼지갈비 1kg 썰어서 준비해주고 양파 2개 반 잘라주세요. 냄비 바닥에 양파 넣고 위에 파.
+  technique: null
+- text: 올려주고 위에 갈비 올려주세요. 위에 굵은 소금 두꼬집 뿌리고 후추도 적당량 뿌려주세요.
+  technique: null
+- text: 마무리로 물 200ml, 맛술 3스푼 넣어준 후 45분간 뚜껑 닫고 끓인다. 마무리로 뜸.
+  technique: 끓이기
+- text: 고춧가루 반스푼, 깨소금 반스푼 넣은 후 잘 섞는다.
+  technique: 무침

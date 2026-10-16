@@ -1,0 +1,88 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: maneulpogtandwaejijjigae_aq_g_8
+title: 마늘폭탄돼지찌개
+cuisine: 한식
+difficulty: 1
+cook_time_min: 10
+servings: null
+source: https://www.youtube.com/watch?v=Aq_g-89tjso
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pork_shoulder
+  raw_text: 돼지고기 앞다리살 300g / 앞다리살 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: garlic
+  raw_text: 다진마늘 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- ingredient: zucchini
+  raw_text: 애호박 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: onion
+  raw_text: 양파 반쪽 / 양파
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 쪽
+- ingredient: green_onion
+  raw_text: 대파 반쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 쪽
+- ingredient: soy_sauce
+  raw_text: 국간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: mirin
+  raw_text: 맛술 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 가루육수 1포
+  role: sub
+  optional: false
+  amount: 1
+  unit: 포
+- ingredient: gochugaru
+  raw_text: 고춧가루 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 마늘 듬뿍 넣고 돼지찌개 끓이잖아요? 풍미가 찌개요리는 대부분 재료 넣고 끓이기만 하면 되는.
+  technique: 끓이기
+- text: 오늘은 마늘 듬뿍 넣고 돼지찌개 어떠세요.
+  technique: null

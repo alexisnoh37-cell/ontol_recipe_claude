@@ -1,0 +1,126 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: weonpaenjabcae_9b_fxs
+title: 원팬잡채
+cuisine: 한식
+difficulty: 2
+cook_time_min: 7
+servings: null
+source: https://www.youtube.com/watch?v=9b-FXs7OIoI
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: glass_noodles
+  raw_text: 당면 200g
+  role: main
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: fish_cake
+  raw_text: 어묵 3장
+  role: sub
+  optional: false
+  amount: 3
+  unit: 장
+- ingredient: carrot
+  raw_text: 당근 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: onion
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: bok_choy
+  raw_text: 청경채 5쪽 / 청경채
+  role: sub
+  optional: false
+  amount: 5
+  unit: 쪽
+- ingredient: olive_oil
+  raw_text: 올리브유 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 흑설탕 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: mirin
+  raw_text: 맛술 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: chicken_stock
+  raw_text: 치킨스톡 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: oligosaccharide
+  raw_text: 올리고당 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 통깨 넉넉히 / 통깨
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- ingredient: null
+  raw_text: 진강장 4스푼
+  role: sub
+  optional: false
+  amount: 4
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 당면을 불리는 동안 재료 손질해 볼게요. 어묵 3장 얇게 썰어주고 당근 반개 얇게.
+  technique: null
+- text: 채자른다. 양파 반개도 채썰어주고 올리고당 2스푼 넣고 설탕이 잘 녹을 때까지.
+  technique: null
+- text: 당근, 양파 넣고 중강불에 3분정도 볶는다.
+  technique: 볶음
+- text: 양념장 넣고 당면도 넣는다.
+  technique: null
+- text: 2분 정도 잘 섞으면서 볶다가 마무리로 청경채 놓고 2분만 더 볶아주면 돼요.
+  technique: 볶음
+- text: 뿌려주면 원팬으로 만드는 잡채 완성이에요.
+  technique: null

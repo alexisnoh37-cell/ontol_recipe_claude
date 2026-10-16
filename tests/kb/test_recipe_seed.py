@@ -1,6 +1,6 @@
 """레시피 시드(data/recipes/) 검사: 형식·어휘 검증, 구성, 검수표 최신 여부, 알레르기 스모크.
 
-1-3 검수 완료 50개(published) + 1차 확장(2026-10-04) 초안 50개(draft) + 자취요리신 YouTube 데이터 변환 100개(draft, 2026-10-16). 개수는 시드에서 센다.
+1-3 검수 완료 50개(published) + 1차 확장(2026-10-04) 초안 50개(draft) + 자취요리신 YouTube 데이터 변환 100개(draft, 2026-10-16) + 살림팝 169개(draft, int-2). 개수는 시드에서 센다.
 """
 
 from __future__ import annotations
@@ -10,6 +10,7 @@ from collections import Counter
 from pathlib import Path
 
 import pytest
+import yaml
 
 from engine.model import ExclusionReason, RecommendRequest, UserContext
 from kb import compile_paths
@@ -201,16 +202,30 @@ def test_loader_rejects_unclassified_or_untimed_draft(ck, tmp_path, extra, messa
 # --- 자취요리신 데이터 변환(2026-10-16, docs/decisions.md D3 예외) ---------------------------------------------
 
 
-def test_simplecooking_recipes_are_draft_with_youtube_source(specs):
-    # 원본 100개가 모두 변환되고, 출처는 영상 URL, 검수 전이므로 draft·confidence low 그대로다.
-    dataset = ROOT / "data" / "simplecooking_recipe_dataset" / "recipes" / "simplecooking"
-    sc = [s for s in specs if s.source.startswith("https://www.youtube.com/watch?v=")]
-    assert len(sc) == len(list(dataset.glob("*.yaml"))) == 100
-    assert {s.status for s in sc} == {"draft"} and {s.confidence for s in sc} == {"low"}
-    assert {s.id for s in sc}.isdisjoint(PUBLISHED_IDS)
-    expansion = [s for s in specs if s.source == "agent_draft" and s.status == "draft"]  # 1차 확장
+def dataset_urls(name):
+    """YouTube 데이터셋 원본의 영상 URL(변환본 source와 같아야 한다)."""
+    folder = ROOT / "data" / f"{name}_recipe_dataset" / "recipes" / name
+    return {yaml.safe_load(p.read_text(encoding="utf-8"))["source"]["video_url"] for p in folder.glob("*.yaml")}
+
+
+@pytest.mark.parametrize("name, count", [("simplecooking", 100), ("sallimpop", 169)])
+def test_youtube_recipes_are_draft_with_video_source(specs, name, count):
+    # 원본이 모두 변환되고, 출처는 영상 URL, 검수 전이므로 draft 그대로다(자취요리신 2026-10-16, 살림팝 int-2).
+    urls = dataset_urls(name)
+    converted = [s for s in specs if s.source in urls]
+    assert len(urls) == len(converted) == count
+    assert {s.status for s in converted} == {"draft"}
+    if name == "simplecooking":
+        assert {s.confidence for s in converted} == {"low"}  # 원본 confidence 그대로(살림팝은 high·low 섞임)
+    assert {s.id for s in converted}.isdisjoint(PUBLISHED_IDS)
+
+
+def test_seed_is_published_expansion_and_youtube(specs):
+    # 시드 구성: 1-3 검수 50 + 1차 확장 draft 50 + 자취요리신 100 + 살림팝 169. 그 밖의 출처는 없다.
+    expansion = [s for s in specs if s.source == "agent_draft" and s.status == "draft"]
     assert len(expansion) == 50
-    assert len(specs) == len(PUBLISHED_IDS) + len(expansion) + len(sc)
+    youtube = dataset_urls("simplecooking") | dataset_urls("sallimpop")
+    assert len(specs) == len(PUBLISHED_IDS) + len(expansion) + sum(s.source in youtube for s in specs)
 
 
 def test_unmapped_only_in_drafts(specs):

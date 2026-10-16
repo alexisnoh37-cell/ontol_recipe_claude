@@ -1,0 +1,128 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: ryusuyeongnim_seupaemsundubujjigae_mqoww9
+title: 류수영님 스팸순두부찌개
+cuisine: 한식
+difficulty: 2
+cook_time_min: 8
+servings: null
+source: https://www.youtube.com/watch?v=Mqoww9mHIuI
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: null
+  raw_text: 스팸 200g
+  role: main
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: green_onion
+  raw_text: 대파 1대 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 대
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: onion
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: olive_oil
+  raw_text: 올리브유 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 양조간장 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: soft_tofu
+  raw_text: 순두부 1봉
+  role: sub
+  optional: false
+  amount: 1
+  unit: 봉
+- ingredient: egg
+  raw_text: 계란 2알 / 계란
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- ingredient: null
+  raw_text: 살탕 반스푼
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: null
+  raw_text: 볶다가 재료 한쪽
+  role: sub
+  optional: false
+  amount: 1
+  unit: 쪽
+- ingredient: null
+  raw_text: 고추가루 3스푼
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 스팸은 반은 으깨주고 반은 토핑용으로 넣어주고 으깬 스팸 넣은 후 갈색이 될때까지.
+  technique: null
+- text: 잘 볶는다. 여기에 다진마늘 1스푼, 청양고추, 대파, 살탕 반스푼 넣은 후 1분간.
+  technique: 볶음
+- text: 볶다가 재료 한쪽으로 민 뒤 불끄고 고추가루 3스푼 넣어 고추기름 살짝 내줄게요.
+  technique: 볶음
+- text: 양조간장 3스푼 넣고 다시 불 켠 뒤 와르르 끓인 후 굴소스 2스푼 넣고 물 400ml.
+  technique: 끓이기
+- text: 부은 후 애호박, 양파 넣어줄게요. 이대로 야채가 익을때까지 5분간 끓이다가 순두부.
+  technique: 끓이기
+- text: 스팸 넣어준 뒤 위에 후추 넉넉히 뿌려주세요.
+  technique: null
+- text: 마무리로 계란 2알 깨서 넣고 대파 토핑올려 준 후 2분간만 더 끓여주면 완성입니다.
+  technique: 끓이기

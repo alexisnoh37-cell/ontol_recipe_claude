@@ -1,0 +1,72 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: koseuteuko_sunsalgalbi_9320rb
+title: 코스트코 순살갈비
+cuisine: 한식
+difficulty: 1
+cook_time_min: 40
+servings: null
+source: https://www.youtube.com/watch?v=9320rbQdlQA
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: soy_sauce
+  raw_text: 진간장 12스푼
+  role: seasoning
+  optional: false
+  amount: 12
+  unit: 스푼
+- ingredient: mirin
+  raw_text: 맛술 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 흑설탕 2스푼
+  role: main
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 매실청 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: carrot
+  raw_text: 당근 적당량 / 당근
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: onion
+  raw_text: 양파 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 4개
+  role: sub
+  optional: false
+  amount: 4
+  unit: 개
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 1
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 핏물 제거 한번 해 줄게요. 손질은 줄게요. 끓는물에 불순물과 지방.
+  technique: 끓이기
+- text: 매실청 두 스푼 넣은 후 잘 섞어 준 뒤 고기 넣고 20분간 끓인다.
+  technique: 끓이기
+- text: 20분을 준비한 야채 다 넣고 올려서 올려서.
+  technique: null

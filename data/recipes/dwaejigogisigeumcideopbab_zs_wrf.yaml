@@ -1,0 +1,96 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: dwaejigogisigeumcideopbab_zs_wrf
+title: 돼지고기시금치덮밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: 2
+source: https://www.youtube.com/watch?v=Zs_wRFmW9V8
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: ground_pork
+  raw_text: 돼지고기 다짐육 200g / 다짐육 200g
+  role: main
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: spinach
+  raw_text: 시금치 200g
+  role: sub
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: red_chili
+  raw_text: 홍고추 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: garlic
+  raw_text: 다진마늘 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: olive_oil
+  raw_text: 올리브유 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: chicken_stock
+  raw_text: 치킨스톡 1/3스푼
+  role: seasoning
+  optional: false
+  amount: 0.3333333333333333
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 훌륭한 돼지고기 시금치 덮밥 레시피 깨끗이 씻어 주세요 뿌리 부분에 흙이.
+  technique: null
+- text: 많아서 꼼꼼하게 씻어 주는게 중요한다 다진마늘 청양고추 홍고추 넣어서.
+  technique: null
+- text: 1분간 볶아 주고 다짐육 넣는다 다짐 육이 익을 때까지 2분 정도.
+  technique: 볶음
+- text: 볶다가 설탕 한 스푼 불소스 한 스푼 스푼 넣어 간해 줄게요 여기에 시금치.
+  technique: 볶음
+- text: 넣는다 처음에는 시금치 양이 많아 보이지만 2분 정도 볶으면.
+  technique: 볶음
+- text: 올려주고 무리로 계란 우라이 하나 올려서 먹으면이 궁합 진심 강력.
+  technique: null

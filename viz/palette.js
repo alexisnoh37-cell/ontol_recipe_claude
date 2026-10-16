@@ -18,6 +18,14 @@ export const NODE_COLOR = {
   unmapped: "#c2414b", // 외부 레시피의 미매칭 줄(온톨로지에 연결되지 않음)
 };
 
+// 레시피 출처별 색(origin, config/display.yaml graph_recipe_origins, int-2). 없는 출처는 NODE_COLOR.recipe
+export const ORIGIN_COLOR = {
+  seed: "#e8dcc0", // 기본·확장 시드
+  simplecooking: "#ffb86b", // 자취요리신
+  sallimpop: "#ff8fb1", // 살림팝
+  foodsafety: "#9fb3c8", // 식품안전나라(그래프 표시 전용, 엔진 미적재)
+};
+
 export const LINK_COLOR = {
   is_a: "#9ba1a6",
   derived_from: "#5eb1ef",

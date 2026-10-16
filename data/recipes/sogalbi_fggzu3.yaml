@@ -1,0 +1,118 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: sogalbi_fggzu3
+title: 소갈비
+cuisine: 한식
+difficulty: 2
+cook_time_min: 80
+servings: null
+source: https://www.youtube.com/watch?v=fGGZU3iRDeY
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: null
+  raw_text: 코스트코에서 2.5kg
+  role: main
+  optional: false
+  amount: 2.5
+  unit: kg
+- ingredient: beef_short_ribs
+  raw_text: 소갈비 2.5kg
+  role: sub
+  optional: false
+  amount: 2.5
+  unit: kg
+- ingredient: soy_sauce
+  raw_text: 진간장 20스푼
+  role: seasoning
+  optional: false
+  amount: 20
+  unit: 스푼
+- ingredient: mirin
+  raw_text: 맛술 10스푼
+  role: seasoning
+  optional: false
+  amount: 10
+  unit: 스푼
+- ingredient: oligosaccharide
+  raw_text: 올리고당 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 흑설탕 3스푼
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: black_pepper
+  raw_text: 후추 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: ginger
+  raw_text: 다진생강 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: carrot
+  raw_text: 당근 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: potato
+  raw_text: 감자 4개
+  role: sub
+  optional: false
+  amount: 4
+  unit: 개
+- ingredient: green_onion
+  raw_text: 대파 2쪽 / 대파
+  role: sub
+  optional: false
+  amount: 2
+  unit: 쪽
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 끓이는데 오랜 시간이 걸리긴 하지만 만들어 놓으면.
+  technique: 끓이기
+- text: 넣어 30분간 핏물 빼줄게요. 설탕을 넣으면.
+  technique: null
+- text: 넣고 잘 섞는다. 같이 넣을 당근 2개, 핏물 뺀 고기는 끓는 물에 10분간 초벌 삶기.
+  technique: 끓이기
+- text: 해주고 큰 저압냄비에 넣고 나머지 재료 다 넣어 준후 소스 부어주세요. 물은 2리터.
+  technique: null
+- text: 넣어주고 끓기 시작하고 40분간 저압냄비로.
+  technique: 끓이기

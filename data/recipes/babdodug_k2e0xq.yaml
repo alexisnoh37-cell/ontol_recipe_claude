@@ -1,0 +1,84 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: babdodug_k2e0xq
+title: 밥도둑 🤗
+cuisine: 한식
+difficulty: 2
+cook_time_min: 45
+servings: null
+source: https://www.youtube.com/watch?v=K2E0XqX1zIQ
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: cabbage
+  raw_text: 양배추 1/4통
+  role: main
+  optional: false
+  amount: 0.25
+  unit: 통
+- ingredient: radish
+  raw_text: 무 반통
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 통
+- ingredient: green_onion
+  raw_text: 대파 반쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 쪽
+- ingredient: gochujang
+  raw_text: 고추장 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: tuna_extract
+  raw_text: 참치액 2스푼 / 참치 한캔 / 참치
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 캔
+- ingredient: null
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 올려주는 참치까지❤ 마무리로 넣을 대파 반쪽은 세로 반으로 물 50ml 부어서 잘 섞어서 준비한다.
+  technique: 무침
+- text: 냄비에 양배추 깔고 그 위에 무 올려주세요.
+  technique: null
+- text: 다 넣어줄게요. 일반 참치 사용할때는 올리브유 3스푼 넣는다. 위에 양념장 부어주고.
+  technique: null
+- text: 코인육수 2알, 물 800ml 부은 후 물이 끓으면.
+  technique: 끓이기
+- text: 뚜껑 덮고 중불에 20분간 푹 끓인다.
+  technique: 끓이기
+- text: 20분 후 뚜껑열고 대파 넣은 후 5분만.
+  technique: null

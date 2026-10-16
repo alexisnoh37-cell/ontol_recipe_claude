@@ -1,0 +1,60 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: gasgimci_ehdljy
+title: 갓김치
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=eHdlJy1Cqu0
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: null
+  raw_text: 김밥용 김 2장 / 김 2장
+  role: main
+  optional: false
+  amount: 2
+  unit: 장
+- ingredient: null
+  raw_text: 스팸 1캔 / 스팸
+  role: sub
+  optional: false
+  amount: 1
+  unit: 캔
+- ingredient: egg
+  raw_text: 계란 3개
+  role: sub
+  optional: false
+  amount: 3
+  unit: 개
+- ingredient: null
+  raw_text: 갓장아찌(또는 씻은 묵은지) 1줌
+  role: sub
+  optional: false
+  amount: 1
+  unit: 줌
+- ingredient: kimchi
+  raw_text: 묵은지
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 들기름을 2스푼 넉넉히 두르고 수분이 날아갈 때까지 바싹 볶는다.
+  technique: 볶음
+- text: 스팸은 도톰하게 썰어 팬에 올리고, 간장 1T + 미림 1T + 설탕 0.5T를 섞은 소스를 부어 졸이듯 굽습니다. (단짠 코팅 완료).
+  technique: 구이
+- text: 4등분 된 구역에 [밥 / 계란 / 스팸 / 볶은 장아찌]를 각각 올립니다.
+  technique: null

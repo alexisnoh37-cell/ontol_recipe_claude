@@ -1,0 +1,78 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: yangbaecudubujeon_wf8r_8
+title: 양배추두부전
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=wf8r_8R4DoA
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에 없음)
+ingredients:
+- ingredient: cabbage
+  raw_text: 양배추 1/4통
+  role: main
+  optional: false
+  amount: 0.25
+  unit: 통
+- ingredient: carrot
+  raw_text: 당근 1/3개
+  role: sub
+  optional: false
+  amount: 0.3333333333333333
+  unit: 개
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: tofu
+  raw_text: 두부 1모
+  role: sub
+  optional: false
+  amount: 1
+  unit: 모
+- ingredient: egg
+  raw_text: 계란2알 / 계란 2알 / 계란
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- ingredient: salt
+  raw_text: 소금 한꼬집 / 소금
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 꼬집
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 2
+  umami: 3
+  savory: 3
+equipment: []
+steps:
+- text: 양배추 1/4통 얇게 자른다. 썰은 양배추는 당근 1/3개도 얇게 채썰어주고 청양고추 2개도.
+  technique: null
+- text: 잘게 썰어줄게요. 물기 뺀 두부는 칼등으로 으깨줄게요. 큰 볼에 준비한 재료 다 넣어주고.
+  technique: null
+- text: 계란 2알 깨서 넣는다. 간은 소금 한꼬집, 넣어줄게요. 이제 잘 섞어주시면 돼요.
+  technique: 무침
+- text: 노릇하게 구워주시면 돼요. 접시에 담아서 싶으시면 이런 치즈 한번 갈아서 먹으면.
+  technique: 구이

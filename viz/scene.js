@@ -11,7 +11,7 @@
 import ForceGraph3D from "https://cdn.jsdelivr.net/npm/3d-force-graph@1.80.1/+esm";
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.186.1/+esm";
 
-import { BUNDLE_DY, LAYER_LABEL, LAYER_Y, NODE_COLOR, linkAlpha, linkBaseColor, linkRestAlpha, rgba } from "./palette.js";
+import { BUNDLE_DY, LAYER_LABEL, LAYER_Y, NODE_COLOR, ORIGIN_COLOR, linkAlpha, linkBaseColor, linkRestAlpha, rgba } from "./palette.js";
 
 const DIM = { select: 0.07, play: 0.025 }; // 강조 밖 노드 투명도(재생 중에는 더 흐리게)
 const LINK_DIM = { select: 0.03, play: 0.01 };
@@ -27,7 +27,9 @@ export function nodeStyle(n) {
   if (n.kind === "allergen_group") {
     return { color: NODE_COLOR[n.category], shape: n.group_kind === "bundle" ? "octa" : "box", hollow: n.category === "custom" };
   }
-  if (n.kind === "recipe") return { color: n.adhoc ? NODE_COLOR.adhoc : NODE_COLOR.recipe, shape: "cylinder" };
+  if (n.kind === "recipe") {
+    return { color: n.adhoc ? NODE_COLOR.adhoc : ORIGIN_COLOR[n.origin] || NODE_COLOR.recipe, shape: "cylinder" };
+  }
   if (n.kind === "unmapped") return { color: NODE_COLOR.unmapped, shape: "tetra", wire: true };
   if (n.is_concept) return { color: NODE_COLOR.concept, shape: "sphere", wire: true };
   if (n.layer === 3) return { color: NODE_COLOR.processed, shape: "icosa" };
@@ -192,6 +194,7 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
 
   const state = {
     layers: { 1: true, 2: true, 3: true, 4: true },
+    origins: {}, // 레시피 출처별 표시(false면 숨김, int-2)
     linkTypes: { is_a: true, derived_from: true, allergen: true, bundle_member: true, uses: false, unmapped: true },
     selection: null, // 클릭한 노드의 강조 { mode, nodes: Map<id, style>, links: Map<link, style>, labels }
     view: null, // 재생 단계가 정한 강조(같은 모양). 선택이 있으면 선택이 우선
@@ -201,7 +204,7 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
   const objects = new Map(); // node id → THREE.Mesh
 
   function nodeVisible(n) {
-    return state.layers[n.layer];
+    return state.layers[n.layer] && !(n.kind === "recipe" && state.origins[n.origin] === false);
   }
   function linkVisible(l) {
     const a = byId.get(l.s);
@@ -604,6 +607,14 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
     syncPulses();
   }
 
+  function setOrigin(origin, on) {
+    state.origins[origin] = on;
+    graph.nodeVisibility((n) => nodeVisible(n));
+    refreshLinks();
+    applyLabels();
+    syncPulses();
+  }
+
   function setLinkType(type, on) {
     state.linkTypes[type] = on;
     refreshLinks();
@@ -619,7 +630,7 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
 
   return {
     graph, nodes, links, byId, linkById, incident, timings, THREE,
-    select, setView, setOffsets, flyTo, resetCamera, setLayer, setLinkType, setOverlay,
+    select, setView, setOffsets, flyTo, resetCamera, setLayer, setOrigin, setLinkType, setOverlay,
     get selected() { return state.selected; },
     // 점검용: 겹침 정리 대상 라벨의 표시 여부(viz-5)
     get labelStates() { return shownLabels.filter((e) => e.priority !== undefined).map((e) => ({ id: e.id, priority: e.priority, visible: e.sprite.visible })); },

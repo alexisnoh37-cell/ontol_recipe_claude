@@ -1,0 +1,94 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: nuguna_mandeul_su_issneun_weonpaenkeurimpaseuta_pbgzbp
+title: 누구나 만들 수 있는 원팬크림파스타
+cuisine: 양식
+difficulty: 3
+cook_time_min: 20
+servings: 1
+source: https://www.youtube.com/watch?v=pbgZbPbcPLo
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pasta
+  raw_text: 파스타면 1인분 / 파스타면
+  role: main
+  optional: false
+  amount: 1
+  unit: 인분
+- ingredient: null
+  raw_text: 육수코인 1알 / 육수코인 한 알
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+- ingredient: sliced_cheese
+  raw_text: 체다치즈 2장
+  role: sub
+  optional: false
+  amount: 2
+  unit: 장
+- ingredient: butter
+  raw_text: 가염버터 20g
+  role: sub
+  optional: false
+  amount: 20
+  unit: g
+- ingredient: garlic
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: onion
+  raw_text: 양파반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: bacon
+  raw_text: 베이컨 3장
+  role: sub
+  optional: false
+  amount: 3
+  unit: 장
+- ingredient: milk
+  raw_text: 우유 250ml
+  role: sub
+  optional: false
+  amount: 250
+  unit: ml
+- ingredient: null
+  raw_text: 동전크기 1인분
+  role: sub
+  optional: false
+  amount: 1
+  unit: 인분
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 동전크기 1인분 넣어줄게요. 여기에 육수코인 한 알 넣어주고 가염버터 20g.
+  technique: null
+- text: 넣어줄게요. 마늘 3쪽 다져서 넣어주고 양파도 잘게 잘라서 반개 넣어줄게요.
+  technique: null
+- text: 베이컨은 두줄만 넣어도 되지만 세줄 넣어줄게요. 마지막으로 체다치즈 2장 넣는다.
+  technique: null
+- text: 우유 250ml 물 450ml 넣고 뚜껑 닫고 강불로 끓을 때까지 기다려주세요.
+  technique: 끓이기
+- text: 끓고나면 중강불로 바꿔주고 넘치지 중간에 한번씩 저어가며 졸여주시기만.
+  technique: 조림
+- text: 하면돼요. 이 농도로 졸여주시면되고 면이 안익었다 싶으면 물 조금씩.
+  technique: 조림
+- text: 추가해서 끓여주시면 돼요. 다 되면.
+  technique: 끓이기
+- text: 후추 넉넉히 뿌려주고 접시에 담아주면.
+  technique: null

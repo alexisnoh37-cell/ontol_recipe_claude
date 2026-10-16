@@ -1,0 +1,76 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: daepaesamgyeob_paseuta_9xmglr
+title: 대패삼겹 파스타
+cuisine: 양식
+difficulty: 2
+cook_time_min: 12
+servings: 1
+source: https://www.youtube.com/watch?v=9XmGLRfX-Hc
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pork_belly
+  raw_text: 대패삼겹살 200g
+  role: main
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: garlic
+  raw_text: 다진마늘 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 페퍼론치노 3개
+  role: sub
+  optional: false
+  amount: 3
+  unit: 개
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: salt
+  raw_text: 소금 1/3스푼
+  role: seasoning
+  optional: false
+  amount: 0.3333333333333333
+  unit: 스푼
+- ingredient: null
+  raw_text: 양파 숨이 죽으면 멸치액젓 한스푼 / 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 볶고 간단한 양념만해서 파스타면 넣고 끓는 물에 소금 1/3스푼 파스타면 백원동전크기.
+  technique: 볶음
+- text: 1인분 넣어줄게요. 이대로 12분간 면 삶아주고 면 삶는 동안 재료 준비해볼게요. 대패삼겹살.
+  technique: 끓이기
+- text: 200g 준비해 주시고 양파 반개는 얇게 채썰어 준비한 프라이팬에 대패 삼겹살 넣고 먼저.
+  technique: null
+- text: 마늘, 페퍼론치노 3개 잘게 부셔서 넣어줄게요. 한스푼 넣고 재료 밑간을 해줄게요. 여기에.
+  technique: null
+- text: 파스타면 넣고 면수 4스푼 넣은 후 잘 섞어주면.
+  technique: 무침

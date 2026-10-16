@@ -1,0 +1,112 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: sangsangcoweol_yaggipaseuta_kmiipp
+title: 상상초월 야끼파스타
+cuisine: 양식
+difficulty: 2
+cook_time_min: 13
+servings: 5
+source: https://www.youtube.com/watch?v=kmiippsdt1s
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 새우 8마리 / 새우
+  role: main
+  optional: false
+  amount: 8
+  unit: 마리
+- ingredient: onion
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: green_onion
+  raw_text: 대파 반쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 쪽
+- ingredient: garlic
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: pasta
+  raw_text: 파스타면 1.5인분 / 파스타면
+  role: sub
+  optional: false
+  amount: 1.5
+  unit: 인분
+- ingredient: olive_oil
+  raw_text: 올리브유 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: mirin
+  raw_text: 맛술 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: oligosaccharide
+  raw_text: 올리고당 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 굵은 소금 반스품 넣은 끓는물에 10분간 삶아 줄게요. 이제 예열된.
+  technique: 끓이기
+- text: 펜에 올리브유 세 스푼 넣고 다진마늘 한 스푼 대파 반쪽 넣고 파마늘 기름.
+  technique: null
+- text: 양파 반쪽 새우 여덟 마리 넣어 2분간 볶아 주다가 이렇게 만들어.
+  technique: 볶음
+- text: 놓은 양념장 넣는다. 아 이건 파스타면 면수네 스푼 넣고 1분만 더.
+  technique: null
+- text: 볶아주면 완성. 마무리 통깨 넉넉기.
+  technique: 볶음

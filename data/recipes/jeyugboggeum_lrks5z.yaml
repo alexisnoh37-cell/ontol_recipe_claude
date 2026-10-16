@@ -1,0 +1,104 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: jeyugboggeum_lrks5z
+title: 제육볶음
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=LRkS5Zc_9Z8
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: null
+  raw_text: 저도 제일 좋아하는 반찬 2개
+  role: main
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: null
+  raw_text: 돼지고기 뒷다리살 600g
+  role: sub
+  optional: false
+  amount: 600
+  unit: g
+- ingredient: olive_oil
+  raw_text: 올리브유 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: onion
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: green_onion
+  raw_text: 대파 1대 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 대
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: mirin
+  raw_text: 맛술 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: tuna_extract
+  raw_text: 참치액2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 셰프님의 제육볶음을 만들어 봤는데 스푼, 후추 툭툭 넣어서 양념장.
+  technique: null
+- text: 양파 반개, 대파 한 쪽 넣어, 기름 풍미 올려주고 1분을 고기 넣어 익혀.
+  technique: null
+- text: 주세요. 반 정도 익으면 양배추 한 주먹 넣어주고 양배추가 익을 때쯤.
+  technique: null
+- text: 참기름 세편 넉넉히 뿌려주면이 맛에.
+  technique: null
