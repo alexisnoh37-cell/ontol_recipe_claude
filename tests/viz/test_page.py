@@ -13,7 +13,9 @@ def test_viz_page_and_static_files_are_served(client):
     assert "/viz/static/app.js" in r.text
     for el in ('id="subject"', 'id="pantry-add"', 'id="run"', 'id="prev"', 'id="next"', 'id="auto"', 'id="cards"'):
         assert el in r.text, el  # 재생 패널(viz-4)
-    for name in ("app.js", "scene.js", "palette.js", "playback.js", "style.css"):
+    for el in ('id="adhoc-title"', 'id="adhoc-text"', 'id="adhoc-subject"', 'id="adhoc-run"', 'id="adhoc-result"'):
+        assert el in r.text, el  # 외부 레시피 분석 카드(부록 E)
+    for name in ("app.js", "scene.js", "palette.js", "playback.js", "adhoc.js", "style.css"):
         assert client.get(f"/viz/static/{name}").status_code == 200, name
 
 

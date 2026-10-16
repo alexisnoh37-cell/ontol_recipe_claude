@@ -65,6 +65,20 @@
           <div id="step-body" class="step-body"></div>
         </div>
       </section>
+      <section class="card" id="adhoc-card">
+        <h2>외부 레시피 분석 <span class="muted small">저장 안 함</span></h2>
+        <label class="field">이름 <input id="adhoc-title" type="text" maxlength="100" placeholder="예) AI 마파두부" autocomplete="off"></label>
+        <textarea id="adhoc-text" rows="6" maxlength="5000" aria-label="재료 원문"
+          placeholder="재료를 줄이나 쉼표로 나눠 붙여 넣기&#10;예) 두부 1모, 다진 돼지고기 100g&#10;두반장 1큰술"></textarea>
+        <label class="field">판정 기준 <select id="adhoc-subject" aria-label="판정 기준"><option value="">구조만 보기(판정 안 함)</option></select></label>
+        <div class="run-row">
+          <button type="button" id="adhoc-run" class="primary">분석해서 그래프에 표시</button>
+          <button type="button" id="adhoc-example" class="link">예시 넣기</button>
+          <button type="button" id="adhoc-clear" class="link">지우기</button>
+        </div>
+        <p id="adhoc-status" class="muted small"></p>
+        <div id="adhoc-result" class="adhoc-result" hidden></div>
+      </section>
       <section class="card" id="cards-card" hidden>
         <h2>추천 카드</h2>
         <div id="cards" class="cards"></div>

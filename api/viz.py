@@ -91,7 +91,8 @@ class GraphCatalog:
         self._link_ids |= {der_link(r.from_id, r.to_id) for r in ck.relations if r.type == "derived_from"}
         # 재료 노드 정보용: 기본 그룹 closure(묶음은 구성원의 합이라 중복). 경로는 컴파일된 via를 링크 id로 옮긴 것
         self._base_closure: dict[str, list[Any]] = {}
-        base_hits: dict[str, list[dict[str, Any]]] = {}
+        self.base_hits: dict[str, list[dict[str, Any]]] = {}
+        base_hits = self.base_hits
         for c in sorted(ck.allergen_closure, key=lambda c: (c.ingredient_id, c.allergen_group_id)):
             if self.groups[c.allergen_group_id].kind == "base":
                 self._base_closure.setdefault(c.ingredient_id, []).append(c)
@@ -142,6 +143,10 @@ class GraphCatalog:
                     self._lines.setdefault((r.id, line.ingredient), []).append(n)
         self._closure = {(c.allergen_group_id, c.ingredient_id): c for c in ck.allergen_closure}
         self._isa = {(r.from_id, r.to_id) for r in ck.relations if r.type == "is_a"}
+        self.sources: dict[str, list[tuple[str, str]]] = {}  # 가공품 → [(원천, certainty)] 직접 derived_from 행
+        for r in ck.relations:
+            if r.type == "derived_from":
+                self.sources.setdefault(r.from_id, []).append((r.to_id, r.certainty))
 
     def group_category(self, group_id: str) -> str:
         g = self.groups[group_id]
@@ -187,20 +192,25 @@ class GraphCatalog:
         }
 
     def recipe_allergens(self, recipe: Any) -> list[dict[str, Any]]:
-        """레시피 정보 패널의 "걸리는 알레르기": 재료 줄마다 컴파일된 기본 그룹 closure 행을 모은다(판정 없음, 표시용).
+        """레시피 정보 패널의 "걸리는 알레르기": 재료 줄마다 컴파일된 기본 그룹 closure 행을 모은다(판정 없음, 표시용)."""
+        return self.lines_allergens((n, line.ingredient, line.role, line.optional)
+                                    for n, line in enumerate(recipe.ingredients, start=1))
+
+    def lines_allergens(self, lines: Any) -> list[dict[str, Any]]:
+        """(줄 번호, 재료 id 또는 None, role, optional) 목록 → 기본 그룹별 closure 행 모음(외부 레시피 분석도 쓴다).
 
         certainty는 그룹에 걸린 줄 중 하나라도 definite면 definite. optional_only는 선택 재료 줄로만 걸렸는지.
         """
         out: dict[str, dict[str, Any]] = {}
-        for n, line in enumerate(recipe.ingredients, start=1):
-            for c in self._base_closure.get(line.ingredient or "", []):
+        for n, ingredient_id, role, optional in lines:
+            for c in self._base_closure.get(ingredient_id or "", []):
                 g = out.setdefault(c.allergen_group_id, {"group": ag(c.allergen_group_id), "certainty": "possible",
                                                          "optional_only": True, "hits": []})
-                g["hits"].append({"ingredient": ing(line.ingredient), "certainty": c.certainty, "role": line.role,
-                                  "optional": line.optional, "line_no": n})
+                g["hits"].append({"ingredient": ing(ingredient_id), "certainty": c.certainty, "role": role,
+                                  "optional": optional, "line_no": n})
                 if c.certainty == "definite":
                     g["certainty"] = "definite"
-                if not line.optional:
+                if not optional:
                     g["optional_only"] = False
         return [out[k] for k in sorted(out)]
 
@@ -225,14 +235,17 @@ class GraphCatalog:
         hit = same or [m for m in members if (m, ingredient_id) in self._closure]
         return hit[0] if hit else target
 
-    def exclusion(self, e: Exclusion, labels: dict[str, str]) -> dict[str, Any]:
+    def exclusion(self, e: Exclusion, labels: dict[str, str],
+                  lines: dict[tuple[str, str], list[int]] | None = None) -> dict[str, Any]:
+        """제외 한 건 → 화면 데이터. lines는 (레시피, 재료) → 줄 번호 색인(없으면 적재된 레시피의 색인)."""
         out: dict[str, Any] = {
             "recipe": rcp(e.recipe_id), "reason": e.reason.value, "label": labels.get(e.reason.value, e.reason.value),
             "ingredient": ing(e.ingredient_id) if e.ingredient_id else None, "target": e.target, "target_node": None,
             "source_group": None, "certainty": e.certainty, "via": [ing(x) for x in e.via], "path_links": [],
             "detail": e.detail,
         }
-        uses = [use_link(e.recipe_id, n) for n in self._lines.get((e.recipe_id, e.ingredient_id or ""), [])]
+        index = self._lines if lines is None else lines
+        uses = [use_link(e.recipe_id, n) for n in index.get((e.recipe_id, e.ingredient_id or ""), [])]
         if e.reason == ExclusionReason.ALLERGEN and e.target and e.ingredient_id:
             base = self.source_group(e.target, e.ingredient_id, e.via)
             out["target_node"], out["source_group"] = ag(e.target), ag(base)

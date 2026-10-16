@@ -6,6 +6,7 @@
 //   - 강조는 노드 메시의 재질만 바꾼다(graphData 재설정 금지). 재질은 (색, 투명도)별로 공유한다.
 //   - 높이 이동은 node.y만 바꾸고 d3ReheatSimulation()으로 위치 동기화 한 번(cooldownTicks 0이라 force tick은 돌지 않음).
 //   - 텍스트 스프라이트는 층·구역 이름, 선택·재생 단계가 고른 노드만. 화면에서 일정한 크기(sizeAttenuation 끔).
+//   - 외부 레시피 겹쳐 보기(부록 E)만 데이터가 바뀌므로 graphData를 다시 넣는다. warmup 없이 넣어 기존 배치는 그대로다.
 
 import ForceGraph3D from "https://cdn.jsdelivr.net/npm/3d-force-graph@1.80.1/+esm";
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.186.1/+esm";
@@ -20,12 +21,14 @@ const LABEL_PX = { layer: 20, sector: 15, selected: 16, node: 12 };
 const MAX_NEIGHBOR_LABELS = 60;
 const FAINT_LINK = 0.28; // 선택 강조 안의 흐린 경로(포함 가능·선택 재료)
 const FAINT_NODE = 0.55;
+const OVERLAY = { x: 0, z: 60, dy: 150, ring: 70 }; // 외부 레시피 노드: 레시피 층 위 가운데(고정), 미매칭 줄은 둘레
 
 export function nodeStyle(n) {
   if (n.kind === "allergen_group") {
     return { color: NODE_COLOR[n.category], shape: n.group_kind === "bundle" ? "octa" : "box", hollow: n.category === "custom" };
   }
-  if (n.kind === "recipe") return { color: NODE_COLOR.recipe, shape: "cylinder" };
+  if (n.kind === "recipe") return { color: n.adhoc ? NODE_COLOR.adhoc : NODE_COLOR.recipe, shape: "cylinder" };
+  if (n.kind === "unmapped") return { color: NODE_COLOR.unmapped, shape: "tetra", wire: true };
   if (n.is_concept) return { color: NODE_COLOR.concept, shape: "sphere", wire: true };
   if (n.layer === 3) return { color: NODE_COLOR.processed, shape: "icosa" };
   return { color: NODE_COLOR.raw, shape: "sphere" };
@@ -114,6 +117,7 @@ const GEOMETRY = {
   box: new THREE.BoxGeometry(9, 9, 9),
   octa: new THREE.OctahedronGeometry(11, 0),
   cylinder: new THREE.CylinderGeometry(9, 9, 5, 14),
+  tetra: new THREE.TetrahedronGeometry(7, 0),
 };
 const EDGES = { box: new THREE.EdgesGeometry(GEOMETRY.box), octa: new THREE.EdgesGeometry(GEOMETRY.octa) };
 const RING = new THREE.TorusGeometry(7, 0.5, 4, 16);
@@ -188,7 +192,7 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
 
   const state = {
     layers: { 1: true, 2: true, 3: true, 4: true },
-    linkTypes: { is_a: true, derived_from: true, allergen: true, bundle_member: true, uses: false },
+    linkTypes: { is_a: true, derived_from: true, allergen: true, bundle_member: true, uses: false, unmapped: true },
     selection: null, // 클릭한 노드의 강조 { mode, nodes: Map<id, style>, links: Map<link, style>, labels }
     view: null, // 재생 단계가 정한 강조(같은 모양). 선택이 있으면 선택이 우선
     selected: null,
@@ -543,6 +547,55 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
     graph.cameraPosition({ x: n.x + (n.x / len) * d, y: n.y + 160, z: n.z + (n.z / len) * d }, { x: n.x, y: n.y, z: n.z }, 900);
   }
 
+  // --- 외부 레시피 겹쳐 보기(부록 E): 이전 임시 노드·간선을 빼고 새로 넣는다. 배열은 제자리에서 바꾼다 ----
+
+  let overlay = { nodes: [], links: [] };
+  function setOverlay(data) {
+    const dropNodes = new Set(overlay.nodes.map((n) => n.id));
+    const dropLinks = new Set(overlay.links);
+    if (dropNodes.has(state.selected)) { state.selected = null; state.selection = null; }
+    for (let i = nodes.length - 1; i >= 0; i--) if (dropNodes.has(nodes[i].id)) nodes.splice(i, 1);
+    for (let i = links.length - 1; i >= 0; i--) if (dropLinks.has(links[i])) links.splice(i, 1);
+    for (const l of dropLinks) {
+      linkById.delete(l.id);
+      for (const id of [l.s, l.t]) {
+        const inc = incident.get(id);
+        if (inc && inc.includes(l)) inc.splice(inc.indexOf(l), 1);
+      }
+    }
+    for (const id of dropNodes) { byId.delete(id); incident.delete(id); objects.delete(id); }
+    overlay = { nodes: [], links: [] };
+    if (data) {
+      const y = LAYER_Y[4] + OVERLAY.dy;
+      const raws = data.nodes.filter((n) => n.kind === "unmapped");
+      for (const src of data.nodes) {
+        const n = { ...src };
+        const k = raws.indexOf(src);
+        const angle = k < 0 ? 0 : (2 * Math.PI * k) / raws.length - Math.PI / 2;
+        const r = k < 0 ? 0 : OVERLAY.ring;
+        n.fx = n.x = OVERLAY.x + r * Math.cos(angle);
+        n.fz = n.z = OVERLAY.z + r * Math.sin(angle);
+        n.fy = n.y = n.baseY = y;
+        nodes.push(n);
+        byId.set(n.id, n);
+        incident.set(n.id, []);
+        overlay.nodes.push(n);
+      }
+      for (const src of data.links) {
+        if (!byId.has(src.source) || !byId.has(src.target)) continue;
+        const l = { ...src, s: src.source, t: src.target };
+        links.push(l);
+        linkById.set(l.id, l);
+        incident.get(l.s).push(l);
+        incident.get(l.t).push(l);
+        overlay.links.push(l);
+      }
+    }
+    graph.warmupTicks(0).graphData({ nodes, links });
+    graph.d3ReheatSimulation(); // cooldownTicks 0: 위치만 한 번 동기화
+    repaint();
+  }
+
   function setLayer(layer, on) {
     state.layers[layer] = on;
     graph.nodeVisibility((n) => nodeVisible(n));
@@ -566,7 +619,7 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
 
   return {
     graph, nodes, links, byId, linkById, incident, timings, THREE,
-    select, setView, setOffsets, flyTo, resetCamera, setLayer, setLinkType,
+    select, setView, setOffsets, flyTo, resetCamera, setLayer, setLinkType, setOverlay,
     get selected() { return state.selected; },
     // 점검용: 겹침 정리 대상 라벨의 표시 여부(viz-5)
     get labelStates() { return shownLabels.filter((e) => e.priority !== undefined).map((e) => ({ id: e.id, priority: e.priority, visible: e.sprite.visible })); },

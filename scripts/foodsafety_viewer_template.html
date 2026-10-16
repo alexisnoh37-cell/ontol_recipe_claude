@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>식품안전나라 레시피 뷰어</title>
+<!-- scripts/make_foodsafety_viewer.py가 데이터를 채워 만든다. 개인용, 재배포 금지(docs/decisions.md D3 보완 2). -->
+<style>
+:root {
+  --bg: #f7f5f0; --surface: #ffffff; --surface-2: #f0ede5; --line: #e2ddd1;
+  --text: #24211c; --muted: #6d675c; --accent: #b4532a; --accent-soft: #f6e2d6;
+  --ok: #2f7a4a; --ok-soft: #dcefe2; --warn: #9a6200; --warn-soft: #fbecc9;
+  --shadow: 0 1px 2px rgba(40, 30, 10, .06), 0 4px 14px rgba(40, 30, 10, .06);
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171512; --surface: #211e1a; --surface-2: #2a2621; --line: #3a352e;
+    --text: #efe9df; --muted: #a79f92; --accent: #e08a5e; --accent-soft: #3d2a20;
+    --ok: #7cc795; --ok-soft: #1f3327; --warn: #e2b55c; --warn-soft: #3a2f17;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 18px rgba(0, 0, 0, .25);
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 15px/1.55 "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+}
+header {
+  position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+}
+.bar { max-width: 1280px; margin: 0 auto; padding: 14px 16px 12px; display: grid; gap: 10px; }
+.top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+h1 { margin: 0; font-size: 20px; letter-spacing: -.01em; }
+.count { color: var(--muted); font-size: 13px; }
+.controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+input[type=search], select {
+  font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 10px; padding: 8px 12px; min-height: 40px;
+}
+input[type=search] { flex: 1 1 260px; min-width: 0; }
+input[type=search]:focus, select:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  font: inherit; font-size: 13px; color: var(--text); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 999px; padding: 5px 12px; cursor: pointer;
+}
+.chip[aria-pressed=true] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); cursor: pointer; }
+main { max-width: 1280px; margin: 0 auto; padding: 18px 16px 40px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow); cursor: pointer; display: flex; flex-direction: column; text-align: left;
+  font: inherit; color: inherit; padding: 0; transition: transform .12s ease;
+}
+.card:hover { transform: translateY(-2px); }
+.thumb { aspect-ratio: 4 / 3; background: var(--surface-2); position: relative; overflow: hidden; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; z-index: 1; }
+.thumb .noimg { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 13px; }
+.badge {
+  position: absolute; z-index: 2; left: 8px; top: 8px; font-size: 12px; padding: 2px 8px; border-radius: 999px;
+  background: var(--surface); color: var(--text); border: 1px solid var(--line);
+}
+.body { padding: 12px 14px 14px; display: grid; gap: 6px; }
+.title { font-weight: 650; line-height: 1.35; }
+.meta { color: var(--muted); font-size: 13px; }
+.match { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+.meter { flex: 1; height: 6px; border-radius: 99px; background: var(--warn-soft); overflow: hidden; }
+.meter > span { display: block; height: 100%; background: var(--ok); }
+.more { display: block; margin: 24px auto 0; }
+.btn {
+  font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 10px; padding: 8px 16px; cursor: pointer;
+}
+.empty { text-align: center; color: var(--muted); padding: 60px 0; }
+footer { max-width: 1280px; margin: 0 auto; padding: 0 16px 32px; color: var(--muted); font-size: 12px; }
+
+dialog {
+  border: none; padding: 0; margin: 0 0 0 auto; height: 100%; max-height: 100%; width: min(760px, 100%);
+  background: var(--surface); color: var(--text); box-shadow: -8px 0 30px rgba(0, 0, 0, .2);
+}
+dialog::backdrop { background: rgba(20, 15, 10, .45); }
+.sheet { display: flex; flex-direction: column; height: 100%; }
+.sheet-head {
+  display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; background: var(--surface);
+}
+.sheet-head h2 { margin: 0; font-size: 18px; flex: 1; line-height: 1.35; }
+.sheet-scroll { overflow: auto; padding: 0 0 32px; }
+.hero { width: 100%; max-height: 360px; object-fit: cover; display: block; background: var(--surface-2); }
+.section { padding: 16px 20px 0; }
+.section h3 { font-size: 14px; margin: 8px 0 10px; color: var(--muted); font-weight: 600; letter-spacing: .02em; }
+.facts { display: flex; flex-wrap: wrap; gap: 6px; }
+.fact { background: var(--surface-2); border-radius: 8px; padding: 4px 10px; font-size: 13px; }
+.nut { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.nut div { background: var(--surface-2); border-radius: 10px; padding: 8px; text-align: center; }
+.nut b { display: block; font-size: 16px; }
+.nut small { color: var(--muted); font-size: 12px; }
+.ings { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.ing { display: flex; gap: 10px; align-items: baseline; padding: 6px 10px; border-radius: 10px; background: var(--surface-2); }
+.ing .tag { font-size: 11px; padding: 1px 7px; border-radius: 999px; white-space: nowrap; }
+.ing.ok .tag { background: var(--ok-soft); color: var(--ok); }
+.ing.no .tag { background: var(--warn-soft); color: var(--warn); }
+.ing .raw { flex: 1; }
+.ing .to { color: var(--muted); font-size: 12px; white-space: nowrap; }
+.notice { font-size: 13px; color: var(--warn); background: var(--warn-soft); border-radius: 10px; padding: 8px 12px; margin-top: 10px; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: s; }
+.step { display: grid; grid-template-columns: 30px 1fr 140px; gap: 12px; align-items: start; }
+.step::before {
+  counter-increment: s; content: counter(s); width: 26px; height: 26px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-size: 13px; font-weight: 700;
+}
+.step img { width: 140px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; background: var(--surface-2); }
+.step.noimg { grid-template-columns: 30px 1fr; }
+.tip { background: var(--accent-soft); border-radius: 12px; padding: 10px 14px; font-size: 14px; }
+.src { color: var(--muted); font-size: 12px; padding: 20px 20px 0; }
+@media (max-width: 600px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .body { padding: 10px; }
+  .nut { grid-template-columns: repeat(3, 1fr); }
+  .step { grid-template-columns: 30px 1fr; }
+  .step img { grid-column: 2; width: 100%; }
+  .section { padding: 14px 16px 0; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="top"><h1>식품안전나라 레시피</h1><span class="count" id="count"></span></div>
+    <div class="controls">
+      <input type="search" id="q" placeholder="메뉴명·재료 검색 (예: 두부, 새우, 된장)" aria-label="검색">
+      <select id="way" aria-label="조리방법"></select>
+      <select id="sort" aria-label="정렬">
+        <option value="seq">일련번호순</option>
+        <option value="title">이름순</option>
+        <option value="miss">미매칭 적은 순</option>
+        <option value="kcal">열량 낮은 순</option>
+      </select>
+      <label class="toggle"><input type="checkbox" id="full"> 미매칭 없는 것만</label>
+    </div>
+    <div class="chips" id="pats" role="group" aria-label="요리종류"></div>
+  </div>
+</header>
+<main>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>조건에 맞는 레시피가 없습니다.</p>
+  <button class="btn more" id="more" hidden>더 보기</button>
+</main>
+<footer id="foot"></footer>
+<dialog id="dlg" aria-labelledby="dlg-title"><div class="sheet">
+  <div class="sheet-head"><h2 id="dlg-title"></h2><button class="btn" id="close">닫기</button></div>
+  <div class="sheet-scroll" id="dlg-body"></div>
+</div></dialog>
+<script type="application/json" id="data">/*__DATA__*/</script>
+<script>
+(() => {
+  const DATA = JSON.parse(document.getElementById("data").textContent);
+  const ALL = DATA.recipes;
+  const PAGE = 60;
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, cls, text) => {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  };
+  const img = (src, alt) => {
+    const i = el("img");
+    i.loading = "lazy"; i.alt = alt || ""; i.referrerPolicy = "no-referrer";
+    if (src) i.src = src;
+    i.addEventListener("error", () => i.remove());
+    return i;
+  };
+  const norm = (s) => (s || "").replace(/\s+/g, "").toLowerCase();
+  for (const r of ALL) {
+    r._hay = norm(r.title + " " + r.tag + " " + r.ings.map((i) => i.t + " " + (i.name || "")).join(" "));
+    r._kcal = r.nut[0][1];
+  }
+
+  const state = { q: "", pat: "전체", way: "전체", full: false, sort: "seq", shown: 0, list: [] };
+  const pats = ["전체", ...new Set(ALL.map((r) => r.pat))];
+  for (const p of pats) {
+    const b = el("button", "chip", p + (p === "전체" ? "" : " " + ALL.filter((r) => r.pat === p).length));
+    b.type = "button"; b.dataset.pat = p; b.setAttribute("aria-pressed", String(p === "전체"));
+    b.addEventListener("click", () => {
+      state.pat = p;
+      for (const c of $("pats").children) c.setAttribute("aria-pressed", String(c.dataset.pat === p));
+      apply();
+    });
+    $("pats").append(b);
+  }
+  for (const w of ["전체", ...new Set(ALL.map((r) => r.way))]) {
+    const o = el("option", null, w === "전체" ? "조리방법 전체" : w); o.value = w; $("way").append(o);
+  }
+
+  function apply() {
+    const q = norm(state.q);
+    let list = ALL.filter((r) =>
+      (state.pat === "전체" || r.pat === state.pat) &&
+      (state.way === "전체" || r.way === state.way) &&
+      (!state.full || r.miss === 0) &&
+      (!q || r._hay.includes(q)));
+    const by = {
+      seq: (a, b) => a.seq - b.seq,
+      title: (a, b) => a.title.localeCompare(b.title, "ko"),
+      miss: (a, b) => a.miss - b.miss || a.seq - b.seq,
+      kcal: (a, b) => (a._kcal ?? 1e9) - (b._kcal ?? 1e9) || a.seq - b.seq,
+    }[state.sort];
+    state.list = list.sort(by);
+    state.shown = 0;
+    $("grid").replaceChildren();
+    $("count").textContent = `${list.length.toLocaleString()} / ${ALL.length.toLocaleString()}개`;
+    $("empty").hidden = list.length > 0;
+    more();
+  }
+
+  function card(r) {
+    const c = el("button", "card"); c.type = "button";
+    const t = el("div", "thumb");
+    t.append(el("span", "noimg", "사진 없음"));
+    if (r.thumb) t.append(img(r.thumb, r.title));
+    t.append(el("span", "badge", r.pat));
+    const b = el("div", "body");
+    b.append(el("div", "title", r.title));
+    const kcal = r._kcal != null ? ` · ${r._kcal}kcal` : "";
+    b.append(el("div", "meta", `${r.way}${kcal} · 재료 ${r.ings.length}개`));
+    const m = el("div", "match");
+    const meter = el("div", "meter"); const fill = el("span");
+    fill.style.width = `${((r.ings.length - r.miss) / r.ings.length) * 100}%`;
+    meter.append(fill);
+    m.append(meter, el("span", null, r.miss ? `미매칭 ${r.miss}` : "모두 매칭"));
+    b.append(m);
+    c.append(t, b);
+    c.addEventListener("click", () => open(r));
+    return c;
+  }
+
+  function more() {
+    const next = state.list.slice(state.shown, state.shown + PAGE);
+    $("grid").append(...next.map(card));
+    state.shown += next.length;
+    $("more").hidden = state.shown >= state.list.length;
+  }
+
+  function open(r) {
+    $("dlg-title").textContent = r.title;
+    const body = $("dlg-body"); body.replaceChildren();
+    if (r.img) {
+      const hero = img(r.img, r.title);
+      hero.className = "hero";
+      body.append(hero);
+    }
+
+    const info = el("div", "section");
+    const facts = el("div", "facts");
+    for (const f of [r.pat, r.way, `일련번호 ${r.seq}`, ...(r.tag ? [`#${r.tag}`] : [])]) facts.append(el("span", "fact", f));
+    info.append(facts);
+    body.append(info);
+
+    if (r.nut.some((n) => n[1] != null)) {
+      const s = el("div", "section"); s.append(el("h3", null, "영양 정보 (1인분)"));
+      const g = el("div", "nut");
+      for (const [label, v, unit] of r.nut) {
+        const d = el("div"); d.append(el("b", null, v == null ? "-" : String(v)), el("small", null, `${label} ${unit}`));
+        g.append(d);
+      }
+      s.append(g); body.append(s);
+    }
+
+    const si = el("div", "section");
+    si.append(el("h3", null, `재료 ${r.ings.length}개 · 매칭 ${r.ings.length - r.miss} · 미매칭 ${r.miss}`));
+    const ul = el("ul", "ings");
+    for (const i of r.ings) {
+      const li = el("li", "ing " + (i.id ? "ok" : "no"));
+      li.append(el("span", "tag", i.id ? "매칭" : "미매칭"), el("span", "raw", i.t));
+      if (i.id) li.append(el("span", "to", `→ ${i.name}`));
+      ul.append(li);
+    }
+    si.append(ul);
+    if (r.miss) si.append(el("p", "notice", "미매칭 재료가 있어 알레르기 판정을 할 수 없습니다. 추천 엔진에서는 알레르기가 있는 사용자에게 제외됩니다."));
+    body.append(si);
+
+    if (r.steps.length) {
+      const ss = el("div", "section"); ss.append(el("h3", null, "만드는 법"));
+      const ol = el("ol", "steps");
+      for (const st of r.steps) {
+        const li = el("li", "step" + (st.img ? "" : " noimg"));
+        li.append(el("div", null, st.t));
+        if (st.img) li.append(img(st.img, ""));
+        ol.append(li);
+      }
+      ss.append(ol); body.append(ss);
+    }
+    if (r.tip) {
+      const st = el("div", "section"); st.append(el("h3", null, "저감 조리 팁"), el("div", "tip", r.tip)); body.append(st);
+    }
+    body.append(el("p", "src", `출처: ${DATA.source} 일련번호 ${r.seq}. 개인용 열람, 재배포 금지.`));
+    if (location.hash !== "#" + r.id) history.replaceState(null, "", "#" + r.id);
+    if (!$("dlg").open) $("dlg").showModal();
+    $("dlg-body").scrollTop = 0;
+  }
+
+  $("close").addEventListener("click", () => $("dlg").close());
+  $("dlg").addEventListener("click", (e) => { if (e.target === $("dlg")) $("dlg").close(); });
+  $("dlg").addEventListener("close", () => history.replaceState(null, "", location.pathname + location.search));
+  $("more").addEventListener("click", more);
+  new IntersectionObserver((es) => { if (es[0].isIntersecting && !$("more").hidden) more(); }, { rootMargin: "600px" })
+    .observe($("more"));
+  let timer;
+  $("q").addEventListener("input", (e) => { clearTimeout(timer); timer = setTimeout(() => { state.q = e.target.value; apply(); }, 150); });
+  $("way").addEventListener("change", (e) => { state.way = e.target.value; apply(); });
+  $("sort").addEventListener("change", (e) => { state.sort = e.target.value; apply(); });
+  $("full").addEventListener("change", (e) => { state.full = e.target.checked; apply(); });
+  $("foot").textContent = `출처: ${DATA.source}. 원본 내려받은 날 ${DATA.fetched_on || "-"}. ` +
+    "재료 매칭은 이 프로젝트 knowledge의 별칭 정확 일치 기준(자동 변환, 검수 전). 개인용 열람 전용, 재배포 금지.";
+
+  apply();
+  const openFromHash = () => {
+    const hit = ALL.find((r) => "#" + r.id === location.hash);
+    if (hit) open(hit);
+  };
+  window.addEventListener("hashchange", openFromHash);
+  openFromHash();
+})();
+</script>
+</body>
+</html>

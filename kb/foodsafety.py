@@ -83,11 +83,12 @@ def _is_label(norm: str, title_norm: str) -> bool:
             or bool(_SERVING.match(norm)) or norm.endswith("재료"))
 
 
-def ingredient_segments(parts: str, title: str) -> list[str]:
+def ingredient_segments(parts: str, title: str, skipped: list[str] | None = None) -> list[str]:
     """재료정보 원문 → 재료 표기 목록(원문 순서).
 
     버리는 것은 머리말(_is_label)과 물뿐이다. 머리말이 아닌 소제목("●두부구이 : 두부 70g"의 "두부구이",
     "[소스] …"의 "소스" 외 값)은 버리지 않고 따로 한 항목으로 남긴다(미매칭으로 검수표에 오른다).
+    skipped를 주면 버린 항목(빈 문자열 제외)을 원문 순서로 덧붙인다(외부 레시피 분석이 화면에 보여 준다).
     """
     title_norm = normalize_term(title)
     out: list[str] = []
@@ -113,6 +114,8 @@ def ingredient_segments(parts: str, title: str) -> list[str]:
         for item in labels + split_outside_parens(line.strip()):
             norm = normalize_term(item)
             if _is_label(norm, title_norm) or normalize_term(ingredient_name(item)) in NOT_INGREDIENTS:
+                if skipped is not None and norm:
+                    skipped.append(item)
                 continue
             out.append(item)
     return out

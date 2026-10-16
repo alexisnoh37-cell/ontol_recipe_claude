@@ -99,6 +99,14 @@ def test_water_is_not_an_ingredient():
     assert ingredient_segments("물 30ml(2큰술), 물전분 1큰술", "예") == ["물전분 1큰술"]
 
 
+def test_skipped_items_are_reported_in_order():
+    """외부 레시피 분석(부록 E)은 버린 항목을 화면에 보여 준다. 버리는 규칙은 그대로다."""
+    skipped: list[str] = []
+    segs = ingredient_segments("[양념장] 간장 1큰술\n2인분 기준\n물 200ml, 두부 1모", "예", skipped)
+    assert segs == ["간장 1큰술", "두부 1모"]
+    assert skipped == ["양념장", "2인분 기준", "물 200ml"]
+
+
 def test_ingredient_name_and_exact_match(index, ck):
     assert ingredient_name("연두부 75g(3/4모)") == "연두부"
     assert ingredient_name("소금 약간") == "소금"
@@ -199,3 +207,27 @@ def test_inline_separators_start_new_lines():
     assert ingredient_segments("크림치즈 > 우유 875ml", "예") == ["크림치즈", "우유 875ml"]
     assert ingredient_segments("닭가슴살 60g [소스소개] 매운소스", "예") == ["닭가슴살 60g", "매운소스"]
     assert ingredient_segments("치킨-스톡 1큰술", "예") == ["치킨-스톡 1큰술"]
+
+
+def _viewer_module():
+    spec = importlib.util.spec_from_file_location("make_foodsafety_viewer", ROOT / "scripts" / "make_foodsafety_viewer.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_viewer_records_and_safe_embedding(index, ck):
+    module = _viewer_module()
+    rows = [row(MANUAL_IMG01="http://example.test/1.png", INFO_ENG="220", RCP_NM="</script><b>x</b>"),
+            row(RCP_SEQ="9", RCP_PARTS_DTLS="")]
+    recs = module.viewer_records(rows, index, ck.concept_ids, {"kimchi": "배추김치"})
+    assert [r["id"] for r in recs] == ["fs_7"]  # 재료정보 없는 행은 변환기와 같이 뺀다
+    r = recs[0]
+    # 이름이 바뀌어 첫 줄("김치 새우 볶음")이 레시피 이름 줄로 걸러지지 않고 미매칭 재료로 남는다
+    assert r["miss"] == 2 and {"t": "김치 100g(1/2컵)", "id": "kimchi", "name": "배추김치"} in r["ings"]
+    assert r["steps"][0] == {"t": "김치를 썬다.", "img": "http://example.test/1.png"}
+    assert r["nut"][0] == ["열량", 220.0, "kcal"]
+    html = module.render(recs, "2026-10-16")
+    payload = html.split('<script type="application/json" id="data">', 1)[1].split("</script>", 1)[0]
+    assert "</script" not in payload  # 데이터가 스크립트 태그를 닫지 못한다
+    assert json.loads(payload.replace("<\/", "</"))["recipes"][0]["title"] == "</script><b>x</b>"

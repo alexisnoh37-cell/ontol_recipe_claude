@@ -1,7 +1,9 @@
 // 시각화 페이지 진입점: 데이터 로딩, 검색, 층·간선 토글, 노드 정보, 범례, HUD(로딩 시간·fps), 추천 과정 재생 연결.
+// 외부 레시피 분석(부록 E)은 adhoc.js가 POST /analyze-recipe 결과를 그래프에 겹쳐 그린다.
 // 데이터: GET /graph(기본). ?graph=<url>이면 그 JSON을, ?recipes=all|none이면 그 범위를 불러온다(viz-5 측정용).
 
 import { GROUP_CATEGORY_LABEL, LAYER_LABEL, LINK_COLOR, LINK_LABEL, NODE_COLOR, PLAY_COLOR, REASON_COLOR, ROLE_LABEL } from "./palette.js";
+import { setupAdhoc } from "./adhoc.js";
 import { setupPlayback } from "./playback.js";
 import { createScene } from "./scene.js";
 
@@ -24,14 +26,19 @@ async function loadGraph() {
 
 function nodeKindText(n) {
   if (n.kind === "allergen_group") return GROUP_CATEGORY_LABEL[n.category];
-  if (n.kind === "recipe") return "레시피";
+  if (n.kind === "recipe") return n.adhoc ? "외부 레시피(분석용, 저장 안 함)" : "레시피";
+  if (n.kind === "unmapped") return n.concept ? "분류에만 맞음(미매칭)" : "미매칭 재료(온톨로지에 없음)";
   if (n.is_concept) return "분류(concept)";
   return n.layer === 3 ? (n.is_processed ? "가공품" : "가공품 아님(원천 재료에서 파생)") : "원천 재료";
 }
 
 function tooltip(n) {
   const lines = [`<b>${esc(n.name)}</b> <span class="sub">${esc(nodeKindText(n))}</span>`];
-  if (n.kind === "recipe") {
+  if (n.kind === "recipe" && n.adhoc) {
+    lines.push("붙여 넣은 재료로 분석한 임시 노드");
+  } else if (n.kind === "unmapped") {
+    lines.push(`${n.line_no}번째 줄: ${esc(n.raw_text)}`);
+  } else if (n.kind === "recipe") {
     lines.push(`${esc(n.cuisine)} · 난이도 ${n.difficulty ?? "-"} · ${n.cook_time_min}분 · 매운맛 ${n.spicy}`);
   } else if (n.kind === "ingredient") {
     const flags = [];
@@ -72,8 +79,14 @@ function renderInfo(scene, n) {
     rows.push(["가공품", chips(into("derived_from").map((l) => chip(l.s)))]);
     rows.push(["쓰는 레시피", `${into("uses").length}개`]);
     if (n.confidence === "low") rows.push(["확신", "낮음(검수표 확인)"]);
+  } else if (n.kind === "unmapped") {
+    rows.push(["원문", esc(n.raw_text)], ["줄 번호", n.line_no]);
+    rows.push(["상태", n.concept ? `분류(concept)에만 맞음: ${chip(n.concept)}<br><span class="muted">더 구체적인 재료로 적어야 합니다</span>`
+      : "정규 재료에 없음(별칭·재료 추가는 knowledge 검수로)"]);
+    rows.push(["알레르기", "판정하지 못함. 알레르기가 있는 사용자에게는 이 레시피가 제외됩니다"]);
   } else if (n.kind === "recipe") {
-    rows.push(["음식 종류", esc(n.cuisine)], ["난이도", n.difficulty ?? "-"], ["조리시간", `${n.cook_time_min}분`], ["매운맛", n.spicy]);
+    if (n.adhoc) rows.push(["구분", "외부 레시피(일회성 분석, 저장 안 함)"]);
+    else rows.push(["음식 종류", esc(n.cuisine)], ["난이도", n.difficulty ?? "-"], ["조리시간", `${n.cook_time_min}분`], ["매운맛", n.spicy]);
     if (n.required_equipment.length) rows.push(["필수 조리기구", esc(n.required_equipment.join(", "))]);
     for (const role of ["main", "sub", "seasoning", "garnish"]) {
       const ls = out("uses").filter((l) => l.role === role).sort((a, b) => a.line_no - b.line_no);
@@ -88,8 +101,14 @@ function renderInfo(scene, n) {
       return `<div class="path">${chip(a.group, strong ? "alert" : "possible")}`
         + `<span class="tag">${tags.join(" · ")}</span> <span class="muted">${hits.join(", ")}</span></div>`;
     }).join("") : chips([])]);
-    if (n.has_unmapped) rows.push(["미매칭", "정규 재료에 매핑되지 않은 재료가 있음(알레르기가 있으면 제외)"]);
-    if (n.status !== "published") rows.push(["상태", "검수 전"]);
+    const raws = out("unmapped");
+    if (raws.length) {
+      rows.push(["미매칭", chips(raws.map((l) => chip(l.t, "alert")))
+        + '<br><span class="muted">알레르기를 판정하지 못함(알레르기가 있으면 제외)</span>']);
+    } else if (n.has_unmapped) {
+      rows.push(["미매칭", "정규 재료에 매핑되지 않은 재료가 있음(알레르기가 있으면 제외)"]);
+    }
+    if (n.status !== "published" && !n.adhoc) rows.push(["상태", "검수 전"]);
   } else {
     rows.push(["구분", GROUP_CATEGORY_LABEL[n.category]]);
     if (n.members.length) rows.push(["구성", chips(n.members.map((m) => chip(m)))]);
@@ -204,6 +223,8 @@ function renderLegend() {
     sw("transparent", "분류 concept(와이어프레임)", `border:1px dashed ${NODE_COLOR.concept};border-radius:50%`),
     sw(NODE_COLOR.processed, "가공품(이십면체)"),
     sw(NODE_COLOR.recipe, "레시피(원기둥)"),
+    sw(NODE_COLOR.adhoc, "외부 레시피(분석용, 저장 안 함)"),
+    sw("transparent", "외부 레시피의 미매칭 줄(사면체)", `border:1px dashed ${NODE_COLOR.unmapped}`),
     sw("transparent", "확신 낮음(노란 고리)", `border:2px solid ${NODE_COLOR.lowConfidence};border-radius:50%`),
     "<h3>간선</h3>",
     ...Object.entries(LINK_LABEL).map(([k, v]) => ln(LINK_COLOR[k], v)),
@@ -268,6 +289,7 @@ async function main() {
     window.__vizTimings = { fetch: tFetched - t0, scene: tScene - tFetched, firstFrame: now - tScene, ...scene.timings };
     startHud(scene, data, now); // 페이지 이동 시작부터(CDN 모듈 로딩 포함) 첫 화면까지
   }));
+  setupAdhoc({ scene, $, esc, select: (id) => focusNode(scene, id) });
   window.__viz = scene; // 디버깅·측정용
 }
 

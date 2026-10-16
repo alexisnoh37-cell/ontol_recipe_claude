@@ -247,6 +247,7 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
    - 재료정보가 없는 레시피는 만들지 않고 보고한다.
 3. 미매칭 재료 빈도와 레시피별 미매칭 수를 `docs/review/foodsafety_unmatched.md`로 만든다. 별칭·재료 보강은 knowledge에 draft로 추가한 뒤 다시 변환한다.
 4. `data/recipes/`로 옮기려면 미매칭 0, cuisine·cook_time_min 채움, 사람 검수가 필요하다(로더가 미분류·cook_time_min 없음을 거부).
+5. 열람용 정적 HTML 뷰어: `scripts/make_foodsafety_viewer.py`(템플릿 `scripts/foodsafety_viewer_template.html`)가 원본과 같은 변환 규칙으로 `data/recipes_foodsafety/viewer.html`(gitignore)을 만든다. 사진·영양 정보·저감 조리 팁, 재료별 매칭 여부를 보여 준다. 개인용 열람 전용, 외부 게시 금지.
 
 ### 5-4. 데이터 검증 스크립트
 
@@ -272,6 +273,8 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
 **이번 구축 범위는 Phase 0과 Phase 1(MVP)까지다.** Phase 1 관문(알레르기 테스트 100% 통과)은 일정과 관계없이 지킨다.
 
 부가 트랙 viz(mvp-v1 이후, 사람 요청·승인 2026-10-03): 지식그래프와 추천 과정 3D 시각화. Phase 2 기능(LLM·개인화·장보기)과 무관한 읽기 전용 화면이다. 상세는 부록 D.
+
+부가 트랙 adhoc(사람 요청·승인 2026-10-16): DB에 없는 레시피(AI가 만든 레시피 등)를 붙여 넣으면 재료·알레르기 구조를 분석해 온톨로지 그래프 위에 겹쳐 보여 준다. 저장하지 않는 일회성 분석이고 LLM을 쓰지 않는다. 상세는 부록 E.
 
 ## 7. 테스트와 검증
 
@@ -658,3 +661,35 @@ viz-5 결과(2026-10-03, 사람 결정): 회전 111fps 통과, 로딩 3.1~4.9초
 ### D-7. 단계
 
 viz-0 설계 기록 → viz-1 `/graph` → viz-2 trace·persona → viz-3 3D 온톨로지 화면 → viz-4 워크플로 재생 → viz-5 성능 측정·문서. 테스트는 `tests/viz/`: 그래프 개수·층 규칙·closure 경로 걷기(via 연속 쌍이 링크로 이어짐), trace 제외 결과 = 일반 `/recommend` 제외 결과, 후보 = 통과 ∪ 제외, 순위 = items 순서.
+
+## 부록 E. 외부 레시피 일회성 분석 adhoc (2026-10-16 사람 승인)
+
+목표: DB에 없는 레시피(AI가 만든 레시피, 웹에서 본 레시피 등)의 재료 목록을 붙여 넣으면, 이미 컴파일된 지식을 조회해 재료 매핑, is_a·derived_from 구조, 알레르기 경로를 보여 주고 `/viz` 그래프 위에 임시 노드로 겹쳐 그린다. 사람이 정한 범위(2026-10-16): 일회성 분석만(저장 안 함), 화면은 `/viz` 입력 카드, 사용자 판정은 선택 입력.
+
+### E-1. 원칙
+
+- **저장하지 않는다.** DB, `knowledge/`, `data/recipes/`, 그래프 캐시를 바꾸지 않는다. 등록하려면 기존 절차(draft YAML → 검수 → published)를 따른다.
+- **결정적 규칙만 쓴다.** 재료 줄 분리는 식품안전나라 변환과 같은 `kb.foodsafety.ingredient_segments`(버리는 것은 고정 머리말 단어, 레시피 이름, 분량 표기, "…재료", 물뿐이고 버린 항목은 응답에 그대로 보여 준다). 매핑은 별칭 색인 정확 일치만. LLM·유사도 매핑 없음.
+- **concept 노드에 맞은 줄은 미매칭과 같이 다룬다**(A1). 응답에는 어떤 분류에 맞았는지 보여 주고 더 구체적인 재료를 적도록 안내한다.
+- **판정은 엔진의 기존 필터를 그대로 쓴다.** 사용자를 주면 임시 `Recipe`(모든 줄 role sub, 선택 아님)를 만들어 `UserConstraints.check`로 판정한다. 추천과 같은 기준이므로 possible도 제외, 미매칭 줄이 있으면 알레르기 사용자에게 제외. 매운맛·조리기구·조리시간·음식 종류는 입력에 정보가 없어 판정하지 않는다고 응답에 밝힌다. 제외되면 `logs/exclusions.jsonl`에 기록한다(recipe_id는 `adhoc_<해시>`).
+- 구조 표시(줄별 알레르기 경로, is_a 조상, derived_from 원천)는 컴파일 결과 행을 조회만 한다(부록 D와 같은 표시 계층, 요청 중 그래프 탐색 없음).
+
+### E-2. API
+
+`POST /analyze-recipe`
+
+- 입력: `title`(1~100자), `text`(재료 원문, 줄·쉼표 구분) 또는 `ingredients`(문자열 목록) 중 정확히 하나, 사용자는 `profile_id`·`persona_id`·`allergen_groups` 중 최대 하나(없으면 구조만). 모양 오류 422, 재료를 하나도 찾지 못함·모르는 알레르기 그룹 400, 없는 프로필·페르소나 404.
+- 출력: `recipe_id`(`adhoc_<해시>`), `lines`(줄 번호, 원문, 이름, `status`: mapped·concept·unmapped, 재료 id·이름, is_a 조상, derived_from 원천, 기본 그룹 알레르기 행: certainty·via·path_links), `skipped`(버린 항목), `allergens`(레시피 단위 요약, `/graph` 레시피 노드와 같은 모양), `counts`(전체·매핑·미매칭·concept), `judgement`(사용자를 준 경우: `excluded`, 제외 사유 목록(부록 D-3 trace exclusions와 같은 모양), 판정한 항목·판정하지 않은 항목), `graph`(겹쳐 그릴 노드·간선), `notice`, `disclaimer`.
+- 그래프 겹쳐 보기: 레시피 노드 `rcp:adhoc_<해시>`(kind recipe, `adhoc: true`), 매핑된 줄은 `uses` 간선(`use:adhoc_<해시>#줄번호`), 미매칭·concept 줄은 온톨로지에 연결되지 않은 노드 `raw:adhoc_<해시>#줄번호`(kind unmapped)와 `unmapped` 간선.
+
+### E-3. 화면
+
+`/viz` 오른쪽 패널의 "외부 레시피 분석" 카드: 제목, 재료 원문, 판정 기준(구조만 / 페르소나 / 저장 프로필) → 분석. 결과는 요약(매핑 수, 걸리는 알레르기), 판정, 줄별 표(매핑 재료·분류·알레르기 경로), 버린 항목. 그래프에는 레시피 층 위 가운데에 임시 레시피 노드를 고정 위치로 추가하고 선택해 알레르기 경로를 강조한다(기존 선택 강조 재사용). 다시 분석하거나 지우면 이전 임시 노드를 뺀다. 데이터가 바뀌는 경우라 `graphData`를 다시 넣되 warmup 없이 넣어 기존 배치는 움직이지 않는다.
+
+### E-4. 테스트
+
+`tests/api/test_analyze_recipe.py`: 매핑·concept·미매칭 구분, 버린 항목, 알레르기 행이 `/graph` 재료 노드와 같음, path_links가 실제 링크, 저장 안 함(`/graph` ETag·레시피 수 불변), 사용자 판정이 추천 필터와 같은 결과(possible 제외, 미매칭 제외, 알레르기 없는 사용자는 미매칭이어도 통과), 입력 검증, 제외 로그. `tests/allergy/`는 바꾸지 않는다.
+
+### E-5. 범위 밖
+
+저장(draft 등록), 미매칭 표기 누적(`unmapped_term`), 자유 문장(LLM) 해석, role·선택 재료 추론. 필요하면 progress.md "다음 단계 제안"에 적는다.
