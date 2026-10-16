@@ -500,6 +500,7 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
 - MVP(Phase 0~1) 완료. Phase 2는 사람이 범위를 정한 뒤 시작한다(아래 "다음 단계 제안").
 - 시각화 트랙 완료(viz-v1). 시연은 README 6-1 "시연 순서"(시연 프로필은 `scripts/seed_demo_profiles.py`).
 - 새 재료를 추가할 때는 status: draft로 넣고 검수표(`scripts/make_review.py`)로 사람 확인 후 reviewed.
+- **(int-0, 2026-10-16, 승인 대기)** 레시피·재료·알레르기 통합 온톨로지 추천안: `docs/review/ontology_integration_proposal.md`. 범위(살림팝 시드 draft 변환, 식품안전나라 그래프 표시 전용), 미매칭 3단계 처리, 같은 요리는 화면에서만 묶기, 고도화 C1·C2만 반영. 승인 후 통합 브랜치 단계별 계획을 제시한다.
 
 ## 다음 단계 제안 (Phase 2 이후, 범위 밖)
 
