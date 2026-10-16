@@ -64,6 +64,15 @@ body { background: var(--bg); color: var(--text); font: 14px/1.5 var(--font); di
 .chip.ancestor { background: #1f3a30; color: #c4f2da; }
 .chip.staple { background: #22282a; color: #a8b5ad; }
 .chip.removable { padding-right: 2px; }
+.chip.missing { background: #3d2616; color: #ffc59c; }
+.small-text { font-size: 12px; margin-bottom: 6px; }
+.check { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); margin: 6px 0; }
+.browse-list .notice { font-size: 12px; background: #3a2d10; color: #ffd98a; border-radius: 6px; padding: 6px 8px; margin: 8px 0 0; }
+.browse-item { border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; margin: 0 0 6px; cursor: pointer; font-size: 12px; }
+.browse-item:hover { border-color: var(--muted); }
+.browse-item .title { font-size: 13px; font-weight: 600; }
+.browse-item.warn { border-color: #7a2a30; background: #2a1a1d; }
+.browse-item .alert-text { color: #ffb4b8; }
 .chip.removable button { background: none; border: 0; color: var(--muted); cursor: pointer; padding: 0 4px; font: inherit; }
 .chip.removable button:hover { color: var(--text); }
 .info .path { margin-bottom: 3px; }

@@ -59,9 +59,12 @@ def remember(items: list[dict[str, Any]]) -> None:
 
 def ingredient_picker(label: str, key: str, current: list[str], *, include_concepts: bool = False) -> list[str]:
     """별칭 검색 → 선택 목록에 추가. 선택 목록에서 지우면 빠진다. 반환: 선택된 재료 id 목록."""
-    sel_key = f"{key}_selected"
+    sel_key, ms_key = f"{key}_selected", f"{key}_ms"
     if sel_key not in st.session_state:
         st.session_state[sel_key] = list(current)
+    # 키가 있는 위젯은 default가 바뀌어도 이전 값을 유지한다(Streamlit 1.64). 그래서 "추가"는 위젯 값(ms_key)을
+    # 직접 바꾼다. 위젯을 그리기 전에만 바꿀 수 있으므로 버튼 처리 → multiselect 순서를 지킨다.
+    st.session_state.setdefault(ms_key, list(st.session_state[sel_key]))
     q = st.text_input(f"{label} 검색(이름·별칭, 예: 달걀, 다진마늘)", key=f"{key}_q")
     if q.strip():
         hits = api("GET", "/ingredients/search", params={"q": q, "include_concepts": include_concepts})
@@ -76,12 +79,51 @@ def ingredient_picker(label: str, key: str, current: list[str], *, include_conce
             pick = cols[0].selectbox("검색 결과", list(options), format_func=options.get, key=f"{key}_pick")
             if cols[1].button("추가", key=f"{key}_add") and pick not in st.session_state[sel_key]:
                 st.session_state[sel_key] = st.session_state[sel_key] + [pick]
+                st.session_state[ms_key] = list(st.session_state[sel_key])
         else:
             st.caption("일치하는 재료가 없습니다.")
-    selected = st.multiselect(label, st.session_state[sel_key], default=st.session_state[sel_key],
-                              format_func=lambda i: names().get(i, i), key=f"{key}_ms")
+    selected = st.multiselect(label, st.session_state[sel_key], format_func=lambda i: names().get(i, i), key=ms_key)
     st.session_state[sel_key] = selected
     return selected
+
+
+@st.cache_data(ttl=300)
+def recipe_detail(recipe_id: str, profile_id: int, pantry: tuple[str, ...] | None) -> dict[str, Any]:
+    params: dict[str, Any] = {"profile_id": profile_id}
+    if pantry is not None:
+        params["pantry"] = list(pantry)
+    return api("GET", f"/recipes/{recipe_id}", params=params)
+
+
+HAVE_MARK = {True: "✅", False: "⬜", None: "·"}
+ROLE_ORDER = ("main", "sub", "seasoning", "garnish")
+
+
+def show_recipe_detail(recipe_id: str, profile_id: int, pantry: list[str] | None) -> None:
+    """역할별 전체 재료(보유 여부 표시)와 조리 순서. 보유 판정은 API(엔진과 같은 기준)가 한다."""
+    try:
+        d = recipe_detail(recipe_id, profile_id, None if pantry is None else tuple(pantry))
+    except RuntimeError as exc:
+        st.error(str(exc))
+        return
+    by_role: dict[str, list[dict[str, Any]]] = {r: [] for r in ROLE_ORDER}
+    for x in d["ingredients"]:
+        by_role.setdefault(x["role"], []).append(x)
+    for lines in by_role.values():
+        if not lines:
+            continue
+        st.markdown(f"**{lines[0]['role_label']}**")
+        rows = []
+        for x in lines:
+            tags = [t for t, on in (("선택", x["optional"]), ("기본 양념", x["is_pantry_staple"]),
+                                    ("미확인 재료", x["unmapped"])) if on]
+            extra = f" ({', '.join(tags)})" if tags else ""
+            rows.append(f"- {HAVE_MARK[x['have']]} {x['raw_text']}{extra}")
+        st.markdown("\n".join(rows))
+    st.caption("✅ 보유(기본 양념·상위 재료 포함) · ⬜ 없음")
+    if d["steps"]:
+        st.markdown("**조리 순서**")
+        st.markdown("\n".join(f"{n}. {t}" for n, t in enumerate(d["steps"], start=1)))
 
 
 # --- 사이드바: 프로필 선택·생성 ------------------------------------------------------------------------
@@ -118,7 +160,7 @@ if st.session_state.get("loaded_profile") != pid:  # 프로필이 바뀌면 편�
     st.session_state["loaded_profile"] = pid
 
 st.title(f"레시피 추천 — {profile['display_name']}")
-tab_rec, tab_profile, tab_allergy = st.tabs(["추천", "프로필·선호 편집", "알레르기"])
+tab_rec, tab_browse, tab_profile, tab_allergy = st.tabs(["추천", "재료로 레시피 찾기", "프로필·선호 편집", "알레르기"])
 v = vocab()
 
 # --- 프로필·선호 편집 --------------------------------------------------------------------------------
@@ -245,6 +287,13 @@ with tab_rec:
     allergy_names = ", ".join(g["name"] for g in profile["allergen_groups"]) or "없음"
     pantry_names = ", ".join(x["name"] for x in profile["pantry"]) or "없음(프로필·선호 편집 탭에서 입력)"
     st.markdown(f"**보유 재료**: {pantry_names}  \n**알레르기**: {allergy_names}")
+    source = st.radio("추천 기준 재료", ["프로필 보유 재료", "이번만 재료 직접 고르기"], horizontal=True,
+                      help="직접 고른 재료는 프로필에 저장되지 않습니다.")
+    adhoc_pantry: list[str] | None = None
+    if source != "프로필 보유 재료":
+        adhoc_pantry = ingredient_picker("고른 재료", "adhoc", [x["id"] for x in profile["pantry"]])
+        if not adhoc_pantry:
+            st.caption("재료를 하나 이상 고르세요. 기본 양념(소금·간장 등)은 고르지 않아도 보유로 봅니다.")
     c1, c2, c3 = st.columns(3)
     max_time = c1.number_input("희망 조리시간(분, 0이면 제한 없음)", 0, 240, 0, 5)
     time_hard = c2.checkbox("시간을 넘는 레시피는 빼기", disabled=max_time == 0)
@@ -252,9 +301,11 @@ with tab_rec:
 
     if st.button("추천 받기", type="primary"):
         try:
-            st.session_state["result"] = api("POST", "/recommend", json={
-                "profile_id": pid, "max_time_min": int(max_time) or None, "time_is_hard": bool(time_hard),
-                "limit": int(limit)})
+            result = api("POST", "/recommend", json={
+                "profile_id": pid, "pantry": adhoc_pantry, "max_time_min": int(max_time) or None,
+                "time_is_hard": bool(time_hard), "limit": int(limit)})
+            result["used_pantry"] = adhoc_pantry  # 상세 보기의 보유 표시도 같은 재료 기준
+            st.session_state["result"] = result
         except RuntimeError as exc:
             st.error(str(exc))
     result = st.session_state.get("result")
@@ -284,11 +335,65 @@ with tab_rec:
                 if item["label_check"]:
                     check = item["label_check"]
                     st.warning(f"⚠️ {check['text']}")
+                with st.expander("전체 재료·조리 순서 보기"):
+                    show_recipe_detail(item["recipe_id"], pid, result.get("used_pantry"))
         if result["exclusion_summary"]:
             with st.expander(f"제외된 레시피 {result['excluded_total']}개 — 사유 요약"):
                 for s in result["exclusion_summary"]:
                     ex = f" (예: {', '.join(s['examples'])})" if s["examples"] else ""
                     st.markdown(f"- **{s['label']}**: {s['count']}개{ex}")
+
+# --- 재료로 레시피 찾기 (조회: 점수 없이 "고른 재료로 만들 수 있는가"만 본다) ---------------------------------
+
+
+def browse_card(item: dict[str, Any], profile_id: int, selected: list[str]) -> None:
+    warn = item["allergy_warnings"]
+    with st.container(border=True):
+        title = ("⚠️ " if warn else "") + item["title"] + (" (검수 전)" if item["status"] != "published" else "")
+        st.markdown(f"#### {title}")
+        st.caption(f"{item['cuisine']} · 난이도 {item['difficulty'] or '-'} · 약 {item['cook_time_min'] or '-'}분")
+        st.markdown("**쓰는 고른 재료**: " + ", ".join(u["name"] for u in item["used"]))
+        if item["missing"]:
+            st.markdown("**더 필요한 재료**: " + ", ".join(m["raw_text"] for m in item["missing"]))
+        if item["optional_missing"]:
+            st.caption("없어도 되는 재료(선택·고명): " + ", ".join(m["name"] for m in item["optional_missing"]))
+        if warn:
+            st.error("⚠️ 알레르기 주의 — " + " / ".join(w["text"] for w in warn))
+        with st.expander("전체 재료·조리 순서 보기"):
+            show_recipe_detail(item["recipe_id"], profile_id, selected)
+
+
+with tab_browse:
+    st.caption("재료를 여러 개 고르면, 고른 재료와 기본 양념(소금·간장 등)만으로 만들 수 있는 레시피를 보여 줍니다. "
+               "삼겹살을 고르면 '돼지고기'가 필요한 레시피도 만들 수 있는 것으로 봅니다(상위 재료 상속). 대체 재료는 쓰지 않습니다.")
+    chosen = ingredient_picker("고른 재료", "browse", [])
+    use_allergy = st.checkbox(f"이 프로필의 알레르기({allergy_names})로 주의 표시",
+                              value=bool(profile["allergen_groups"]), disabled=not profile["allergen_groups"])
+    if st.button("레시피 찾기", type="primary", disabled=not chosen):
+        params: dict[str, Any] = {"ingredients": chosen}
+        if use_allergy:
+            params["profile_id"] = pid
+        try:
+            st.session_state["browse"] = {"pid": pid, "selected": chosen,
+                                          "result": api("GET", "/browse", params=params)}
+        except RuntimeError as exc:
+            st.error(str(exc))
+    found = st.session_state.get("browse")
+    if found and found["pid"] == pid:
+        res = found["result"]
+        st.markdown("**고른 재료**: " + ", ".join(x["name"] for x in res["selected"]))
+        if res["allergy_notice"]:
+            st.warning(res["allergy_notice"])
+        st.subheader(f"바로 만들 수 있는 레시피 ({len(res['cookable'])}개)")
+        if not res["cookable"]:
+            st.caption("고른 재료만으로 만들 수 있는 레시피가 없습니다.")
+        for item in res["cookable"]:
+            browse_card(item, pid, found["selected"])
+        st.subheader(f"재료가 조금 모자란 레시피 ({len(res['near'])}개)")
+        if not res["near"]:
+            st.caption("해당하는 레시피가 없습니다.")
+        for item in res["near"]:
+            browse_card(item, pid, found["selected"])
 
 st.divider()
 st.caption("⚠️ " + v["disclaimer"])

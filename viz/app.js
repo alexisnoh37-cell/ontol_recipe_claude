@@ -4,6 +4,7 @@
 
 import { GROUP_CATEGORY_LABEL, LAYER_LABEL, LINK_COLOR, LINK_LABEL, NODE_COLOR, PLAY_COLOR, REASON_COLOR, ROLE_LABEL } from "./palette.js";
 import { setupAdhoc } from "./adhoc.js";
+import { setupBrowse } from "./browse.js";
 import { setupPlayback } from "./playback.js";
 import { createScene } from "./scene.js";
 
@@ -14,6 +15,7 @@ const norm = (s) => String(s ?? "").toLowerCase().replace(/\s+/g, "");
 const params = new URLSearchParams(location.search);
 const t0 = performance.now();
 let playback = null;
+let browse = null;
 
 async function loadGraph() {
   const url = params.get("graph") || `/graph?recipes=${encodeURIComponent(params.get("recipes") || "published")}`;
@@ -274,12 +276,16 @@ async function main() {
     return;
   }
   const tFetched = performance.now();
-  const scene = createScene($("#graph"), data, { tooltip, onSelect: (n) => renderInfo(scene, n) });
+  const scene = createScene($("#graph"), data, { tooltip, onSelect: (n) => { renderInfo(scene, n); browse?.onNodeSelect(n); } });
   const tScene = performance.now();
   $("#loading").remove();
   setupSearch(scene);
   setupToggles(scene);
   renderLegend();
+  browse = setupBrowse({
+    scene, $, attachSearch,
+    ingredientIndex: searchIndex(scene, (n) => n.kind === "ingredient" && !n.is_concept),
+  });
   playback = setupPlayback({
     scene, $, attachSearch,
     ingredientIndex: searchIndex(scene, (n) => n.kind === "ingredient" && !n.is_concept),
