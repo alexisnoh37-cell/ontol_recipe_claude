@@ -153,6 +153,32 @@ def create_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir
                            include_concepts: bool = False) -> list[dict[str, Any]]:
         return state.catalog.search(q, limit=limit, include_concepts=include_concepts)
 
+    @app.get("/browse")
+    def browse(ingredients: list[str] = Query(..., min_length=1, max_length=50), profile_id: int | None = None,
+               persona_id: str | None = None, allergen_groups: list[str] | None = Query(None, max_length=50),
+               max_missing: int | None = Query(None, ge=0, le=5)) -> dict[str, Any]:
+        """재료로 레시피 찾기(조회, engine/browse.py). 고른 재료(+기본 양념, is_a 상속)로 조리 가능한 레시피와
+        꼭 필요한 재료가 max_missing개 이하로 모자란 레시피. 알레르기 기준(프로필·페르소나·그룹 중 최대 하나)을 주면
+        알레르기 레시피를 제외하지 않고 경고를 붙인다(사람 결정 2026-10-16)."""
+        if sum(x is not None for x in (profile_id, persona_id, allergen_groups)) > 1:
+            raise bad("profile_id, persona_id, allergen_groups 중 최대 하나만 주세요")
+        check_pantry(ingredients)
+        groups: frozenset[str] = frozenset(allergen_groups or ())
+        if profile_id is not None:
+            groups = user_context(get_profile(profile_id)).allergen_groups
+        elif persona_id is not None:
+            persona = persona_index.get(persona_id)
+            if persona is None:
+                raise HTTPException(status_code=404, detail=f"페르소나 {persona_id}이(가) 없습니다")
+            groups = persona.user.allergen_groups
+        with state.lock:
+            recommender, catalog = state.recommender, state.catalog
+        try:
+            result = recommender.browse(ingredients, groups, max_missing=max_missing)
+        except ValueError as exc:  # 모르는 알레르기 그룹
+            raise bad(str(exc)) from None
+        return catalog.browse(result, has_allergy=bool(groups))
+
     @app.get("/recipes/{recipe_id}")
     def recipe_detail(recipe_id: str, profile_id: int | None = None,
                       pantry: list[str] | None = Query(None)) -> dict[str, Any]:

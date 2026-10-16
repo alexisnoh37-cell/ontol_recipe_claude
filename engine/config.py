@@ -29,6 +29,7 @@ _WEIGHT_KEYS = {
 class EngineConfig:
     weights: Mapping[str, Any] = field(default_factory=dict)  # config/weights.yaml 내용
     serve_draft_recipes: bool = False  # config/engine.yaml
+    browse_max_missing: int = 2  # config/engine.yaml(재료로 레시피 찾기)
 
 
 def load_engine_config(config_dir: Path, *, serve_draft_recipes: bool | None = None) -> EngineConfig:
@@ -37,7 +38,10 @@ def load_engine_config(config_dir: Path, *, serve_draft_recipes: bool | None = N
     engine = _read_yaml(config_dir / "engine.yaml")
     serve = bool(engine.get("serve_draft_recipes", False)) if serve_draft_recipes is None else serve_draft_recipes
     ScoringConfig.from_mapping(weights)  # 적재 시점에 검증
-    return EngineConfig(weights=weights, serve_draft_recipes=serve)
+    max_missing = engine.get("browse_max_missing", 2)
+    if not isinstance(max_missing, int) or isinstance(max_missing, bool) or max_missing < 0:
+        raise ValueError(f"engine.yaml browse_max_missing은 0 이상 정수여야 합니다: {max_missing!r}")
+    return EngineConfig(weights=weights, serve_draft_recipes=serve, browse_max_missing=max_missing)
 
 
 def _read_yaml(path: Path) -> dict[str, Any]:

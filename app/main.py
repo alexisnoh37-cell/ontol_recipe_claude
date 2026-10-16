@@ -160,7 +160,7 @@ if st.session_state.get("loaded_profile") != pid:  # 프로필이 바뀌면 편�
     st.session_state["loaded_profile"] = pid
 
 st.title(f"레시피 추천 — {profile['display_name']}")
-tab_rec, tab_profile, tab_allergy = st.tabs(["추천", "프로필·선호 편집", "알레르기"])
+tab_rec, tab_browse, tab_profile, tab_allergy = st.tabs(["추천", "재료로 레시피 찾기", "프로필·선호 편집", "알레르기"])
 v = vocab()
 
 # --- 프로필·선호 편집 --------------------------------------------------------------------------------
@@ -342,6 +342,58 @@ with tab_rec:
                 for s in result["exclusion_summary"]:
                     ex = f" (예: {', '.join(s['examples'])})" if s["examples"] else ""
                     st.markdown(f"- **{s['label']}**: {s['count']}개{ex}")
+
+# --- 재료로 레시피 찾기 (조회: 점수 없이 "고른 재료로 만들 수 있는가"만 본다) ---------------------------------
+
+
+def browse_card(item: dict[str, Any], profile_id: int, selected: list[str]) -> None:
+    warn = item["allergy_warnings"]
+    with st.container(border=True):
+        title = ("⚠️ " if warn else "") + item["title"] + (" (검수 전)" if item["status"] != "published" else "")
+        st.markdown(f"#### {title}")
+        st.caption(f"{item['cuisine']} · 난이도 {item['difficulty'] or '-'} · 약 {item['cook_time_min'] or '-'}분")
+        st.markdown("**쓰는 고른 재료**: " + ", ".join(u["name"] for u in item["used"]))
+        if item["missing"]:
+            st.markdown("**더 필요한 재료**: " + ", ".join(m["raw_text"] for m in item["missing"]))
+        if item["optional_missing"]:
+            st.caption("없어도 되는 재료(선택·고명): " + ", ".join(m["name"] for m in item["optional_missing"]))
+        if warn:
+            st.error("⚠️ 알레르기 주의 — " + " / ".join(w["text"] for w in warn))
+        with st.expander("전체 재료·조리 순서 보기"):
+            show_recipe_detail(item["recipe_id"], profile_id, selected)
+
+
+with tab_browse:
+    st.caption("재료를 여러 개 고르면, 고른 재료와 기본 양념(소금·간장 등)만으로 만들 수 있는 레시피를 보여 줍니다. "
+               "삼겹살을 고르면 '돼지고기'가 필요한 레시피도 만들 수 있는 것으로 봅니다(상위 재료 상속). 대체 재료는 쓰지 않습니다.")
+    chosen = ingredient_picker("고른 재료", "browse", [])
+    use_allergy = st.checkbox(f"이 프로필의 알레르기({allergy_names})로 주의 표시",
+                              value=bool(profile["allergen_groups"]), disabled=not profile["allergen_groups"])
+    if st.button("레시피 찾기", type="primary", disabled=not chosen):
+        params: dict[str, Any] = {"ingredients": chosen}
+        if use_allergy:
+            params["profile_id"] = pid
+        try:
+            st.session_state["browse"] = {"pid": pid, "selected": chosen,
+                                          "result": api("GET", "/browse", params=params)}
+        except RuntimeError as exc:
+            st.error(str(exc))
+    found = st.session_state.get("browse")
+    if found and found["pid"] == pid:
+        res = found["result"]
+        st.markdown("**고른 재료**: " + ", ".join(x["name"] for x in res["selected"]))
+        if res["allergy_notice"]:
+            st.warning(res["allergy_notice"])
+        st.subheader(f"바로 만들 수 있는 레시피 ({len(res['cookable'])}개)")
+        if not res["cookable"]:
+            st.caption("고른 재료만으로 만들 수 있는 레시피가 없습니다.")
+        for item in res["cookable"]:
+            browse_card(item, pid, found["selected"])
+        st.subheader(f"재료가 조금 모자란 레시피 ({len(res['near'])}개)")
+        if not res["near"]:
+            st.caption("해당하는 레시피가 없습니다.")
+        for item in res["near"]:
+            browse_card(item, pid, found["selected"])
 
 st.divider()
 st.caption("⚠️ " + v["disclaimer"])

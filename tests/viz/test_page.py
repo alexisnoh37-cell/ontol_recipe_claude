@@ -26,3 +26,11 @@ def test_cdn_versions_are_pinned_and_share_one_three():
         "https://cdn.jsdelivr.net/npm/3d-force-graph@1.80.1/+esm",
         "https://cdn.jsdelivr.net/npm/three@0.186.1/+esm",
     }
+
+
+def test_browse_card_is_served(client):
+    """재료로 레시피 찾기 카드(ui-2). 동작은 브라우저로 확인한다."""
+    html = client.get("/viz").text
+    for el in ('id="browse-add"', 'id="browse-pick"', 'id="browse-subject"', 'id="browse-run"', 'id="browse-list"'):
+        assert el in html, el
+    assert client.get("/viz/static/browse.js").status_code == 200

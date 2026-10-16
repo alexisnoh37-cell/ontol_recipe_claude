@@ -13,9 +13,11 @@ from typing import Any
 
 import yaml
 
+from api.viz import ing, rcp, use_link
+from engine.browse import BrowseItem, BrowseResult
 from engine.candidates import owned_ingredients
 from engine.korean import josa
-from engine.model import KnowledgeSnapshot, RecommendItem, RecommendResult
+from engine.model import ExclusionReason, KnowledgeSnapshot, RecommendItem, RecommendResult
 from kb.datacheck import RecipeSpec
 from kb.text import normalize_term
 from storage.engine_source import CONFIG_DIR, EngineData, snapshot_from_compiled
@@ -178,6 +180,64 @@ class Catalog:
                 "ingredients": [{"id": i, "name": self.names[i]} for i in disp.label_check],
                 "text": f"{self.display['label_check']}: " + ", ".join(self.names[i] for i in disp.label_check),
             } if has_allergy and disp.label_check else None,
+        }
+
+    def browse(self, result: BrowseResult, *, has_allergy: bool) -> dict[str, Any]:
+        """재료로 레시피 찾기 결과 → 화면용. 그래프 강조용 노드·링크 id(api.viz 규칙)를 함께 싣는다."""
+        named = lambda ids: [{"id": i, "name": self.names.get(i, i)} for i in ids]  # noqa: E731
+        return {
+            "selected": named(result.selected),
+            "has_allergy": has_allergy,
+            "cookable": [self._browse_item(i) for i in result.cookable],
+            "near": [self._browse_item(i) for i in result.near],
+            "allergy_notice": self.display["browse_allergy_notice"] if has_allergy else None,
+        }
+
+    def _browse_item(self, it: BrowseItem) -> dict[str, Any]:
+        r = it.recipe
+        spec = self.recipes[r.id]
+        lines = {line.line_no: line for line in r.ingredients}
+        labels = self.display["exclusion_labels"]
+
+        def line_out(n: int) -> dict[str, Any]:
+            line = lines[n]
+            ing_id = line.ingredient_id
+            return {"line_no": n, "id": ing_id, "name": self.names.get(ing_id, ing_id) if ing_id else line.raw_text,
+                    "raw_text": line.raw_text, "role": line.role, "optional": line.optional}
+
+        warnings = []
+        for e in it.allergy:
+            if e.reason == ExclusionReason.ALLERGEN and e.target:
+                hit = (f"{self.groups[e.target].display_name}: {self.names.get(e.ingredient_id, e.ingredient_id)}"
+                       + (" (포함 가능)" if e.certainty == "possible" else ""))
+            else:
+                hit = e.detail or labels.get(e.reason.value, e.reason.value)
+            warnings.append({"reason": e.reason.value, "label": labels.get(e.reason.value, e.reason.value),
+                             "group": e.target if e.reason == ExclusionReason.ALLERGEN else None,
+                             "group_name": self.groups[e.target].display_name
+                             if e.reason == ExclusionReason.ALLERGEN and e.target else None,
+                             "ingredient_id": e.ingredient_id, "certainty": e.certainty, "text": hit})
+        lacking = set(it.missing) | set(it.optional_missing)
+        return {
+            "recipe_id": r.id,
+            "title": r.title,
+            "cuisine": r.cuisine,
+            "difficulty": spec.difficulty,
+            "cook_time_min": spec.cook_time_min,
+            "status": spec.status,
+            "used": [{"id": i, "name": self.names.get(i, i)} for i in it.used],
+            "missing": [line_out(n) for n in it.missing],
+            "optional_missing": [line_out(n) for n in it.optional_missing],
+            "missing_count": len(it.missing),
+            "allergy_warnings": warnings,
+            "graph": {
+                "recipe": rcp(r.id),
+                "used_nodes": [ing(i) for i in it.used],
+                "owned_links": [use_link(r.id, line.line_no) for line in r.ingredients
+                                if line.ingredient_id and line.line_no not in lacking],
+                "missing_links": [use_link(r.id, n) for n in it.missing if lines[n].ingredient_id],
+                "missing_nodes": [ing(lines[n].ingredient_id) for n in it.missing if lines[n].ingredient_id],
+            },
         }
 
     def item(self, item: RecommendItem, *, has_allergy: bool) -> dict[str, Any]:

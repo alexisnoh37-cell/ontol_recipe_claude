@@ -42,6 +42,20 @@
         <h2>노드 정보</h2>
         <div id="info" class="info"><p class="muted">노드를 클릭하면 연결된 관계만 강조합니다. 빈 곳 클릭 또는 Esc로 해제.</p></div>
       </section>
+      <section class="card" id="browse-card">
+        <h2>재료로 레시피 찾기</h2>
+        <p class="muted small-text">재료를 여러 개 고르면 고른 재료와 기본 양념만으로 만들 수 있는 레시피를 찾습니다(상위 재료 상속, 대체 재료 미사용).</p>
+        <div id="browse-chips" class="pantry"></div>
+        <div class="search small">
+          <input id="browse-add" type="search" placeholder="재료 추가(재료·별칭)" autocomplete="off" aria-label="찾을 재료 추가">
+          <ul id="browse-results" class="search-results" role="listbox" hidden></ul>
+        </div>
+        <label class="check"><input type="checkbox" id="browse-pick"> 그래프에서 재료 노드를 클릭해 고르기</label>
+        <label class="field">알레르기 <select id="browse-subject" aria-label="알레르기 표시 기준"><option value="">알레르기 표시 안 함</option></select></label>
+        <div class="run-row"><button type="button" id="browse-run" class="primary" disabled>레시피 찾기</button>
+          <button type="button" id="browse-clear" class="link" hidden>지우기</button><span id="browse-status" class="muted"></span></div>
+        <div id="browse-list" class="browse-list"></div>
+      </section>
       <section class="card" id="play-card">
         <h2>추천 과정 재생</h2>
         <label class="field">프로필 <select id="subject" aria-label="프로필 선택"><option>불러오는 중…</option></select></label>

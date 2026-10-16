@@ -286,3 +286,52 @@ def test_recipe_detail_label_check_only_with_allergy(client, data):
     set_prefs(client, pid, [{"target_type": "allergen_group", "target_id": "shrimp"}])
     check = client.get(f"/recipes/{rid}", params={"profile_id": pid}).json()["label_check"]
     assert check and check["ingredients"]
+
+
+# --- 재료로 레시피 찾기 (ui-2) ----------------------------------------------------------------------
+
+
+def test_browse_cookable_and_near_with_names(client):
+    body = client.get("/browse", params={"ingredients": ["pork_belly", "kimchi"]}).json()
+    assert body["selected"] == [{"id": "pork_belly", "name": "삼겹살"}, {"id": "kimchi", "name": "배추김치"}]
+    cookable = {i["recipe_id"]: i for i in body["cookable"]}
+    jj = cookable["kimchi_jjigae"]  # 삼겹살 → "돼지고기" 충족(is_a), 양념은 기본 양념, 두부·양파 선택, 대파 고명
+    assert jj["missing"] == [] and jj["missing_count"] == 0
+    assert [u["id"] for u in jj["used"]] == ["pork_belly", "kimchi"]
+    assert {m["id"] for m in jj["optional_missing"]} >= {"tofu", "green_onion"}
+    assert jj["allergy_warnings"] == [] and body["allergy_notice"] is None
+    assert jj["graph"]["recipe"] == "rcp:kimchi_jjigae" and "ing:pork_belly" in jj["graph"]["used_nodes"]
+    for item in body["near"]:
+        assert 1 <= item["missing_count"] <= 2 and len(item["missing"]) == item["missing_count"]
+        for m in item["missing"]:
+            assert m["name"] and m["role"] in {"main", "sub", "seasoning"} and not m["optional"]
+
+
+def test_browse_allergy_warns_instead_of_excluding(client):
+    params = {"ingredients": ["pork_belly", "kimchi"], "allergen_groups": ["shrimp"]}
+    body = client.get("/browse", params=params).json()
+    jj = next(i for i in body["cookable"] if i["recipe_id"] == "kimchi_jjigae")
+    assert any(w["reason"] == "allergen" and w["group"] == "shrimp" and w["certainty"] == "possible"
+               for w in jj["allergy_warnings"])  # 김치(새우 포함 가능) → 경고, 목록에는 남는다
+    assert body["allergy_notice"]
+    pid = make_profile(client, pantry=["pork_belly", "kimchi"])
+    set_prefs(client, pid, [{"target_type": "allergen_group", "target_id": "shrimp"}])
+    by_profile = client.get("/browse", params={"ingredients": ["pork_belly", "kimchi"], "profile_id": pid}).json()
+    assert by_profile["cookable"] == body["cookable"]
+    # 추천은 그대로 제외한다
+    rec = client.post("/recommend", json={"profile_id": pid}).json()
+    assert "kimchi_jjigae" not in [i["recipe_id"] for i in rec["items"]]
+
+
+def test_browse_max_missing_and_errors(client):
+    zero = client.get("/browse", params={"ingredients": ["pork_belly", "kimchi"], "max_missing": 0}).json()
+    assert zero["near"] == [] and zero["cookable"]
+    assert client.get("/browse").status_code == 422
+    assert client.get("/browse", params={"ingredients": ["nope"]}).status_code == 400
+    assert client.get("/browse", params={"ingredients": ["seafood"]}).status_code == 400  # concept
+    assert client.get("/browse", params={"ingredients": ["egg"], "allergen_groups": ["no_group"]}).status_code == 400
+    assert client.get("/browse", params={"ingredients": ["egg"], "profile_id": 999}).status_code == 404
+    assert client.get("/browse", params={"ingredients": ["egg"], "persona_id": "nope"}).status_code == 404
+    both = {"ingredients": ["egg"], "profile_id": 1, "allergen_groups": ["egg"]}
+    assert client.get("/browse", params=both).status_code == 400
+    assert client.get("/browse", params={"ingredients": ["egg"], "max_missing": 9}).status_code == 422
