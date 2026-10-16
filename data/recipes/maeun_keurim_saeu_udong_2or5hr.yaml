@@ -1,0 +1,86 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: maeun_keurim_saeu_udong_2or5hr
+title: 매운 크림 새우 우동
+cuisine: 일식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=2Or5HrxZzrk
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- ingredient: udon_noodles
+  raw_text: 우동사리
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: shrimp_raw
+  raw_text: 냉동 새우 150g / 새우 150g
+  role: sub
+  optional: false
+  amount: 150
+  unit: g
+- ingredient: onion
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: milk
+  raw_text: 우유 / 우유 1 컵
+  role: sub
+  optional: false
+  amount: 1
+  unit: 컵
+- ingredient: sliced_cheese
+  raw_text: 체다치즈
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: chicken_stock
+  raw_text: 치킨스톡 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: cooking_oil
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 식용유 넉넉히 두른 뒤 냉동 새우, 다진 마늘 1/2스푼을 볶는다.
+  technique: 볶음
+- text: 고춧가루 2스푼을 더한 뒤 한번 더 볶는다.
+  technique: 볶음
+- text: 우유 1 컵반, 치킨스톡 1/2스푼, 우동면, 체다치즈를 더한 뒤 꾸덕하게 끓인다.
+  technique: 끓이기
+- text: 모짜렐라 치즈를 얹은 뒤 녹인다.
+  technique: null

@@ -1,0 +1,84 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: usamgyeobsulbab_cpr3d6
+title: 우삼겹술밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=cpR3d68p4GY
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- ingredient: beef_plate
+  raw_text: 우삼겹 200g
+  role: main
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: onion
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: zucchini
+  raw_text: 애호박
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: ssamjang
+  raw_text: 쌈장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: salt
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: rice
+  raw_text: 밥
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 우삼겹 200g, 고추장 1스푼, 쌈장 1스푼, 다진 마늘 1스푼을 볶는다.
+  technique: 볶음
+- text: 물 1컵 반, 양파, 애호박을 더한 뒤 끓인다.
+  technique: 끓이기
+- text: 간 맞출 소금, 밥 1공기, 후추를 뿌려 한번 더 끓인다.
+  technique: 끓이기

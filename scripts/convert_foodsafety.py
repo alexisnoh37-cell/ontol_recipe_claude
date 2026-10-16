@@ -7,7 +7,7 @@
 
 모든 레시피는 source: foodsafety, status: draft, confidence: low, cuisine: 미분류, role: sub.
 재료는 별칭 색인 정확 일치만 매핑한다(kb/foodsafety.py). 출력 YAML은 scripts/validate_data.py
---recipes-dir data/recipes_foodsafety로 검사할 수 있다(미매칭은 unmapped 오류로 나온다).
+--recipes-dir data/recipes_foodsafety로 검사할 수 있다(draft의 미매칭은 허용된다, plan 5-4).
 종료 코드: 0 성공, 1 변환 결과가 검증 규칙에 맞지 않음, 2 설정 오류.
 """
 

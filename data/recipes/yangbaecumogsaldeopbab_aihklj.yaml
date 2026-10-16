@@ -1,0 +1,112 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: yangbaecumogsaldeopbab_aihklj
+title: 양배추목살덮밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=aIhKLj-FP9U
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- ingredient: pork_neck
+  raw_text: 목살 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: onion
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: cabbage
+  raw_text: 양배추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: cooking_oil
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: vinegar
+  raw_text: 식초 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: rice
+  raw_text: 밥
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 식용유 두른 팬에 목살, 대파, 다진 마늘 1/2스푼을 볶는다.
+  technique: 볶음
+- text: 양파, 양배추를 더한 뒤 숨이 죽게 볶는다.
+  technique: 볶음
+- text: 고춧가루 2스푼을 더한 뒤 30초만 볶는다.
+  technique: 볶음
+- text: 설탕 1스푼, 진간장 1스푼, 굴소스 1스푼, 멸치액젓 1/2스푼을 더한 뒤 살짝만 볶는다.
+  technique: 볶음
+- text: 밥 위에 올리고 식초 1/2스푼 흩뿌린다.
+  technique: null

@@ -161,7 +161,7 @@
 # --- 생선 가공품 ---
 - id: fish_cake
   name: 어묵
-  aliases: [오뎅, 사각어묵, 부산어묵, 어묵탕용 어묵]
+  aliases: [오뎅, 사각어묵, 부산어묵, 어묵탕용 어묵, 꼬치어묵]
   derived_from:
     - fish
     - {id: wheat_flour, certainty: possible}
@@ -170,11 +170,11 @@
   is_processed: true
   category: 가공식품
   confidence: low
-  note: 어종이 제품마다 달라 '생선'(분류 노드)에서 파생 → 모든 생선 그룹 possible. 밀가루·전분·대두단백 첨가 제품 많음
+  note: 어종이 제품마다 달라 '생선'(분류 노드)에서 파생 → 모든 생선 그룹 possible. 밀가루·전분·대두단백 첨가 제품 많음. 2026-10-16 자취요리신 데이터 연결로 별칭 추가, 검수 필요('꼬치어묵')
   status: reviewed
 - id: imitation_crab
   name: 게맛살
-  aliases: [맛살, 게살맛살]
+  aliases: [맛살, 게살맛살, 크래미]
   derived_from:
     - fish
     - {id: crab, certainty: possible}
@@ -184,7 +184,7 @@
   is_processed: true
   category: 가공식품
   confidence: low
-  note: 연육(생선살)이 주원료. 게 추출물·밀·난백·대두 함유 제품 있음
+  note: 연육(생선살)이 주원료. 게 추출물·밀·난백·대두 함유 제품 있음. 2026-10-16 자취요리신 데이터 연결로 별칭 추가, 검수 필요('크래미'는 게맛살 상품명)
   status: reviewed
 
 # --- 갑각류 ---

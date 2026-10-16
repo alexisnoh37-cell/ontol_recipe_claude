@@ -53,7 +53,10 @@ def test_ambiguous_alias_removed_and_soybean_oil_separate(ck):
 
 
 # 검수 대기 중인 재료. 사람이 검수표로 승인하면 reviewed로 바꾸고 여기서 뺀다.
-DRAFT_INGREDIENTS = frozenset({"soft_tofu"})  # 레시피 1차 확장(2026-10-04)
+DRAFT_INGREDIENTS = frozenset({
+    "soft_tofu",  # 레시피 1차 확장(2026-10-04)
+    "beef_plate", "bomdong",  # 자취요리신 데이터 연결(2026-10-16)
+})
 
 
 def test_all_knowledge_is_reviewed(ck):
@@ -68,6 +71,14 @@ def test_soft_tofu_is_soybean(ck):
     assert ck.closure_of("soybean")["soft_tofu"].certainty == "definite"
     by_norm = {a.alias_norm: a.ingredient_id for a in ck.aliases}
     assert by_norm["순두부"] == "soft_tofu"
+
+
+def test_simplecooking_links(ck):
+    # 자취요리신 연결(2026-10-16): 우삼겹은 쇠고기(상속), '깨'는 참깨·들깨 모호해 별칭으로 넣지 않는다.
+    assert ck.closure_of("beef")["beef_plate"].certainty == "definite"
+    by_norm = {a.alias_norm: a.ingredient_id for a in ck.aliases}
+    assert by_norm["노른자"] == "egg" and by_norm["크래미"] == "imitation_crab" and by_norm["통삼겹살"] == "pork_belly"
+    assert "깨" not in by_norm
 
 
 # --- D4 알레르기 그룹 확정 내용 (docs/decisions.md) -------------------------

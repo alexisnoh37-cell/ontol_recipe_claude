@@ -1,0 +1,112 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: jabcaebab_sxprl6
+title: 잡채밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source: https://www.youtube.com/watch?v=sXPRl64K2ds
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- ingredient: glass_noodles
+  raw_text: 당면 / 당면 한줌
+  role: main
+  optional: false
+  amount: 1
+  unit: 줌
+- ingredient: pork_belly
+  raw_text: 대패삼겹살 / 대패삼겹살 100g
+  role: sub
+  optional: false
+  amount: 100
+  unit: g
+- ingredient: onion
+  raw_text: 양파 / 양파 1/2개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: green_onion
+  raw_text: 대파 / 대파 한줌
+  role: sub
+  optional: false
+  amount: 1
+  unit: 줌
+- ingredient: egg
+  raw_text: 계란
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: cooking_oil
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: rice
+  raw_text: 밥
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 식용유 넉넉히 두른 팬에 계란 후라이를 튀기듯이 구워주고 덜어 둔다.
+  technique: 튀김
+- text: 대패삼겹살 100g, 대파 한줌, 양파 1/2개, 다진 마늘 1/2스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 고춧가루 1스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 불린 당면 한줌, 설탕 1스푼, 진간장 1스푼, 굴소스 1스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 밥 1공기, 계란 후라이, 후추를 흩뿌린다.
+  technique: null

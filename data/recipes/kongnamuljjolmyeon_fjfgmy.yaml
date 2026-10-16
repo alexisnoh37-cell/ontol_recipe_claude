@@ -1,0 +1,104 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: kongnamuljjolmyeon_fjfgmy
+title: 콩나물쫄면
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=fJFgMytlFk8
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 영상에 여러 레시피가 있어 첫 번째 레시피만 구조화
+ingredients:
+- ingredient: null
+  raw_text: 쫄면
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: soybean_sprouts
+  raw_text: 콩나물
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: pork_belly
+  raw_text: 대패삼겹살
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: beef_plate
+  raw_text: 우삼겹
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: soy_sauce
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sesame
+  raw_text: 통깨
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- ingredient: vinegar
+  raw_text: 식초 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 끓는 물에 쫄면과 콩나물을 더한 뒤 약 5분간 삶은 뒤 찬물에 헹군다.
+  technique: 끓이기
+- text: 양념장 재료를 모두 섞는다.
+  technique: 무침
+- text: 쫄면에 양념장을 입맛에 맞게 더한 뒤 비빈다.
+  technique: null
+- text: 참기름과 통깨를 뿌리고 구운 대패삼겹살이나 우삼겹을 올리면 마친다.
+  technique: null

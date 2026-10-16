@@ -1,0 +1,83 @@
+id: bajiragkaljebi_ijaztr
+title: 바지락칼제비
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 밖에서 사먹는 것보다 100배 더 맛있습니다.
+  video_url: https://www.youtube.com/watch?v=IjaZTrFxZ3U
+  published_at: '2026-08-21'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 멸치칼국수 라면
+  raw_text: 멸치칼국수라면
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- name: 바지락
+  raw_text: 바지락 500g
+  role: sub
+  optional: false
+  amount: 500
+  unit: g
+- name: 수제비
+  raw_text: 냉동 수제비
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 양파
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 청양고추
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 멸치액젓
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 물 800ml에 해감된 바지락, 멸칼 스프, 면, 멸치액젓 1스푼, 냉동 수제비를 더한 뒤 끓인다.
+  technique: 끓이기
+- text: 면이 절반 정도 익으면 양파, 대파, 청양고추를 더한 뒤 이어서 끓인다.
+  technique: 끓이기
+- text: 후추를 뿌려 마친다.
+  technique: null

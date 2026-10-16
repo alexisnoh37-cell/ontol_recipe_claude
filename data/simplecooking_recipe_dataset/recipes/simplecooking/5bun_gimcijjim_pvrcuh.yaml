@@ -1,0 +1,93 @@
+id: 5bun_gimcijjim_pvrcuh
+title: 5분 김치찜
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 5분컷 이거 먹으려고 일부러 삼겹살 남깁니다.
+  video_url: https://www.youtube.com/watch?v=pvrcuhpiAQc
+  published_at: '2026-07-12'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- name: 삼겹살
+  raw_text: 삼겹살 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- name: 김치
+  raw_text: 자른 김치 300g / 김치 300g
+  role: sub
+  optional: false
+  amount: 300
+  unit: g
+- name: 양파
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 마늘
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 치킨스톡
+  raw_text: 치킨스톡 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 김가루
+  raw_text: 김가루
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- name: 참기름
+  raw_text: 참기름 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 0
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 삼겹살과 대파를 볶는다.
+  technique: 볶음
+- text: 자른 김치, 양파를 더한 뒤 볶는다.
+  technique: 볶음
+- text: 고춧가루 1스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 물 1컵 , 다진 마늘 1스푼, 치킨스톡 1/2스푼을 더한 뒤 뚜껑 덮고 5분간 끓인다.
+  technique: 끓이기
+- text: 흰밥에 얹어 김가루와 참기름 1스푼을 곁들여 곁들인다.
+  technique: null

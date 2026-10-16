@@ -1,6 +1,6 @@
 """레시피 시드(data/recipes/) 검사: 형식·어휘 검증, 구성, 검수표 최신 여부, 알레르기 스모크.
 
-1-3 검수 완료 50개(published) + 1차 확장(2026-10-04) 초안(draft). 개수는 시드에서 센다.
+1-3 검수 완료 50개(published) + 1차 확장(2026-10-04) 초안 50개(draft) + 자취요리신 YouTube 데이터 변환 100개(draft, 2026-10-16). 개수는 시드에서 센다.
 """
 
 from __future__ import annotations
@@ -74,7 +74,9 @@ def test_reviewed_recipes_stay_published(specs):
     by_id = {s.id: s for s in specs}
     assert PUBLISHED_IDS <= set(by_id), sorted(PUBLISHED_IDS - set(by_id))
     assert {by_id[i].status for i in PUBLISHED_IDS} == {"published"}
-    assert {s.source for s in specs} == {"agent_draft"}
+    assert {by_id[i].source for i in PUBLISHED_IDS} == {"agent_draft"}
+    # 영상 출처(자취요리신 변환) 외에는 모두 에이전트 작성 초안이다(외부 본문 복제 금지, D3).
+    assert {s.source for s in specs if not s.source.startswith("https://www.youtube.com/watch?v=")} == {"agent_draft"}
 
 
 def test_published_recipes_have_required_fields(specs):
@@ -105,9 +107,10 @@ def test_every_recipe_is_complete(specs):
     for s in specs:
         assert s.taste is not None and s.difficulty is not None, s.id
         assert any(i.role == "main" and not i.optional for i in s.ingredients), f"{s.id}: 필수 주재료 없음"
-        assert all(i.ingredient is not None for i in s.ingredients), f"{s.id}: 미매칭 재료"
         assert s.steps, s.id
-        assert len({i.ingredient for i in s.ingredients}) == len(s.ingredients), f"{s.id}: 재료 중복"
+        if s.status == "published":  # draft(자취요리신 변환)는 미매칭·중복 매핑을 검수표·CONVERSION.md로 확인
+            assert all(i.ingredient is not None for i in s.ingredients), f"{s.id}: 미매칭 재료"
+            assert len({i.ingredient for i in s.ingredients}) == len(s.ingredients), f"{s.id}: 재료 중복"
 
 
 def test_bad_seed_is_rejected(ck, tmp_path):
@@ -155,7 +158,10 @@ def test_kimchi_recipes_excluded_for_shrimp_allergy(recommender, recommender_wit
     served = {i.recipe_id for i in result.items}
     assert served and not served & (kimchi_recipes | {"gyeranjjim", "haemul_pajeon"})
     allergen = [e for e in result.exclusions if e.reason == ExclusionReason.ALLERGEN]
-    assert kimchi_recipes <= {e.recipe_id for e in allergen if e.ingredient_id in KIMCHI_LIKE and e.target == "shrimp"}
+    # 주재료가 모두 미매칭인 draft는 후보가 되지 않아 제외 기록도 없다(누구에게도 제공되지 않음, 위 served 검사로 확인).
+    candidates = {s.id for s in pool if s.id in kimchi_recipes
+                  and any(i.role == "main" and i.ingredient is not None for i in s.ingredients)}
+    assert candidates <= {e.recipe_id for e in allergen if e.ingredient_id in KIMCHI_LIKE and e.target == "shrimp"}
     reasons = {(e.recipe_id, e.ingredient_id, e.certainty) for e in allergen}
     assert ("kimchi_jjigae", "kimchi", "possible") in reasons
     assert ("gyeranjjim", "saeujeot", "definite") in reasons
@@ -190,3 +196,34 @@ def test_loader_rejects_unclassified_or_untimed_draft(ck, tmp_path, extra, messa
         load_recipe_specs(ck, tmp_path)
     assert [i.code for i in exc.value.issues] == ["not_loadable"]
     assert message in exc.value.issues[0].message
+
+
+# --- 자취요리신 데이터 변환(2026-10-16, docs/decisions.md D3 예외) ---------------------------------------------
+
+
+def test_simplecooking_recipes_are_draft_with_youtube_source(specs):
+    # 원본 100개가 모두 변환되고, 출처는 영상 URL, 검수 전이므로 draft·confidence low 그대로다.
+    dataset = ROOT / "data" / "simplecooking_recipe_dataset" / "recipes" / "simplecooking"
+    sc = [s for s in specs if s.source.startswith("https://www.youtube.com/watch?v=")]
+    assert len(sc) == len(list(dataset.glob("*.yaml"))) == 100
+    assert {s.status for s in sc} == {"draft"} and {s.confidence for s in sc} == {"low"}
+    assert {s.id for s in sc}.isdisjoint(PUBLISHED_IDS)
+    expansion = [s for s in specs if s.source == "agent_draft" and s.status == "draft"]  # 1차 확장
+    assert len(expansion) == 50
+    assert len(specs) == len(PUBLISHED_IDS) + len(expansion) + len(sc)
+
+
+def test_unmapped_only_in_drafts(specs):
+    # 미매칭(null) 재료는 draft에만 있다(docs/plan.md 5-4). 미매칭 레시피는 알레르기 사용자에게 제외된다.
+    with_unmapped = {s.id: s.status for s in specs if any(i.ingredient is None for i in s.ingredients)}
+    assert with_unmapped and set(with_unmapped.values()) == {"draft"}
+
+
+def test_unmapped_draft_excluded_for_any_allergy(recommender_with_drafts, specs):
+    unmapped = {s.id for s in specs if any(i.ingredient is None for i in s.ingredients)}
+    mains = {i.ingredient for s in specs if s.id in unmapped for i in s.ingredients if i.role == "main" and i.ingredient}
+    ctx = UserContext(allergen_groups=frozenset({"peach"}), pantry=ALL_PANTRY | mains)
+    result = recommender_with_drafts.recommend(ctx, RecommendRequest(limit=1000))
+    assert not {i.recipe_id for i in result.items} & unmapped
+    excluded = {e.recipe_id for e in result.exclusions if e.reason == ExclusionReason.UNMAPPED_INGREDIENT}
+    assert excluded & unmapped

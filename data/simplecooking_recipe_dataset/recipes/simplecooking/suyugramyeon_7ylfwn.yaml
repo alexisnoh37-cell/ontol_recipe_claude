@@ -1,0 +1,61 @@
+id: suyugramyeon_7ylfwn
+title: 수육라면
+cuisine: 한식
+difficulty: 1
+cook_time_min: 40
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 라면에 이걸 한번 넣어보세요. 대박 맛도리입니다.
+  video_url: https://www.youtube.com/watch?v=7yLfwNaYDL0
+  published_at: '2026-08-25'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- name: 신라면
+  raw_text: 신라면 2봉
+  role: main
+  optional: false
+  amount: 2
+  unit: 봉
+- name: 통삼겹살
+  raw_text: 통삼겹살 500g
+  role: sub
+  optional: false
+  amount: 500
+  unit: g
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 물 1.2L, 라면스프 2개, 통삼겹살을 더한 뒤 뚜껑 덮고 20분, 뒤집어서 다시 20분 끓인다.
+  technique: 끓이기
+- text: 만든 수육은 얇게 자른다.
+  technique: null
+- text: 수육 삶은 물에 라면을 더한 뒤 끓인다.
+  technique: 끓이기
+- text: 수육, 대파, 후추를 뿌려 마친다.
+  technique: null

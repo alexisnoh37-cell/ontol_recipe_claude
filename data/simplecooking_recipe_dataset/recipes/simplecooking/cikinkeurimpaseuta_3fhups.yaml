@@ -1,0 +1,85 @@
+id: cikinkeurimpaseuta_3fhups
+title: 치킨크림파스타
+cuisine: 양식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 싸게 만드는 치킨크림파스타
+  video_url: https://www.youtube.com/watch?v=3FhuPsPglto
+  published_at: '2026-03-28'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 닭다리살
+  raw_text: 닭다리살 정육 250g / 닭다리살
+  role: main
+  optional: false
+  amount: 250
+  unit: g
+- name: 스파게티면
+  raw_text: 냉동 스파게티면 / 스파게티면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 양파
+  raw_text: 양파 / 양파 1/2개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 치킨스톡
+  raw_text: 치킨스톡 1/3스푼
+  role: seasoning
+  optional: false
+  amount: 0.3333333333333333
+  unit: 스푼
+- name: 파슬리
+  raw_text: 파슬리
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 우유
+  raw_text: 우유 1컵
+  role: sub
+  optional: false
+  amount: 1
+  unit: 컵
+- name: 소금
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 닭다리살 정육에 소금간 해준 뒤 충분히 굽는다.
+  technique: 구이
+- text: 다진 양파 1/2개를 더한 뒤 갈색빛이 띄게 같이 볶는다.
+  technique: 볶음
+- text: 우유 1컵반, 치킨스톡 1/3스푼, 냉동 스파게티면을 더한 뒤 꾸덕한 소스 느낌이 나게 졸인다.
+  technique: 조림
+- text: 체다치즈, 후추, 파슬리를 뿌려 마친다.
+  technique: null

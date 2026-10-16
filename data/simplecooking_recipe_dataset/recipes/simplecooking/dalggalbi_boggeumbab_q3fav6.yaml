@@ -1,0 +1,121 @@
+id: dalggalbi_boggeumbab_q3fav6
+title: 닭갈비 볶음밥
+cuisine: 일식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 제발 이제 이거 먹으러 멀리 가지마세요.
+  video_url: https://www.youtube.com/watch?v=Q3FAv6KRW3Y
+  published_at: '2026-02-26'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 닭다리살
+  raw_text: 닭다리살 정육 150g / 닭다리살 150g
+  role: main
+  optional: false
+  amount: 150
+  unit: g
+- name: 양파
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 양배추
+  raw_text: 양배추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 깻잎
+  raw_text: 깻잎
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 김가루
+  raw_text: 김가루
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- name: 마늘
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 굴소스
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 통깨
+  raw_text: 통깨
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 설탕
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 소금
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 밥
+  raw_text: 밥
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 닭다리살 150g을 소금, 후추 밑간 해준 뒤 잘게잘라서 볶는다.
+  technique: 볶음
+- text: 양파, 양배추, 양념장을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 밥 1공기, 김가루, 깻잎을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 통깨를 뿌려 마친다.
+  technique: null

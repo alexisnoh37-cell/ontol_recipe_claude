@@ -132,8 +132,11 @@ def test_convert_row_shape(index, ck):
 
 
 def test_converted_recipe_passes_validation_except_unmapped(index, ck):
+    # draft의 미매칭(null)은 검증 오류가 아니다(plan 5-4, 자취요리신 연결 때 승인). 엔진은 알레르기 사용자에게 제외한다.
     r = convert_row(row(), index, ck.concept_ids)
-    assert [i.code for i in check_recipes(ck, [("fs_7", r)])] == ["unmapped"]
+    assert any(i["ingredient"] is None for i in r["ingredients"])
+    assert check_recipes(ck, [("fs_7", r)]) == []
+    assert "unmapped" in {i.code for i in check_recipes(ck, [("fs_7", {**r, "status": "published"})])}  # published는 계속 오류
 
 
 def test_row_without_parts_is_skipped(index, ck):

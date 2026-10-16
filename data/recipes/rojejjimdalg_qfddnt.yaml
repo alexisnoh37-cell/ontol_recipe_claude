@@ -1,0 +1,90 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: rojejjimdalg_qfddnt
+title: 로제찜닭
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=QfddnT_S3YY
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; cuisine '기타'→'한식'(vocab에 없음, 검수 필요)
+ingredients:
+- ingredient: chicken_thigh
+  raw_text: 닭다리살 정육 / 닭다리살
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: null
+  raw_text: 까르보 불닭볶음면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: milk
+  raw_text: 우유 / 우유 2컵
+  role: sub
+  optional: false
+  amount: 2
+  unit: 컵
+- ingredient: onion
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: null
+  raw_text: 불닭 스프 2개
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: gochujang
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: salt
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 닭다리살 정육 500g에 소금간하고 굽는다.
+  technique: 구이
+- text: 우유 2컵, 까르보 불닭 스프 2개, 고추장 1스푼, 설탕 1스푼, 양파, 대파, 면을 더한 뒤 면이 완전히 익도록 끓인다.
+  technique: 끓이기
+- text: 체다치즈, 후추를 뿌려 마친다.
+  technique: null

@@ -1,0 +1,79 @@
+id: samgyeobsal_jjolmyeon_ct1m82
+title: 삼겹살 쫄면
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 이거 광고 아니고 진짜 너무 맛있습니다.
+  video_url: https://www.youtube.com/watch?v=ct1M82PHtck
+  published_at: '2026-02-24'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 삼겹살
+  raw_text: 삼겹살 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- name: 진짜 쫄면 라면
+  raw_text: 진짜 쫄면 라면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 콩나물
+  raw_text: 콩나물 / 콩나물 한줌
+  role: sub
+  optional: false
+  amount: 1
+  unit: 줌
+- name: 깻잎
+  raw_text: 깻잎
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 통깨
+  raw_text: 통깨
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 소금
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 삼겹살은 소금, 후추간 해준 뒤 익힌 뒤 덜어 둔다.
+  technique: 구이
+- text: 쫄면 라면 삶을 때 콩나물 한줌 추가해준 뒤 삶는다.
+  technique: 끓이기
+- text: 면에 액상 스프를 더한 뒤 잘 고르게 비빈다.
+  technique: null
+- text: 삼겹살 위에 쫄면, 통깨, 깻잎을 얹어 마친다.
+  technique: null

@@ -1,0 +1,102 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: ddugbaegi_bulgogi_7sxegr
+title: 뚝배기 불고기
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=7SxeGRr8OV8
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- ingredient: pork_belly
+  raw_text: 대패삼겹살 200g
+  role: main
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: onion
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: glass_noodles
+  raw_text: 당면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 물 300ml, 진간장 2스푼, 굴소스 1스푼, 멸치액젓 1스푼, 설탕 1스푼, 다진 마늘 1스푼을 더한 뒤 물을 끓인다.
+  technique: 끓이기
+- text: 양파, 대파, 대패삼겹살, 물에 불린 당면, 청양고추를 더한 뒤 4분간 끓인다.
+  technique: 끓이기
+- text: 참기름 1스푼, 후추를 뿌려 마친다.
+  technique: null

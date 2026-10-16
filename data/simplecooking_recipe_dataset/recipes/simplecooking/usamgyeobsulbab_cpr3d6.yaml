@@ -1,0 +1,89 @@
+id: usamgyeobsulbab_cpr3d6
+title: 우삼겹술밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 밖에서 파는 것보다 더 맛있습니다.
+  video_url: https://www.youtube.com/watch?v=cpR3d68p4GY
+  published_at: '2026-08-03'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 우삼겹
+  raw_text: 우삼겹 200g
+  role: main
+  optional: false
+  amount: 200
+  unit: g
+- name: 양파
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 애호박
+  raw_text: 애호박
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 마늘
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 쌈장
+  raw_text: 쌈장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 소금
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 밥
+  raw_text: 밥
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 우삼겹 200g, 고추장 1스푼, 쌈장 1스푼, 다진 마늘 1스푼을 볶는다.
+  technique: 볶음
+- text: 물 1컵 반, 양파, 애호박을 더한 뒤 끓인다.
+  technique: 끓이기
+- text: 간 맞출 소금, 밥 1공기, 후추를 뿌려 한번 더 끓인다.
+  technique: 끓이기

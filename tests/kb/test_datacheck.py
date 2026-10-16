@@ -59,6 +59,16 @@ def test_unmapped_ingredient_fails(ck):
     assert codes(check_recipes(ck, [("r.yaml", bad)])) == ["unmapped"]
 
 
+def test_unmapped_ingredient_allowed_only_in_draft(ck):
+    # draft의 미매칭은 허용(검수 전 원문 보존). 엔진은 알레르기 사용자에게 이 레시피를 제외한다.
+    lines = [{"ingredient": "kimchi", "raw_text": "김치", "role": "main"},
+             {"ingredient": None, "raw_text": "비법 소스", "role": "sub"}]
+    assert check_recipes(ck, [("r.yaml", recipe(status="draft", ingredients=lines))]) == []
+    # 매핑했지만 없는 id는 draft여도 오류
+    bad = [*lines[:1], {"ingredient": "dragon_fruit", "raw_text": "용과", "role": "sub"}]
+    assert codes(check_recipes(ck, [("r.yaml", recipe(status="draft", ingredients=bad))])) == ["bad_ref"]
+
+
 def test_unknown_ingredient_fails(ck):
     bad = recipe(ingredients=[{"ingredient": "dragon_fruit", "raw_text": "용과", "role": "main"}])
     assert codes(check_recipes(ck, [("r.yaml", bad)])) == ["bad_ref"]

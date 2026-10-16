@@ -1,0 +1,94 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: dalgramyeon_jnxcqn
+title: 닭라면
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=JnXCqn9Sxxw
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- ingredient: chicken_thigh
+  raw_text: 닭다리살 정육 200g / 닭다리살
+  role: main
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: null
+  raw_text: 꼬꼬면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: soy_sauce
+  raw_text: 진간장 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 마늘
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: egg
+  raw_text: 계란
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: soy_sauce
+  raw_text: 간장
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주 한줌
+  role: sub
+  optional: false
+  amount: 1
+  unit: 줌
+- ingredient: salt
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 닭다리살 정육에 소금, 후추를 뿌려주고 잠시 기다린다.
+  technique: null
+- text: 팬에 닭다리살 익힌 다음 진간장 1/2스푼만 둘러 간장향을 더해주고 덜어 둔다.
+  technique: 구이
+- text: 물 500ml, 꼬꼬면을 더한 뒤 충분히 끓여준 뒤 면만 덜어 둔다.
+  technique: 끓이기
+- text: 숙주 한줌을 더한 뒤 30초만 데친다.
+  technique: null
+- text: 면 위에 다 부어주고 닭다리살, 대파, 삶은 계란, 다진마늘 소량, 후추를 곁들인다.
+  technique: 끓이기

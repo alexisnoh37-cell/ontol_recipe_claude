@@ -1,0 +1,92 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: saceon_jjagyeciboggi_bbcybi
+title: 사천 짜계치볶이
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=bBcyBIrQ6Wc
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- ingredient: null
+  raw_text: 사천짜파게티
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: tteokbokki_rice_cake
+  raw_text: 떡볶이 떡
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sliced_cheese
+  raw_text: 체다 치즈 / 체다 치즈 1장 / 치즈 1장
+  role: sub
+  optional: false
+  amount: 1
+  unit: 장
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: egg
+  raw_text: 계란 프라이 / 계란
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: null
+  raw_text: 분말 스프
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: gochujang
+  raw_text: 고추장 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: null
+  raw_text: 조미유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 물 450ml를 끓이고 면, 떡 한줌, 건더기 스프, 분말 스프를 더한다.
+  technique: 끓이기
+- text: 고추장 1/2스푼과 설탕 1스푼을 더한 뒤 약 5분간 자박하게 끓인다.
+  technique: 끓이기
+- text: 체다 치즈 1장, 청양고추, 계란 프라이를 얹는다.
+  technique: null
+- text: 조미유와 후추를 뿌려 마무리마친다.
+  technique: null

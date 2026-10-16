@@ -1,0 +1,104 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: gimci_sunsal_dalgdoritang_zfrsjk
+title: 김치 순살 닭도리탕
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=ZfRSjkO9uKA
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- ingredient: chicken_thigh
+  raw_text: 닭다리살 정육 500g / 닭다리살
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- ingredient: kimchi
+  raw_text: 자른 김치 / 김치 1컵
+  role: sub
+  optional: false
+  amount: 1
+  unit: 컵
+- ingredient: glass_noodles
+  raw_text: 불린 당면 / 당면 한 줌
+  role: sub
+  optional: false
+  amount: 1
+  unit: 줌
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 통깨
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 닭다리살 정육을 충분히 굽는다.
+  technique: 구이
+- text: 자른 김치 1컵반 더한 뒤 볶는다.
+  technique: 볶음
+- text: 물에 불린 당면 한 줌, 양념장, 물 1컵를 더한 뒤 당면이 완전히 익도록 끓인다.
+  technique: 끓이기
+- text: 대파 더한 뒤 1~2분 더 끓여주고 통깨를 뿌려 마친다.
+  technique: 끓이기

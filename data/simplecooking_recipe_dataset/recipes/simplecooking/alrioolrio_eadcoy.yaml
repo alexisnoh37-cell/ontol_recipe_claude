@@ -1,0 +1,97 @@
+id: alrioolrio_eadcoy
+title: 알리오올리오
+cuisine: 양식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 5분컷 라면 만큼 개쉬움
+  video_url: https://www.youtube.com/watch?v=eaDCOY0xAzY
+  published_at: '2026-08-19'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 마늘
+  raw_text: 통마늘 한 줌 / 다진 마늘 1스푼 / 마늘
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 새우
+  raw_text: 냉동 새우 / 냉동 새우 한 줌 / 새우 한 줌
+  role: main
+  optional: false
+  amount: 1
+  unit: 줌
+- name: 파스타면
+  raw_text: 냉동 파스타면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 스파게티면
+  raw_text: 스파게티면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 청양고추
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 치킨스톡
+  raw_text: 치킨스톡 1/3스푼
+  role: seasoning
+  optional: false
+  amount: 0.3333333333333333
+  unit: 스푼
+- name: 올리브유
+  raw_text: 올리브유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 굴소스
+  raw_text: 굴소스 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 파슬리
+  raw_text: 파슬리
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 올리브유 넉넉히 두른 팬에 다진 마늘 1스푼, 편마늘을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 냉동 새우 한 줌, 청양고추 하나를 더한 뒤 볶는다.
+  technique: 볶음
+- text: 냉동 스파게티면, 물 2/3컵 , 치킨스톡 1/3스푼, 굴소스 1/2스푼을 더한 뒤 수분이 거의 사라질 때까지 끓인다.
+  technique: 조림
+- text: 후추, 파슬리를 뿌려 마친다.
+  technique: null

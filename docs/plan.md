@@ -251,7 +251,7 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
 
 ### 5-4. 데이터 검증 스크립트
 
-- 모든 recipe_ingredient가 정규 ID에 매핑되어 있다.
+- 모든 recipe_ingredient가 정규 ID에 매핑되어 있다. 단, draft 레시피는 미매칭(NULL)을 허용하고 검수표에 표시한다. published는 예외 없음(2026-10-16 승인, 자취요리신 데이터 연결). 미매칭 레시피는 알레르기 사용자에게 제외된다(4-3 제약 필터).
 - is_processed 재료는 derived_from 관계가 1개 이상 있다.
 - 모든 published 레시피에 맛 프로필과 난이도가 있다.
 - is_a, derived_from, 그리고 두 그래프의 합집합에 순환 관계가 없다.

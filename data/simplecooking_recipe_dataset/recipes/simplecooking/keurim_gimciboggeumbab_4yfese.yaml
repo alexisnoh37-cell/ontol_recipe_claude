@@ -1,0 +1,95 @@
+id: keurim_gimciboggeumbab_4yfese
+title: 크림 김치볶음밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 이 늙은이는 요즘 유행 따라가기 너무 힘듭니다.
+  video_url: https://www.youtube.com/watch?v=4yfEseZNU0k
+  published_at: '2026-05-03'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 김치
+  raw_text: 자른 김치 / 김치 3스푼
+  role: main
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 생크림
+  raw_text: 생크림 / 생크림 1/2컵
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 컵
+- name: 체다 치즈
+  raw_text: 체다치즈
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 모차렐라 치즈
+  raw_text: 모짜렐라 치즈
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 마요네즈
+  raw_text: 마요네즈 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 쌈장
+  raw_text: 쌈장 1/3스푼
+  role: seasoning
+  optional: false
+  amount: 0.3333333333333333
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 대파, 자른 김치 3스푼, 설탕 1/2스푼, 고춧가루 1/2스푼, 진간장 1/2스푼, 쌈장 1/3스푼, 마요네즈 2스푼을 고르게 섞는다.
+  technique: 무침
+- text: 팬에 그대로 얹어 볶는다.
+  technique: 볶음
+- text: 가운데에 생크림 1/2컵, 체다치즈, 모짜렐라 치즈를 더한 뒤 녹인다.
+  technique: null

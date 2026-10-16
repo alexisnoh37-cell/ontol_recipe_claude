@@ -16,6 +16,8 @@
 
 **재료 ↔ 레시피 조회 트랙 ui-1**(2026-10-16, 브랜치 `feature/ingredient-recipe-browse`, fs-3 커밋에서 분기): 추천 탭에서 그 자리에서 재료를 골라 추천받기, 추천 카드에서 레시피 전체 재료(보유 여부)·조리 순서 보기, `GET /recipes/{id}` 추가. ui-2(2026-10-16): **재료로 레시피 찾기**(여러 재료를 고르면 조합해 만들 수 있는 레시피와 1~2개 모자란 레시피, 알레르기는 제외 대신 주의 표시) — Streamlit 탭, `/viz` 카드, `GET /browse`. 전체 테스트 432개 통과(DB 테스트 9개 skip). 아래 "재료 ↔ 레시피 조회 트랙" 참조.
 
+**데이터 트랙 sc-1(브랜치 `data/simplecooking-ontology`, 2026-10-16)**: 자취요리신 YouTube 레시피 100개를 시드로 변환해 기존 50개와 합쳐 150개. 새 100개는 draft(검수 전). 전체 테스트 389개 통과. 아래 "데이터 트랙 sc-1" 참조.
+
 ## 단계별 상태
 
 | 단계 | 상태 | 완료일 | 사람 확인 | 비고 |
@@ -604,6 +606,36 @@ ui-1은 고른 재료를 추천 엔진에 넣는 방식이라 사람의 의도(�
 - `/viz` "재료로 레시피 찾기" 카드(viz/browse.js): 검색 또는 "그래프에서 재료 노드를 클릭해 고르기", 알레르기 기준(페르소나·프로필), 결과 목록(클릭하면 해당 레시피로 카메라 이동)과 그래프 강조(고른 재료 초록, 조리 가능 연두, 거의 가능 노랑, 알레르기 주의 빨강, 모자란 재료 주황, 레시피-재료 간선).
 - 테스트: `tests/logic/test_browse.py` 12개(조리 가능·거의 가능, is_a 방향, 고명·선택, 미매칭, 대체재 미사용, 경고 = 추천 제외 근거, 정렬, 모르는 그룹), `tests/api/test_api.py` 3개, `tests/viz/test_page.py` 1개.
 - 화면 확인(임시 API: 파일 지식 + 메모리 프로필): Streamlit에서 삼겹살·배추김치 + 새우 알레르기 → 조리 가능 ⚠️김치찌개(새우: 배추김치 포함 가능), 거의 가능 제육볶음(양파·대파)·⚠️김치전(부침가루). `/viz`에서 삼겹살·배추김치·계란(그래프 클릭) + 알레르기 많은 아이 부모 → 조리 가능 3·거의 가능 5, 그래프 강조 확인. 실제 DB 구성으로는 확인하지 않았다.
+
+## 데이터 트랙 sc-1: 자취요리신 데이터 연결 (2026-10-16)
+
+기준: `data/simplecooking-recipes` 브랜치(origin/main + 원본 데이터셋 `data/simplecooking_recipe_dataset/`). `feature/recipe-expansion`의 1차 확장 50개와 soft_tofu는 포함하지 않는다(합칠 때 정리 필요).
+
+사람이 정한 것(2026-10-16):
+
+- **D3 예외**: 설명란 원문(raw_text·조리 단계)을 유지한 채 draft로만 넣는다. source는 영상 URL. published 전에 출처 이용 조건·표현 재검토(docs/decisions.md D3).
+- **미매칭 처리**: 확실한 연결만 추가하고, 상표 제품·시판 소스·가공품은 성분을 추측하지 않고 `ingredient: null`.
+- **draft만 미매칭 허용**: `kb/datacheck.py`가 draft 레시피의 null 재료를 오류로 보지 않는다. published는 계속 오류(docs/plan.md 5-4 수정). 엔진은 이미 알레르기 사용자에게 미매칭 레시피를 제외한다(tests/allergy 무수정 통과).
+
+한 것:
+
+- knowledge: 별칭 6개(노른자→egg, 통삼겹살→pork_belly, 절단용 닭→chicken, 파스타면→pasta, 꼬치어묵→fish_cake, 크래미→imitation_crab, 각 노드 note에 검수 필요 표시), 새 재료 2개 draft(`beef_plate` 우삼겹 is_a beef, `bomdong` 봄동 confidence low). '깨'는 참깨·들깨 모호(기존 검수 결정)라 연결하지 않음. 재료 254개.
+- `scripts/convert_simplecooking.py`: 원본 YAML → `data/recipes/<id>.yaml` 변환, 차이는 `data/simplecooking_recipe_dataset/CONVERSION.md`(생성 파일). 완전 매핑 54개, 미매칭 포함 46개.
+- 형식 때문에 바꾼 것: source(객체→URL), id 1개(`5bun_gimcijjim_pvrcuh`→`obun_gimcijjim_pvrcuh`, 숫자 시작 불가), cuisine '기타' 5개 임시 지정, vocab에 없는 선택 조리기구(토치·기타 조리도구) 제외. 모두 note와 CONVERSION.md에 기록.
+- 테스트: `tests/kb/test_recipe_seed.py`·`tests/api/test_api.py`는 feature/recipe-expansion 선례(개수는 시드에서 셈, published 50개 고정)를 가져와 조정, 자취요리신 검사 3개 추가. `tests/kb/test_real_knowledge.py` DRAFT_INGREDIENTS, `tests/kb/test_datacheck.py` draft 미매칭 허용 검사 추가.
+- 검수표 재생성: `docs/review/ingredients_review.md`, `docs/review/recipes_review.md`(150개).
+
+사람 확인 필요:
+
+- 새 재료 2개와 별칭 6개 검수(봄동을 is_a 배추로 둘지 포함).
+- cuisine '기타' 5개의 임시 지정(버팔로 핫닭다리살→양식, 나머지 4개→한식). vocab에 '기타'를 넣을지.
+- 미매칭 재료 목록(CONVERSION.md): 라면 제품·시판 소스 등을 knowledge에 넣을지는 제품 표시사항 확인 후.
+- 같은 재료 id로 매핑된 줄 4건(CONVERSION.md) 합칠지.
+
+알려진 문제:
+
+- 주재료가 미매칭인 draft(예: 열무비빔냉면, 주재료가 냉면 제품)는 후보 생성 근거가 없어 누구에게도 추천되지 않는다(안전 문제는 아님).
+- 새 100개는 기본 설정(published만 제공)에서는 추천에 나오지 않는다. 그래프(`/graph?recipes=all`)와 `serve_draft_recipes` 설정에서만 보인다.
 
 ## 사람 확인 필요
 
