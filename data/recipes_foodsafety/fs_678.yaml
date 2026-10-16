@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_678
+title: 가지나물냉국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 678. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: eggplant
+  raw_text: 가지 50g
+  role: sub
+- ingredient: null
+  raw_text: 다진 청양고추 2.5g
+  role: sub
+- ingredient: null
+  raw_text: 다진 홍고추 2.5g
+  role: sub
+- ingredient: null
+  raw_text: 다진 실파 2.5g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 1.25g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 국간장 3g
+  role: sub
+- ingredient: null
+  raw_text: 국물
+  role: sub
+- ingredient: null
+  raw_text: 다시마국물 100g(건다시마 5g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 사과식초 1.25g
+  role: sub
+- ingredient: null
+  raw_text: 감식초 1.25g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.5g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 1g
+  role: sub
+steps:
+- text: 가지는 반 갈라 4등분하여 찜통에 5분간 찐 후 한 김 식혀준다.
+- text: 식은 가지를 새끼손가락 굵기로 찢는다.
+- text: 다진 고추, 실파, 마늘, 국간장을 넣어 양념장을 만든다.
+- text: 찐 가지에 양념장을 넣고 조물조물 무친다.
+- text: 차게 한 다시마국물 반컵에 식초, 죽염을 넣어 간한다.
+- text: 유리 그릇에 무친 가지를 담고 5를 부은 뒤 얼음을 띄우고 통깨를 뿌린다.

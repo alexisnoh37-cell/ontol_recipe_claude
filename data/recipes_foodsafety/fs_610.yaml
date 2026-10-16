@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_610
+title: 크림치즈 망고무스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 610. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 망고퓨레(50g)
+  role: sub
+- ingredient: null
+  raw_text: 라즈베리(10g)
+  role: sub
+- ingredient: null
+  raw_text: 피스타치오(30g)
+  role: sub
+- ingredient: cream_cheese
+  raw_text: 크림치즈(50g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 요거트(50g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(50g)
+  role: sub
+- ingredient: null
+  raw_text: 판젤라틴(1장)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/4개)
+  role: sub
+- ingredient: null
+  raw_text: 애플민트(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+steps:
+- text: 냄비에 망고퓨레, 레몬, 설탕을 넣고 은근히 끓인다.
+- text: 젤라틴은 찬물에 불린 뒤 중탕으로 녹여 망고퓨레에 넣고 틀에 굳힌다.
+- text: 생크림은 차갑게 휘핑하여 요거트와 섞는다.
+- text: 생크림을 섞은 요거트에 설탕, 크림치즈를 섞는다
+- text: 냄비에 라즈베리, 설탕을 넣고 은근히 끓인다.
+- text: 접시에 굳힌 망고무스에 담고 그 위에 라즈베리 소스와 크림치즈 소스, 다진 파스타치오를 올리고 애플민트로 장식한다.

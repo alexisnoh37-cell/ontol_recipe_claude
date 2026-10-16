@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_325
+title: 족발수육
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 325. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 양념족발 200g
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마 150g
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지 150g
+  role: sub
+- ingredient: null
+  raw_text: 맥주 400g
+  role: sub
+- ingredient: null
+  raw_text: 백김치 50g
+  role: sub
+- ingredient: null
+  raw_text: 백김치 무침양념
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 15g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 3g
+  role: sub
+steps:
+- text: 조미된 족발은 뜨거운 맥주에 데쳐내 기름기를 제거한다.
+- text: 고구마는 편으로 썰어 냉수에 헹궈 기름 없는 팬에 구워준다.
+- text: 가지는 편으로 썰어서 수분을 제거한다.
+- text: 가지는 편으로 썰어 살짝 구워준다.
+- text: 백김치는 물에 헹궈서 손으로 꼭 짠 후 송송 썰어서 양념을 해 무쳐준다.
+- text: 무쳐준 김치와 함께 구워진 채소와 족발수육을 담아 완성한다.

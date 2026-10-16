@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1031
+title: 토마토 야채 오븐구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1031. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: potato
+  raw_text: 감자 20g
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마 20g
+  role: sub
+- ingredient: null
+  raw_text: 오릴브오일 2g
+  role: sub
+- ingredient: null
+  raw_text: 홍피망 15g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 12g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: null
+  raw_text: 레드어니언 12g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 25g
+  role: sub
+- ingredient: null
+  raw_text: 돼지호박 12g
+  role: sub
+- ingredient: parmesan
+  raw_text: 파마산치즈 2g
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루 5g
+  role: sub
+- ingredient: basil
+  raw_text: 바질약간
+  role: sub
+steps:
+- text: 양파는 링으로 자르고 나머지 야채는 0.5cm 주사위모양으로 잘라 볼에 담는다.
+- text: 볼에 담긴 야채에 소금을 뿌려 골고루 간이 베이도록 섞는다.
+- text: 오븐용기에 야채를 가지런히 깔고 올리브 오일을 뿌리뒤 소금과 후추로 간을 한다.
+- text: 그릇에 파마산 치즈와 빵가루를 넣고 잘 섞는다.
+- text: 3의 야채 위에 4를 뿌려 덮는다.
+- text: 180℃로 예열된 오븐에 굽는다.

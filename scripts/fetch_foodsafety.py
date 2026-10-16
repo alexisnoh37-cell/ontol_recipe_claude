@@ -3,7 +3,7 @@
     uv run python scripts/fetch_foodsafety.py            # → data/external/foodsafety/raw/COOKRCP01.json
 
 인증키는 .env의 FOODSAFETY_API_KEY(식품안전나라에서 발급). 한 번에 최대 1000건씩 요청한다
-(API 제한: 1000건/요청, 시간당 100회). 원본은 gitignore 대상이다(개인용 범위, 재배포하지 않음).
+(API 제한: 1000건/요청, 시간당 100회). 원본은 커밋한다(D3 보완 3, 출처 표시 유지).
 인증키는 출력이나 저장 파일에 남기지 않는다.
 종료 코드: 0 성공, 1 API 오류, 2 설정 오류.
 """

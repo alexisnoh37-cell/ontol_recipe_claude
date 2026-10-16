@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_668
+title: 컬리플라워소스 광어스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 668. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 광어(1마리)
+  role: sub
+- ingredient: null
+  raw_text: 콜리플라워(50g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(20g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(1/2개)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(1/4개)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(30g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(200g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.01g)
+  role: sub
+steps:
+- text: 광어는 비늘을 벗기고 포를 떠 소금, 후춧가루를 뿌린다.
+- text: 콜리플라워는 팬에 볶는다.
+- text: 감자와 양파를 썰어 콜리플라워와 함께 볶는다.
+- text: ?번에 우유를 넣는다.
+- text: ?를 믹서로 곱게 간 뒤, 끓인다.
+- text: 가지, 당근. 단호박은 둥근 모양으로 만들어 팬에 시금치와 함께 익히고, 광어도 팬에 구워 접시에 담아 컬리플라워 소스를 올린다.

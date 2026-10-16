@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_37
+title: 된장국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 37. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: tofu
+  raw_text: 두부 20g(2×2×2cm)
+  role: sub
+- ingredient: null
+  raw_text: 애느타리버섯 20g(4가닥)
+  role: sub
+- ingredient: potato
+  raw_text: 감자 10g(4×3×1cm)
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g(2×1cm)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 10g(5cm)
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 5g(1작은술)
+  role: sub
+steps:
+- text: 감자, 양파는 얇게 썰고 애느타리 버섯은 썰어 달궈진 팬에 굽는다.
+- text: 냄비에 물을 붓고 된장을 푼 뒤 감자, 양파, 두부를 넣어 재료가 투명해지게 끓인 후 된장국의 재료를 건져서 믹서에 넣어 갈고 된장국에 넣어 한번 더 끓인다.
+- text: 구운 애느타리버섯과 대파를 국에 넣어 끓인 후 그릇에 담는다.

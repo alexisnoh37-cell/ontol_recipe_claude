@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_337
+title: 근채류주먹밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 337. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: burdock
+  raw_text: 우엉 20g
+  role: sub
+- ingredient: lotus_root
+  raw_text: 연근 20g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 20g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 10g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: rice
+  raw_text: 쌀 100g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 70g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 1g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 15g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 5g
+  role: sub
+- ingredient: null
+  raw_text: 마늘기름 15g
+  role: sub
+- ingredient: null
+  raw_text: 함초소금 2g
+  role: sub
+steps:
+- text: 쌀을 깨끗하게 씻은 후에 쌀뜨물은 따로 보관하고 불려준 쌀로 밥을 해주고 접시에 펼쳐 식혀준다.
+- text: 우엉과 연근, 감자는 송송 다져준 후 아린 맛을 빼기위해 물에 담가준다.
+- text: 우엉과 연근, 감자는 물기를 빼고 볶아준다.
+- text: 청고추, 양파, 당근은 송송 다져서 함께 볶아준 뒤, 함초 소금을 이용해 1차 간을 해준다.
+- text: 그 릇 에 모 든 재 료 를 넣 고 오 니 기 리 를 만들어준다.
+- text: 그릇에 담아 완성한다.

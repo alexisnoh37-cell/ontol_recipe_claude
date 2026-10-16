@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_463
+title: 크림치즈떡볶이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 463. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: tteokbokki_rice_cake
+  raw_text: 떡볶이떡(100g)
+  role: sub
+- ingredient: pasta
+  raw_text: 펜네(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(100g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(50g)
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모짜렐라치즈(30g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(0.3g)
+  role: sub
+steps:
+- text: 펜네는 10분정도 삶아 데치고, 떡볶이 떡은 뜨거운 물에 살짝 불려 놓는다.
+- text: 양파는 채를 썰어 준비한다.
+- text: 냄비에 버터를 넣고 밀가루를 넣어 볶는다.
+- text: 볶아지는 밀가루에 준비한 육수를 넣는다.
+- text: 육수가 은근히 끓으면 우유와 생크림 넣어준다.
+- text: 끓고 있는 냄비에 떡볶이떡, 삶은 펜네와 양파를 넣어 끓인 후 모짜렐라치즈를 넣고 치즈가 녹으면 파슬리가루를 살짝 뿌려 완성한다.

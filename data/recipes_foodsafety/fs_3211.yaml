@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3211
+title: 크림카레소스를 곁들인 함초두부스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3211. 요리종류 기타, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(20g)
+  role: sub
+- ingredient: null
+  raw_text: 불린 함초(15g)
+  role: sub
+- ingredient: null
+  raw_text: 으깬 두부(120g)
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(60g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(40g)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(5g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(10g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(250g)
+  role: sub
+- ingredient: null
+  raw_text: 강황가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 함초소금(0.5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(5g)
+  role: sub
+- ingredient: null
+  raw_text: 저염 간장(3g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(10ml)
+  role: sub
+steps:
+- text: 양파와 당근, 양송이버섯, 불린 함초는 잘게 다진다.
+- text: 으깬 두부는 물기를 제거한 뒤 닭가슴살과 믹서에 넣어 곱게 갈고 다진 양파(20g), 당근(10g), 함초(7.5g), 달걀, 빵가루, 함초소금(0.25g)을 넣어 버무린다.
+- text: 두부 반죽은 동그랗게 만들어 중간 불로 달군 팬에 식용유(10㎖)를 두른 뒤 4분간 앞뒤로 노릇하게 구워 꺼낸다.
+- text: 약한 불로 달군 냄비에 밀가루, 버터를 넣어 루를 만들고 우유, 강황가루, 다진 양파(10g)와 당근(10g), 양송이버섯, 다진 마늘(5g)을 넣어 섞은 뒤 저염 간장(3g), 함초소금(0.25g)으로 간한다.
+- text: 믹서에 소스와 다진 함초(7.5g)를 넣어 곱게 간다.
+- text: 그릇에 함초두부스테이크를 올리고 소스를 뿌린다.

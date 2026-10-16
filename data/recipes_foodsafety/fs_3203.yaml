@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3203
+title: 콩가루 소보로
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3203. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 강력분 320g
+  role: sub
+- ingredient: null
+  raw_text: 날콩가루 80g
+  role: sub
+- ingredient: null
+  raw_text: 따뜻한 우유 140ml
+  role: sub
+- ingredient: null
+  raw_text: 이스트 8g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 2개
+  role: sub
+- ingredient: null
+  raw_text: 코코넛 오일 20g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 2g
+  role: sub
+- ingredient: null
+  raw_text: 박력 쌀가루 100g
+  role: sub
+- ingredient: null
+  raw_text: 볶은 콩가루 60g
+  role: sub
+- ingredient: null
+  raw_text: 베이킹파우더 2g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 2개
+  role: sub
+- ingredient: butter
+  raw_text: 버터 60g
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마 500g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 50g
+  role: sub
+- ingredient: null
+  raw_text: 크랜베리 100g
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드 30g
+  role: sub
+steps:
+- text: (속재료) 찐 고구마에 우유, 다진 아몬드, 크랜베리를 넣어 섞는다. ★ 고구마를 물에 삶으면 수분이 많아 우유량을 조절해야 해요.
+- text: (비스킷) 버터를 부드럽게 만들어 준 다음 볶은 콩가루와 소금을 넣고 섞다가 계란을 조금씩 넣어 분리되지 않게 반죽한다. 여기에 체 친 박력 쌀가루와 베이킹파우더를 넣어 섞어준 뒤 냉장고에 30분간 휴지시킨다.
+- text: 코코넛 오일을 제외한 반죽 재료를 모두 반죽하다가 한 덩어리가 되면 코코넛 오일을 넣어 부드러워질 때까지 반죽한 다음 반죽의 크기가 두배가 될 때까지 발효한다. (약 1시간)
+- text: 1차 발효 반죽은 30g씩 분할해 둥글리기 하고 중간 발효 (약 15분)한 다음 반죽 속 가스를 빼고 ①의 속재료를 40g씩 넣어 감싼다.
+- text: 20g씩 비스킷을 분할해 비닐 위에 얇게 민 다음 비닐을 이용해 빵 반죽 위에 덮어준다. ★반죽이 비닐에 달라 붙으면 덧가루를 조금 뿌려요.
+- text: 팬닝 후 2차 발효(약15분)를 하고 윗불 180℃ , 아랫불 160℃ 로 예열된 오븐에서 20분 굽는다.

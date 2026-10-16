@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3086
+title: 오징어튀김&딸기쨈
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3086. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: squid
+  raw_text: 오징어 35g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 70g
+  role: sub
+- ingredient: egg
+  raw_text: 계란 32.5g 후추 0.1g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 500g
+  role: sub
+- ingredient: null
+  raw_text: 딸기쨈 5g
+  role: sub
+steps:
+- text: 오징어를 먹기 좋은 크기로 썬다.
+- text: 오징어를 살짝 데친 후 물기를 제거한다.
+- text: 밀가루에 물, 계란, 후추를 넣어 튀김반죽을 만든다.
+- text: 오징어에 튀김 반죽을 묻혀 식용유에 튀긴다.
+- text: 키친타올에 올려 기름을 제거한다.
+- text: 딸기잼과 같이 곁들여 낸다.

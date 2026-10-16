@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_284
+title: 새우단배추된장국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 284. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 마늘(0.3g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(20g)
+  role: sub
+- ingredient: null
+  raw_text: 단배추(25g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(5g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(25g)
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 마른 새우(10g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 무(15g)
+  role: sub
+- ingredient: anchovy
+  raw_text: 멸치(2.5g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(2.5g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 된장(10g)
+  role: sub
+- ingredient: null
+  raw_text: 표고버섯가루(3g)
+  role: sub
+- ingredient: null
+  raw_text: 날콩가루(10g)
+  role: sub
+steps:
+- text: 냄비에 육수 재료를 넣고 10분간 끓여 건진다.
+- text: 마늘은 다지고, 양파는 채 썰고, 애호박은 반달모양으로 납작하게 썬다.
+- text: 단배추는 5cm로 썰고, 대파는 어슷 썰고, 두부는 0.5cm 두께로 썬다.
+- text: 된장에 표고버섯가루, 날콩가루, 육수(50g)를 넣어 섞는다.
+- text: 육수에 된장을 풀고 다진 마늘, 호박, 양파, 단배추 순으로 넣어가며 끓인다.
+- text: 끓으면 마른 새우, 대파를 넣어 살짝 더 끓여 마무리한다.

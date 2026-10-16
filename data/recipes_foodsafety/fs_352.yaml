@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_352
+title: 닭가슴살샌드스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 352. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 150g
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 30g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: null
+  raw_text: 콜리플라워 30g
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리 100g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이 30g
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 100g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 200g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 5g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 15g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 15g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 5g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 30g
+  role: sub
+- ingredient: null
+  raw_text: 오렌지주스 200g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 15g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+steps:
+- text: 닭은 손질해 주고 흰 후추와 올리브오일로 밑간을 해준다.
+- text: 시금치는 데친 후 수분을 제거해 먹기 좋게 잘라주고, 양파는 송송 다져준다. 준비된 채소를 마늘과 버터에 볶아주다 생크림을 넣어 살짝 졸여준다.
+- text: 콜리플라워, 브로콜리는 뜨거운 물에 데친 후 방울토마토와 함께 팬에 구워준다.
+- text: 버터에 꿀을 넣고 졸이다가 카라멜 효과를 주고 오렌지주스와 레몬즙을 넣고 갈색소스를 만든다.
+- text: 닭가슴살을 포를 떠준 후 졸여준 채소를 채워준다.
+- text: 닭가슴살을 팬에 구워주고 접시에 구운 채소 와 소스를 뿌려준다.

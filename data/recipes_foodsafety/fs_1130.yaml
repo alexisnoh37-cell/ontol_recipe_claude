@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1130
+title: 유자애(愛) 빠지다
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1130. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 유자(200g)
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤(25g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(15g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(50g)
+  role: sub
+- ingredient: null
+  raw_text: 석류(20g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+steps:
+- text: 유자는 십자로 갈집을 낸 뒤 끓는 소금물에 데쳐 껍질을 깨끗이 한다.
+- text: 유자는 속을 꺼내 씨를 제거하고 유자속과 속껍질을 얇게 채 썬다.
+- text: 밤, 대추, 배는 채 썰고 2번과 섞어 소를 만든다.
+- text: 속을 빼낸 유자에 소를 2/3쯤 채워 입구를 실로 묶는다.
+- text: 유자묶음을 용기에 채워 넣은 후 꿀물을 붓고 잘 밀봉하여 냉장고에 보관한다.
+- text: 3~4주 정도 숙성한 뒤 석류를 곁들여 먹는다.

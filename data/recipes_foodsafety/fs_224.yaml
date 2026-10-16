@@ -1,0 +1,79 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_224
+title: 봄주먹밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 224. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 11개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 봄동(10g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(6g)
+  role: sub
+- ingredient: null
+  raw_text: 낙지 다리(6g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(3g)
+  role: sub
+- ingredient: null
+  raw_text: 두릅(8g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(4g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(3g)
+  role: sub
+- ingredient: null
+  raw_text: 주먹밥 데친 꼬막살(14g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(4g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(100g)
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨(3g)
+  role: sub
+- ingredient: null
+  raw_text: 두부강된장 참기름(10g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 양파(14g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 당근(14g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 애호박(14g)
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장(14g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(4g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(4g)
+  role: sub
+- ingredient: null
+  raw_text: 송송 썬 붉은 고추(4g)
+  role: sub
+- ingredient: null
+  raw_text: 송송 썬 청양고추(4g)
+  role: sub
+- ingredient: null
+  raw_text: 으깬 두부(76g)
+  role: sub
+steps:
+- text: 봄동과 깻잎은 데친 뒤 체에 밭쳐 물기를 제거한다.
+- text: 데친 꼬막살은 물기를 제거하고 다져 올리브유로 양념한 밥에 참깨와 함께 버무린 후 한입 크기로 주먹밥을 만든다.
+- text: 낙지 다리는 데쳐 찬물에 담가 식힌 뒤 참기름(3g)에 양념하고, 두릅은 데쳐 물기를 제거한 뒤 올리브유로 양념한다.
+- text: 봄동에 꼬막밥을 넣고 만 뒤 깻잎으로 싸고 데친 미나리로 묶어 봄주먹밥을 만든다.
+- text: 냄비에 참기름(10g)을 두르고 양파, 당근, 애호박을 넣고 볶은 뒤 물, 된장, 고춧가루, 다진 마늘, 붉은 고추, 청양고추를 넣고 끓이다가 두부를 넣고 조려 두부강된장을 만든다.
+- text: 봄주먹밥에 낙지와 두릅, 두부강된장을 곁들여 마무리한다.

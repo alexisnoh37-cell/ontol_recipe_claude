@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_236
+title: 닭가슴살카나페
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 236. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 고구마(100g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(110g)
+  role: sub
+- ingredient: null
+  raw_text: 백김치(40g)
+  role: sub
+- ingredient: null
+  raw_text: 비트(40g)
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(100g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.3g)
+  role: sub
+- ingredient: null
+  raw_text: 새싹(1g)
+  role: sub
+- ingredient: null
+  raw_text: 바나나식초(80g)
+  role: sub
+steps:
+- text: 고구마를 삶아 껍질을 벗겨 으깬 뒤 우유와 섞어 고구마무스를 만든다.
+- text: 백김치와 비트를 작게 썬 뒤 백김치에 물이 들도록 절여 놓는다.
+- text: 닭가슴살을 한입 크기로 썬 후 칼등으로 두드린 뒤 후춧가루로 밑간한다.
+- text: 식용유(15g)를 두른 팬에 닭가슴살을 올려 굽는다.
+- text: 구운 닭가슴살 위에 고구마무스, 비트에 절인 백김치, 새싹을 얹는다.
+- text: 그릇에 닭가슴살카나페를 넣은 후 바나나식초를 곁들여 마무리한다.

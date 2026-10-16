@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_363
+title: 미역 닭가슴살전
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 363. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 100g
+  role: sub
+- ingredient: seaweed
+  raw_text: 미역 10g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 50g
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 10g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 10g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: egg
+  raw_text: 계란 60g
+  role: sub
+- ingredient: null
+  raw_text: 저염간장 30g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 10g
+  role: sub
+- ingredient: wasabi
+  raw_text: 고추냉이 5g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 1g
+  role: sub
+steps:
+- text: 닭가슴살은 송송 다져준 후 소금, 후추로 밑간을 해준다.
+- text: 미역은 물에 불려준 후 송송 잘라준다.
+- text: 두부는 물기를 꼭 짜준다.
+- text: 청양고추, 대파, 당근은 송송 다져준다.
+- text: 소스를 만들어준다.
+- text: 준비된 재료에 계란으로 반죽해 한입 크기로 전을 부쳐준다.

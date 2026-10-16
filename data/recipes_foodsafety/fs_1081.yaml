@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1081
+title: 새우채소꼬치구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1081. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 새우(60g)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(60g)
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추(40g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(35g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추(0.5g)
+  role: sub
+steps:
+- text: 새우는 꼬리와 껍질을 제거한 뒤 후추로 밑간한다.
+- text: 단호박은 찜기에 찐다
+- text: 대파와 양배추는 4cm 길이로 썬다.
+- text: 찐단호박을 4cm 길이로 썬다.
+- text: 프라이팬에 새우, 단호박, 대파, 양배추, 방울토마토를 굽는다..
+- text: 꼬지에 보기 좋게 끼운다.

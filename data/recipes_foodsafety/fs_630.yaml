@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_630
+title: 설렁탕쑥떡볶이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 630. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(뼈갈비, 200g)
+  role: sub
+- ingredient: null
+  raw_text: 쑥(20g)
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루(200g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(50g)
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주(20g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(1개)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(1개)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+steps:
+- text: 뼈갈비는 찬물에 담궈 핏물을 뺀다.
+- text: 핏물을 뺀 뼈갈비를 건져 냄비에 넣고 끓여 육수를 만든다
+- text: 쑥은 데치고, 당근, 감자는 한입크기로 썰고, 홍고추, 청양고추는 어슷썬다.
+- text: 데친 쑥은 곱게 다진다.
+- text: 찹쌀가루에 다진 쑥을 넣고 뜨거운 물로 익반죽 한 뒤 비닐에 담아 숙성시킨다.
+- text: 숙성된 찹쌀반죽을 작게 잘라 가운데를 비벼 조랭이 쑥 떡을 만들고, 끓인 육수에 준비 한 야채와 함께 한소끔 끓인다.

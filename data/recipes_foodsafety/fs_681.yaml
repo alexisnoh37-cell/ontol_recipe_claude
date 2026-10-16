@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_681
+title: 별미병어조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 681. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 병어 60g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 1g
+  role: sub
+- ingredient: radish
+  raw_text: 무 40g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 25g
+  role: sub
+- ingredient: green_chili
+  raw_text: 풋고추 10g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 2.5g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 5g
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 2g
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 6g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 굵은 고춧가루 1.7g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고운 고춧가루 0.85g
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 5g
+  role: sub
+- ingredient: null
+  raw_text: 매실액 6g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2g
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 1g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1.5g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.25g
+  role: sub
+steps:
+- text: 병어에 칼집을 내어 소금을 뿌린다.
+- text: 무는 두툼하게 썰고 양파는 굵게 채 썰고 고추와 대파는 어슷 썬다.
+- text: 양념장 재료를 모두 섞어 양념장을 만든다.
+- text: 양념장의 ¼만 남기고 나머지 양념장을 물 반컵에 풀어 무를 넣어 끓인다.
+- text: 무에 간이 배면 양파와 병어를 넣고 남은 양념장을 넣어 졸여준다.
+- text: 고추와 대파를 넣어 마무리한다.

@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_488
+title: 깐풍파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 488. 요리종류 일품, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 밀가루(200g)
+  role: sub
+- ingredient: null
+  raw_text: 뽕잎가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 백년초가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 호박가루(10g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: chicken
+  raw_text: 닭고기(200g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(5g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(50g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(400g)
+  role: sub
+- ingredient: null
+  raw_text: 크림소스(30g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: null
+  raw_text: 청피망(20g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(10g)
+  role: sub
+steps:
+- text: 밀가루는 세 군데로 나눠 각각 뽕잎 가루와 호박가루, 백년초가루를 넣고 올리브오일을 넣어 반죽을 하고, 비닐봉투에 넣어 숙성시킨다.
+- text: 닭은 작게 토막을 내어 생강과 정종, 소금, 후춧가루를 뿌려 숙성시킨다.
+- text: 파프리카와 피망은 속을 파내고 작은 깍두기 모양으로 썰고, 깻잎은 잘게 썰어둔다.
+- text: 숙성된 밀가루를 각각 꺼내 밀대로 밀어, 파스타 굵기로 썰어 면을 데쳐 접시에 담아 놓는다.
+- text: 숙성한 닭(②)은 녹말가루와 달걀을 섞은 반죽을 입혀 170℃의 튀김기름에 두 번 튀겨 기름을 제거한다.
+- text: 파스타면(④) 위에 튀긴 닭(⑤)을 올리고 냄비에 크림소스를 끓이다가 설탕을 넣고, 다시 끓으면 파프리카와 피망, 깻잎(③)을 넣고, 한 번 더 끓인 후 깐풍파스타에 올려 완성한다.

@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_383
+title: 매운닭날개구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 383. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chicken_wing
+  raw_text: 닭날개 100g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 80g
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 100g
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리 30g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 15g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 50g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 15g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 1g
+  role: sub
+- ingredient: sugar
+  raw_text: 황설탕 5g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 5g
+  role: sub
+- ingredient: wine
+  raw_text: 레드와인 30g
+  role: sub
+- ingredient: null
+  raw_text: 멕시코고추 1g
+  role: sub
+steps:
+- text: 닭날개를 멕시코고추와 고추가루에 설탕, 다진마늘, 후추를 넣어 밑간을 해준다.
+- text: 감자는 먹기 좋게 썰어 뜨거운 물에 70% 정도 익혀준다.
+- text: 감자는 데쳐 낸 후 버터에 볶아준다.
+- text: 브로콜리는 데치고, 사과와 토마토는 잘게 잘라준다.
+- text: 냄비에 다진마늘과 다진양파를 볶아주다 토마토를 넣어 소스를 만들어준다.
+- text: 닭날개를 팬에 구워주고 감자와 샐러드를 곁들여 완성한다.

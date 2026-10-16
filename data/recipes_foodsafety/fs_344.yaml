@@ -1,0 +1,24 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_344
+title: 크렌베리귀리밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 344. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: rice
+  raw_text: 백미 150g
+  role: sub
+- ingredient: null
+  raw_text: 크렌베리 15g
+  role: sub
+- ingredient: null
+  raw_text: 귀리 20g
+  role: sub
+steps:
+- text: 백미와 귀리는 세척해 백미는 30분, 귀리는 1시간 정도 불려준다.
+- text: 귀리를 먼저 물을 넣어 볶아 충분히 익혀준다.
+- text: 귀리가 어느 정도 익을 때 쯤 쌀을 섞어 한 번 더 볶아준다.
+- text: 귀뢰와 쌀이 익어갈 때 쌀의 물 1배를 넣고 밥을 해 준다.
+- text: 불을 끄고 크린베리를 바로 넣어서 뚜껑을 덮어 5분 후에 밥을 완성한다.

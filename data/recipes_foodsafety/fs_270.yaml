@@ -1,0 +1,69 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_270
+title: 해물토마토김치찌개
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 270. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 김치(40g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(40g)
+  role: sub
+- ingredient: squid
+  raw_text: 오징어(15g)
+  role: sub
+- ingredient: mussel
+  raw_text: 홍합(20g)
+  role: sub
+- ingredient: manila_clam
+  raw_text: 바지락(15g)
+  role: sub
+- ingredient: webfoot_octopus
+  raw_text: 주꾸미(25g)
+  role: sub
+- ingredient: null
+  raw_text: 데친 미나리(2g)
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓(5g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(7g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(7g)
+  role: sub
+- ingredient: null
+  raw_text: 어슷 썬 풋고추(1g)
+  role: sub
+- ingredient: null
+  raw_text: 김치주머니 소 새우(15g)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(3g)
+  role: sub
+- ingredient: null
+  raw_text: 불린 당면(7g)
+  role: sub
+- ingredient: null
+  raw_text: 불린 무말랭이(3g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(5g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(23g)
+  role: sub
+steps:
+- text: 김치를 씻은 뒤 줄기부분은 한입 크기로 썰고, 잎은 따로 두고, 토마토, 양파도 비슷한 크기로 썬다.
+- text: 오징어는 칼집을 넣고, 홍합, 바지락, 주꾸미와 함께 살짝 데친 뒤 식용유(10g) 두른 팬에 볶는다.
+- text: 새우, 부추, 불린 당면과 무말랭이는 다진 뒤 녹말가루와 달걀을 넣어 반죽해 김치주머니 소를 만든다.
+- text: 김치 잎에 소를 넣고 주머니 모양으로 감싸 데친 미나리로 묶는다.
+- text: 김치와 채소를 볶아 냄비에 담은 뒤 해산물과 김치주머니를 넣고 끓이다가 끓어오르면 쑥갓, 느타리버섯, 팽이버섯, 고추를 올려 마무리한다.

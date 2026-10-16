@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1066
+title: 신호등 통통이(어린이 곤약삼색주먹밥)
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1066. 요리종류 밥, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(10g)
+  role: sub
+- ingredient: null
+  raw_text: 곤약미(30g)
+  role: sub
+- ingredient: rice
+  raw_text: 쌀(30g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: anchovy
+  raw_text: 멸치(5g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(0.5g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(1g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.2g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(3.5g)
+  role: sub
+steps:
+- text: 쌀과 곤약은 깨끗이 씻어 밥을 짓는다.
+- text: 시금치는 데쳐 잘게 다지고 당근은 잘게 다져 팬에 볶고, 달걀은 삶아 노른자만 체에 거른다.
+- text: 소고기는 간장, 참기름, 대파, 마늘, 물엿, 후춧가루를 버무려 볶는다.
+- text: 멸치는 올리고당으로 볶고 밥은 소금과 참기름으로 밑간한다.
+- text: 밥과 멸치, 밥과 소고기를 각각 버무려 동그랗게 빚는다.
+- text: 동그랗게 빚은 밥은 시금치, 당근, 달걀노른자에 각각 굴린다.

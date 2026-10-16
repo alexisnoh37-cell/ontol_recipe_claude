@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2992
+title: 퓨전떡갈비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2992. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기 40g
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기 6g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 15g
+  role: sub
+- ingredient: pear
+  raw_text: 배 10g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 5g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 2g
+  role: sub
+- ingredient: null
+  raw_text: 저염간장 3g
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루 5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2g
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨 5g
+  role: sub
+steps:
+- text: 고기는 곱게 다지고 야채는 껍질을 제거한다.
+- text: 배는 갈아 즙을 만들고 양파는 다진 뒤 기름을 두르지 않은 팬에 살짝 볶는다.
+- text: 마늘과 생강을 곱게 다져 배즙과 섞은 뒤 다진 고기에 넣어 치댄다.
+- text: 떡갈비 반죽에 저염간장, 참기름을 이용해 밑간을 하고 찹쌀가루를 넣어 찰기를 준다.
+- text: 둥근 모양으로 빚은 뒤 중간을 살짝 눌러 기름을 두른 팬에 굽는다.
+- text: 170℃ 오븐에 3분 정도 구워 속까지 익힌다.

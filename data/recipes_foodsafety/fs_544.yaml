@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_544
+title: 삼겹살부추찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 544. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: pork_belly
+  raw_text: 삼겹살(150g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추(5g)
+  role: sub
+- ingredient: null
+  raw_text: 소주(10g)
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장(10g)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(50g)
+  role: sub
+- ingredient: garlic
+  raw_text: 편마늘(20g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(20g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추(5g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(10g)
+  role: sub
+- ingredient: null
+  raw_text: 물녹말(녹말 10g, 물 10g)
+  role: sub
+steps:
+- text: 보쌈용 삼겹살을 깨끗이 씻어 생강채와 양파채, 월계수잎, 통후추와 소주를 넣고 약 1시간 정도 숙성을 시킨다.
+- text: 찜통에 물과 된장, 편마늘을 넣고 숙성된 삼겹살을 올려 약 50분 정도 찜을 하다가 부추를 올려 1분 정도 더 찜을 한다.
+- text: 부추는 약 6cm 길이로 썰어 준비한다.
+- text: 홍고추는 반으로 갈라 씨를 제거하고, 채를 썰어 놓는다.
+- text: 냄비에 간장과 물, 설탕, 올리고당, 통후추, 생강을 넣고 은근히 끓인다.
+- text: 소스가 은근히 끓고 있을 때 채로 생강과 통후추를 걸러내고, 물녹말을 풀어 한 소큼 더 끓인 후, 찜통에서 쪄 나온 부추와 삼겹살을 썰어 접시에 담고, 그 위에 소스와 홍고추를 올려 완성한다.

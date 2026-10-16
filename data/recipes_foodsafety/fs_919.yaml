@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_919
+title: 버섯 리조또
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 919. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: rice
+  raw_text: 쌀 70g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯 15g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 2g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 180g
+  role: sub
+- ingredient: null
+  raw_text: 파슬리다진것 2g
+  role: sub
+- ingredient: null
+  raw_text: 타임다진것 0.5
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 1.5g
+  role: sub
+- ingredient: parmesan
+  raw_text: 파마산치즈 3g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량
+  role: sub
+steps:
+- text: 마늘은 잘게 다지고 양송이 버섯은 2mm 두께로 썬다.
+- text: 팬에 기름을 두르고 다진 마늘을 볶다가 양송이버섯을 넣고 볶아 접시에 담아둔다.
+- text: 2의 팬에 쌀을 넣고 볶는다.
+- text: 3에 닭육수를 넣고 수분을 흡수 할 때까지 잘 젓는다.
+- text: 쌀이 어느 정도 익으면 2를 넣고 쌀이 완전히 익을 때까지 조리한다.
+- text: 파마산치즈, 소금, 후추, 다진 타임, 다진 파슬리를 넣는다.

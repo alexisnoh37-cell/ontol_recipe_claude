@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_239
+title: 차돌박이구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 239. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 연근(30g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(20g)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(50g)
+  role: sub
+- ingredient: null
+  raw_text: 오렌지주스(50g)
+  role: sub
+- ingredient: beef_brisket
+  raw_text: 차돌박이(60g)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎채소(10g)
+  role: sub
+- ingredient: null
+  raw_text: 홍초물 설탕(5g)
+  role: sub
+- ingredient: null
+  raw_text: 홍초(20g)
+  role: sub
+steps:
+- text: 연근은 얇게 3㎜ 정도의 두께로 썰어 홍초물에 담가 절인다.
+- text: 미나리는 연근과 비슷한 길이로 썬다.
+- text: 오렌지는 껍질은 얇게 벗겨 채 썰고, 과육부분은 반달 모양으로 2조각 썬다.
+- text: 과육을 오렌지주스와 섞은 뒤 갈아 오렌지소스를 만든다.
+- text: 팬에 차돌박이를 펼친 뒤 오렌지소스를 조금씩 넣으며 익힌다.
+- text: 그릇에 연근초절임, 미나리, 어린잎채소, 차돌박이 순서로 담은 뒤 오렌지 껍질과 오렌지소스를 얹어 마무리한다.

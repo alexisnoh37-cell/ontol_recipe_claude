@@ -1,0 +1,76 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_421
+title: 뿌리채소두부선
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 421. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: tofu
+  raw_text: 두부 300g
+  role: sub
+- ingredient: null
+  raw_text: 전분 50g
+  role: sub
+- ingredient: egg
+  raw_text: 계란 60g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 2g
+  role: sub
+- ingredient: null
+  raw_text: 소
+  role: sub
+- ingredient: burdock
+  raw_text: 우엉 30g
+  role: sub
+- ingredient: null
+  raw_text: 인삼 15g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 30g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 10g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 15g
+  role: sub
+- ingredient: null
+  raw_text: 마늘기름 15g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: miso
+  raw_text: 일본된장 15g
+  role: sub
+- ingredient: null
+  raw_text: 마늘기름 15g
+  role: sub
+- ingredient: perilla_oil
+  raw_text: 들기름 15g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 30g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 5g
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 15g
+  role: sub
+- ingredient: null
+  raw_text: 땅콩잼 30g
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨 2g
+  role: sub
+steps:
+- text: 두부는 물기를 꼭 짠 뒤 으깨어 전분, 계란과 섞어준다.
+- text: 우엉, 인삼, 감자는 아주 곱게 채 썰어서 냉수에 담가준다.
+- text: 볶아진 모든 채소를 각각 볶아서 한데 섞어 준다.
+- text: 땅콩잼으로 소스를 만들어준다.
+- text: 김발을 깔고 비닐을 놓아 준 후 두부를 펴준다.
+- text: 볶아진 채소를 두부에 넣어주고 찜기에 쪄서 식힌 뒤 한입 크기로 잘라준다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_939
+title: 알파벳 스프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 939. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파 1cm 정사각형 14g
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리 1cm 정사각형 7g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1cm 정사각형 7g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 1g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 1g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 150g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎
+  role: sub
+- ingredient: null
+  raw_text: 알파벳파스타 20g
+  role: sub
+steps:
+- text: 냄비에 기름을 두르고 중간불로 열을 가열한다.
+- text: 1에 양파, 셀러리, 당근을 넣고 색이 나지 않도록 부드러워 질 때까지 볶는다.
+- text: 야채가 익을 때 쯤 마늘을 넣고 볶는다.
+- text: 3에 닭육수, 후추, 월계수잎을 넣고 끓인다.
+- text: 중간불로 줄이고 35분 정도 은근하게 끓인다.
+- text: 여기에 알파벳 파스타를 넣고 약 10분간 저어주며 끓인다.

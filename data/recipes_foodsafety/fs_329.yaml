@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_329
+title: 채소비빔밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 329. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: rice
+  raw_text: 쌀 150g
+  role: sub
+- ingredient: manila_clam
+  raw_text: 바지락 100g
+  role: sub
+- ingredient: null
+  raw_text: 다진쇠고기 25g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 15g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 15g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 25g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 25g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 25g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 25g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고 25g
+  role: sub
+- ingredient: null
+  raw_text: 두부볶음
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 50g
+  role: sub
+- ingredient: null
+  raw_text: 함초 25g
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎 10g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 20g
+  role: sub
+- ingredient: null
+  raw_text: 다진파 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 15g
+  role: sub
+steps:
+- text: 바지락은 해감을 시켜준 후 물에 넣어 바지락 육수를 만들어준다.
+- text: 바지락살은 따로 떼어내어 다진소고기와 다시 다져서 양념해 볶아준다.
+- text: 두부는 물기제거를 한 후 함초, 깻잎, 다진양파, 를 넣어 치대어 두부볶음을 만들어준다.
+- text: 애호박은 채 썰어주고 양파, 오이, 당근, 표고도 채 썰어 각각 볶아준다.
+- text: 볶은 바지락과 쌀을 넣어 밥을 한다.
+- text: 몰드에 밥과 각종 채소들을 올려주고 마지막에 두부 스크램블을 올려 밥을 완성한다.

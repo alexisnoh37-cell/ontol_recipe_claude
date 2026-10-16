@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_517
+title: 버섯리조또
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 517. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(20g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(20g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(5g)
+  role: sub
+- ingredient: null
+  raw_text: 불린쌀(150g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.05g)
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 건새우(10g)
+  role: sub
+- ingredient: null
+  raw_text: 건멸치(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(5g)
+  role: sub
+steps:
+- text: 양파와 양송이, 표고버섯, 느타리버섯은 작게 썰어 준비해 놓는다.
+- text: 멸치와 새우, 마늘을 냄비에 담고, 물을 약 500㎖ 정도 붓고 끓여 육수를 만든다.
+- text: 냄비에 버터를 넣고, 양파와 버섯을 넣어 볶는다.
+- text: ③번의 냄비에 불린 쌀을 넣고 은근히 볶는다.
+- text: 볶아지는 냄비에 만들어 놓은 육수를 조금 넣는다.
+- text: 육수를 넣고 다시 은근히 볶으면서 뚜껑을 덮어 충분히 익힌 후, 마지막에 생크림과 소금을 넣고 완성한다.

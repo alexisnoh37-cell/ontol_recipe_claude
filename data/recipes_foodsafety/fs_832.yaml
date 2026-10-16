@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_832
+title: 도토리묵 콩국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 832. 요리종류 국&찌개, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 곤약 10g
+  role: sub
+- ingredient: black_soybean
+  raw_text: 서리태 20g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2g
+  role: sub
+- ingredient: null
+  raw_text: 마늘쫑 5g
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카 5g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨 조림소스
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3.4g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2.2g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 1.5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.1g
+  role: sub
+steps:
+- text: 대두는 6시간 이상 물에 불린다.
+- text: 불린통은 20~25분 정도 삶은 후 껍질을 제거한다.
+- text: 껍질을 제거한 삶은 콩에 참깨와 물을 넣고 곱게 갈아 체에 받쳐 준비한다.
+- text: 도토리묵은 7cm 길이로 굵게 채썬다.
+- text: 오이는 어슷썬다.
+- text: 그릇에 묵을 담고 준비된 콩국을 붓고 오이채를 곁들인다.

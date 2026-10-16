@@ -1,0 +1,19 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_799
+title: 채소 커리를 곁들인 팬케익
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 799. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: .
+  role: sub
+steps:
+- text: 브로콜리는 작은 송이로 나누고 실파와 그린빈은 0.8cm의 정육면체로 썬 뒤 브로콜리와 그린빈은 끓는 물에 데친다.
+- text: 당근, 양배추, 홍파프리카, 양파, 청고추는 0.8cm의 정육면체로 썰고 파슬리를 곱게 다진다.
+- text: 볼에 밀가루, 우유, 달걀, 버터, 다진 파슬리를 넣고 잘 섞는다.
+- text: 팬에 식용유를 두르고 브로콜리와 그린빈을 뺀 나머지 재료를 볶다가 커리파우더를 넣고 섞는다.
+- text: 닭육수를 넣어 재료가 익을 때까지 끓인 뒤 물이 자작하게 줄어들면 브로콜리와 그린빈을 넣어 섞는다.
+- text: 팬에 식용유를 살짝 두르고 국자로 반죽을 떠 넣어 지름 10cm 정도의 얇은 팬케익을 부친다

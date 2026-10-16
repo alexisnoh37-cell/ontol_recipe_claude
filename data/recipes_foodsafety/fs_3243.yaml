@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3243
+title: 토마토채소스프와 연어소바찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3243. 요리종류 일품, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: tomato
+  raw_text: 토마토(356g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(6g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(6g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(5g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(6g)
+  role: sub
+- ingredient: salmon
+  raw_text: 연어(100g)
+  role: sub
+- ingredient: buckwheat_noodles
+  raw_text: 메밀면(70g)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(2g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+steps:
+- text: 토마토(100g)와 무, 당근, 마늘, 양파는 작게 썰고, 연어는 길게 2장으로 포를 뜬다.
+- text: 믹서에 토마토(250g)를 넣어 간 뒤 체에 걸러 월계수잎과 함께 3분간 졸인다.
+- text: 졸인 토마토에 작게 썬 토마토와 무, 당근, 마늘, 양파, 소금을 넣어 1분간 볶다가 물(250㎖)을 넣고 5분간 끓인다.
+- text: 끓는 물(800㎖)에 메밀면을 넣어 4분간 삶아 찬물에 헹군 뒤 포 뜬 연어에 돌돌만다.
+- text: 면포 깐 찜기에 김이 오르면 메밀면을 감싼 연어를 넣어 3분간 찐다.
+- text: 그릇에 토마토채소스프와 연어소바찜을 담아 마무리한다.

@@ -1,0 +1,25 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_19
+title: 백일송이버섯 볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 19. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 백일송이버섯 65g(1컵)
+  role: sub
+- ingredient: null
+  raw_text: 노랑 파프리카 5g(5×1cm)
+  role: sub
+- ingredient: null
+  raw_text: 빨강 파프리카 5g(5×1cm)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 카놀라유 3g(2/3작은술)
+  role: sub
+steps:
+- text: 파프리카는 씨를 빼고 버섯 크기와 비슷하게 썬다.
+- text: 달구어진 팬에 카놀라유를 두르고 백일송이 버섯을 볶는다.
+- text: 버섯이 살짝 숨이 죽으면 파프리카를 넣어 함께 볶아 접시에 담는다.

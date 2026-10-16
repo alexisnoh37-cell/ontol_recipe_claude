@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1122
+title: 꽃설기
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1122. 요리종류 후식, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 멥쌀가루(112g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(5알)
+  role: sub
+- ingredient: null
+  raw_text: 백년초가루(3.5g)
+  role: sub
+- ingredient: null
+  raw_text: 단호박가루(3.5g)
+  role: sub
+- ingredient: null
+  raw_text: 시금치가루(3.5g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(3g)
+  role: sub
+- ingredient: null
+  raw_text: 백앙금(25g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(2g)
+  role: sub
+- ingredient: null
+  raw_text: 호박씨(3g)
+  role: sub
+steps:
+- text: 다양한 색상의 가루를 각각 멥쌀가루와 섞은 뒤 물 15g을 넣고 섞는다.
+- text: 1번을 한번 더 체에 내리고 설탕 3g을 넣고 섞는다.
+- text: 2번에 불린 대추 속살을 섞는다.
+- text: 찜기에 김이 오르면 면보를 깔고 모양틀을 넣은 뒤 3번을 넣는다.
+- text: 윗면을 고르게 정리하고 20분 간 찐다.
+- text: 호박씨, 대추로 장식한다.

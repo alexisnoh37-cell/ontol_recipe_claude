@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3269
+title: 단호박 라타투이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3269. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: eggplant
+  raw_text: 가지(1개)
+  role: sub
+- ingredient: null
+  raw_text: 주키니호박(½개)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(1½개)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(1개)
+  role: sub
+- ingredient: smoked_duck
+  raw_text: 훈제 오리(400g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(6쪽)
+  role: sub
+- ingredient: null
+  raw_text: 다진 양파(½컵)
+  role: sub
+- ingredient: null
+  raw_text: 다진 토마토(1컵)
+  role: sub
+- ingredient: null
+  raw_text: 다진 파프리카(1컵)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(2Ts)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3Ts)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.3Ts)
+  role: sub
+steps:
+- text: 가지, 주키니호박, 토마토는 0.3mm 두께로 썬다.
+- text: 단호박은 전자레인지에 5분간 돌리고, 익으면 윗부분을 약간 잘라낸 뒤 씨를 제거한다.
+- text: 중간 불로 달군 팬에 훈제오리와 마늘을 넣어 고루 볶은 뒤 단호박 속에 채운다.
+- text: 팬에 올리브유를 두른 뒤 약한 불로 올리고, 라타투이 소스 재료, 소금, 후춧가루를 넣어 10분간 볶아 라타투이 소스를 만든다.
+- text: 높이가 낮은 냄비에 라타투이 소스를 넓게 깔고, 손질한 채소를 둘러 담는다.
+- text: 오리로 채운 단호박을 가운데 올린 뒤 6~8등분하여 펼치고, 중간 불로 15분간 쪄 마무리한다.

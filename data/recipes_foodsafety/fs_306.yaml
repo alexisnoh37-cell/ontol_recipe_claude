@@ -1,0 +1,48 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_306
+title: 오색볶음면
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 306. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 양파(40g)
+  role: sub
+- ingredient: bok_choy
+  raw_text: 청경채(30g)
+  role: sub
+- ingredient: null
+  raw_text: 두 가지 색 파프리카(각 15g씩)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파(15g)
+  role: sub
+- ingredient: ramen_noodles
+  raw_text: 라면(60g)
+  role: sub
+- ingredient: null
+  raw_text: 채 썬 돼지고기(30g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 다진 마늘(7g)
+  role: sub
+- ingredient: chili_oil
+  raw_text: 고추기름(5g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(4g)
+  role: sub
+- ingredient: doubanjiang
+  raw_text: 두반장(8g)
+  role: sub
+- ingredient: null
+  raw_text: 라면스프(3g)
+  role: sub
+steps:
+- text: 양파와 청경채, 파프라카는 채 썰고, 쪽파는 송송 썬다.
+- text: 라면은 삶아서 체에 밭쳐 물기를 제거한다.
+- text: 팬에 식용유(5g)를 두르고 다진 마늘을 볶아 향을 낸 뒤 돼지고기를 볶는다.
+- text: 채 썬 양파와 청경채, 파프리카를 함께 넣고 볶다가 고추기름, 설탕, 두반장, 라면스프로 간을 해 볶는다.
+- text: 면을 함께 볶은 후 송송 썬 쪽파를 뿌려 마무리한다.

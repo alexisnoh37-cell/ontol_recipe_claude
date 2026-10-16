@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_431
+title: 미역전복죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 431. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: abalone
+  raw_text: 전복 100g
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀 70g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 25g
+  role: sub
+- ingredient: null
+  raw_text: 다시마 사방 10x10cm
+  role: sub
+- ingredient: null
+  raw_text: 건조 자른미역 3g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 15g
+  role: sub
+- ingredient: null
+  raw_text: 검정깨 5g
+  role: sub
+steps:
+- text: 전복은 내장과 분리해 손질한다.
+- text: 내장은 칼로 다진다.
+- text: 당근과 전복살은 송송 잘라준다.
+- text: 전복 껍질과 다시마를 넣어 물 300g에 국물을 만들어준다.
+- text: 만들어진 국물에 미역을 넣고 끓여준다.
+- text: 다진 내장과 불린 찹쌀을 참기름에 볶다가 끓인 미역국을 넣고 더 끓여 죽을 만든다. 다진 당근, 흑임자로 마무리 완성한다.

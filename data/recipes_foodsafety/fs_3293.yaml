@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3293
+title: 토마토소스 애호박냉파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3293. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: tomato
+  raw_text: 토마토(2개)
+  role: sub
+- ingredient: null
+  raw_text: 참외(1개)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(1개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(½개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3쪽)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(1개)
+  role: sub
+- ingredient: basil
+  raw_text: 바질잎(4장)
+  role: sub
+- ingredient: null
+  raw_text: 블랙올리브 파우더(약간)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(1Ts)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(5Ts)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.4Ts)
+  role: sub
+- ingredient: null
+  raw_text: 페페론치노(0.3Ts)
+  role: sub
+- ingredient: null
+  raw_text: 저염 간장(0.5Ts)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(2Ts)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(1Ts)
+  role: sub
+steps:
+- text: 토마토는 꼭지를 제거하고, 열십자로 칼집을 낸 뒤 끓는 물에 30초간 데쳐 건지고, 껍질을 제거해 한입 크기로 썬다.
+- text: 참외는 깨끗하게 씻어 2등분해 씨를 제거한 뒤 한입 크기로 썰고, 오이와 양파는 한입 크기로 썰고, 마늘은 꼭지를 제거한 뒤 4등분한다.
+- text: 애호박은 스파이럴라이저로 썰고, 끓는 물에 30초간 데쳐 건진 뒤 한 김 식히고, 레몬즙(1Ts), 올리브유(2Ts), 소금(0.1Ts)에 버무린다.
+- text: 믹서에 토마토, 오이, 참외, 양파, 마늘, 바질잎(3장), 페페론치노, 차가운 물(½컵)을 넣어 곱게 갈아 토마토소스를 만든다.
+- text: 저염 간장, 식초, 꿀, 올리브유(3Ts), 소금(0.3Ts)을 넣어 한 번 더 곱게 간다.
+- text: 그릇에 애호박면과 토마토소스를 담고, 바질잎(1장)과 블랙올리브 파우더를 뿌려 마무리한다.

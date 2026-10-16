@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_598
+title: 배추관자카나페
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 598. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: scallop
+  raw_text: 관자(2개)
+  role: sub
+- ingredient: null
+  raw_text: 배춧잎(6장)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(1/2개)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/2개)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(20g)
+  role: sub
+- ingredient: null
+  raw_text: 매실액(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(5g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리(5g)
+  role: sub
+steps:
+- text: 배춧잎을 물에 담궈 싱싱하게 한다
+- text: 레몬은 슬라이스로 썬다.
+- text: 레몬, 고추장, 설탕 및 매실액을 넣고 양념장을 만든다.
+- text: 파프리카는 작은 사각형 모양으로 자른다.
+- text: 관자는 끓는 물에 소금을 넣고 데친다.
+- text: 관자는 프라이팬에 구운 뒤 잘게 썰어 파프리카와 섞어 배춧잎에 올리고, 그 위에 파슬리와 만들어 놓은 양념장을 먹기 직전에 올린다.

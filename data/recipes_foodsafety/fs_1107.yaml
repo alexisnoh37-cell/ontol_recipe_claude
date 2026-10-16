@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1107
+title: 수(Sugaer)다(Down) 고구마 케이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1107. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: sweet_potato
+  raw_text: 밤고구마(65g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 요거트(18g)
+  role: sub
+- ingredient: kiwi
+  raw_text: 키위(7g)
+  role: sub
+- ingredient: null
+  raw_text: 파인애플(7g)
+  role: sub
+- ingredient: null
+  raw_text: 카스테라(2g)
+  role: sub
+- ingredient: null
+  raw_text: 블루베리(5g)
+  role: sub
+steps:
+- text: 고구마는 깨끗하게 씻은 뒤 껍질을 벗기고 찐다.
+- text: 찐 고구마를 으깨고 요거트와 섞는다.
+- text: 카스테라를 체에 갈아 가루를 만든다.
+- text: 키위, 파인애플을 적당한 크기로 자른다.
+- text: 무스틀에 2번을 넣어 평평하게 펴주고 키위, 블루베리, 파인애플을 넣고 요거트를 올린 뒤 다시 고구마를 넣어 펴준다.
+- text: 카스테라 가루를 뿌리고 키위, 블루베리, 파인애플을 올린다.

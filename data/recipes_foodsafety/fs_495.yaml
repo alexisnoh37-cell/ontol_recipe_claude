@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_495
+title: 백김치닭살샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 495. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(80g)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(1장)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추(2g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(10g)
+  role: sub
+- ingredient: null
+  raw_text: 백김치(100g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(30g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: null
+  raw_text: 브로컬리(20g)
+  role: sub
+- ingredient: iceberg_lettuce
+  raw_text: 양상추(50g)
+  role: sub
+- ingredient: null
+  raw_text: 발사믹식초(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.1g)
+  role: sub
+steps:
+- text: 닭고기에 물을 자작하게 넣고 월계수잎과 통후추, 정종을 넣고 약 20분 정도 삶아 식혀 찢어놓는다.
+- text: 브로컬리는 끓는 물에 소금을 넣고, 데쳐 작게 썰어놓고, 양상추는 물에 담그어 놓았다가 먹기 좋게 손으로 찢어 놓는다.
+- text: 파프리카는 속씨를 제거하고, 작은 깍둑썰기를 하고, 당근은 5cm 길이로 납작하게 썰어놓는다.
+- text: 브로컬리는 끓는 물에 소금을 넣고 데쳐 작게 썰어놓고, 양상추는 물에 담그어 놓았다가 먹기 좋게 손으로 찢어 놓는다.
+- text: 발사믹 식초에 설탕과 올리브 오일을 넣고 골고루 섞어 소스를 만들어 놓는다.
+- text: 찢어 놓은 닭고기살과 백김치를 넣고, 준비한 채소를 넣어 먹기 직전에 소스를 올려 완성한다.

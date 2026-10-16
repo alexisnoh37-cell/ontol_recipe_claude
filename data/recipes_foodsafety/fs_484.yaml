@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_484
+title: 버섯탕수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 484. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(80g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(50g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(50g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(40g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(400g)
+  role: sub
+- ingredient: kiwi
+  raw_text: 키위(20g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(20g)
+  role: sub
+- ingredient: null
+  raw_text: 물녹말(녹말가루 10g, 물 10g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: null
+  raw_text: 목이버섯(10g)
+  role: sub
+steps:
+- text: 새송이와 느타리, 표고버섯은 먹기 좋은 형태로 썰어 준비한다.
+- text: 썰어 놓은 버섯에 소금을 살짝 뿌려 놓는다.
+- text: 소금 뿌린 버섯에 녹말가루와 달걀물을 넣고 골고루 섞는다.
+- text: 오이, 당근, 양파, 키위는 작은 깍두기 모양으로 썰어 준비한다.
+- text: 냄비에 저염간장에 설탕을 넣고 골고루 섞어 끓이다가, 물녹말을 풀어 농도를 맞추고 썰어놓은 오이, 당근, 양파를 넣어 소스를 만든다.
+- text: 튀김기름의 온도가 약 170~180℃ 정도 올라오면 녹말옷을 입힌 버섯(③)을 재빠르게 튀겨 기름을 제거하고, 접시에 담아 소스(⑤)를 얹고 키위를 올려 완성 한다.

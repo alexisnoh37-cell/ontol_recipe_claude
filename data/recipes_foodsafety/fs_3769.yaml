@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3769
+title: 고등어 묵말랭이 냉소바
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3769. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 묵말랭이 20g
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추 15g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 15g
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파 10g
+  role: sub
+- ingredient: mackerel
+  raw_text: 고등어 40g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 27.5g
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 5g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 0.25g
+  role: sub
+- ingredient: null
+  raw_text: 유자청 10g
+  role: sub
+- ingredient: katsuobushi
+  raw_text: 가다랑어포 4g
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마 3g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 5g
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 5g
+  role: sub
+- ingredient: null
+  raw_text: 유자청 5g
+  role: sub
+steps:
+- text: 묵말랭이는 따뜻한 물에 5시간 정도 불린 후, 끓는 물에 15분간 삶아 식힌다.
+- text: 양배추, 당근은 채 썰고, 쪽파는 잘게 자른다.
+- text: 냄비에 물(180ml), 소바육수 재료를 모두 넣고 끓인다.
+- text: 끓인 육수를 체에 거르고 냉동실에서 차갑게 식혀 소바육수를 만든다.
+- text: 올리브유를 두른 팬에 고등어를 구운 뒤, 소바육수(5g), 맛술(5g), 유자청(5g), 물(30ml)을 넣고 조린다.
+- text: 그릇에 불린 묵말랭이를 담고 차가운 소바육수를 넣는다. 조린 고등어, 손질한 채소를 올려 마무리한다.

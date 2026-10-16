@@ -1,0 +1,76 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3083
+title: 닭가슴살호두크로켓
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3083. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 80g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 12.5g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 5g
+  role: sub
+- ingredient: walnut
+  raw_text: 호두 5g
+  role: sub
+- ingredient: peanut
+  raw_text: 땅콩 2.5g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 0.5g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 3.8g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 2.5g
+  role: sub
+- ingredient: egg
+  raw_text: 계란 65g(1.5개)
+  role: sub
+- ingredient: rice_flour
+  raw_text: 쌀가루 7g
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루 25g
+  role: sub
+- ingredient: null
+  raw_text: 순무 24g
+  role: sub
+- ingredient: soy_milk
+  raw_text: 두유 45ml
+  role: sub
+- ingredient: null
+  raw_text: 홀그레인 2.5g
+  role: sub
+- ingredient: peanut_butter
+  raw_text: 땅콩버터 5g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬 7g
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리 0.5g
+  role: sub
+steps:
+- text: 양파, 대파, 호두, 닭가슴살은 잘게 다진다.
+- text: ①에 물기를 제거한 두부와 생강, 마늘, 후추를 섞어 반죽한다.
+- text: 반죽을 쌀가루, 계란물, 빵가루 순으로 묻히고 튀겨 크로켓을 만든다.
+- text: 믹서에 두부, 두유를 넣고 갈아 두부 마요네즈를 만든다.
+- text: 순무와 양파는 다지고, 계란은 삶아 다져 준비한다.
+- text: 두부 마요네즈에 ⑤의 재료와 설탕, 레몬, 식초, 땅콩버터, 후추, 홀그레인, 파슬리가루를 넣어 타르소스를 만든다.

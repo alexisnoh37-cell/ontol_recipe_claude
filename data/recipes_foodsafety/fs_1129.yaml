@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1129
+title: 와인배숙
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1129. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: pear
+  raw_text: 배(1/2개)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(1/2개)
+  role: sub
+- ingredient: wine
+  raw_text: 레드와인(200g)
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피(5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추(6알)
+  role: sub
+steps:
+- text: 배와 사과는 스쿠퍼로 동그랗게 모양을 만든다.
+- text: 냄비에 와인을 넣고 계피, 통후추와 함께 약불에서 끓인다.
+- text: 와인이 끓기 시작하면 배와 사과를 넣고 양이 반이 될 때까지 졸인다.
+- text: 차갑게 식힌다.
+- text: 4번을 용기에 담는다.
+- text: 졸여진 배와 사과를 과일꼬지에 꽂아 곁들인다.

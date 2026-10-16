@@ -1,0 +1,57 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3248
+title: 소고기육전과 전복내장소스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3248. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 부챗살(150g)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파(5g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(5g)
+  role: sub
+- ingredient: null
+  raw_text: 익힌 전복내장(5g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 건새우(5g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 달걀물(50g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(1g)
+  role: sub
+- ingredient: null
+  raw_text: 저염 간장(5g)
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술(2g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(2g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(1g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(2g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(10ml)
+  role: sub
+steps:
+- text: 부챗살은 3mm로 썰어 후춧가루를 뿌려 버무리고, 쪽파, 홍고추, 익힌 전복내장은 잘게 다진다.
+- text: 밀가루에 다진 건새우를 섞은 뒤, 부챗살에 밀가루 → 달걀물 순으로 입힌다.
+- text: 다진 쪽파, 홍고추, 익힌 전복내장에 초간장 재료를 섞어 전복내장소스를 만든다.
+- text: 중간 불로 달군 팬에 식용유(10㎖)를 두른 뒤 옷을 입힌 부챗살을 앞뒤로 4분간 굽는다.
+- text: 그릇에 구운 부챗살을 담고 전복내장소스를 곁들인다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_162
+title: 파프리카 물김치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 162. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 자색고구마 10g(3cm)
+  role: sub
+- ingredient: radish
+  raw_text: 무 10g(2cm)
+  role: sub
+- ingredient: pear
+  raw_text: 배 80g(1/4개)
+  role: sub
+- ingredient: napa_cabbage
+  raw_text: 배추 200g(1/3개)
+  role: sub
+- ingredient: chive
+  raw_text: 부추 10g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 80g(1/3개)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파 10g(10cm)
+  role: sub
+- ingredient: salt
+  raw_text: 소금 20g(1⅓큰술)
+  role: sub
+- ingredient: rice
+  raw_text: 멥쌀 10g(2작은술)
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 50g(1/4컵)
+  role: sub
+- ingredient: null
+  raw_text: 황파프리카 140g(1½개)
+  role: sub
+steps:
+- text: 황파프리카를 갈아 체에 내리고 멥쌀로 쌀풀을 만들어 황파프리카 즙을 섞고 물엿을 첨가하여 양념을 만든다.
+- text: 배추를 소금물에 절이고 절인 배추를 찬물로 씻어 소금기를 뺀다.
+- text: 소금기를 뺀 배추에 채썬 자색고구마, 무, 쪽파, 부추, 사과, 배를 놓고 양념을 부은 후 3일 동안 숙성시켜 완성한다.

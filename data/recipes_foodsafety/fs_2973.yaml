@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2973
+title: 토마토 채소 계란찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2973. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 5g
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리 10g
+  role: sub
+- ingredient: null
+  raw_text: 그린빈스 10g
+  role: sub
+- ingredient: egg
+  raw_text: 계란 80g
+  role: sub
+- ingredient: parmesan
+  raw_text: 파마산치즈 3g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 20g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 0.1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.1g
+  role: sub
+steps:
+- text: 볼에 계란을 푼다.
+- text: 마늘을 다져 계란과 섞고 파마산치즈, 후추를 넣어 간을 맞춘다.
+- text: 양파는 채 썰고 브로콜리는 깍둑썰고 그린빈스는 2cm 길이로 자른다.
+- text: 3의 재료를 볶은 뒤 계란물과 섞는다.
+- text: 방울토마토를 반으로 잘라 4에 넣는다.
+- text: 그릇에 옮겨 담아 찐다.

@@ -1,0 +1,25 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_686
+title: 우무오미자냉화채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 686. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 오미자 10g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 14g
+  role: sub
+- ingredient: null
+  raw_text: 우무묵 20g
+  role: sub
+steps:
+- text: 오미자를 헹궈 따뜻한 물에 담가 12시간 우린다.
+- text: 우려낸 오미자물을 면보에 거른다.
+- text: 오미자 국물 1컵에 올리고당을 넣어 감미한다.
+- text: 우무를 곱게 채 썰거나 모양 틀로 찍어낸다.
+- text: 오미자 국물을 살짝 얼려 믹서에 갈아 슬러쉬를 만든다.
+- text: 오미자 슬러쉬에 우무를 올린다.

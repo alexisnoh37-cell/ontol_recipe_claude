@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3219
+title: 들깨 삼계면
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3219. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 삼계탕용 닭(250g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(500㎖)
+  role: sub
+- ingredient: null
+  raw_text: 삼계탕 티백(70g)
+  role: sub
+- ingredient: buckwheat_noodles
+  raw_text: 메밀면(100g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(5장)
+  role: sub
+- ingredient: basil
+  raw_text: 바질(5장)
+  role: sub
+- ingredient: null
+  raw_text: 삼계탕 육수(100㎖)
+  role: sub
+- ingredient: vinegar
+  raw_text: 사과식초(30g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(2개)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(½개)
+  role: sub
+- ingredient: null
+  raw_text: 삼계탕 육수(30㎖)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깻가루(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(2g)
+  role: sub
+steps:
+- text: 닭은 우유에 담가 20분간 재운다.
+- text: 냄비에 물(1.5L)과 닭, 삼계탕 티백, 소금을 넣어 30분간 삶아 건진 뒤 살을 발라 한입 크기로 찢는다.
+- text: 끓는 삼계탕 육수(800㎖)에 메밀면을 4분간 삶아 건져 얼음에 비벼 식힌 뒤 돌돌 말아준다.
+- text: 끓는 물(500㎖)에 깻잎을 넣어 1분간 살짝 데쳐 건진 뒤 펼쳐 찢은 닭고기, 들깨소스, 바질을 얹어 돌돌 말아준다.
+- text: 믹서에 국물 재료를 넣어 간 뒤 체에 거른다.
+- text: 그릇에 메밀면과 깻잎말이를 담은 뒤 국물을 부어 마무리한다.

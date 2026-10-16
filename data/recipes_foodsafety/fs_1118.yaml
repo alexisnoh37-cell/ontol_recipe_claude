@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1118
+title: 콩 판나코타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1118. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 렌틸콩(레드, 20g)
+  role: sub
+- ingredient: null
+  raw_text: 완두콩(30g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(40g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(8g)
+  role: sub
+- ingredient: null
+  raw_text: 판젤라틴(2g)
+  role: sub
+steps:
+- text: 완두콩과 렌틸콩은 각각 삶은 뒤 믹서에 간다.
+- text: 완두콩과 렌틸콩에 각각 생크림(20g)과 설탕(4g)을 넣고 냄비에 끓인다.
+- text: 젤라틴 1g을 물에 넣어 불린다.
+- text: 2번에 각각 불린 젤라틴을 혼합하여 녹인다.
+- text: 용기에 4번의 렌틸콩을 붓고 얼린다.
+- text: 5번이 어느정도 굳으면 4번의 완두콩을 붓고 얼린다.

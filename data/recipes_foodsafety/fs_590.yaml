@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_590
+title: 리코타소스 연어샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 590. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: salmon
+  raw_text: 연어(100g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(100g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(200g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/4개)
+  role: sub
+- ingredient: null
+  raw_text: 파인애플(50g)
+  role: sub
+- ingredient: null
+  raw_text: 아보카도(1/4개)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(20g)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+steps:
+- text: 연어는 깍둑 썰기한다.
+- text: 냄비에 우유를 넣고 은근히 끓이다가 레몬즙과 소금을 넣고 뭉글거리게 한다.
+- text: 뭉글거리는 우유를 체에 걸러 리코타치즈를 만든다
+- text: 토마토, 아보카도, 오이 및 파인애플은 주사위 모양으로 썬다.
+- text: 어린잎은 찬물에 담궈 싱싱해지면 물에서 건져 놓는다
+- text: 오렌지와 파인애플은 즙을 만들어 리코타치즈와 섞어 소스를 만들고, 연어와 야채를 담은 뒤 그 위에 소스를 올린다.

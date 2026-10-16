@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3190
+title: 바질향이 향긋한 고구마 찰 바케트
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3190. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 강력분 675g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 6g
+  role: sub
+- ingredient: null
+  raw_text: 생이스트 10g
+  role: sub
+- ingredient: null
+  raw_text: 파인소프트 T 300g
+  role: sub
+- ingredient: null
+  raw_text: 파인소프트 C 50g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 강력분 50g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 8g
+  role: sub
+- ingredient: null
+  raw_text: 분유 8g
+  role: sub
+- ingredient: null
+  raw_text: 아몬드 분말 74g
+  role: sub
+- ingredient: null
+  raw_text: 드라이 이스트(골드) 10g
+  role: sub
+- ingredient: butter
+  raw_text: 무염버터 54g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 50g(1개)
+  role: sub
+- ingredient: cream_cheese
+  raw_text: 크림치즈 200g
+  role: sub
+- ingredient: null
+  raw_text: 바질 페스토 30g
+  role: sub
+- ingredient: null
+  raw_text: 노른자 20g
+  role: sub
+- ingredient: null
+  raw_text: 고구마 다이스 100g
+  role: sub
+steps:
+- text: 반죽을 모두 섞어 30분 발효 후 punch 후 40분 발효한다. ★punch는 가스를 빼는 과정을 얘기해요.
+- text: 150g으로 분할 후 중간발효 20분을 한다.
+- text: 찰 반죽 80g 분할 후 밀대로 얇게 펴서 크림치즈와 바질페스토를 섞은 속재료를 짜고 삶아 낸 고구마 다이스를 촘촘한 간격으로 올린 후 말아준다.
+- text: 중간발효를 마친 바게트 반죽은 최대한 기공을 살려 조심히 펴 준다. 펴준 반죽 위에 찰 반죽을 놓고 가볍게 환목모양으로 말아준다.
+- text: 반죽에 물을 뿌린 후 덧 가루를 묻혀 1시간 동안 2차 발효한다.
+- text: 빵이 터지지 않게 꾸쁘는 사선으로 세 번 내고 , 195℃의 컨벡션 오븐에 16분 스팀 8초 설정을 하여 굽는다.

@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_546
+title: 오징어토마토초무침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 546. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: squid
+  raw_text: 오징어(100g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추(10g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(10g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(5g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(50g)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: null
+  raw_text: 생강즙(10g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(20g)
+  role: sub
+steps:
+- text: 오징어는 껍질을 벗겨 안 쪽으로 칼집을 넣어 무늬를 만들어 놓는다.
+- text: 끓는 물에 소금을 넣고 미나리를 데쳐 찬물에 헹구고, 바로 오징어를 데쳐 준비한다.
+- text: 준비한 토마토 반은 굵게 다지고, 반은 썰어서 접시에 돌려 담아놓는다.
+- text: 다진 토마토와 고추장, 식초, 생강즙, 올리고당을 골고루 섞어 양념장을 만든다.
+- text: 당근, 양파, 대파, 청 ․ 홍고추를 썰어 놓는다.
+- text: 만들어 놓은 양념장에 데친 오징어와 채소를 넣어 무친 후 토마토를 돌려 담은 접시에 담아 통깨를 올려 완성한다.

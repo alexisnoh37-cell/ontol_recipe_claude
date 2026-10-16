@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_304
+title: 황태포당면국수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 304. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 감자(80g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(15g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(10g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(5g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(3g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(30g)
+  role: sub
+- ingredient: glass_noodles
+  raw_text: 당면(70g)
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓(5g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 멸치(2g)
+  role: sub
+- ingredient: null
+  raw_text: 황태포(10g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 다진 마늘(1g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(2g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.6g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.5g)
+  role: sub
+steps:
+- text: 감자는 한입 크기로 썰고, 양파와 당근, 대파는 길게 채 썰고, 청양고추는 다지고, 팽이버섯은 깨끗이 씻어 준비한다.
+- text: 달걀은 노른자와 흰자를 분리해 지단을 부쳐 채 썬다.
+- text: 당면은 찬물에 2시간 정도 불린다.
+- text: 물(300g)에 멸치를 넣어 육수를 만든 후, 황태포를 넣어 다시 한 번 진하게 육수를 우려낸다.
+- text: 육수에 감자, 당근, 양파, 당면을 순서대로 넣고 끓인 후 불을 끄고 팽이버섯을 얹어 잔열로 익힌다.
+- text: 다진 마늘, 청양고추, 저염간장, 소금, 후춧가루를 넣어 간을 한 뒤 지단, 쑥갓, 대파를 얹어 마무리한다.

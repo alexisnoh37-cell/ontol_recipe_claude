@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3194
+title: 견과류 미숫가루 빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3194. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 강력분60g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 박력분 30g
+  role: sub
+- ingredient: null
+  raw_text: 미숫가루 150g
+  role: sub
+- ingredient: null
+  raw_text: 이스트 4g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 5g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 50g(1개)
+  role: sub
+- ingredient: butter
+  raw_text: 버터 30g
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드20g
+  role: sub
+- ingredient: null
+  raw_text: 해바라기씨 30g
+  role: sub
+- ingredient: null
+  raw_text: 호박씨 10g
+  role: sub
+- ingredient: raisin
+  raw_text: 건포도 20g
+  role: sub
+- ingredient: null
+  raw_text: 아몬드우유
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드 30g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 180g
+  role: sub
+- ingredient: butter
+  raw_text: 버터10g
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드 슬라이스10g
+  role: sub
+- ingredient: null
+  raw_text: 미숫가루10g
+  role: sub
+steps:
+- text: (아몬드우유) 믹서기에 아몬드와 우유를 갈아 아몬드 우유를 만든다.
+- text: 밀가루, 미숫가루, 이스트, 소금, 달걀, 아몬드 우유를 넣어 손으로 반죽하다가 아몬드, 해바라기씨, 호박씨 넣고 반죽한다.
+- text: ②이 한 덩어리가 되면 무염버터를 넣어 반죽을 하고 마지막으로 건포도를 넣어 섞는다.
+- text: '"크기가 2.5배가 될 때까지 1차 발효하고 반죽을 접어 공기를 빼고 3등분으로 나눠 둥글리기 후 10분 정도 중간 발효한다. ★반죽이 달라붙으면 덧가루를 뿌리면서 작업하면 수월해요."'
+- text: 발효가 끝나면 다시 둥글리기를 해주고 반죽의 매끄러운 면이 위로 가도록 팬닝 후 40~50분 2차 발효 시킨다.
+- text: '"180℃ 오븐에서 20~25분 동안 구워서 완성시킨 뒤 위에 버터를 바르고 아몬드 슬라이스와 미숫가루로 토핑한다. ★ 버터는 살짝 녹여 사용하세요."'

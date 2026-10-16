@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_721
+title: 간편조기찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 721. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: yellow_croaker
+  raw_text: 조기 70g
+  role: sub
+- ingredient: bracken
+  raw_text: 고사리 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 3g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 3g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2.5g
+  role: sub
+- ingredient: ginger
+  raw_text: 다진 생강 1g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 국간장 2g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.3g
+  role: sub
+steps:
+- text: 조기의 비늘과 지느러미를 제거하고 앞뒤 3~4회 칼집을 내어 양념이 잘 배도록 손질한다
+- text: 고사리는 4cm 가량으로 자른다.
+- text: 자른 고사리는 국간장, 참기름, 마늘을 넣고 무친다
+- text: 양파, 홍고추, 청고추는 잘게 썬다
+- text: 양념된 고사리는 냄비에 넣는다
+- text: 5의 냄비에 물을 붓고 조기, 양파, 홍고추, 청고추, 생강, 마늘, 국간장, 통깨, 참기름을 넣고 찐다

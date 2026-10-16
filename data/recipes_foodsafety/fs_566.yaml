@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_566
+title: 삼계치킨
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 566. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(가슴살, 120g)
+  role: sub
+- ingredient: null
+  raw_text: 인삼(1뿌리)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(3개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(2장)
+  role: sub
+- ingredient: asparagus
+  raw_text: 아스파라거스(3개)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(1/2개)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/2개)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(30g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.2g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+steps:
+- text: 닭가슴살은 포를 떠 후춧가루로 밑간을 한다.
+- text: 인삼은 뇌두를 제거하고 깨끗이 씻어 절반은 다지고, 양파와 마늘도 다진다.
+- text: 나머지 인삼은 채썰고, 대파, 깻잎도 채를 썰어 물에 담군다.
+- text: 다진 양파, 마늘을 볶다가 생크림을 넣고 은근히 졸인 뒤 오렌지, 레몬즙을 넣고 소스를 만든다.
+- text: 닭가슴살에 밀가루에 찬물, 달걀을 넣고 튀김옷을 만들어 입힌다.
+- text: 팬에 기름을 넉넉히 넣고 지지듯이 닭가슴살을 튀겨 접시에 담고 인삼소스를 뿌린 뒤, 그 위에 깻잎과 대파, 인삼채를 올린다.

@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_378
+title: 명란프리타타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 378. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: myeongnanjeot
+  raw_text: 명란젓 50g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 20g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 4개(240g)
+  role: sub
+- ingredient: null
+  raw_text: 흰추후 1g
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 50g
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 6개(100g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 15g
+  role: sub
+steps:
+- text: 명란은 껍질을 벗겨 송송 다져준다.
+- text: 달걀을 풀어서 채에 내려주고 후추로 간을 해준다.
+- text: 달걀에 명란과 생크림을 넣어 섞어준다.
+- text: 시금치는 데쳐서 수분을 제거 후 송송 다져 주고 토마토는 작은 사각형으로 잘라준다.
+- text: 팬에 기름을 두르고 달걀을 부어 반 정도 익혀준다.
+- text: 달걀이 반 정도 익었을 때 토마토와 시금치를 넣어 뚜껑을 덮어 익혀 완성한다.

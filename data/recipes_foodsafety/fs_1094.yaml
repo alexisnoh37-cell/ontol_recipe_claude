@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1094
+title: 바나나 속 달걀빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1094. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: egg
+  raw_text: 달걀(2개)
+  role: sub
+- ingredient: banana
+  raw_text: 바나나(30g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(5g)
+  role: sub
+- ingredient: null
+  raw_text: 베이킹파우더(0.3g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(0.5g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.1g)
+  role: sub
+steps:
+- text: 달걀노른자, 밀가루, 베이킹파우더, 우유, 소금을 섞어 반죽을 만든다.
+- text: 바나나 절반은 0.5cm 두께로 자르고 나머지는 잘게 다진다.
+- text: 타르트팬에 버터를 바른 뒤 반죽을 얇게 깔고 그 위에 바나나를 담고 소금을 조금 뿌린다.
+- text: 3번에 달걀흰자로 만든 머랭을 올린다.
+- text: 머랭 가운데 바나나 1조각을 올리고 노른자 물을 바른다.
+- text: 달군 팬에 물을 넣고 타르트팬 채로 넣은 뒤 약불에서 15분 간 익힌다.

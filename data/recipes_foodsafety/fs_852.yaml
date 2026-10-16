@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_852
+title: 돼지고기 찹쌀부침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 852. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: pork_loin
+  raw_text: 돼지고기 등심 50g
+  role: sub
+- ingredient: null
+  raw_text: 젖은 찹쌀가루 50g
+  role: sub
+- ingredient: null
+  raw_text: 밑간양념
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 3g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 2g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.1g
+  role: sub
+- ingredient: null
+  raw_text: 무순 1g
+  role: sub
+- ingredient: null
+  raw_text: 레디쉬 0.3g
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎 1.5g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 3g 저나트륨된장소스:된장 1g
+  role: sub
+- ingredient: null
+  raw_text: 파인애플 15g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 0.5g
+  role: sub
+- ingredient: garlic
+  raw_text: 통마늘 0.3g
+  role: sub
+steps:
+- text: 돼지고기는 간장, 물엿, 다진마늘, 후춧가루로 밑간 한다.
+- text: 레디쉬, 깻잎, 대파는 채썬다.
+- text: 소스 재료들은 모두 믹서에 간다.
+- text: 돼지고기에 찹쌀가루를 두 번 입힌다.
+- text: 가열된 팬에 옷입힌 돼지고기를 지진다.
+- text: 구운 돼지고기에 썰어둔 채소를 얹은 후 고기를 말아 소스와 곁들인다.

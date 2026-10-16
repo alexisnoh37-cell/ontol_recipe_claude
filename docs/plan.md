@@ -238,8 +238,8 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
 
 #### 5-3-1. 식품안전나라 레시피 가져오기 (D3 보완 2)
 
-1. `scripts/fetch_foodsafety.py`가 Open API(COOKRCP01)에서 원본을 내려받아 `data/external/foodsafety/raw/`에 저장한다. 인증키는 `.env`의 `FOODSAFETY_API_KEY`. 원본은 gitignore.
-2. `scripts/convert_foodsafety.py`가 원본을 레시피 YAML(`data/recipes_foodsafety/fs_<일련번호>.yaml`, gitignore)로 바꾼다. 로더(`data/recipes/`)와 골든셋에는 들어가지 않는다.
+1. `scripts/fetch_foodsafety.py`가 Open API(COOKRCP01)에서 원본을 내려받아 `data/external/foodsafety/raw/`에 저장한다. 인증키는 `.env`의 `FOODSAFETY_API_KEY`. 원본은 커밋한다(D3 보완 3).
+2. `scripts/convert_foodsafety.py`가 원본을 레시피 YAML(`data/recipes_foodsafety/fs_<일련번호>.yaml`, 커밋)로 바꾼다. 로더(`data/recipes/`)와 골든셋에는 들어가지 않는다.
    - `source: foodsafety`, `status: draft`, `confidence: low`, note에 출처(식품의약품안전처 식품안전나라, 일련번호)와 요리종류·조리방법 원문.
    - 재료: 재료정보(RCP_PARTS_DTLS)를 줄·쉼표(괄호 밖)로 나눠 `raw_text`에 원문을 두고, 양 앞까지의 이름이 별칭 색인과 정확히 일치할 때만 `ingredient`를 채운다. 나머지는 `null`(미매칭). `role`은 모두 `sub`(검수 때 정함).
    - 줄 나누기: HTML 태그(`<br>`), 줄 중간 대괄호(`[소스소개]`), 공백 사이 하이픈(` - `), `>`는 줄바꿈·머리말 구분으로 본다. 버리는 것은 머리말(고정 단어, 레시피 이름, 분량 "2인분 기준", "…재료")과 이름이 정확히 "물"인 항목(시드 규칙)뿐이다. 머리말이 아닌 소제목("두부구이 : 두부 70g"의 "두부구이")은 버리지 않고 따로 한 항목(미매칭)으로 남긴다.
@@ -349,8 +349,8 @@ api/             FastAPI (main.py, schemas.py, present.py: 이름·안내 문구
 app/             Streamlit (API를 HTTP로 호출)
 knowledge/       allergens.yaml, vocab.yaml, ingredients.yaml 또는 ingredients/*.yaml, substitutes.yaml, README.md
 data/recipes/    레시피 시드 YAML(레시피당 1파일)
-data/recipes_foodsafety/  (gitignore) 식품안전나라 변환 결과 draft YAML. 적재 대상 아님(5-3-1)
-data/external/foodsafety/raw/  (gitignore) 식품안전나라 API 원본 JSON
+data/recipes_foodsafety/  식품안전나라 변환 결과 draft YAML. 적재 대상 아님(5-3-1)
+data/external/foodsafety/raw/  식품안전나라 API 원본 JSON
 config/          weights.yaml, pantry_staples.yaml, engine.yaml(serve_draft_recipes 등 가중치 외 설정), display.yaml(화면 안내·면책 문구, 표시 전용)
 scripts/         compile_knowledge.py, validate_data.py, load_recipes.py, bench.py (얇은 CLI, 로직은 kb/·storage/)
 migrations/      Alembic

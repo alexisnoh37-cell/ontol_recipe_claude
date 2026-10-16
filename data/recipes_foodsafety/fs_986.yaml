@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_986
+title: 나스와 샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 986. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: egg
+  raw_text: 달걀 20g
+  role: sub
+- ingredient: null
+  raw_text: 완두콩 5g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 10g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 20g
+  role: sub
+- ingredient: null
+  raw_text: 레드어니언 10g
+  role: sub
+- ingredient: null
+  raw_text: 로메인 10g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 2g
+  role: sub
+- ingredient: null
+  raw_text: 블랙올리브 2g
+  role: sub
+- ingredient: basil
+  raw_text: 바질 1g
+  role: sub
+- ingredient: null
+  raw_text: 캔참치 20g
+  role: sub
+- ingredient: null
+  raw_text: 드래싱
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 2g
+  role: sub
+- ingredient: null
+  raw_text: 레드와인식초 2g
+  role: sub
+- ingredient: null
+  raw_text: 디존 머스타드 1g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 1g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕적당량
+  role: sub
+steps:
+- text: 달걀은 완숙으로 삶아 껍질을 벗긴 뒤 세로로 4등분하고 완두콩은 끓는 물에 삶아 찬물에 헹군 뒤 물기를 제거한다.
+- text: 오이는 1cm 주사위모양으로 썰고 양파는 링으로 슬라이스 하고 로메인은 먹기 좋게 뜯어 찬물에 담군다.
+- text: 토마토는 달걀과 같은 모양으로 자르고 홍고추는 어슷하게 썰고 참치는 덩어리가 있게 기름기를 뺀다.
+- text: 바질은 슬라이스하고 마늘은 다진다.
+- text: 볼에 올리브오일과 레드와인식초, 머스타드, 설탕, 다진마늘을 섞어 드레싱을 만든다.
+- text: 다른 볼에 준비해둔 야채들과 달걀, 참치를 넣고 드래싱을 끼얹어 버무린다.

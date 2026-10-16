@@ -2,7 +2,7 @@
 
     uv run python scripts/convert_foodsafety.py
       입력: data/external/foodsafety/raw/COOKRCP01.json
-      출력: data/recipes_foodsafety/fs_<일련번호>.yaml (gitignore, 기존 fs_*.yaml은 다시 만든다)
+      출력: data/recipes_foodsafety/fs_<일련번호>.yaml (커밋 대상 D3 보완 3, 기존 fs_*.yaml은 다시 만든다)
             docs/review/foodsafety_unmatched.md (미매칭 재료 빈도, 레시피별 미매칭 수)
 
 모든 레시피는 source: foodsafety, status: draft, confidence: low, cuisine: 미분류, role: sub.

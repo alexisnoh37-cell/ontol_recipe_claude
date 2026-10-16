@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3167
+title: 배물김치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3167. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: pear
+  raw_text: 배 30g
+  role: sub
+- ingredient: minari
+  raw_text: 미나리 1g
+  role: sub
+- ingredient: null
+  raw_text: 청홍고추 0.2g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 4g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 3g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 1g
+  role: sub
+steps:
+- text: 감자를 삶아 물과 함께 갈아 감자풀을 만든다.
+- text: 배는 나박썬다.
+- text: 청홍고추는 어슷썬다.
+- text: 미나리는 고추와 비슷한 크기로 썰어준다.
+- text: 준비된 재료에 감자 전분물, 설탕, 마늘, 생강을 넣고 섞어 물김치를 만든다.
+- text: 하루 정도 숙성시킨 다음 먹는다.

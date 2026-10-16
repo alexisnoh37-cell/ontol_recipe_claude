@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1012
+title: 돼지갈비 볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1012. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: pork_ribs
+  raw_text: 돼지갈비 60g
+  role: sub
+- ingredient: salt
+  raw_text: 굵은소금적당량
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 3g
+  role: sub
+- ingredient: null
+  raw_text: 생강다진것 2g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 10g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 25g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 5g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 3g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 적당량
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 적당량
+  role: sub
+steps:
+- text: 돼지갈비는 4cm 길이로 준비하여 기름기를 제거하고 찬물에 담가 핏물을 뺀다.
+- text: 1에 굵은 소금을 넣고 주물러 갈비를 연하게 한 뒤 소금을 씻어낸다.
+- text: 돼지갈비에 칼집을 넣은 뒤 대파, 마늘, 생강을 넣고 끓인 물에 데쳐서 헹군다.
+- text: 냄비에 기름을 두르고 데쳐낸 갈비를 볶다가 양념장을 붓고 뚜껑을 덮어 서서히 익히면서 볶는다.
+- text: 갈비에 간이 베이면 센불에서 저어주면서 윤기 나게 볶는다.
+- text: 접시에 얇게 썬 토마토를 깔고 볶아낸 돼지갈비를 담은 뒤 통깨를 뿌린다.

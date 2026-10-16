@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3575
+title: 소고기 김말이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3575. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(치맛살)(100g)
+  role: sub
+- ingredient: laver
+  raw_text: 김(6g(3장))
+  role: sub
+- ingredient: frying_mix
+  raw_text: 튀김가루(20g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(45g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 쪽파(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(12g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(4g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(12g)
+  role: sub
+- ingredient: null
+  raw_text: 깨(20g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추(3g)
+  role: sub
+steps:
+- text: 소고기는 키친타월로 핏물을 제거한다.
+- text: 다진 쪽파, 다진 마늘, 저염간장, 고춧가루, 깨(18g), 물(4ml)을 섞어 양념장을 만든다.
+- text: 튀김가루와 물(15ml)을 섞어 반죽을 만든다
+- text: 손질한 소고기는 후추로 밑간하여 한입 크기로 다지고 김 위에 올려 돌돌 말아 김말이를 만든다.
+- text: 김말이에 반죽을 묻히고 달군 팬에 식용유를 두르고 김말이를 앞뒤로 굽는다.
+- text: 접시에 담고 양념장, 깨를 올려 마무리한다.

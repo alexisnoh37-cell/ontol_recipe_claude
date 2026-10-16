@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_322
+title: 한식풍닭가슴살스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 322. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 280g
+  role: sub
+- ingredient: minari
+  raw_text: 미나리 50g
+  role: sub
+- ingredient: rice
+  raw_text: 쌀 50g
+  role: sub
+- ingredient: bok_choy
+  raw_text: 청경채 60g
+  role: sub
+- ingredient: null
+  raw_text: 무조림
+  role: sub
+- ingredient: radish
+  raw_text: 무 150g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 15g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 5g
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 15g
+  role: sub
+- ingredient: null
+  raw_text: 매실청 15g
+  role: sub
+- ingredient: perilla_oil
+  raw_text: 들기름 10g
+  role: sub
+- ingredient: null
+  raw_text: 다진양파 10g
+  role: sub
+- ingredient: null
+  raw_text: 검은깨 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 5g
+  role: sub
+steps:
+- text: 미나리는 데친 후 먹기 좋은 크기로 잘라서 밥을 해준다.
+- text: 닭가슴살에 밥을 넣고 말아서 오븐에 굽는다.
+- text: 무는 물에 익히고 고춧가루와 무조림 재료를 넣어 졸여준다.
+- text: 청경채는 데친 후 팬에 살짝 볶아준다.
+- text: 소스를 만들어준다.
+- text: 접시에 무조림을 깔고 닭가슴살 구이를 올리고 청경채와 함께 소스를 뿌려 완성한다.

@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1082
+title: 영유아를 위한 고소한 닭꼬치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1082. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(가슴살, 25g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(10g)
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드슬라이스(10g)
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨(2g)
+  role: sub
+- ingredient: null
+  raw_text: 흑임자(1g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.1g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.1g)
+  role: sub
+steps:
+- text: 닭가슴살은 10cm 길이로 얇게 자른다.
+- text: 닭가슴살에 소금, 후춧가루로 밑간을 한다.
+- text: 아몬드슬라이스를 잘게 다지고 흑임자, 참깨와 섞는다.
+- text: 닭가슴살에 3번을 묻힌다.
+- text: 팬에 식용유를 두르고 4번을 노릇하게 굽는다.
+- text: 꼬지에 꽂는다.

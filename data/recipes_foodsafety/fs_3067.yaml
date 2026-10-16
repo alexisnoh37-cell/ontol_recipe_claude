@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3067
+title: 배추된장국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3067. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: napa_cabbage
+  raw_text: 배추 20g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 30g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 20g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 10g
+  role: sub
+- ingredient: anchovy
+  raw_text: 다시멸치 5g
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 1g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 0.5g
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 0.5g
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 2g
+  role: sub
+- ingredient: null
+  raw_text: 쌀뜨물 60ml
+  role: sub
+steps:
+- text: 배추, 양파, 두부는 한입 크기로 썰고 대파와 청양고추는 어슷썰어 준비한다.
+- text: 전처리 후 남은 양파껍질, 대파뿌리와 다시멸치를 넣고 육수를 우린 후 거른다.
+- text: 두부는 끓는 물에 10분정도 넣어서 염분기를 빼준다.
+- text: 냄비에 참기름과 배추를 넣어 볶다가 쌀뜨물과 육수를 넣어 끓인다.
+- text: 두부와 양파, 대파, 고추를 넣는다.
+- text: 된장, 간마늘, 생강즙을 넣어 간을 맞춘다.

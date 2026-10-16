@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_972
+title: 서양식 씨리얼(뮤즐리)
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 972. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 오트밀 15g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 5g
+  role: sub
+- ingredient: yogurt
+  raw_text: 플레인 요거트 18g
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드 5g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 8g
+  role: sub
+- ingredient: raisin
+  raw_text: 건포도 4g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 30g
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피가루적당량
+  role: sub
+- ingredient: banana
+  raw_text: 바나나 10g
+  role: sub
+- ingredient: kiwi
+  raw_text: 키위 10g
+  role: sub
+steps:
+- text: 아몬드는 기름 두르지 않은 팬에 옅은 갈색이 나도록 볶는다.
+- text: 사과는 껍질을 제거하고 주사위모양으로 썬다.
+- text: 바나나와 키위는 껍질을 제거하고 사과와 같은 크기로 썬다.
+- text: 볼에 꿀, 플레인 요거트, 우유를 넣고 잘 섞는다.
+- text: 깨끗한 볼에 오트밀을 담고 4를 넣어 잘 섞어준다.
+- text: 5에 준비된 과일과 아몬드, 건포도를 올리고 기호에 따라 계피가루를 뿌린다.

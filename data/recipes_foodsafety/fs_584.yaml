@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_584
+title: 노른자크림 육회샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 584. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(홍두깨살, 150g)
+  role: sub
+- ingredient: null
+  raw_text: 두릅(100g)
+  role: sub
+- ingredient: null
+  raw_text: 아보카도(1/2개)
+  role: sub
+- ingredient: pear
+  raw_text: 배(1/4개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/8개)
+  role: sub
+- ingredient: cream_cheese
+  raw_text: 크림치즈(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+steps:
+- text: 소고기는 홍두깨살로 준비해서 0.3mm 두께로 썰고, 배는 껍질을 벗겨 채 썰어 설탕을 뿌린다.
+- text: 끓는 물에 소금을 넣고 두릅을 데친 후 찬물에 헹구어 건진다.
+- text: 소금과 설탕, 다진 마늘을 넣고 소고기 육회 양념장을 만든다.
+- text: 삶은 달걀노른자와 크림치즈, 레몬을 섞어 짤주머니에 담는다.
+- text: 숙성이 잘된 아보카도는 강판에 갈아 준비한다.
+- text: 접시에 양념한 육회와 두릅을 담고 그 위에 배를 올리고, 달걀크림과 아보카도를 짜서 올린다

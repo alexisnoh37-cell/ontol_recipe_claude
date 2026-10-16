@@ -1,0 +1,48 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3006
+title: 저염 겉절이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3006. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: napa_cabbage
+  raw_text: 배추(50g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(20g)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(5g)
+  role: sub
+- ingredient: ginger
+  raw_text: 다진생강(5g)
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨(1g)
+  role: sub
+- ingredient: null
+  raw_text: 저염소금(5g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(5g)
+  role: sub
+- ingredient: jeotgal
+  raw_text: 젓갈(3g)
+  role: sub
+steps:
+- text: 배추에 세로로 칼집을 낸 뒤 저염소금을 뿌리고, 10분 뒤 씻는다.
+- text: 무는 깨끗이 손질하여 씻은 뒤 얇게 채 썰고, 쪽파는 4cm 길이로 썰고, 양파는 채 썬다.
+- text: 볼에 참깨를 제외한 무, 쪽파, 양파, 다진 마늘, 다진 생강과 저염소금을 제외한 양념재료를 넣고 버무려 양념을 만든다.
+- text: 저염소금에 절여 씻은 배추를 김치 양념에 골고루 버무린다.
+- text: 참깨를 뿌려 마무리한다.

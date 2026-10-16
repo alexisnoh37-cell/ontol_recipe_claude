@@ -1,0 +1,73 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3002
+title: 돈수육, 해물냉채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3002. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(삼겹살) 100g
+  role: sub
+- ingredient: squid
+  raw_text: 오징어 15g
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우 15g
+  role: sub
+- ingredient: webfoot_octopus
+  raw_text: 주꾸미 25g
+  role: sub
+- ingredient: null
+  raw_text: 적파프리카 5g
+  role: sub
+- ingredient: null
+  raw_text: 황파프리카 5g
+  role: sub
+- ingredient: null
+  raw_text: 주황파프리카 5g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 5g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 5g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 5g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 10g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 10g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 10g
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 5g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 5g
+  role: sub
+- ingredient: null
+  raw_text: 겨자가루 5g
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 15g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추 15g
+  role: sub
+steps:
+- text: 냄비에 물, 대파, 생강, 마늘, 통후추, 맛술, 된장을 넣고 끓인다.
+- text: 1이 끓으면 삼겹살 덩어리를 넣고 35~40분 간 삶는다.
+- text: 새우, 오징어, 주꾸미는 모양을 내 데치고 파프리카와 오이, 당근, 양파는 가늘게 채 썬다.
+- text: 겨자가루를 개어 숙성시켜 설탕, 식초로 냉채 소스를 만든 뒤 3을 넣고 무친다.
+- text: 2의 삽겹살을 모양대로 썬다.
+- text: 수육과 해물냉채를 담는다.

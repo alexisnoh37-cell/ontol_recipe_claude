@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_869
+title: 낙지볶음면
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 869. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: small_octopus
+  raw_text: 낙지 20g
+  role: sub
+- ingredient: webfoot_octopus
+  raw_text: 쭈꾸미 20g
+  role: sub
+- ingredient: null
+  raw_text: 생면 80g
+  role: sub
+- ingredient: napa_cabbage
+  raw_text: 배추 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 13g
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯 13g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 13g
+  role: sub
+- ingredient: null
+  raw_text: 볶음소스
+  role: sub
+- ingredient: null
+  raw_text: 청피망 8g
+  role: sub
+- ingredient: null
+  raw_text: 홍피망 5g
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 15g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 13g
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 2g
+  role: sub
+- ingredient: null
+  raw_text: 매운고춧가루 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+steps:
+- text: 낙지와 쭈꾸미는 각각 소금물에 씻어 손질한다.
+- text: 낙지는 5cm 길이로 자른다.
+- text: 채소들은 각각 10cm 길이로 얇게 채 썬다.
+- text: 소스를 만든다.
+- text: 생면은 끓는 물에 데친다.
+- text: 가열된 팬에 식용유를 넣고 채소를 볶다가 면과 소스를 넣고 충분히 볶는다.

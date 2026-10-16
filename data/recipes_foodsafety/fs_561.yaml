@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_561
+title: 머스터드튤립치킨
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 561. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(날개, 8개)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(20g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리(5g)
+  role: sub
+- ingredient: mustard
+  raw_text: 머스터드(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(50g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/4개)
+  role: sub
+- ingredient: frying_mix
+  raw_text: 튀김가루(100g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.1g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추(0.01g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(400g)
+  role: sub
+steps:
+- text: 닭날개에 칼집을 넣고 뒤집어 튤립모양의 봉을 만든다.
+- text: 닭날개에 소금, 후춧가루로 밑간을 한다.
+- text: 파슬리는 곱게 다져 가루를 만든다
+- text: 양파, 마늘은 즙을 내서 튀김가루, 파슬리 가루와 함께 골고루 섞어 튀김반죽을 만든다.
+- text: 어린잎은 찬물에 담궈 건져 놓는다.
+- text: 튀긴 닭날개의 기름을 빼고 레몬과 어린잎으로 장식한다.

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1028
+title: 커리향이 들어간 치킨샐러드 샌드위치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1028. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 20g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 0.5g
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 2g
+  role: sub
+- ingredient: bread
+  raw_text: 식빵 40g
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드 3g
+  role: sub
+- ingredient: raisin
+  raw_text: 건포도 2g
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루 0.5g
+  role: sub
+- ingredient: null
+  raw_text: 레몬주스 2g
+  role: sub
+- ingredient: basil
+  raw_text: 바질약간
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량
+  role: sub
+steps:
+- text: 닭가슴살에 소금, 후추로 간을 한다.
+- text: 팬에 기름을 두르고 닭가슴살을 굽는다.
+- text: 구워 낸 닭가슴살을 다져서 볼에 담는다.
+- text: 올리브오일, 카레가루, 레몬주스, 건포도, 아몬드, 마요네즈를 3에 넣고 섞는다.
+- text: 식빵을 팬에 바삭하게 굽는다.
+- text: 식빵에 치킨 샐러드를 얹은 뒤 남은 식빵으로 덮고, 사방을 잘라낸다.

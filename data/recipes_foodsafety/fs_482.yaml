@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_482
+title: 냉파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 482. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: pasta
+  raw_text: 스파게티(100g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: beef
+  raw_text: 소고기(50g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(400g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+steps:
+- text: 스파게티는 약 10분 정도 삶아 건져 찬물에 헹궈 물기를 빼고 올리브오일을 발라 준비한다.
+- text: 소고기는 넓게 편으로 펴서 간장, 설탕, 마늘을 넣어 양념을 한다.
+- text: 양념된 소고기를 팬에 구워 냅킨위에 올려 기름을 빼놓는다.
+- text: 깻잎과 양파, 파프리카는 길게 채를 썰어 준비한다.
+- text: 팬에 기름을 넣고 팬이 뜨거울 때 양파를 넣어 재빠르게 볶아낸다.
+- text: 준비한 육수에 설탕과 식초, 저염간장을 넣어 차갑게 냉장보관하고, 그릇에 스파게티를 담고, 그 위에 볶은 양파와 깻잎, 파프리카와 구운 고기를 올린 후 차가운 육수를 부어 완성한다.

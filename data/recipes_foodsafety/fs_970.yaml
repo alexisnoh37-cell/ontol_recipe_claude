@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_970
+title: 생선살 완자 찹쌀 찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 970. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: glutinous_rice
+  raw_text: 찹쌀 30g
+  role: sub
+- ingredient: null
+  raw_text: 치자 5g
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 10g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: null
+  raw_text: 흰살생선 100g
+  role: sub
+- ingredient: null
+  raw_text: 흰 살생선 양념
+  role: sub
+- ingredient: null
+  raw_text: 달걀흰자 15g
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: null
+  raw_text: 흰후춧가루 적당량
+  role: sub
+- ingredient: null
+  raw_text: 전분 3g
+  role: sub
+steps:
+- text: 찹쌀을 깨끗이 씻어 40분 가량 치차 물에 불린 뒤 물기를 빼고 소금을 약간 넣어 버무리고 마른 면보로 옮겨 수분을 빼면서 반 정도 으깬다.
+- text: 시금치는 소금물에 데쳐 냉수에 헹군 뒤 물기를 짜서 다지고 당근도 잘게 다진다.
+- text: 흰 살 생선은 면보로 물기를 꼭 짠 다음 곱게 다지고 끈기가 생기도록 치대면서 생강즙, 소금, 후춧가루를 넣는다.
+- text: 3에 달걀 흰자, 전분을 첨가하여 계속 치대 끈기가 생기도록 한 뒤 다져놓은 시금치와 당근을 넣어 섞는다.
+- text: 4를 조금씩 떼어 생선 완자를 만든 뒤 1을 묻힌다.
+- text: 찜통에 젖은 면보를 깔고 생선 완자가 서로 붙지 않도록 놓고 20분 정도 찐다.

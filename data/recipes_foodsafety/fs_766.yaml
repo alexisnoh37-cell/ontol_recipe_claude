@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_766
+title: 바지락수제비볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 766. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 밀가루 50
+  role: sub
+- ingredient: manila_clam
+  raw_text: 바지락 100(바지락살 50)
+  role: sub
+- ingredient: onion
+  raw_text: 양파 20
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 5
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 5
+  role: sub
+- ingredient: scallion
+  raw_text: 실파 5
+  role: sub
+- ingredient: soybean_oil
+  raw_text: 콩기름 4
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 5
+  role: sub
+- ingredient: sesame_oil
+  raw_text: '참기름 2 양념장: 물 25'
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1.5
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1
+  role: sub
+- ingredient: null
+  raw_text: 매실액 1.5
+  role: sub
+- ingredient: null
+  raw_text: 피쉬소스 1
+  role: sub
+steps:
+- text: 밀가루에 물을 넣고 수제비 반죽을 만든다.
+- text: 반죽을 끓는 물에 떼어 넣어 익혀 체에 받쳐둔다.
+- text: 양파는 굵게 채 썰고 마늘은 편으로 청양고추는 어슷 썰고 실파는 송송 썬다.
+- text: 분량의 재료를 섞어 양념장을 만든다.
+- text: 팬에 기름을 두르고 마늘을 볶다 바지락과 맛술을 넣어 볶는다.
+- text: 양파, 청양고추를 넣어 볶은 뒤 양념장, 수제비, 참기름을 넣어 살짝 볶는다.

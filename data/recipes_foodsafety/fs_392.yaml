@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_392
+title: 토마토소고기찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 392. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 소고기우둔살 200g
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리 40g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 30g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 50g
+  role: sub
+- ingredient: wine
+  raw_text: 화이트와인 25g
+  role: sub
+- ingredient: null
+  raw_text: 홀토마토 100g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 20g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬 25g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루 2g
+  role: sub
+- ingredient: null
+  raw_text: 함초소금 1g
+  role: sub
+steps:
+- text: 당근, 양파, 샐러리는 사방 2cm 정도로 잘라준다.
+- text: 레몬은 껍질을 아주 곱게 채 썰어준다.
+- text: 소고기는 사방 3cm 정도로 자르고 흰 후추를 뿌려준다.
+- text: 홀토마토는 먹기 좋게 부수어 준 후 볶아준다.
+- text: 팬에 버터를 넣고 소고기부터 볶기 시작하다 채소를 넣고 볶아준다. 이 때 두꺼운 채소부터 볶아주는 것이 고기랑 익는 시간이 같아진다.
+- text: 마지막에 다져 놓은 홀토마토를 넣고 함초소금 으로 간을 한 후 레몬껍질을 올려서 마무리 한다.

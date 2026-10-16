@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_89
+title: 시금치 우유 소스와 그린매쉬드포테이토
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 89. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 그린매쉬드포테이토
+  role: sub
+- ingredient: potato
+  raw_text: 감자 80g(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 시금치우유 소스 5g(1작은술)
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드 2g(1알)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2g(1/3작은술)
+  role: sub
+- ingredient: null
+  raw_text: 크랜베리 3g
+  role: sub
+- ingredient: null
+  raw_text: 치커리 약간
+  role: sub
+- ingredient: null
+  raw_text: 시금치우유 소스
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 10g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 10g(2작은술)
+  role: sub
+steps:
+- text: 시금치는 끓는 소금물에 데쳐 찬물에 헹구어 물기를 짜고 우유를 넣고 블렌더에 곱게 갈아 체에 거른다.
+- text: 껍질 벗긴 감자는 찜기에 넣어 20분 정도 삶고 꺼내서 으깨고, 아몬드는 잘게 다지며, 치커리는 곱게 다진다.
+- text: 으깬 감자, 다진 치커리, 시금치 우유소스, 설탕을 넣고 섞어 접시에 담고 아몬드, 크랜베리를 올리고 시금치우유 소스를 곁들인다.

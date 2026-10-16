@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3092
+title: 계란만두&토마토소스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3092. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: eggplant
+  raw_text: 가지 7g
+  role: sub
+- ingredient: glass_noodles
+  raw_text: 당면 5g
+  role: sub
+- ingredient: egg
+  raw_text: 계란 75g(1.5개)
+  role: sub
+- ingredient: chive
+  raw_text: 부추 5g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 3g
+  role: sub
+- ingredient: null
+  raw_text: 토마토홀 30g
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎 1g
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리 1g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 3g
+  role: sub
+- ingredient: null
+  raw_text: 함초소금 0.5g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.5g
+  role: sub
+steps:
+- text: 당면은 물에 불리고, 물에 불린 당면과 가지, 부추, 양파를 다진다.
+- text: 계란은 잘 풀어 둔다.
+- text: 계란과 전처리한 야채, 후추를 넣고 골고루 섞는다.
+- text: 기름 두른 팬에 반죽을 지름이 10cm되는 타원형 모양으로 올리고, 반쯤 익으면 접어 납작 만두 모양을 만든다.
+- text: 토마토홀, 월계수잎, 함초소금을 끓여 소스를 만든다.
+- text: 완성된 계란만두에 소스를 끼얹고 파슬리로 장식한다.

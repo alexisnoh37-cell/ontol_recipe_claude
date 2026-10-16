@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3289
+title: 카레크림 두부면 파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3289. 요리종류 기타, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 콜리플라워(200g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(2개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(½개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3쪽)
+  role: sub
+- ingredient: soy_milk
+  raw_text: 무가당 두유(2컵)
+  role: sub
+- ingredient: null
+  raw_text: 두부면(1팩=100g)
+  role: sub
+- ingredient: basil
+  raw_text: 바질(3장)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(1Ts)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(1ts)
+  role: sub
+- ingredient: null
+  raw_text: 강황가루(2Ts)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(1ts)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(1ts)
+  role: sub
+steps:
+- text: 콜리플라워는 잘게 썰고, 양송이버섯과 양파는 3mm 두께로 채 썰고, 마늘(2쪽)은 납작 썬다.
+- text: 믹서에 잘게 썬 콜리플라워, 무가당 두유, 물(1컵), 마늘(1쪽)을 넣어 곱게 갈아 콜리플라워 크림을 만든다.
+- text: 중간 불로 달군 팬에 올리브유를 두른 뒤 다진 마늘을 볶고, 납작 썬 마늘, 양파, 양송이버섯을 넣어 양파가 숨이 죽을 때까지 볶는다.
+- text: 콜리플라워 크림을 넣은 뒤 끓어오르면 강황가루와 두부면을 넣어 골고루 섞는다.
+- text: 바질을 넣어 고루 섞고, 불을 끈 뒤 식초를 넣어 고루 섞는다.
+- text: 그릇에 카레크림 두부면 파스타를 담고, 파슬리가루를 뿌려 마무리한다.

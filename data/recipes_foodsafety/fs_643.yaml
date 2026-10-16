@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_643
+title: 간장소스를 곁들인 새우전복찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 643. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: abalone
+  raw_text: 전복(2개)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(3마리)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(30g)
+  role: sub
+- ingredient: null
+  raw_text: 해초(20g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/4개)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.1g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말(10g)
+  role: sub
+- ingredient: null
+  raw_text: 식용꽃(60g)
+  role: sub
+steps:
+- text: 전복은 수저로 떼어내어 소금으로 비벼 깨끗이 씻는다.
+- text: 시금치는 데쳐 다지고, 새우는 껍질을 벗겨 전복, 해초와 함께 다진다.
+- text: ?번을 잘 섞어 전복 껍질에 넣는다.
+- text: 찜통에 김이 오르면 속을 채운 전복 껍질을 넣고 약 10분 정도 찐다.
+- text: 저염간장, 레몬, 설탕, 다진마늘을 넣고 살짝 끓여 소스를 만든다.
+- text: 간장소스에 전분을 풀어 농도를 맞추고, 전복찜에 여러번 바르고 식용꽃을 올린다.

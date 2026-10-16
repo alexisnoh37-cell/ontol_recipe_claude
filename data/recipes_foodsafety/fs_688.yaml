@@ -1,0 +1,28 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_688
+title: 포도호두스무디
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 688. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 얼린포도알 80g
+  role: sub
+- ingredient: null
+  raw_text: 오미자액 15g
+  role: sub
+- ingredient: null
+  raw_text: 호상요구르트 30g
+  role: sub
+- ingredient: null
+  raw_text: 깐호두 5g
+  role: sub
+steps:
+- text: 포도를 씻는다.
+- text: 포도 껍질을 까고, 포도알을 떼어 낸다.
+- text: 포도알은 뚜껑이 있는 통에 담아 냉동고에 얼린다.
+- text: 얼린 포도알에 오미자액과 호상요구르트를 넣고 믹서에 갈아 스무디를 만든다.
+- text: 호두는 칼로 굵게 다진다.
+- text: 다진 호두는 스무디 위에 뿌린다.

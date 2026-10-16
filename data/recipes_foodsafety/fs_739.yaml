@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_739
+title: 꼬막떡꼬치구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 739. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: cockle
+  raw_text: 꼬막 60g(꼬막살 20g)
+  role: sub
+- ingredient: tteokbokki_rice_cake
+  raw_text: 떡볶이떡 40g 고추장 8g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: null
+  raw_text: 파 5g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 조청 3g
+  role: sub
+- ingredient: null
+  raw_text: 현미유 3g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2.5g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 1g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.5g
+  role: sub
+steps:
+- text: 떡볶이떡은 반으로 잘라 끓는 물에 데쳐 건진다.
+- text: 꼬막은 씻어 떡을 데친 끓는 물(잔열)에 살짝 삶아 건진 후 식으면 꼬막살을 뺀다.
+- text: 꼬치에 데친 떡과 꼬막살을 번갈아 가며 꽂는다.
+- text: 파와 양파는 다진다.
+- text: 고추장, 양파, 파, 다진 마늘, 조청, 간장, 고춧가루, 참기름을 넣어 고추장양념을 만든다.
+- text: 팬에 현미유를 조금 두르고 고추장양념을 볶다가 3의 꼬막떡꼬치에 고추장양념을 입힌 후 통깨를 뿌린다.

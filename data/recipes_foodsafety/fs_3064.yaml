@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3064
+title: 바지락맑은국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3064. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: manila_clam
+  raw_text: 바지락(60g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(20g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(5g)
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓(2g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(5g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(3g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(10g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(5g)
+  role: sub
+steps:
+- text: 물에 다시마, 청양고추, 대파, 한 입 크기로 썬 무를 넣고 끓인다.
+- text: 육수가 끓으면 청양고추와 다시마를 건진다.
+- text: 해감한 바지락을 넣고 끓인다.
+- text: 팽이버섯은 밑동을 자른 뒤 적당히 가르고, 홍고추는 어슷 썰고, 쑥갓은 먹기 좋은 크기로 썬다.
+- text: 국에 팽이버섯을 넣고 끓인다.
+- text: 홍고추와 쑥갓을 넣고 마무리한다.

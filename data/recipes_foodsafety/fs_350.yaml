@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_350
+title: 매생이찰범벅
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 350. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: milk
+  raw_text: 우유100g
+  role: sub
+- ingredient: null
+  raw_text: 매생이 20g
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀 15g
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박 50g
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤 30g
+  role: sub
+- ingredient: null
+  raw_text: 녹차소금 1g
+  role: sub
+- ingredient: anchovy_stock
+  raw_text: 멸치육수 150g
+  role: sub
+steps:
+- text: 찹쌀은 미리 불려준다.
+- text: 매생이는 물에 담가 짠기와 이물질을 빼준다.
+- text: 단호박은 작은 사각형으로 잘라 멸치육수에 데쳐준다.
+- text: 밤은 곱게 다져주어 고명으로 사용한다.
+- text: 우유와 육수를 섞은 뒤 찹쌀을 끓여준다.
+- text: 죽이 어느 정도 완성되면 데쳐낸 호박과 매생이를 넣어 범벅을 만들어준다.

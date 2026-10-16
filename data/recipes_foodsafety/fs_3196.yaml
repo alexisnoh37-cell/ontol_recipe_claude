@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3196
+title: 속이 든든든한 밥 빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3196. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 강력 쌀가루 240g
+  role: sub
+- ingredient: null
+  raw_text: 불린밥 100g
+  role: sub
+- ingredient: null
+  raw_text: 이스트 4g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 4g
+  role: sub
+- ingredient: null
+  raw_text: 코코넛 오일 12g
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박 700g
+  role: sub
+- ingredient: corn
+  raw_text: 옥수수 100g
+  role: sub
+steps:
+- text: (속재료) 익혀 낸 단호박과 옥수수 알을 섞어준다.
+- text: 쌀가루, 소금, 불린 밥, 물을 넣고 한 덩어리가 되게 반죽한 다음 코코넛 오일을 넣고 부드러워질 때까지 반죽한다.
+- text: '"반죽의 크기가 두 배가 될 때까지 발효한다. ★손으로 반죽을 눌렀을 때 자국이 남아 있으면 발효가 잘 된 거예요."'
+- text: 반죽을 얇은 직사각형(크기 약 35cm ×28cm, 두께 약 0.5cm )으로 밀어 위에 속재료를 바르고 말아준다.
+- text: 말린 반죽을 약 4cm 크기로 잘라 머핀틀에 넣어 틀에 꽉 찰때까지 발효한다.
+- text: 위에 우유를 발라 윗불 180℃, 아랫불 160℃ 예열된 오븐에 20~25분 굽는다.

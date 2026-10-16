@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_966
+title: 배추 달걀볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 966. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: napa_cabbage
+  raw_text: 배추 50g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 30g
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기 20g
+  role: sub
+- ingredient: null
+  raw_text: 파 3g
+  role: sub
+- ingredient: null
+  raw_text: 생강다진것 2g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: null
+  raw_text: 목이버섯 10g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 10g
+  role: sub
+- ingredient: null
+  raw_text: 물전분 10g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 3g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 배추는 잎을 떼서 크게 썬 다음 3cm 길이로 결대로 찢는다.
+- text: 기름을 넣어 가열 된 팬에 배추를 넣고 살짝 볶아 낸 후 수분을 제거한다.
+- text: 달걀을 풀어 팬에 익힌다.
+- text: 채 썬 돼지고기를 팬에 볶고 파, 다진 생강, 간장을 넣고 다시 볶는다.
+- text: 4에 목이버섯, 배추, 달걀을 넣고 잘 섞는다.
+- text: 5에 육수, 소금, 물전분을 넣는다.

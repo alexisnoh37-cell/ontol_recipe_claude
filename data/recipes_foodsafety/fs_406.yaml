@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_406
+title: 울금해초밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 406. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 울금가루 15g
+  role: sub
+- ingredient: rice
+  raw_text: 쌀 50g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 5g
+  role: sub
+- ingredient: null
+  raw_text: 건조미역줄기 10g
+  role: sub
+- ingredient: null
+  raw_text: 맛장
+  role: sub
+- ingredient: miso
+  raw_text: 일본된장 15g
+  role: sub
+- ingredient: null
+  raw_text: 다진양파 15g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 50g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 3g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 2g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 15g
+  role: sub
+steps:
+- text: 쌀은 세척 후 울금물에 불려준다.
+- text: 두부를 으깨서 수분을 빼준다.
+- text: 쌈장을 맛장으로 만들어준다.
+- text: 건조 미역줄기는 세척해 불린다. 이때 불리고 나온 물을 이용해 밥을 한다.
+- text: 올리브오일로 쌀을 볶아주다 미역줄기를 넣고 밥을 한다.
+- text: 두부 맛장과 함께 곁들여 완성한다.

@@ -1,0 +1,79 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3266
+title: 방아잎 닭고기말이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3266. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: asparagus
+  raw_text: 아스파라거스(2개)
+  role: sub
+- ingredient: null
+  raw_text: 닭다릿살(400g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(4개)
+  role: sub
+- ingredient: null
+  raw_text: 방아잎(⅓줌=30g)
+  role: sub
+- ingredient: null
+  raw_text: 파르메산 치즈(1Ts)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(0.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 맛간장(2Ts)
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣(1Ts)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3쪽)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(⅔컵)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(1컵)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(½개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(½개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(4쪽)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(½대)
+  role: sub
+- ingredient: yogurt
+  raw_text: 플레인 요거트(½컵)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(0.5ts)
+  role: sub
+- ingredient: null
+  raw_text: 무가당 아보카도 마요네즈(2Ts)
+  role: sub
+- ingredient: null
+  raw_text: 파르메산 치즈(1Ts)
+  role: sub
+- ingredient: null
+  raw_text: 스테이크 시즈닝(1ts)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(약간)
+  role: sub
+steps:
+- text: 아스파라거스는 두꺼운 밑동을 잘라내고, 방아잎은 깨끗이 씻어 물기를 제거한다.
+- text: 믹서에 방아잎 페스토 재료를 넣어 곱게 갈고, 요거트 소스 재료를 모두 섞는다.
+- text: 닭다릿살을 넓게 편 뒤 방아잎 페스토 (4Ts)를 올리고, 파르메산 치즈를 올린 뒤 스테이크 시즈닝과 파슬리가루를 넣어 돌돌 말고, 풀리지 않도록 실로 묶는다.
+- text: 중간 불로 달군 팬에 식용유를 두르고, 돌돌 만 닭다릿살을 넣어 5분간 튀기듯 굽는다.
+- text: 같은 팬에 아스파라거스와 방울토마토를 넣어 2분간 볶는다.
+- text: 그릇에 구운 닭다릿살과 아스파라거스, 방울토마토를 올리고 요거트 소스를 곁들여 마무리한다.

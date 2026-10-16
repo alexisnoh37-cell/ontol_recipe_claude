@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_843
+title: 녹차 파나코타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 843. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 녹차가루 6g
+  role: sub
+- ingredient: null
+  raw_text: 판젤라틴 5.3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 32g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 30g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 55.7g
+  role: sub
+- ingredient: null
+  raw_text: 바닐라에센스 0.1g
+  role: sub
+- ingredient: null
+  raw_text: 통조림단팥장식용
+  role: sub
+- ingredient: null
+  raw_text: 민트장식용
+  role: sub
+steps:
+- text: 볼에 물을 담고 판 젤라틴을 넣어 3분 가량 불린 뒤 건진다.
+- text: 냄비에 녹차가루와 소량의 물을 넣고 진하게 섞는다.
+- text: 2에 우유와 크림, 설탕, 바닐라 에센스를 넣고 약한 불에서 설탕이 녹을 정도로 끓인다.
+- text: 3에 불린 젤라틴을 넣고 젤라틴이 녹을 때까지 가열한다.
+- text: 용기에 녹차 파나코타를 부은 후 실온에서 식힌다.
+- text: 냉장고에서 한번 더 식혀 완성한다.

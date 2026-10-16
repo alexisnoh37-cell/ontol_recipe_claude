@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_722
+title: 표고버섯쇠고기찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 722. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: shiitake
+  raw_text: 표고버섯 30g
+  role: sub
+- ingredient: null
+  raw_text: 다진 쇠고기 등심 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 3g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 2.5g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 1.25g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: null
+  raw_text: 말린 청양고추 0.5g
+  role: sub
+steps:
+- text: 표고버섯의 기둥을 떼 낸다.
+- text: 버섯 기둥과 양파, 대파는 다진다.
+- text: 말린 고추는 으깨준다.
+- text: 고기에 2, 3과 나머지 양념을 넣어 잘 치댄다.
+- text: 표고버섯에 양념한 고기를 채운다.
+- text: 찜기에 젖은 면보를 깔고 10분간 쪄 낸다.

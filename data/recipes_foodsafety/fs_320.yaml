@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_320
+title: 녹차귀리라떼
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 320. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: broccoli
+  raw_text: 브로콜리 60g
+  role: sub
+- ingredient: null
+  raw_text: 귀리 30g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 250ml
+  role: sub
+- ingredient: milk
+  raw_text: 우유150ml
+  role: sub
+- ingredient: null
+  raw_text: 녹차가루 10g
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드슬라이스 20g
+  role: sub
+- ingredient: butter
+  raw_text: 무염버터 5g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 3g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.5g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 50ml
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 50ml
+  role: sub
+- ingredient: null
+  raw_text: 다진양파 15g
+  role: sub
+steps:
+- text: 귀리는 불려준 뒤 닭육수에 삶아준다.
+- text: 브로콜리는 잘 손질하여 잘게 썰어 놓는다.
+- text: 양파는 채 썰어 버터로 볶다가 1의 브로콜리와 귀리, 아몬드슬라이스를 넣고 같이 볶아준다.
+- text: 어느 정도 볶아지면 우유를 넣고 다시 한 번 볶아준다.
+- text: 닭육수를 넣고 귀리가 익을 때 까지 푹 익힌 후 믹서에 갈아 체에 걸러준다.
+- text: 마지막으로 생크림을 넣고 농도를 조절하고 녹차가루를 올려 완성한다.

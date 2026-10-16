@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3200
+title: 검은콩 크림빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3200. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 강력분 300g
+  role: sub
+- ingredient: null
+  raw_text: 이스트 8g
+  role: sub
+- ingredient: null
+  raw_text: 호밀가루 50g
+  role: sub
+- ingredient: null
+  raw_text: 검은콩가루 24g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 4g
+  role: sub
+- ingredient: walnut
+  raw_text: 호두 50g
+  role: sub
+- ingredient: null
+  raw_text: 크랜베리 24g
+  role: sub
+- ingredient: null
+  raw_text: 불린 검은콩 300g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 200g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 50g(1개)
+  role: sub
+- ingredient: salt
+  raw_text: 소금 3g
+  role: sub
+steps:
+- text: (속재료) 물에 불린 검은 콩을 30-40분 정도 삶은 다음 콩과 물을 분리시켜 식힌다. 식은 검은콩에 우유, 계란, 소금을 넣고 믹서에 갈고 끓여 검은콩 크림을 만든다. 이때 검은콩 물로 농도를 맞춘다.
+- text: 호두, 크랜베리를 제외한 모든 재료를 섞어 한 덩어리가 되면 호두와 크랜베리를 넣어 밖으로 빠져 나오지 않게 잘 넣어가며 반죽한다.
+- text: 처음 부피의 2배 정도 부풀게 1차 발효를 하고 발효가 끝나면 반죽을 6개로 분할하여 둥글리기하여 중간 발효한다.
+- text: 중간 발효한 반죽을 공기를 빼주고 양끝을 접어 바게트 모양으로 만들어 주고 팬에 3개씩 팬닝한다.
+- text: '"윗불 180℃, 아랫불 160℃에서 약 20-30분정도 구워 준 뒤 냉각팬에 옮겨 식힌다. ★팬에 크기에 따라 2회로 나눠 구워요."'
+- text: 식은 빵을 반으로 갈라 검은콩크림을 넣는다.

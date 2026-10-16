@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_358
+title: 고등어카레탕수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 358. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 냉동고등어 300g
+  role: sub
+- ingredient: null
+  raw_text: 전분가루 50g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 200g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 200g
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루 20g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 50g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 25g
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 25g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 20g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 25g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 15g
+  role: sub
+steps:
+- text: 냉동고등어는 먹기 좋은 크기로 잘라 전분을 묻혀 기름에 두 번 튀겨준다.
+- text: 애호박, 방울토마토, 사과는 적당한 크기로 잘라준다.
+- text: 감자와 양파는 적당한 크기로 자른 뒤 물 1컵 에 감자를 먼저 넣고 끓여주다 양파를 넣고 끓여 단맛을 내준다.
+- text: 우유에 카레가루를 섞어 불려준 뒤 끓고 있는 감자에 넣어준다.
+- text: 튀겨진 고등어를 키친타월을 이용해 기름을 빼준다.
+- text: 카레가 완성되면 사과, 방울토마토, 꿀을 넣어주고 튀겨 놓은 고등어에 뿌려 완성한다.

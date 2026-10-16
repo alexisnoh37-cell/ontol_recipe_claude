@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1034
+title: 가지볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1034. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: eggplant
+  raw_text: 가지 70g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 0.5g
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 2g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 2g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.5g
+  role: sub
+- ingredient: perilla_oil
+  raw_text: 들기름 2g
+  role: sub
+steps:
+- text: 가지를 깨끗하게 씻는다.
+- text: 가지를 1x1x4cm 크기로 자른다.
+- text: 생강을 곱게 다진다.
+- text: 다진 생강과 고추장, 물엿, 통깨를 섞어 양념장을 만든다.
+- text: 팬에 들기름을 넣고 센불에서 가지를 볶는다.
+- text: 가지가 다 볶아지면 양념장을 넣고 섞일 정도로만 볶는다.

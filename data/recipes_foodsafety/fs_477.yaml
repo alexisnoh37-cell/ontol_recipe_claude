@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_477
+title: 수삼떡갈비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 477. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: ground_beef
+  raw_text: 다진소고기(100g)
+  role: sub
+- ingredient: null
+  raw_text: 수삼(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.05g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(10g)
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루(10g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이(50g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(20g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(2g)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(5g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(100g)
+  role: sub
+steps:
+- text: 수삼은 뇌두를 제거하고 양파와 대파, 마늘과 함께 다진다
+- text: 다진 소고기에 다진 재료(①)와 간장, 후춧가루, 정종, 찹쌀가루를 넣어 골고루 섞는다.
+- text: 대추는 씨를 제거하고 채를 썰어 곁들임채소로 준비하고, 새송이는 길이로 썰어 갈비뼈 모양으로 만들어 놓는다.
+- text: 양념이 된 소고기(②)를 새송이(③)에 감싸듯 타원형 모양으로 떡갈비를 만든다.
+- text: 만들어 놓은 떡갈비를 팬에 은근히 익힌다.
+- text: 간장과 올리고당, 설탕, 육수를 넣고 섞어가며 바글바글 끓인 뒤, 익힌 떡갈 비(⑤)를 넣고 살짝 졸인 후 접시에 담고, 그 위에 통깨를 살짝 뿌리고, 대추채(③)와 어린잎을 곁들임채소로 올려 완성한다.

@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_637
+title: 인삼떡갈비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 637. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(100g)
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기(100g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(3알)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(1/4개)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(1/2개)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(1/4개)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(50g)
+  role: sub
+- ingredient: null
+  raw_text: 인삼(1뿌리)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이(5개)
+  role: sub
+- ingredient: null
+  raw_text: 배추잎(5장)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.01g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(50g)
+  role: sub
+steps:
+- text: 대추는 돌려 깍아 씨를 제거 하고 곱게 다진다.
+- text: 다진 소고기와 돼지고기에 대추와 소금 후춧가루를 넣고 치댄다.
+- text: 애호박과 단호박, 파프리카는 입자있게 썰어 ?에 넣고 잘 치댄다.
+- text: 양송이는 편으로 썰어 팬에 익히고, 인삼을 뇌두를 자르고 깨끗이 씻어 팬에 볶아 잘게 썰어 ?에 넣는다.
+- text: 재료가 골고루 섞인 떡갈비를 갈비 모양으로 만든다.
+- text: 떡갈비를 팬에 굽고, 접시에 배춧잎을 깔고 익힌 양송이를 올리고 떡갈비를 담는다.

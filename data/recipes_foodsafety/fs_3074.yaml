@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3074
+title: 단호박함박스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3074. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기 30g
+  role: sub
+- ingredient: beef
+  raw_text: 소고기 20g
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 1g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 7g
+  role: sub
+- ingredient: egg
+  raw_text: 계란20g
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루 5g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 50ml
+  role: sub
+- ingredient: soybean_oil
+  raw_text: 콩기름 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.4g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.1g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 3g
+  role: sub
+steps:
+- text: 단호박은 쪄서 속을 파내고, 우유와 올리고당을 넣고 끓여 소스를 만든다.
+- text: 소고기, 돼지고기, 양파, 마늘, 당근은 모두 잘게 다진다.
+- text: ②에 빵가루, 달걀, 소금, 후추를 넣고 치댄다.
+- text: 치댄 반죽을 둥글고 납작하게 만들어 준다.
+- text: 팬에 기름을 두르고 노릇하게 굽는다.
+- text: 함박스테이크에 단호박 크림소스를 부어 제공한다.

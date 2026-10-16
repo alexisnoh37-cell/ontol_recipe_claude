@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_114
+title: 닭가슴살 브로콜리 만두
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 114. 요리종류 일품, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: dumpling_wrapper
+  raw_text: 만두피 4g(2장)
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리 100g(1/4개)
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주 100g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 20g(2개)
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭 가슴살 100g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2g(1/2작은술)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장 4g(1작은술)
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.5g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.1g
+  role: sub
+steps:
+- text: 브로콜리, 숙주, 표고버섯, 닭 가슴살은 다지고 다진 닭 가슴살은 소금과 후추로 밑간 한다.
+- text: 다진 채소와 닭가슴살, 참기름, 저염간장을 섞어 만두소를 만든다.
+- text: 준비한 만두피에 만두소를 넣은 후 만두 모양으로 빚고 만두를 찜통에 넣어 찌고 그릇에 담는다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_577
+title: 참깨흑임 자연두부샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 577. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: tofu
+  raw_text: 연두부(100g)
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨(20g)
+  role: sub
+- ingredient: null
+  raw_text: 흑임자(20g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(50g)
+  role: sub
+- ingredient: null
+  raw_text: 무순(10g)
+  role: sub
+- ingredient: null
+  raw_text: 날치알(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(30g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(30g)
+  role: sub
+steps:
+- text: 참깨와 흑임자를 섞어 곱게 간다.
+- text: 갈아 놓은 참깨와 흑임자에 설탕과 식초를 넣고 섞는다.
+- text: 2번에 우유와 마요네즈를 넣고 골고루 섞어 참깨 흑임자 드레싱을 만든다.
+- text: 연두부는 동그랗게 자른다.
+- text: 파프리카는 채 썬다.
+- text: 접시에 드레싱, 연두부, 파프리카, 무순, 날치알 순으로 올린다.

@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1014
+title: 밀라노 스타일 포크 커틀렛
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1014. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: pork_loin
+  raw_text: 돼지등심 60g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 4g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 12g
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루 4.5g
+  role: sub
+- ingredient: basil
+  raw_text: 바질 0.5g
+  role: sub
+- ingredient: null
+  raw_text: 건타임 0.5g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 0.5g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 1g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬 5g
+  role: sub
+- ingredient: parmesan
+  raw_text: 파마산치즈 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 적당량
+  role: sub
+steps:
+- text: 돼지고기(등심)을 고기망치로 두드려 1cm 정도 두께로 편다.
+- text: 돼지등심에 소금, 후추로 간을 한다.
+- text: 파마산치즈, 빵가루, 건바질, 타임을 섞어 허브 빵가루를 만든다.
+- text: 고기에 밀가루, 달걀물, 허브 빵가루 순으로 묻힌다.
+- text: 가열한 팬에 기름을 두르고 커틀렛을 익힌다.
+- text: 커틀렛이 익으면 기름을 빼고 그릇에 담는다.

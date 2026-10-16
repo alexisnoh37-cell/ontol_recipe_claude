@@ -1,0 +1,60 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_287
+title: 된장냉국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 287. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 가다랑어포(5g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(5g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(1g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 무(50g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(1g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: null
+  raw_text: 된장양념 콩가루(1g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(1.5g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(2g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 대파(0.5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(0.5g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 양파(0.5g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 청양고추(1g)
+  role: sub
+- ingredient: null
+  raw_text: 저염된장(1g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(3g)
+  role: sub
+steps:
+- text: 냄비에 육수 재료를 넣어 20분간 끓인 뒤 불을 끄고 가다랑어포를 넣어 10분간 우려 체에 걸러 차갑게 식힌다.
+- text: 된장양념을 만든다.
+- text: 오이와 깻잎은 채 썬다.
+- text: 식힌 육수에 된장양념을 푼다.
+- text: 채 썬 오이와 깻잎을 올려 마무리한다.

@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_467
+title: 단호박피자
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 467. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: ground_beef
+  raw_text: 다진 소고기(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술(10g)
+  role: sub
+- ingredient: null
+  raw_text: 미니단호박(120g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: null
+  raw_text: 청피망(20g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: bacon
+  raw_text: 베이컨(20g)
+  role: sub
+- ingredient: ham
+  raw_text: 햄(20g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모짜렐라치즈(20g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(0.5g)
+  role: sub
+steps:
+- text: 다진 소고기에 다진마늘, 소금, 후춧가루, 맛술을 넣고 잘 섞어 숙성을 시킨다.
+- text: 미니 단호박을 반으로 잘라 속을 파낸 뒤 약 15분 정도 쪄서 호박 속을 긁는다.
+- text: 긁어 놓은 호박 속에 생크림을 넣어 골고루 섞는다.
+- text: 양송이와 양파, 당근, 베이컨, 햄은 사각지게 썰고, 피망과 파프리카는 속을 제거하고 사각지게 썰어 놓는다.
+- text: 재워놓은 소고기(①)와 베이컨, 햄을 올리브기름에 볶다가 썰어 놓은 채소를 넣어 함께 볶아 준비한다.
+- text: 속 파낸 단호박(②)에 준비해둔 호박속 (③)과 볶아놓은 햄과 채소(⑤)를 담고, 모짜렐라치즈를 올려 오븐에 약 5분 정도 구운 뒤 파슬리가루를 살짝 뿌려 완성한다.

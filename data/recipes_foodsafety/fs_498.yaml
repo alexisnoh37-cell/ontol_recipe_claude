@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_498
+title: 바지락실곤약파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 498. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: manila_clam
+  raw_text: 바지락(100g)
+  role: sub
+- ingredient: null
+  raw_text: 브로컬리(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(2g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(10g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(5g)
+  role: sub
+- ingredient: null
+  raw_text: 실곤약(100g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.1g)
+  role: sub
+- ingredient: null
+  raw_text: 곁들임채소
+  role: sub
+- ingredient: null
+  raw_text: 어린싹(10g)
+  role: sub
+steps:
+- text: 끓는 물에 바지락을 넣고, 바지락이 입을 벌릴 때 까지 삶는다.
+- text: 삶아진 바지락을 채에 밭쳐 바지락 국물을 만들어 놓는다.
+- text: 브로컬리는 끓는 물에 소금을 조금 넣어 데쳐 찬물에 헹구어 잘라놓고, 마늘은 편으로 썰고, 파프리카는 채를 썰고, 청양고추는 어슷썰어 놓는다.
+- text: 팬에 올리브 오일을 조금 넣고 마늘과 청양고추를 먼저 볶는다.
+- text: 볶아지는 팬에 바지락과 브로컬리를 넣고 볶는다.
+- text: 볶아지는 팬에 바지락 국물을 넣어 졸이다가 실곤약과 파프리카, 후춧 가루를 넣고, 한 번 더 졸여 완성한다.

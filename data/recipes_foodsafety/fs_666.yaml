@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_666
+title: 오이냉국을 곁들인 오색쌈밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 666. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(안심, 100g)
+  role: sub
+- ingredient: rice
+  raw_text: 쌀(200g)
+  role: sub
+- ingredient: bellflower_root
+  raw_text: 도라지(30g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(1/2개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(1개)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(20g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(50g)
+  role: sub
+- ingredient: null
+  raw_text: 청포묵(20g)
+  role: sub
+- ingredient: null
+  raw_text: 쌈무(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: null
+  raw_text: 라이스페이퍼(5장)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(10g)
+  role: sub
+steps:
+- text: 쌀은 깨끗이 씻어 30분 정도 불려 밥을 짓는다.
+- text: 달걀을 풀어 소금을 넣고 지단을 만들어 채썬다.
+- text: 도라지, 애호박, 양파, 홍고추는 채를 썰어 소금에 살짝 절여 볶고, 청포묵은 채를 썰어 참기름에 버무린다.
+- text: 돼지 안심은 소금, 후춧가루로 양념 한 뒤 팬에 익힌다.
+- text: 찬물에 식초, 설탕, 소금을 넣고 채 썬 오이를 넣어 냉국을 만든다.
+- text: 고추장에 고춧가루를 섞어 쌈밥장을 만들고, 라이스페이퍼를 물에 담궈 건져 밥과 준비한 야채, 달걀지단, 쌈무, 쌈밥장을 올려 돌돌 말고 데친 미나리로 묶는다.

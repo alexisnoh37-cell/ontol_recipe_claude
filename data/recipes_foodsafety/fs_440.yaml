@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_440
+title: 리코타치즈돈가스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 440. 요리종류 일품, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: pork_loin
+  raw_text: 돼지등심(120g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.03g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(10g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(200g)
+  role: sub
+- ingredient: null
+  raw_text: 리코타치즈
+  role: sub
+- ingredient: milk
+  raw_text: 우유(50g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(10g)
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모짜렐라치즈(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(30g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(20g)
+  role: sub
+- ingredient: ketchup
+  raw_text: 케첩(20g)
+  role: sub
+- ingredient: tonkatsu_sauce
+  raw_text: 돈가스소스(20g)
+  role: sub
+steps:
+- text: 돼지등심을 넓게 피고 소금과 후춧가루 올리브오일을 발라 숙성시킨다.
+- text: 우유를 끓이다가 레몬즙을 넣고 몽글 거리면, 소창에 걸러 리코타치즈를 만든다.
+- text: 양파와 토마토, 마늘, 사과는 입자있게 다져 케첩을 섞어준다.
+- text: 숙성시킨 등심에 리코타치즈를 올려준다.
+- text: 리코타치즈를 올린 등심에 다시 모짜렐 라치즈를 넣고 등심을 다시 위에 올려, 밀가루와 달걀물, 빵가루 순서로 입힌 뒤 튀김온도 170~180℃에 약 3분 정도 튀겨 기름을 빼 놓는다.
+- text: 냄비에 준비해 놓은 소스(③)를 넣고 볶다가 돈가스 소스를 넣고 다시 한 번 더 끓인 후 튀겨놓은 리코타돈가스(⑤)에 곁들여 완성한다.

@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_338
+title: 단호박약식
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 338. 요리종류 밥, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 미니 단호박 250g
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀 100g
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤 40g
+  role: sub
+- ingredient: jujube
+  raw_text: 대추 18g
+  role: sub
+- ingredient: null
+  raw_text: 크린베리 10g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 15g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 10g
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피가루 5g
+  role: sub
+steps:
+- text: 단 호박은 속을 파 준다.
+- text: 찹쌀은 물에 불려준다.
+- text: 밤은 먹기 좋게 잘라서 물에 담가준다.
+- text: 대추는 씨를 제거하고 먹기 좋게 잘라준다.
+- text: 양념장을 만들어 먼저 쌀과 밤을 재워준 후 찰밥을 만든다.
+- text: 단호박 속에 찰밥을 넣어서 찜기에 쪄준다.

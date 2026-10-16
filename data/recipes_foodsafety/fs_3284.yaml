@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3284
+title: 닭가슴살 채소쌈
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3284. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: iceberg_lettuce
+  raw_text: 양상추(3장)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(¼개)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(중간 크기 1개)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(2개)
+  role: sub
+- ingredient: null
+  raw_text: 할라피뇨 피클(10개)
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(270g)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(1개)
+  role: sub
+- ingredient: null
+  raw_text: 라이스페이퍼(7장)
+  role: sub
+- ingredient: yogurt
+  raw_text: 플레인 요거트(1컵)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3~4쪽)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(½대)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.5ts)
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루(1Ts)
+  role: sub
+steps:
+- text: 양상추는 채 썰고, 양파와 토마토는 작게 한입 크기로 썰고, 청양고추와 할라피뇨 피클은 잘게 다진다.
+- text: 냄비에 물(10컵), 닭가슴살, 닭가슴살 삶는 재료와 후춧가루(0.3ts)를 넣어 7분 정도 삶은 뒤 건져 얇게 찢는다.
+- text: 호박은 4조각으로 잘라 씨를 제거하고, 찜기에 물(1컵)을 넣어 쪄내고, 껍질을 벗긴 뒤 물(1컵)을 부어가며 으깬다.
+- text: 약한 불로 달군 팬에 으깬 단호박, 닭가슴살, 다진 청양고추, 카레가루, 후춧가루(0.2ts)를 넣어 수분이 날아갈 때까지 볶는다.
+- text: 팬에 식용유(2컵)를 부은 뒤 중간 불로 예열하고, 라이스페이퍼를 넣어 튀긴 뒤 바로 건져낸다.
+- text: 튀긴 라이스페이퍼에 단호박 볶음과 손질한 채소, 플레인 요거트를 올려 마무리한다.

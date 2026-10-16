@@ -1,0 +1,28 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_793
+title: 팥죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 793. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: red_bean
+  raw_text: 팥 40g
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루 30g
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀 10g
+  role: sub
+- ingredient: null
+  raw_text: 설탕기호에따라
+  role: sub
+steps:
+- text: 찹쌀을 씻어 불린다.
+- text: 팥을 씻어서 건진 후 잠길 만큼 물을 붓고 끓인다.
+- text: 검붉은 물이 우러나오면 제거하고 팥 분량의 3배 정도 물을 넣어서 완전히 뭉그러질 때까지 끓인다.
+- text: 찹쌀가루는 끓는 물로 익반죽하여 1.5cm 가량의 찹쌀경단을 빚는다.
+- text: 삶은 팥을 손으로 주무른 다음 체에 거르고 앙금을 가라앉도록 하여 웃물을 먼저 끓으면 불린 찹쌀을 넣고 퍼질 때 까지 끓인다.
+- text: 앙금과 찹쌀경단을 차례로 넣고 끓인 뒤 경단이 떠오르면 2~3분 더 끓여 완성한다.(설탕이나 꿀은 기호에 따라 사용한다.)

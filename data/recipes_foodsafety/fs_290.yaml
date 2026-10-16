@@ -1,0 +1,51 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_290
+title: 샤브된장국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 290. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 우삼겹(50g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(7.5g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(20g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(20g)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파(10g)
+  role: sub
+- ingredient: null
+  raw_text: 송송 썬 청양고추(3g)
+  role: sub
+- ingredient: null
+  raw_text: 송송 썬 붉은 고추(3g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 닭가슴살(50g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 저염된장(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(5g)
+  role: sub
+steps:
+- text: 물(600g)에 육수 재료를 넣고 15분간 센 불에 끓인 후 10분간 약한 불로 끓여 육수를 만든다.
+- text: 우삼겹을 펼쳐 깔고 그 위에 깻잎, 느타리버섯, 팽이버섯 순으로 올린다.
+- text: 돌돌 말고 쪽파로 묶어 고정시킨다.
+- text: 육수에 저염된장을 풀고 다진 마늘을 넣은 뒤 청양고추와 돌돌 만 고기를 넣고 약한 불에 살짝 익힌다.
+- text: 그릇에 담은 뒤 붉은 고추를 올려 마무리한다.

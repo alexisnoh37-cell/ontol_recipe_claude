@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3215
+title: 곤약 가스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3215. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 냉동 곤약(200g)
+  role: sub
+- ingredient: null
+  raw_text: 채 썬 양파(50g)
+  role: sub
+- ingredient: null
+  raw_text: 납작 썬 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 채소 육수(100㎖)
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드(100g)
+  role: sub
+- ingredient: peanut
+  raw_text: 땅콩(100g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 통밀가루(45g)
+  role: sub
+- ingredient: mirin
+  raw_text: 미림(20g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(5g)
+  role: sub
+- ingredient: null
+  raw_text: 간 마늘(10g)
+  role: sub
+- ingredient: tomato_paste
+  raw_text: 토마토 페이스트(30g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(3g)
+  role: sub
+- ingredient: null
+  raw_text: 발사믹식초(5g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(5㎖)
+  role: sub
+steps:
+- text: 냉동 곤약에 칼집을 낸 뒤 냄비에 조림 양념과 물(40㎖)을 함께 넣고 5분간 조린다.
+- text: 팬에 채 썬 양파와 납작 썬 마늘을 넣어 3분간 볶다가 토마토 페이스트(30g)를 넣어 3분간 볶는다.
+- text: 채소 육수(100㎖), 간장(10g), 설탕(3g), 발사믹식초(5g)를 넣어 3분간 끓인 뒤 체에 밭쳐 건더기를 걸러 내 소스를 만든다.
+- text: 중간 불로 달군 마른 팬에 아몬드와 땅콩을 5분간 볶은 뒤 잘게 다진다.
+- text: 조린 곤약에 통밀가루(45g)와 물(40㎖)을 섞은 반죽을 입힌 뒤 잘게 다진 견과류를 묻힌다.
+- text: 중간 불로 달군 팬에 식용유(5㎖)를 두른 뒤 견과류를 묻힌 곤약을 넣어 앞뒤로 3~5분간 굽고, 그릇에 곤약가스를 올리고 ③의 소스를 곁들인다.

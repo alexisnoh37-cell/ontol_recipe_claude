@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_574
+title: 원소병
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 574. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루(200g)
+  role: sub
+- ingredient: null
+  raw_text: 치자(10g)
+  role: sub
+- ingredient: null
+  raw_text: 오미자(10g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(5알)
+  role: sub
+- ingredient: null
+  raw_text: 귤병(20g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(30g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(50g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말(50g)
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣(10알)
+  role: sub
+steps:
+- text: 찹쌀가루는 체에 내려 2등분한다.
+- text: 찹쌀가루는 오미자와 치자를 우린 뜨거운 물로 익반죽하여 비닐봉투에 담아 숙성시킨다
+- text: 대추는 씨를 발라내 곱게 다지고 귤병, 유자청, 꿀을 섞어 원소병 소를 만든다.
+- text: 굴병과 꿀을 섞어 원소병 소를 준비한다.
+- text: 익반죽을 지름 3cm 크기로 동그랗게 만들고 안에 소를 넣어 다시 동그랗게 만든다
+- text: 녹말가루를 입혀 끓는 물에 넣은 뒤 떠오르면 건져 찬물에 헹궈 물기를 빼고 그릇에 담아 꿀물을 붓고 잣을 올린다.

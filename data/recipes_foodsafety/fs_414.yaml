@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_414
+title: 주꾸미머리순대
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 414. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: webfoot_octopus
+  raw_text: 주꾸미 200g
+  role: sub
+- ingredient: minari
+  raw_text: 미나리 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 25g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 20g
+  role: sub
+- ingredient: egg
+  raw_text: 계란 60g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 15g
+  role: sub
+- ingredient: null
+  raw_text: 생강청 15g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 10g
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 15g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 10g
+  role: sub
+- ingredient: null
+  raw_text: 생강청 10g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 3g
+  role: sub
+steps:
+- text: 주꾸미를 몸과 다리를 분리 후 잘 씻어준다.
+- text: 주꾸미 다리, 미나리, 양파, 당근을 다져준다.
+- text: 다진 채소를 계란, 다진마늘, 생강청에 양념 한다.
+- text: 양념한 3을 주꾸미 머리 속에 넣어주고 이쑤시개로 꽂아준다.
+- text: 찜기에 찐다. 찔 때 레몬즙을 뿌리면 더욱 탱탱하다.
+- text: 소스를 만든 뒤 주꾸미를 함께 완성한다.

@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_417
+title: 돼지머리수육맑은전골
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 417. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 돼지머리 200g
+  role: sub
+- ingredient: udon_noodles
+  raw_text: 우동면 100g
+  role: sub
+- ingredient: minari
+  raw_text: 미나리 20g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 15g
+  role: sub
+- ingredient: miso
+  raw_text: 일본 된장 30g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 10g
+  role: sub
+- ingredient: null
+  raw_text: 다진대파 10g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 15g
+  role: sub
+- ingredient: radish
+  raw_text: 무 25g
+  role: sub
+- ingredient: null
+  raw_text: 해물육수 300g
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 20g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 15g
+  role: sub
+steps:
+- text: 무, 청고추, 미나리, 대파는 먹기 좋게 썰어준다.
+- text: 돼지머리는 냉수에 데친다. 냉수일 때부터 돼지머리를 넣어야 물이 끓어오르면 불순물이 제거된다.
+- text: 일본 된장을 풀어 체에 걸러준다.
+- text: 돼지머리를 살짝 졸여준다.
+- text: 냄비에 국물을 끓여주다가 채소를 넣어 끓인다.
+- text: 국물에 우동면을 데쳐낸 뒤 완성한다.

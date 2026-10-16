@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3282
+title: 어린잎채소 건두부말이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3282. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 어린잎채소(4컵)
+  role: sub
+- ingredient: null
+  raw_text: 견과류(1컵)
+  role: sub
+- ingredient: null
+  raw_text: 건두부(10장)
+  role: sub
+- ingredient: null
+  raw_text: 슈레드 모차렐라치즈(1컵)
+  role: sub
+- ingredient: null
+  raw_text: 라임청(3ts)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(약간)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(2ts)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(0.3ts)
+  role: sub
+steps:
+- text: 어린잎채소는 깨끗하게 씻어 물기를 제거하고, 견과류는 굵게 다진다.
+- text: 건두부는 끓는 물에 데쳐 건져낸 뒤 물기를 제거한다.
+- text: 건두부 위에 어린잎채소(3컵)를 올리고, 돌돌 말아 한입 크기로 썬다.
+- text: 남은 어린잎채소에 다진 견과류와 슈레드모차렐라치즈를 고루 섞는다.
+- text: 라임청의 라임을 얇게 다지고, 나머지 라임청드레싱 재료와 고루 섞는다.
+- text: 그릇에 건두부말이와 샐러드를 담고, 라임청 드레싱을 뿌려 마무리한다.

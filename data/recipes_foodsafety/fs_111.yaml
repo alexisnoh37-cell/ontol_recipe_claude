@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_111
+title: 칠곡석류국수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 111. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: somen
+  raw_text: 소면 160g
+  role: sub
+- ingredient: null
+  raw_text: 저염소금 4g(1작은술)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 8g(1/2작은술)
+  role: sub
+- ingredient: null
+  raw_text: 석류 200g(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 장식
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣 4g(1작은술)
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드 4g(1작은술)
+  role: sub
+- ingredient: null
+  raw_text: 해바라기씨 4g(1작은술)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두 4g(1작은술)
+  role: sub
+- ingredient: null
+  raw_text: 호박씨 4g(1작은술)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 20g(1/4개)
+  role: sub
+steps:
+- text: 잣, 아몬드, 해바라기씨, 호두, 호박씨는 다진다.
+- text: 끓는 물에 저염소금과 식초를 넣은 후 소면을 삶은 후 체에 건져 물기를 뺀다.
+- text: 석류는 물 600g와 함께 믹서에 갈고 체에 걸러 즙을 낸다. 그릇에 면을 담고 차갑게 식힌 석류즙을 붓고 견과류, 채 썬 오이를 고명으로 올린다.

@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3186
+title: 사과 견과류 식빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3186. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 강력분 250g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 5g
+  role: sub
+- ingredient: null
+  raw_text: 드라이이스트 6g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 25g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 22g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 175g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 500g (2개)
+  role: sub
+- ingredient: null
+  raw_text: 견과류 15g
+  role: sub
+steps:
+- text: (속재료) 사과 1개와 견과류는 다이스하고 사과 1개는 강판에 간 후 냄비에 졸인다. ★ 사과를 졸이면 단 맛이 농축되고, 갈변도 막을 수 있어요.
+- text: 강력분과 소금, 이스트, 우유, 물을 넣고 반죽하여 어느 정도 글루텐이 형성되면 버터를 넣어 반죽한다.
+- text: 반죽을 60분 정도 1차 발효하고 분할해 둥글리기 하여 중간 발효한다.
+- text: 중간발효가 끝난 반죽은 길게 밀어 편 후 졸인 사과와 견과류를 넣어 롤로 말아 30분간 2차 발효한다.
+- text: 2차 발효한 반죽 위에 계란물을 발라 아랫불160℃, 윗 불180℃의 오븐에 넣고 30분간 굽는다.
+- text: 5분정도 남았을 때 꺼내 계란물을 한 번 더 발라 아랫불 170℃, 윗불 180℃로 구워 윗면에 색을 내준다. ★ 굽는 중간에 틀을 돌려주면 골고루 구워져요.

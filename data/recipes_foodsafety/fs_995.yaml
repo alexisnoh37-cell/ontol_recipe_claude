@@ -1,0 +1,76 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_995
+title: 종이에 싸서 구운 도미(파필로테)
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 995. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 11개'
+ingredients:
+- ingredient: null
+  raw_text: 도미살 65g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 적당량
+  role: sub
+- ingredient: null
+  raw_text: 샐러리 채친것 3g
+  role: sub
+- ingredient: null
+  raw_text: 당근 채친것 3g
+  role: sub
+- ingredient: null
+  raw_text: 대파채친것 3g
+  role: sub
+- ingredient: null
+  raw_text: 양파채친것 6g
+  role: sub
+- ingredient: null
+  raw_text: 피망채친것 5g
+  role: sub
+- ingredient: null
+  raw_text: 브러컬리 5g
+  role: sub
+- ingredient: null
+  raw_text: 레몬제스트 1g
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯 3g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 2g
+  role: sub
+- ingredient: null
+  raw_text: 유산지
+  role: sub
+- ingredient: null
+  raw_text: 허브버터
+  role: sub
+- ingredient: butter
+  raw_text: 버터 2g
+  role: sub
+- ingredient: parmesan
+  raw_text: 파마산치즈 1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추 약간
+  role: sub
+- ingredient: null
+  raw_text: 오레가노 0.2g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 0.3g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 0.5g
+  role: sub
+steps:
+- text: 도미살에 소금, 후추로 밑간한다.
+- text: 셀러리, 당근, 대파, 양파, 피망은 채 썰고 브로컬리는 작은 송이로 자르고 레몬 껍질은 얇게 제스트하고 팽이버섯은 밑동을 자른다.
+- text: 유산지는 반을 접었다가 편 뒤 안쪽에 부드러운 버터를 바른다.
+- text: 4의 버터를 바른 한 쪽 면에 셀러리, 당근, 대파, 팽이버섯, 양파, 피망, 레몬 제스트를 준비된 분량의 반 정도 놓고 밑간한 도미살을 올린다.
+- text: 다시 남은 야채들을 도미위에 올리고 유산지의 한 면으로 야채를 덮어주고, 모서리의 뚫린 곳을 접어 봉해준다.
+- text: 160℃로 예열된 오븐에서 익혀준다.

@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_486
+title: 실곤약팟타야
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 486. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 실곤약(120g)
+  role: sub
+- ingredient: beef
+  raw_text: 소고기(50g)
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: null
+  raw_text: 청피망(10g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(10g)
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(10g)
+  role: sub
+- ingredient: fish_sauce
+  raw_text: 액젓(10g)
+  role: sub
+steps:
+- text: 뜨거운 물에 실곤약을 넣고, 약 20초 정도 삶아 건진다.
+- text: 양파와 청 피망, 홍고추는 약 5cm 길이로 채를 썰고, 홍고추 몇 개는 어슷썰어 놓는다.
+- text: 굴소스에 다진 마늘과 액젓을 넣고 섞는다.
+- text: 냄비에 소스(③)을 넣고 바글바글 끓여 팟타야소스를 만들어 놓는다.
+- text: 소고기는 만들어 놓은 팟타야소스에 볶는다.
+- text: 팬에 기름을 두르고, 채소를 먼저 볶다가 실곤약을 넣고 살짝 볶은 후 팟타야소스를 넣어 다시 볶다가 접시에 담고, 숙주와 고기를 올려 완성한다.

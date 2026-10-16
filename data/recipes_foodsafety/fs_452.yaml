@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_452
+title: 해산물리조또
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 452. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 보리쌀(50g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: squid
+  raw_text: 오징어(50g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(50g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(100g)
+  role: sub
+- ingredient: cheese
+  raw_text: 치즈(50g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(0.3g)
+  role: sub
+- ingredient: clam
+  raw_text: 조개(30g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(10g)
+  role: sub
+steps:
+- text: 보리는 깨끗이 씻어 물에 약 30분 이상 불려 놓고, 당근, 양파, 마늘, 대파는 입자있게 다져 준비한다.
+- text: 시금치는 끓는 물에 소금을 넣고 데친 후 생크림을 넣고 함께 갈아서 준비한다.
+- text: 오징어는 껍질을 벗겨 안쪽에 칼집을 내어 새우와 함께 데치고, 조개는 해감 후 다시마를 넣고 삶은 뒤 소창에 걸러 육수를 만들어 놓는다.
+- text: 냄비에 버터를 넣고, 다진 마늘과 양파 당근을 볶다가 불린 보리를 넣어 다시 볶는다.
+- text: 볶아지는 냄비에 조개 삶은 육수를 넣어 끓인다.
+- text: 끓여지는 냄비에 데친 조개와 해물, 치즈, 우유를 넣어 어우러지게 저어 가며 졸이듯 끓이다가 마지막에 시금치와 생크림 갈은 것(②)을 넣고 살짝 끓인 후 파슬리 가루를 살짝 뿌려 완성한다.

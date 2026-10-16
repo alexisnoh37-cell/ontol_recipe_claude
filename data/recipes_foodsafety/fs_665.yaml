@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_665
+title: 연근부각
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 665. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: lotus_root
+  raw_text: 연근(60g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 천일염(0.1g)
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피가루(20g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(200g)
+  role: sub
+steps:
+- text: 연근은 껍질을 벗긴다.
+- text: 껍질벗긴 연근은 얇게 썬다.
+- text: 물 200g에 식초 10g을 섞는다
+- text: 식촛물에 썬 연근을 담근다.
+- text: 연근을 체에 건져 물기를 뺀다.
+- text: 연근을 바삭하게 튀긴 뒤 천일염을 살짝 뿌리고, 계피가루를 묻힌다.

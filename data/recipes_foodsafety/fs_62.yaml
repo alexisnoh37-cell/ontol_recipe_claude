@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_62
+title: 불고기 소스를 곁들인 두부구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 62. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 두부구이
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 70g(1/5모)
+  role: sub
+- ingredient: null
+  raw_text: 전분 10g(2작은술)
+  role: sub
+- ingredient: null
+  raw_text: 흑임자 2g(1/3작은술)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 5g(1작은술)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추약간
+  role: sub
+- ingredient: null
+  raw_text: 불고기 양념
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3g(2/3작은술)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 3g(2/3작은술)
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 3g(2/3작은술)
+  role: sub
+steps:
+- text: 두부를 2.5×2.5×1cm 정도로 잘라 물기를 빼고 후추를 뿌린 후 전분가루를 골고루 묻혀 식용유를 둘러 프라이팬에 갈색이 나도록 양면을 굽는다.
+- text: 프라이팬에 간장, 올리고당, 생강즙, 물을 넣어 끓여 불고기 양념을 만든 후 양념을 구운 두부에 넣고 졸인다.
+- text: 그릇에 두부를 담고 위에 흑임자를 뿌린다.

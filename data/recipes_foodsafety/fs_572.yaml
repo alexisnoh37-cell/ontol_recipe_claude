@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_572
+title: 옥음밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 572. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: canned_corn
+  raw_text: 옥수수콘(200g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(1/3개)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(1/2개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 라이스페이퍼(1장)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: rice
+  raw_text: 쌀(150g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.01g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(10g)
+  role: sub
+steps:
+- text: 쌀은 깨끗이 씻어 30분 이상 불려 밥을 지어 식힌다.
+- text: 옥수수콘은 체에 걸러 물기를 뺀다.
+- text: 양파, 애호박, 당근, 양파 및 새송이버섯은 옥수수콘 크기로 썰고 마늘은 다진다.
+- text: 팬에 기름을 두르고 야채를 먼저 볶는다.
+- text: 볶은 야채에 식혀놓은 밥을 넣고 볶다가 저염간장, 후춧가루로 간을 하고 옥수수콘을 넣고 살짝 볶는다.
+- text: 팬에 기름을 자작하게 넣고, 라이스페이퍼를 둥글게 넣고 튀겨 그릇에 담은 뒤 볶음밥을 담는다

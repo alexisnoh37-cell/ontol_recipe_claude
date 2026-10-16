@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_999
+title: 과일 파이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 999. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: orange
+  raw_text: 오렌지 25g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 25g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 15g
+  role: sub
+- ingredient: null
+  raw_text: 물전분 4g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 1g
+  role: sub
+- ingredient: bread
+  raw_text: 식빵 30g
+  role: sub
+steps:
+- text: 오렌지는 껍질을 벗긴 뒤 잘게 썰고 사과는 껍질 째 깨끗하게 씻어서 잘게 썬다.
+- text: 냄비에 오렌지와 사과를 각각 넣고 설탕을 넣어 중간 불에서 타지 않도록 졸인다.
+- text: 졸이는 도중에 과일에서 나온 물로 질척해지면 물전분을 넣어 농도를 맞춘 뒤 차게 식힌다.
+- text: 식빵은 가장자리를 잘라낸 다음 밀대로 납작하게 밀어 버터를 바른다.
+- text: 졸인 과일을 얹고 돌돌 만 다음 양끝을 포크로 눌러 붙인다.
+- text: 식빵의 표면에 버터를 얇게 바르고 170℃로 예열된 오븐에 넣어 노릇하게 굽는다.

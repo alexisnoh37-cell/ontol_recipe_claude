@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_319
+title: 닭가슴살리조또
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 319. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 100g
+  role: sub
+- ingredient: null
+  raw_text: 찰보리 50g
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀 50g
+  role: sub
+- ingredient: null
+  raw_text: 청피망 50g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 30g
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 10g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 15g
+  role: sub
+- ingredient: null
+  raw_text: 홍피망 50g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 30g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 30g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 50g
+  role: sub
+- ingredient: null
+  raw_text: 함초소금 2g
+  role: sub
+- ingredient: null
+  raw_text: 건조토마토 10g
+  role: sub
+steps:
+- text: 찹쌀은 30분 정도, 찰보리는 1시간 이상 불려주고 보리쌀은 한번 쪄 준다.
+- text: 표고버섯은 물에 데친다. 이때 표고버섯 불린 물은 버리지 않고 짜투리 채소와 함께 채소 국물을 만들어준다.
+- text: 불린 표고버섯, 청피망, 홍피망, 양파, 오리 가슴살은 작은 정사각형으로 잘라주고 청양 고추는 다져준다.
+- text: 다진 청양고추와 다진마늘은 볶아주고 다시 여기에 다진채소와 가슴살을 볶아준다.
+- text: 찹쌀과 보리쌀을 넣어 만들어진 채소국물에 끓여주다 생크림과 우유를 넣어 죽 형태로 만든다.
+- text: 여기에 볶아진 재료를 넣고 소금으로 간을 하고 말린 토마토를 올려 완성한다.

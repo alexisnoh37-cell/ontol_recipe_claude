@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_605
+title: 오렌지마리네이드 돼지고기
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 605. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(150g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(30g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(3개)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(1/4개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(1/2개)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/4개)
+  role: sub
+- ingredient: mustard
+  raw_text: 머스터드(20g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(10g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(200g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추(0.01g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(20g)
+  role: sub
+steps:
+- text: 돼지고기는 오렌지와 레몬, 올리브오일로 마리네이드 한다.
+- text: 파프리카, 양송이버섯은 썰어서 팬에 굽는다.
+- text: 머스터드와 꿀을 섞어 소스를 만든다.
+- text: 시금치는 끓는 물에 데친다.
+- text: 마늘은 편으로 썰고 팬에 굽는다.
+- text: 돼지고기를 팬에 구워 접시에 담고, 구운 마늘, 파프리카, 양송이버섯, 데친 시금치를 담고 그 위에 머스터드소스를 올린다.

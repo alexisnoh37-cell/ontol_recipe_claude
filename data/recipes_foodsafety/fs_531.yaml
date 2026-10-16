@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_531
+title: 애호박들깨볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 531. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: zucchini
+  raw_text: 애호박(150g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(10g)
+  role: sub
+- ingredient: perilla_oil
+  raw_text: 들기름(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(5g)
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 건새우(20g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깨가루(30g)
+  role: sub
+steps:
+- text: 애호박은 반달 모양으로 썰어 준다.
+- text: 썰어 놓은 호박에 소금을 넣고 살짝 절여 물기를 제거하고 준비한다.
+- text: 양파는 채를 썰고, 대파는 1/4로 자르고, 홍고추는 어슷썰어 자연스럽게 씨를 제거해 놓는다.
+- text: 팬에 들기름을 넣고, 마늘을 먼저 볶는다.
+- text: 볶아진 팬에 건새우를 넣어 볶아준다.
+- text: 건새우가 볶아지면, 썰어 놓은 호박을 넣어 볶다가 양파와 대파를 넣어 볶으면서 들깨 가루와 넣어 살짝 볶으면서 마지막에 썰어 놓은 홍고추를 넣어 한 번만 더 볶아 완성한다.

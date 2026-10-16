@@ -1,0 +1,28 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_932
+title: 흑임자 두부국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 932. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 불린 쌀 30g
+  role: sub
+- ingredient: null
+  raw_text: 으깬 두부 35g
+  role: sub
+- ingredient: null
+  raw_text: 검은 깨 5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 쌀을 씻어 불린 뒤 믹서나 절구에 넣고 곱게 간다.
+- text: 두부를 곱게 으깬다.
+- text: 검은깨를 물에 넣어 돌맹이가 없도록 거른다.
+- text: 3의 물기를 빼고 볶은 뒤 동량의 물을 넣고 곱게 간다.
+- text: 냄비에 쌀과 두부, 적당량의 물을 넣고 센불에서 끓인다.
+- text: 불을 줄여 쌀이 퍼지면 2의 검은깨를 넣고 더 끓여 소금으로 간한다.

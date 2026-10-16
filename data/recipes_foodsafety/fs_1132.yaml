@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1132
+title: 상큼하자두
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1132. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 자두(100g)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(170g)
+  role: sub
+- ingredient: null
+  raw_text: 탄산수(100g)
+  role: sub
+- ingredient: null
+  raw_text: 민트잎(5g)
+  role: sub
+- ingredient: null
+  raw_text: 얼음(145g)
+  role: sub
+steps:
+- text: 자두(30g)를 잘게 다진다.
+- text: 나머지 자두는 강판에 간다.
+- text: 오렌지는 즙을 낸다.
+- text: 오렌지 즙에 1,2번을 넣고 섞는다.
+- text: 컵에 4번을 넣고 얼음을 넣은 다음 탄산수를 붓는다.
+- text: 민트잎을 올린다.

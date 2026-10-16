@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_78
+title: 깻잎향을 입힌 관자 샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 78. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 돌나물(10g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(3장)
+  role: sub
+- ingredient: scallop
+  raw_text: 관자(5개)
+  role: sub
+- ingredient: null
+  raw_text: 식용 꽃(약간)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(60g)
+  role: sub
+- ingredient: null
+  raw_text: 석류 원액(3g)
+  role: sub
+- ingredient: null
+  raw_text: 레시틴가루(0.5)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(약간)
+  role: sub
+steps:
+- text: 돌나물은 손질하여 찬물에 담갔다가 물기를 빼고, 깻잎은 씻어 한 장씩 앞뒤로 물기를 닦고, 식용 꽃은 찬물에 담가 놓는다.
+- text: 튀김 팬에 올리브유(50g)를 붓고 예열해 깻잎을 넣어 바삭하고 투명하게 튀긴 뒤 건지고 팬에 남은 깻잎 기름은 따로 둔다.
+- text: 석류 원액에 물(100ml)과 레시틴가루를 넣어 블렌더로 섞어 석류 거품을 만든다.
+- text: 관자는 막을 제거한 뒤 찬물에 씻고, 잘게 칼집을 내 후춧가루를 뿌린다.
+- text: 달군 팬에 올리브유(10g)를 두르고 관자를 넣어 겉은 노릇하게 굽는다.
+- text: 접시에 튀긴 깻잎, 돌나물, 구운 관자, 깻잎 기름을 순서대로 담고, 석류 거품을 올려 마무리한다.

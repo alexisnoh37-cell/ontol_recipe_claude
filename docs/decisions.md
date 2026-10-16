@@ -28,6 +28,10 @@
   - 이용 조건: API 안내에 공공누리 유형이 표시되어 있지 않고, 식약처 저작권정책은 "공공누리 미부착 자료는 담당 부서와 사전 협의, 출처 명시"를 요구한다. 상업적 이용·변경 허용은 명시되어 있지 않다. 이를 확인한 상태에서 **개인용 범위(D1)로 출처를 표시하고 사용**하기로 했다. 외부 공개·상업화 전에는 식약처에 이용 조건을 문의한다.
   - 원본과 변환 결과는 git에 올리지 않는다(재배포 방지, `data/external/`, `data/recipes_foodsafety/` gitignore).
   - 변환 결과는 `source: foodsafety`, `status: draft`, `confidence: low`, cuisine `미분류`, role `sub`. draft에 한해 cook_time_min을 비울 수 있다. 상세: docs/plan.md 5-3-1.
+- 보완 3(2026-10-16, 사람 결정): 식품안전나라 원본(`data/external/foodsafety/raw/`)과 변환 결과(`data/recipes_foodsafety/`)를 git에 커밋한다. 보완 2의 "git에 올리지 않는다"를 대체한다.
+  - 저장소가 공개(PUBLIC) 상태임을 확인하고, 공공누리 미표시·사전 협의 요구 조건도 안내받은 상태에서 내린 결정이다. 근거: 이 온톨로지는 백엔드 동작을 시각적으로 보여 주는 용도다.
+  - 출처 표시는 유지한다(레시피마다 `source: foodsafety`, note에 식품의약품안전처 식품안전나라·일련번호, 원본 JSON의 `source`). 상업화 전에는 식약처에 이용 조건을 문의한다.
+  - 커밋에 API 인증키가 들어가지 않는다(`.env`만 사용, 원본 JSON에 키 없음 확인).
 
 ## D4. 알레르기 그룹 기준
 

@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_928
+title: 유부 만두찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 928. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: fried_tofu
+  raw_text: 유부 10g
+  role: sub
+- ingredient: minari
+  raw_text: 미나리 10g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 20g
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 15g
+  role: sub
+- ingredient: null
+  raw_text: 양파채썬것 15g
+  role: sub
+- ingredient: null
+  raw_text: 당근채썬것 10g
+  role: sub
+- ingredient: null
+  raw_text: 건표고버섯 5g
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 10g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: null
+  raw_text: 흰 후춧가루 적당량
+  role: sub
+- ingredient: sesame
+  raw_text: 깨소금 1g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: null
+  raw_text: 초간장
+  role: sub
+- ingredient: anchovy_stock
+  raw_text: 멸치 육수 3g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1g
+  role: sub
+steps:
+- text: 유부는 윗면을 살짝 잘라 내고 입을 벌려 주머니를 만든 뒤 끓는 물에 데쳐 냉수에 헹구고 미나리는 잎을 떼고 데쳐 냉수에 헹군다.
+- text: 두부는 면보에 물기를 짠 뒤 곱게 으깨고 닭고기는 껍질을 제거하여 곱게 다진다.
+- text: 양파와 당근, 불린 표고버섯은 곱게 채썰고 시금치는 끓는 물에 데쳐 물기를 짜고 2cm 길이로 썬다.
+- text: 볼에 2, 3을 담고 소금, 흰 후춧가루, 깨소금과 참기름을 넣고 양념하여 만두소를 만든다.
+- text: 준비한 유부주머니에 만두소를 넣고 미나리로 묶어 김 오른 찜통에 10분 정도 찐다.
+- text: 초간장을 곁들여 낸다.

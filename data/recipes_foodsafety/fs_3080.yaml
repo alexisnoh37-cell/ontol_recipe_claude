@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3080
+title: 구기자모듬장조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3080. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 한돈(사태) 30g
+  role: sub
+- ingredient: quail_egg
+  raw_text: 메추리알 30g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: null
+  raw_text: 곤약 10g
+  role: sub
+- ingredient: null
+  raw_text: 구기자 5g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: null
+  raw_text: 파 10g
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 10g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 10g
+  role: sub
+- ingredient: null
+  raw_text: 저염간장 15g
+  role: sub
+steps:
+- text: 한돈은 사태로 준비하여 깍둑썰기하여 세척한다.
+- text: 양파, 파, 다시마, 표고버섯, 마늘은 깨끗이 세척 후 적당한 크기로 자르고, 당근, 곤약은 깍뚝썰기하여 준비한다.
+- text: 냄비에 물과 저염간장을 2:1 비율로 조림장을 준비한다.
+- text: 조림장에 구기자 및 양파, 파, 다시마, 표고버섯, 마늘을 넣고 끓인다.
+- text: 조림장이 끓으면 사태, 메추리알, 당근, 곤약을 넣고 조린다.
+- text: 접시에 담아서 완성한다.

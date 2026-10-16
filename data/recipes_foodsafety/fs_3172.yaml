@@ -1,0 +1,25 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3172
+title: 단감피클
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3172. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: persimmon
+  raw_text: 단감 60g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 25g
+  role: sub
+steps:
+- text: 단감의 껍질과 씨를 제거한다.
+- text: 단감을 깍둑썰기 한다.
+- text: 식초와 설탕과 물을 섞어 단촛물을 만든다.
+- text: 단촛물을 끓인다.
+- text: 단촛물을 식혀 단감에 부워 절인다.
+- text: 30분 정도 숙성시켜 완성한다.

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_443
+title: 밥핫도그
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 443. 요리종류 밥, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: sausage
+  raw_text: 소시지(100g)
+  role: sub
+- ingredient: null
+  raw_text: 나무막대기(5개)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(30g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(30g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(200g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(30g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(50g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(50g)
+  role: sub
+- ingredient: null
+  raw_text: 달걀흰자(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+steps:
+- text: 소시지는 먹기 좋은 크기로 썰어 나무 막대기에 꽂아놓는다.
+- text: 파프리카는 작게 다져 준비한다.
+- text: 으깬 감자를 준비된 밥과 함께 골고루 섞는다.
+- text: 으깬 감자를 다시 준비된 밥과 함께 소금을 조금 넣고 골고루 섞는다.
+- text: 밥과 감자가 잘 섞어지면, 다시 다져진 파프리카를 넣고 섞어준다.
+- text: 막대기에 밀가루를 살짝 바르고, 소시 지에 반죽(⑤)을 감싸듯 손으로 둥글게 말아 밀가루와, 달걀물, 빵가루 순서로 입혀 튀김 기름 170℃의 온도에서 약 2분 정도 튀긴 후 기름을 제거하여 완성한다.

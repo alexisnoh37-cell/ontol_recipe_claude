@@ -1,0 +1,51 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_215
+title: 가지볶음밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 215. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 단호박(100g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: null
+  raw_text: 석박지(35g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(40g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(90g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(50g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(180g)
+  role: sub
+- ingredient: null
+  raw_text: 세발나물(10g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 다진 마늘(5g)
+  role: sub
+- ingredient: null
+  raw_text: 저염된장(12g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.3g)
+  role: sub
+- ingredient: perilla_oil
+  raw_text: 들기름(4g)
+  role: sub
+steps:
+- text: 단호박은 삶아 으깬다.
+- text: 양파, 석박지, 파프리카, 가지는 깍둑 썰고, 두부는 으깬다.
+- text: 팬에 다진 마늘, 양파, 석박지를 넣어 볶다가 두부를 넣고 수분이 없어질 때까지 볶다가 가지, 파프리카도 넣어 볶는다
+- text: 밥과 저염된장, 후춧가루를 넣고 볶다가 들기름을 넣어 한 번 더 볶는다.
+- text: 그릇에 담고 으깬 단호박과 세발나물을 곁들여 마무리한다.

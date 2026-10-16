@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_926
+title: 에멘탈 치즈 퐁듀
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 926. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 에멘탈 치즈 20g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2g
+  role: sub
+- ingredient: null
+  raw_text: 넉맥약간
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 30g
+  role: sub
+- ingredient: null
+  raw_text: 물전분 2g
+  role: sub
+- ingredient: null
+  raw_text: 바케트빵 6g
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 30g
+  role: sub
+- ingredient: kiwi
+  raw_text: 키위 20g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 적당량
+  role: sub
+steps:
+- text: 바닥이 두꺼운 팬의 표면에 마늘을 문질러 마늘 즙을 골고루 묻힌다.
+- text: 1을 가열한 뒤 버터를 녹인다.
+- text: 팬에 닭육수와 물전분을 넣고 약한 불에서 덩어리가 생기지 않도록 저어가며 끓인다.
+- text: 자른 에멘탈치즈를 넣고 나무 주걱을 이용하여 한 방향으로 젓는다.
+- text: 치즈가 다 녹으면 기호에 맞게 넉맥, 소금, 후추를 넣는다.
+- text: 바케트, 방울토마토, 키위 등을 적당한 크기로 잘라 꼬치에 꼿아 곁들인다.

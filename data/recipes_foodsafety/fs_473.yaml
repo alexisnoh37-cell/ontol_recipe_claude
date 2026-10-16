@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_473
+title: 채소어묵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 473. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 생선살(100g)
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술(10g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: corn
+  raw_text: 옥수수(20g)
+  role: sub
+- ingredient: null
+  raw_text: 어린이치즈(20g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(400g)
+  role: sub
+steps:
+- text: 생선살은 가시를 발라내고 곱게 으깨어 놓는다.
+- text: 으깬 생선살에 맛술 과 생강즙, 소금을 넣어 골고루 치댄다.
+- text: 잘 치댄 생선살에 밀가루를 넣어 다시 치대어 준다.
+- text: 양파와 당근, 샐러리, 마늘은 곱게 다지고, 옥수수는 알맹이를 준비한다.
+- text: 생선살에 다진 채소와 어린이 치즈를 다져 섞는다.
+- text: 채소를 다져 섞은 생선살을 동글동글 하게 완자를 빚어 튀김기름에 약 150℃ 온도에서 은근히 5분 정도 튀겨 완성 한다.

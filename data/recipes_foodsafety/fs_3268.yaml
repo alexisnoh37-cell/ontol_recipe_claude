@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3268
+title: 레몬등갈비구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3268. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: pork_ribs
+  raw_text: 등갈비(150g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(15g)
+  role: sub
+- ingredient: null
+  raw_text: 소주(10g)
+  role: sub
+- ingredient: null
+  raw_text: 로즈메리(1g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(1g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(1g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(5g)
+  role: sub
+- ingredient: null
+  raw_text: 디핑소스
+  role: sub
+- ingredient: yogurt
+  raw_text: 요거트(10g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(2g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(2g)
+  role: sub
+steps:
+- text: 등갈비는 찬물(5컵)에 담가 1시간 이상 핏물을 제거한다.
+- text: 등갈비는 한 쪽씩 썬다.
+- text: 손질한 등갈비는 밑간한 뒤 마늘, 로즈메리와 함께 버무려 30분 정도 재운다.
+- text: 재운 등갈비는 190℃로 예열한 오븐에 40분간 굽고, 뒤집어서 같은 온도에 30분간 더 굽는다.
+- text: 디핑소스를 만든다.
+- text: 그릇에 등갈비구이를 담은 뒤 레몬을 짜 즙을 뿌리고, 디핑 소스를 곁들여 마무리한다.

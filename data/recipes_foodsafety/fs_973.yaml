@@ -1,0 +1,82 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_973
+title: 수퍼 브리또
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 973. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 11개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: null
+  raw_text: 할라피뇨 3g
+  role: sub
+- ingredient: null
+  raw_text: 쇠고기갈은것 10g
+  role: sub
+- ingredient: null
+  raw_text: 토마토콩카세 10g
+  role: sub
+- ingredient: iceberg_lettuce
+  raw_text: 양상추 10g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 1g
+  role: sub
+- ingredient: tortilla
+  raw_text: 또띠아8인치 30g
+  role: sub
+- ingredient: null
+  raw_text: 아보카도 6g
+  role: sub
+- ingredient: null
+  raw_text: 사워크림 3g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 적당량
+  role: sub
+- ingredient: null
+  raw_text: 강낭콩 퓨레
+  role: sub
+- ingredient: null
+  raw_text: 강낭콩 40g
+  role: sub
+- ingredient: bacon
+  raw_text: 베이컨 2g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 1g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: null
+  raw_text: 바질마른것 약간
+  role: sub
+- ingredient: null
+  raw_text: 살사
+  role: sub
+- ingredient: pear
+  raw_text: 배 3g
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지 3g
+  role: sub
+- ingredient: null
+  raw_text: 레몬주스 2g
+  role: sub
+- ingredient: null
+  raw_text: 파프리카 가루 1g
+  role: sub
+steps:
+- text: 양파, 할라피뇨는 잘게 다지고 토마토는 끓는 물에 데쳐 껍질과 씨를 제거하고 잘게 썰어 볶다가 간 소고기를 넣고 소금, 후추로 간한다.
+- text: 베이컨, 마늘, 양파는 잘게 썰고 강낭콩은 체에 받쳐 물기를 제거한다.
+- text: 팬에 베이컨을 볶아 기름을 제거하고 2의 마늘, 양파를 볶다가 강낭콩을 넣고 건바질 조금, 소금, 후추로 간을 한 뒤 믹서에 갈아 퓨레로 만든다.
+- text: 배, 오렌지를 1cm 주사위모양으로 썰고 레몬주스, 파프리카 가루와 섞어 살사를 만든다.
+- text: 기름 없는 팬에 또띠아를 살짝 구운 뒤 강낭콩 퓨레를 얇게 바르고 볶은 소기기, 채 썬 양상추, 아보카도, 베이컨, 토마토, 사워크림을 넣고 만다.
+- text: 5에 배, 오렌지 살사를 곁들인다.

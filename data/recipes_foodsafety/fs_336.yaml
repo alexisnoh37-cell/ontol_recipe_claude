@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_336
+title: 묵계밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 336. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 도토리묵
+  role: sub
+- ingredient: null
+  raw_text: 올방개묵
+  role: sub
+- ingredient: null
+  raw_text: 검정깨묵 각각 25g
+  role: sub
+- ingredient: null
+  raw_text: 귀리밥 150g
+  role: sub
+- ingredient: egg
+  raw_text: 계란 55g
+  role: sub
+- ingredient: soybean_sprouts
+  raw_text: 콩나물 30g
+  role: sub
+- ingredient: null
+  raw_text: 국물
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 70g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 10g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 10g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 15g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 15g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: null
+  raw_text: 버섯마늘소금 2g
+  role: sub
+steps:
+- text: 닭가슴살을 이용해 국물을 만든다.
+- text: 닭가슴살은 먹기 좋게 찢어 흰 후추, 버섯마늘 소금으로 밑간을 해준다.
+- text: 콩나물은 머리를 떼어내고 데쳐준다.
+- text: 계란은 황백지단으로 부친 후 채 썰어준다.
+- text: 3종류의 묵은 먹기 좋은 크기로 썰어준다.
+- text: 그릇에 밥을 담고 콩나물을 올리고 3종류의 묵을 올린 후 계란으로 고명해 완성한다.

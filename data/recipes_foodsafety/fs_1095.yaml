@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1095
+title: 두부빼빼로
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1095. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: tofu
+  raw_text: 두부(25g)
+  role: sub
+- ingredient: grape
+  raw_text: 포도(10g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(1g)
+  role: sub
+- ingredient: null
+  raw_text: 검은깨(1g)
+  role: sub
+- ingredient: bread
+  raw_text: 식빵(7.5g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(5g)
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피가루(1g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.1g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(2g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(5g)
+  role: sub
+steps:
+- text: 두부를 칼등으로 곱게 으깬 후 면포에 싸서 물기를 짠다.
+- text: 식빵은 믹서에 갈아 빵가루를 만들고, 포도는 믹서에 간 뒤 걸러 포도즙을 만든다.
+- text: 냄비에 포도즙, 꿀, 물, 소금을 넣고 끓으면 불을 끄고 식용유를 넣고 섞는다.
+- text: 밀가루에 계피가루, 으깬 두부, 검은깨, 다진 호두를 넣고 반죽한다.
+- text: 짤주머니에 반죽을 넣고 15cm 길이로 팬에 짠다.
+- text: 반죽표면에 3번을 바르고 180℃ 오븐에 15분 간 굽는다.

@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_909
+title: 김치 고구마밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 909. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: sweet_potato
+  raw_text: 고구마 15g
+  role: sub
+- ingredient: rice
+  raw_text: 쌀 40g
+  role: sub
+- ingredient: kimchi
+  raw_text: 김치 8g
+  role: sub
+- ingredient: null
+  raw_text: 사과작은것 95g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 1g
+  role: sub
+- ingredient: null
+  raw_text: 소스1
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 국간장 1g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 1g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 1g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 1g
+  role: sub
+- ingredient: null
+  raw_text: 실파송송썬것 1.5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 0.5g
+  role: sub
+steps:
+- text: 고구마는 1cm의 주사위모양으로 썰어 놓는다.
+- text: 물에 씻은 김치를 송송 썰어서 참기름을 두른 팬에 볶다가 마늘과 소금을 넣어 볶은 뒤 깨소긂으로 마무리한다.
+- text: 냄비에 불린 쌀과 고구마, 볶은 김치를 넣고 고슬고슬하게 밥을 짓는다.
+- text: 사과의 꼭지 부분을 자른 뒤 속을 파내고 밥을 채운다.
+- text: 160℃로 예열된 오븐에 밥을 채운 사과를 넣고 사과가 익을 정도로 구워준다.
+- text: 양념장 재료를 섞어 양념장을 만들고 밥과 곁들여 낸다.

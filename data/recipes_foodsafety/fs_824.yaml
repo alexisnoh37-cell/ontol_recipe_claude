@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_824
+title: 오이초절임
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 824. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: cucumber
+  raw_text: 오이(60g)
+  role: sub
+- ingredient: garlic
+  raw_text: 통마늘(3g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(5g)
+  role: sub
+- ingredient: null
+  raw_text: 말린 홍고추(3g)
+  role: sub
+- ingredient: null
+  raw_text: 오이초절임소스
+  role: sub
+- ingredient: vinegar
+  raw_text: 양조식초(60g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(60g)
+  role: sub
+- ingredient: doubanjiang
+  raw_text: 두반장(3g)
+  role: sub
+- ingredient: chili_oil
+  raw_text: 고추기름(40g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(3g)
+  role: sub
+steps:
+- text: 오이는 길이로 4등분하여 삼각썰기 한 후 0.8cm 두께의 막대모양으로 썬다.
+- text: 소금에 살짝 절여 꼭 짜서 준비한다.
+- text: 통마늘은 길이로 3등분하고 생강은 편으로 썬다.
+- text: 마른 홍고추는 가위를 사용하여 어슷하게 자른다.
+- text: 손질한 모든 재료를 볼에 담고 푹 잠길 정도로 오이초절임소스를 붓는다.
+- text: 냉장 보관해 마무리한다.

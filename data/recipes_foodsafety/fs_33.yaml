@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_33
+title: 사과 새우 북엇국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 33. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 북엇국
+  role: sub
+- ingredient: dried_pollock
+  raw_text: 북어채 25g(15개)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우 10g(3마리)
+  role: sub
+- ingredient: apple
+  raw_text: 사과 30g(1/5개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파 40g(1/4개)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 20g(2장)
+  role: sub
+steps:
+- text: 북어채를 잘게 손으로 찢어 찬물에 헹구어 준비한 후 양파, 표고버섯, 사과는 채 썰고 새우는 등쪽의 두세 마디에 꼬챙이를 넣어 내장을 뺀 후 헹군다.
+- text: 찬물에 북어채, 새우, 표고버섯, 양파를 넣고 20분 정도 끓인 후 사과를 넣어 북어의 씁쓸한 맛을 없앤다.
+- text: 그릇에 담아낸다.

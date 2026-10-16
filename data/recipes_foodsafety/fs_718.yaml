@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_718
+title: 사과소스폭찹
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 718. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: pork_loin
+  raw_text: 돼지고기 등심 60g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.5g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.25g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리 브유 1.5g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 50g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 25g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 50g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 1g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 1.5g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 2.5g
+  role: sub
+steps:
+- text: 돼지고기를 0.5cm 두께로 썰어 칼집을 넣어 소금, 후추로 밑간한다.
+- text: 사과와 양파는 얇게 채 썬다.
+- text: 토마토는 4등분하여 물을 넣고 믹서에 간다.
+- text: 팬에 버터와 올리브유를 두르고 사과와 양파를 볶다가 토마토를 넣고 약불에서 사과가 무를 때 까지 천천히 익힌 뒤 레몬즙을 넣는다.
+- text: 팬에 올리브유를 두르고 고기를 앞뒤로 노릇하게 굽는다.
+- text: 고기를 한입 크기로 잘라 사과소스를 얹어 낸다.

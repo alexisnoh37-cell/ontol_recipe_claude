@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_497
+title: 견과편수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 497. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 흑임자(20g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(200g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(100g)
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(100g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.01g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(10g)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 대파(10g)
+  role: sub
+- ingredient: null
+  raw_text: 마(20g)
+  role: sub
+- ingredient: banana
+  raw_text: 바나나(30g)
+  role: sub
+- ingredient: mustard
+  raw_text: 머스터드(10g)
+  role: sub
+- ingredient: null
+  raw_text: 캐슈넛(20g)
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣(10g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(100g)
+  role: sub
+steps:
+- text: 흑임자는 곱게 갈아 밀가루와 우유를 넣고 반죽을 해서 비닐에 넣어 숙성 시킨다.
+- text: 닭가슴살은 삶아 건져 후춧가루를 살짝 넣고, 입자있게 다진다.
+- text: 입자있게 다진 닭가슴살을 마늘과 함께 팬에서 볶아놓는다.
+- text: 마와 바나나는 강판에 갈고, 캐슈넛과 잣은 입자있게 다진 뒤 냄비에 마, 바나나, 캐슈넛, 잣, 머스터드를 넣어 섞은 뒤, 우유를 넣고 살짝 끓여 편수 육수를 만들어 놓는다.
+- text: 부추와 양파, 파는 입자있게 썰어, 볶아 놓은 닭가슴살(③)에 섞어 편수 속을 만들어 놓는다.
+- text: 숙성시킨 밀가루 반죽(①)은 얇게 밀어 사각형으로 썰어 그 안에 속을 채워 넣고, 찜통에 약 5분 정도 쪄 접시에 담고, 그 위에 편수 육수를 올려 완성한다.

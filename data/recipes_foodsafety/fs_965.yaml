@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_965
+title: 미니 떡갈비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 965. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 쇠고기샄코기 80g
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯 40g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 4g
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣가루 1g
+  role: sub
+- ingredient: null
+  raw_text: 떡갈비 양념
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 5g
+  role: sub
+- ingredient: null
+  raw_text: 배즙 5g
+  role: sub
+- ingredient: null
+  raw_text: 양파즙 5g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 4g
+  role: sub
+- ingredient: null
+  raw_text: 다진 파 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 3g
+  role: sub
+- ingredient: sesame
+  raw_text: 깨소금 1g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 1g
+  role: sub
+steps:
+- text: 소고기는 곱게 다진다.
+- text: 다진 소고기에 떡갈비 양념을 넣고 골고루 치대 양념한다.
+- text: 새송이버섯은 폭 1.5cm, 길이 6cm로 썰어 밀가루를 묻힌다.
+- text: 3에 2를 버섯 위, 아래로 1cm를 남기고 감싸듯이 부쳐 떡갈비를 만든다.
+- text: 팬에 앞뒤로 타지 않도록 굽는다.
+- text: 잣가루를 뿌린다.

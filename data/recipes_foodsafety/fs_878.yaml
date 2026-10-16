@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_878
+title: 꽁치 양념구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 878. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: pacific_saury
+  raw_text: 꽁치 60g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.1g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 4g
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루 8g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 2g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨고추장소스
+  role: sub
+- ingredient: ketchup
+  raw_text: 토마토케첩 2g
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 2g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2g
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 2.4g
+  role: sub
+- ingredient: null
+  raw_text: 청고추다진것 4g
+  role: sub
+- ingredient: null
+  raw_text: 홍고추다진것 2g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 20g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 5g
+  role: sub
+steps:
+- text: 꽁치는 머리와 내장을 제거해 손질하고 칼집을 낸다.
+- text: 손질한 꽁치에 후춧가루와 청주를 뿌려 밑간해 둔다.
+- text: 밑간해 둔 꽁치의 수분을 제거하고 밀가루를 묻힌다.
+- text: 밀가루 묻힌 꽁치를 팬에서 노릇하게 굽는다.
+- text: 팬에 저나트륨 고추장소스 재료를 넣고 살짝 졸인다.
+- text: 구워진 꽁치에 소스를 뿌려낸다.

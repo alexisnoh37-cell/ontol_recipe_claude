@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1043
+title: 연두부 무순 냉국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1043. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: tofu
+  raw_text: 연두부 75g
+  role: sub
+- ingredient: null
+  raw_text: 무순 10g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 5g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 3g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 3g
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓 2g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: null
+  raw_text: 다시마육수 90g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 4g
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 2g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 3g
+  role: sub
+steps:
+- text: 무순의 잡티를 제거한 뒤 물에 흔들어 씻어 물기를 뺀다.
+- text: 연두부는 적당한 크기로 나눈다.
+- text: 다시마 육수에 분량의 재료를 섞어 냉국 국물을 만든 뒤 냉장고에 넣어 차갑게 만든다.
+- text: 청, 홍고추, 대파는 2cm 길이로 곱게 채 썬다.
+- text: 냉국 그릇에 2의 연두부를 담고 무순, 채썬 대파, 청, 홍고추를 가지런히 올린다.
+- text: 5의 연두부에 차게 준비한 냉국 국물을 붓고 쑥갓을 얹은 뒤 통깨를 뿌린다.

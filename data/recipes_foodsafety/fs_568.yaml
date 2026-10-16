@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_568
+title: 새우완자탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 568. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 새우(5마리)
+  role: sub
+- ingredient: bok_choy
+  raw_text: 청경채(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(2개)
+  role: sub
+- ingredient: null
+  raw_text: 치킨육수(200g)
+  role: sub
+- ingredient: null
+  raw_text: 전분(30g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.01g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 요리술(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+steps:
+- text: 새우는 내장을 제거 하고 껍질을 벗겨 깨끗이 씻는다.
+- text: 다진 새우에 전분, 후춧가루, 달걀흰자 및 요리술을 섞는다.
+- text: 반죽새우를 잘 치대어 완자로 만든 후 치킨 육수에 넣고 끓인다
+- text: 청경채는 깨끗이 씻어 반으로 길게 가른다.
+- text: 달걀은 황백으로 나눠 지단을 부쳐 마름모꼴로 썬다.
+- text: 완자가 익으면 물 녹말을 한 수저 넣고 청경채를 넣고 한소끔 끓인 뒤 그릇에 담고 황백지단을 올린다.

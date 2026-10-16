@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_438
+title: 미니밥버거
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 438. 요리종류 밥, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 밥패티
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀(100g)
+  role: sub
+- ingredient: null
+  raw_text: 현미쌀(50g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: null
+  raw_text: 소고기패티
+  role: sub
+- ingredient: ground_beef
+  raw_text: 다진소고기(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(10g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(10g)
+  role: sub
+- ingredient: null
+  raw_text: 으깬두부(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(20g)
+  role: sub
+- ingredient: cheese
+  raw_text: 치즈(30g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(30g)
+  role: sub
+steps:
+- text: 찹쌀과 현미는 깨끗이 씻어 30분 이상 충분히 불려 밥을 지어, 둥글둥글하게 패티를 만들어 놓는다.
+- text: 마늘과 양파는 곱게 다져 볶아 준비 한다.
+- text: 다진고기에 볶은 양파와 마늘, 빵가루, 생크림, 으깬두부, 소금, 후춧가루를 넣어 골고루 섞는다.
+- text: 섞어진 소고기를 둥글게 패티를 만들어 놓는다.
+- text: 토마토는 편으로 썰어 준비한다.
+- text: 팬에 올리브 오일과 버터를 넣고 팬이 따끈하게 달궈지면, 밥패티를 먼저 굽고, 소고기 패티를 구운 후, 밥패티에 마요네즈를 살짝 바르고, 치즈와 토마토를 올리고, 구운 소고기패티를 올려 다시 밥패티를 덮어 완성한다.

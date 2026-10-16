@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1061
+title: 잡곡강정밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1061. 요리종류 밥, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 잡곡(50g)
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀(50g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(20g)
+  role: sub
+- ingredient: null
+  raw_text: 은행(20g)
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤(20g)
+  role: sub
+- ingredient: null
+  raw_text: 대추고(60g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(5g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(15g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(2g)
+  role: sub
+steps:
+- text: 잡곡과 찹쌀은 물에 씻어 불린 뒤 소금을 넣고 밥을 짓는다.
+- text: 호두는 껍질을 제거하고 굵게 부숴 마른 팬에 볶는다.
+- text: 은행은 기름에 볶아 껍질을 제거하고 4등분 한다
+- text: 생밤은 껍질을 벗기고 작은 주사위 모양으로 자른 뒤 기름에 굽는다.
+- text: 물 40g에 간장, 대추고, 꿀을 넣고 끓인 뒤 2,3,4번을 넣고 잘 섞는다.
+- text: 잡곡밥을 넓게 펼친 뒤 5번을 넣고 돌돌 만다.

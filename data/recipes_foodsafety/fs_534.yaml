@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_534
+title: 백김치주꾸미샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 534. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 백김치(100g)
+  role: sub
+- ingredient: webfoot_octopus
+  raw_text: 주꾸미(100g)
+  role: sub
+- ingredient: null
+  raw_text: 파(10g)
+  role: sub
+- ingredient: iceberg_lettuce
+  raw_text: 양상추(10g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(10g)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(10g)
+  role: sub
+- ingredient: null
+  raw_text: 샐러드드레싱
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(10g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+steps:
+- text: 백김치는 살짝 씻어 물기를 제거하고 잘게 썰어 준비한다.
+- text: 양파와 마늘은 다지고 파는 채를 썰어 놓는다.
+- text: 어린잎은 찬 물에 담그어 놓았다가, 다시 소창에 건져 물기를 빼 놓는다.
+- text: 냄비에 물을 넣고, 양파와 파를 넣어 끓이다가 준비한 쭈구미를 넣고 부드럽게 데쳐 썰어 놓는다.
+- text: 식초와 간장, 설탕, 꿀, 레몬, 다진양파, 다진마늘을 넣고 잘 섞어서 샐러드 드레싱을 만든다.
+- text: 준비한 백김치(①)와 주꾸미(②)를 섞은 후 양상추를 접시에 깔고, 그 위에 섞어놓은 백김치와 주꾸미를 올리고, 홍고추와 어린잎을 위에 장식으로 올린 후 샐러드 소스를 뿌려 완성한다.

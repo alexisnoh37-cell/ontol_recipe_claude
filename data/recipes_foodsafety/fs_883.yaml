@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_883
+title: 마 두부 오징어전
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 883. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: tofu
+  raw_text: 두부 60g
+  role: sub
+- ingredient: null
+  raw_text: 마 60g
+  role: sub
+- ingredient: null
+  raw_text: 표고버섯마른것 3.5g
+  role: sub
+- ingredient: squid
+  raw_text: 오징어 6g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.1g
+  role: sub
+- ingredient: null
+  raw_text: 녹말 0.8g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 4.8g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 0.5g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1.5g
+  role: sub
+- ingredient: null
+  raw_text: 조미술 1.5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 0.5g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 0.5g
+  role: sub
+steps:
+- text: 두부는 소창에 싸서 으깬다.
+- text: 마는 껍질을 벗기고 강판에 간다.
+- text: 홍고추는 다지고 표고버섯은 물에 불린 후 잘게 다진다. 오징어도 손질하여 잘게 다진다.
+- text: 두부와 마, 다진 재료들을 모두 섞어 소금, 후춧가루로 간한다.
+- text: 반죽을 한 스푼씩 떠 식용유를 넣은 팬에 노릇하게 구워낸다.
+- text: 재료를 섞어 양념장을 만들어 함께 낸다

@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_709
+title: 배추토란국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 709. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 토란 50g
+  role: sub
+- ingredient: null
+  raw_text: 쇠고기 양지 15g
+  role: sub
+- ingredient: napa_cabbage
+  raw_text: 배추 10g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 2.5g 다진 마늘 1.25g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 1.7g
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 9g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+steps:
+- text: 토란은 감자칼로 껍질을 벗겨 3~4 등분한다.
+- text: 소고기와 배추는 5mm 너비로 썰고 대파는 어슷 썬다.
+- text: 토란을 연한 소금물(물 1컵 + 소금 1g)에 담근다.
+- text: 참기름에 소고기와 다진 마늘을 볶다가 향이 우러나면 고춧가루를 넣고 잠시 더 볶는다.
+- text: 볶은 고기에 물을 붓고 된장을 풀어 넣는다.
+- text: 국물이 끓으면 배추, 토란, 대파를 넣고 한소끔 끓인다.

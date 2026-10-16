@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3217
+title: 닭고기 찰깨빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3217. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(60g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(70g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(120g)
+  role: sub
+- ingredient: null
+  raw_text: 할라피뇨(10g)
+  role: sub
+- ingredient: null
+  raw_text: 훈제 닭가슴살(40g)
+  role: sub
+- ingredient: null
+  raw_text: 찰깨빵(45g)
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모차렐라치즈(30g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(약간)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(1g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(15㎖)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.5g)
+  role: sub
+steps:
+- text: 방울토마토, 양파, 파프리카, 할라피뇨, 훈제 닭가슴살은 작게 깍둑썬다.
+- text: 손질한 재료에 양념을 고루 섞는다.
+- text: 찰깨빵의 윗부분 1cm를 도려낸다.
+- text: 빵 안에 버무린 재료를 채운 뒤 모차렐라치즈를 올린다.
+- text: 180℃로 예열한 오븐에 속을 채운 빵을 넣고 5분간 구워 꺼낸다.
+- text: 그릇에 구운 빵을 올린 뒤 파슬리가루를 뿌린다.

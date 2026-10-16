@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_547
+title: 들깨칼국수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 547. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 밀가루(100g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(10g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(20g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(10g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깨가루(30g)
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 건새우(10g)
+  role: sub
+- ingredient: anchovy
+  raw_text: 멸치(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(50g)
+  role: sub
+steps:
+- text: 밀가루에 녹말가루와 식용유, 소금, 달걀, 물을 넣고 반죽을 한다.
+- text: 반죽된 밀가루를 비닐에 넣고 숙성을 시킨다.
+- text: 냄비에 건새우와 머리 ․ 내장을 제거한 멸치, 양파, 다시마, 무, 통마늘을 넣고 끓인 육수를 소창에 걸러 놓는다.
+- text: 호박은 반달로 썰고, 홍고추는 어슷 썰어 준비한다.
+- text: 만들어 놓은 육수에 들깨 가루를 넣어 끓인다.
+- text: 숙성된 밀가루(②)를 얇게 밀어 칼국수로 만든 뒤 준비한 육수(⑤)를 한소끔 끓인 후 칼국수와 호박을 넣어 끓이다가 다시 홍고추를 넣고 한 번 더 끓여 완성한다.

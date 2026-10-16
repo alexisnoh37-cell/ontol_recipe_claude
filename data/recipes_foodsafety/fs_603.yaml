@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_603
+title: 식혜양갱과 수박증편
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 603. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 엿기름(100g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(50g)
+  role: sub
+- ingredient: null
+  raw_text: 미숫가루(50g)
+  role: sub
+- ingredient: null
+  raw_text: 막걸리(50g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(3알)
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣(10g)
+  role: sub
+- ingredient: null
+  raw_text: 백년초(30g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루(200g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(100g)
+  role: sub
+- ingredient: null
+  raw_text: 한천(10g)
+  role: sub
+steps:
+- text: 엿기름은 물을 넣고 주물럭거린다
+- text: 엿기름에 맑은 물이 생기면 채에 걸러내어 밥을 넣고 3시간 정도 발효를 시켜 밥알이 떠오르면 설탕을 넣고 끓인다.
+- text: 한천은 물을 넣고 불린다
+- text: 식혜에 불린 한천을 넣고 틀에 담아 굳힌다.
+- text: 미숫가루에 밀가루, 버터, 설탕을 섞고 살짝 끓여 잼을 만든다.
+- text: 찹쌀가루에 뜨거운 막걸리와 백년초를 넣고 익반죽 후 찜통에 쪄서 수박모양의 증편을 만들고 식혜, 양갱, 버터 잼과 함께 담는다.

@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3270
+title: 버터치킨카레
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3270. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파(1개)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(½개)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(2개)
+  role: sub
+- ingredient: chicken
+  raw_text: 닭고기(가슴살, 다릿살 각 200g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(200g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(빨강, 노랑 각 1개)
+  role: sub
+- ingredient: null
+  raw_text: 바게트(약간)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(1장)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추(5알)
+  role: sub
+- ingredient: null
+  raw_text: 정향(1개)
+  role: sub
+- ingredient: yogurt
+  raw_text: 요거트(1컵)
+  role: sub
+- ingredient: null
+  raw_text: 가람마살라(2Ts)
+  role: sub
+- ingredient: null
+  raw_text: 코리앤더파우더(2Ts)
+  role: sub
+- ingredient: null
+  raw_text: 커민파우더(2Ts)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(3Ts)
+  role: sub
+- ingredient: null
+  raw_text: 파프리카가루(2Ts)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1ts)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(2Ts)
+  role: sub
+steps:
+- text: 양파, 당근, 토마토, 파프리카는 한입 크기로 썰고, 닭고기는 한입 크기로 썬다.
+- text: 닭고기는 요거트(1컵), 가람마살라(1Ts), 코리앤더파우더(1Ts), 커민파우더(1Ts), 다진 마늘(1Ts), 파프리카가루(1Ts), 소금(0.5ts)에 버무려 15분간 재운다.
+- text: 중간 불로 달군 팬에 버터(2Ts)를 녹이고, 다진 마늘(1Ts), 양파, 당근, 토마토를 넣어 5분간 볶는다.
+- text: 물(⅓컵), 육수 재료, 생크림을 넣어 끓이고, 당근이 익으면 핸드 믹서로 곱게 간 뒤 체로 거른다.
+- text: 갈아 낸 카레를 냄비에 붓고, 가람마살라 (1Ts), 코리앤더파우더(1Ts), 커민파우더, (1Ts), 다진 마늘(1Ts), 파프리카가루(1Ts), 소금(0.5ts)을 넣어 걸쭉하게 끓인다.
+- text: 꼬치에 파프리카와 닭을 번갈아 끼운 뒤 중간 불로 달군 팬에 닭이 익을 때까지 굽고, 그릇에 카레를 담은 뒤 닭꼬치와 바게트를 곁들여 마무리한다.

@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3467
+title: 두부샐러드 메밀김밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3467. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: buckwheat_noodles
+  raw_text: 메밀면(생면, 166g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(55g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(42g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(25g)
+  role: sub
+- ingredient: null
+  raw_text: 족발(200g)
+  role: sub
+- ingredient: null
+  raw_text: 달걀지단(20g)
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추(50g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(1/4개=60g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(15g)
+  role: sub
+- ingredient: null
+  raw_text: 리코타 치즈(60g)
+  role: sub
+- ingredient: tofu
+  raw_text: 연두부(80g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 레몬청 과육(50g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(14g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(20g)
+  role: sub
+- ingredient: laver
+  raw_text: 김(2장)
+  role: sub
+steps:
+- text: 당근, 양파, 깻잎은 깨끗이 씻고, 오이, 양배추, 사과는 채 썬다.
+- text: 리코타 치즈, 연두부, 다진 레몬청 과육을 섞어 소스를 만들고 양배추, 사과와 함께 버무려 두부 리코타 샐러드를 만든다.
+- text: 메밀면을 4분간 삶아 물기를 제거한 후 참기름, 간장을 넣어 버무린다.
+- text: 족발은 전자레인지에 1분간 돌리고 채 썰어 준비한다.
+- text: 김을 깔고 양념한 메밀면 → 깻잎 → 오이 → 당근 → 양파 → 두부 리코타 샐러드 → 족발 순서로 올려 말아 김밥을 만든다.
+- text: 김밥을 먹기 좋은 크기로 썰고 달걀지단을 올려 마무리한다.

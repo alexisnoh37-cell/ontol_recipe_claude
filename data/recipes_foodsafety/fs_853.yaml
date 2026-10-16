@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_853
+title: 등심 배구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 853. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 쇠고기등심 38g
+  role: sub
+- ingredient: pear
+  raw_text: 배 12g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 9g
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣가루 0.5g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 0.5g
+  role: sub
+- ingredient: null
+  raw_text: 고기재움장
+  role: sub
+- ingredient: wine
+  raw_text: 포도주 2.5g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.1g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨초간장소스
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1.3g
+  role: sub
+- ingredient: null
+  raw_text: 사과주스 3.8g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 1.3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1.3g
+  role: sub
+- ingredient: null
+  raw_text: 와사미 0.8g
+  role: sub
+steps:
+- text: 소고기등심은 손질하여 칼등으로 부드럽게 두드린 뒤 4cm 길이로 썰어서 재움장에 30분 정도 재운다.
+- text: 오이는 0.2cm 두께로 동그랗게 썰어 소금에 살짝 절였다 짠다.
+- text: 배는 껍질과 씨를 제거하고 반달모양으로 0.2cm 두께로 썬다.
+- text: 팬에 식용유를 두르고 오이는 센불에서 살짝 볶고 배는 노릇하게 지진다.
+- text: 팬에 재워둔 소고기등심을 지지고 초간장소스를 만든다.
+- text: 노릇하게 지진 배에 소고기등심을 오이, 잣가루를 얹고 가볍게 싸서 저나트륨 초간장에 찍어 먹는다.

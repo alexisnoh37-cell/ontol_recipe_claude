@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_885
+title: 미역 물오징어 연두부 초회
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 885. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 연두부큰것 25g
+  role: sub
+- ingredient: null
+  raw_text: 불린미역 25g
+  role: sub
+- ingredient: null
+  raw_text: 물오징어 25g
+  role: sub
+- ingredient: green_chili
+  raw_text: 꽈리고추 4.2g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨양념장
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 2.5g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 0.8g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 1g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 0.8g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 0.8g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 0.2g
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 1g
+  role: sub
+- ingredient: null
+  raw_text: 파다진것 0.2g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 0.1g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.2g
+  role: sub
+steps:
+- text: 연두부는 작은 숟가락으로 떠 놓는다.
+- text: 불린 미역은 4cm 길이로 썬다.
+- text: 오징어는 껍질을 벗기고 칼집을 넣어 데친다.
+- text: 데친 오징어는 솔방울 모양으로 자른다.
+- text: 꽈리고추는 데친다.
+- text: 재료를 보기좋게 담고 양념장을 곁들여 낸다.

@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_428
+title: 장어조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 428. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 장어 150g
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎 10g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추17g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 17g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 15g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 25g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 15g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 15g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 15g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 통마늘 20g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 10g
+  role: sub
+steps:
+- text: 장어는 한입 크기로 잘라서 흰 후추와 청주를 뿌려 재워준다.
+- text: 깻잎은 채를 썰어서 냉수에 담가 물기를 빼준다.
+- text: 생강, 마늘은 편으로 썰어주고 양파, 청고추, 홍고추는 어슷하게 잘라준다.
+- text: 참기름을 뺀 양념장 재료에 편마늘과 다진대파를 넣어서 양념장을 만들어준다.
+- text: 만들어진 양념장 1/2에 장어를 넣고 졸여준다.
+- text: 나머지 양념장에 준비된 채소를 넣어 볶아주다 졸인 장어를 넣어 졸여주고 깻잎을 깔고 완성한다.

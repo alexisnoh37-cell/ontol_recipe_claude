@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3191
+title: 곶감 베이글
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3191. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 통밀가루 200g
+  role: sub
+- ingredient: null
+  raw_text: 강력밀가루 150g
+  role: sub
+- ingredient: null
+  raw_text: 인스턴트 드라이 이스트 8g
+  role: sub
+- ingredient: null
+  raw_text: 사과종 30ml
+  role: sub
+- ingredient: salt
+  raw_text: 소금 6g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 카놀라유 20g
+  role: sub
+- ingredient: null
+  raw_text: 레몬 제스트 1개
+  role: sub
+- ingredient: dried_persimmon
+  raw_text: 곶감 88g
+  role: sub
+steps:
+- text: 레몬의 겉껍질로 제스트를 만들고, 곶감은 작은 다이스로 썬다.
+- text: 물에 만들어 놓은 레몬 제스트와 소금, 이스트, 사과종, 카놀라유를 넣고 섞어준 뒤 통밀가루와, 강력분을 넣고 반죽해 겉표면이 매끄럽고 탄력성을 가질 때 까지 치댄다.
+- text: 반죽에 비닐을 덮어 40~50℃에서 2배가 부풀 때까지 1차발효하고, 발효가 끝난 반죽은 기포를 빼준 뒤 75g씩 분할해 둥글리기하고 비닐을 씌워 다시 15분간 중간 발효한다.
+- text: 반죽은 가스를 살짝 빼주고 타원형으로 밀고, 곶감을 올려 삼절 접기한 다음 이음새를 꼬집고 양쪽을 붙여 원형모양으로 성형하여 30분간 2차 발효한다.
+- text: 발효된 반죽은 끓는 물에 앞, 뒤로 10초간 데쳐내고 팬닝한다.
+- text: 200도로 예열된 오븐에서 17분간 굽는다.

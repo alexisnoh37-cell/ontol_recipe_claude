@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_625
+title: 라따뚜이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 625. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: tomato
+  raw_text: 토마토(150g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(1/2개)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 홀토마토(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(1장)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리(5g)
+  role: sub
+steps:
+- text: 토마토는 슬라이스 한다.
+- text: 홀토마토와 양파는 곱게 다진다.
+- text: 가지와 애호박은 둥글게 썬다.
+- text: 팬에 가지와 애호박을 굽는다
+- text: 냄비에 다진 토마토를 넣고 볶다가 다진 양파, 월계수잎을 넣고 볶아 은근히 끓여서 소스를 만든다.
+- text: 파슬리는 곱게 다져 준비하고 접시에 토마토, 가지, 애호박을 돌려담고 그 위에 토마토소스를 올린 뒤 다진 파슬리를 올린다.

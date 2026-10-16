@@ -1,0 +1,22 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_861
+title: 케이준 스타일 닭고기 요리
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 861. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 100g, 식용유 8g, 파프리카가루 2g, 키엔페퍼 1g, 양파가루 1g, 마늘가루 1g, 후추 1g, 흰후춧가루 1g, 오레가노마른것 0.5g, 타임 마른것 0.5g, 바질마른것 1g, 로즈마리마른것 0.5g *선택
+  role: sub
+- ingredient: sugar
+  raw_text: 황설탕 1g
+  role: sub
+steps:
+- text: 식용유를 제외한 모든 향신료를 섞어준다.
+- text: 닭가슴살에 식용유를 바른다.
+- text: 1의 향신료를 닭가슴살의 한면에만 잘 발라준다.
+- text: 가열된 식용유를 두르고 닭가슴살의 향신료 묻는 면이 팬에 닿도록 놓는다.
+- text: 앞 뒷면이 노릇하게 되도록 구워준다.
+- text: 그릇에 담아 마무리 한다.

@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1083
+title: 얌얌 맛있게타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1083. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 바게트(1/4개)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(15g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(10g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(2개)
+  role: sub
+- ingredient: basil
+  raw_text: 바질(10g)
+  role: sub
+- ingredient: null
+  raw_text: 생모짜렐라치즈(15g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(2.5g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+steps:
+- text: 바게트는 1cm 두께로 잘라 한쪽 면에 다진 마늘과 올리브오일을 발라 팬에 굽고 식힌다.
+- text: 방울토마토는 씨를 제거하고 다진 뒤 물기를 빼주고 바질은 얇게 슬라이스 한다.
+- text: 생모짜렐라치즈를 잘게 찢고 방울토마토, 바질과 함께 소금, 올리브오일에 섞는다.
+- text: 새송이버섯, 표고버섯, 마늘은 잘게 다진다.
+- text: 팬에 올리브오일을 두르고 다진 마늘을 볶다가 표고버섯과 새송이버섯을 넣어 볶는다.
+- text: 바게트에 각각 소를 얹는다.

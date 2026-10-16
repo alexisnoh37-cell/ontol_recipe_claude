@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2960
+title: 만가닥버섯볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2960. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 만가닥버섯 25g
+  role: sub
+- ingredient: crab
+  raw_text: 게살(크래미) 10g
+  role: sub
+- ingredient: null
+  raw_text: 적파프리카 10g
+  role: sub
+- ingredient: null
+  raw_text: 황파프리카 10g
+  role: sub
+- ingredient: null
+  raw_text: 청피망 10g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 3g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 1g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+steps:
+- text: 만가닥버섯을 한 송이씩 자른다.
+- text: 청피망, 황, 적파프리카는 채썰고 게살은 길이로 찢는다.
+- text: 팬에 기름을 두르고 채썬 파프리카와 피망을 볶는다.
+- text: 3에 손질한 만가닥버섯을 넣고 볶는다.
+- text: 찢어둔 게살을 넣고 볶다가 소금, 후추로 간을 한다.
+- text: 간장으로 색을 내고 담는다.

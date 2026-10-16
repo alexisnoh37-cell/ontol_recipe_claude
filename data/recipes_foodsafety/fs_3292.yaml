@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3292
+title: 양파토마토스튜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3292. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: garlic
+  raw_text: 마늘(4쪽)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(2개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(1개)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(2장)
+  role: sub
+- ingredient: null
+  raw_text: 육수용 멸치(½컵)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(5×5cm, 2장)
+  role: sub
+steps:
+- text: 물(8컵)에 육수 재료와 마늘(2쪽)을 넣어 끓으면 다시마를 건진 뒤 약한 불 로 30분간 더 끓여 육수를 만든다.
+- text: 토마토는 꼭지를 제거하고, 열십자로 칼집을 낸 뒤 끓는 물에 30초간 데쳐 찬물에 담근다.
+- text: 데친 토마토는 껍질을 벗긴 뒤 씨를 제거하고, 1×1cm 크기로 썬다.
+- text: 양파는 3mm 두께로 채 썰고, 마늘(2쪽)은 1mm 두께로 채 썬다.
+- text: 중간 불로 달군 마른 냄비에 채 썬 양파와 물(1Ts)을 넣어 진한 갈색이 될 때까지 볶는다.
+- text: 토마토를 넣어 으깨가며 5분간 볶고, 육수(6컵), 월계수잎, 채 썬 마늘을 넣어 10분간 끓이고 마무리한다.

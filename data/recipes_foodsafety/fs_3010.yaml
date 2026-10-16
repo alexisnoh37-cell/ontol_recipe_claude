@@ -1,0 +1,28 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3010
+title: 완두콩과 당근을 넣은 감자요거트 샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3010. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 완두콩 10g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 50g
+  role: sub
+- ingredient: yogurt
+  raw_text: 플레인요거트 20g
+  role: sub
+steps:
+- text: 완두콩을 삶아 건진다.
+- text: 감자는 삶은 뒤 건져 껍질을 벗긴다.
+- text: 감자가 뜨거울 때 곱게 으깬다.
+- text: 당근을 잘게 다진다.
+- text: 으깬 감자와 완두콩, 당근을 섞는다.
+- text: 플레인요거트를 섞어 마무리한다.

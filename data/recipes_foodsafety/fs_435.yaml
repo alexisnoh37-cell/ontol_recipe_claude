@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_435
+title: 크림닭
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 435. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(120g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(100g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(10g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(100g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: null
+  raw_text: 크림소스(20g)
+  role: sub
+- ingredient: null
+  raw_text: 캐슈넛(20g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모짜렐라치즈(20g)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(10g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(0.5g)
+  role: sub
+steps:
+- text: 우유에 닭가슴살을 넣어 약20분 정도 재워 놓는다.
+- text: 양송이버섯은 껍질을 벗기고, 양파와 캐슈넛과 각각 다져 준비한다.
+- text: 우유에 재워놓은 닭가슴살은 소금, 후춧가루를 뿌려 밀가루와 달걀물, 빵가루 순서로 입혀 기름에 튀기듯이 익혀 기름을 빼놓는다.
+- text: 팬에 버터를 넣고, 버터가 녹으면, 양송이와 양파를 넣고 볶는다.
+- text: 볶아지는 채소에 크림소스를 넣어 은근히 볶는다.
+- text: 소스가 볶아지면, 마지막에 다져 놓은 캐슈넛과 생크림, 모짜렐라치즈를 넣고 한 번 더 익힌 후, 접시에 어린잎과, 닭가슴살을 놓고, 크림소스를 곁들여 완성한다.

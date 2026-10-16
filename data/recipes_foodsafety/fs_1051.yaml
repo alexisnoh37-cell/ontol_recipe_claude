@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1051
+title: 과일 샐러드 또띠아
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1051. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 자몽 30g
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지 30g
+  role: sub
+- ingredient: kiwi
+  raw_text: 키위 30g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 30g
+  role: sub
+- ingredient: null
+  raw_text: 플레인 요구르트 30g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 5g
+  role: sub
+- ingredient: tortilla
+  raw_text: 또띠아 45g
+  role: sub
+steps:
+- text: 자몽은 껍질을 벗겨내고 과육만 0.5cm 주사위모양으로 자른다.
+- text: 오렌지는 껍질을 벗겨내고 과육만 자몽과 같은 크기로 자른다.
+- text: 키위도 껍질을 벗겨내고 자몽과 같은 크기로 자른다.
+- text: 썰어 둔 과일에 플레인 요거트, 꿀을 넣고 버무린다.
+- text: 또띠아를 반으로 자른다.
+- text: 버무린 과일을 넣고 말아준다.

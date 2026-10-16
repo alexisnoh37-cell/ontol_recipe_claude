@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_695
+title: 애호박장떡말이밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 695. 요리종류 밥, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: rice
+  raw_text: 밥 100g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 25g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: green_chili
+  raw_text: 풋고추 5g
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 15g
+  role: sub
+- ingredient: null
+  raw_text: 우리밀가루 50g
+  role: sub
+- ingredient: null
+  raw_text: 현미유 1.5g
+  role: sub
+- ingredient: null
+  raw_text: 흑임자 1g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+steps:
+- text: 양파는 갈고 애호박과 풋고추는 잘게 다진다.
+- text: 물 1/2컵에 고추장을 풀고 우리밀가루를 넣어 골고루 섞는다.
+- text: 1의 재료를 2에 넣어 반죽한다.
+- text: 팬에 현미유를 두르고 3의 재료를 얇게 부친다.
+- text: 밥에 참기름과 흑임자, 소금을 넣고 양념을 한다.
+- text: 애호박장떡에 양념한 밥을 얇게 펴놓고 돌돌 말아 2~3cm 가량의 길이로 자른다.

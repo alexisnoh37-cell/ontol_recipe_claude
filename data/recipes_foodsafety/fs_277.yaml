@@ -1,0 +1,91 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_277
+title: 나가사키부대찌개
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 277. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 통조림 햄(30g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(100g)
+  role: sub
+- ingredient: null
+  raw_text: 실곤약(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(25g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(10g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(30g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(5g)
+  role: sub
+- ingredient: null
+  raw_text: 붉은 고추(5g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(30g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(30g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(40g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(30g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(3g)
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓(10g)
+  role: sub
+- ingredient: null
+  raw_text: 완자 다진 돼지고기(20g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 파(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(1g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 달걀노른자(20g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 사골육수(300g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(5g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 들깻가루(15g)
+  role: sub
+steps:
+- text: 통조림 햄은 한 번 데친 뒤 우유에 담가두고, 실곤약은 식초를 넣은 끓는 물에 살짝 데친다.
+- text: 양파는 굵게 채 썰고, 느타리버섯은 찢고, 표고버섯은 모양대로 썰고, 팽이버섯은 끝부분을 잘라내고, 청양고추와 붉은 고추는 어슷 썬다.
+- text: 감자, 무, 두부는 0.5㎝ 두께로 썰고, 애호박은 반달썰기 하고 깻잎은 채 썰어 찬물에 담가 매운맛을 제거한다.
+- text: 사골육수에 다시마를 넣어 끓인 후 한 김 식힌다.
+- text: 다진 돼지고기에 다진 파, 다진 마늘, 후춧가루, 소금을 섞어 완자를 만들고 밀가루와 달걀물을 묻혀 식용유(5g)를 두른 팬에 부친다.
+- text: 냄비에 재료를 보기 좋게 담고 사골육수를 부은 뒤 끓이다가 쑥갓과 들깻가루를 넣어 마무리한다.

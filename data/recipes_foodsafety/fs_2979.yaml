@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2979
+title: 과일 먹은 닭탕수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2979. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(다리살) 300g
+  role: sub
+- ingredient: grape
+  raw_text: 포도 15g
+  role: sub
+- ingredient: null
+  raw_text: 미니사과 30g
+  role: sub
+- ingredient: null
+  raw_text: 파인애플 15g
+  role: sub
+- ingredient: null
+  raw_text: 전분 80g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 20g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬 70g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 10g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 2g
+  role: sub
+steps:
+- text: 닭다리의 살만 발라내 4cm ? 1cm 크기로 썬다.
+- text: 1에 소금, 후추로 밑간한 뒤 청주를 넣어 재운다.
+- text: 포도알은 2등분하고 사과, 파인애플은 한 입 크기로 썬다.
+- text: 2에 녹말을 입혀 기름에 2번 튀긴다.
+- text: 팬에 물, 설탕, 레몬즙을 넣고 한소끔 끓인다.
+- text: 소스에 물전분을 넣어 농도를 맞추고 썰어둔 과일을 넣는다.

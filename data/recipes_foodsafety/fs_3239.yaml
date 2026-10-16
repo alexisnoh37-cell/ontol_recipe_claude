@@ -1,0 +1,39 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3239
+title: 연두부 토마토
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3239. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: tofu
+  raw_text: 연두부(70g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(6~7개=50g)
+  role: sub
+- ingredient: null
+  raw_text: 스트링치즈(40g)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎채소(약간)
+  role: sub
+- ingredient: null
+  raw_text: 발사믹식초(5g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(150g)
+  role: sub
+- ingredient: null
+  raw_text: 사과주스(50g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 플레인 요거트(30g)
+  role: sub
+steps:
+- text: 믹서에 사과와 사과주스를 넣고 곱게 간 뒤 플레인 요거트를 섞어 사과드레싱을 만든다.
+- text: 연두부는 9cm 크기로 썬 뒤 중앙 부분을 파낸다.
+- text: 방울토마토와 스트링치즈는 굵게 다진 뒤 사과드레싱에 버무린다.
+- text: 버무려진 방울토마토와 스트링치즈로 연두부 속을 채운 뒤 사과드레싱을 올린다.
+- text: 그릇에 발사믹 식초를 바른 뒤 속 채운 연두부를 올리고 어린잎채소를 곁들인다.

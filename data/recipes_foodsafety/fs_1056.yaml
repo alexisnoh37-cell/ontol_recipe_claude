@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1056
+title: 레몬 들깨 소스를 품은 떡꼬치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1056. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 떡꼬치
+  role: sub
+- ingredient: tteokbokki_rice_cake
+  raw_text: 쌀떡 90g
+  role: sub
+- ingredient: null
+  raw_text: ghen 10g(1알)
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣 5g(5알)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 30g(2큰술)
+  role: sub
+- ingredient: null
+  raw_text: 꼬치용 꼬치 6개
+  role: sub
+- ingredient: null
+  raw_text: 레몬 들깨 소스
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깨가루 45g(3큰술)
+  role: sub
+- ingredient: soy_milk
+  raw_text: 두유 45g(3큰술)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 15g(1큰술)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 7g(1작은술)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 7g(1작은술)
+  role: sub
+- ingredient: null
+  raw_text: 검은깨 5g(1작은술)
+  role: sub
+steps:
+- text: 들깨가루, 검은깨, 두유, 레몬즙, 꿀, 물, 참기름을 섞어 레몬 들깨 소스를 만든다.
+- text: 떡 군데군데 꼬챙이로 찌르거나 칼집을 넣는다.
+- text: 팬에 기름을 두르고 160℃ 정도에서 기름이 튀지 않도록 주의하며 떡을 튀긴다.
+- text: 꼭지를 땐 잣과 호두를 굵게 다진다.
+- text: 떡은 꼬치에 꽂아 접시에 담는다.
+- text: 레몬 들깨소스를 바르고 잣, 호두를 고명으로 뿌린다.

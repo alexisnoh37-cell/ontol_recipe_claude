@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_390
+title: 오징어콩순대
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 390. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: squid
+  raw_text: 오징어 1마리(220g)
+  role: sub
+- ingredient: corn
+  raw_text: 옥수수 30g
+  role: sub
+- ingredient: null
+  raw_text: 귀리밥 50g
+  role: sub
+- ingredient: null
+  raw_text: 강낭콩 20g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 20g
+  role: sub
+- ingredient: null
+  raw_text: 미니파프리카 20g
+  role: sub
+- ingredient: green_bell_pepper
+  raw_text: 피망 20g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 10g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 25g
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루 25g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 15g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 15g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 15g
+  role: sub
+steps:
+- text: 오징어는 내장을 빼서 흐르는 물에 깨끗이 씻은 후, 다리는 송송 다져주고 레몬즙을 살짝 뿌려준다.
+- text: 강낭콩은 먼저 삶아준다.
+- text: 피망, 당근, 양파, 대파, 파프리카는 송송 다져준다.
+- text: 잘라준 오징어다리는 다진마늘과 살짝 볶아준다.
+- text: 볼에 귀리밥을 넣고 카레가루를 넣고 모든 재료를 섞어 소 재료를 만든다.
+- text: 오징어 안쪽에 밀가루를 묻혀주고 소를 채워 팬에 구워준다.

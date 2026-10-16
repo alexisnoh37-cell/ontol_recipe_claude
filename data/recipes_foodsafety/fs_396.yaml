@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_396
+title: 까르보나라뇨끼
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 396. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: potato
+  raw_text: 감자 220g
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎 10g
+  role: sub
+- ingredient: bacon
+  raw_text: 베이컨 25g
+  role: sub
+- ingredient: null
+  raw_text: 백일송이 25g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 15g
+  role: sub
+- ingredient: null
+  raw_text: 다진양파 25g
+  role: sub
+- ingredient: null
+  raw_text: 다진대파 25g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 3g
+  role: sub
+- ingredient: butter
+  raw_text: 버터15g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 200g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 30g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 10g
+  role: sub
+- ingredient: null
+  raw_text: 치즈가루 15g
+  role: sub
+steps:
+- text: 감자를 슬라이스 하여 찜통에 찐 후 체에 으깬다. 깻잎을 잘게 채 썰어서 냉수에 담가 향을 빼준다.
+- text: 베이컨을 한 번 데쳐내 송송 썰어준 후 다진 마늘과 볶아준다.
+- text: 으깬 감자와 깻잎을 다져서 반죽을 만들고 엄지손가락 크기로 떼어 밀가루를 뿌리고, 둥글게 빚은 후 포크로 자국을 내 뇨끼를 만든다.
+- text: 만들어진 뇨끼를 삶아 건져준다.
+- text: 팬에 버터를 넣고 다진양파, 다진마늘, 다진 대파, 볶은 베이컨, 새송이, 흰후추를 볶다가 우유와 생크림, 설탕을 넣고 끓여준다.
+- text: 뇨끼를 넣어 한 번 더 끓여준 뒤 완성한다.

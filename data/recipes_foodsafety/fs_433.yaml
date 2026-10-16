@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_433
+title: 치자연근물김치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 433. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: lotus_root
+  raw_text: 연근 200g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 40g
+  role: sub
+- ingredient: minari
+  raw_text: 미나리 20g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 15g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 18g
+  role: sub
+- ingredient: null
+  raw_text: 알마늘 12g
+  role: sub
+- ingredient: null
+  raw_text: 치자가루 15g
+  role: sub
+- ingredient: null
+  raw_text: 생강청 30g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+- ingredient: null
+  raw_text: 볶은소금 5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 7g
+  role: sub
+steps:
+- text: 당근은 모양틀로 잘라서 편으로 썰어준다.
+- text: 연 근 은 껍 질 을 벗 겨 서 식 초 물 에 살 짝 담가준다.
+- text: 청고추, 홍고추, 미나리는 먹기 좋게 썰어준다.
+- text: 마늘은 편으로 썰어서 물 400g에 끓여주다 불을 끄고 치자가루를 넣어 국물을 만들어준다.
+- text: 국물에 연근을 담가 색을 들인다.
+- text: 여기에 생강청, 식초, 설탕, 볶은소금과 준비된 채소를 넣어 치자 연근물김치를 완성한다.

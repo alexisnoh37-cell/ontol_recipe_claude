@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_279
+title: 쑥갓부대찌개
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 279. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: luncheon_meat
+  raw_text: 통조림 햄(30g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(20g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(20g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(20g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(5g)
+  role: sub
+- ingredient: kimchi
+  raw_text: 김치(30g)
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓(4g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(5g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(0.5g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(4g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(2g)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(2g)
+  role: sub
+steps:
+- text: 통조림 햄을 썰어 끓는 물에 데친다.
+- text: 애호박은 반달모양으로 썰고, 두부는 도톰하게 썰고, 팽이버섯은 3등분하고, 청양고추는 어슷 썬다.
+- text: 김치는 씻어서 잘게 썬다.
+- text: 양념장을 만든다.
+- text: 냄비에 물과 다시마를 넣고 살짝 끓여 육수를 만든다.
+- text: 육수에 손질한 재료를 담고 양념장의 1/2 분량을 넣고 중간 불에 끓이다가 쑥갓과 남은 양념장을 넣고 약한 불에 조금 더 끓여 마무리한다.

@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3781
+title: 오소부코
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3781. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: brown_rice
+  raw_text: 현미 80g
+  role: sub
+- ingredient: beef
+  raw_text: 소고기(정강이살) 180g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 30g
+  role: sub
+- ingredient: celery
+  raw_text: 셀러리 20g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 20g
+  role: sub
+- ingredient: null
+  raw_text: 닭뼈육수 300g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 30g
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎 8g
+  role: sub
+- ingredient: null
+  raw_text: 참나물 12g
+  role: sub
+- ingredient: vinegar
+  raw_text: 사과식초 10g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 10g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 2g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 60g
+  role: sub
+- ingredient: null
+  raw_text: 파르미지아노 치즈 13g
+  role: sub
+steps:
+- text: 현미는 2시간 이상 물에 불린다. 소고기에 소금, 후추로 밑간하고 달군 팬에 올리브유(20g)를 두르고 소고기 겉면을 바싹 익힌다.
+- text: 양파, 셀러리, 당근을 잘게 다진다. 올리브유(10g)를 두른 팬에 손질한 양파(30g), 당근, 셀러리, 다진 마늘(10g)을 넣고 볶다가 익힌 소고기, 닭뼈육수(150g), 청주를 넣고 약한 불로 20분간 뭉근하게 조린다.
+- text: 깻잎, 참나물을 잘게 다진다. 볼에 손질한 깻잎, 참나물, 사과식초, 레몬즙, 올리브유(20g)를 넣고 섞어 그레몰라타 소스를 만든다.
+- text: 올리브유(10g)를 두른 팬에 손질한 양파(30g), 다진 마늘(10g)을 넣고 볶은 후 불린 현미, 닭뼈육수(150g)를 넣고 조려 리소토를 만든다.
+- text: 그릇에 리소토를 담고 파르미지아노 치즈를 갈아 올린다.
+- text: 리소토 위에 조린 소고기를 얹고 그레몰라타 소스를 곁들여 마무리한다.

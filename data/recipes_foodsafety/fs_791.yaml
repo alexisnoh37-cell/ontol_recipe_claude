@@ -1,0 +1,79 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_791
+title: 쌈밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 791. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+ingredients:
+- ingredient: rice
+  raw_text: 밥 140g
+  role: sub
+- ingredient: null
+  raw_text: 쇠고기다진것 15g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.01g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2g
+  role: sub
+- ingredient: null
+  raw_text: 근대 20g
+  role: sub
+- ingredient: null
+  raw_text: 쌈다시마 15g
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추 20g
+  role: sub
+- ingredient: null
+  raw_text: 케일20g
+  role: sub
+- ingredient: null
+  raw_text: 앤다이브 20g
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎 10g
+  role: sub
+- ingredient: minari
+  raw_text: 미나리 1g
+  role: sub
+- ingredient: squid
+  raw_text: 오징어 10g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨 양념간장
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 6g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 3g
+  role: sub
+- ingredient: null
+  raw_text: 청고주 2g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨 초고추장
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 1g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 0.5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 0.5g
+  role: sub
+- ingredient: null
+  raw_text: 사이다 0.5g
+  role: sub
+steps:
+- text: 고슬고슬하게 지은밥에 참기름을 섞고 다진 소고기는 후춧가루, 참기름에 무친 뒤 볶아서 밥과 섞어 주먹밥을 만든다.
+- text: 근대는 데친 뒤 소금, 다진 마늘, 참기름으로 무친다.
+- text: 쌈다시마는 물에 헹군 뒤 끓는 물에 파랗게 데쳐 6cm폭으로 자른다.
+- text: 케일, 앤다이브는 씻어서 물기를 빼고 깻잎은 저나트륨 양념간장에 재운다.
+- text: 미나리와 오징어는 손질하여 살짝 데치고 오징어는 얇게 저며 썬다.
+- text: 1의 주먹밥을 준비한 각각의 재료로 말아 싼 다음 쌈장, 저나트륨 초고추장을 올려 마무리 한다.

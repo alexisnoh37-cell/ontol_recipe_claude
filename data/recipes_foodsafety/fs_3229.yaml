@@ -1,0 +1,33 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3229
+title: 오이 소르베
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3229. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: cucumber
+  raw_text: 오이(100g)
+  role: sub
+- ingredient: null
+  raw_text: 셀러리 줄기(15g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 요거트(60g)
+  role: sub
+- ingredient: null
+  raw_text: 과일(20g)
+  role: sub
+- ingredient: null
+  raw_text: 라임즙(5g)
+  role: sub
+- ingredient: null
+  raw_text: 아가베 시럽(5g)
+  role: sub
+steps:
+- text: 오이는 껍질을 제거한 뒤 큼직하게 썰고, 셀러리는 필러로 겉껍질을 벗겨 큼직하게 썬다.
+- text: 손질한 오이와 셀러리에 양념을 넣어 믹서에 곱게 간다.
+- text: 면포에 간 오이와 셀러리를 부은 뒤 즙만 짠다.
+- text: 오이셀러리 즙을 밀폐 용기에 넣어 냉동실에서 3시간 이상 얼린다.
+- text: 요거트에 얼린 오이소르베를 얹고 과일을 곁들인다.

@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3177
+title: 양상추샐러드 & 과일드레싱
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3177. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: iceberg_lettuce
+  raw_text: 양상추(60g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(10g)
+  role: sub
+- ingredient: cabbage
+  raw_text: 적양배추(10g)
+  role: sub
+- ingredient: null
+  raw_text: 치커리(5g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(20g)
+  role: sub
+- ingredient: null
+  raw_text: 파인애플(15g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(1g)
+  role: sub
+steps:
+- text: 양상추는 깨끗이 씻어 먹기 좋은 크기로 썬다.
+- text: 당근과 적양배추는 곱게 채 썰고, 치커리는 잘게 썬다.
+- text: 사과는 껍질과 심을 제거한 뒤 한입 크기로 썬다.
+- text: 파인애플은 껍질과 심을 제거한 뒤 한입 크기로 썬다.
+- text: 손질한 과일과 레몬즙을 믹서에 넣어 곱게 갈아 드레싱을 만든다.
+- text: 양상추와 당근, 적양배추를 접시에 깔고 드레싱을 곁들여 마무리한다.

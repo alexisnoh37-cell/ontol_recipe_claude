@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1093
+title: 감말랭이 찰빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1093. 요리종류 후식, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 감말랭이(10g)
+  role: sub
+- ingredient: rice_flour
+  raw_text: 쌀가루(7g)
+  role: sub
+- ingredient: null
+  raw_text: 보릿가루(7g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(6g)
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마(13g)
+  role: sub
+- ingredient: null
+  raw_text: 냉동딸기(13g)
+  role: sub
+- ingredient: null
+  raw_text: 흑임자(4g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(100g)
+  role: sub
+steps:
+- text: 고구마는 삶은 뒤 껍질을 제거한다.
+- text: 쌀가루, 보릿가루, 밀가루는 체에 내린다.
+- text: 체에 내린 가루에 삶은 고구마, 감말랭이, 냉동딸기, 흑임자를 넣고 믹서에 간다.
+- text: 믹서에 간 반죽을 10cm 길이의 스틱모양으로 성형한다.
+- text: 170℃ 기름에 반죽을 튀긴다.
+- text: 기름을 제거하고 그릇에 담는다.

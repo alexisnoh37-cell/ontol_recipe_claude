@@ -1,0 +1,57 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3294
+title: 황금팽이 비빔국수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3294. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 황금팽이버섯(400g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파( 개)
+  role: sub
+- ingredient: lettuce
+  raw_text: 상추(2장)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(2장)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(½개)
+  role: sub
+- ingredient: peach
+  raw_text: 천도복숭아(½개)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우살(½컵)
+  role: sub
+- ingredient: crab
+  raw_text: 게살(½컵)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(3Ts)
+  role: sub
+- ingredient: vinegar
+  raw_text: 현미식초(1.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 저염 간장(1.5Ts)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(0.5Ts)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(1.5Ts)
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨(0.3Ts)
+  role: sub
+steps:
+- text: 황금팽이버섯은 밑동을 자른 뒤 낱낱이 가르고, 양파, 상추, 깻잎, 오이는 채 썰고, 천도복숭아는 웨지 모양으로 썬다.
+- text: 끓는 물에 황금 팽이버섯을 넣어 5분간 삶아 건진 뒤 찬물에 헹궈 물기를 뺀다.
+- text: 같은 물에 새우살과 게살을 30초간 데쳐 건진 뒤 찬물에 헹궈 물기를 뺀다.
+- text: 양념장을 만든다.
+- text: 손질한 재료를 그릇에 담고, 양념장을 곁들여 마무리한다.

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_881
+title: 낙지 잣소스 냉채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 881. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: small_octopus
+  raw_text: 낙지 50g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 20g
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤 15g
+  role: sub
+- ingredient: minari
+  raw_text: 미나리 15g
+  role: sub
+- ingredient: pear
+  raw_text: 배 30g
+  role: sub
+- ingredient: null
+  raw_text: 홍피망 12g
+  role: sub
+- ingredient: null
+  raw_text: 잣소스
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣20g
+  role: sub
+- ingredient: null
+  raw_text: 배즙 37.5
+  role: sub
+- ingredient: null
+  raw_text: 흰후춧가루 0.1g레몬즙 5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.3g
+  role: sub
+steps:
+- text: 낙지는 밀가루를 넣어 주물러 미끈거리는 것을 씻어내고 흐르는 물에 헹군다.
+- text: 끓는 물에 데쳐 한 입 크기로 썬다.
+- text: 오이는 가운데 씨를 잘라낸 뒤 눈썹 모양으로 썰고 홍피망과 미나리는 5cm 길이로 썬다.
+- text: 배는 굵게 채 썰고 밤은 얇게 썬다.
+- text: 잣은 곱게 다져 분마기에 넣고 배즙을 조금씩 넣어가며 뽀얗게 즙을 내고 레몬즙과 흰후춧가루, 소금을 넣어준다.
+- text: 준비된 재료를 잣소스에 버무린다.

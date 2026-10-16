@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3265
+title: 카레삼겹살 파니니
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3265. 요리종류 기타, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(4개)
+  role: sub
+- ingredient: null
+  raw_text: 아보카도(1개)
+  role: sub
+- ingredient: null
+  raw_text: 로메인(4장)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(¼개)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(15cm)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(⅓줌=50g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(5쪽)
+  role: sub
+- ingredient: pork_belly
+  raw_text: 대패삼겹살(100g)
+  role: sub
+- ingredient: null
+  raw_text: 치아바타(2개)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(0.5Ts)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(약간)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(1Ts)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(1Ts)
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루(1Ts)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고운 고춧가루(0.3Ts)
+  role: sub
+- ingredient: yogurt
+  raw_text: 플레인 요거트(2Ts) + 꿀(1Ts)
+  role: sub
+steps:
+- text: 방울토마토는 4등분하고, 아보카도는 얇게 모양대로 썰고, 로메인은 깨끗하게 씻어 물기를 제거하고, 양파, 대파, 미나리는 4cm 길이로 썰고, 마늘은 납작 썬다.
+- text: 중간 불로 달군 팬에 올리브유를 두른 뒤 납작 썬 마늘, 양파, 대파를 넣어 1분간 볶는다.
+- text: 대패삼겹살과 후춧가루를 넣어 겉면이 노릇해질 때까지 볶고, 미나리, 간장, 꿀을 넣어 1분 정도 볶고, 카레가루, 고운 고춧가루를 넣어 고루 섞으며 볶는다.
+- text: 허니요거트소스를 만든다.
+- text: 치아바타는 마른 팬에 안쪽 면을 노릇하게 구워 꺼내고, 빵 안쪽에 허니 요거트소스를 바른다.
+- text: 로메인, 삼겹살볶음, 허니요거트소스, 아보카도, 방울토마토, 후춧가루 순으로 올려 마무리한다.

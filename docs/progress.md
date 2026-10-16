@@ -10,7 +10,7 @@
 
 **데이터 확장 트랙 data-1**(2026-10-04, 브랜치 `feature/recipe-expansion`, 기준점 태그 `checkpoint/before-recipe-expansion`): 레시피 1차 초안 50개를 draft로 추가(합계 100개, published 50 그대로). 사람 검수 대기. data-2(2026-10-04): soft_tofu is_a tofu, 골든셋 재검토 자료 `docs/review/golden_review.md`. data-3(2026-10-04): "순두부" 절대 불선호 범위 확정, 불선호 제외 범위 측정, `scripts/make_golden_review.py`. 전체 테스트 399개. data-4(2026-10-04): 신규 레시피 draft 유지, 검수·골든셋 재선정 보류, PR로 올림. 아래 "데이터 확장 트랙" 참조.
 
-**식품안전나라 가져오기 트랙 fs-1~2**(2026-10-16, 브랜치 `feature/foodsafety-import`, `feature/recipe-expansion`에서 분기): D3 보완 2(개인용·출처 표시)로 식품안전나라 조리식품 레시피 DB 내려받기·변환 도구 추가(fs-1), 실제 1153개 변환, 재료 줄 미매칭 28.9%(fs-2). 아래 "식품안전나라 가져오기 트랙" 참조.
+**식품안전나라 가져오기 트랙 fs-1~2**(2026-10-16, 브랜치 `feature/foodsafety-import`, `feature/recipe-expansion`에서 분기): D3 보완 2(개인용·출처 표시)로 식품안전나라 조리식품 레시피 DB 내려받기·변환 도구 추가(fs-1), 실제 1153개 변환, 재료 줄 미매칭 28.9%(fs-2). fs-5: D3 보완 3으로 원본·변환 결과 커밋(공개 저장소, 사람 결정). 아래 "식품안전나라 가져오기 트랙" 참조.
 
 ## 단계별 상태
 
@@ -550,9 +550,15 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
 - 효과(시뮬레이션): 재료 줄 미매칭 28.9% → A 23.1% → A+B 15.5%. 미매칭 없는 레시피 82 → 127 → 272개(1153개 중).
 - 별칭·이름 충돌, 없는 id·그룹·분류 자동 검사 통과(분석 스크립트 `.scratch/fs/proposal.py`, 커밋 안 함).
 
+### fs-5 식품안전나라 원본·변환 결과 커밋 (2026-10-16)
+
+- 사람 결정 D3 보완 3: 공개 저장소임을 확인한 상태에서 원본 JSON(`data/external/foodsafety/raw/COOKRCP01.json`, 1156건)과 변환 YAML 1153개(`data/recipes_foodsafety/`)를 커밋. `.gitignore`에서 두 폴더를 빼고 정적 뷰어 산출물(`viewer.html`)만 제외.
+- 이 브랜치의 변환기로 다시 변환한 결과가 로컬 기존 파일과 동일(1153개, 미매칭 3769/13048줄 28.9%, 검수표 변화 없음). 원본·변환 결과에 API 인증키 없음 확인.
+- 적재 대상이 아닌 것(5-3-1 4번)과 knowledge 무변경은 그대로다. push는 하지 않음(push하면 공개됨).
+
 ## 사람 확인 필요
 
-- **(fs-3) 식품안전나라 보강안 검수**: `docs/review/foodsafety_alias_proposal.md`의 A·B 승인 열에 O/X, C 보류 처리, D 변환 규칙 적용 여부를 정한다. 승인분만 knowledge에 draft로 반영한다. 외부 공개·상업화 전에는 식약처에 이용 조건 문의(D3 보완 2).
+- **(fs-3) 식품안전나라 보강안 검수**: `docs/review/foodsafety_alias_proposal.md`의 A·B 승인 열에 O/X, C 보류 처리, D 변환 규칙 적용 여부를 정한다. 승인분만 knowledge에 draft로 반영한다. 상업화 전에는 식약처에 이용 조건 문의(D3 보완 3).
 - **(보류, data-4) 레시피 1차 확장 검수·골든셋 재선정**: 위 "data-4"의 "보류를 풀 때 할 일" 순서대로 진행. 아래 data-1·data-2 항목도 이때 함께 처리한다.
 - (해결, data-3) "순두부" 절대 불선호 범위: 지금 동작 유지(두부 요리도 제외). 불선호의 "포함 가능" 처리는 "다음 단계 제안" 11번에서 검토.
 - **(data-2) 골든셋 기대값**: `docs/review/golden_review.md`를 보고 expected_top3를 다시 고를지 정한다.

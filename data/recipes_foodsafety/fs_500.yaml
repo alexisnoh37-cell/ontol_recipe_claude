@@ -1,0 +1,76 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_500
+title: 누룽닭
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 500. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(120g)
+  role: sub
+- ingredient: null
+  raw_text: 생강즙(5g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(10g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리(20g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리(20g)
+  role: sub
+- ingredient: webfoot_octopus
+  raw_text: 주꾸미(30g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(20g)
+  role: sub
+- ingredient: bok_choy
+  raw_text: 청경채(20g)
+  role: sub
+- ingredient: null
+  raw_text: 누룽지(50g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(200g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(200g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.1g)
+  role: sub
+steps:
+- text: 닭은 포를 떠서 생강즙과 정종을 섞어 발라 놓는다.
+- text: 시금치는 살짝 데쳐 썰고, 당근, 양파, 샐러리, 파프리카는 약 6Cm 길이로 채를 썰어 절반은 닭고기말이에 사용 하고, 절반은 곁들임채소로 사용한다.
+- text: 느타리는 끓는 물에 소금을 넣고 데쳐 손으로 찢어놓고, 포를 뜬 닭가슴살에 느타리와 썰어 놓은 채소를 넣어 말아 주고, 육수를 끓여서 말아놓은 닭을 넣고 익혀낸다.
+- text: 주꾸미와 새우는 끓는 물에 살짝 데치고, 청경채는 반으로 썰어 살짝 데쳐 준비 한다.
+- text: 튀김기름 온도가 180℃ 정도 되면 누룽지를 넣고 튀겨 기름을 밭쳐 놓는다.
+- text: 닭을 넣은 육수(③)에 간장과 녹말, 마늘, 소금, 후춧가루를 넣고 끓이다가, 곁들임채소로 남겨 놓은 채소(②)와 데쳐 놓은 해물 및 청경채를 넣고 한 번 더 끓인 뒤 튀겨진 누룽지를 넣어 완성한다.

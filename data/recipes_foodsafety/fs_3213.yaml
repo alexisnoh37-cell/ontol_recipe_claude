@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3213
+title: 애호박 순대
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3213. 요리종류 일품, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: tofu
+  raw_text: 두부(8g)
+  role: sub
+- ingredient: null
+  raw_text: 생새우(45g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(3g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(3g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(1g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(3g)
+  role: sub
+- ingredient: ground_beef
+  raw_text: 다진 소고기(8g)
+  role: sub
+- ingredient: potato_starch
+  raw_text: 감자전분(50g)
+  role: sub
+- ingredient: null
+  raw_text: 달걀흰자(60g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(1개)
+  role: sub
+- ingredient: null
+  raw_text: 저염 간장(1g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(1g)
+  role: sub
+- ingredient: onion
+  raw_text: 적양파(2g)
+  role: sub
+steps:
+- text: 저염 간장, 식초, 물(10㎖)을 섞은 뒤 얇게 채 썬 적양파를 넣어 30분간 숙성해 양파장아찌를 만든다.
+- text: 두부와 생새우, 팽이버섯, 당근, 깻잎, 파프리카는 믹서에 넣어 곱게 간다.
+- text: 중간 불로 달군 팬에 다진 소고기를 살짝 볶은 뒤 곱게 간 재료와 감자전분(45g), 달걀흰자와 섞어 소를 만든다.
+- text: 애호박은 양끝을 자른 뒤 속을 파내고 안쪽에 감자전분(5g)을 고루 묻힌다.
+- text: 애호박에 소를 채운 뒤 찜기에 넣어 8분간 찐다.
+- text: 애호박 순대를 1cm 두께로 썰어 그릇에 담고 양파장아찌를 올린다.

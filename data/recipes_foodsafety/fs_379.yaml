@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_379
+title: 양송이구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 379. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: button_mushroom
+  raw_text: 양송이 100g
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리 1g
+  role: sub
+- ingredient: null
+  raw_text: 소
+  role: sub
+- ingredient: null
+  raw_text: 다진 돼기고기 100g
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 30g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 1g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 5g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 60g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 5g
+  role: sub
+- ingredient: null
+  raw_text: 홀스레디쉬 30g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 15g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 1g
+  role: sub
+steps:
+- text: 양송이는 꼭지를 제거하고 밀가루를 살짝 묻혀준다.
+- text: 청양고추를 송송 다진다.
+- text: 청양고추, 다진 돼지고기, 계란을 함께 버무려 준다.
+- text: 양송이 소에 양념된 돼지고기를 채워준다.
+- text: 소스를 만들어준다.
+- text: 팬에 양송이를 구워준 후 로즈마리를 올려주고 소스와 함께 낸다.

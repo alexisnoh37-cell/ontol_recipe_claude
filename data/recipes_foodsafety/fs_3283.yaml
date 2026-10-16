@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3283
+title: 당근새우 카나페
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3283. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 칵테일새우(2마리)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(½개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(⅓개)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(¼개)
+  role: sub
+- ingredient: null
+  raw_text: 바게트(2조각)
+  role: sub
+- ingredient: null
+  raw_text: 다진 파슬리(0.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 블루베리(6알)
+  role: sub
+- ingredient: null
+  raw_text: 애플민트잎(6장)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(⅓개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(⅓개)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(⅓개)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(3t)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(6Ts)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(0.6Ts)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(1Ts)
+  role: sub
+steps:
+- text: 물(3컵)에 육수 재료와 칵테일새우를 넣어 새우가 익을 때까지 데친 뒤 건진다.
+- text: 사과와 양파는 잘게 다지고, 당근은 길게 썬다.
+- text: 다진 사과와 양파, 채 썬 당근, 후춧가루, 레몬즙, 식초, 올리브유를 넣어 고루 섞는다.
+- text: 바게트 위에 버무린 재료를 올린다.
+- text: 데친 새우를 올리고, 다진 파슬리와 후춧가루를 뿌린 뒤 블루베리를 올린다.
+- text: 애플민트를 올려 마무리한다.

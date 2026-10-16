@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_229
+title: 오징어불고기김밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 229. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 오징어 몸통(130g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(30g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: green_bell_pepper
+  raw_text: 피망(30g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(200g)
+  role: sub
+- ingredient: null
+  raw_text: 채 썬 쇠고기(우둔살, 60g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: laver
+  raw_text: 김(2g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(20g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(30g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 참기름(15g)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(3g)
+  role: sub
+- ingredient: null
+  raw_text: 매실청(15g)
+  role: sub
+steps:
+- text: 오징어 몸통 안쪽에 칼집을 내고 끓는 물에 데친다.
+- text: 파프리카와 당근, 피망은 작게 다져 볶은 뒤 밥에 넣어 섞는다.
+- text: 쇠고기는 참기름에 볶는다.
+- text: 달걀을 풀어 약한 불로 달군 팬에 부은 뒤 김가루를 뿌려 지단을 부치고, 바닥이 익으면 깻잎과 밥을 올린다.
+- text: 데친 오징어, 볶은 쇠고기 순으로 올려 만 뒤 랩으로 싼다.
+- text: 고추장과 매실청을 섞은 뒤 팬에 넣고 약한 불에서 끓여 소스를 만들고 한입 크기로 썬 김밥에 구운 버섯을 함께 곁들여 마무리한다.

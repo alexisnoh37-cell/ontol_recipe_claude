@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_961
+title: 라이스페이퍼 새우롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 961. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 새우 20g
+  role: sub
+- ingredient: null
+  raw_text: 홍피망 5g
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯 5g
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주 15g
+  role: sub
+- ingredient: null
+  raw_text: 무순 3g
+  role: sub
+- ingredient: lettuce
+  raw_text: 상추 5g
+  role: sub
+- ingredient: null
+  raw_text: 차이브 5g
+  role: sub
+- ingredient: null
+  raw_text: 쌀국수가는것 15g
+  role: sub
+- ingredient: null
+  raw_text: 라이스페이퍼 20g
+  role: sub
+- ingredient: null
+  raw_text: 새콤 달콤 소스
+  role: sub
+- ingredient: onion
+  raw_text: 양파 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 1g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 1g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 1g
+  role: sub
+- ingredient: null
+  raw_text: 물전분 약간
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1g
+  role: sub
+- ingredient: chili_oil
+  raw_text: 고추기름 약간
+  role: sub
+steps:
+- text: 새우는 끓는 물에 대친 뒤 찬물에 담궈 식히고 껍질을 벗긴다.
+- text: 홍피망은 얇게 채 썰고 팽이버섯은 밑동을 잘라 준비하고 숙주는 거두절미하여 끓는 물에 데친 뒤 찬물에 식혀서 물기를 빼고 상추는 채 썬다.
+- text: 쌀국수를 물에 불렸다가 끓는 물에 데친 뒤 찬물에 식혀 물기를 제거한다.
+- text: 따뜻한 물에 라이스페이퍼를 담궜다가 꺼내 면보 위에 놓고 물기를 살짝 제거하고 1, 2, 3을 올리고 조심스럽게 말아준다.
+- text: 마늘은 다지고 양파, 홍고추, 청고추는 0.3mm로 잘게 썬다.
+- text: 팬에 고추기름을 두르고 다진 마늘을 볶다가 양파를 넣고 청, 홍고추를 넣어 살짝 볶은 뒤 물, 식초, 설탕을 넣고 물전분으로 농도를 맞춘다.

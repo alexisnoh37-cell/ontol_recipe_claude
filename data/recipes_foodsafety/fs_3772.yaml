@@ -1,0 +1,76 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3772
+title: 녹담밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3772. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 녹차 300ml
+  role: sub
+- ingredient: null
+  raw_text: 건다시마 2g
+  role: sub
+- ingredient: soybean_sprouts
+  raw_text: 콩나물 40g
+  role: sub
+- ingredient: null
+  raw_text: 달래 30g
+  role: sub
+- ingredient: cod
+  raw_text: 대구살(냉동) 150g
+  role: sub
+- ingredient: brown_rice
+  raw_text: 현미밥 210g
+  role: sub
+- ingredient: katsuobushi
+  raw_text: 가다랑어포 10g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 50g
+  role: sub
+- ingredient: null
+  raw_text: 콩나물밥 양념
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 6g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 8g
+  role: sub
+- ingredient: perilla_oil
+  raw_text: 들기름 8g
+  role: sub
+- ingredient: null
+  raw_text: 대구살 양념
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 6g
+  role: sub
+- ingredient: null
+  raw_text: 유자청 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 12g
+  role: sub
+- ingredient: perilla_oil
+  raw_text: 들기름 12g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 12g
+  role: sub
+- ingredient: null
+  raw_text: 양파가루 8g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 5g
+  role: sub
+steps:
+- text: 볼에 실온의 녹차, 건다시마를 넣어 녹차물을 만든다. 콩나물, 달래는 깨끗이 씻어 손질한다. 대구살은 한입 크기로 잘라 키친타월로 물기를 제거한다.
+- text: 끓는 물에 손질한 콩나물을 2분간 데친 후 물기를 제거한다. 팬에 데친 콩나물, 현미밥, 콩나물밥 양념을 넣고 볶는다. 불을 끄고 가다랑어포(5g), 손질한 달래를 잘게 잘라 넣고 섞어 콩나물밥을 만든다.
+- text: 볼에 대구살 양념을 모두 넣고 섞은 후 손질한 대구살을 넣고 전자레인지에서 3분간(700W 기준) 조리한다.
+- text: 볼에 통깨, 가다랑어포(5g), 양파가루, 고춧가루를 넣고 곱게 빻은 뒤 조리한 대구살에 뿌린다.
+- text: 그릇에 콩나물밥을 넣고 조리한 대구살을 올린 후 달걀지단을 만들어 고명으로 올린다.
+- text: 다시마를 제거한 녹차물을 따뜻하게 데워 콩나물밥에 붓고 마무리한다.

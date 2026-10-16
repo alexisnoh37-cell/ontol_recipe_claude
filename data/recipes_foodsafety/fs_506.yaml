@@ -1,0 +1,73 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_506
+title: 새우와스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 506. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 새우(60g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: beef
+  raw_text: 소고기(120g)
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리(2g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(2g)
+  role: sub
+- ingredient: wine
+  raw_text: 와인(50g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(30g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: null
+  raw_text: 발사믹소스(20g)
+  role: sub
+- ingredient: null
+  raw_text: 곁들임채소
+  role: sub
+- ingredient: asparagus
+  raw_text: 아스파라거스(20g)
+  role: sub
+- ingredient: null
+  raw_text: 브로컬리(20g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이(20g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(30g)
+  role: sub
+steps:
+- text: 새우는 꼬리를 자르고 내장을 제거 한다.
+- text: 스테이크 소고기는 소금과 로즈마리를 뿌리고 후춧가루를 살짝 뿌려 놓는다.
+- text: 아스파라거스는 팬에 기름 없이 굽는다.
+- text: 새송이와 가지는 길게 썰어 브로컬리와 함께 기름 없이 팬에 살짝 구워 놓는다.
+- text: 팬에 버터를 살짝 넣고 새우를 굽고, 스테이크를 구워 접시에 담는다.
+- text: 팬에 와인과 설탕을 넣고 끓이다가, 당근, 양파와 토마토 마늘, 대파를 다져 넣고 볶듯이 끓이다가 발사믹소스를 넣고 한 번 더 졸인 소스를 스테이크 위에 얹고, 브로컬리와 새송이, 가지, 아스파라거스를 함께 놓아 완성한다.

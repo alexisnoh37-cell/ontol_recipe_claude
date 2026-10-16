@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_782
+title: 고구마 타락죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 782. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: sweet_potato
+  raw_text: 고구마 20g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯 15g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯 7g
+  role: sub
+- ingredient: brown_rice
+  raw_text: 현미(불린것) 30g
+  role: sub
+- ingredient: milk
+  raw_text: 저지방우유 130g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 20g
+  role: sub
+steps:
+- text: 고구마는 껍질을 벗겨 1cm 크기로 깍둑썰기 한 뒤 삶는다.
+- text: 양송이버섯과 양파는 굵게 다지고 느타리버섯은 데친다.
+- text: 냄비에 식용유를 넣어 양파, 고구마, 양송이버섯 순으로 볶는다.
+- text: 현미 1/2공기와 물 1/2컵을 넣어 믹서에 굵게 간다.
+- text: 3에 4와 나머지 우유를 넣어 끓인다.
+- text: 5를 그릇에 담고 고구마, 데친 느타리버섯을 가운데 담는다.

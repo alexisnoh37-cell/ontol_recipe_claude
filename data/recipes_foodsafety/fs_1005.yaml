@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1005
+title: 현미 크레이프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1005. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 현미가루 10g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 20g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 30g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름적당량
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: null
+  raw_text: 팥소
+  role: sub
+- ingredient: red_bean
+  raw_text: 팥 15g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 10g
+  role: sub
+- ingredient: null
+  raw_text: 당근조림
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 20g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 10g
+  role: sub
+steps:
+- text: 팥을 깨끗하게 씻어 끓인 뒤 물을 따라 버리고 다시 물을 부어 팥이 무르게 삶는다.
+- text: 당근을 1cm 주사위 모양으로 자른다.
+- text: 1, 2에 각각 설탕을 넣고 졸인다.
+- text: 볼에 현미가루, 밀가루, 우유를 넣고 덩어리가 생기지 않도록 잘 갠 뒤 30분간 둔다.
+- text: 가열된 팬에 참기름을 두르고 약한 불에서 4를 한 국자 정도 떠서 둥글게 부친 뒤 식힌다.
+- text: 크레이프를 펴고 각각 팥소와 당근조림을 각각 얹은 후 둥글게 만다.

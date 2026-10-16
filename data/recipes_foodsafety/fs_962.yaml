@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_962
+title: 레몬, 파슬리 빵가루를 입힌 도미
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 962. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 도미 40g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 2g
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루 10g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 1g
+  role: sub
+- ingredient: null
+  raw_text: 레몬주스 3g
+  role: sub
+- ingredient: null
+  raw_text: 레몬제스트 2g
+  role: sub
+- ingredient: null
+  raw_text: 파슬리다진것 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량
+  role: sub
+steps:
+- text: 도미에는 소금과 후추로 밑간을 하고 마늘, 파슬리는 다진다.
+- text: 버터를 두른 팬에 다진 마늘을 넣고 마늘 향을 낸 버터물을 만든다.
+- text: 2에 빵가루를 섞어 믹싱볼로 옮겨 담는다.
+- text: 3에 다진 파슬리, 레몬주스, 레몬제스트, 소금, 후추를 넣고 고무주걱으로 잘 섞는다.
+- text: 도미를 양념하고 도미위에 4을 얹는다.
+- text: 5를 오븐에 굽는다.

@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_789
+title: 서리태 잣국수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 789. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: pine_nut
+  raw_text: 잣 20g
+  role: sub
+- ingredient: black_soybean
+  raw_text: 서리태 20g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 10g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 70g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+- ingredient: null
+  raw_text: 체리토마토 10g
+  role: sub
+- ingredient: null
+  raw_text: 흑임자 0.5g
+  role: sub
+steps:
+- text: 서리태를 씻어 물에 충분히 불리고 오이는 곱게 채썬다
+- text: 냄비에 서리태를 넣고 자작하게 물을 부어 한소끔 끓고 나면 불을 끄고 삶아진 서리태를 차가운 물에 헹구면서 껍질을 벗긴다.
+- text: 믹서에 서리태와 잣을 넣고 물을 넣어 곱게 간다.
+- text: 밀가루에 소금을 소량 넣어 반죽 한다.
+- text: 반죽을 가늘고 얇게 국수로 만들어 끓는 물에 넣고 삶는다.
+- text: 그릇에 국수를 담고 잣, 콩물을 부은 후 채썬 오이와 반 가른 체리토마토를 얹고 흑임자를 뿌려 완성한다.

@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_247
+title: 쇠고기표고찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 247. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 표고버섯(15g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(5g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(30g)
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣(2g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(1g)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(7g)
+  role: sub
+- ingredient: pickled_cucumber
+  raw_text: 피클(10g)
+  role: sub
+- ingredient: null
+  raw_text: 소 다진 쇠고기(15g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 대파(1g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(1g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 양파(5g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 파프리카(6g)
+  role: sub
+- ingredient: null
+  raw_text: 으깬 두부(10g)
+  role: sub
+- ingredient: null
+  raw_text: 오렌지소스 오렌지주스(50g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(3g)
+  role: sub
+steps:
+- text: 소를 고루 치대 반죽한다.
+- text: 표고버섯은 밑동을 제거한 뒤 안쪽에 밀가루→달걀물 순서로 바른 뒤 반죽을 넣고 달걀물을 한 번 더 발라준 뒤 김 오른 찜기에 15분간 찐다.
+- text: 잣과 대추를 올리고 달걀물을 한 번 더 바르고 3분간 더 찐다.
+- text: 오렌지소스 재료를 팬에 넣고 조린다.
+- text: 단호박은 얇게 썰어 노릇하게 굽는다.
+- text: 쇠고기표고찜에 오렌지소스를 뿌리고 피클과 구운 단호박을 곁들여 마무리한다.

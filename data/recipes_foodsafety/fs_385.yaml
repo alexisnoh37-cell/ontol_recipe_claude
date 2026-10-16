@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_385
+title: 토마토스프파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 385. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 홀토마토 200g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 100g
+  role: sub
+- ingredient: null
+  raw_text: 다진양파 30g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 20g
+  role: sub
+- ingredient: null
+  raw_text: 먹물파스타 25g
+  role: sub
+- ingredient: cheese
+  raw_text: 치즈 25g
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루 1g
+  role: sub
+- ingredient: null
+  raw_text: 함초소금 1g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 30g
+  role: sub
+- ingredient: null
+  raw_text: 곁들이 야채
+  role: sub
+- ingredient: onion
+  raw_text: 양파 20g
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지 20g
+  role: sub
+- ingredient: null
+  raw_text: 2가지색 파프리카 20g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 20g
+  role: sub
+steps:
+- text: 토마토홀과 토마토는 송송 다져주고, 마늘, 양파를 냄비에서 볶은 후 믹서에 갈아 토마토 스프를 만들어준다.
+- text: 만들어진 스프를 볶아서 신맛을 날려준다.
+- text: 먹물파스타면은 삶은 뒤 오일에 버무려주고 볶아준다.
+- text: 양파, 애호박, 가지, 2가지색 파프리카를 먹기 좋게 잘라 팬에 볶아준다.
+- text: 접시에 볶아진 채소와 파스타면을 서로 다시 볶아준다.
+- text: 치즈를 곱게 다져주고 접시에 파스타면을 올린 뒤, 토마토스프와 치즈가루를 뿌려 완성 한다.

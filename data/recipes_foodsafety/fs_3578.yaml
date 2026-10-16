@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3578
+title: 열무톳김치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3578. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: young_radish
+  raw_text: 열무(30g)
+  role: sub
+- ingredient: null
+  raw_text: 톳(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(1g)
+  role: sub
+- ingredient: null
+  raw_text: 어간장(5g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(2g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(2g)
+  role: sub
+steps:
+- text: 톳은 깨끗한 물에 여러 번 씻은 후 끓는 물에 살짝 데치고 물기를 제거한다
+- text: 열무는 3cm 크기로 썬다.
+- text: 손질한 열무는 끓은 물에 살짝 데치고 물기를 제거한다.
+- text: 마늘, 생강은 잘게 다진다.
+- text: 볼에 손질한 열무, 톳, 마늘, 생강을 넣고 고춧가루, 어간장으로 간하여 버무린다.
+- text: 접시에 담고 통깨를 뿌려 마무리한다.

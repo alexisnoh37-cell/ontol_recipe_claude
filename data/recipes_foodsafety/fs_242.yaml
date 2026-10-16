@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_242
+title: 닭가슴살말이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 242. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 닭가슴살(150g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(10g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(10g)
+  role: sub
+- ingredient: null
+  raw_text: 마른 표고버섯(10g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(5g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(3g)
+  role: sub
+- ingredient: null
+  raw_text: 견과류(16g)
+  role: sub
+- ingredient: null
+  raw_text: 단촛물 설탕(3g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: null
+  raw_text: 겨자소스 설탕(28g)
+  role: sub
+- ingredient: null
+  raw_text: 발효겨자(28g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(28g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 잣(4g)
+  role: sub
+- ingredient: null
+  raw_text: 다진 땅콩(4g)
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨(4g)
+  role: sub
+steps:
+- text: 닭가슴살은 곱게 다진다.
+- text: 당근은 채 썰어서 단촛물에 5분 정도 절이고, 시금치는 데쳐서 물기를 제거하고, 마른 표고버섯은 불린 뒤 곱게 채를 썰어 간장과 참기름에 버무린다.
+- text: 종이포일에 다진 가슴살을 올리고 그 위에 시금치, 당근, 표고버섯과 견과류를 올려 말아준다
+- text: 김 오른 찜기에 넣어서 25분간 찐다.
+- text: 겨자소스를 만든다.
+- text: 닭가슴살말이에 겨자소스를 곁들여 마무리한다.

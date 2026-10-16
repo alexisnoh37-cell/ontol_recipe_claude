@@ -1,0 +1,94 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3273
+title: 소고기찜과 검은콩수제비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3273. 요리종류 일품, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+ingredients:
+- ingredient: enoki
+  raw_text: 팽이버섯(½봉)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(½줌)
+  role: sub
+- ingredient: napa_cabbage
+  raw_text: 알배추(½개)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파(3대)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(½개)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(¼개)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 흰다리새우(7마리)
+  role: sub
+- ingredient: scallop
+  raw_text: 관자(4개)
+  role: sub
+- ingredient: null
+  raw_text: 삶은 검은콩(½컵)
+  role: sub
+- ingredient: beef
+  raw_text: 소고기(불고기용 부채살, 200g)
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주(⅓줌)
+  role: sub
+- ingredient: null
+  raw_text: 달걀노른자(2개)
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓(⅓줌)
+  role: sub
+- ingredient: null
+  raw_text: 미니 단호박(½개)
+  role: sub
+- ingredient: null
+  raw_text: 생표고버섯(5개)
+  role: sub
+- ingredient: bok_choy
+  raw_text: 청경채(2개)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3Ts)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 통밀가루(¼컵)
+  role: sub
+- ingredient: null
+  raw_text: 돼지감자가루(¼컵)
+  role: sub
+- ingredient: null
+  raw_text: 현미쌀가루(¼컵)
+  role: sub
+- ingredient: null
+  raw_text: 저염 간장(2Ts)
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술(0.3Ts)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(1Ts)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(1Ts)
+  role: sub
+- ingredient: null
+  raw_text: 다진 쪽파(1Ts)
+  role: sub
+- ingredient: null
+  raw_text: 다진 청양고추(0.5Ts)
+  role: sub
+steps:
+- text: 팽이버섯과 느타리버섯은 밑동을 잘라 낱낱이 가르고, 알배추는 한입 크기로 썰고, 쑥갓과 쪽파는 한입 크기로 썬다.
+- text: 가지와 당근은 어슷 썰고, 단호박은 씨 제거 후 7~8쪽으로 썰고, 표고버섯은 별모양 칼집을 내고, 새우는 깨끗하게 씻고, 관자는 한입 크기로 썬다.
+- text: 믹서에 삶은 검은콩과 물(1컵)을 넣어 갈고, 볼에 담은 뒤 검은콩 수제비 반죽 재료와 고루 섞어 치대고, 냉장실에서 30분간 숙성한다.
+- text: 불고기용 소고기를 펼치고, 팽이버섯과 쪽파를 위에 올려 돌돌 만다.
+- text: 대나무 찜기에 손질한 채소, 해산물, 숙주 순으로 깔아준다.
+- text: 그 위에 고기 버섯말이를 올려 중간 불에서 10분간 쪄내고, 달걀노른자와 양념장을 곁들여 마무리한다.

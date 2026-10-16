@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_987
+title: 다시마전
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 987. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: kelp
+  raw_text: 다시마 30g
+  role: sub
+- ingredient: chive
+  raw_text: 영양부추 3g
+  role: sub
+- ingredient: null
+  raw_text: 청고추다진것 3g
+  role: sub
+- ingredient: null
+  raw_text: 홍고추다진것 3g
+  role: sub
+- ingredient: null
+  raw_text: 새우살다진것 10g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 10g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: null
+  raw_text: 멸치액적소스
+  role: sub
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2g
+  role: sub
+- ingredient: sesame
+  raw_text: 깨소금 2g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 1g
+  role: sub
+- ingredient: scallion
+  raw_text: 실파 2g
+  role: sub
+steps:
+- text: 냄비에 다시마가 잠길 정도의 물을 붓고 중불에서 삶아 10여분 두었다가 건져 찬물에 휑군 뒤 18cm 크기로 자른다.
+- text: 청, 홍고추는 씨를 빼 잘게 다지고 부추와 새우 살도 다진다.
+- text: 밀가루에 물과 소금을 넣고 반죽을 한 뒤 다진 채소들을 넣고 골고루 섞는다.
+- text: 3에 다시마를 넣어 반죽 물을 입히고 팬에 기름을 둘러 노릇하게 지진다.
+- text: 다시마전이 한 김 식은 후 돌돌 말아 자를 수 있도록 꼬치로 고정시킨다.
+- text: 5를 4cm 정도 길이로 자르고 멸치액젓소스를 곁들인다.

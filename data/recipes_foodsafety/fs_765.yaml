@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_765
+title: 오리고기곰피쌈
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 765. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: duck
+  raw_text: 오리고기 50g
+  role: sub
+- ingredient: null
+  raw_text: 곰피 20g
+  role: sub
+- ingredient: null
+  raw_text: 무순 10g
+  role: sub
+- ingredient: olive_oil
+  raw_text: '올리브유 4 소스: 오미자 액기스 1g'
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 6g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 2.5g
+  role: sub
+steps:
+- text: 곰피를 데쳐 찬물에 헹군다.
+- text: 헹군 곰피는 10cm길이로 자른다.
+- text: 오미자액기스, 고추장, 설탕, 식초, 물을 섞어 오미자 초고추장 소스를 만든다.
+- text: 팬에 오리고기를 굽는다.
+- text: 곰피에 오리구이와 무순을 올리고 오미자 초고추장을 발라 돌돌 말아준다.
+- text: 그릇에 담아 완성한다.

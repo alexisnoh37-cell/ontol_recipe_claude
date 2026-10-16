@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_402
+title: 닭가슴살스튜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 402. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 200g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 30g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 30g
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리 30g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 40g
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 100g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 100g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 15g
+  role: sub
+- ingredient: tomato_paste
+  raw_text: 토마토페이스트 100g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 15g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 7g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 3g
+  role: sub
+steps:
+- text: 닭가슴살은 먹기 좋은 크기로 잘라서 우유에 재워준 뒤 뜨거운 물에 데쳐준다.
+- text: 방울토마토는 반으로 자르고, 양파는 먹기 좋은 크기로 잘라준다.
+- text: 감자, 당근, 브로콜리는 먹기 좋은 크기로 잘라 뜨거운 물에 순서대로 데쳐준다.
+- text: 모든 재료를 올리브유에 볶아준다.
+- text: 토마토페이스트와 닭가슴살을 데쳐낸 물을 섞어 끓여준다.
+- text: 끓고 있는 국물 50g에 밀가루를 섞어 농도를 맞추어 준다.

@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3264
+title: 돼지고기 포두부 파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3264. 요리종류 기타, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파(½개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(6~7쪽)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(1대)
+  role: sub
+- ingredient: ground_pork
+  raw_text: 다진 돼지고기(400g)
+  role: sub
+- ingredient: null
+  raw_text: 두부면(2팩=200g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(¾컵)
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수(5컵)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(2개)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(0.5Ts)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.8Ts)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(1.5Ts)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(10Ts)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(1Ts)
+  role: sub
+steps:
+- text: 양파는 3mm 두께로 채 썰고, 마늘은 납작 썰고, 대파와 청양고추는 어슷 썬다.
+- text: 다진 돼지고기에 고추장과 후춧가루 (0.3Ts)를 넣어 고루 섞은 뒤 10분간 재운다.
+- text: 중간 불로 달군 팬에 올리브유(3Ts)를 두르고, 다진 돼지고기와 고춧가루를 넣어 돼지고기의 겉면이 하얗게 변할 때까지 볶는다.
+- text: 올리브유(7Ts)에 납작 썬 마늘, 대파, 양파, 건새우, 후춧가루(0.3Ts)를 넣고 마늘이 노릇해질 때까지 볶는다.
+- text: 두부면과 닭육수(½컵)를 넣은 뒤 육수가 졸아들 때까지 볶고, 후춧가루(0.2Ts)와 청양고추를 넣어 1분간 볶는다.
+- text: 그릇에 담고 볶은 돼지고기와 식초에 재운 양파를 곁들여 마무리한다.

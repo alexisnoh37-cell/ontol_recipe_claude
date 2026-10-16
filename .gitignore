@@ -8,6 +8,5 @@ logs/
 *.egg-info/
 viz/_bench/
 
-# 식품안전나라 원본·변환 결과(개인용, 재배포 금지, D3 보완 2)
-data/external/
-data/recipes_foodsafety/
+# 식품안전나라 원본·변환 결과는 커밋한다(D3 보완 3). 정적 뷰어 산출물만 제외
+data/recipes_foodsafety/viewer.html

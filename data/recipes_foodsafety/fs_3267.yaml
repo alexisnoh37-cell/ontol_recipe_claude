@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3267
+title: 라이스페이퍼 수제소시지
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3267. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: ground_pork
+  raw_text: 다진 돼지고기(600g)
+  role: sub
+- ingredient: null
+  raw_text: 사각 라이스페이퍼(8장)
+  role: sub
+- ingredient: saeujeot
+  raw_text: 새우젓(0.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 저염 간장(0.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 버섯가루(1Ts)
+  role: sub
+- ingredient: null
+  raw_text: 스테비아(0.3Ts)
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루(2Ts)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.3Ts)
+  role: sub
+- ingredient: null
+  raw_text: 훈제 파프리카파우더(1.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 카옌 페퍼(0.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 커민(0.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 다진 양파(1Ts)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(0.5Ts)
+  role: sub
+steps:
+- text: 다진 돼지고기(300g)에 밑간한 뒤 얼음물(¼컵)을 넣어 찰기가 생길 때까지 치대 소시지 반죽을 만든다.
+- text: 남은 다진 돼지고기(300g)에 양념과 얼음물(¼컵)을 넣고 고루 섞어 치대 다른 소시지 반죽을 만든다.
+- text: 두 가지 소시지 반죽은 짤주머니에 각각 담아 냉장실에서 30분간 숙성한다.
+- text: 라이스페이퍼 양면에 물을 약간 묻히고, 소시지 반죽을 일정하게 짠 뒤 돌돌 말아 소시지를 만든다.
+- text: 약한 불로 달군 팬에 식용유를 두르고, 소시지를 돌려가며 5분간 골고루 익힌다.
+- text: 센 불로 올려 1분간 더 익혀 마무리한다.

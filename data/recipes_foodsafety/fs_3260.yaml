@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3260
+title: 두부크림 관자뇨키
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3260. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파(25g)
+  role: sub
+- ingredient: scallop
+  raw_text: 관자(200g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(6마리)
+  role: sub
+- ingredient: hard_clam
+  raw_text: 모시조개(6개)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(2개)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(200g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(⅔컵)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(⅔컵)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(약간)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(0.7Ts)
+  role: sub
+- ingredient: basil
+  raw_text: 바질(4장)
+  role: sub
+- ingredient: null
+  raw_text: 그라나파다노 치즈(1Ts)
+  role: sub
+steps:
+- text: 양파는 5mm 두께로 채 썰고, 청양고추는 어슷 썬 뒤 씨를 제거하고, 관자는 깨끗하게 헹군 뒤 후춧가루로 밑간한다.
+- text: 두부에 우유와 생크림을 넣어 고루 섞어 두부크림을 만든다.
+- text: 중간 불로 달군 팬에 식용유(1.5Ts)를 두른 뒤 관자를 넣어 불투명해질 때까지 구워 꺼낸다.
+- text: 같은 팬에 식용유(0.5Ts)를 두른 뒤 다진 마늘과 양파를 넣어 볶다가 새우, 모시조개, 청양고추를 넣어 볶는다.
+- text: 물(100ml)을 넣어 조개가 입을 벌릴 때까지 끓이고, 두부크림을 넣어 끓어오르면 관자를 넣어 3분간 익힌다.
+- text: 그릇에 담아 바질을 올리고, 그라나파다노 치즈를 뿌려 마무리한다.

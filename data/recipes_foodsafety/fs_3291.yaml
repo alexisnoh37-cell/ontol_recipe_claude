@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3291
+title: 참치두부 주먹밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3291. 요리종류 밥, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: tofu
+  raw_text: 두부(1모=300g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(빨강, 노랑 각 ¼개)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(4장)
+  role: sub
+- ingredient: null
+  raw_text: 잡곡밥(70g)
+  role: sub
+- ingredient: canned_tuna
+  raw_text: 통조림 참치(50g)
+  role: sub
+- ingredient: null
+  raw_text: 스테비아(0.5Ts)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(0.5Ts)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(1Ts)
+  role: sub
+steps:
+- text: 큰 볼에 두부를 담은 뒤 물이 담긴 무거운 그릇을 3분간 올려 수분을 제거한다.
+- text: 두부 속을 사각형 모양으로 파내고, 파낸 두부 속은 물기를 꼭 짜 으깬다.
+- text: 파프리카와 깻잎은 잘게 썬다.
+- text: 통조림 참치는 체에 밭친 뒤, 뜨거운 물을 부어 기름과 염분을 제거한다.
+- text: 볼에 으깬 두부, 손질한 채소, 잡곡밥, 참치를 넣은 뒤 양념해 고루 섞는다.
+- text: 주먹밥을 동그랗게 만들고, 속을 판 두부 속에 넣어 마무리한다.

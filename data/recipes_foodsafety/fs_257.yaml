@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_257
+title: 묵은지가지말이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 257. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 돼지고기(80g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(30g)
+  role: sub
+- ingredient: kimchi
+  raw_text: 김치(40g)
+  role: sub
+- ingredient: null
+  raw_text: 청피망(15g)
+  role: sub
+- ingredient: null
+  raw_text: 붉은피망(15g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(40g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(2g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(5g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(50g)
+  role: sub
+- ingredient: wine
+  raw_text: 레드와인(120g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(15g)
+  role: sub
+- ingredient: null
+  raw_text: 고기 삶는 재료 양파(15g)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(2g)
+  role: sub
+- ingredient: null
+  raw_text: 정향(1g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(2g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(5g)
+  role: sub
+steps:
+- text: 냄비에 고기 삶는 재료를 넣고 끓으면 돼지고기를 넣어 익힌다.
+- text: 가지는 길이로 납작하게 썰고, 김치는 씻어 5㎝ 길이로 채 썰고, 피망, 양파도 같은 길이로 채 썰고, 생강과 마늘은 편으로 썰어 준비한다.
+- text: 팬에 올리브유를 약간 두르고 가지를 살짝 굽는다.
+- text: 김치, 피망을 가지에 넣고 돌돌 만다.
+- text: 팬에 올리브유, 마늘, 생강, 삶은 고기를 넣고 육즙이 나오지 않도록 고기 겉면을 익힌 뒤 채 썬 양파, 마늘, 레몬, 레드와인, 올리고당을 넣고 조린다.
+- text: 고기에 간이 배면 건져내 먹기 좋은 크기로 썰어 마무리한다.

@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_131
+title: 함초 냉이 국수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 131. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: somen
+  raw_text: 소면 50g
+  role: sub
+- ingredient: null
+  raw_text: 함초 3g(1/2작은술)
+  role: sub
+- ingredient: null
+  raw_text: 노루궁뎅이버섯 25g(1/2개)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마 17g(15cm)
+  role: sub
+- ingredient: null
+  raw_text: 파 140g(1/2개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파 150g(1/2개)
+  role: sub
+- ingredient: radish
+  raw_text: 무 250g(1/3개)
+  role: sub
+- ingredient: hard_clam
+  raw_text: 모시조개 150g(3/4컵)
+  role: sub
+- ingredient: null
+  raw_text: 냉이 35g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 30g(2큰술)
+  role: sub
+- ingredient: null
+  raw_text: 장식
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 50g(1개)
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 20g(1개)
+  role: sub
+- ingredient: null
+  raw_text: 실고추 2g
+  role: sub
+steps:
+- text: 함초, 노루궁뎅이버섯, 다시마, 파, 양파, 무를 물에 넣어 10분 끓이고 향이 강한 모시조개와 냉이를 넣고 30분 끓인 후 간장으로 색을 낸다.
+- text: 소면은 따로 삶는다.
+- text: 그릇에 삶은 소면을 담은 후 육수를 붓고 지단, 슬라이스한 청고추, 실고추를 올려 완성한다.

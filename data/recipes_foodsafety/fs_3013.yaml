@@ -1,0 +1,28 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3013
+title: 미역 미소국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3013. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: seaweed
+  raw_text: 건미역(2g)
+  role: sub
+- ingredient: katsuobushi
+  raw_text: 가다랑어포(0.3g)
+  role: sub
+- ingredient: miso
+  raw_text: 미소된장(3g)
+  role: sub
+- ingredient: mirin
+  raw_text: 미향(0.3g)
+  role: sub
+steps:
+- text: 건미역을 물에 불린다.
+- text: 불린 미역을 잘게 썬다.
+- text: 냄비에 물(350g)과 가다랑어포를 넣어 우려내 육수를 만든다.
+- text: 육수에 미소된장을 곱게 푼다.
+- text: 국에 미역을 넣어 한소끔 끓인다.
+- text: 미향을 넣어 마무리한다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_941
+title: 야채볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 941. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: potato
+  raw_text: 감자 20g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯 15g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 15g
+  role: sub
+- ingredient: null
+  raw_text: 건목이버섯 5g
+  role: sub
+- ingredient: null
+  raw_text: 산마 10g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: null
+  raw_text: 물전분 6g
+  role: sub
+- ingredient: null
+  raw_text: 육수 6g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 당근과 감자를 2cm 주사위모양으로 자르고 버섯은 4등분한다.
+- text: 산마를 끓는 물에 데친다.
+- text: 기름을 두른 팬을 가열한 후 당근, 감자, 데친 마를 넣고 볶은 뒤 육수를 넣는다
+- text: 육수가 끓으면 양송이버섯과 목이버섯을 넣고 소금으로 간한다.
+- text: 물 전분을 넣어 농도를 맞춘다.
+- text: 참기름을 넣어 향을 낸다.

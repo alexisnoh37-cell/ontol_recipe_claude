@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1112
+title: 약밥 닮은 호떡
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1112. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 호떡반죽(200g)
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤(30g)
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마(30g)
+  role: sub
+- ingredient: dried_persimmon
+  raw_text: 곶감(50g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(10g)
+  role: sub
+- ingredient: null
+  raw_text: 호박씨(10g)
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣(5g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(1알)
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피가루(8g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(15g)
+  role: sub
+steps:
+- text: 호떡반죽에 물을 넣고 반죽한 뒤 발효시킨다.
+- text: 밤, 고구마, 대추, 곶감, 호두를 다진다.
+- text: 2번에 잣, 호박씨, 계피가루, 홍시를 섞는다.
+- text: 발효시킨 반죽에 3번을 채우고 동그랗게 빚는다.
+- text: 팬에 식용유를 두른다.
+- text: 가열된 팬에 반죽을 올린 뒤 납작하게 눌러 굽는다.

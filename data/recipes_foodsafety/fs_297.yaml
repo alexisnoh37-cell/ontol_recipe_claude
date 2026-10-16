@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_297
+title: 아몬드치킨볼
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 297. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 양송이버섯(5g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: chicken_thigh
+  raw_text: 닭다리살(30g)
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(50g)
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드(5g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(10g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(50g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깻가루(30g)
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리(15g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 닭뼈(90g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: null
+  raw_text: 양송이버섯 밑동(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(5g)
+  role: sub
+steps:
+- text: 냄비에 육수 재료와 물(400g)을 넣고 푹 끓인다.
+- text: 양송이버섯을 잘게 다진 뒤 버터에 살짝 볶아 건져 한김 식힌 뒤 닭다리살과 닭가슴살, 아몬드를 다져 볶은 양송이버섯과 섞어 동그랗게 빚어 밀가루옷을 입힌다.
+- text: 식용유(15g)를 두른 팬에서 겉을 노릇하게 굽는다.
+- text: 육수(150g), 우유, 들깻가루를 끓여 소스를 만든 뒤 아몬드 치킨볼과 브로콜리를 넣고 졸인다.
+- text: 마늘은 편 썰어 낮은 온도의 식용유에서 바삭하게 튀긴다.
+- text: 접시에 아몬드치킨볼을 담고 튀긴 마늘을 얹어 마무리한다.

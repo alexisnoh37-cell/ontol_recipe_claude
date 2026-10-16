@@ -1,0 +1,85 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_314
+title: 김말이두부스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 314. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: tofu
+  raw_text: 두부 100g
+  role: sub
+- ingredient: laver
+  raw_text: 김 2g
+  role: sub
+- ingredient: null
+  raw_text: 허브소금 1g
+  role: sub
+- ingredient: null
+  raw_text: 소
+  role: sub
+- ingredient: null
+  raw_text: 다진쇠고기 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파20g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯10g
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯 10g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 10g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 0.3g
+  role: sub
+- ingredient: null
+  raw_text: 곁들이채소
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마 50g
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박 50g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 70g
+  role: sub
+- ingredient: asparagus
+  raw_text: 아스파라거스 10g
+  role: sub
+- ingredient: null
+  raw_text: 레드와인소스
+  role: sub
+- ingredient: wine
+  raw_text: 레드와인 25g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 20g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 3g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 5g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 20g
+  role: sub
+- ingredient: null
+  raw_text: 허브소금 1g
+  role: sub
+- ingredient: null
+  raw_text: 발사믹식초 15g
+  role: sub
+steps:
+- text: 두부는 사방 3cm 길이와 두께로 잘라 허브 소금을 뿌려 수분을 완전히 빼고 속을 파서 밀가루를 묻힌다.
+- text: 소 재료를 골고루 양념해 속을 파준 두부에 채워준다.
+- text: 채워진 두부를 김을 두른 뒤 팬에 은근하게 구워준다.
+- text: 고구마, 단호박, 아스파라거스를 편으로 썰어 준다.
+- text: 마늘과 토마토를 각각 다진 후 오일에 볶다가 레드와인을 넣어 졸인다. 불을 끄기 직전에 버터를 넣어 소스를 만든다.
+- text: 채소를 각각 구워주고 구워진 두부스테이크를 담고 레드와인 소스를 뿌려 완성한다.

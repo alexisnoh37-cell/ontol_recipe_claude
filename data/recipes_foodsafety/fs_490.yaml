@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_490
+title: 소고기꼬치구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 490. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(100g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: null
+  raw_text: 인삼(20g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(5g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: null
+  raw_text: 파인애플(30g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(20g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(30g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(20g)
+  role: sub
+- ingredient: bacon
+  raw_text: 베이컨(30g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: null
+  raw_text: 꼬치(3개)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(50g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+steps:
+- text: 소고기는 포를 두툼하게 떠서, 소금과 후춧가루를 뿌려 숙성을 시킨다.
+- text: 인삼은 뇌두를 잘라 씻어 약 2cm 두께로 썰고, 파인애플과 파프리카도 두툼하게 썰고, 표고버섯과 대파, 토마토를 썰어 준비하고, 베이컨도 2cm 길이로 썰어 준비한다.
+- text: 팬에 기름 없이 파인애플과 파프리카를 먼저 굽는다.
+- text: 잘라놓은 인삼은 올리브오일을 살짝 넣고 굽는다.
+- text: 마늘은 썰어 굽고, 준비한 재료를 꼬치에 차례로 꽂아 프라이팬 또는 직화로 구워 담는다.
+- text: 유자청에 저염간장과 레몬, 설탕을 넣고 골고루 섞어 구워 놓은 소고기 꼬지에 올려 완성한다.

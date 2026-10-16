@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3096
+title: 포두부채소잡채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3096. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 포두부(100g)
+  role: sub
+- ingredient: null
+  raw_text: 참느타리버섯(45g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(45g)
+  role: sub
+- ingredient: imitation_crab
+  raw_text: 게맛살(15g)
+  role: sub
+- ingredient: null
+  raw_text: 청피망(15g)
+  role: sub
+- ingredient: null
+  raw_text: 홍피망(15g)
+  role: sub
+- ingredient: null
+  raw_text: 파(10g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(3g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(3g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(15g)
+  role: sub
+- ingredient: null
+  raw_text: 노두유(3g)
+  role: sub
+steps:
+- text: 포두부, 양파, 피망, 파, 생강은 가늘게 채 썬다.
+- text: 참느타리버섯, 게맛살은 가늘게 찢는다.
+- text: 냄비에 물을 끓이고 포두부는 미리 데쳐 체에 밭쳐 물기를 뺀다.
+- text: 팬에 식용유를 두른 뒤 파, 다진 마늘, 생강을 볶는다.
+- text: 손질한 채소와 참느타리버섯, 게맛살을 넣어 볶는다.
+- text: 채소가 익으면 데쳐 놓은 포두부를 넣고 볶다가 노두유와 설탕으로 간을 해 마무리한다.

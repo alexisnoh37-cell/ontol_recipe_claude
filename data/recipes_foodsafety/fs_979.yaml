@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_979
+title: 중국식 바비큐 폭립
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 979. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: pork_ribs
+  raw_text: 돼지갈비(바비큐용) 120g
+  role: sub
+- ingredient: null
+  raw_text: 양파작게자른것 20g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 4g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 1g
+  role: sub
+- ingredient: null
+  raw_text: 레드와인식초 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 황설탕 2g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 5g
+  role: sub
+- ingredient: null
+  raw_text: 데미글라스 10g
+  role: sub
+- ingredient: ketchup
+  raw_text: 토마토케첩 2g
+  role: sub
+- ingredient: null
+  raw_text: 머스타드 2g
+  role: sub
+- ingredient: null
+  raw_text: 우스터소스 2g
+  role: sub
+- ingredient: null
+  raw_text: 케이엔페퍼약간
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량
+  role: sub
+steps:
+- text: 소스재료를 볼에 넣고 잘 섞는다.
+- text: 소스를 돼지갈비에 골고루 바른 뒤 6시간 이상 재운다.
+- text: 재운 돼지갈비를 호일로 감싼다.
+- text: 3을 170℃의 오븐에서 30분간 굽는다.
+- text: 구운 돼지갈비의 호일을 벗긴다.
+- text: 5의 갈비가 부드러워 질 때까지 약 30분간 소스를 골고루 발라가며 굽는다.

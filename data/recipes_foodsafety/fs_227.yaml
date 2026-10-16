@@ -1,0 +1,45 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_227
+title: 새싹참치김밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 227. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 파프리카(15g)
+  role: sub
+- ingredient: null
+  raw_text: 파인애플(15g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(30g)
+  role: sub
+- ingredient: laver
+  raw_text: 김(2g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(150g)
+  role: sub
+- ingredient: null
+  raw_text: 새싹채소(10g)
+  role: sub
+- ingredient: tuna
+  raw_text: 참치(12g)
+  role: sub
+- ingredient: null
+  raw_text: 소스 저염간장(5g)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(2.5g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(0.5g)
+  role: sub
+steps:
+- text: 소스를 만든다.
+- text: 파프리카와 파인애플을 먹기 좋게 썬다.
+- text: 스크램블 에그를 만든다.
+- text: 김발 위에 ⅔크기로 자른 김을 놓고 밥을 고루 편 뒤 새싹채소, 스크램블 에그, 파프리카, 기름 뺀 참치, 파인애플을 올리고 소스를 고르게 뿌린다.
+- text: 반으로 접어 먹기 좋게 썰어 마무리한다.

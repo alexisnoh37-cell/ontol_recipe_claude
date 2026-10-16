@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_700
+title: 쑥호두달걀말이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 700. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: egg
+  raw_text: 달걀 50g
+  role: sub
+- ingredient: null
+  raw_text: 쑥 3g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 3g
+  role: sub
+- ingredient: walnut
+  raw_text: 호두 2g
+  role: sub
+- ingredient: null
+  raw_text: 현미유 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.3g
+  role: sub
+steps:
+- text: 쑥을 잘게 썬다.
+- text: 당근을 잘게 다진다.
+- text: 호두를 칼로 부순다.
+- text: 달걀을 그릇에 깨뜨려 넣고 소금을 넣어 섞은 후 1,2,3의 재료를 섞는다 .
+- text: 달군 팬에 기름을 두르고 달걀물을 부어 반숙이 되면 말아서 두툼하게 만든 뒤 약한 불에서 아래, 위, 양옆으로 뒤집어가며 속까지 익힌다 .
+- text: 한입 크기로 썰어 그릇에 담는다.

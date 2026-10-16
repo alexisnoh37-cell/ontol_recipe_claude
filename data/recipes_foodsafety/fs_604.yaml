@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_604
+title: 아보카도 연어샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 604. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: salmon
+  raw_text: 연어(훈제연어, 120g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 아보카도(1/2개)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(1/2개)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 사워크림(20g)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(20g)
+  role: sub
+steps:
+- text: 연어는 주사위 모양으로 썬다.
+- text: 양파, 파프리카도 주사위 모양으로 썬다.
+- text: 아보카도와 오렌지도 같은 형태로 썬다.
+- text: 사워크림에 다진 양파를 섞어 소스를 만든다.
+- text: 어린잎은 찬물에 담궈 싱싱하게 한다.
+- text: 원형 몰드에 연어를 넣고, 옆으로 야채와 과일을 담고 그 위에 사워크림소스와 어린잎을 올린다.

@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_959
+title: 단호박 새우찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 959. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 단호박작은것 125g
+  role: sub
+- ingredient: null
+  raw_text: 잔새우살다진것 20g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 20g
+  role: sub
+- ingredient: null
+  raw_text: 건표고버섯 10g
+  role: sub
+- ingredient: null
+  raw_text: 청피망다진것 10g
+  role: sub
+- ingredient: null
+  raw_text: 홍피망다진것 10g
+  role: sub
+- ingredient: scallion
+  raw_text: 실파 5g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 8g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 3g
+  role: sub
+- ingredient: sesame
+  raw_text: 깨소금 1g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 1g
+  role: sub
+- ingredient: null
+  raw_text: 흰후춧가루 1g
+  role: sub
+steps:
+- text: 단호박은 표면을 깨끗하게 씻어 물기를 제거하고 꼭지 부분의 윗면을 자르고 수저로 속을 파낸 후 소금을 뿌려 놓는다.
+- text: 새우살은 다지고 두부는 면보로 싸서 물기를 제거하고 곱게 으깨고 불린 건표고버섯과 청, 홍피망은 곱게 다지고 실파는 송송 썬다.
+- text: 2의 재료를 한 데 섞고 소금, 다진 마늘, 깨소금, 참기름, 흰 후춧가루를 넣고 양념하여 소를 만든다.
+- text: 1의 내부에 수분을 제거한다.
+- text: 4의 안쪽에 밀가루를 살짝 뿌리고 밀가루가 골고루 잘 묻도록 한다.
+- text: 준비된 소를 채운 후 잘라둔 꼭지 부분의 뚜껑을 덮어 김 오른 찜통에 20분가량 찐 뒤 4~6등분 하여 낸다.

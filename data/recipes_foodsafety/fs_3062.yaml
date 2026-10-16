@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3062
+title: 마들깨미역국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3062. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: seaweed
+  raw_text: 건미역 4g
+  role: sub
+- ingredient: null
+  raw_text: 마 40g
+  role: sub
+- ingredient: null
+  raw_text: 깐들깨가루 17g
+  role: sub
+- ingredient: null
+  raw_text: 건다시마 1g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2.5g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2.5g
+  role: sub
+steps:
+- text: 다시 육수를 만들어 준다.
+- text: 건미역은 불려 잘게 썰어준다.
+- text: 마는 껍질을 제거한 후 깍둑 썰기하여 준비한다.
+- text: 참기름을 두르고 미역과 마늘을 볶다가 육수를 부어 끓인다.
+- text: 끓어오른 미역국에 마를 넣어 익혀준다.
+- text: 들깨가루를 넣어 한소끔 끓여낸다.

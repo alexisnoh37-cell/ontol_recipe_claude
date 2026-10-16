@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1016
+title: 밥 샌드위치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1016. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: imitation_crab
+  raw_text: 맛살 50g
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 3g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 25g
+  role: sub
+- ingredient: rice
+  raw_text: 밥 120g
+  role: sub
+- ingredient: null
+  raw_text: 치즈슬라이스 20g
+  role: sub
+- ingredient: null
+  raw_text: 검은깨 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 적당량
+  role: sub
+steps:
+- text: 맛살을 잘게 다져 마요네즈와 소금을 넣고 버무린다.
+- text: 오이는 다져서 소금을 뿌려 놓았다가 면보에 짜서 수분을 제거한 뒤 마요네즈에 버무린다.
+- text: 밥에 소금을 넣어 버무린다.
+- text: 네모난 플라스틱 통에 랩을 깐다.
+- text: 4에 밥, 치즈, 밥, 오이나 맛살, 밥 순서로 얹어 꼭꼭 누른다.
+- text: 랩을 통째로 꺼내 칼로 조심스럽게 썰어 검은깨로 장식한다.

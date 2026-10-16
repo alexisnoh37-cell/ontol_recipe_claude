@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_580
+title: 콩비지포카치아 샌드위치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 580. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 포카치아빵(1개)
+  role: sub
+- ingredient: null
+  raw_text: 콩비지(50g)
+  role: sub
+- ingredient: null
+  raw_text: 무장아찌(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(50g)
+  role: sub
+- ingredient: null
+  raw_text: 생치즈(20g)
+  role: sub
+- ingredient: null
+  raw_text: 루꼴라(20g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(20g)
+  role: sub
+steps:
+- text: 비지는 살짝 데쳐 물기를 뺀다.
+- text: 무장아찌는 잘게 다져 비지에 골고루 섞어 소스를 만든다.
+- text: 토마토는 슬라이스로 썰어 팬에 오일을 두르고 익힌다.
+- text: 포카치아빵은 반으로 갈라 비지소스를 바른다.
+- text: 생치즈는 동그랗게 원형으로 찍어, 비지를 바른 빵에 구운 토마토와 함께 올리고, 다시 그 위에 비지를 올려 접시에 담는다.
+- text: 루꼴라는 찬물에 담궈 건져 포카치아빵 옆에 함께 놓는다

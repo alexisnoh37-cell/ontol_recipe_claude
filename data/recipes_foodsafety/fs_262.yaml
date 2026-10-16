@@ -1,0 +1,36 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_262
+title: 토마토콩조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 262. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 콩(대두, 100g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(50g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(30g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(200g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 설탕(4g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(2g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(2g)
+  role: sub
+steps:
+- text: 콩을 충분히 불린 후 냄비에 물과 함께 넣고 삶는다.
+- text: 양파와 버섯은 곱게 다진다.
+- text: 토마토를 끓는 물에 데쳐 껍질을 벗긴 뒤 으깨 팬에서 끓인다.
+- text: 양파와 버섯을 넣고 끓여 숨이 죽으면 설탕과 후춧가루로 간을 한다.
+- text: 삶은 콩을 넣고 조린 뒤 파슬리가루를 뿌려 마무리한다.

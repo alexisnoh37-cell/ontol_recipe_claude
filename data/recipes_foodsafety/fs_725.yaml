@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_725
+title: 잣소스새송이볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 725. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이 버섯 30g
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 빨간 파프리카 10g
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 노란 파프리카 10g
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루 20g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.25g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 4g
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣 5g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 0.5g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.25g
+  role: sub
+steps:
+- text: 새송이버섯과 파프리카는 가늘게 채썬다.
+- text: 채선 야채는 팬에 기름을 두르고 살짝 볶아낸다.
+- text: 찹쌀가루, 물, 소금을 섞어 찹쌀 반죽을 만든다.
+- text: 팬에 기름을 두르고 반죽을 한 스푼씩 떠 넣어 동그랗게 부친다.
+- text: 소스 재료를 모두 넣어 믹서에 간다.
+- text: 채소볶음을 잣소스에 무쳐 찹쌀전병 위에 한 스푼씩 올려낸다.

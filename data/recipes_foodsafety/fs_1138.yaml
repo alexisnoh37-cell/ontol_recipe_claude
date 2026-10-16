@@ -1,0 +1,25 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1138
+title: 감자주스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1138. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: potato
+  raw_text: 감자(400g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(200g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+steps:
+- text: 감자를 깨끗이 씻는다.
+- text: 냄비에 설탕을 넣고 감자를 삶는다.
+- text: 삶은 감자의 껍질을 벗긴다.
+- text: 껍질 벗긴 감자를 우유와 믹서에넣고 간다.
+- text: 4번을 체에 걸러 부드럽게 만든다.
+- text: 컵에 담는다.

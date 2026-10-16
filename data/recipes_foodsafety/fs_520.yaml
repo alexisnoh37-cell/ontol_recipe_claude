@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_520
+title: 인삼닭살찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 520. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(200g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.03g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(10g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(20g)
+  role: sub
+- ingredient: null
+  raw_text: 인삼(50g)
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(30g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(30g)
+  role: sub
+- ingredient: null
+  raw_text: 치킨육수(100g)
+  role: sub
+steps:
+- text: 닭가슴살을 넓게 펴서 소금과 후춧가루, 정종으로 밑간을 한다.
+- text: 대추는 돌려깎아 채를 썰고, 인삼은 세로 방향으로 반으로 가르고, 밤은 껍질을 벗겨 납작하게 썰고, 표고와 새송이 버섯은 뜨거운 물에 담그어 불린 후 채를 썰어 준비한다.
+- text: 숙성된 닭가슴살(①)에 썰어놓은 재료(②)를 얹어 놓는다.
+- text: 닭 가슴살을 돌돌 말아 놓는다.
+- text: 냄비에 육수를 붓고, 육수가 끓으면 말아 놓은 닭가슴살을 넣는다.
+- text: 뚜껑을 덮고, 약 15분 정도 은근히 찐 뒤, 닭가슴살이 익으면 불을 끄고 먹기 좋은 크기로 썰어서 접시에 담는다.
