@@ -6,6 +6,8 @@
 
 **MVP 완료(Phase 1-6, 2026-10-03, 태그 `mvp-v1`).** 전체 테스트 323개 통과, 골든셋 상위 3개 적중률 0.88, bench p95 75.5ms(기준 200ms). Phase 2 이후 할 일은 "다음 단계 제안". 단계별 경과는 아래 기록. **tests/allergy/는 수정·삭제·skip 금지**(0-3 승인). 하나라도 실패하면 엔진 결함이다.
 
+**통합 트랙 int-1**(2026-10-16, 브랜치 `feature/ontology-integration`): 기존 브랜치 5개를 새 브랜치에 병합해 레시피 200개(published 50 + draft 150)·재료 255개를 하나의 그래프로 연결. 살림팝 시드 변환·식품안전나라 그래프 표시·미매칭 보강은 추천안(PR #3) 승인 후. 아래 "통합 트랙" 참조.
+
 **부가 트랙 viz 완료**(2026-10-03, 태그 `viz-v1`, 3D 온톨로지 + 추천 워크플로 시각화, docs/plan.md 부록 D). 전체 테스트 390개 통과. 아래 "부가 트랙 viz" 참조.
 
 **데이터 확장 트랙 data-1**(2026-10-04, 브랜치 `feature/recipe-expansion`, 기준점 태그 `checkpoint/before-recipe-expansion`): 레시피 1차 초안 50개를 draft로 추가(합계 100개, published 50 그대로). 사람 검수 대기. data-2(2026-10-04): soft_tofu is_a tofu, 골든셋 재검토 자료 `docs/review/golden_review.md`. data-3(2026-10-04): "순두부" 절대 불선호 범위 확정, 불선호 제외 범위 측정, `scripts/make_golden_review.py`. 전체 테스트 399개. data-4(2026-10-04): 신규 레시피 draft 유지, 검수·골든셋 재선정 보류, PR로 올림. 아래 "데이터 확장 트랙" 참조.
@@ -644,6 +646,27 @@ ui-1은 고른 재료를 추천 엔진에 넣는 방식이라 사람의 의도(�
 - `data/sallimpop_recipe_viewer/`: 정적 웹 뷰어(`dist/`)와 `build_viewer.py`(`../sallimpop_recipe_dataset/recipes/sallimpop/*.yaml` → `dist/recipes-data.js`). 경로 조정 없이 그대로 동작한다.
 - 검증: `validate.py` 169개 통과, `build_viewer.py` 169개 생성(전달본과 바이트 동일), `node --check dist/app.js` 통과, 로컬 정적 서버에서 검색·분류·필터·정렬·더 보기·상세 창·체크리스트·모바일(375px) 확인.
 - 엔진·지식·DB와 연결하지 않은 독립 자료다. 추천 엔진 시드로 쓰려면 재료 정규 ID 매핑과 사람 검수가 먼저 필요하다.
+
+## 통합 트랙 int (브랜치 `feature/ontology-integration`)
+
+### int-1 브랜치 통합 (2026-10-16)
+
+- 사람 요청: 기존 브랜치는 손대지 않고 새 브랜치에서 레시피·재료·알레르기를 하나의 온톨로지로 합친다. 추천안은 `docs/review/ontology_integration_proposal.md`(PR #3, 승인 대기).
+- `main`(ae7014b)에서 분기해 차례로 병합(`--no-ff`): `feature/foodsafety-import`(fs-5 포함) → `feature/adhoc-recipe-analysis` → `feature/ingredient-recipe-browse` → `data/simplecooking-ontology` → `feature/sallimpop-recipe-viewer`. 원래 브랜치는 바꾸지 않았다.
+- 충돌 해결
+  - `knowledge/`: 충돌 없음(자동 병합). 재료 255개(draft 3: soft_tofu, beef_plate, bomdong), 별칭 393개.
+  - progress·decisions: 양쪽 기록을 모두 유지(D3 보완·보완 2·보완 3·자취요리신 예외).
+  - `viz/app.js`: adhoc·browse import를 둘 다 유지.
+  - `tests/kb/test_real_knowledge.py`: `DRAFT_INGREDIENTS`를 세 재료로, soft_tofu·자취요리신 연결 테스트 둘 다 유지.
+  - `tests/kb/test_recipe_seed.py`: published 50 + 1차 확장 draft 50 + 자취요리신 draft 100 = 200 기준. 영상 출처 외 source는 모두 agent_draft. 김치 레시피 새우 제외 검사는 주재료가 매핑된 후보만(자취요리신 쪽 규칙).
+  - `tests/api/test_api.py`: ui-1·ui-2 테스트 유지, /health는 시드 파일 수와 비교(자취요리신 쪽 변경).
+  - 검수표 `ingredients_review.md`·`recipes_review.md`는 다시 생성(레시피 200개).
+- 의미 충돌 1건: 자취요리신 갈래에서 승인된 "draft 미매칭 허용"(plan 5-4)으로 식품안전나라 변환 결과의 검증 결과가 `unmapped` 오류 → 오류 없음으로 바뀜. `tests/kb/test_foodsafety.py` 기대값과 `scripts/convert_foodsafety.py` 설명을 새 규칙에 맞춤(published는 계속 unmapped 오류). 엔진의 미매칭 알레르기 제외는 그대로다.
+- 검증: `validate_data` 통과(재료 255, 레시피 200, 오류 0, 경고 3). 전체 458 통과 + DB 통합 9 건너뜀(TEST_DATABASE_URL 없음), `tests/allergy` 118 통과·무변경. 살림팝 `validate.py` 169 통과, `build_viewer.py` 결과 동일.
+- 화면 확인(ENGINE_SOURCE=files, 내장 브라우저): `/graph?recipes=all` 재료 255 · 알레르기 그룹 27 · 레시피 200(published 50). `/viz`에 외부 레시피 분석·재료로 찾기 카드 모두 표시, 그래프 노드 482. 외부 분석 예시에서 우삼겹·봄동(자취요리신 갈래)이 매핑되고 코인육수는 미매칭으로 밀 알레르기 기준 제외. 로컬 DB가 꺼져 있어 `/profiles`는 응답 없음(병합과 무관).
+- 알려진 문제
+  - `data/recipes_foodsafety/`는 fs-5 시점 지식으로 변환된 결과다. 병합된 지식(별칭 +7, 재료 +2)으로 다시 변환하지 않았다(다음 단계 연결 작업에서 함께).
+  - 살림팝 169개는 아직 원본만 있고 시드로 변환하지 않았다. 식품안전나라는 그래프에 아직 나오지 않는다(추천안 승인 후).
 
 ## 사람 확인 필요
 
