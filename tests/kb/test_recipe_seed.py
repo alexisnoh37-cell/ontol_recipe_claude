@@ -175,3 +175,18 @@ def test_published_seed_served_by_default(recommender, specs):
     assert len(result.items) >= 20
     drafts = {s.id for s in specs if s.status == "draft"}
     assert not {i.recipe_id for i in result.items} & drafts  # 기본 설정은 검수 전 레시피를 제공하지 않는다
+
+
+@pytest.mark.parametrize("extra, message", [
+    ("cuisine: 미분류\ncook_time_min: 10\n", "미분류"),
+    ("cuisine: 한식\n", "cook_time_min"),
+])
+def test_loader_rejects_unclassified_or_untimed_draft(ck, tmp_path, extra, message):
+    """검증은 draft에 허용해도 엔진·DB 적재는 거부한다(plan 5-4)."""
+    (tmp_path / "fs_1.yaml").write_text(
+        "id: fs_1\ntitle: 예\n" + extra + "source: foodsafety\nstatus: draft\n"
+        "ingredients:\n  - {ingredient: salt, raw_text: 소금 약간, role: sub}\n", encoding="utf-8")
+    with pytest.raises(RecipeSeedError) as exc:
+        load_recipe_specs(ck, tmp_path)
+    assert [i.code for i in exc.value.issues] == ["not_loadable"]
+    assert message in exc.value.issues[0].message

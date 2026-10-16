@@ -10,6 +10,8 @@
 
 **데이터 확장 트랙 data-1**(2026-10-04, 브랜치 `feature/recipe-expansion`, 기준점 태그 `checkpoint/before-recipe-expansion`): 레시피 1차 초안 50개를 draft로 추가(합계 100개, published 50 그대로). 사람 검수 대기. data-2(2026-10-04): soft_tofu is_a tofu, 골든셋 재검토 자료 `docs/review/golden_review.md`. data-3(2026-10-04): "순두부" 절대 불선호 범위 확정, 불선호 제외 범위 측정, `scripts/make_golden_review.py`. 전체 테스트 399개. data-4(2026-10-04): 신규 레시피 draft 유지, 검수·골든셋 재선정 보류, PR로 올림. 아래 "데이터 확장 트랙" 참조.
 
+**식품안전나라 가져오기 트랙 fs-1**(2026-10-16, 브랜치 `feature/foodsafety-import`, `feature/recipe-expansion`에서 분기): D3 보완 2(개인용·출처 표시)로 식품안전나라 조리식품 레시피 DB 내려받기·변환 도구를 추가. 인증키 입력 전이라 실제 데이터는 아직 받지 않음. 아래 "식품안전나라 가져오기 트랙" 참조.
+
 ## 단계별 상태
 
 | 단계 | 상태 | 완료일 | 사람 확인 | 비고 |
@@ -509,8 +511,29 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
   4. baseline 저장: `uv run python scripts/eval_golden.py --save-baseline "설명"`(사람 승인 후).
 - **관련 이슈**: 조리도구·조리시간 미입력 시 처리 방식(보류) — alexisnoh37-cell/ontol_recipe_claude#1.
 
+## 식품안전나라 가져오기 트랙 (브랜치 `feature/foodsafety-import`)
+
+### fs-1 내려받기·변환 도구 (2026-10-16)
+
+- **결정(사람, 2026-10-16)**: D3 보완 2. 이용 조건 확인 결과 API 안내에 공공누리 유형이 없고, 식약처 저작권정책은 공공누리 미부착 자료에 담당 부서 사전 협의와 출처 명시를 요구한다. 이를 확인한 상태에서 개인용 범위로 출처를 표시해 쓰기로 함. 별도 폴더, draft에 한해 cook_time_min 선택, cuisine `미분류`, role 모두 `sub`. plan.md 5-3, 5-3-1(신설), 5-4, 디렉터리 구조 수정.
+- **추가한 것**
+  - `scripts/fetch_foodsafety.py`: `.env`의 `FOODSAFETY_API_KEY`로 COOKRCP01을 1000건씩 받아 `data/external/foodsafety/raw/COOKRCP01.json`에 저장. 인증키는 출력·파일에 남기지 않음.
+  - `kb/foodsafety.py` + `scripts/convert_foodsafety.py`: 원본 → `data/recipes_foodsafety/fs_<일련번호>.yaml`, 검수표 `docs/review/foodsafety_unmatched.md`(미매칭 빈도, 미매칭 1~2개 레시피, 이름 중복, 건너뛴 레시피).
+  - 재료 매핑은 별칭 색인 **정확 일치만**(양 표기 앞 이름 → 원문 전체 순). concept 노드는 미매칭. 버리는 줄은 레시피 이름 줄과 고정 머리말 단어(`HEADER_WORDS`)뿐이다. 그 밖의 짧은 줄은 모두 재료로 남긴다(잘못 버리면 알레르기 판정에서 빠짐).
+  - 검증 규칙(`kb/datacheck.py`): draft는 cuisine `미분류`(`UNCLASSIFIED_CUISINE`, vocab에는 없음), cook_time_min 없음 허용. published는 cook_time_min 필수.
+  - 적재 차단(`kb/recipes.load_recipe_specs`): cuisine 미분류이거나 cook_time_min이 없으면 `not_loadable`로 거부. DB 컬럼은 NOT NULL 유지.
+  - `.gitignore`: `data/external/`, `data/recipes_foodsafety/`(재배포 방지).
+- **테스트**: DB 통합(tests/storage) 제외 408개 통과(allergy·logic·kb·golden 337, api 12, viz 59). tests/storage는 Docker Desktop이 꺼져 있어 DB 연결 대기로 실행하지 못함. 추가: `tests/kb/test_foodsafety.py` 14개(직접 만든 예시 행), `tests/kb/test_datacheck.py` 2개, `tests/kb/test_recipe_seed.py` 2개 추가. tests/allergy 무수정.
+- **실행 순서(인증키 입력 후)**:
+  1. `.env`에 `FOODSAFETY_API_KEY=<발급받은 키>`
+  2. `uv run python scripts/fetch_foodsafety.py`
+  3. `uv run python scripts/convert_foodsafety.py`
+  4. `docs/review/foodsafety_unmatched.md` 확인 → 별칭·재료 보강(knowledge에 draft) → 3번 다시 실행
+- **남은 일**: 실제 데이터 미수신. 미매칭률은 받은 뒤 측정. `data/recipes/`로 옮기는 기준(미매칭 0, cuisine·조리시간·role·맛·난이도 채움, 사람 검수)은 plan 5-3-1 4번.
+
 ## 사람 확인 필요
 
+- **(fs-1) 식품안전나라 인증키**: `.env`에 `FOODSAFETY_API_KEY`를 넣은 뒤 내려받기·변환 실행. 외부 공개·상업화 전에는 식약처에 이용 조건 문의(D3 보완 2).
 - **(보류, data-4) 레시피 1차 확장 검수·골든셋 재선정**: 위 "data-4"의 "보류를 풀 때 할 일" 순서대로 진행. 아래 data-1·data-2 항목도 이때 함께 처리한다.
 - (해결, data-3) "순두부" 절대 불선호 범위: 지금 동작 유지(두부 요리도 제외). 불선호의 "포함 가능" 처리는 "다음 단계 제안" 11번에서 검토.
 - **(data-2) 골든셋 기대값**: `docs/review/golden_review.md`를 보고 expected_top3를 다시 고를지 정한다.

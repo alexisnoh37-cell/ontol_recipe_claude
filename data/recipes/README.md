@@ -6,9 +6,9 @@ DB 컬럼(docs/plan.md 부록 B의 recipe, recipe_ingredient, recipe_taste, reci
 ```yaml
 id: kimchi_jjigae              # 소문자 slug, 파일 이름과 같게
 title: 돼지고기 김치찌개
-cuisine: 한식                  # knowledge/vocab.yaml cuisines
+cuisine: 한식                  # knowledge/vocab.yaml cuisines. draft만 `미분류` 가능(적재되지 않음)
 difficulty: 1                  # 1~3 (1 초급). published에는 필수
-cook_time_min: 30
+cook_time_min: 30              # published에는 필수. draft는 비워 둘 수 있으나 그러면 적재되지 않음
 servings: 2                    # 선택
 source: agent_draft            # 출처. 에이전트 초안은 agent_draft
 status: draft                  # draft | published. 사람 검수 후에만 published

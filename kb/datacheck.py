@@ -18,6 +18,10 @@ from kb.validate import Issue, _parse
 
 Level = Annotated[int, Field(ge=0, le=5)]
 
+# draft 레시피만 쓸 수 있는 cuisine 값(vocab에는 넣지 않는다). 외부 데이터 가져오기처럼 음식 종류를
+# 아직 정하지 못한 레시피에 쓴다(docs/plan.md 5-3-1, 5-4). 적재(kb.recipes.load_recipe_specs)는 거부한다.
+UNCLASSIFIED_CUISINE = "미분류"
+
 
 class RecipeIngredientSpec(StrictModel):
     ingredient: Id | None = None  # None = 미매칭
@@ -52,7 +56,7 @@ class RecipeSpec(StrictModel):
     title: Text
     cuisine: Text
     difficulty: Annotated[int, Field(ge=1, le=3)] | None = None
-    cook_time_min: Annotated[int, Field(gt=0)]
+    cook_time_min: Annotated[int, Field(gt=0)] | None = None  # published에는 필수. draft만 비워 둘 수 있다
     servings: Annotated[int, Field(gt=0)] | None = None
     source: Text
     status: Literal["draft", "published"] = "draft"
@@ -101,7 +105,7 @@ def check_recipes(ck: CompiledKnowledge, recipes: Iterable[tuple[str, Any]]) -> 
             issue = _ingredient_issue(ck, line.ingredient, f"{where} 재료 {n}({line.raw_text})", "레시피 재료")
             if issue:
                 issues.append(issue)
-        if r.cuisine not in cuisines:
+        if r.cuisine not in cuisines and not (r.cuisine == UNCLASSIFIED_CUISINE and r.status == "draft"):
             issues.append(Issue("bad_vocab", where, f"cuisine '{r.cuisine}'가 vocab.yaml에 없습니다"))
         for e in r.equipment:
             if e.name not in equipment:
@@ -114,6 +118,8 @@ def check_recipes(ck: CompiledKnowledge, recipes: Iterable[tuple[str, Any]]) -> 
                 issues.append(Issue("published_incomplete", where, "published 레시피에 맛 프로필(taste)이 없습니다"))
             if r.difficulty is None:
                 issues.append(Issue("published_incomplete", where, "published 레시피에 난이도(difficulty)가 없습니다"))
+            if r.cook_time_min is None:
+                issues.append(Issue("published_incomplete", where, "published 레시피에 조리시간(cook_time_min)이 없습니다"))
     return issues
 
 
