@@ -564,6 +564,16 @@ viz-5(2026-10-03, 완료 — 로딩 3초 미달은 사람 결정으로 기록만
 - 테스트: `tests/api/test_analyze_recipe.py` 19개, `tests/kb/test_foodsafety.py` 1개 추가, `tests/viz/test_page.py` 카드 요소 확인 추가. DB 없이 432개 통과(`--ignore=tests/storage`). `tests/storage/`는 로컬 DB(docker)가 꺼져 있어 이번에 실행하지 못함(연결 시간 초과).
 - 브라우저 확인(ENGINE_SOURCE=files): 예시(마파두부, multi_allergy 페르소나) → 7줄 중 6줄 매핑, 굴소스 → 굴 → 조개 경로, 트러플 오일 미매칭으로 제외, 콘솔 오류 없음.
 
+### fs-4 정적 HTML 레시피 뷰어 (2026-10-16)
+
+- `scripts/make_foodsafety_viewer.py` + `scripts/foodsafety_viewer_template.html` → `data/recipes_foodsafety/viewer.html`(2.5MB, gitignore, 레시피 1153개 내장).
+  - 카드 목록(대표 사진, 요리종류, 조리방법, 열량, 재료 매칭 막대), 검색(메뉴명·재료·해시태그·매칭된 재료 이름), 요리종류 칩, 조리방법·정렬(번호·이름·미매칭 적은 순·열량), "미매칭 없는 것만".
+  - 상세 시트: 사진, 영양 정보(1인분), 재료별 매칭/미매칭 표시(매칭이면 정규 재료 이름), 미매칭이 있으면 "알레르기 판정 불가" 안내, 단계별 사진, 저감 조리 팁, 출처. 주소 `#fs_<번호>`로 바로 열림.
+  - 사진은 식품안전나라 서버에서 직접 불러온다(인터넷 필요). 데이터는 textContent로만 넣고, 내장 JSON의 `</`를 이스케이프한다.
+  - 알레르기 성분 표시는 넣지 않음(미매칭이 많아 "알레르기 없음"으로 오해될 수 있음).
+- 확인: 브라우저 패널에서 목록·사진·검색("두부" 157개)·"미매칭 없는 것만"(82개)·상세 시트·딥 링크, 콘솔 오류 없음. 브라우저 패널이 file:// 를 열지 못해 `.claude/launch.json`에 `foodsafety-viewer`(로컬 정적 서버, 개인 설정이라 커밋 안 함)를 추가해 확인했다. 사용자는 파일을 더블클릭해 열면 된다.
+- 테스트 1개 추가(`tests/kb/test_foodsafety.py` 20개).
+
 ## 사람 확인 필요
 
 - **(adhoc-1) 외부 레시피 분석 확인**: `/viz` "외부 레시피 분석"에서 예시 넣기 → 분석. 안전 관련 판정 테스트(possible·미매칭·concept 제외)를 `tests/api/`에 두었다. `tests/allergy/`로 옮겨 승인 대상으로 둘지 정한다.

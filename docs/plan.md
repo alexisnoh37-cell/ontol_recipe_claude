@@ -247,6 +247,7 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
    - 재료정보가 없는 레시피는 만들지 않고 보고한다.
 3. 미매칭 재료 빈도와 레시피별 미매칭 수를 `docs/review/foodsafety_unmatched.md`로 만든다. 별칭·재료 보강은 knowledge에 draft로 추가한 뒤 다시 변환한다.
 4. `data/recipes/`로 옮기려면 미매칭 0, cuisine·cook_time_min 채움, 사람 검수가 필요하다(로더가 미분류·cook_time_min 없음을 거부).
+5. 열람용 정적 HTML 뷰어: `scripts/make_foodsafety_viewer.py`(템플릿 `scripts/foodsafety_viewer_template.html`)가 원본과 같은 변환 규칙으로 `data/recipes_foodsafety/viewer.html`(gitignore)을 만든다. 사진·영양 정보·저감 조리 팁, 재료별 매칭 여부를 보여 준다. 개인용 열람 전용, 외부 게시 금지.
 
 ### 5-4. 데이터 검증 스크립트
 
