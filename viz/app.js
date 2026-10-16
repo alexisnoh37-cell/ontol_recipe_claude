@@ -2,12 +2,13 @@
 // 외부 레시피 분석(부록 E)은 adhoc.js가 POST /analyze-recipe 결과를 그래프에 겹쳐 그린다.
 // 데이터: GET /graph(기본). ?graph=<url>이면 그 JSON을, ?recipes=all|none이면 그 범위를 불러온다(viz-5 측정용).
 // ?display=1이면 표시 전용 레시피(식품안전나라, 엔진 미적재)도 불러온다. 레시피는 출처(origin)별 색·토글(int-2).
+// ?layout=tree-ingredient(기본)|tree-cuisine|flat: 나무(주재료 방향·음식 종류) 또는 평면 배치(부록 D-9). 화면에서 바로 바꾼다.
 
 import { GROUP_CATEGORY_LABEL, LAYER_LABEL, LINK_COLOR, LINK_LABEL, NODE_COLOR, ORIGIN_COLOR, PLAY_COLOR, REASON_COLOR, ROLE_LABEL } from "./palette.js";
 import { setupAdhoc } from "./adhoc.js";
 import { setupBrowse } from "./browse.js";
 import { setupPlayback } from "./playback.js";
-import { createScene } from "./scene.js";
+import { LAYOUTS, createScene } from "./scene.js";
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -233,6 +234,18 @@ function setupOrigins(scene, data) {
   });
 }
 
+function setupLayout(scene) {
+  const sel = $("#layout-mode");
+  sel.innerHTML = Object.entries(LAYOUTS).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("");
+  sel.value = scene.layout;
+  sel.addEventListener("change", () => {
+    scene.setLayoutMode(sel.value);
+    const next = new URLSearchParams(location.search);
+    next.set("layout", sel.value);
+    history.replaceState(null, "", `${location.pathname}?${next}`);
+  });
+}
+
 function setupToggles(scene) {
   for (const el of document.querySelectorAll("[data-layer]")) {
     el.addEventListener("change", () => scene.setLayer(Number(el.dataset.layer), el.checked));
@@ -309,9 +322,12 @@ async function main() {
     return;
   }
   const tFetched = performance.now();
-  const scene = createScene($("#graph"), data, { tooltip, onSelect: (n) => { renderInfo(scene, n); browse?.onNodeSelect(n); } });
+  const scene = createScene($("#graph"), data, {
+    tooltip, onSelect: (n) => { renderInfo(scene, n); browse?.onNodeSelect(n); }, layout: params.get("layout") || "tree-ingredient",
+  });
   const tScene = performance.now();
   $("#loading").remove();
+  setupLayout(scene);
   setupOrigins(scene, data);
   setupSearch(scene);
   setupToggles(scene);

@@ -36,3 +36,14 @@ def test_browse_card_is_served(client):
     for el in ('id="browse-add"', 'id="browse-pick"', 'id="browse-subject"', 'id="browse-run"', 'id="browse-list"'):
         assert el in html, el
     assert client.get("/viz/static/browse.js").status_code == 200
+
+
+def test_tree_layout_controls_are_served(client):
+    """나무 배치(부록 D-9): 배치 선택, 출처 토글 자리, tree.js. 좌표·전환은 브라우저로 확인한다."""
+    html = client.get("/viz").text
+    for el in ('id="layout-mode"', 'id="origin-toggles"', 'id="display-toggle"'):
+        assert el in html, el
+    tree = client.get("/viz/static/tree.js")
+    assert tree.status_code == 200 and "export function treeLayout" in tree.text
+    scene = client.get("/viz/static/scene.js").text
+    assert all(k in scene for k in ('"tree-ingredient"', '"tree-cuisine"', "flat:"))
