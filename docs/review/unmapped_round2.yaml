@@ -5,8 +5,9 @@
 #
 # 사람 결정(2026-10-17): "일괄 승인은 그대로 진행하고 꼭 확인해야 할 것만 검수"
 #   decision O    = 일괄 승인분. knowledge/와 식품안전나라 이름 보정표(data/foodsafety_name_overrides.yaml)에 반영했다.
-#   decision null = 꼭 확인(E, 그리고 E 재료를 쓰는 D). 아직 반영하지 않았다(미매칭 유지 = 알레르기 사용자에게 제외, 안전).
-#                   검수 화면: docs/review/unmapped_round2_review.html
+#   E(꼭 확인 17개) = 검수 화면(docs/review/unmapped_round2_review.html)에서 사람이 결정(2026-10-17, 모두 O).
+#                     내보낸 결과: docs/review/unmapped_round2_decisions.json. 메모 반영: 코코넛·도토리묵은 알레르기 없음,
+#                     '성분표 확인 후 사용 권장' 메모 15개는 시판 제품 안내(config/display.yaml) 대상.
 # C(보류)의 O는 "미매칭으로 둔다"에 동의한 것이다.
 #
 # 분류 기준(1차 검수 결정을 따름)
@@ -1388,61 +1389,61 @@ entries:
   new: {category: 해조류, id: seaweed_mix, name: 해초(혼합)}
 
 - kind: E
-  decision: null
+  decision: O
   terms: [코코넛밀크, 코코넛 오일, 코코넛우유, 코코넛설탕, 코코넛슬라이스, 코코넛워터]
-  new: {allergens: [{certainty: possible, group: other_tree_nuts}], category: 견과·씨앗, confidence: low, id: coconut, name: 코코넛}
-  note: 코코넛을 견과류 알레르기로 볼지 불확실(국내 법정 대상 아님) → 기타 견과류 possible로 둠. 밀크·오일·우유를 한 재료로 묶음
+  new: {category: 견과·씨앗, confidence: low, id: coconut, name: 코코넛}
+  note: '사람 결정(um-3 검수 2026-10-17, 메모 ''알레르기 제외''): 견과류 알레르기에 넣지 않음(국내 법정 대상 아님). 밀크·오일·우유를 한 재료로 묶음'
 
 - kind: E
-  decision: null
+  decision: O
   terms: [홍초]
   new: {category: 가공식품, confidence: low, derived_from: [vinegar, {certainty: possible, id: sulfite}], id: hongcho, is_processed: true, name: 홍초(시판 식초 음료)}
   note: 상표 음료. 석류·과즙 식초. 성분 확인 필요
 
 - kind: E
-  decision: null
+  decision: O
   terms: [도토리묵, 건도토리묵, 도토리가루, 묵말랭이]
-  new: {allergens: [{certainty: possible, group: other_tree_nuts}], category: 가공식품, confidence: low, id: acorn_jelly, name: 도토리묵}
-  note: 도토리(참나무 열매)를 견과류 알레르기로 볼지 불확실 → 기타 견과류 possible
+  new: {category: 가공식품, confidence: low, id: acorn_jelly, name: 도토리묵}
+  note: '사람 결정(um-3 검수 2026-10-17, 메모 ''알레르기 제외''): 견과류 알레르기에 넣지 않음. 시판 제품으로 성분표 확인 후 사용 권장'
 
 - kind: E
-  decision: null
+  decision: O
   terms: [막걸리]
   new: {allergens: [{certainty: possible, group: wheat}], category: 주류, confidence: low, id: makgeolli, name: 막걸리}
   note: 쌀 막걸리 외에 밀 막걸리가 있어 밀 possible
 
 - kind: E
-  decision: null
+  decision: O
   terms: [스리라차소스, 스리라차]
   new: {category: 소스, confidence: low, derived_from: [red_chili, garlic, vinegar, sugar, {certainty: possible, id: sulfite}], id: sriracha, is_processed: true, name: 스리라차소스}
   note: 시판 소스. 대표 제품 원재료에 아황산수소나트륨이 있어 아황산류 possible. 그 밖의 법정 알레르기 성분은 보통 없음
 
 - kind: E
-  decision: null
+  decision: O
   terms: [카스텔라, 카스테라, 카스텔라가루]
   new: {category: 가공식품, confidence: low, derived_from: [egg, wheat_flour, {certainty: possible, id: milk}, {certainty: possible, id: soybean}], id: castella, is_processed: true, name: 카스텔라}
   note: 시판 빵. 계란·밀 확정
 
 - kind: E
-  decision: null
+  decision: O
   terms: [크림소스]
   new: {category: 소스, confidence: low, derived_from: [heavy_cream, {certainty: possible, id: wheat_flour}, {certainty: possible, id: cheese}, {certainty: possible, id: chicken_stock}], id: cream_sauce, is_processed: true, name: 크림소스}
   note: 시판·가정식 크림소스. 우유 확정
 
 - kind: E
-  decision: null
+  decision: O
   terms: [다크초콜릿, 블랙초콜릿, 초콜릿, 화이트 초콜릿]
   new: {category: 가공식품, confidence: low, derived_from: [{certainty: possible, id: milk}, {certainty: possible, id: soybean}, {certainty: possible, id: almond}, {certainty: possible, id: peanut}], id: chocolate, is_processed: true, name: 초콜릿}
   note: 시판 초콜릿(다크·화이트 모두). 유당(화이트는 우유 확정)·대두 레시틴·견과 교차 포함 가능
 
 - kind: E
-  decision: null
+  decision: O
   terms: [바게트, 바케트, 바케트빵]
   new: {category: 면·떡·빵, confidence: low, derived_from: [wheat_flour, {certainty: possible, id: milk}, {certainty: possible, id: soybean}], id: baguette, is_processed: true, name: 바게트}
   note: 밀 확정. 시판 제품은 우유·대두 들어가기도 함
 
 - kind: E
-  decision: null
+  decision: O
   terms: [버섯마늘소금]
   new: {category: 양념, confidence: low, derived_from: [salt, garlic, {certainty: possible, id: shiitake}, {certainty: possible, id: soybean}, {certainty: possible, id: wheat_flour}], id: mushroom_garlic_salt, is_processed: true, name: 버섯마늘소금}
   note: 시판 혼합 소금. 조미 성분(가수분해 단백 등)에 대두·밀이 들 수 있어 possible
@@ -1668,19 +1669,19 @@ entries:
   new: {allergens: [{certainty: definite, group: other_tree_nuts}], category: 견과·씨앗, id: macadamia, name: 마카다미아}
 
 - kind: E
-  decision: null
+  decision: O
   terms: [그라놀라]
   new: {category: 가공식품, confidence: low, derived_from: [oats, {certainty: possible, id: wheat_flour}, {certainty: possible, id: mixed_nuts}, {certainty: possible, id: milk}, {certainty: possible, id: soybean}, {certainty: possible, id: honey}], id: granola, is_processed: true, name: 그라놀라}
   note: 시판 시리얼. 견과·밀·우유·대두 possible
 
 - kind: E
-  decision: null
+  decision: O
   terms: [데미글라스]
   new: {category: 소스, confidence: low, derived_from: [{certainty: possible, id: beef}, {certainty: possible, id: wheat_flour}, {certainty: possible, id: tomato}, {certainty: possible, id: milk}, {certainty: possible, id: soybean}], id: demi_glace, is_processed: true, name: 데미글라스소스}
   note: 시판 소스. 쇠고기 육수·밀가루 루 기반
 
 - kind: E
-  decision: null
+  decision: O
   terms: [떡볶이양념파우더]
   new: {category: 소스, confidence: low, derived_from: [gochugaru, {certainty: possible, id: soybean}, {certainty: possible, id: wheat_flour}, {certainty: possible, id: beef}, {certainty: possible, id: seafood}], id: tteokbokki_powder, is_processed: true, name: 떡볶이 양념 분말}
   note: 시판 양념 분말. 성분 확인 필요
@@ -1865,19 +1866,19 @@ entries:
   note: 보리 싹. 법정 알레르기(밀) 아님
 
 - kind: E
-  decision: null
+  decision: O
   terms: [멍게살]
   new: {allergens: [{certainty: possible, group: shellfish}], category: 해산물, confidence: low, id: sea_squirt, name: 멍게}
   note: 멍게(우렁쉥이)는 조개류가 아니지만 해산물 알레르기와의 관계가 불확실 → 조개류 possible로 둠
 
 - kind: E
-  decision: null
+  decision: O
   terms: [미더덕]
   new: {allergens: [{certainty: possible, group: shellfish}], category: 해산물, confidence: low, id: mideodeok, name: 미더덕}
   note: 멍게와 같은 판단
 
 - kind: E
-  decision: null
+  decision: O
   terms: [아이스크림]
   new: {category: 가공식품, confidence: low, derived_from: [milk, {certainty: possible, id: egg}, {certainty: possible, id: soybean}, {certainty: possible, id: mixed_nuts}, {certainty: possible, id: wheat_flour}], id: ice_cream, is_processed: true, name: 아이스크림}
   note: 시판 아이스크림. 우유 확정
@@ -2027,7 +2028,7 @@ entries:
   note: 복숭아·배·포도 통조림 혼합. 복숭아 확정
 
 - kind: E
-  decision: null
+  decision: O
   terms: [파인소프트 C, 파인소프트 T]
   new: {category: 첨가물, confidence: low, derived_from: [{certainty: possible, id: wheat_flour}, {certainty: possible, id: corn}], id: fine_soft, is_processed: true, name: 파인소프트(제빵용 전분)}
   note: 제빵용 가공전분 상표. 원료(타피오카·옥수수·밀) 확인 필요

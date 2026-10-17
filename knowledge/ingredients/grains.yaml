@@ -459,3 +459,17 @@
   confidence: low
   note: "법정 '밀'은 아니나 밀 혼입·교차 사용이 흔해 밀 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
   status: reviewed
+
+# --- um-3 미매칭 2차 보강 꼭 확인분(2026-10-17, 사람 검수 승인) ---
+- id: baguette
+  name: 바게트
+  aliases: [바케트, 바케트빵]
+  derived_from:
+    - wheat_flour
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: "밀 확정. 시판 제품은 우유·대두 들어가기도 함 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed

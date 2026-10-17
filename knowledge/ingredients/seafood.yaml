@@ -583,3 +583,20 @@
   allergens: [{group: other_fish, certainty: definite}]
   note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
   status: reviewed
+
+# --- um-3 미매칭 2차 보강 꼭 확인분(2026-10-17, 사람 검수 승인) ---
+- id: sea_squirt
+  name: 멍게
+  aliases: [멍게살]
+  category: 해산물
+  allergens: [{group: shellfish, certainty: possible}]
+  confidence: low
+  note: "멍게(우렁쉥이)는 조개류가 아니지만 해산물 알레르기와의 관계가 불확실 → 조개류 possible로 둠 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: mideodeok
+  name: 미더덕
+  category: 해산물
+  allergens: [{group: shellfish, certainty: possible}]
+  confidence: low
+  note: "멍게와 같은 판단 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed

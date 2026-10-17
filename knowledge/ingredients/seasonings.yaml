@@ -1076,3 +1076,90 @@
   confidence: low
   note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
   status: reviewed
+
+# --- um-3 미매칭 2차 보강 꼭 확인분(2026-10-17, 사람 검수 승인) ---
+- id: makgeolli
+  name: 막걸리
+  category: 주류
+  allergens: [{group: wheat, certainty: possible}]
+  confidence: low
+  note: "쌀 막걸리 외에 밀 막걸리가 있어 밀 possible um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: sriracha
+  name: 스리라차소스
+  aliases: [스리라차]
+  derived_from:
+    - red_chili
+    - garlic
+    - vinegar
+    - sugar
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판 소스. 대표 제품 원재료에 아황산수소나트륨이 있어 아황산류 possible. 그 밖의 법정 알레르기 성분은 보통 없음 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: cream_sauce
+  name: 크림소스
+  derived_from:
+    - heavy_cream
+    - {id: wheat_flour, certainty: possible}
+    - {id: cheese, certainty: possible}
+    - {id: chicken_stock, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판·가정식 크림소스. 우유 확정 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: mushroom_garlic_salt
+  name: 버섯마늘소금
+  derived_from:
+    - salt
+    - garlic
+    - {id: shiitake, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 양념
+  confidence: low
+  note: "시판 혼합 소금. 조미 성분(가수분해 단백 등)에 대두·밀이 들 수 있어 possible um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: demi_glace
+  name: 데미글라스소스
+  aliases: [데미글라스]
+  derived_from:
+    - {id: beef, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: tomato, certainty: possible}
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판 소스. 쇠고기 육수·밀가루 루 기반 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: tteokbokki_powder
+  name: 떡볶이 양념 분말
+  aliases: [떡볶이양념파우더]
+  derived_from:
+    - gochugaru
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: seafood, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판 양념 분말. 성분 확인 필요 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: fine_soft
+  name: 파인소프트(제빵용 전분)
+  aliases: [파인소프트 C, 파인소프트 T]
+  derived_from:
+    - {id: wheat_flour, certainty: possible}
+    - {id: corn, certainty: possible}
+  is_processed: true
+  category: 첨가물
+  confidence: low
+  note: "제빵용 가공전분 상표. 원료(타피오카·옥수수·밀) 확인 필요 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed

@@ -375,3 +375,76 @@
   confidence: low
   note: "복숭아·배·포도 통조림 혼합. 복숭아 확정 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
   status: reviewed
+
+# --- um-3 미매칭 2차 보강 꼭 확인분(2026-10-17, 사람 검수 승인) ---
+- id: hongcho
+  name: 홍초(시판 식초 음료)
+  aliases: [홍초]
+  derived_from:
+    - vinegar
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "상표 음료. 석류·과즙 식초. 성분 확인 필요 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: acorn_jelly
+  name: 도토리묵
+  aliases: [건도토리묵, 도토리가루, 묵말랭이]
+  category: 가공식품
+  confidence: low
+  note: "사람 결정(um-3 검수 2026-10-17, 메모 '알레르기 제외'): 견과류 알레르기에 넣지 않음. 시판 제품으로 성분표 확인 후 사용 권장 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: castella
+  name: 카스텔라
+  aliases: [카스테라, 카스텔라가루]
+  derived_from:
+    - egg
+    - wheat_flour
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "시판 빵. 계란·밀 확정 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: chocolate
+  name: 초콜릿
+  aliases: [다크초콜릿, 블랙초콜릿, 화이트 초콜릿]
+  derived_from:
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: almond, certainty: possible}
+    - {id: peanut, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "시판 초콜릿(다크·화이트 모두). 유당(화이트는 우유 확정)·대두 레시틴·견과 교차 포함 가능 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: granola
+  name: 그라놀라
+  derived_from:
+    - oats
+    - {id: wheat_flour, certainty: possible}
+    - {id: mixed_nuts, certainty: possible}
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: honey, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "시판 시리얼. 견과·밀·우유·대두 possible um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: ice_cream
+  name: 아이스크림
+  derived_from:
+    - milk
+    - {id: egg, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: mixed_nuts, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "시판 아이스크림. 우유 확정 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed

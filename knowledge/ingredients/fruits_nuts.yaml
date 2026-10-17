@@ -419,3 +419,12 @@
   allergens: [{group: other_tree_nuts, certainty: definite}]
   note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
   status: reviewed
+
+# --- um-3 미매칭 2차 보강 꼭 확인분(2026-10-17, 사람 검수 승인) ---
+- id: coconut
+  name: 코코넛
+  aliases: [코코넛밀크, 코코넛 오일, 코코넛우유, 코코넛설탕, 코코넛슬라이스, 코코넛워터]
+  category: 견과·씨앗
+  confidence: low
+  note: "사람 결정(um-3 검수 2026-10-17, 메모 '알레르기 제외'): 견과류 알레르기에 넣지 않음(국내 법정 대상 아님). 밀크·오일·우유를 한 재료로 묶음 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed

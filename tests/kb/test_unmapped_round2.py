@@ -1,11 +1,12 @@
-"""미매칭 2차 보강(um-3): 일괄 승인분은 반영되고, 꼭 확인할 항목·보류는 미매칭으로 남는지.
+"""미매칭 2차 보강(um-3): 일괄 승인분과 꼭 확인 검수 결정이 반영되고, 보류는 미매칭으로 남는지.
 
 결정 원본: docs/review/unmapped_round2.yaml. 사람 결정(2026-10-17) "일괄 승인은 그대로 진행하고 꼭 확인해야 할 것만 검수".
-decision O = 반영, null = 꼭 확인(검수 전이라 반영하지 않음).
+decision O = 반영. 꼭 확인 17개(E)는 검수 화면에서 사람이 결정했다(docs/review/unmapped_round2_decisions.json, 모두 O).
 """
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pytest
@@ -40,25 +41,42 @@ def overrides(ck):
     return load_name_overrides(ROOT, ck, NAME_OVERRIDES)
 
 
-def _pending_ids(entries):
-    return {e.new["id"] for e in entries if e.kind == "E" and e.decision is None}
+DECISIONS = ROOT / "docs" / "review" / "unmapped_round2_decisions.json"
 
 
-def test_only_must_check_items_are_pending(entries):
-    pending = _pending_ids(entries)
-    assert pending, "꼭 확인할 항목이 있어야 검수 화면을 만든다"
-    for e in entries:
-        if e.decision is None:
-            uses = {e.target} | {p["id"] for p in e.split or []} | ({e.new["id"]} if e.new else set())
-            assert e.kind == "E" or uses & pending, e.key
-        else:
-            assert e.decision == "O", e.key
+def _human():
+    data = json.loads(DECISIONS.read_text(encoding="utf-8"))
+    assert data["format"] == "unmapped-round2-decisions/1"
+    return {r["id"]: r for r in data["rows"]}
+
+
+def test_must_check_items_follow_human_decisions(entries):
+    human = _human()
+    checked = {e.new["id"]: e for e in entries if e.kind == "E"}
+    assert set(checked) == set(human)  # 꼭 확인 항목 = 검수 화면에서 결정한 항목
+    for i, e in checked.items():
+        assert e.decision == {"O": "O", "X": "X"}.get(human[i]["decision"]), i
+    assert all(e.decision == "O" for e in entries if e.kind != "E")
+
+
+def test_must_check_memos_applied(ck):
+    """메모 '알레르기 제외' → 알레르기 없음, '성분표 확인 후 사용 권장' → 시판 제품 안내 대상(ir-2와 같은 해석)."""
+    import yaml
+
+    has_allergen = {r.ingredient_id for r in ck.allergen_closure}
+    assert "coconut" not in has_allergen and "acorn_jelly" not in has_allergen
+    notice = set(yaml.safe_load((ROOT / "config" / "display.yaml").read_text(encoding="utf-8"))
+                 ["commercial_product_notice"]["ingredients"])
+    memo = {i for i, r in _human().items() if "확인" in r["memo"] and r["decision"] != "X"}
+    assert len(memo) == 14 and memo <= notice
+    status = {i.id: i.status for i in ck.ingredients}
+    assert all(status[i] == "reviewed" for i in _human())
 
 
 def test_approved_aliases_and_new_ingredients_map(entries, ck, index):
     status = {i.id: i.status for i in ck.ingredients}
     for e in entries:
-        if e.decision != "O" or e.kind not in ("A", "B"):
+        if e.decision != "O" or e.kind not in ("A", "B", "E"):
             continue
         expected = e.new["id"] if e.new else e.target
         if e.new:
@@ -67,14 +85,12 @@ def test_approved_aliases_and_new_ingredients_map(entries, ck, index):
             assert index.get(normalize_term(t)) == expected, t
 
 
-def test_pending_and_held_terms_stay_unmapped(entries, index, overrides):
-    pending = _pending_ids(entries)
+def test_held_terms_stay_unmapped(entries, index, overrides):
     for e in entries:
-        if e.decision is None or e.kind == "C":
+        if e.decision != "O" or e.kind == "C":
             for t in e.texts:
                 assert normalize_term(t) not in index, t
                 assert normalize_term(t) not in overrides, t
-    assert not pending & set(index.values())
 
 
 def test_foodsafety_name_overrides_match_approved_d_entries(entries, overrides):
@@ -88,9 +104,9 @@ def test_foodsafety_name_overrides_match_approved_d_entries(entries, overrides):
 
 
 def test_converted_recipes_leave_only_held_or_pending_terms(entries):
-    """변환 결과(data/recipes_foodsafety)가 지금 지식·보정표와 맞는지: 남은 미매칭은 1·2차에서 보류·제외·확인 대기뿐."""
+    """변환 결과(data/recipes_foodsafety)가 지금 지식·보정표와 맞는지: 남은 미매칭은 1·2차에서 보류·제외한 표기뿐."""
     first = load_proposal(ROOT / "docs" / "review" / "unmapped_proposal.yaml")
-    left_open = {normalize_term(t) for e in entries if e.kind == "C" or e.decision is None for t in e.texts}
+    left_open = {normalize_term(t) for e in entries if e.kind == "C" or e.decision != "O" for t in e.texts}
     left_open |= {normalize_term(t) for e in first if e.kind == "C" or e.decision == "X" for t in e.texts}
     fs = foodsafety_unmapped(ROOT)
     assert set(fs.terms) <= left_open

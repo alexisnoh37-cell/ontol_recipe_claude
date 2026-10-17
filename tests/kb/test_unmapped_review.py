@@ -97,11 +97,14 @@ def test_commercial_notice_products_are_approved_and_configured(entries):
     display = yaml.safe_load((ROOT / "config" / "display.yaml").read_text(encoding="utf-8"))
     notice = display["commercial_product_notice"]
     assert notice["text"] == "시판 제품으로 제품 성분을 확인해 알레르기 유무를 확인하시기 바랍니다."
-    approved = {e.new["id"] for e in entries if e.decision == "O" and e.new}
+    round2 = load_proposal(ROOT / "docs" / "review" / "unmapped_round2.yaml")
+    approved = {e.new["id"] for e in entries + round2 if e.decision == "O" and e.new}
     assert COMMERCIAL <= set(notice["ingredients"]) <= approved
-    # ir-2: 재료 검수에서 '포장 알레르기 표시 확인 권장' 메모를 단 재료(지우지 않은 것)가 모두 안내 대상이다
-    decisions = json.loads((ROOT / "docs" / "review" / "ingredient_decisions.json").read_text(encoding="utf-8"))["rows"]
-    memo = {r["id"] for r in decisions if "확인" in r["memo"] and r["decision"] != "X"}
+    # ir-2 재료 검수·um-3 꼭 확인 검수에서 '포장 알레르기 표시 확인 권장' 메모를 단 재료(지우지 않은 것)가 모두 안내 대상이다
+    memo = set()
+    for name in ("ingredient_decisions.json", "unmapped_round2_decisions.json"):
+        decisions = json.loads((ROOT / "docs" / "review" / name).read_text(encoding="utf-8"))["rows"]
+        memo |= {r["id"] for r in decisions if "확인" in r["memo"] and r["decision"] != "X"}
     assert set(notice["ingredients"]) == COMMERCIAL | memo
 
 
