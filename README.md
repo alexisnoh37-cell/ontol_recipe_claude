@@ -69,6 +69,7 @@ uv run python scripts/load_recipes.py --dry-run      # 레시피 검증만 (DB �
 uv run python scripts/load_recipes.py                # 검증 후 DB 반영 (지식을 먼저 컴파일해 둘 것)
 uv run python scripts/load_recipes.py --prune        # 시드에 없는 DB 레시피도 삭제
 uv run python scripts/make_recipe_review.py          # docs/review/recipes_review.md 다시 만들기
+uv run python scripts/make_baseline_recommendations.py  # 현재 추천 로직 기준 결과(docs/review/baseline_recommendations.md·json, 기준점 태그 baseline/v1)
 uv run python scripts/make_ingredient_review_html.py # docs/review/ingredient_review.html(draft 재료 검수 화면: O·X·보류, 결과 내보내기) 다시 만들기
 uv run python scripts/make_review.py                 # docs/review/ingredients_review.md 다시 만들기
 ```
