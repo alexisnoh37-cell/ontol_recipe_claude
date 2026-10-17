@@ -145,13 +145,16 @@ def test_row_without_parts_is_skipped(index, ck):
     assert conv.skipped == [("fs_9", "김치 새우 볶음", "재료 정보 없음")]
 
 
-def test_converted_recipes_are_not_loadable(index, ck, tmp_path):
-    """매핑이 끝나도 cuisine 미분류·조리시간 없음이라 엔진·DB에 적재되지 않는다."""
+def test_converted_recipes_load_with_unknown_fields(index, ck, tmp_path):
+    """ar-1: cuisine 미분류·조리시간·난이도·맛이 없어도 draft로 엔진·DB에 적재되고, 엔진은 그 값을 '모름'(None)으로 둔다."""
+    from storage.engine_source import recipe_from_spec
+
     r = convert_row(row(RCP_PARTS_DTLS="김치 100g, 소금 약간"), index, ck.concept_ids)
     (tmp_path / "fs_7.yaml").write_text(yaml.safe_dump(r, allow_unicode=True), encoding="utf-8")
-    with pytest.raises(RecipeSeedError) as exc:
-        load_recipe_specs(ck, tmp_path)
-    assert {i.code for i in exc.value.issues} == {"not_loadable"}
+    [spec] = load_recipe_specs(ck, tmp_path)
+    recipe = recipe_from_spec(spec)
+    assert (spec.cuisine, spec.status) == ("미분류", "draft")
+    assert recipe.cook_time_min is None and recipe.difficulty is None and recipe.taste is None
 
 
 def test_convert_script_end_to_end(tmp_path, monkeypatch):

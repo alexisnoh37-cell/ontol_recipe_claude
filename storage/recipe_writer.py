@@ -40,8 +40,6 @@ def write_recipes(conn: Connection, specs: Sequence[RecipeSpec], *, prune: bool 
 
     recipes, lines, tastes, equipment, steps = [], [], [], [], []
     for r in specs:
-        if r.difficulty is None:
-            raise ValueError(f"{r.id}: DB 적재에는 difficulty가 필요합니다")
         recipes.append({
             "id": r.id, "title": r.title, "cuisine": r.cuisine, "difficulty": r.difficulty,
             "cook_time_min": r.cook_time_min, "servings": r.servings, "source": r.source, "status": r.status,

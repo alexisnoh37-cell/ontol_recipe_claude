@@ -118,8 +118,8 @@ recipe = Table(
     Column("id", Text, primary_key=True),
     Column("title", Text, nullable=False),
     Column("cuisine", Text, nullable=False),
-    Column("difficulty", SmallInteger, nullable=False),
-    Column("cook_time_min", Integer, nullable=False),
+    Column("difficulty", SmallInteger),  # NULL = 모름(0003, ar-1)
+    Column("cook_time_min", Integer),
     Column("servings", SmallInteger),
     Column("source", Text, nullable=False),
     Column("status", Text, nullable=False),

@@ -21,6 +21,14 @@ from engine.model import KnowledgeSnapshot, Recipe, RecipeIngredient, Substitute
 from engine.ports import RecipeRepository
 
 CANDIDATE_ROLES = ("main",)  # 후보 생성 근거가 되는 역할
+FALLBACK_CANDIDATE_ROLES = ("sub",)  # 주재료 표시가 없는 레시피(식품안전나라 원본은 역할 구분이 없다, ar-1)
+
+
+def candidate_roles(recipe: Recipe) -> tuple[str, ...]:
+    """이 레시피의 후보 근거 역할. 주재료(main) 줄이 하나도 없으면 부재료(sub)를 근거로 삼는다(역할을 지어내지 않음)."""
+    if any(line.role in CANDIDATE_ROLES for line in recipe.ingredients):
+        return CANDIDATE_ROLES
+    return FALLBACK_CANDIDATE_ROLES
 
 LineStatus = Literal["owned", "substitute", "missing"]
 
@@ -102,7 +110,8 @@ def generate_candidates(
         if recipe.status != "published" and not serve_draft_recipes:
             continue
         lines = match_lines(snapshot, recipe, pantry, owned, is_unsafe, default_ratio)
-        if any(m.line.role in CANDIDATE_ROLES
+        roles = candidate_roles(recipe)
+        if any(m.line.role in roles
                and (m.status == "substitute" or (m.status == "owned" and m.line.ingredient_id in from_pantry))
                for m in lines):
             out.append(Candidate(recipe, lines))

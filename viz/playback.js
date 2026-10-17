@@ -423,7 +423,7 @@ export function setupPlayback({ scene, $, attachSearch, ingredientIndex }) {
       if (it.label_check) lines.push(`<div class="note warn">${esc(it.label_check.text)}</div>`);
       return `<article class="rcard" data-goto="rcp:${esc(it.recipe_id)}">`
         + `<header><b>${i + 1}. ${esc(it.title)}</b><span class="score">${it.score.toFixed(3)}</span></header>`
-        + `<div class="meta">${esc(it.cuisine)} · 난이도 ${it.difficulty} · ${it.cook_time_min}분`
+        + `<div class="meta">${esc(it.cuisine)} · 난이도 ${it.difficulty ?? "-"} · ${it.cook_time_min ?? "-"}분`
         + (s?.moved_by_diversity ? ` · <span class="moved">다양성 보정(점수 ${s.score_rank}위)</span>` : "") + "</div>"
         + `<div class="bars">${bars}</div>${lines.join("")}</article>`;
     }).join("") || '<p class="muted">추천할 레시피가 없습니다.</p>';

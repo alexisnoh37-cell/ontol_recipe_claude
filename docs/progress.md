@@ -778,7 +778,25 @@ ui-1은 고른 재료를 추천 엔진에 넣는 방식이라 사람의 의도(�
 - 기록: `docs/review/unmapped_proposal.yaml`의 식용 꽃 항목 decision → X(ir-2 삭제). 검수 화면 생성기는 reviewed가 된 재료의 미리 채운 판단을 기록으로 두고 화면에서는 뺀다(지금 화면에는 보류 6개만).
 - 테스트: `tests/kb/test_ingredient_review.py`에 결정 반영 검사 1개(O → reviewed, 보류 → draft, X → 삭제, 메밀 삭제, 호박 이름). `tests/kb/test_real_knowledge.py` draft 목록을 보류 6개로, 삭제 재료 검사. `tests/kb/test_unmapped_review.py` 새 재료 status draft/reviewed 허용, 안내 대상 = um-2 7개 ∪ 메모 재료. `tests/api/test_api.py` 안내 테스트를 설정 목록 기준으로. **DB 포함 전체 491개 통과**, `tests/allergy` 무변경, 골든셋 0.88 그대로. 개발 DB 재반영·`validate_data.py --db` 통과.
 
+## 전체 레시피 추천 트랙 ar (브랜치 `feature/all-recipes`)
+
+### ar-1 레시피 1,522개 전부를 추천 대상으로 (2026-10-17)
+
+- 사람 결정: "1500개 모든 레시피를 대상으로 추천". 방식(사람 승인): draft 추천 켜기 + 식품안전나라를 엔진·DB에 적재, 원본에 없는 값은 지어내지 않고 '모름'으로 처리(점수 중간값, 맛을 모르면 매운맛 한도 사용자에게 제외, 조리시간을 모르면 시간 필터에서 빼지 않음). docs/decisions.md D3, docs/plan.md 3-2·4-2·4-3·4-4·5-3-1·부록 B 0003.
+- 설정: `config/engine.yaml` `serve_draft_recipes: true`, `recipe_dirs: [data/recipes, data/recipes_foodsafety]`. `config/weights.yaml`에 `difficulty.unknown`·`time.unknown`·`taste.unknown`(0.5). 그래프 출처 설정에서 식품안전나라 `display_dir` 삭제(표시 전용 아님).
+- 엔진: `Recipe.difficulty`·`cook_time_min`·`taste`가 None(모름) 가능. 이전에는 맛이 없으면 0으로 채워 매운맛 필터를 그대로 통과했다(맛 모르는 레시피가 '안 매움'으로 처리될 뻔함) → None으로 두고 필터·점수에서 따로 처리. 정렬 동점 기준에서 모르는 조리시간은 뒤로. 설명에 "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)".
+- **구현 중 발견·수정 2건**
+  - 후보 생성은 주재료(main)를 가진 레시피만 잡는데 식품안전나라는 역할 구분이 없어 모두 sub라 한 건도 후보가 되지 못했다 → 주재료 표시가 하나도 없는 레시피는 sub를 후보 근거로(`engine.candidates.candidate_roles`, 후보 생성·색인·재료로 찾기·추천 과정 시각화가 같이 씀). 기존 369개(주재료 있음)는 동작 그대로.
+  - 매운맛 한도 5(최대치)도 '한도'로 보고 맛 모르는 레시피 794개를 뺐다 → 한도가 5 미만일 때만 제외(5는 어떤 레시피도 넘지 않음).
+- 적재·DB: `kb.recipes.load_recipe_specs`가 여러 폴더를 읽고 미분류·조리시간 없음 거부 규칙 삭제(published는 검증 규칙이 계속 요구). `scripts/load_recipes.py`·`validate_data.py` 기본 폴더 = recipe_dirs. 마이그레이션 0003(`0003_recipe_unknown_fields`, difficulty·cook_time_min NULL 허용; 처음 이름이 alembic 버전 칸 32자를 넘어 실패 → 줄임, 트랜잭션이라 DB 무변경). 되돌리기(downgrade)는 값을 지어내지 않고 모르는 레시피를 지운 뒤 NOT NULL. 개발 DB: 레시피 1,522개 적재(조리시간·난이도 있는 것 369, published 50), `validate_data.py --db` 통과.
+- 화면: Streamlit 카드·추천 과정 재생 카드에서 모르는 값은 '-'.
+- 결과(골든셋 페르소나 8명, 실제 데이터): 레시피 1,522개(식품안전나라 1,153 · draft 시드 319 · published 50)가 모두 엔진에 들어간다. 매운맛 한도가 없거나 5인 페르소나 4명은 추천 가능 621~881개 중 식품안전나라 589~794개. 매운맛 한도 1~4인 4명(초보·알레르기 많은 부모·매운 것 못 먹음·해산물 숙련자)은 식품안전나라가 모두 제외(맛 정보 없음, 설계대로). 알레르기 사용자에게는 미매칭 860개도 제외. **상위 10개에는 식품안전나라가 아직 없다**(최고 22~86위): 난이도·음식 종류·맛이 중간값이라 정보가 다 있는 레시피보다 점수가 낮다. 보유 재료가 잘 맞으면 올라온다(예: 단호박·우유·꿀 보유 → 상위 5개가 모두 식품안전나라).
+- 테스트: `tests/logic/test_unknown_recipe_fields.py` 7개(맛 모름 → 매운맛 한도 사용자 제외·한도 5는 제외 안 함·한도 없으면 유지, 조리시간 모름 → 시간 필터 통과, 모름 점수 중간값·설명, 정렬 기준). 설계 변경을 검사하던 테스트 6개를 새 동작으로(적재 허용, published는 여전히 필수, draft 추천 기본 켬, 식품안전나라 = 엔진 레시피, /health 1,522개). **DB 포함 전체 499개 통과(건너뜀 0)**, `tests/allergy` 무변경, 골든셋 0.88(published만), bench p95 29.2ms.
+
 ## 사람 확인 필요
+
+- **(ar-1) 식품안전나라 레시피 순위**: 모르는 값을 중간값(0.5)으로 두어 상위 10개에 거의 오르지 않는다. 더 자주 보이게 하려면 (가) `config/weights.yaml`의 unknown 값을 높이거나, (나) 재료로 매운맛 여부를 판정(고추류가 없으면 맵지 않음 등)하거나, (다) 조리 단계로 조리시간·난이도를 추정(확신 낮음)하는 방법이 있다. 어느 쪽도 정하지 않았다.
+- **(ar-1) 매운맛 한도 사용자**: 맛 정보가 없는 식품안전나라 레시피는 매운맛 한도(5 미만)를 정한 사용자에게 모두 제외된다(설계대로). 위 (나)를 하면 상당수를 살릴 수 있다.
 
 - **(ir-2) 보류한 시판 제품 6개**: 시판 고기 양념·불닭소스·참소스·폰즈 소스·감자칩·순대는 포장 알레르기 표시를 확인한 뒤 `docs/review/ingredient_review.html`에서 다시 검수(지금 화면에는 이 6개만 나온다).
 - (ir-2) 메모 해석 확인: 안내 대상 38개(알레르기 없는 재료 포함), 확인 없이 승인한 시판 제품의 reviewed 처리.
@@ -834,7 +852,7 @@ ui-1은 고른 재료를 추천 엔진에 넣는 방식이라 사람의 의도(�
 - MVP(Phase 0~1) 완료. Phase 2는 사람이 범위를 정한 뒤 시작한다(아래 "다음 단계 제안").
 - 시각화 트랙 완료(viz-v1). 시연은 README 6-1 "시연 순서"(시연 프로필은 `scripts/seed_demo_profiles.py`).
 - 새 재료를 추가할 때는 status: draft로 넣고 검수표(`scripts/make_review.py`)로 사람 확인 후 reviewed.
-- 미매칭 보강(um-2) main 병합 완료(PR #5). 재료 검수(ir-1·ir-2) 반영, PR 리뷰 대기. 다음: 레시피 검수(B-2) → 골든셋 처리(B-3) → published 전환(B-4).
+- 미매칭 보강(um-2)·재료 검수(ir-1·ir-2) main 병합 완료(PR #5, #6). 전체 레시피 추천(ar-1) PR 리뷰 대기. 다음(선택): 식품안전나라 순위 개선 방식 결정, 레시피 검수(B-2) → 골든셋 → published 전환.
 - 통합 트랙(int-4): PR #4 main 병합 완료(2026-10-17). 병합 후 레시피 활용(미매칭 보강 → 레시피 검수 → 골든셋 → published 전환)은 main 위에서 단계별로 진행한다.
 - 데이터 확장 트랙(data-1, `feature/recipe-expansion`): 신규 레시피 50개 draft 검수 대기. 승인된 레시피는 published로 바꾸고 `tests/kb/test_recipe_seed.py`의 `PUBLISHED_IDS`에 추가, soft_tofu 승인 시 reviewed로 바꾸고 `tests/kb/test_real_knowledge.py`의 `DRAFT_INGREDIENTS`에서 뺀다. published 전환 전에 골든셋 처리 방법을 정한다.
 

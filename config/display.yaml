@@ -120,4 +120,4 @@ graph_recipe_origins:
   - {id: seed, label: 기본·확장 시드, source: agent_draft}
   - {id: simplecooking, label: 자취요리신, dataset: data/simplecooking_recipe_dataset/recipes/simplecooking}
   - {id: sallimpop, label: 살림팝, dataset: data/sallimpop_recipe_dataset/recipes/sallimpop}
-  - {id: foodsafety, label: 식품안전나라(그래프 표시 전용), source: foodsafety, display_dir: data/recipes_foodsafety}
+  - {id: foodsafety, label: 식품안전나라, source: foodsafety}  # ar-1: 엔진에 적재(config/engine.yaml recipe_dirs), 표시 전용 아님

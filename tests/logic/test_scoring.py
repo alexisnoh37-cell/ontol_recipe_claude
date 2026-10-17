@@ -349,9 +349,10 @@ def test_missing_config_key_raises(weights):
         ScoringConfig.from_mapping({})
 
 
-def test_engine_yaml_serve_draft_default_off():
-    assert load_engine_config(CONFIG_DIR).serve_draft_recipes is False
-    assert load_engine_config(CONFIG_DIR, serve_draft_recipes=True).serve_draft_recipes is True
+def test_engine_yaml_serves_drafts_and_can_be_overridden():
+    # ar-1(2026-10-17 사람 결정): 레시피 전부를 추천 대상으로. 골든셋은 인자로 published만 쓴다
+    assert load_engine_config(CONFIG_DIR).serve_draft_recipes is True
+    assert load_engine_config(CONFIG_DIR, serve_draft_recipes=False).serve_draft_recipes is False
 
 
 # --- 다양성 보정 (4-6) ----------------------------------------------------------------------------

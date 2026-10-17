@@ -229,9 +229,12 @@ def test_missing_split_required_vs_nice_to_have(client, data):
 def test_vocab_and_health(client, data):
     v = client.get("/vocab").json()
     assert "한식" in v["cuisines"] and "오븐" in v["equipment"] and v["disclaimer"]
-    # 레시피 수는 시드에서 센다(draft 포함, 파일 하나 = 레시피 하나)
-    seed_files = sorted((Path(__file__).resolve().parents[2] / "data" / "recipes").glob("*.yaml"))
-    assert client.get("/health").json()["recipes"] == len(data.recipes) == len(seed_files) >= 50
+    # 레시피 수는 config/engine.yaml recipe_dirs의 파일에서 센다(draft 포함, 파일 하나 = 레시피 하나).
+    # ar-1: 시드 369개 + 식품안전나라 1153개
+    from storage.engine_source import recipe_dirs
+
+    seed_files = [p for d in recipe_dirs() for p in d.glob("*.yaml")]
+    assert client.get("/health").json()["recipes"] == len(data.recipes) == len(seed_files) >= 1500
 
 
 # --- 레시피 상세 (ui-1) -----------------------------------------------------------------------------

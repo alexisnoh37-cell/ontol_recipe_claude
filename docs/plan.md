@@ -108,9 +108,9 @@ knowledge/*.yaml  ──(scripts/compile_knowledge.py)──▶  DB 테이블 + 
 | recipe_equipment | recipe_id, equipment, required | 오븐, 에어프라이어 등 |
 | recipe_step | recipe_id, step_no, text, technique | 조리 단계와 기법. technique은 대체재 context와 같은 어휘 |
 
-`raw_text`에는 원문 표기("마늘 2쪽")를 남긴다. 매핑 오류를 추적할 때 필요하다. cuisine, equipment, technique 어휘는 `knowledge/vocab.yaml`에 둔다. cuisine은 Phase 1에서 국가별 평면 어휘(한식, 일식, 중식, 양식 등)다.
+`raw_text`에는 원문 표기("마늘 2쪽")를 남긴다. recipe의 difficulty·cook_time_min은 NULL(모름)을 허용한다(마이그레이션 0003, ar-1). 매핑 오류를 추적할 때 필요하다. cuisine, equipment, technique 어휘는 `knowledge/vocab.yaml`에 둔다. cuisine은 Phase 1에서 국가별 평면 어휘(한식, 일식, 중식, 양식 등)다.
 
-엔진은 기본적으로 published 레시피만 쓴다. 검수 전 개발 중에는 `config/engine.yaml`의 `serve_draft_recipes: true`로 draft도 쓰고, 화면에 "검수 전" 표시를 한다.
+엔진은 `config/engine.yaml`의 `serve_draft_recipes`가 false면 published 레시피만 쓴다. ar-1(2026-10-17 사람 결정)부터 true로 두고 draft도 추천한다(설명에 "검수 전 레시피입니다"). 골든셋은 이 설정과 무관하게 published만으로 평가한다. 엔진·DB가 읽는 레시피 폴더는 `recipe_dirs`(data/recipes, data/recipes_foodsafety)다. draft는 cuisine 미분류, 난이도·조리시간·맛 없음을 허용하고 엔진이 '모름'으로 다룬다(4-2~4-4).
 
 ### 3-3. 사용자
 
@@ -140,7 +140,7 @@ knowledge/*.yaml  ──(scripts/compile_knowledge.py)──▶  DB 테이블 + 
 
 ### 4-2. 후보 생성
 
-- main 재료를 하나 이상 보유한 레시피를 후보로 잡는다(직접 보유, 하위 개념 보유, 대체재 포함). sub 재료만 보유한 레시피는 후보가 아니다. 기본 양념은 점수·부족 재료 계산에서는 보유로 간주하지만 후보 생성 근거로는 쓰지 않는다(1-4 골든셋에서 변경).
+- main 재료를 하나 이상 보유한 레시피를 후보로 잡는다(직접 보유, 하위 개념 보유, 대체재 포함). sub 재료만 보유한 레시피는 후보가 아니다. 단, 주재료 표시(main)가 하나도 없는 레시피(식품안전나라 원본은 역할 구분이 없어 모두 sub)는 sub 재료를 후보 근거로 삼는다(ar-1, 역할을 지어내지 않음). 기본 양념은 점수·부족 재료 계산에서는 보유로 간주하지만 후보 생성 근거로는 쓰지 않는다(1-4 골든셋에서 변경).
 - 동의어와 is_a 상위 개념으로도 매칭한다. 삼겹살을 가진 사용자는 "돼지고기"가 필요한 레시피에 매칭된다. 반대 방향(돼지고기 보유 → "삼겹살" 레시피)은 매칭하지 않고 부족 재료로 표시한다.
 - 대체재로만 매칭된 재료는 따로 표시해 설명 단계에 넘긴다.
 - 대체 관계는 `knowledge/substitutes.yaml`을 쓴다. context가 비어 있으면 항상 성립하고, 비어 있지 않으면 레시피 조리 단계의 technique 집합과 겹칠 때만 성립한다(Phase 1). 더 정교한 조건부 대체는 Phase 2에서 확장한다.
@@ -149,12 +149,14 @@ knowledge/*.yaml  ──(scripts/compile_knowledge.py)──▶  DB 테이블 + 
 
 - **알레르기**: 사용자 알레르기 그룹의 원천 재료에서 is_a 하위와 derived_from 파생을 모두 모은 집합(`allergen_closure`)에 걸리는 재료가 하나라도 있으면 제외한다. 선택(optional) 재료와 고명도 제외 대상이다(D2).
 - **절대 불선호**: is_hard 재료는 `ingredient_contains`(부록 C)로 판정한다. 레시피 재료가 불선호 재료 자신이거나, 그 재료를 포함(가능)하면 제외한다. 포함에는 불선호 재료의 is_a 하위와 derived_from 파생("새우 못 먹음"이면 새우젓, 김치도 제외)뿐 아니라, 불선호 재료를 is_a 하위로 가진 넓은 재료도 possible로 들어간다("순두부 못 먹음"이면 순두부가 두부의 하위이므로 두부를 쓰는 레시피도 제외, 2026-10-04 확인). is_hard 음식 종류는 해당 cuisine을 제외한다.
-- **매운맛 한도**: 레시피 spicy가 사용자 max_level을 넘으면 제외한다.
-- **조리기구, 시간**: 필수 조리기구가 없거나, 사용자가 시간을 절대 조건(`time_is_hard`)으로 두고 초과한 경우 제외한다. 식단 조건은 Phase 2에서 추가한다.
+- **매운맛 한도**: 레시피 spicy가 사용자 max_level을 넘으면 제외한다. 레시피 맛을 모르면(taste 없음) max_level이 5 미만인 사용자에게 제외한다(매운지 알 수 없으므로 보수적으로, ar-1). 5는 제한이 아니다.
+- **조리기구, 시간**: 필수 조리기구가 없거나, 사용자가 시간을 절대 조건(`time_is_hard`)으로 두고 초과한 경우 제외한다. 조리시간을 모르면 시간 필터로 빼지 않는다(ar-1). 식단 조건은 Phase 2에서 추가한다.
 - **미매칭 재료**: 정규 ID로 매핑되지 않은 재료가 있는 레시피는 알레르기가 있는 사용자에게 제외한다.
 - 제외할 때마다 사유를 기록한다. 엔진은 제외 목록(recipe_id, 사유 코드, 상세)을 반환하고, API가 `logs/exclusions.jsonl`에 남긴다. 응답에는 사유별 개수 요약만 담는다.
 
 ### 4-4. 지식 기반 점수
+
+레시피 정보를 모를 때(ar-1): 난이도 → D = `difficulty.unknown`, 희망 시간이 있는데 조리시간 → M = `time.unknown`, 맛 선호가 있는데 맛 → T = `taste.unknown`(모두 config/weights.yaml, 0.5). 음식 종류 미분류는 K 중립값. 설명에 "…정보가 없는 레시피입니다"를 붙인다.
 
 ```
 S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
@@ -246,8 +248,8 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
    - `cuisine: 미분류`, `cook_time_min`·`difficulty`·`taste` 없음(API에 없음, 검수 때 채움). 조리 단계는 MANUAL01~20 원문.
    - 재료정보가 없는 레시피는 만들지 않고 보고한다.
 3. 미매칭 재료 빈도와 레시피별 미매칭 수를 `docs/review/foodsafety_unmatched.md`로 만든다. 별칭·재료 보강은 knowledge에 draft로 추가한 뒤 다시 변환한다.
-4. `data/recipes/`로 옮기려면 미매칭 0, cuisine·cook_time_min 채움, 사람 검수가 필요하다(로더가 미분류·cook_time_min 없음을 거부).
-5. 그래프 표시 전용(int-2, D3 통합): 엔진에 적재하지 않고 `GET /graph?display=true`에서만 같은 지식으로 연결해 보여 준다(부록 D-8).
+4. published로 바꾸려면 미매칭 0, cuisine·cook_time_min·난이도·맛 채움, 사람 검수가 필요하다(검증 규칙).
+5. 엔진·DB 적재(ar-1, 2026-10-17 사람 결정, 개인용 범위 D3): `config/engine.yaml` `recipe_dirs`로 data/recipes와 함께 읽는다. 값이 없는 칸은 엔진이 '모름'으로 다룬다(4-2~4-4). 이전(int-2)에는 그래프 표시 전용이었다.
 5. 열람용 정적 HTML 뷰어: `scripts/make_foodsafety_viewer.py`(템플릿 `scripts/foodsafety_viewer_template.html`)가 원본과 같은 변환 규칙으로 `data/recipes_foodsafety/viewer.html`(gitignore)을 만든다. 사진·영양 정보·저감 조리 팁, 재료별 매칭 여부를 보여 준다. 개인용 열람 전용, 외부 게시 금지.
 
 #### 5-3-2. YouTube 레시피 데이터셋 변환과 원본 이름 보정표 (D3 예외, um-2)
@@ -607,6 +609,15 @@ ALTER TABLE allergen_group
   ADD COLUMN official boolean NOT NULL DEFAULT false,
   ADD COLUMN source   text    NOT NULL DEFAULT 'custom' CHECK (source IN ('law_annex2','custom')),
   ADD CONSTRAINT allergen_group_official_source CHECK (official = (source = 'law_annex2'));
+```
+
+0003(ar-1 승인 2026-10-17): 레시피 난이도·조리시간을 비워 둘 수 있게 한다(모름). 식품안전나라 원본에는 이 값이 없어, 지어내지 않고 엔진이 '모름'으로 다룬다(4-3, 4-4). 값이 있으면 기존 CHECK가 그대로 적용된다.
+
+```sql
+-- 0003
+ALTER TABLE recipe
+  ALTER COLUMN difficulty DROP NOT NULL,
+  ALTER COLUMN cook_time_min DROP NOT NULL;
 ```
 
 ## 부록 C. compile_knowledge.py 동작 순서 (Phase 0-1 확정)

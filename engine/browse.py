@@ -20,7 +20,7 @@ from __future__ import annotations
 from collections.abc import Iterable
 from dataclasses import dataclass
 
-from engine.candidates import CANDIDATE_ROLES, owned_ingredients
+from engine.candidates import candidate_roles, owned_ingredients
 from engine.filters import UserConstraints
 from engine.model import Exclusion, ExclusionReason, KnowledgeSnapshot, Recipe, RecommendRequest, UserContext
 from engine.normalize import clean_pantry
@@ -74,7 +74,8 @@ def find_by_ingredients(
     for recipe in recipes.by_ingredients(from_selected):
         if recipe.status != "published" and not serve_draft_recipes:
             continue
-        if not any(line.role in CANDIDATE_ROLES and line.ingredient_id in from_selected for line in recipe.ingredients):
+        roles = candidate_roles(recipe)
+        if not any(line.role in roles and line.ingredient_id in from_selected for line in recipe.ingredients):
             continue
         missing, optional_missing = [], []
         for line in recipe.ingredients:

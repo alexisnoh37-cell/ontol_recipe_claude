@@ -76,13 +76,13 @@ def recipe_from_spec(spec: RecipeSpec) -> Recipe:
         id=spec.id,
         title=spec.title,
         cuisine=spec.cuisine,
-        difficulty=spec.difficulty or 1,
+        difficulty=spec.difficulty,
         cook_time_min=spec.cook_time_min,
         ingredients=tuple(
             RecipeIngredient(n, line.ingredient, line.role, line.optional, line.raw_text)
             for n, line in enumerate(spec.ingredients, start=1)
         ),
-        taste=Taste(**spec.taste.model_dump()) if spec.taste else Taste(),
+        taste=Taste(**spec.taste.model_dump()) if spec.taste else None,
         required_equipment=frozenset(e.name for e in spec.equipment if e.required),
         techniques=frozenset(s.technique for s in spec.steps if s.technique),
         status=spec.status,
@@ -114,10 +114,17 @@ class EngineData:
                                  config_dir=config_dir, serve_draft_recipes=serve_draft_recipes)
 
 
+def recipe_dirs(root: Path = ROOT, config_dir: Path | None = None) -> list[Path]:
+    """엔진·DB가 읽는 레시피 폴더(config/engine.yaml recipe_dirs). 없으면 data/recipes만."""
+    path = (config_dir or root / "config") / "engine.yaml"
+    raw = yaml.safe_load(path.read_text(encoding="utf-8")) if path.is_file() else {}
+    return [root / d for d in ((raw or {}).get("recipe_dirs") or ["data/recipes"])]
+
+
 def load_files(root: Path = ROOT) -> EngineData:
-    """knowledge/ 컴파일 + data/recipes/ 시드. 시드 오류가 있으면 RecipeSeedError."""
+    """knowledge/ 컴파일 + 레시피 폴더(config/engine.yaml recipe_dirs). 시드 오류가 있으면 RecipeSeedError."""
     ck = compile_paths(root / "knowledge", root / "config" / "pantry_staples.yaml")
-    specs = load_recipe_specs(ck, root / "data" / "recipes", root)
+    specs = load_recipe_specs(ck, recipe_dirs(root), root)
     return EngineData(ck, tuple(specs), "files")
 
 

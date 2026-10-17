@@ -319,7 +319,7 @@ with tab_rec:
             with st.container(border=True):
                 head, score = st.columns([5, 1])
                 head.markdown(f"### {n}. {item['title']}")
-                head.caption(f"{item['cuisine']} · 난이도 {item['difficulty']} · 약 {item['cook_time_min']}분")
+                head.caption(f"{item['cuisine']} · 난이도 {item['difficulty'] or '-'} · 약 {item['cook_time_min'] or '-'}분")
                 score.metric("점수", f"{item['score']:.2f}")
                 cols = st.columns(len(item["breakdown"]))
                 for col, b in zip(cols, item["breakdown"]):

@@ -29,10 +29,15 @@ difficulty:                   # (레시피 난이도 - 사용자 실력) → 점
   "0": 1.0
   "1": 0.4
   "2": 0.1
+  unknown: 0.5                # 레시피 난이도를 모를 때(ar-1, 식품안전나라 원본에 없음)
+
+time:
+  unknown: 0.5                # 희망 시간이 있는데 레시피 조리시간을 모를 때(ar-1). 희망 시간이 없으면 다른 레시피처럼 1.0
 
 taste:
   dimensions: [spicy, salty, sweet, sour, umami, savory]
   dimension_weight: {spicy: 1.0, salty: 1.0, sweet: 1.0, sour: 1.0, umami: 1.0, savory: 1.0}
+  unknown: 0.5                # 맛 선호가 있는데 레시피 맛을 모를 때(ar-1). 매운맛 한도가 있으면 제외는 filters에서
 
 diversity:
   top_n: 10
