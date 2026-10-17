@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3058. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3058. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
 ingredients:
 - ingredient: crab
   raw_text: 꽃게 8.2g
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: radish
   raw_text: 조선무 11.3g
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 깐양파 5g
   role: sub
 - ingredient: zucchini
@@ -25,10 +25,10 @@ ingredients:
 - ingredient: null
   raw_text: 두절콩나물 5.3g
   role: sub
-- ingredient: null
+- ingredient: anchovy
   raw_text: 국멸치 1.3g
   role: sub
-- ingredient: null
+- ingredient: kelp
   raw_text: 건다시마 0.3g
   role: sub
 - ingredient: null

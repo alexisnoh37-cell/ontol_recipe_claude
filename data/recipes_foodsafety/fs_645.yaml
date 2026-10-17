@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 645. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 645. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
 ingredients:
-- ingredient: null
+- ingredient: yam
   raw_text: 산마(100g)
   role: sub
-- ingredient: null
+- ingredient: chamnamul
   raw_text: 참나물(20g)
   role: sub
 - ingredient: null
@@ -22,10 +22,10 @@ ingredients:
 - ingredient: null
   raw_text: 레디쉬(1개)
   role: sub
-- ingredient: null
+- ingredient: baby_greens
   raw_text: 어린잎(10g)
   role: sub
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 저염간장(20g)
   role: sub
 - ingredient: vinegar
@@ -34,7 +34,7 @@ ingredients:
 - ingredient: sugar
   raw_text: 설탕(20g)
   role: sub
-- ingredient: null
+- ingredient: mustard_powder
   raw_text: 겨자가루(10g).
   role: sub
 steps:

@@ -4,7 +4,7 @@
 # --- 기본 양념 ---
 - id: salt
   name: 소금
-  aliases: [굵은소금, 꽃소금, 천일염, 맛소금]
+  aliases: [굵은소금, 꽃소금, 천일염, 맛소금, 볶은소금]
   category: 양념
   confidence: low
   note: 맛소금은 MSG가 섞인 제품. 알레르기 성분은 없다고 보고 별칭으로 둠
@@ -16,12 +16,12 @@
   status: reviewed
 - id: black_pepper
   name: 후추
-  aliases: [후춧가루, 통후추, 흑후추]
+  aliases: [후춧가루, 통후추, 흑후추, 흰 후추, 흰후춧가루]
   category: 허브·향신료
   status: reviewed
 - id: gochugaru
   name: 고춧가루
-  aliases: [고운 고춧가루, 굵은 고춧가루]
+  aliases: [고운 고춧가루, 굵은 고춧가루, 고추가루]
   category: 양념
   status: reviewed
 - id: vinegar
@@ -49,7 +49,7 @@
 # --- 기름 ---
 - id: cooking_oil
   name: 식용유
-  aliases: [카놀라유, 포도씨유, 해바라기유, 옥수수유]
+  aliases: [카놀라유, 포도씨유, 해바라기유, 옥수수유, 기름, 튀김기름, 현미유]
   category: 기름
   confidence: low
   note: 콩기름(대두유)은 별도 재료 soybean_oil. '식용유'가 콩기름일 수 있는 문제(대두 알레르기)는 검수 필요
@@ -91,7 +91,7 @@
 # --- 장류 ---
 - id: soy_sauce
   name: 간장
-  aliases: [진간장, 국간장, 양조간장, 조선간장]
+  aliases: [진간장, 국간장, 양조간장, 조선간장, 저염간장, 저염국간장]
   derived_from: [soybean, wheat_flour]
   is_processed: true
   category: 장류
@@ -100,7 +100,7 @@
   status: reviewed
 - id: doenjang
   name: 된장
-  aliases: [재래식 된장, 시판 된장]
+  aliases: [재래식 된장, 시판 된장, 저염된장]
   derived_from: [soybean, {id: wheat_flour, certainty: possible}]
   is_processed: true
   category: 장류
@@ -175,7 +175,7 @@
   status: reviewed
 - id: ketchup
   name: 토마토케첩
-  aliases: [케첩, 케찹]
+  aliases: [케첩, 케찹, 케챱]
   derived_from: [tomato]
   is_processed: true
   category: 소스
@@ -264,7 +264,7 @@
   status: reviewed
 - id: chicken_stock
   name: 치킨스톡
-  aliases: [치킨스톡 큐브, 닭육수]
+  aliases: [치킨스톡 큐브, 닭육수, 치킨스톡 가루]
   derived_from:
     - chicken
     - {id: wheat_flour, certainty: possible}
@@ -277,7 +277,7 @@
   status: reviewed
 - id: beef_seasoning
   name: 쇠고기 맛 조미료
-  aliases: [쇠고기 조미료, 소고기 조미료]
+  aliases: [쇠고기 조미료, 소고기 조미료, 소고기 다시다, 쇠고기 다시다]
   derived_from:
     - {id: beef, certainty: possible}
     - {id: wheat_flour, certainty: possible}
@@ -296,7 +296,7 @@
   status: reviewed
 - id: parsley
   name: 파슬리
-  aliases: [파슬리가루, 건파슬리]
+  aliases: [파슬리가루, 건파슬리, {text: 파슬리다진것, form: minced}]
   category: 허브·향신료
   status: reviewed
 - id: bay_leaf
@@ -311,7 +311,7 @@
   status: reviewed
 - id: mustard_powder
   name: 겨자
-  aliases: [겨잣가루, 연겨자]
+  aliases: [겨잣가루, 연겨자, 겨자가루]
   category: 허브·향신료
   status: reviewed
 
@@ -352,3 +352,396 @@
   allergens: [{group: sulfites, certainty: definite}]
   note: 레시피 재료로 직접 쓰지 않음. 와인·건과일 등의 derived_from 원천으로만 사용
   status: reviewed
+
+# --- um-2 미매칭 보강(2026-10-17, 사람 검수표 승인, 재료 검수 전 draft) ---
+- id: instant_stock
+  name: 시판 육수(코인·분말)
+  aliases: [코인육수, 육수코인, 분말육수, 육수가루, 가루육수]
+  derived_from:
+    - {id: seafood, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: pork, certainty: possible}
+    - {id: chicken, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: milk, certainty: possible}
+    - {id: kelp, certainty: possible}
+  is_processed: true
+  category: 육수·조미료
+  confidence: low
+  note: "제품마다 원료가 다름(멸치·디포리·새우·황태·사골·채소). 해산물 전체·육류·대두·밀·우유를 모두 possible로 둠. 쓰는 제품의 표시를 확인하면 줄일 수 있음 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: dasida
+  name: 조미료(다시다)
+  aliases: [다시다]
+  derived_from:
+    - {id: beef, certainty: possible}
+    - {id: seafood, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 육수·조미료
+  confidence: low
+  note: "상표명. 쇠고기 외에 멸치·해물·조개 다시다가 있어 쇠고기 맛 조미료와 구분. 해산물 전체 possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: buldak_sauce
+  name: 불닭소스
+  derived_from:
+    - {id: chicken, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: milk, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: egg, certainty: possible}
+    - {id: sesame, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "상표 소스. 닭고기 추출물·간장·밀 등 제품별 표시 확인 필요 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: bottled_marinade
+  name: 시판 고기 양념(갈비·찜닭)
+  aliases: [매운 갈비양념, 찜닭 양념, 찜닭 소스]
+  derived_from:
+    - {id: soy_sauce, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: sesame, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: pork, certainty: possible}
+    - {id: chicken, certainty: possible}
+    - {id: peach, certainty: possible}
+    - {id: tomato, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판 양념장. 간장·과즙(배·복숭아 등)·고기 추출물이 제품마다 다름 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: cham_sauce
+  name: 참소스
+  derived_from:
+    - {id: soy_sauce, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - vinegar
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "상표 소스(간장·식초 계열). 대두·밀 표시 확인 필요 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: ponzu
+  name: 폰즈 소스
+  aliases: [폰즈]
+  derived_from:
+    - soy_sauce
+    - {id: katsuobushi, certainty: possible}
+    - {id: lemon, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "간장 + 감귤즙. 가쓰오부시 국물을 넣는 제품이 많음 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: jjajang_powder
+  name: 짜장 분말
+  aliases: [짜장분말소스, 짜장가루]
+  derived_from:
+    - {id: chunjang, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: pork, certainty: possible}
+    - {id: milk, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "분말 짜장(오뚜기 등). 돼지고기·우유 포함 제품 있음 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: cream_soup_powder
+  name: 크림수프 분말
+  aliases: [크림스프, 크림수프]
+  derived_from:
+    - {id: milk, certainty: possible}
+    - wheat_flour
+    - {id: soybean, certainty: possible}
+    - {id: chicken, certainty: possible}
+    - {id: beef, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "분말 수프. 밀가루 루 기반, 우유·고기 추출물 제품별 상이 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: pad_thai_sauce
+  name: 팟타이 소스
+  derived_from:
+    - {id: fish_sauce, certainty: possible}
+    - {id: dried_shrimp, certainty: possible}
+    - {id: peanut, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "피시소스·타마린드 기반. 새우·땅콩 포함 제품 있음 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: naengmyeon_broth
+  name: 시판 냉면육수
+  aliases: [냉면 육수]
+  derived_from:
+    - {id: beef, certainty: possible}
+    - {id: soy_sauce, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: chicken, certainty: possible}
+    - {id: pork, certainty: possible}
+    - {id: clam, certainty: possible}
+  is_processed: true
+  category: 육수·조미료
+  confidence: low
+  note: "동치미·쇠고기 육수 계열. 제품별 상이 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: allulose
+  name: 알룰로스
+  category: 양념
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: maesil_cheong
+  name: 매실청
+  aliases: [매실액, 매실원액]
+  derived_from:
+    - maesil
+    - sugar
+  is_processed: true
+  category: 양념
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: peperoncino
+  name: 페퍼론치노
+  aliases: [페페론치노]
+  category: 허브·향신료
+  note: "말린 이탈리아 고추 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: basil_pesto
+  name: 바질페스토
+  derived_from:
+    - basil
+    - {id: olive_oil, certainty: possible}
+    - {id: pine_nut, certainty: possible}
+    - {id: parmesan, certainty: possible}
+    - {id: walnut, certainty: possible}
+    - {id: almond, certainty: possible}
+    - {id: garlic, certainty: possible}
+    - {id: peanut, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "잣 대신 호두·캐슈를 쓰는 제품 있음 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: msg
+  name: 미원(MSG)
+  aliases: [미원]
+  category: 육수·조미료
+  confidence: low
+  note: "글루탐산나트륨(사탕수수 발효). 법정 알레르기 성분 없음으로 봄. 상표명 별칭 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: ginger_juice
+  name: 생강즙
+  derived_from:
+    - ginger
+  is_processed: true
+  category: 양념
+  note: "um-2 사람 결정(별칭 대신 새 재료) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: basil_powder
+  name: 바질가루
+  derived_from:
+    - basil
+  is_processed: true
+  category: 양념
+  note: "um-2 사람 결정(별칭 대신 새 재료, 양념) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: cheonggukjang_powder
+  name: 청국장가루
+  derived_from:
+    - cheonggukjang
+  is_processed: true
+  category: 양념
+  note: "um-2 사람 결정(별칭 대신 새 재료, 양념). 대두 그대로 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: yuzu_cheong
+  name: 유자청
+  category: 양념
+  note: "유자+설탕. 유자 자체는 미등록 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: seasoned_soy_sauce
+  name: 맛간장
+  derived_from:
+    - soy_sauce
+    - {id: katsuobushi, certainty: possible}
+    - {id: anchovy, certainty: possible}
+  is_processed: true
+  category: 장류
+  confidence: low
+  note: "제품·가정식마다 다름. 가쓰오부시·멸치 등 들어갈 수 있어 possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: rosemary
+  name: 로즈마리
+  aliases: [로즈메리]
+  category: 허브·향신료
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: balsamic_vinegar
+  name: 발사믹식초
+  aliases: [화이트발사믹식초]
+  derived_from:
+    - grape
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 양념
+  confidence: low
+  note: "와인식초 계열이라 아황산 가능. 식초(vinegar)의 별칭으로 두지 않음. 화이트발사믹 포함 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: balsamic_glaze
+  name: 발사믹 글레이즈
+  aliases: [발사믹소스]
+  derived_from:
+    - grape
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "졸이거나 당·증점제를 더한 소스(um-2 사람 결정으로 식초와 분리) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: kelp_stock
+  name: 다시마육수
+  aliases: [다시마국물, 다시마물]
+  derived_from:
+    - kelp
+  is_processed: true
+  category: 육수·조미료
+  note: "다시마만 우린 물. 멸치 들어가면 멸치육수 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: ginger_cheong
+  name: 생강청
+  derived_from:
+    - ginger
+  is_processed: true
+  category: 양념
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: garlic_oil
+  name: 마늘기름
+  aliases: [마늘오일]
+  derived_from:
+    - garlic
+    - {id: cooking_oil, certainty: possible}
+    - {id: olive_oil, certainty: possible}
+  is_processed: true
+  category: 기름
+  confidence: low
+  note: "기름 종류 불명 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: yeast
+  name: 이스트
+  aliases: [드라이이스트, 인스턴트 드라이이스트]
+  category: 첨가물
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: hamcho_salt
+  name: 함초소금
+  derived_from:
+    - salt
+    - hamcho
+  is_processed: true
+  category: 양념
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: gelatin
+  name: 젤라틴
+  aliases: [판젤라틴, 가루젤라틴]
+  derived_from:
+    - {id: pork, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: fish, certainty: possible}
+  is_processed: true
+  category: 첨가물
+  confidence: low
+  note: "돼지·소 껍질·뼈 유래. 원료 표시 확인 필요 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: turmeric_powder
+  name: 강황가루
+  aliases: [강황, 울금가루]
+  category: 허브·향신료
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: fish_soy_sauce
+  name: 어간장
+  aliases: [간편 어간장]
+  derived_from:
+    - fish_sauce
+    - anchovy
+    - {id: soy_sauce, certainty: possible}
+  is_processed: true
+  category: 장류
+  confidence: low
+  note: "생선 발효 간장. 대두 포함 여부 제품별 상이 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: baking_powder
+  name: 베이킹파우더
+  derived_from:
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 첨가물
+  confidence: low
+  note: "부형제로 밀 전분을 쓰는 제품 가능성 → 확인 필요 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: oregano
+  name: 오레가노
+  category: 허브·향신료
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: mint
+  name: 민트
+  aliases: [애플민트]
+  category: 허브·향신료
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: gardenia_powder
+  name: 치자가루
+  aliases: [치자]
+  category: 첨가물
+  note: "색소용 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: paprika_powder
+  name: 파프리카가루
+  derived_from:
+    - bell_pepper
+  is_processed: true
+  category: 허브·향신료
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: cactus_fruit_powder
+  name: 백년초가루
+  category: 첨가물
+  note: "색소용 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: stevia
+  name: 스테비아
+  category: 양념
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: thyme
+  name: 타임
+  category: 허브·향신료
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: pickling_spice
+  name: 피클링스파이스
+  category: 허브·향신료
+  confidence: low
+  note: "혼합 향신료(겨자씨 등). 법정 대상 성분은 없다고 봄 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: soju
+  name: 소주
+  category: 주류
+  confidence: low
+  note: "원료(쌀·타피오카·고구마) 다양 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft

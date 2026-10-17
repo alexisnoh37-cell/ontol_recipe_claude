@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=U8Mw1HcadV0
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '가운데에 계란' → egg(이름 보정표)
 ingredients:
 - ingredient: pork_belly
   raw_text: 대패삼겹살 100g
@@ -47,7 +47,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: egg
   raw_text: 가운데에 계란 한알 / 계란 1알 / 계란
   role: sub
   optional: false

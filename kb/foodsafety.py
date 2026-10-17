@@ -24,6 +24,7 @@ MANUAL_COUNT = 20
 HEADER_WORDS = frozenset(normalize_term(w) for w in (
     "재료", "주재료", "부재료", "필수재료", "선택재료", "기본재료", "고명", "고명재료", "양념", "양념장", "양념재료",
     "소스", "소스재료", "드레싱", "육수", "반죽", "속재료", "토핑", "곁들임", "밑간", "절임물", "조림장", "소스소개",
+    "장식",  # um-2 사람 결정(2026-10-17)
 ))
 _BULLET = re.compile(r"^[\s●•·○◎■□◆◇▶▷★☆※*\-]+")
 _BRACKET_HEAD = re.compile(r"^[\[［【<〈(（]([^\]］】>〉)）]{1,15})[\]］】>〉)）]\s*")
@@ -83,6 +84,20 @@ def _is_label(norm: str, title_norm: str) -> bool:
             or bool(_SERVING.match(norm)) or norm.endswith("재료"))
 
 
+def _strip_label_prefix(item: str, skipped: list[str] | None) -> str:
+    """"재료 닭가슴살 100g", "양념 다진 마늘"처럼 머리말 단어가 공백으로만 붙은 항목에서 머리말을 뗀다(um-2).
+
+    뒤가 양 표기로 시작하면("소스 1큰술") 머리말이 아니라 재료 이름이므로 그대로 둔다.
+    """
+    head, _, rest = item.strip().partition(" ")
+    rest = rest.strip()
+    if rest and normalize_term(head) in HEADER_WORDS and _AMOUNT_START.match(rest) is None:
+        if skipped is not None:
+            skipped.append(head)
+        return rest
+    return item
+
+
 def ingredient_segments(parts: str, title: str, skipped: list[str] | None = None) -> list[str]:
     """재료정보 원문 → 재료 표기 목록(원문 순서).
 
@@ -112,6 +127,7 @@ def ingredient_segments(parts: str, title: str, skipped: list[str] | None = None
                 labels.append(_PAREN.sub("", head).strip())
                 line = rest
         for item in labels + split_outside_parens(line.strip()):
+            item = _strip_label_prefix(item, skipped)
             norm = normalize_term(item)
             if _is_label(norm, title_norm) or normalize_term(ingredient_name(item)) in NOT_INGREDIENTS:
                 if skipped is not None and norm:

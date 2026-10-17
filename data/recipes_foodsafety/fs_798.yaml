@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 798. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 798. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
 ingredients:
 - ingredient: null
   raw_text: 쇠고기갈은것 50g
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: onion
   raw_text: 양파 7.5g
   role: sub
-- ingredient: null
+- ingredient: green_bell_pepper
   raw_text: 청피망 4.5g
   role: sub
 - ingredient: tomato
@@ -34,7 +34,7 @@ ingredients:
 - ingredient: chicken_stock
   raw_text: 닭육수 30g
   role: sub
-- ingredient: null
+- ingredient: garlic
   raw_text: 마늘다진것 0.8g
   role: sub
 - ingredient: null

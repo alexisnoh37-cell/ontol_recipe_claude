@@ -17,13 +17,13 @@ ingredients:
   optional: false
   amount: 500
   unit: g
-- ingredient: null
+- ingredient: cola
   raw_text: 콜라 / 콜라 2컵
   role: sub
   optional: false
   amount: 2
   unit: 컵
-- ingredient: null
+- ingredient: ssanghwatang
   raw_text: 쌍화탕 / 쌍화탕 1병
   role: sub
   optional: false

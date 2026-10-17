@@ -9,7 +9,8 @@ servings: null
 source: https://www.youtube.com/watch?v=m3oiihEGjf8
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '대파 흰부분' → green_onion(이름 보정표); 재료 이름 '볼에 담고 대파' → green_onion(이름
+  보정표)
 ingredients:
 - ingredient: soybean_sprouts
   raw_text: 콩나물 300g
@@ -17,7 +18,7 @@ ingredients:
   optional: false
   amount: 300
   unit: g
-- ingredient: null
+- ingredient: green_onion
   raw_text: 대파 흰부분 1 스푼 / 대파 1스푼
   role: sub
   optional: false
@@ -59,7 +60,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: green_onion
   raw_text: 볼에 담고 대파 1스푼
   role: sub
   optional: false

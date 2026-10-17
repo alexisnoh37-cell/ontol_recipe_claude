@@ -36,7 +36,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: maesil_cheong
   raw_text: 매실액 1스푼
   role: seasoning
   optional: false

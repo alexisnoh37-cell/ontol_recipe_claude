@@ -29,7 +29,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: dasida
   raw_text: 다시다 반스푼
   role: seasoning
   optional: false

@@ -17,7 +17,7 @@ ingredients:
   optional: false
   amount: 200
   unit: g
-- ingredient: null
+- ingredient: garlic_scape
   raw_text: 마늘쫑 100g
   role: sub
   optional: false

@@ -35,7 +35,7 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: seasoned_laver
   raw_text: 김가루
   role: garnish
   optional: false

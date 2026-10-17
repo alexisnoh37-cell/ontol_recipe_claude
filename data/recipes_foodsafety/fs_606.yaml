@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 606. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 606. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
 - ingredient: beef
   raw_text: 소고기(갈비, 300g)
   role: sub
-- ingredient: null
+- ingredient: ginseng
   raw_text: 인삼(2뿌리)
   role: sub
 - ingredient: glass_noodles
@@ -37,7 +37,7 @@ ingredients:
 - ingredient: sugar
   raw_text: 설탕(10g)
   role: sub
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 저염간장(20g)
   role: sub
 steps:

@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 464. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 464. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
 ingredients:
 - ingredient: null
   raw_text: 돼지목살(120g)
@@ -13,7 +13,7 @@ ingredients:
 - ingredient: ginger
   raw_text: 생강(5g)
   role: sub
-- ingredient: null
+- ingredient: rosemary
   raw_text: 로즈마리(2g)
   role: sub
 - ingredient: salt
@@ -28,7 +28,7 @@ ingredients:
 - ingredient: ketchup
   raw_text: 케첩(20g)
   role: sub
-- ingredient: null
+- ingredient: grape_juice
   raw_text: 포도주스(100g)
   role: sub
 - ingredient: onion
@@ -40,13 +40,13 @@ ingredients:
 - ingredient: butter
   raw_text: 버터(10g)
   role: sub
-- ingredient: null
+- ingredient: broccoli
   raw_text: 브로컬리(20g)
   role: sub
 - ingredient: carrot
   raw_text: 당근(20g)
   role: sub
-- ingredient: null
+- ingredient: cabbage
   raw_text: 적채(20g)
   role: sub
 - ingredient: celery

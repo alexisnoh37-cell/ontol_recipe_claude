@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 263. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 263. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
 ingredients:
-- ingredient: null
-  raw_text: 재료 풋고추(2g)
+- ingredient: green_chili
+  raw_text: 풋고추(2g)
   role: sub
-- ingredient: null
+- ingredient: red_chili
   raw_text: 붉은 고추(1g)
   role: sub
 - ingredient: radish
@@ -28,8 +28,8 @@ ingredients:
 - ingredient: tofu
   raw_text: 두부(100g)
   role: sub
-- ingredient: null
-  raw_text: 육수 콩나물(80g)
+- ingredient: soybean_sprouts
+  raw_text: 콩나물(80g)
   role: sub
 - ingredient: kelp
   raw_text: 다시마(7g)
@@ -46,11 +46,11 @@ ingredients:
 - ingredient: gochugaru
   raw_text: 고춧가루(20g)
   role: sub
-- ingredient: null
+- ingredient: balsamic_vinegar
   raw_text: 발 사믹식초(13g)
   role: sub
-- ingredient: null
-  raw_text: 양념 다진 마늘(15g)
+- ingredient: garlic
+  raw_text: 다진 마늘(15g)
   role: sub
 steps:
 - text: 고추는 어슷 썰고, 무, 당근, 양파, 노란 파프리카, 두부는 납작하게 썬다.

@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3077. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3077. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
 - ingredient: null
   raw_text: 앞다리살 돈육(보쌈용) 100g
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: green_onion
   raw_text: 대파 20g
   role: sub
-- ingredient: null
+- ingredient: doenjang
   raw_text: 저염된장 4g
   role: sub
 - ingredient: black_pepper
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: bay_leaf
   raw_text: 월계수잎 1g
   role: sub
-- ingredient: null
+- ingredient: ginger
   raw_text: 생강가루 2g
   role: sub
 - ingredient: garlic

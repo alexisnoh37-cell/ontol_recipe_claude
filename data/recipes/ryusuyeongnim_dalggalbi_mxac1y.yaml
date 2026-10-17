@@ -77,7 +77,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: pear_drink
   raw_text: 배음료 한캔
   role: sub
   optional: false

@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=9b-FXs7OIoI
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '진강장' → soy_sauce(이름 보정표)
 ingredients:
 - ingredient: glass_noodles
   raw_text: 당면 200g
@@ -95,7 +95,7 @@ ingredients:
   optional: false
   amount: null
   unit: null
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 진강장 4스푼
   role: sub
   optional: false

@@ -9,7 +9,8 @@ servings: null
 source: https://www.youtube.com/watch?v=8SHbi0lai9A
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '새우 취향껏' → shrimp_raw(이름 보정표); 재료 이름 '열이 충분히 올라오면 양파' → onion(이름
+  보정표)
 ingredients:
 - ingredient: zucchini
   raw_text: 애호박 반개
@@ -23,7 +24,7 @@ ingredients:
   optional: false
   amount: 100
   unit: g
-- ingredient: null
+- ingredient: shrimp_raw
   raw_text: 새우 취향껏 10마리
   role: sub
   optional: true
@@ -53,13 +54,13 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: jjajang_powder
   raw_text: 짜장분말소스 50g
   role: sub
   optional: false
   amount: 50
   unit: g
-- ingredient: null
+- ingredient: onion
   raw_text: 열이 충분히 올라오면 양파 한줌 / 양파 2개
   role: sub
   optional: false

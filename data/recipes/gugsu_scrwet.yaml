@@ -9,7 +9,8 @@ servings: null
 source: https://www.youtube.com/watch?v=sCRweTHgc0A
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에 없음)
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에 없음); 재료 이름 '제일 중요한 시판 냉면육수' → naengmyeon_broth(이름
+  보정표)
 ingredients:
 - ingredient: cucumber
   raw_text: 오이 1개
@@ -53,7 +54,7 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: naengmyeon_broth
   raw_text: 시판냉면육수 1봉
   role: sub
   optional: false
@@ -65,7 +66,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: naengmyeon_broth
   raw_text: 제일 중요한 시판 냉면육수 1봉
   role: sub
   optional: false

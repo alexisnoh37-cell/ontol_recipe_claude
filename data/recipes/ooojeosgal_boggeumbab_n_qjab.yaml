@@ -9,7 +9,8 @@ servings: null
 source: https://www.youtube.com/watch?v=N-qjabK28ro
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준; 재료 이름 '잘게자른 오징어젓갈' → ojingeojeot(이름
+  보정표)
 ingredients:
 - ingredient: green_onion
   raw_text: 대파 반쪽 / 대파
@@ -29,7 +30,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: seasoned_laver
   raw_text: 김가루
   role: garnish
   optional: false
@@ -41,13 +42,13 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: ojingeojeot
   raw_text: 잘게자른 오징어젓갈 2스푼
   role: sub
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: egg
   raw_text: 계란후라이 2개
   role: sub
   optional: false

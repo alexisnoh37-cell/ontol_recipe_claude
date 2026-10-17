@@ -23,7 +23,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 컵
-- ingredient: null
+- ingredient: instant_noodle_product
   raw_text: 사리곰탕 라면
   role: sub
   optional: false

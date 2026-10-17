@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 544. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 544. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: pork_belly
   raw_text: 삼겹살(150g)
@@ -22,7 +22,7 @@ ingredients:
 - ingredient: black_pepper
   raw_text: 통후추(5g)
   role: sub
-- ingredient: null
+- ingredient: soju
   raw_text: 소주(10g)
   role: sub
 - ingredient: doenjang
@@ -37,7 +37,7 @@ ingredients:
 - ingredient: red_chili
   raw_text: 홍고추(10g)
   role: sub
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 저염간장(20g)
   role: sub
 - ingredient: sugar
@@ -52,7 +52,7 @@ ingredients:
 - ingredient: ginger
   raw_text: 생강(10g)
   role: sub
-- ingredient: null
+- ingredient: starch
   raw_text: 물녹말(녹말 10g, 물 10g)
   role: sub
 steps:

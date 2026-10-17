@@ -77,7 +77,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 1알
   role: sub
   optional: false

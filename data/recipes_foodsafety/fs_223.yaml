@@ -5,10 +5,10 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 223. 요리종류 밥, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 223. 요리종류 밥, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
 ingredients:
-- ingredient: null
-  raw_text: 재료 닭봉(80g)
+- ingredient: chicken_wing
+  raw_text: 닭봉(80g)
   role: sub
 - ingredient: milk
   raw_text: 우유(20g)
@@ -22,7 +22,7 @@ ingredients:
 - ingredient: eggplant
   raw_text: 가지(15g)
   role: sub
-- ingredient: null
+- ingredient: zucchini
   raw_text: 주키니호박(15g)
   role: sub
 - ingredient: carrot
@@ -40,11 +40,11 @@ ingredients:
 - ingredient: rice
   raw_text: 밥(150g)
   role: sub
-- ingredient: null
+- ingredient: sprouts_mix
   raw_text: 새싹채소(10g)
   role: sub
-- ingredient: null
-  raw_text: 양념 후춧가루(3g)
+- ingredient: black_pepper
+  raw_text: 후춧가루(3g)
   role: sub
 - ingredient: sesame_oil
   raw_text: 참기름(20g)
@@ -52,8 +52,8 @@ ingredients:
 - ingredient: soy_sauce
   raw_text: 간장(5g)
   role: sub
-- ingredient: null
-  raw_text: 소스 레몬즙(5g)
+- ingredient: lemon
+  raw_text: 레몬즙(5g)
   role: sub
 - ingredient: mayonnaise
   raw_text: 마요네즈(12g)

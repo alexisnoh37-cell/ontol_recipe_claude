@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 248. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 248. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
-- ingredient: null
-  raw_text: 재료 다진 돼지고기(50g)
+- ingredient: ground_pork
+  raw_text: 다진 돼지고기(50g)
   role: sub
-- ingredient: null
+- ingredient: ground_beef
   raw_text: 다진 쇠고기(30g)
   role: sub
 - ingredient: eggplant
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: rice_cake
   raw_text: 가래떡(60g)
   role: sub
-- ingredient: null
+- ingredient: yuzu_cheong
   raw_text: 유자청(15g)
   role: sub
 - ingredient: soy_sauce
@@ -34,7 +34,7 @@ ingredients:
 - ingredient: garlic
   raw_text: 다진 마늘(5g)
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 다진 양파(10g)
   role: sub
 - ingredient: salt

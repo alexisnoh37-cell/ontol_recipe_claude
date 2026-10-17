@@ -9,7 +9,8 @@ servings: 1
 source: https://www.youtube.com/watch?v=pxx1NDuuW58
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 줄 '고추기름이 나오면 물 600ml' 뺌(물, 이름 보정표); 재료 이름 '동전크기' → pasta(이름 보정표); 재료 이름 '불을 끄고
+  올리브유' → olive_oil(이름 보정표)
 ingredients:
 - ingredient: pasta
   raw_text: 파스타면 1인분 / 파스타면
@@ -17,7 +18,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 인분
-- ingredient: null
+- ingredient: peperoncino
   raw_text: 페페론치노 3개
   role: sub
   optional: false
@@ -41,19 +42,13 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
-  raw_text: 고추기름이 나오면 물 600ml
-  role: sub
-  optional: false
-  amount: 600
-  unit: ml
-- ingredient: null
+- ingredient: pasta
   raw_text: 동전크기 1인분
   role: sub
   optional: false
   amount: 1
   unit: 인분
-- ingredient: null
+- ingredient: olive_oil
   raw_text: 불을 끄고 올리브유 한스푼
   role: sub
   optional: false

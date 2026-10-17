@@ -5,24 +5,24 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 868. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 868. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
 ingredients:
 - ingredient: beef
   raw_text: 쇠고기 40g
   role: sub
-- ingredient: null
+- ingredient: shiitake
   raw_text: 생표고버섯 16g
   role: sub
 - ingredient: button_mushroom
   raw_text: 양송이버섯 9g
   role: sub
-- ingredient: null
+- ingredient: oyster_mushroom
   raw_text: 애느타리버섯 12g
   role: sub
-- ingredient: null
+- ingredient: white_wood_ear
   raw_text: 흰목이버섯 0.4g
   role: sub
-- ingredient: null
+- ingredient: wood_ear
   raw_text: 목이버섯 0.4g
   role: sub
 - ingredient: celery
@@ -52,7 +52,7 @@ ingredients:
 - ingredient: null
   raw_text: 쇠고기밑간양념
   role: sub
-- ingredient: null
+- ingredient: starch
   raw_text: 전분 2g
   role: sub
 - ingredient: egg

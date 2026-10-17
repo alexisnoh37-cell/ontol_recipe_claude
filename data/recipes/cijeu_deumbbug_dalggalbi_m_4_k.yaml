@@ -65,7 +65,7 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: allulose
   raw_text: 알룰로스 2스푼
   role: seasoning
   optional: false

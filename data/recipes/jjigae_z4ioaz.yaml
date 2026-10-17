@@ -9,7 +9,8 @@ servings: null
 source: https://www.youtube.com/watch?v=Z4iOaz0PGPg
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 줄 '이제 물 700ml' 뺌(물, 이름 보정표); 재료 이름 '이제 뚜껑열고 채썬 양파' → onion(이름 보정표);
+  재료 이름 '채썬 애호박' → zucchini(이름 보정표)
 ingredients:
 - ingredient: null
   raw_text: 000원에 2개
@@ -59,25 +60,19 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 2알
   role: sub
   optional: false
   amount: 2
   unit: 알
-- ingredient: null
-  raw_text: 이제 물 700ml
-  role: sub
-  optional: false
-  amount: 700
-  unit: ml
-- ingredient: null
+- ingredient: onion
   raw_text: 이제 뚜껑열고 채썬 양파반개 / 양파 반개
   role: sub
   optional: false
   amount: 0.5
   unit: 개
-- ingredient: null
+- ingredient: zucchini
   raw_text: 채썬 애호박 한개 / 애호박 1개
   role: sub
   optional: false

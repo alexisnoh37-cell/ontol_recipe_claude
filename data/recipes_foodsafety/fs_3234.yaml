@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3234. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3234. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: chicken_breast
   raw_text: 닭가슴살(40g)
   role: sub
-- ingredient: null
+- ingredient: bell_pepper
   raw_text: 노랑 파프리카(20g)
   role: sub
 - ingredient: onion
@@ -22,10 +22,10 @@ ingredients:
 - ingredient: carrot
   raw_text: 당근(15g)
   role: sub
-- ingredient: null
+- ingredient: konjac
   raw_text: 곤약면(80g)
   role: sub
-- ingredient: null
+- ingredient: baby_greens
   raw_text: 어린잎채소(10g)
   role: sub
 - ingredient: mustard_powder
@@ -43,7 +43,7 @@ ingredients:
 - ingredient: salt
   raw_text: 소금(0.3g)
   role: sub
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 저염 간장(0.5g)
   role: sub
 steps:

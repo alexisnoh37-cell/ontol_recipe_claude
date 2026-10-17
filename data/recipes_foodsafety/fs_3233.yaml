@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3233. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3233. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
 ingredients:
 - ingredient: eggplant
   raw_text: 가지(½개+20g)
@@ -13,7 +13,7 @@ ingredients:
 - ingredient: cabbage
   raw_text: 양배추(70g)
   role: sub
-- ingredient: null
+- ingredient: bell_pepper
   raw_text: 빨강 파프리카(20g)
   role: sub
 - ingredient: carrot
@@ -22,7 +22,7 @@ ingredients:
 - ingredient: bok_choy
   raw_text: 청경채(1단)
   role: sub
-- ingredient: null
+- ingredient: egg
   raw_text: 달걀지단(3개 분량)
   role: sub
 - ingredient: laver
@@ -55,7 +55,7 @@ ingredients:
 - ingredient: black_pepper
   raw_text: 후춧가루(0.5g)
   role: sub
-- ingredient: null
+- ingredient: edible_flower
   raw_text: 식용 꽃(노란색 2개)
   role: sub
 - ingredient: parsley

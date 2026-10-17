@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 889. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 889. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
 - ingredient: squid
   raw_text: 오징어 80g
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: egg
   raw_text: 달걀 19g
   role: sub
-- ingredient: null
+- ingredient: shiitake
   raw_text: 표고버섯마른것 7g
   role: sub
 - ingredient: cooking_oil
@@ -31,10 +31,10 @@ ingredients:
 - ingredient: null
   raw_text: 토마토케첩소스
   role: sub
-- ingredient: null
+- ingredient: garlic
   raw_text: 마늘다진것 1.1g
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 양파다진것 1.1g
   role: sub
 - ingredient: ketchup

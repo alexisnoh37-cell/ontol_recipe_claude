@@ -106,6 +106,9 @@ def show_recipe_detail(recipe_id: str, profile_id: int, pantry: list[str] | None
     except RuntimeError as exc:
         st.error(str(exc))
         return
+    if d.get("commercial_notice"):  # 시판 제품 안내(um-2): 재료 목록 위, 알레르기 설정과 무관
+        notice = d["commercial_notice"]
+        st.warning(f"⚠️ {notice['text']} ({', '.join(i['name'] for i in notice['ingredients'])})")
     by_role: dict[str, list[dict[str, Any]]] = {r: [] for r in ROLE_ORDER}
     for x in d["ingredients"]:
         by_role.setdefault(x["role"], []).append(x)

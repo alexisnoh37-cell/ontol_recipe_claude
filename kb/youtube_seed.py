@@ -6,6 +6,7 @@
 변환 규칙(2026-10-16 사람 결정, docs/decisions.md D3 예외):
 - id(id_overrides 제외), 제목, 사실값(양·단위·맛·시간·난이도·인분), raw_text, 조리 단계, status(draft), confidence, note는 그대로 둔다.
 - 재료 이름은 컴파일된 지식의 이름·별칭(공백 무시)으로만 매핑한다. 없거나 concept이면 null(미매칭).
+  단, 원본 이름 보정표(data/recipe_name_overrides.yaml, um-2 사람 승인)에 있는 이름은 표대로 매핑·제외·분리한다.
   추측 매핑은 하지 않는다. 미매칭 레시피는 알레르기 사용자에게 제외된다.
 - source는 영상 URL 문자열로 바꾼다(시드 형식의 source는 문자열).
 - 시드 id 규칙(영문 소문자로 시작)에 맞지 않는 id는 id_overrides로 바꾼다(원본 id는 note에 남김).
@@ -53,9 +54,38 @@ def alias_index(ck: CompiledKnowledge) -> dict[str, str]:
     return {a.alias_norm: a.ingredient_id for a in ck.aliases if a.ingredient_id not in ck.concept_ids}
 
 
+NAME_OVERRIDES = Path("data") / "recipe_name_overrides.yaml"  # 원본 재료 이름 보정표(um-2)
+DROP_REASONS = {"duplicate": "같은 재료 줄이 이미 있음", "water": "물"}
+
+
+def load_name_overrides(root: Path, ck: CompiledKnowledge) -> dict[str, dict]:
+    """보정표 → {정규화한 원본 이름: 보정}. 없는 재료·concept·알 수 없는 사유는 오류(조용히 미매칭이 되지 않게)."""
+    path = root / NAME_OVERRIDES
+    if not path.is_file():
+        return {}
+    known = {i.id for i in ck.ingredients} - set(ck.concept_ids)
+    out: dict[str, dict] = {}
+    for item in yaml.safe_load(path.read_text(encoding="utf-8"))["overrides"]:
+        fix = {k: v for k, v in item.items() if k != "names"}
+        if len(fix) != 1 or not set(fix) <= {"id", "drop", "split"}:
+            raise SystemExit(f"{NAME_OVERRIDES}: {item['names']}에는 id·drop·split 중 하나만 적습니다")
+        ids = [fix["id"]] if "id" in fix else [p["id"] for p in fix.get("split", [])]
+        bad = [i for i in ids if i not in known]
+        if "drop" in fix and fix["drop"].split(":")[0] not in DROP_REASONS:
+            bad.append(fix["drop"])
+        if bad:
+            raise SystemExit(f"{NAME_OVERRIDES}: {item['names']}의 알 수 없는 재료·사유 {bad}")
+        for name in item["names"]:
+            key = normalize_term(name)
+            if key in out:
+                raise SystemExit(f"{NAME_OVERRIDES}: '{name}'가 두 번 있습니다")
+            out[key] = fix
+    return out
+
+
 def convert(ds: YoutubeDataset, ck: CompiledKnowledge, src: dict,
-            index: dict[str, str]) -> tuple[dict, list[str], list[str]]:
-    """(시드 dict, 미매칭 재료 이름, 원본과 달라진 점)."""
+            index: dict[str, str], overrides: dict[str, dict] | None = None) -> tuple[dict, list[str], list[str]]:
+    """(시드 dict, 미매칭 재료 이름, 원본과 달라진 점). overrides는 load_name_overrides 결과(원본 이름 보정)."""
     changes: list[str] = []
     rid = ds.id_overrides.get(src["id"], src["id"])
     if rid != src["id"]:
@@ -74,19 +104,35 @@ def convert(ds: YoutubeDataset, ck: CompiledKnowledge, src: dict,
             changes.append(f"조리기구 '{e['name']}'(선택) 제외(vocab에 없음)")
     unmapped: list[str] = []
     ingredients = []
+    raw_ids = {index.get(normalize_term(line["name"])) for line in src["ingredients"]}
     for line in src["ingredients"]:
-        ing_id = index.get(normalize_term(line["name"]))
-        if ing_id is None:
-            unmapped.append(line["name"])
-        ingredients.append({
-            "ingredient": ing_id,
-            "raw_text": line["raw_text"],
-            "role": line["role"],
-            "optional": line["optional"],
-            # DB 컬럼 numeric(8,2)에 맞춘다(1/3 → 0.33). 그대로 두면 DB 스냅샷이 파일과 달라진다.
-            "amount": None if line["amount"] is None else round(line["amount"], 2),
-            "unit": line["unit"],
-        })
+        fix = (overrides or {}).get(normalize_term(line["name"]))
+        if fix is None:
+            parts = [(index.get(normalize_term(line["name"])), True)]
+        elif "drop" in fix:
+            reason = fix["drop"]
+            if reason.startswith("duplicate:") and reason.split(":", 1)[1] not in raw_ids:
+                raise SystemExit(f"{src['id']}: '{line['name']}'를 중복 줄로 뺄 수 없습니다(같은 레시피에 {reason}가 없음)")
+            changes.append(f"재료 줄 '{line['raw_text']}' 뺌({DROP_REASONS.get(reason.split(':')[0], reason)}, 이름 보정표)")
+            continue
+        elif "split" in fix:
+            parts = [(p["id"], p.get("amount", True) is not False) for p in fix["split"]]
+            changes.append(f"재료 줄 '{line['raw_text']}' → {', '.join(i for i, _ in parts)}로 나눔(이름 보정표)")
+        else:
+            parts = [(fix["id"], True)]
+            changes.append(f"재료 이름 '{line['name']}' → {fix['id']}(이름 보정표)")
+        for ing_id, keep_amount in parts:
+            if ing_id is None:
+                unmapped.append(line["name"])
+            ingredients.append({
+                "ingredient": ing_id,
+                "raw_text": line["raw_text"],
+                "role": line["role"],
+                "optional": line["optional"],
+                # DB 컬럼 numeric(8,2)에 맞춘다(1/3 → 0.33). 그대로 두면 DB 스냅샷이 파일과 달라진다.
+                "amount": None if line["amount"] is None or not keep_amount else round(line["amount"], 2),
+                "unit": line["unit"] if keep_amount else None,
+            })
     note = "; ".join(x for x in [src["note"], *changes] if x) or None
     out = {
         "id": rid,
@@ -172,12 +218,13 @@ def run(ds: YoutubeDataset, root: Path) -> int:
         print(exc, file=sys.stderr)
         return 1
     index = alias_index(ck)
+    overrides = load_name_overrides(root, ck)
     out_dir = root / "data" / "recipes"
     rows = []
     for path in sorted(ds.source_dir(root).glob("*.yaml")):
         src = yaml.safe_load(path.read_text(encoding="utf-8"))
         assert src["id"] == path.stem, path
-        rows.append(convert(ds, ck, src, index))
+        rows.append(convert(ds, ck, src, index, overrides))
 
     ours = {r["id"] for r, _, _ in rows}
     for path in out_dir.glob("*.yaml"):

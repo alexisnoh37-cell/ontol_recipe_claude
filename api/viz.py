@@ -112,9 +112,11 @@ class GraphCatalog:
     """EngineData 하나 위의 그래프 응답. 데이터 reload 때 새로 만든다(요청 중에는 캐시만 읽음)."""
 
     def __init__(self, data: EngineData, origins: RecipeOrigins | None = None,
-                 display_loader: Callable[[], list[RecipeSpec]] | None = None):
+                 display_loader: Callable[[], list[RecipeSpec]] | None = None,
+                 commercial: tuple[str, frozenset[str]] = ("", frozenset())):
         ck = data.knowledge
         self.data = data
+        self.commercial_text, self.commercial_ids = commercial  # 시판 제품 안내(표시 전용, um-2)
         self.origins = origins
         self._display_loader = display_loader
         self._display: list[RecipeSpec] | None = None  # 처음 display=true 요청 때 읽는다(시작 비용 없음)
@@ -207,6 +209,13 @@ class GraphCatalog:
                 self._cache[key] = (body, '"' + hashlib.sha256(blob).hexdigest()[:20] + '"')
             return self._cache[key]
 
+    def _commercial_notice(self, r: RecipeSpec) -> dict[str, Any] | None:
+        ids = [i for i in dict.fromkeys(line.ingredient for line in r.ingredients) if i in self.commercial_ids]
+        if not ids:
+            return None
+        names = {i.id: i.name for i in self.data.knowledge.ingredients}
+        return {"text": self.commercial_text, "ingredients": [names[i] for i in ids]}
+
     def display_recipes(self) -> list[RecipeSpec]:
         """표시 전용 레시피(엔진 미적재). 적재된 레시피와 id가 겹치면 뺀다."""
         if self._display is None:
@@ -239,6 +248,7 @@ class GraphCatalog:
                                    for n, line in enumerate(r.ingredients, start=1) if line.ingredient is None],
                 "origin": origin, "engine": in_engine,
                 "allergens": self.recipe_allergens(r),
+                "commercial_notice": self._commercial_notice(r),
             })
             for n, line in enumerate(r.ingredients, start=1):  # line_no는 엔진 recipe_from_spec과 같은 번호
                 if line.ingredient is None:

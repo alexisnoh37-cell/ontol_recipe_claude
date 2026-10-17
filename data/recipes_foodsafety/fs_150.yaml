@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 150. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 150. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
 - ingredient: napa_cabbage
   raw_text: 배추 10g(1/60개)
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: salt
   raw_text: 소금 5g(1작은술)
   role: sub
-- ingredient: null
+- ingredient: kimchi
   raw_text: 김치국물
   role: sub
 - ingredient: null
@@ -31,7 +31,7 @@ ingredients:
 - ingredient: garlic
   raw_text: 다진 마늘 10g(2작은술)
   role: sub
-- ingredient: null
+- ingredient: ginger_juice
   raw_text: 생강즙 5g(1작은술)
   role: sub
 steps:

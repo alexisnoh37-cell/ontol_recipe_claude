@@ -9,9 +9,10 @@ servings: null
 source: https://www.youtube.com/watch?v=rsiBjbpuqiQ
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준; 재료 이름 '돼지고기 등심 카레용' → pork_loin(이름
+  보정표)
 ingredients:
-- ingredient: null
+- ingredient: pork_loin
   raw_text: 돼지고기 등심 카레용 300g
   role: main
   optional: false
@@ -23,7 +24,7 @@ ingredients:
   optional: false
   amount: 5
   unit: 스푼
-- ingredient: null
+- ingredient: cooking_oil
   raw_text: 기름 2스푼
   role: sub
   optional: false

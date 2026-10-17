@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 871. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 871. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
 ingredients:
 - ingredient: null
   raw_text: 도미 100g
@@ -22,7 +22,7 @@ ingredients:
 - ingredient: wine
   raw_text: 화이트와인 50g
   role: sub
-- ingredient: null
+- ingredient: parsley
   raw_text: 파슬리다진것 1g
   role: sub
 - ingredient: null
@@ -37,10 +37,10 @@ ingredients:
 - ingredient: null
   raw_text: 케이퍼 3g
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 양파다진것 5g
   role: sub
-- ingredient: null
+- ingredient: garlic
   raw_text: 마늘다진것 2g
   role: sub
 - ingredient: tomato

@@ -65,7 +65,7 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: ketchup
   raw_text: 케챱 1스푼
   role: sub
   optional: false

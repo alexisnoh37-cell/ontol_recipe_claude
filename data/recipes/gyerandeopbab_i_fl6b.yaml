@@ -59,7 +59,7 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: starch
   raw_text: 전분 1스푼 / 전분 한스푼
   role: seasoning
   optional: false

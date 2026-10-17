@@ -5,10 +5,10 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 272. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 272. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
-- ingredient: null
-  raw_text: 재료 콩나물(30g)
+- ingredient: soybean_sprouts
+  raw_text: 콩나물(30g)
   role: sub
 - ingredient: kimchi
   raw_text: 김치(50g)
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: tofu
   raw_text: 두부(40g)
   role: sub
-- ingredient: null
+- ingredient: red_chili
   raw_text: 붉은 고추(15g)
   role: sub
 - ingredient: ground_pork
@@ -25,8 +25,8 @@ ingredients:
 - ingredient: saeujeot
   raw_text: 새우젓(5g)
   role: sub
-- ingredient: null
-  raw_text: 육수 대파(10g)
+- ingredient: green_onion
+  raw_text: 대파(10g)
   role: sub
 - ingredient: garlic
   raw_text: 마늘(5g)

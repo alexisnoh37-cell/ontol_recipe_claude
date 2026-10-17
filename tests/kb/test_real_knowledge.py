@@ -7,6 +7,7 @@ from pathlib import Path
 import pytest
 
 from kb import compile_paths
+from kb.unmapped_review import load_proposal
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -53,10 +54,15 @@ def test_ambiguous_alias_removed_and_soybean_oil_separate(ck):
 
 
 # 검수 대기 중인 재료. 사람이 검수표로 승인하면 reviewed로 바꾸고 여기서 뺀다.
+# um-2(2026-10-17): 미매칭 보강 검수표에서 승인한 새 재료는 제안 데이터(decision O, new)에 적힌 것과 정확히 같아야 한다.
+UM2_NEW_INGREDIENTS = frozenset(
+    e.new["id"] for e in load_proposal(ROOT / "docs" / "review" / "unmapped_proposal.yaml")
+    if e.decision == "O" and e.new
+)
 DRAFT_INGREDIENTS = frozenset({
     "soft_tofu",  # 레시피 1차 확장(2026-10-04)
     "beef_plate", "bomdong",  # 자취요리신 데이터 연결(2026-10-16)
-})
+}) | UM2_NEW_INGREDIENTS
 
 
 def test_all_knowledge_is_reviewed(ck):

@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 550. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 550. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
 ingredients:
-- ingredient: null
+- ingredient: konjac
   raw_text: 실곤약(100g)
   role: sub
 - ingredient: radish
@@ -22,7 +22,7 @@ ingredients:
 - ingredient: sugar
   raw_text: 설탕(10g)
   role: sub
-- ingredient: null
+- ingredient: bell_pepper
   raw_text: 홍파프리카(20g)
   role: sub
 - ingredient: cucumber
@@ -40,7 +40,7 @@ ingredients:
 - ingredient: null
   raw_text: 동치미국물(200g)
   role: sub
-- ingredient: null
+- ingredient: pear_juice
   raw_text: 배즙(10g)
   role: sub
 - ingredient: null

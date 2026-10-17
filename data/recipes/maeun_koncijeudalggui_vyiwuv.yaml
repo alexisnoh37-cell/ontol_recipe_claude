@@ -29,7 +29,7 @@ ingredients:
   optional: false
   amount: 4
   unit: 스푼
-- ingredient: null
+- ingredient: bottled_marinade
   raw_text: 매운 갈비 양념
   role: sub
   optional: false

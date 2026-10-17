@@ -9,7 +9,7 @@ servings: 1
 source: https://www.youtube.com/watch?v=pbgZbPbcPLo
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '동전크기' → pasta(이름 보정표)
 ingredients:
 - ingredient: pasta
   raw_text: 파스타면 1인분 / 파스타면
@@ -17,7 +17,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 인분
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 육수코인 1알 / 육수코인 한 알
   role: sub
   optional: false
@@ -59,7 +59,7 @@ ingredients:
   optional: false
   amount: 250
   unit: ml
-- ingredient: null
+- ingredient: pasta
   raw_text: 동전크기 1인분
   role: sub
   optional: false

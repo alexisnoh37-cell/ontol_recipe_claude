@@ -17,7 +17,7 @@ ingredients:
   optional: false
   amount: 340
   unit: g
-- ingredient: null
+- ingredient: kimchi
   raw_text: 묵은 김치 1/4 포 / 묵은 김치 1/4포 / 김치 1/4 포
   role: sub
   optional: false
@@ -35,7 +35,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 모
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 2알
   role: sub
   optional: false

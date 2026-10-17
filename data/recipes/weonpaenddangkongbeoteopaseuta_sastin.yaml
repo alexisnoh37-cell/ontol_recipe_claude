@@ -9,9 +9,10 @@ servings: 1
 source: https://www.youtube.com/watch?v=SasTinxCwVY
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '땅콩버터 크게' → peanut_butter(이름 보정표); 재료 이름 '볶다가 맛술' → mirin(이름 보정표); 재료 이름 '부은
+  후 백원동전크기 파스타면' → pasta(이름 보정표)
 ingredients:
-- ingredient: null
+- ingredient: ground_pork
   raw_text: 간 돼지고기 100g / 돼지고기 100g
   role: main
   optional: false
@@ -35,7 +36,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: peperoncino
   raw_text: 페퍼론치노 3개
   role: sub
   optional: false
@@ -59,25 +60,25 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 1알
   role: sub
   optional: false
   amount: 1
   unit: 알
-- ingredient: null
+- ingredient: peanut_butter
   raw_text: 땅콩버터 크게 한스푼 / 크게 한스푼
   role: sub
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: mirin
   raw_text: 볶다가 맛술 2스푼
   role: sub
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: pasta
   raw_text: 부은 후 백원동전크기 파스타면 1인분 / 파스타면 1인분 / 파스타면
   role: sub
   optional: false

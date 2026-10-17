@@ -3,7 +3,7 @@
 # --- 곡류 ---
 - id: rice
   name: 쌀
-  aliases: [백미, 멥쌀, {text: 밥, form: cooked}, {text: 쌀밥, form: cooked}, {text: 흰밥, form: cooked}]
+  aliases: [백미, 멥쌀, {text: 밥, form: cooked}, {text: 쌀밥, form: cooked}, {text: 흰밥, form: cooked}, 햇반, 불린쌀]
   category: 곡류·가루
   status: reviewed
 - id: glutinous_rice
@@ -12,7 +12,7 @@
   status: reviewed
 - id: brown_rice
   name: 현미
-  aliases: [{text: 현미밥, form: cooked}]
+  aliases: [{text: 현미밥, form: cooked}, 볶은현미]
   category: 곡류·가루
   status: reviewed
 - id: buckwheat
@@ -106,7 +106,7 @@
 # --- 면 ---
 - id: somen
   name: 소면
-  aliases: [중면, 국수면]
+  aliases: [중면, 국수면, 국수]
   derived_from: [wheat_flour]
   is_processed: true
   category: 면·떡·빵
@@ -140,7 +140,7 @@
   status: reviewed
 - id: pasta
   name: 파스타
-  aliases: [스파게티, 스파게티면, 펜네, 링귀니, 파스타면]
+  aliases: [스파게티, 스파게티면, 펜네, 링귀니, 파스타면, 통밀 파스타면, 통밀파스타]
   derived_from: [wheat_flour, {id: egg, certainty: possible}]
   is_processed: true
   category: 면·떡·빵
@@ -149,7 +149,7 @@
   status: reviewed
 - id: buckwheat_noodles
   name: 메밀면
-  aliases: [메밀국수, 소바, 소바면]
+  aliases: [메밀국수, 소바, 소바면, 막국수]
   derived_from: [buckwheat, {id: wheat_flour, certainty: possible}]
   is_processed: true
   category: 면·떡·빵
@@ -230,3 +230,97 @@
   confidence: low
   note: 밀 또띠아 기준. 옥수수 또띠아도 있음
   status: reviewed
+
+# --- um-2 미매칭 보강(2026-10-17, 사람 검수표 승인, 재료 검수 전 draft) ---
+- id: instant_noodle_product
+  name: 시판 라면 제품(면·스프 포함)
+  aliases: [너구리, 신라면, 신라면 더레드, 사리곰탕 라면, 사리곰탕, 멸치칼국수 라면, 불닭볶음면, 까르보 불닭볶음면, 불닭볶음탕면, 짜파게티, 사천짜파게티, 비빔면, 팔도 비빔면, 진짜 쫄면 라면, 진쫄면, 꼬꼬면, 매운 라면, 생생우동, 컵누들 마라탕]
+  derived_from:
+    - wheat_flour
+    - {id: soybean, certainty: possible}
+    - {id: milk, certainty: possible}
+    - {id: egg, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: pork, certainty: possible}
+    - {id: chicken, certainty: possible}
+    - {id: seafood, certainty: possible}
+    - {id: sesame, certainty: possible}
+    - {id: tomato, certainty: possible}
+    - {id: buckwheat, certainty: possible}
+    - {id: peanut, certainty: possible}
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: "상표 제품을 하나로 묶음(제품마다 해물·닭·쇠고기·우유 등 다름). 기존 '라면'(ramen_noodles)은 알레르기 범위가 좁아 별칭으로 두지 않음. 제품별로 나누면 더 많은 레시피를 살릴 수 있으나 포장 표시 확인 필요(컵누들은 녹말면이라 밀 여부도 확인) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: starch
+  name: 전분
+  aliases: [녹말가루, 녹말, 전분가루, 물전분, 물녹말]
+  derived_from:
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 곡류·가루
+  confidence: low
+  note: "원료 불명(감자·옥수수·고구마·타피오카). 밀 전분 제품도 있으나 드묾 → 알레르기 없음으로 두되 검수 필요. 기존 potato_starch·corn_starch를 is_a starch로 둘지 함께 결정 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: sujebi
+  name: 수제비
+  derived_from:
+    - wheat_flour
+    - {id: potato_starch, certainty: possible}
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: "원문 '냉동 수제비' um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: jjolmyeon_noodles
+  name: 쫄면 사리
+  aliases: [쫄면]
+  derived_from:
+    - wheat_flour
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: "면만. 소스가 든 제품(진쫄면)은 시판 라면 제품으로 분류 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: oats
+  name: 귀리
+  aliases: [귀리밥, 오트밀]
+  category: 곡류·가루
+  confidence: low
+  note: "밀 교차오염 제품 있음(법정 '밀' 아님) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: rice_paper
+  name: 라이스페이퍼
+  derived_from:
+    - rice
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: "타피오카 혼합 제품 있음(법정 대상 아님) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: misutgaru
+  name: 미숫가루
+  derived_from:
+    - {id: soybean, certainty: possible}
+    - {id: sesame, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: peanut, certainty: possible}
+    - {id: walnut, certainty: possible}
+    - {id: almond, certainty: possible}
+    - {id: buckwheat, certainty: possible}
+    - {id: milk, certainty: possible}
+  is_processed: true
+  category: 곡류·가루
+  confidence: low
+  note: "곡물 혼합. 제품마다 콩·깨·밀 포함 여부 다름 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: nurungji
+  name: 누룽지
+  derived_from:
+    - rice
+  is_processed: true
+  category: 곡류·가루
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft

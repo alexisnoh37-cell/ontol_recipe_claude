@@ -9,7 +9,7 @@ servings: 2
 source: https://www.youtube.com/watch?v=uvpvrOJQop0
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '저는 대식가라 국수' → somen(이름 보정표); 재료 이름 '고소한 맛을 위해 참기름' → sesame_oil(이름 보정표)
 ingredients:
 - ingredient: olive_oil
   raw_text: 올리브유 2스푼 / 올리브유 1스푼
@@ -65,13 +65,13 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: somen
   raw_text: 저는 대식가라 국수 2인분 / 국수 2인분
   role: sub
   optional: false
   amount: 2
   unit: 인분
-- ingredient: null
+- ingredient: sesame_oil
   raw_text: 고소한 맛을 위해 참기름 1스푼
   role: sub
   optional: false

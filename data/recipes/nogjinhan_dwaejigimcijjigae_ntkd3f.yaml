@@ -9,7 +9,7 @@ servings: 4
 source: https://www.youtube.com/watch?v=nTKD3Fbytnc
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준; 재료 이름 '김치 밥공기' → kimchi(이름 보정표)
 ingredients:
 - ingredient: pork_shoulder
   raw_text: 돼지고기 앞다리살 300g / 앞다리살 300g
@@ -17,7 +17,7 @@ ingredients:
   optional: false
   amount: 300
   unit: g
-- ingredient: null
+- ingredient: kimchi
   raw_text: 김치 밥공기 한컵
   role: sub
   optional: false
@@ -65,7 +65,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 2알
   role: sub
   optional: false

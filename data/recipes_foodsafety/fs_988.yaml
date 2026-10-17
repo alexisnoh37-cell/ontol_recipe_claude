@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 988. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 988. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: corn
   raw_text: 옥수수 35g
@@ -13,7 +13,7 @@ ingredients:
 - ingredient: pine_nut
   raw_text: 잣 3g
   role: sub
-- ingredient: null
+- ingredient: green_bell_pepper
   raw_text: 청피망 25g
   role: sub
 - ingredient: carrot
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: cooking_oil
   raw_text: 식용유 1g
   role: sub
-- ingredient: null
+- ingredient: starch
   raw_text: 물전분 6g
   role: sub
 - ingredient: salt

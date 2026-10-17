@@ -9,7 +9,8 @@ servings: null
 source: https://www.youtube.com/watch?v=oSFrbBWnhZ0
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준; 재료 이름 '고형카레 큰거' → curry_powder(이름
+  보정표)
 ingredients:
 - ingredient: onion
   raw_text: 양파 2개
@@ -23,13 +24,13 @@ ingredients:
   optional: false
   amount: 500
   unit: g
-- ingredient: null
+- ingredient: curry_powder
   raw_text: 고형카레 큰거 하나
   role: sub
   optional: false
   amount: 1
   unit: 개
-- ingredient: null
+- ingredient: cooking_oil
   raw_text: 기름 5스푼
   role: sub
   optional: false

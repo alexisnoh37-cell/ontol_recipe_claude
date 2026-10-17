@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 294. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 294. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
-- ingredient: null
-  raw_text: 재료 풋고추(1g)
+- ingredient: green_chili
+  raw_text: 풋고추(1g)
   role: sub
-- ingredient: null
+- ingredient: red_chili
   raw_text: 붉은 고추(1g)
   role: sub
 - ingredient: zucchini
@@ -43,14 +43,14 @@ ingredients:
 - ingredient: soy_sauce
   raw_text: 간장(5g)
   role: sub
-- ingredient: null
+- ingredient: starch
   raw_text: 녹말가루(15g)
   role: sub
 - ingredient: wheat_flour
   raw_text: 밀가루(15g)
   role: sub
-- ingredient: null
-  raw_text: 육수 돼지고기(앞다리살, 100g)
+- ingredient: pork
+  raw_text: 돼지고기(앞다리살, 100g)
   role: sub
 - ingredient: radish
   raw_text: 무(70g)
@@ -61,7 +61,7 @@ ingredients:
 - ingredient: green_onion
   raw_text: 대파(40g)
   role: sub
-- ingredient: null
+- ingredient: doenjang
   raw_text: 저염된장(10g)
   role: sub
 steps:

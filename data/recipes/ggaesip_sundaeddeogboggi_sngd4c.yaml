@@ -11,7 +11,7 @@ status: draft
 confidence: low
 note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 영상에 여러 레시피가 있어 첫 번째 레시피만 구조화
 ingredients:
-- ingredient: null
+- ingredient: sundae
   raw_text: 순대
   role: main
   optional: false

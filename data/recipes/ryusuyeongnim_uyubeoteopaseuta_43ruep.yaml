@@ -9,7 +9,7 @@ servings: 1
 source: https://www.youtube.com/watch?v=43rUEP9zVgY
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '파스타면 백원동전 크기' → pasta(이름 보정표); 재료 이름 '졸아 들었다 싶으면 마늘' → garlic(이름 보정표)
 ingredients:
 - ingredient: milk
   raw_text: 우유 300ml
@@ -35,7 +35,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 한알
   role: sub
   optional: false
@@ -53,13 +53,13 @@ ingredients:
   optional: false
   amount: null
   unit: null
-- ingredient: null
+- ingredient: pasta
   raw_text: 파스타면 백원동전 크기 1인분 / 파스타면 1인분 / 파스타면
   role: sub
   optional: false
   amount: 1
   unit: 인분
-- ingredient: null
+- ingredient: garlic
   raw_text: 졸아 들었다 싶으면 마늘 1개
   role: sub
   optional: false

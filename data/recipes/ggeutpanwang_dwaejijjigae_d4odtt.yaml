@@ -9,9 +9,10 @@ servings: null
 source: https://www.youtube.com/watch?v=D4OdTTGTysQ
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '돼지고기 앞다리살 찌개용' → pork_shoulder(이름 보정표); 재료 이름 '위해 청양고추' → cheongyang_pepper(이름
+  보정표)
 ingredients:
-- ingredient: null
+- ingredient: pork_shoulder
   raw_text: 돼지고기 앞다리살 찌개용 500g
   role: main
   optional: false
@@ -35,7 +36,7 @@ ingredients:
   optional: false
   amount: 5
   unit: 스푼
-- ingredient: null
+- ingredient: cheongyang_pepper
   raw_text: 다진 청양고추 2개 / 청양고추 2개
   role: sub
   optional: false
@@ -71,13 +72,13 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 2알
   role: sub
   optional: false
   amount: 2
   unit: 알
-- ingredient: null
+- ingredient: cheongyang_pepper
   raw_text: 위해 청양고추 2개
   role: sub
   optional: false

@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=iwOTBjIRhCU
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준; 재료 이름 '생강 작은 조각' → ginger(이름 보정표)
 ingredients:
 - ingredient: pork_shoulder
   raw_text: 돼지고기 앞다리살 1kg / 앞다리살 1kg
@@ -29,7 +29,7 @@ ingredients:
   optional: false
   amount: 10
   unit: 알
-- ingredient: null
+- ingredient: ginger
   raw_text: 생강 작은 조각 하나
   role: sub
   optional: false

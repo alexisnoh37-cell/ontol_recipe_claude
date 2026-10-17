@@ -9,7 +9,8 @@ servings: null
 source: https://www.youtube.com/watch?v=zz9stmkFUG0
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '올려주는 고추기름' → chili_oil(이름 보정표); 재료 이름 '맛을 올리기 위해 참기름' → sesame_oil(이름
+  보정표)
 ingredients:
 - ingredient: fish_cake
   raw_text: 어묵 5장
@@ -83,13 +84,13 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: chili_oil
   raw_text: 올려주는 고추기름 2스푼
   role: sub
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: sesame_oil
   raw_text: 맛을 올리기 위해 참기름 한 스푼
   role: sub
   optional: false

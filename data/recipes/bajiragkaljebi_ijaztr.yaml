@@ -11,7 +11,7 @@ status: draft
 confidence: low
 note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
 ingredients:
-- ingredient: null
+- ingredient: instant_noodle_product
   raw_text: 멸치칼국수라면
   role: main
   optional: false
@@ -23,7 +23,7 @@ ingredients:
   optional: false
   amount: 500
   unit: g
-- ingredient: null
+- ingredient: sujebi
   raw_text: 냉동 수제비
   role: sub
   optional: false

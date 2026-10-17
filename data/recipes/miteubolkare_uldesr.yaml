@@ -11,7 +11,7 @@ status: draft
 confidence: low
 note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
 ingredients:
-- ingredient: null
+- ingredient: meatball
   raw_text: 레트로 미트볼
   role: main
   optional: false

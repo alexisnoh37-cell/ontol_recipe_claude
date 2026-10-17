@@ -53,7 +53,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 장
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 1개
   role: sub
   optional: false

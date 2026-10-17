@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2963. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2963. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: chicken
   raw_text: 닭고기(가슴살) 50g
@@ -13,13 +13,13 @@ ingredients:
 - ingredient: tofu
   raw_text: 두부 120g
   role: sub
-- ingredient: null
+- ingredient: beet
   raw_text: 비트 10g
   role: sub
 - ingredient: spinach
   raw_text: 시금치 10g
   role: sub
-- ingredient: null
+- ingredient: baby_greens
   raw_text: 베이비채소 1g
   role: sub
 - ingredient: garlic
@@ -28,7 +28,7 @@ ingredients:
 - ingredient: sesame_oil
   raw_text: 참기름 1.5g
   role: sub
-- ingredient: null
+- ingredient: sesame
   raw_text: 흑임자 3g
   role: sub
 - ingredient: yogurt

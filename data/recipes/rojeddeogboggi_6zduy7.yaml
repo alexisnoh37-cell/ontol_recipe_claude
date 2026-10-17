@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=6zDUY7hKRhc
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; cuisine '기타'→'한식'(vocab에 없음, 검수 필요)
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; cuisine '기타'→'한식'(vocab에 없음, 검수 필요); 재료 이름 '고추장 크게' → gochujang(이름 보정표)
 ingredients:
 - ingredient: fish_cake
   raw_text: 오뎅 2장
@@ -17,7 +17,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 장
-- ingredient: null
+- ingredient: sausage
   raw_text: 소세지 10개
   role: sub
   optional: false
@@ -35,7 +35,7 @@ ingredients:
   optional: false
   amount: 400
   unit: ml
-- ingredient: null
+- ingredient: gochujang
   raw_text: 고추장 크게 한스푼
   role: sub
   optional: false
@@ -47,7 +47,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: beef_seasoning
   raw_text: 소고기 다시다 반스푼
   role: sub
   optional: false
@@ -71,7 +71,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: dasida
   raw_text: 다시다 반스푼
   role: seasoning
   optional: false

@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=tQaucO9sIhI
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '굶은 소금' → salt(이름 보정표)
 ingredients:
 - ingredient: tteokbokki_rice_cake
   raw_text: 밀떡 500g
@@ -83,7 +83,7 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: salt
   raw_text: 굶은 소금 1/3스푼
   role: sub
   optional: false

@@ -29,7 +29,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: maesil_cheong
   raw_text: 매실청 2스푼
   role: seasoning
   optional: false

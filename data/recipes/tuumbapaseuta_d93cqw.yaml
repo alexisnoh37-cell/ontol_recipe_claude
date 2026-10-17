@@ -83,7 +83,7 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: chicken_stock
   raw_text: 치킨스톡 가루 반스푼
   role: sub
   optional: false

@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3682. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3682. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
 ingredients:
 - ingredient: null
   raw_text: 박력 쌀가루 56g
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: null
   raw_text: 무가당 코코아가루① 8g
   role: sub
-- ingredient: null
+- ingredient: yeast
   raw_text: 드라이 이스트 16g
   role: sub
 - ingredient: salt
@@ -46,10 +46,10 @@ ingredients:
 - ingredient: null
   raw_text: 무가당 코코아가루② 12g
   role: sub
-- ingredient: null
+- ingredient: allulose
   raw_text: 알룰로스 30g
   role: sub
-- ingredient: null
+- ingredient: egg
   raw_text: 달걀물 약간
   role: sub
 - ingredient: butter

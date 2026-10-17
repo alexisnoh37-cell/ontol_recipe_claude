@@ -17,7 +17,7 @@ ingredients:
   optional: false
   amount: 500
   unit: g
-- ingredient: null
+- ingredient: instant_noodle_product
   raw_text: 신라면 더레드 2개
   role: sub
   optional: false

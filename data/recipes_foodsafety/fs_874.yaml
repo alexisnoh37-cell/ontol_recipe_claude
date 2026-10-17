@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 874. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 874. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
 ingredients:
-- ingredient: null
+- ingredient: whelk
   raw_text: 골뱅이 25g
   role: sub
 - ingredient: onion
@@ -28,10 +28,10 @@ ingredients:
 - ingredient: null
   raw_text: 저나트륨초고추장소스
   role: sub
-- ingredient: null
+- ingredient: gochugaru
   raw_text: 고추가루 1g
   role: sub
-- ingredient: null
+- ingredient: ginger_juice
   raw_text: 생강즙 1g
   role: sub
 - ingredient: null
@@ -52,7 +52,7 @@ ingredients:
 - ingredient: sesame_oil
   raw_text: 참기름 1.3g
   role: sub
-- ingredient: null
+- ingredient: garlic
   raw_text: 마늘다진것 1g
   role: sub
 - ingredient: green_chili

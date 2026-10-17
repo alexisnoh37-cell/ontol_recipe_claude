@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3273. 요리종류 일품, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3273. 요리종류 일품, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
 ingredients:
 - ingredient: enoki
   raw_text: 팽이버섯(½봉)
@@ -40,16 +40,16 @@ ingredients:
 - ingredient: mung_bean_sprouts
   raw_text: 숙주(⅓줌)
   role: sub
-- ingredient: null
+- ingredient: egg
   raw_text: 달걀노른자(2개)
   role: sub
 - ingredient: crown_daisy
   raw_text: 쑥갓(⅓줌)
   role: sub
-- ingredient: null
+- ingredient: kabocha
   raw_text: 미니 단호박(½개)
   role: sub
-- ingredient: null
+- ingredient: shiitake
   raw_text: 생표고버섯(5개)
   role: sub
 - ingredient: bok_choy
@@ -67,7 +67,7 @@ ingredients:
 - ingredient: null
   raw_text: 현미쌀가루(¼컵)
   role: sub
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 저염 간장(2Ts)
   role: sub
 - ingredient: mirin
@@ -82,7 +82,7 @@ ingredients:
 - ingredient: null
   raw_text: 다진 쪽파(1Ts)
   role: sub
-- ingredient: null
+- ingredient: cheongyang_pepper
   raw_text: 다진 청양고추(0.5Ts)
   role: sub
 steps:

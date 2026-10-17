@@ -29,7 +29,7 @@ ingredients:
   optional: false
   amount: 3
   unit: 꼬집
-- ingredient: null
+- ingredient: msg
   raw_text: 미원 3꼬집
   role: sub
   optional: false

@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 409. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 409. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
 - ingredient: webfoot_octopus
   raw_text: 주꾸미 50g
@@ -13,7 +13,7 @@ ingredients:
 - ingredient: apple
   raw_text: 사과 60g
   role: sub
-- ingredient: null
+- ingredient: deodeok
   raw_text: 더덕 40g
   role: sub
 - ingredient: onion
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: red_chili
   raw_text: 홍고추 15g
   role: sub
-- ingredient: null
+- ingredient: garlic_oil
   raw_text: 마늘기름 30g
   role: sub
 - ingredient: vinegar
@@ -34,16 +34,16 @@ ingredients:
 - ingredient: garlic
   raw_text: 다진마늘 5g
   role: sub
-- ingredient: null
+- ingredient: green_onion
   raw_text: 다진대파 5g
   role: sub
 - ingredient: null
   raw_text: 레몬소금 1g
   role: sub
-- ingredient: null
+- ingredient: black_pepper
   raw_text: 흰후추 1g
   role: sub
-- ingredient: null
+- ingredient: green_chili
   raw_text: 다진청고추 15g
   role: sub
 - ingredient: lemon

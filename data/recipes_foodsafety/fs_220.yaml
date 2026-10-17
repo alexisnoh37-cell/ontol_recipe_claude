@@ -5,10 +5,10 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 220. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 220. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
-- ingredient: null
-  raw_text: 재료 감자(20g)
+- ingredient: potato
+  raw_text: 감자(20g)
   role: sub
 - ingredient: onion
   raw_text: 양파(10g)
@@ -31,16 +31,16 @@ ingredients:
 - ingredient: cherry_tomato
   raw_text: 방울토마토(20g)
   role: sub
-- ingredient: null
+- ingredient: yogurt
   raw_text: 플레인 요구르트(15g)
   role: sub
-- ingredient: null
-  raw_text: 양념 후춧가루(0.1g)
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.1g)
   role: sub
 - ingredient: tomato_paste
   raw_text: 토마토페이스트(20g)
   role: sub
-- ingredient: null
+- ingredient: paprika_powder
   raw_text: 파프리카가루(3g)
   role: sub
 - ingredient: curry_powder

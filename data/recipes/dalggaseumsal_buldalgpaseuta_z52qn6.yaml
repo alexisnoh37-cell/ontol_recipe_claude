@@ -9,7 +9,7 @@ servings: 1
 source: https://www.youtube.com/watch?v=Z52qN6AwhDU
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '양념은 불닭소스' → buldak_sauce(이름 보정표)
 ingredients:
 - ingredient: pasta
   raw_text: 파스타면 1인분 / 파스타면
@@ -59,7 +59,7 @@ ingredients:
   optional: false
   amount: 20
   unit: g
-- ingredient: null
+- ingredient: buldak_sauce
   raw_text: 양념은 불닭소스 3스푼 / 불닭소스 3스푼
   role: sub
   optional: false

@@ -9,7 +9,7 @@ servings: 2
 source: https://www.youtube.com/watch?v=x7iWsbtXndY
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '이때 고추장' → gochujang(이름 보정표); 재료 이름 '마지막 킥 다진생강' → ginger(이름 보정표)
 ingredients:
 - ingredient: squid
   raw_text: 오징어 1마리 / 오징어 한마리 / 오징어
@@ -65,7 +65,7 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: allulose
   raw_text: 알룰로스 2스푼
   role: seasoning
   optional: false
@@ -83,13 +83,13 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: gochujang
   raw_text: 이때 고추장 2스푼
   role: sub
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: ginger
   raw_text: 마지막 킥 다진생강 반스푼
   role: sub
   optional: false

@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 385. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 385. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
 ingredients:
 - ingredient: null
   raw_text: 홀토마토 200g
@@ -13,7 +13,7 @@ ingredients:
 - ingredient: tomato
   raw_text: 토마토 100g
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 다진양파 30g
   role: sub
 - ingredient: garlic
@@ -28,7 +28,7 @@ ingredients:
 - ingredient: parsley
   raw_text: 파슬리가루 1g
   role: sub
-- ingredient: null
+- ingredient: hamcho_salt
   raw_text: 함초소금 1g
   role: sub
 - ingredient: olive_oil

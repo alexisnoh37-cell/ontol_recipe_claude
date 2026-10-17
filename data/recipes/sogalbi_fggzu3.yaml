@@ -9,9 +9,9 @@ servings: null
 source: https://www.youtube.com/watch?v=fGGZU3iRDeY
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '코스트코에서' → beef_short_ribs(이름 보정표)
 ingredients:
-- ingredient: null
+- ingredient: beef_short_ribs
   raw_text: 코스트코에서 2.5kg
   role: main
   optional: false

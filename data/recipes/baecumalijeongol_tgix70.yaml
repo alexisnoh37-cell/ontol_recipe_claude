@@ -9,15 +9,15 @@ servings: null
 source: https://www.youtube.com/watch?v=TGIx70ZlRNM
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '잘 씻은 숙주나물' → mung_bean_sprouts(이름 보정표)
 ingredients:
-- ingredient: null
+- ingredient: napa_cabbage
   raw_text: 배추 잎 10장
   role: main
   optional: false
   amount: 10
   unit: 장
-- ingredient: null
+- ingredient: beef
   raw_text: 샤브샤브용 소고기 400g / 소고기 400g
   role: sub
   optional: false
@@ -65,7 +65,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: mung_bean_sprouts
   raw_text: 잘 씻은 숙주나물 200g / 숙주나물 200g
   role: sub
   optional: false

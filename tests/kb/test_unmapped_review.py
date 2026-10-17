@@ -1,37 +1,27 @@
-"""미매칭 보강 검수표(um-1): 제안 데이터가 지식과 충돌하지 않고, 엔진 레시피 미매칭을 모두 분류했으며, 검수표가 최신인지."""
+"""미매칭 보강(um-1 검수 → um-2 반영): 사람 결정이 knowledge·이름 보정표·변환 규칙에 그대로 반영됐는지.
+
+결정 원본: docs/review/unmapped_proposal.yaml(decision), 사람 내보내기 파일 docs/review/unmapped_decisions.json.
+"""
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pytest
+import yaml
 
 from kb import compile_paths
+from kb.foodsafety import ingredient_segments
 from kb.text import normalize_term
-from kb.unmapped_review import (
-    OUT,
-    PROPOSAL,
-    Entry,
-    ProposalError,
-    Unmapped,
-    Usage,
-    _resolved_keys,
-    candidate_knowledge,
-    engine_unmapped,
-    foodsafety_unmapped,
-    load_proposal,
-    make,
-    read_approvals,
-    simulate,
-    unclassified,
-)
+from kb.unmapped_review import PROPOSAL, ProposalError, engine_unmapped, load_proposal
+from kb.youtube_seed import NAME_OVERRIDES, YoutubeDataset, alias_index, convert, load_name_overrides
 
 ROOT = Path(__file__).resolve().parents[2]
 
-
-def _lf(text: str) -> str:
-    """git 줄바꿈 변환(CRLF)과 무관하게 비교한다."""
-    return text.replace("\r\n", "\n")
+# 사람 결정(2026-10-17): 레시피를 보여 줄 때 재료 목록 위에 시판 제품 안내를 띄우는 재료
+COMMERCIAL = {"instant_noodle_product", "naengmyeon_broth", "buldak_sauce", "sundae", "potato_chips",
+              "ssanghwatang", "misutgaru"}
 
 
 @pytest.fixture(scope="module")
@@ -40,44 +30,89 @@ def entries():
 
 
 @pytest.fixture(scope="module")
-def ck_now():
+def ck():
     return compile_paths(ROOT / "knowledge", ROOT / "config" / "pantry_staples.yaml")
 
 
 @pytest.fixture(scope="module")
-def eng(ck_now):
-    return engine_unmapped(ROOT, ck_now)
+def index(ck):
+    return alias_index(ck)
 
 
-def test_proposal_compiles_into_knowledge(entries, ck_now):
-    # 별칭 충돌·없는 id가 있으면 KnowledgeError/ProposalError. 새 재료는 모두 draft로 들어간다.
-    ck = candidate_knowledge(ROOT, entries)
-    new_ids = {e.new["id"] for e in entries if e.new}
-    assert new_ids and not new_ids & {i.id for i in ck_now.ingredients}
-    assert {i.id: i.status for i in ck.ingredients if i.id in new_ids} == dict.fromkeys(new_ids, "draft")
+@pytest.fixture(scope="module")
+def overrides(ck):
+    return load_name_overrides(ROOT, ck)
 
 
-def test_proposal_terms_are_still_unmapped(entries, ck_now):
-    # 지식이 바뀌어 이미 매핑되는 표기가 생기면 제안을 정리해야 한다.
-    index = {a.alias_norm for a in ck_now.aliases if a.ingredient_id not in ck_now.concept_ids}
-    stale = [t for e in entries for t in e.texts if normalize_term(t) in index]
-    assert not stale, stale
+def test_every_entry_has_a_human_decision(entries):
+    decisions = json.loads((ROOT / "docs" / "review" / "unmapped_decisions.json").read_text(encoding="utf-8"))
+    assert decisions["format"] == "unmapped-decisions/1"
+    assert all(e.decision in ("O", "X") for e in entries)
 
 
-def test_every_engine_unmapped_term_is_classified(entries, eng):
-    fs = Unmapped({}, {}, 0, 0)
-    e_left, _ = unclassified(entries, eng, fs)
-    assert not e_left, e_left
-
-
-def test_new_ingredients_with_possible_allergens_are_low_confidence(entries):
-    # 제품마다 성분이 다른 새 재료(possible 관계)는 confidence low로 검수표에 올린다(CLAUDE.md).
+def test_approved_aliases_and_new_ingredients_map(entries, ck, index):
+    status = {i.id: i.status for i in ck.ingredients}
     for e in entries:
-        if not e.new:
+        if e.decision != "O" or e.kind not in ("A", "B", "E"):
             continue
-        rels = list(e.new.get("derived_from", [])) + list(e.new.get("allergens", []))
-        if e.kind == "E" or any(isinstance(r, dict) and r.get("certainty") == "possible" for r in rels):
-            assert e.new["confidence"] == "low" or e.new["id"] == "mixed_nuts", e.new["id"]
+        expected = e.new["id"] if e.new else e.target
+        if e.new:
+            assert status.get(expected) == "draft", expected  # 재료 검수 전
+        for t in e.texts:
+            assert index.get(normalize_term(t)) == expected, (t, expected)
+
+
+def test_rejected_and_held_terms_stay_unmapped(entries, index, overrides):
+    # X(반영 안 함)와 C(보류)는 미매칭으로 남아 알레르기 사용자에게 계속 제외된다.
+    for e in entries:
+        if e.decision == "X" or e.kind == "C":
+            for t in e.texts:
+                k = normalize_term(t)
+                assert k not in index and k not in overrides, t
+
+
+def test_name_overrides_match_approved_d_entries(entries, overrides):
+    fs_rules = {"재료 닭가슴살", "양념 다진 마늘", "육수 무", "장식"}  # 식품안전나라는 변환 규칙으로 처리
+    expected = {}
+    for e in entries:
+        if e.kind == "D" and e.decision == "O" and e.key not in fs_rules:
+            fix = {"split": e.split} if e.split else {"drop": e.drop} if e.drop else {"id": e.target}
+            expected.update({normalize_term(t): fix for t in e.texts})
+    assert overrides == expected
+
+
+def test_drop_is_only_for_water_or_a_line_already_present(overrides):
+    assert {f["drop"].split(":")[0] for f in overrides.values() if "drop" in f} <= {"water", "duplicate"}
+
+
+def test_engine_recipes_left_unmapped_only_by_human_choice(entries, ck):
+    # 엔진 레시피(자취요리신·살림팝)에 남은 미매칭 표기는 모두 X·C로 결정된 것뿐이다.
+    left = set(engine_unmapped(ROOT, ck).terms)
+    kept = {normalize_term(t) for e in entries if e.decision == "X" or e.kind == "C" for t in e.texts}
+    assert left <= kept, sorted(left - kept)
+
+
+def test_commercial_notice_products_are_approved_and_configured(entries):
+    display = yaml.safe_load((ROOT / "config" / "display.yaml").read_text(encoding="utf-8"))
+    notice = display["commercial_product_notice"]
+    assert set(notice["ingredients"]) == COMMERCIAL
+    assert notice["text"] == "시판 제품으로 제품 성분을 확인해 알레르기 유무를 확인하시기 바랍니다."
+    approved = {e.new["id"] for e in entries if e.decision == "O" and e.new}
+    assert COMMERCIAL <= approved
+
+
+def test_commercial_products_keep_broad_possible_allergens(ck):
+    # 시판 제품은 성분이 제품마다 달라 넓게 '포함 가능'으로 둔다(사람이 승인한 목록, Gemini 지적 성분 포함).
+    closure: dict[str, set[str]] = {}
+    for r in ck.allergen_closure:
+        closure.setdefault(r.ingredient_id, set()).add(r.allergen_group_id)
+    assert {"peanut", "shrimp", "egg", "wheat"} <= closure["instant_noodle_product"]
+    assert {"pork", "shellfish"} <= closure["naengmyeon_broth"]
+    assert {"egg", "sesame"} <= closure["buldak_sauce"]
+    assert {"egg", "milk", "beef", "sesame"} <= closure["sundae"]
+    assert {"beef", "pork", "chicken", "egg", "tomato"} <= closure["potato_chips"]
+    assert "sulfites" in closure["ssanghwatang"]
+    assert {"peanut", "walnut", "buckwheat", "milk"} <= closure["misutgaru"]
 
 
 def test_duplicate_term_across_entries_is_rejected(tmp_path):
@@ -87,50 +122,48 @@ def test_duplicate_term_across_entries_is_rejected(tmp_path):
         load_proposal(p)
 
 
-def test_d_entry_needs_its_new_ingredient_approved():
-    entries = [
-        Entry(0, "E", ["코인"], new={"id": "x_stock", "name": "코인", "category": "육수·조미료"}),
-        Entry(1, "D", ["멸치 대신 코인"], target="x_stock"),
-        Entry(2, "D", ["마지막 꿀"], target="honey"),
-    ]
-    assert _resolved_keys(entries, {"D"}) == {"마지막꿀"}
-    assert _resolved_keys(entries, {"D", "E"}) == {"코인", "멸치대신코인", "마지막꿀"}
+# --- 변환 규칙 ---
+
+DS = YoutubeDataset(name="t", label="테스트", script="-")
 
 
-def test_simulate_counts_recipes_without_unmapped():
-    u = Unmapped({"a": Usage(2), "b": Usage(1)}, {"r1": {"a"}, "r2": {"a", "b"}}, 3, 10)
-    assert simulate(u, set()) == (3, 1)
-    assert simulate(u, {"a"}) == (1, 2)
-    assert simulate(u, {"a", "b"}) == (0, 3)
+def _src(*lines):
+    return {"id": "t1", "title": "테스트", "cuisine": "한식", "difficulty": 1, "cook_time_min": 10, "servings": 1,
+            "source": {"video_url": "https://www.youtube.com/watch?v=x"}, "status": "draft", "confidence": "low",
+            "note": None, "taste": None, "equipment": [], "steps": [],
+            "ingredients": [{"name": n, "raw_text": r, "role": role, "optional": False, "amount": 1.0, "unit": "개"}
+                            for n, r, role in lines]}
 
 
-def test_review_is_up_to_date_and_keeps_approvals():
-    # 검수표는 생성기 결과와 같아야 한다(승인 열은 기존 파일에서 가져와 유지).
-    assert _lf((ROOT / OUT).read_text(encoding="utf-8")) == _lf(make(ROOT))
-    assert isinstance(read_approvals(ROOT / OUT), dict)
+def test_override_maps_splits_and_drops(ck, index):
+    ov = {normalize_term("맛을 위해 참기름"): {"id": "sesame_oil"},
+          normalize_term("파란부분 올리브유"): {"split": [{"id": "green_onion", "amount": False}, {"id": "olive_oil"}]},
+          normalize_term("이제 물"): {"drop": "water"}}
+    out, unmapped, changes = convert(DS, ck, _src(("맛을 위해 참기름", "맛을 위해 참기름 1스푼", "seasoning"),
+                                                  ("파란부분 올리브유", "파란부분 올리브유 5스푼", "seasoning"),
+                                                  ("이제 물", "이제 물 700ml", "sub"),
+                                                  ("양파", "양파 1개", "main")), index, ov)
+    got = [(i["ingredient"], i["amount"]) for i in out["ingredients"]]
+    assert got == [("sesame_oil", 1.0), ("green_onion", None), ("olive_oil", 1.0), ("onion", 1.0)]
+    assert not unmapped and len(changes) == 3
 
 
-def test_foodsafety_counts_match_conversion_report():
-    fs = foodsafety_unmapped(ROOT)
-    assert fs.recipe_count == 1153
-    report = (ROOT / "docs" / "review" / "foodsafety_unmatched.md").read_text(encoding="utf-8")
-    assert f"미매칭: {sum(u.lines for u in fs.terms.values())}개" in report
+def test_override_refuses_to_drop_a_line_that_is_not_a_duplicate(ck, index):
+    # 한 줄 안에 두 표기가 적힌 경우("양념은 불닭소스 3스푼 / 불닭소스 3스푼")를 중복 줄로 오판해 빼면 알레르기 성분이 사라진다.
+    ov = {normalize_term("양념은 불닭소스"): {"drop": "duplicate:buldak_sauce"}}
+    with pytest.raises(SystemExit):
+        convert(DS, ck, _src(("양념은 불닭소스", "양념은 불닭소스 3스푼", "sub"), ("양파", "양파 1개", "main")), index, ov)
 
 
-def _html_script():
-    import importlib.util
-    spec = importlib.util.spec_from_file_location("make_unmapped_review_html", ROOT / "scripts" / "make_unmapped_review_html.py")
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod
+def test_override_file_rejects_unknown_ingredient(ck, tmp_path):
+    (tmp_path / "data").mkdir()
+    (tmp_path / NAME_OVERRIDES).write_text("overrides:\n- {names: [가], id: no_such_thing}\n", encoding="utf-8")
+    with pytest.raises(SystemExit):
+        load_name_overrides(tmp_path, ck)
 
 
-def test_review_html_is_up_to_date_and_prefill_covers_disagreements():
-    # 두 검토가 갈린 줄은 모두 미리 채울 판단(unmapped_prefill.yaml)이 있어야 생성된다. 화면 파일은 생성 결과와 같아야 한다.
-    mod = _html_script()
-    html, data = mod.build()
-    assert _lf((ROOT / "docs" / "review" / "unmapped_review.html").read_text(encoding="utf-8")) == _lf(html)
-    assert len(data) == len(load_proposal(ROOT / PROPOSAL))
-    assert {d["prefill"]["decision"] for d in data} <= {"O", "X", "보류"}
-    # 시판 제품(E)은 포장 확인 전 승인으로 미리 채우지 않는다.
-    assert all(d["prefill"]["decision"] != "O" for d in data if d["kind"] == "E")
+def test_foodsafety_strips_header_word_prefix_and_decor():
+    skipped: list[str] = []
+    out = ingredient_segments("재료 닭가슴살 100g, 양념 다진 마늘 1큰술, 소스 1큰술, 장식", "닭요리", skipped)
+    assert out == ["닭가슴살 100g", "다진 마늘 1큰술", "소스 1큰술"]
+    assert skipped == ["재료", "양념", "장식"]

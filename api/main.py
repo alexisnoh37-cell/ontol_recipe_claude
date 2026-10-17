@@ -23,7 +23,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from api.adhoc import analyze as analyze_adhoc
-from api.present import TASTE_DIMENSIONS, Catalog, load_display
+from api.present import TASTE_DIMENSIONS, Catalog, commercial_products, load_display
 from api.schemas import AnalyzeRecipeIn, PreferencesIn, ProfileCreate, ProfileOut, ProfileUpdate, RecommendIn
 from api.viz import GraphCatalog, RecipeOrigins, RecipeScope
 from engine.model import Preference, RecommendRequest, RecommendResult, TastePreference, UserContext
@@ -64,7 +64,7 @@ class State:
         def display_loader() -> list[Any]:  # 표시 전용 레시피(엔진·DB 미적재), 처음 요청 때만 읽는다
             return [s for _, d in origins.display_dirs for s in load_display_specs(data.knowledge, ROOT / d, ROOT)[0]]
 
-        graph = GraphCatalog(data, origins, display_loader)
+        graph = GraphCatalog(data, origins, display_loader, commercial_products(display))
         with self.lock:
             self.recommender: Recommender = recommender
             self.catalog: Catalog = catalog

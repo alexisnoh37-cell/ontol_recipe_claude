@@ -9,9 +9,10 @@ servings: null
 source: https://www.youtube.com/watch?v=0_72MGLlwxU
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '감자 큰거' → potato(이름 보정표); 재료 이름 '고추장 1 크게' → gochujang(이름 보정표); 재료
+  이름 '고추장 크게' → gochujang(이름 보정표)
 ingredients:
-- ingredient: null
+- ingredient: potato
   raw_text: 감자 큰거 2개
   role: main
   optional: false
@@ -41,7 +42,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 캔
-- ingredient: null
+- ingredient: gochujang
   raw_text: 고추장 1 크게 한큰술
   role: sub
   optional: false
@@ -71,7 +72,7 @@ ingredients:
   optional: false
   amount: 3
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 1개
   role: sub
   optional: false
@@ -89,7 +90,7 @@ ingredients:
   optional: false
   amount: 3
   unit: 큰술
-- ingredient: null
+- ingredient: gochujang
   raw_text: 고추장 크게 한큰술
   role: sub
   optional: false
