@@ -268,3 +268,6 @@ overrides:
   id: green_curry_paste
 - names: [머스터드조스]
   id: mustard_sauce
+# --- um-5(2026-10-18) 쌍점 오른쪽 '2가지색 …'을 양으로 읽던 문제 수정 뒤 드러난 줄 ---
+- names: [2가지색 미니파프리카 30g]
+  id: bell_pepper

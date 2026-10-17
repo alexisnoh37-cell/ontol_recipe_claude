@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>미매칭 4차 확인</title>
+<style>
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --text: #1d2330; --muted: #5d6676; --line: #dde1e7;
+  --accent: #2f5bd3; --accent-text: #ffffff;
+  --red-bg: #fdecec; --red-line: #d64545;
+  --yellow-bg: #fff6d6; --yellow-line: #c99a06;
+  --blue-bg: #e9f1fd; --blue-line: #3b74d4;
+  --white-bg: #ffffff; --white-line: #c9ced6;
+  --chip: #f1f3f6; --chip-warn: #fde3d6; --chip-warn-text: #8a3510;
+  --o: #1f8a4c; --x: #c23b3b; --hold: #b07d00;
+  --changed: #7a3fd1;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14171c; --panel: #1c2027; --text: #e6e9ee; --muted: #9aa3b2; --line: #2e343e;
+    --accent: #6d93ff; --accent-text: #0e1220;
+    --red-bg: #3a1f22; --red-line: #ff6b6b;
+    --yellow-bg: #3a3218; --yellow-line: #e2b93b;
+    --blue-bg: #1b2a44; --blue-line: #6d9bff;
+    --white-bg: #1c2027; --white-line: #3a404b;
+    --chip: #262b34; --chip-warn: #4a2a1d; --chip-warn-text: #ffb995;
+    --o: #4cc985; --x: #ff7a7a; --hold: #e8c04d;
+    --changed: #b48cff;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171c; --panel: #1c2027; --text: #e6e9ee; --muted: #9aa3b2; --line: #2e343e;
+  --accent: #6d93ff; --accent-text: #0e1220;
+  --red-bg: #3a1f22; --red-line: #ff6b6b;
+  --yellow-bg: #3a3218; --yellow-line: #e2b93b;
+  --blue-bg: #1b2a44; --blue-line: #6d9bff;
+  --white-bg: #1c2027; --white-line: #3a404b;
+  --chip: #262b34; --chip-warn: #4a2a1d; --chip-warn-text: #ffb995;
+  --o: #4cc985; --x: #ff7a7a; --hold: #e8c04d;
+  --changed: #b48cff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 15px/1.55 -apple-system, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; }
+header { padding: 20px 16px 8px; max-width: 1100px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 0 0 6px; }
+.lead { color: var(--muted); margin: 0 0 12px; }
+.legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 8px; margin: 10px 0 4px; }
+.legend button { text-align: left; border: 1px solid var(--line); border-left-width: 6px; border-radius: 8px;
+  padding: 8px 10px; background: var(--panel); color: var(--text); cursor: pointer; font: inherit; }
+.legend button[aria-pressed="true"] { outline: 2px solid var(--accent); }
+.legend b { display: block; }
+.legend small { color: var(--muted); }
+.lg-red { border-left-color: var(--red-line) !important; background: var(--red-bg) !important; }
+.lg-yellow { border-left-color: var(--yellow-line) !important; background: var(--yellow-bg) !important; }
+.lg-blue { border-left-color: var(--blue-line) !important; background: var(--blue-bg) !important; }
+.lg-white { border-left-color: var(--white-line) !important; }
+.bar { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+.bar-in { max-width: 1100px; margin: 0 auto; padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.bar input[type=search], .bar select { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--panel); color: var(--text); }
+.bar input[type=search] { flex: 1 1 180px; min-width: 0; }
+.bar label { display: inline-flex; gap: 4px; align-items: center; color: var(--muted); white-space: nowrap; }
+.btn { font: inherit; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--line); background: var(--panel);
+  color: var(--text); cursor: pointer; white-space: nowrap; }
+.btn.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 600; }
+.progress { width: 100%; font-size: 13px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; }
+.progress b { color: var(--text); }
+main { max-width: 1100px; margin: 0 auto; padding: 12px 16px 80px; }
+.empty { color: var(--muted); padding: 30px 0; text-align: center; }
+.card { border: 1px solid var(--line); border-left: 6px solid var(--white-line); border-radius: 10px;
+  background: var(--white-bg); padding: 12px 14px; margin: 0 0 10px; }
+.card.c-red { background: var(--red-bg); border-left-color: var(--red-line); }
+.card.c-yellow { background: var(--yellow-bg); border-left-color: var(--yellow-line); }
+.card.c-blue { background: var(--blue-bg); border-left-color: var(--blue-line); }
+.top { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.num { color: var(--muted); font-variant-numeric: tabular-nums; }
+.kind { font-size: 12px; font-weight: 700; padding: 1px 7px; border-radius: 10px; background: var(--chip); }
+.term { font-size: 17px; font-weight: 700; }
+.others { color: var(--muted); font-size: 13px; }
+.stats { margin-left: auto; color: var(--muted); font-size: 13px; white-space: nowrap; }
+.stats b { color: var(--text); }
+.prop { margin: 6px 0 4px; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 4px 0; }
+.chip { font-size: 12.5px; padding: 1px 8px; border-radius: 10px; background: var(--chip); }
+.chip.warn { background: var(--chip-warn); color: var(--chip-warn-text); }
+.chip.none { color: var(--muted); }
+.lbl { font-size: 12px; color: var(--muted); margin-right: 4px; }
+.decide { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; margin-top: 8px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel); }
+.seg button { font: inherit; font-weight: 700; border: 0; padding: 7px 14px; background: transparent; color: var(--muted); cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"][data-v="O"] { background: var(--o); color: #fff; }
+.seg button[aria-pressed="true"][data-v="X"] { background: var(--x); color: #fff; }
+.seg button[aria-pressed="true"][data-v="보류"] { background: var(--hold); color: #fff; }
+textarea { width: 100%; min-height: 38px; resize: vertical; font: inherit; padding: 6px 8px; border-radius: 6px;
+  border: 1px solid var(--line); background: var(--panel); color: var(--text); }
+.foot { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 6px; font-size: 13px; }
+.foot label { display: inline-flex; gap: 4px; align-items: center; cursor: pointer; }
+.changed { color: var(--changed); font-weight: 700; }
+.linkbtn { border: 0; background: none; color: var(--accent); cursor: pointer; font: inherit; padding: 0; }
+details { margin-top: 6px; }
+summary { cursor: pointer; color: var(--accent); font-size: 13px; }
+.ops { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px; margin-top: 6px; }
+.op { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 13.5px; }
+.op b { display: block; font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+.meta { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.meta div { margin: 2px 0; }
+.toast { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); background: var(--text); color: var(--bg);
+  padding: 8px 14px; border-radius: 8px; opacity: 0; transition: opacity .2s; pointer-events: none; max-width: 90vw; }
+.toast.show { opacity: 1; }
+@media (max-width: 640px) {
+  .decide { grid-template-columns: 1fr; }
+  .stats { margin-left: 0; width: 100%; }
+}
+</style>
+<style>
+.sect { margin: 6px 0 2px; font-size: 13.5px; }
+.sect .lbl { display: inline-block; min-width: 92px; }
+.idtag { color: var(--muted); font-size: 12px; font-family: ui-monospace, Consolas, monospace; }
+.badge-com { font-size: 12px; font-weight: 700; padding: 1px 7px; border-radius: 10px; background: var(--chip-warn); color: var(--chip-warn-text); }
+.via { font-size: 12.5px; color: var(--muted); margin: 1px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>미매칭 4차 정리 · 꼭 확인할 항목</h1>
+  <p class="lead">남은 미매칭 53줄을 조리 단계·원문과 함께 다시 봤습니다. 모두 지난 검수에서 보류·반영 안 함으로 정한 표기라, 바꾸려면 확인이 필요합니다. Claude가 미리 골라 두었으니 다르게 판단하는 재료만 바꾸세요.
+    다 끝나면 <b>결과 내보내기</b>로 받은 파일 경로를 Claude에게 알려 주면 knowledge에 반영합니다. 입력 내용은 이 브라우저에 자동 저장됩니다.</p>
+  <p class="lead"><b>O</b> 제안대로 연결·추가(메모가 있으면 고친 뒤) · <b>X</b> 지금처럼 미매칭 유지(알레르기 사용자에게 제외) · <b>보류</b> 이번에는 반영하지 않음.
+    알레르기 칸의 '(가능)'은 포함 가능이며 판정에서는 포함으로 간주합니다.</p>
+  <div class="legend" id="legend"></div>
+</header>
+<div class="bar"><div class="bar-in">
+  <input type="search" id="q" placeholder="재료·별칭·레시피 검색" aria-label="검색">
+  <select id="kind" aria-label="구분">
+    <option value="">모든 구분</option>
+    <option value="근거 있음">근거 있음</option><option value="시판·추정">시판·추정</option><option value="지난 결정 뒤집기">지난 결정 뒤집기</option>
+  </select>
+  <label><input type="checkbox" id="engOnly"> 추천 레시피에 쓰이는 것만</label>
+  <label><input type="checkbox" id="todo"> 확인 안 한 것만</label>
+  <label><input type="checkbox" id="mine"> 내가 바꾼 것만</label>
+  <button class="btn primary" id="export">결과 내보내기</button>
+  <button class="btn" id="importBtn">불러오기</button>
+  <input type="file" id="importFile" accept=".json,application/json" hidden>
+  <button class="btn" id="reset">처음 상태로</button>
+  <div class="progress" id="progress"></div>
+</div></div>
+<main id="list"></main>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const DATA = {"title": "미매칭 4차 확인", "rows": [{"n": 1, "id": "edible_flower", "name": "식용꽃", "origin": "지난 결정 뒤집기", "category": "채소", "conf": "low", "processed": false, "note": "9개 레시피의 장식용 꽃(팬지·비올라·금어초 등). ir-2에서 '종류 불명'으로 지웠으나, 장식 꽃은 법정 알레르기 대상이 아니어서 알레르기 없음으로 다시 넣자는 제안. 지우면 9개 레시피가 알레르기 사용자에게 계속 제외", "aliases": ["식용꽃"], "is_a": [], "derived_from": [], "allergens": [], "commercial": false, "engine": 0, "engineTitles": [], "fs": 9, "fsTitles": ["간장소스를 곁들인 새우전복찜", "깻잎퓌레를 곁들인 삼치새우", "깻잎향을 입힌 관자 샐러드", "배차와 주악", "북어비빔밥"], "claude": "9개 레시피의 장식용 꽃(팬지·비올라·금어초 등). ir-2에서 '종류 불명'으로 지웠으나, 장식 꽃은 법정 알레르기 대상이 아니어서 알레르기 없음으로 다시 넣자는 제안. 지우면 9개 레시피가 알레르기 사용자에게 계속 제외 승인하면 미매칭이 모두 풀리는 레시피 9개.", "prefill": {"decision": "O", "memo": "", "color": "red"}}, {"n": 2, "id": ".", "name": "'.' → 브로콜리 + 쪽파 + 그린빈 + 당근 + 양배추 + 파프리카 + 양파 + 풋고추 + 파슬리 + 밀가루 + 우유 + 계란 + 버터 + 식용유 + 카레가루 + 치킨스톡", "origin": "지난 결정 뒤집기", "category": "이름 보정(연결)", "conf": "low", "processed": false, "note": "채소 커리를 곁들인 팬케익(fs_799). 원문 재료정보가 '.' 하나뿐. 조리 단계에 나온 재료 16가지(브로콜리·실파·그린빈·당근·양배추·홍파프리카·양파·청고추·파슬리·밀가루·우유·달걀·버터·식용유·커리파우더·닭육수)로 재료 목록을 만든다(양 없음)", "aliases": ["."], "is_a": [], "derived_from": [], "allergens": [{"group": "밀", "possible": false, "via": "밀가루"}, {"group": "우유", "possible": false, "via": "우유"}, {"group": "알류(가금류)", "possible": false, "via": "계란"}, {"group": "쇠고기", "possible": true, "via": "카레가루 → 쇠고기"}, {"group": "닭고기", "possible": true, "via": "카레가루 → 닭고기"}, {"group": "돼지고기", "possible": true, "via": "카레가루 → 돼지고기"}, {"group": "대두", "possible": true, "via": "카레가루 → 대두"}, {"group": "토마토", "possible": true, "via": "카레가루 → 토마토"}], "commercial": false, "engine": 0, "engineTitles": [], "fs": 1, "fsTitles": ["채소 커리를 곁들인 팬케익"], "claude": "채소 커리를 곁들인 팬케익(fs_799). 원문 재료정보가 '.' 하나뿐. 조리 단계에 나온 재료 16가지(브로콜리·실파·그린빈·당근·양배추·홍파프리카·양파·청고추·파슬리·밀가루·우유·달걀·버터·식용유·커리파우더·닭육수)로 재료 목록을 만든다(양 없음) 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "red"}}, {"n": 3, "id": "조미유", "name": "'조미유' → 시판 라면 제품(면·스프 포함)", "origin": "시판·추정", "category": "이름 보정(연결)", "conf": "low", "processed": false, "note": "라면 봉지 속 스프·조미유(짜파게티·너구리·불닭·신라면). 시판 라면 제품(면·스프 포함, 넓게 포함 가능)으로 연결. 대부분 같은 레시피에 그 라면 줄이 이미 있어 알레르기 판정은 그대로", "aliases": ["조미유", "분말 스프", "불닭 스프", "라면스프", "스프"], "is_a": [], "derived_from": [], "allergens": [{"group": "쇠고기", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 쇠고기"}, {"group": "메밀", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 메밀"}, {"group": "닭고기", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 닭고기"}, {"group": "게", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 해산물 → 게"}, {"group": "알류(가금류)", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 계란"}, {"group": "고등어", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 해산물 → 생선 → 고등어"}, {"group": "우유", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 우유"}, {"group": "기타 연체류(문어·낙지·주꾸미)", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 해산물 → 문어"}, {"group": "기타 생선(고등어 외)", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 해산물 → 생선 → 멸치"}, {"group": "땅콩", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 땅콩"}, {"group": "돼지고기", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 돼지고기"}, {"group": "참깨", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 참깨"}, {"group": "조개류(굴·전복·홍합 포함)", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 해산물 → 조개"}, {"group": "새우", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 해산물 → 새우"}, {"group": "대두", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 대두"}, {"group": "오징어", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 해산물 → 오징어"}, {"group": "토마토", "possible": true, "via": "시판 라면 제품(면·스프 포함) → 토마토"}, {"group": "밀", "possible": false, "via": "시판 라면 제품(면·스프 포함) → 밀가루"}], "commercial": true, "engine": 10, "engineTitles": ["까르보 불닭 떡볶이", "당면게티", "라면", "로제찜닭", "매운 해물라면", "목살 짜파구리", "사천 짜계치볶이", "사천비빔면"], "fs": 2, "fsTitles": ["오색볶음면", "토마토라면"], "claude": "라면 봉지 속 스프·조미유(짜파게티·너구리·불닭·신라면). 시판 라면 제품(면·스프 포함, 넓게 포함 가능)으로 연결. 대부분 같은 레시피에 그 라면 줄이 이미 있어 알레르기 판정은 그대로 승인하면 미매칭이 모두 풀리는 레시피 12개.", "prefill": {"decision": "O", "memo": "", "color": "yellow"}}, {"n": 4, "id": "gat_jangajji", "name": "갓장아찌", "origin": "시판·추정", "category": "김치", "conf": "low", "processed": true, "note": "갓김치(스팸 덮밥). 원문 '갓장아찌(또는 씻은 묵은지) 1줌'. 간장 절임 기준(대두·밀). 묵은지는 같은 레시피에 따로 있음", "aliases": ["갓장아찌"], "is_a": [], "derived_from": ["간장", "설탕(가능)"], "allergens": [{"group": "대두", "possible": false, "via": "갓장아찌 → 간장 → 대두"}, {"group": "밀", "possible": false, "via": "갓장아찌 → 간장 → 밀가루"}], "commercial": true, "engine": 1, "engineTitles": ["갓김치"], "fs": 0, "fsTitles": [], "claude": "갓김치(스팸 덮밥). 원문 '갓장아찌(또는 씻은 묵은지) 1줌'. 간장 절임 기준(대두·밀). 묵은지는 같은 레시피에 따로 있음 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "yellow"}}, {"n": 5, "id": "cocoa_mix", "name": "코코아(가루·믹스)", "origin": "시판·추정", "category": "가공식품", "conf": "low", "processed": true, "note": "카카오 깜빠뉴(빵 반죽 30g). 무가당 코코아가루일 가능성이 높으나 우유가 든 코코아 믹스일 수 있어 우유·대두 포함 가능. 이 레시피에는 우유가 이미 있음", "aliases": ["코코아"], "is_a": [], "derived_from": ["코코아가루", "우유(가능)", "대두(가능)"], "allergens": [{"group": "우유", "possible": true, "via": "코코아(가루·믹스) → 우유"}, {"group": "대두", "possible": true, "via": "코코아(가루·믹스) → 대두"}], "commercial": true, "engine": 0, "engineTitles": [], "fs": 1, "fsTitles": ["카카오 깜빠뉴"], "claude": "카카오 깜빠뉴(빵 반죽 30g). 무가당 코코아가루일 가능성이 높으나 우유가 든 코코아 믹스일 수 있어 우유·대두 포함 가능. 이 레시피에는 우유가 이미 있음 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "yellow"}}, {"n": 6, "id": "kiwi_sauce", "name": "키위소스", "origin": "시판·추정", "category": "소스", "conf": "low", "processed": true, "note": "단호박 생선탕수. 시판 키위 소스·드레싱은 마요네즈(계란)·대두·밀이 들기도 함", "aliases": ["키위소스"], "is_a": [], "derived_from": ["키위", "설탕", "계란(가능)", "대두(가능)", "밀가루(가능)"], "allergens": [{"group": "알류(가금류)", "possible": true, "via": "키위소스 → 계란"}, {"group": "대두", "possible": true, "via": "키위소스 → 대두"}, {"group": "밀", "possible": true, "via": "키위소스 → 밀가루"}], "commercial": true, "engine": 0, "engineTitles": [], "fs": 1, "fsTitles": ["단호박 생선탕수, 키위소스"], "claude": "단호박 생선탕수. 시판 키위 소스·드레싱은 마요네즈(계란)·대두·밀이 들기도 함 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "yellow"}}, {"n": 7, "id": "basil_rub", "name": "바질 럽(양념)", "origin": "시판·추정", "category": "허브·향신료", "conf": "low", "processed": true, "note": "단호박 양고기볶음 '바질럽드(3Ts)'. 바질 양념(럽). 바질페스토처럼 잣·치즈가 들 수 있어 포함 가능", "aliases": ["바질럽드"], "is_a": [], "derived_from": ["바질", "마늘", "올리브유", "잣(가능)", "파마산치즈(가능)"], "allergens": [{"group": "우유", "possible": true, "via": "바질 럽(양념) → 파마산치즈 → 치즈 → 우유"}, {"group": "잣", "possible": true, "via": "바질 럽(양념) → 잣"}], "commercial": true, "engine": 0, "engineTitles": [], "fs": 1, "fsTitles": ["단호박 양고기볶음"], "claude": "단호박 양고기볶음 '바질럽드(3Ts)'. 바질 양념(럽). 바질페스토처럼 잣·치즈가 들 수 있어 포함 가능 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "yellow"}}, {"n": 8, "id": "meal_kit_sauce", "name": "간편식 동봉 소스", "origin": "시판·추정", "category": "소스", "conf": "low", "processed": true, "note": "'[가정 간편식 재료]'로 함께 오는 소스(양장피 콩국수 '볶음 소스(20g)', 고등어 라따뚜이 '양념장(75g)'). 성분 표시가 없어 넓게 포함 가능. 소제목 '볶음소스:'(뒤에 재료가 적힌 줄)는 지금처럼 뺀다", "aliases": ["볶음 소스", "양념장"], "is_a": [], "derived_from": ["대두(가능)", "밀가루(가능)", "참깨(가능)", "해산물(가능)", "쇠고기(가능)", "돼지고기(가능)", "닭고기(가능)", "계란(가능)", "우유(가능)", "토마토(가능)"], "allergens": [{"group": "쇠고기", "possible": true, "via": "간편식 동봉 소스 → 쇠고기"}, {"group": "닭고기", "possible": true, "via": "간편식 동봉 소스 → 닭고기"}, {"group": "게", "possible": true, "via": "간편식 동봉 소스 → 해산물 → 게"}, {"group": "알류(가금류)", "possible": true, "via": "간편식 동봉 소스 → 계란"}, {"group": "고등어", "possible": true, "via": "간편식 동봉 소스 → 해산물 → 생선 → 고등어"}, {"group": "우유", "possible": true, "via": "간편식 동봉 소스 → 우유"}, {"group": "기타 연체류(문어·낙지·주꾸미)", "possible": true, "via": "간편식 동봉 소스 → 해산물 → 문어"}, {"group": "기타 생선(고등어 외)", "possible": true, "via": "간편식 동봉 소스 → 해산물 → 생선 → 멸치"}, {"group": "돼지고기", "possible": true, "via": "간편식 동봉 소스 → 돼지고기"}, {"group": "참깨", "possible": true, "via": "간편식 동봉 소스 → 참깨"}, {"group": "조개류(굴·전복·홍합 포함)", "possible": true, "via": "간편식 동봉 소스 → 해산물 → 조개"}, {"group": "새우", "possible": true, "via": "간편식 동봉 소스 → 해산물 → 새우"}, {"group": "대두", "possible": true, "via": "간편식 동봉 소스 → 대두"}, {"group": "오징어", "possible": true, "via": "간편식 동봉 소스 → 해산물 → 오징어"}, {"group": "토마토", "possible": true, "via": "간편식 동봉 소스 → 토마토"}, {"group": "밀", "possible": true, "via": "간편식 동봉 소스 → 밀가루"}], "commercial": true, "engine": 0, "engineTitles": [], "fs": 2, "fsTitles": ["고등어 라따뚜이 파스타", "해산물 완자볼을 곁들인 양장피 콩국수"], "claude": "'[가정 간편식 재료]'로 함께 오는 소스(양장피 콩국수 '볶음 소스(20g)', 고등어 라따뚜이 '양념장(75g)'). 성분 표시가 없어 넓게 포함 가능. 소제목 '볶음소스:'(뒤에 재료가 적힌 줄)는 지금처럼 뺀다 승인하면 미매칭이 모두 풀리는 레시피 2개.", "prefill": {"decision": "O", "memo": "", "color": "yellow"}}, {"n": 9, "id": "수제조미료", "name": "'수제조미료' → 육수(종류 불명)", "origin": "시판·추정", "category": "이름 보정(연결)", "conf": "low", "processed": false, "note": "연어스테이크 '수제조미료 10g'. 가정에서 만든 천연 조미료(멸치·새우·다시마·버섯 가루 등)로 보고 육수(종류 불명)와 같은 넓은 기준", "aliases": ["수제조미료"], "is_a": [], "derived_from": [], "allergens": [{"group": "쇠고기", "possible": true, "via": "육수(종류 불명) → 쇠고기"}, {"group": "닭고기", "possible": true, "via": "육수(종류 불명) → 닭고기"}, {"group": "게", "possible": true, "via": "육수(종류 불명) → 해산물 → 게"}, {"group": "고등어", "possible": true, "via": "육수(종류 불명) → 해산물 → 생선 → 고등어"}, {"group": "기타 연체류(문어·낙지·주꾸미)", "possible": true, "via": "육수(종류 불명) → 해산물 → 문어"}, {"group": "기타 생선(고등어 외)", "possible": true, "via": "육수(종류 불명) → 해산물 → 생선 → 멸치"}, {"group": "돼지고기", "possible": true, "via": "육수(종류 불명) → 돼지고기"}, {"group": "조개류(굴·전복·홍합 포함)", "possible": true, "via": "육수(종류 불명) → 해산물 → 조개"}, {"group": "새우", "possible": true, "via": "육수(종류 불명) → 해산물 → 새우"}, {"group": "대두", "possible": true, "via": "육수(종류 불명) → 대두"}, {"group": "오징어", "possible": true, "via": "육수(종류 불명) → 해산물 → 오징어"}, {"group": "밀", "possible": true, "via": "육수(종류 불명) → 밀가루"}], "commercial": true, "engine": 0, "engineTitles": [], "fs": 1, "fsTitles": ["연어스테이크"], "claude": "연어스테이크 '수제조미료 10g'. 가정에서 만든 천연 조미료(멸치·새우·다시마·버섯 가루 등)로 보고 육수(종류 불명)와 같은 넓은 기준 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "yellow"}}, {"n": 10, "id": "herb_crust", "name": "허브크러스트", "origin": "시판·추정", "category": "곡류·가루", "conf": "low", "processed": true, "note": "조기까스 '허브크러스트 100g'. 빵가루에 허브·치즈·버터를 섞은 것. 밀 확정, 우유·계란 포함 가능", "aliases": ["허브크러스트"], "is_a": [], "derived_from": ["빵가루", "파마산치즈(가능)", "버터(가능)", "계란(가능)"], "allergens": [{"group": "알류(가금류)", "possible": true, "via": "허브크러스트 → 계란"}, {"group": "우유", "possible": true, "via": "허브크러스트 → 빵가루 → 우유"}, {"group": "대두", "possible": true, "via": "허브크러스트 → 빵가루 → 대두"}, {"group": "밀", "possible": false, "via": "허브크러스트 → 빵가루 → 밀가루"}], "commercial": true, "engine": 0, "engineTitles": [], "fs": 1, "fsTitles": ["조기까스"], "claude": "조기까스 '허브크러스트 100g'. 빵가루에 허브·치즈·버터를 섞은 것. 밀 확정, 우유·계란 포함 가능 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "yellow"}}, {"n": 11, "id": "color_powder", "name": "색 내는 가루(채소·곡물 분말)", "origin": "시판·추정", "category": "곡류·가루", "conf": "low", "processed": false, "note": "황태탕수육 '삼색분말(각 10g)'. 조리 단계 '밀가루를 세 군데로 나눠 각각 … 삼색 가루를 넣어 세 가지 색' → 단호박·시금치·비트 같은 색 내는 가루로 보고 알레르기 없음으로 둠. 녹차·흑미 등 다른 가루여도 법정 알레르기는 없음", "aliases": ["삼색분말"], "is_a": [], "derived_from": [], "allergens": [], "commercial": true, "engine": 0, "engineTitles": [], "fs": 1, "fsTitles": ["황태탕수육"], "claude": "황태탕수육 '삼색분말(각 10g)'. 조리 단계 '밀가루를 세 군데로 나눠 각각 … 삼색 가루를 넣어 세 가지 색' → 단호박·시금치·비트 같은 색 내는 가루로 보고 알레르기 없음으로 둠. 녹차·흑미 등 다른 가루여도 법정 알레르기는 없음 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "yellow"}}, {"n": 12, "id": "hotteok_mix", "name": "호떡 믹스", "origin": "시판·추정", "category": "곡류·가루", "conf": "low", "processed": true, "note": "약밥 닮은 호떡 '호떡반죽(200g)'에 물을 넣어 반죽·발효 → 시판 호떡 믹스. 밀 확정, 우유·대두·계란 포함 가능", "aliases": ["호떡반죽"], "is_a": [], "derived_from": ["밀가루", "찹쌀가루(가능)", "우유(가능)", "대두(가능)", "계란(가능)"], "allergens": [{"group": "알류(가금류)", "possible": true, "via": "호떡 믹스 → 계란"}, {"group": "우유", "possible": true, "via": "호떡 믹스 → 우유"}, {"group": "대두", "possible": true, "via": "호떡 믹스 → 대두"}, {"group": "밀", "possible": false, "via": "호떡 믹스 → 밀가루"}], "commercial": true, "engine": 0, "engineTitles": [], "fs": 1, "fsTitles": ["약밥 닮은 호떡"], "claude": "약밥 닮은 호떡 '호떡반죽(200g)'에 물을 넣어 반죽·발효 → 시판 호떡 믹스. 밀 확정, 우유·대두·계란 포함 가능 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "yellow"}}, {"n": 13, "id": "비빌 때", "name": "'비빌 때' → 올리브유", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "김치비빔국수. 조리 단계 '올리브유 2스푼(삶을 때 1스푼, 비빌 때 한스푼)'", "aliases": ["비빌 때"], "is_a": [], "derived_from": [], "allergens": [], "commercial": false, "engine": 1, "engineTitles": ["김치비빔국수"], "fs": 0, "fsTitles": [], "claude": "김치비빔국수. 조리 단계 '올리브유 2스푼(삶을 때 1스푼, 비빌 때 한스푼)' 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}, {"n": 14, "id": "잘 안뭉쳐서", "name": "'잘 안뭉쳐서' → 전분", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "한판탕. 원문 '전분가루를 처음에 8스푼, 잘 안뭉쳐서 10스푼' → 전분가루", "aliases": ["잘 안뭉쳐서"], "is_a": [], "derived_from": [], "allergens": [{"group": "밀", "possible": true, "via": "전분 → 밀가루"}], "commercial": false, "engine": 1, "engineTitles": ["한판탕"], "fs": 0, "fsTitles": [], "claude": "한판탕. 원문 '전분가루를 처음에 8스푼, 잘 안뭉쳐서 10스푼' → 전분가루 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}, {"n": 15, "id": "마지막에", "name": "'마지막에' → 참깨", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "인생간장국수. 원문 '깨소금이 핵심이에요 영상에서는 2스푼, 마지막에 한스푼' → 깨소금(참깨)", "aliases": ["마지막에"], "is_a": [], "derived_from": [], "allergens": [{"group": "참깨", "possible": false, "via": "참깨"}], "commercial": false, "engine": 1, "engineTitles": ["인생간장국수"], "fs": 0, "fsTitles": [], "claude": "인생간장국수. 원문 '깨소금이 핵심이에요 영상에서는 2스푼, 마지막에 한스푼' → 깨소금(참깨) 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}, {"n": 16, "id": "아니 저는", "name": "'아니 저는' → 메밀면", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "들기름막국수. 조리 단계 '1인분 아니 저는 2인분 끓는 물에 5분간 삶아' → 막국수(같은 레시피에 막국수 줄 있음)", "aliases": ["아니 저는"], "is_a": [], "derived_from": [], "allergens": [{"group": "메밀", "possible": false, "via": "메밀면 → 메밀"}, {"group": "밀", "possible": true, "via": "메밀면 → 밀가루"}], "commercial": false, "engine": 1, "engineTitles": ["자꾸 생각나는 들기름막국수"], "fs": 0, "fsTitles": [], "claude": "들기름막국수. 조리 단계 '1인분 아니 저는 2인분 끓는 물에 5분간 삶아' → 막국수(같은 레시피에 막국수 줄 있음) 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}, {"n": 17, "id": "000원에", "name": "'000원에' → 애호박", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "찌개. 'OOOO원에 2개'는 애호박 값 자막으로 보임(같은 레시피에 애호박 줄 있음)", "aliases": ["000원에"], "is_a": [], "derived_from": [], "allergens": [], "commercial": false, "engine": 1, "engineTitles": ["찌개"], "fs": 0, "fsTitles": [], "claude": "찌개. 'OOOO원에 2개'는 애호박 값 자막으로 보임(같은 레시피에 애호박 줄 있음) 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}, {"n": 18, "id": "볶을때 단단", "name": "'볶을때 단단' → 공심채", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "마늘밥+모닝글로리. 조리 단계 '볶을때 단단한 줄기 먼저 볶고' → 공심채 줄기", "aliases": ["볶을때 단단"], "is_a": [], "derived_from": [], "allergens": [], "commercial": false, "engine": 1, "engineTitles": ["마늘밥 + 모닝글로리"], "fs": 0, "fsTitles": [], "claude": "마늘밥+모닝글로리. 조리 단계 '볶을때 단단한 줄기 먼저 볶고' → 공심채 줄기 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}, {"n": 19, "id": "저도 제일 좋아하는 반찬", "name": "'저도 제일 좋아하는 반찬' → 뺌(재료 아님)", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "제육볶음. 요리를 소개하는 자막('제가 제일 좋아하는 반찬'). 재료 아님", "aliases": ["저도 제일 좋아하는 반찬"], "is_a": [], "derived_from": [], "allergens": [], "commercial": false, "engine": 1, "engineTitles": ["제육볶음"], "fs": 0, "fsTitles": [], "claude": "제육볶음. 요리를 소개하는 자막('제가 제일 좋아하는 반찬'). 재료 아님 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}, {"n": 20, "id": "볶다가 재료", "name": "'볶다가 재료' → 뺌(재료 아님)", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "스팸순두부찌개. 조리 단계 '볶다가 재료 한쪽으로 민 뒤'. 재료 아님", "aliases": ["볶다가 재료"], "is_a": [], "derived_from": [], "allergens": [], "commercial": false, "engine": 1, "engineTitles": ["류수영님 스팸순두부찌개"], "fs": 0, "fsTitles": [], "claude": "스팸순두부찌개. 조리 단계 '볶다가 재료 한쪽으로 민 뒤'. 재료 아님 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}, {"n": 21, "id": "양은", "name": "'양은' → 뺌(재료 아님)", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "순두부버섯덮밥. '양은 2인분'(분량 안내). 재료 아님", "aliases": ["양은"], "is_a": [], "derived_from": [], "allergens": [], "commercial": false, "engine": 1, "engineTitles": ["순두부버섯덮밥"], "fs": 0, "fsTitles": [], "claude": "순두부버섯덮밥. '양은 2인분'(분량 안내). 재료 아님 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}, {"n": 22, "id": "제가 제일 좋아하는 식재료", "name": "'제가 제일 좋아하는 식재료' → 뺌(재료 아님)", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "양배추삼겹살덮밥. '제가 제일 좋아하는 식재료 2개'는 이어지는 양배추·삼겹살을 가리킴(둘 다 재료 줄 있음)", "aliases": ["제가 제일 좋아하는 식재료"], "is_a": [], "derived_from": [], "allergens": [], "commercial": false, "engine": 1, "engineTitles": ["양배추삼겹살덮밥"], "fs": 0, "fsTitles": [], "claude": "양배추삼겹살덮밥. '제가 제일 좋아하는 식재료 2개'는 이어지는 양배추·삼겹살을 가리킴(둘 다 재료 줄 있음) 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}, {"n": 23, "id": "적절", "name": "'적절' → 뺌(재료 아님)", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "삼겹살 된장구이. '적절한 단(짠)…' 자막 조각. 재료 아님", "aliases": ["적절"], "is_a": [], "derived_from": [], "allergens": [], "commercial": false, "engine": 1, "engineTitles": ["영상 보시면 아시겠지만"], "fs": 0, "fsTitles": [], "claude": "삼겹살 된장구이. '적절한 단(짠)…' 자막 조각. 재료 아님 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}, {"n": 24, "id": "양파오이지 채수", "name": "'양파오이지 채수' → 오이 + 양파", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "비빔국수. 원문 줄 '양파오이지 채수 4스푼 / 오이1개 / 오이 한개 / 양파 반개 / 채수 4스푼'에 오이·양파가 묻혀 있음. 조리 단계상 채수는 오이·양파에 소금·설탕(둘 다 재료 줄 있음)을 뿌려 낸 물", "aliases": ["양파오이지 채수"], "is_a": [], "derived_from": [], "allergens": [], "commercial": false, "engine": 1, "engineTitles": ["비빔국수"], "fs": 0, "fsTitles": [], "claude": "비빔국수. 원문 줄 '양파오이지 채수 4스푼 / 오이1개 / 오이 한개 / 양파 반개 / 채수 4스푼'에 오이·양파가 묻혀 있음. 조리 단계상 채수는 오이·양파에 소금·설탕(둘 다 재료 줄 있음)을 뿌려 낸 물 승인하면 미매칭이 모두 풀리는 레시피 1개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}, {"n": 25, "id": "분말가루", "name": "'분말가루' → 시판 육수(코인·분말)", "origin": "근거 있음", "category": "이름 보정(연결)", "conf": "high", "processed": false, "note": "참치애호박찌개·참치두부조림·돼지곰탕·등갈비·잔치국수. 조리 단계 '분말가루 한 포' → 분말 육수 한 포. 1차 메모대로 '시판 육수'(승인된 재료)로 연결", "aliases": ["분말가루"], "is_a": [], "derived_from": [], "allergens": [{"group": "쇠고기", "possible": true, "via": "시판 육수(코인·분말) → 쇠고기"}, {"group": "닭고기", "possible": true, "via": "시판 육수(코인·분말) → 닭고기"}, {"group": "게", "possible": true, "via": "시판 육수(코인·분말) → 해산물 → 게"}, {"group": "고등어", "possible": true, "via": "시판 육수(코인·분말) → 해산물 → 생선 → 고등어"}, {"group": "우유", "possible": true, "via": "시판 육수(코인·분말) → 우유"}, {"group": "기타 연체류(문어·낙지·주꾸미)", "possible": true, "via": "시판 육수(코인·분말) → 해산물 → 문어"}, {"group": "기타 생선(고등어 외)", "possible": true, "via": "시판 육수(코인·분말) → 해산물 → 생선 → 멸치"}, {"group": "돼지고기", "possible": true, "via": "시판 육수(코인·분말) → 돼지고기"}, {"group": "조개류(굴·전복·홍합 포함)", "possible": true, "via": "시판 육수(코인·분말) → 해산물 → 조개"}, {"group": "새우", "possible": true, "via": "시판 육수(코인·분말) → 해산물 → 새우"}, {"group": "대두", "possible": true, "via": "시판 육수(코인·분말) → 대두"}, {"group": "오징어", "possible": true, "via": "시판 육수(코인·분말) → 해산물 → 오징어"}, {"group": "밀", "possible": true, "via": "시판 육수(코인·분말) → 밀가루"}], "commercial": false, "engine": 5, "engineTitles": ["강력추천 등갈비", "돼지곰탕", "잔치국수", "참치두부조림", "참치애호박찌개"], "fs": 0, "fsTitles": [], "claude": "참치애호박찌개·참치두부조림·돼지곰탕·등갈비·잔치국수. 조리 단계 '분말가루 한 포' → 분말 육수 한 포. 1차 메모대로 '시판 육수'(승인된 재료)로 연결 승인하면 미매칭이 모두 풀리는 레시피 5개.", "prefill": {"decision": "O", "memo": "", "color": "blue"}}], "source": "docs/review/unmapped_round4.yaml (decision 없음 = 꼭 확인)"};
+const FORMAT = "unmapped-round4-decisions/1";
+const COLORS = {
+  red: ["꼭 봐야 함", "지난 결정을 뒤집는 판단"],
+  yellow: ["확인 후 결정", "시판·가정식 제품 성분을 넓게 추정"],
+  blue: ["근거 확인", "조리 단계·원문에 근거가 있는 연결"],
+  white: ["넘어가도 됨", "알레르기 없는 단순 재료"],
+};
+const KEY = "unmapped-round4/" + DATA.rows.map(r => r.id).join("|").length + "/" + DATA.rows.length;
+let state = {};
+let colorFilter = "";
+
+function load() { try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; } }
+function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* 저장 불가 환경: 화면 상태만 유지 */ } }
+function cur(r) {
+  const s = state[r.id] || {};
+  return { decision: s.decision ?? r.prefill.decision, memo: s.memo ?? r.prefill.memo, checked: !!s.checked };
+}
+function changed(r) { const c = cur(r); return c.decision !== r.prefill.decision || c.memo.trim() !== r.prefill.memo.trim(); }
+function setField(r, field, value) { state[r.id] = Object.assign({}, state[r.id], { [field]: value }); save(); }
+function esc(s) { return String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch])); }
+function toast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove("show"), 2200);
+}
+function chips(items, cls) {
+  return items.length ? items.map(x => `<span class="chip ${cls || ""}">${esc(x)}</span>`).join("") : `<span class="chip none">없음</span>`;
+}
+
+function renderLegend() {
+  const el = document.getElementById("legend");
+  el.innerHTML = Object.entries(COLORS).map(([c, [title, desc]]) => {
+    const n = DATA.rows.filter(r => r.prefill.color === c).length;
+    return `<button class="lg-${c}" data-color="${c}" aria-pressed="${colorFilter === c}"><b>${title} · ${n}개</b><small>${desc}</small></button>`;
+  }).join("");
+  el.querySelectorAll("button").forEach(b => b.onclick = () => {
+    colorFilter = colorFilter === b.dataset.color ? "" : b.dataset.color;
+    renderLegend(); renderList();
+  });
+}
+
+function visible(r) {
+  const q = document.getElementById("q").value.trim();
+  const kind = document.getElementById("kind").value;
+  if (colorFilter && r.prefill.color !== colorFilter) return false;
+  if (kind && r.origin !== kind) return false;
+  if (document.getElementById("engOnly").checked && r.engine === 0) return false;
+  if (document.getElementById("todo").checked && cur(r).checked) return false;
+  if (document.getElementById("mine").checked && !changed(r)) return false;
+  if (q) {
+    const hay = [r.name, r.id, r.aliases.join(" "), r.engineTitles.join(" "), r.fsTitles.join(" "), r.note].join(" ");
+    if (!hay.includes(q)) return false;
+  }
+  return true;
+}
+
+function cardHtml(r) {
+  const c = cur(r);
+  const allergens = r.allergens.length
+    ? r.allergens.map(a => `<span class="chip ${a.possible ? "warn" : ""}" title="${esc(a.via)}">${esc(a.group)}${a.possible ? "(가능)" : ""}</span>`).join("")
+    : `<span class="chip none">알레르기 없음</span>`;
+  const rel = [];
+  if (r.is_a.length) rel.push(`<div class="sect"><span class="lbl">상위 재료(is_a)</span>${chips(r.is_a)}</div>`);
+  if (r.derived_from.length) rel.push(`<div class="sect"><span class="lbl">원천(derived_from)</span>${chips(r.derived_from)}</div>`);
+  return `
+  <article class="card c-${r.prefill.color}" id="r-${r.id}">
+    <div class="top">
+      <span class="num">#${r.n}</span>
+      <span class="kind">${esc(r.origin)}</span>
+      <span class="term">${esc(r.name)}</span>
+      <span class="idtag">${esc(r.id)}</span>
+      ${r.commercial ? `<span class="badge-com">시판 제품 안내 대상</span>` : ""}
+      <span class="stats">추천 레시피 <b>${r.engine}</b> · 식품안전나라 <b>${r.fs}</b></span>
+    </div>
+    <div class="sect"><span class="lbl">분류</span>${esc(r.category)}${r.processed ? " · 가공품" : ""} <span class="chip">conf ${esc(r.conf)}</span></div>
+    <div class="sect"><span class="lbl">별칭</span>${chips(r.aliases)}</div>
+    ${rel.join("")}
+    <div class="chips"><span class="lbl">알레르기(상속 포함)</span>${allergens}</div>
+    <div class="decide">
+      <div class="seg" role="group" aria-label="승인">
+        ${["O", "X", "보류"].map(v => `<button data-v="${v}" aria-pressed="${c.decision === v}">${v}</button>`).join("")}
+      </div>
+      <textarea placeholder="고칠 내용(선택): 알레르기 추가·삭제, 분류, 별칭 등" aria-label="메모">${esc(c.memo)}</textarea>
+    </div>
+    <div class="foot">
+      <label><input type="checkbox" class="chk" ${c.checked ? "checked" : ""}> 확인함</label>
+      <span class="chg"></span>
+    </div>
+    <details>
+      <summary>의견·근거 보기</summary>
+      <div class="ops">
+        <div class="op"><b>Claude</b>${esc(r.claude) || "—"}</div>
+        <div class="op"><b>재료 메모(knowledge note)</b>${esc(r.note) || "—"}</div>
+      </div>
+      <div class="meta">
+        ${r.allergens.length ? `<div>알레르기 경로</div>` + r.allergens.map(a => `<div class="via">${esc(a.group)}${a.possible ? "(가능)" : ""}: ${esc(a.via)}</div>`).join("") : ""}
+        <div>쓰이는 추천 레시피${r.engine > r.engineTitles.length ? ` (${r.engine}개 중 ${r.engineTitles.length}개)` : ""}: ${esc(r.engineTitles.join(", ") || "없음")}</div>
+        <div>식품안전나라 예시: ${esc(r.fsTitles.join(", ") || "없음")}</div>
+        <div>미리 채운 값: ${esc(r.prefill.decision)}${r.prefill.memo ? " · " + esc(r.prefill.memo) : ""}</div>
+      </div>
+    </details>
+  </article>`;
+}
+
+function bind(card, r) {
+  card.querySelectorAll(".seg button").forEach(b => b.onclick = () => {
+    setField(r, "decision", b.dataset.v);
+    card.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    refreshCard(card, r); renderProgress();
+  });
+  const ta = card.querySelector("textarea");
+  ta.oninput = () => { setField(r, "memo", ta.value); refreshCard(card, r); renderProgress(); };
+  card.querySelector(".chk").onchange = e => { setField(r, "checked", e.target.checked); renderProgress(); };
+}
+function refreshCard(card, r) {
+  const chg = card.querySelector(".chg");
+  chg.innerHTML = changed(r) ? `<span class="changed">내가 바꿈</span> <button class="linkbtn undo">미리 채운 값으로 되돌리기</button>` : "";
+  const undo = chg.querySelector(".undo");
+  if (undo) undo.onclick = () => {
+    const keep = (state[r.id] || {}).checked;
+    state[r.id] = keep ? { checked: true } : {};
+    save();
+    const fresh = document.createElement("div"); fresh.innerHTML = cardHtml(r);
+    const nc = fresh.firstElementChild; card.replaceWith(nc); bind(nc, r); refreshCard(nc, r); renderProgress();
+  };
+}
+
+function renderList() {
+  const list = document.getElementById("list");
+  const rows = DATA.rows.filter(visible);
+  list.innerHTML = rows.length ? rows.map(cardHtml).join("") : `<p class="empty">조건에 맞는 재료가 없습니다.</p>`;
+  rows.forEach(r => { const card = document.getElementById("r-" + r.id); bind(card, r); refreshCard(card, r); });
+  renderProgress(rows.length);
+}
+function renderProgress(shown) {
+  if (shown === undefined) shown = document.querySelectorAll("#list .card").length;
+  const rows = DATA.rows;
+  const flagged = rows.filter(r => r.prefill.color !== "white");
+  const doneFlagged = flagged.filter(r => cur(r).checked).length;
+  const count = v => rows.filter(r => cur(r).decision === v).length;
+  document.getElementById("progress").innerHTML =
+    `<span>표시 <b>${shown}</b> / ${rows.length}개</span>` +
+    `<span>색 있는 재료 확인 <b>${doneFlagged}</b> / ${flagged.length}</span>` +
+    `<span>O <b>${count("O")}</b> · X <b>${count("X")}</b> · 보류 <b>${count("보류")}</b></span>` +
+    `<span>내가 바꾼 재료 <b>${rows.filter(changed).length}</b></span>`;
+}
+
+function exportResult() {
+  const out = {
+    format: FORMAT, source: DATA.source, exported_at: new Date().toISOString(),
+    rows: DATA.rows.map(r => {
+      const c = cur(r);
+      return { n: r.n, id: r.id, name: r.name, origin: r.origin, decision: c.decision, memo: c.memo.trim(), checked: c.checked,
+        changed: changed(r), prefill_decision: r.prefill.decision, prefill_memo: r.prefill.memo };
+    }),
+  };
+  const blob = new Blob([JSON.stringify(out, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "unmapped_round4_decisions.json";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  toast("unmapped_round4_decisions.json을 내려받았습니다. 파일 경로를 Claude에게 알려 주세요.");
+}
+function importResult(file) {
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      if (data.format !== FORMAT) throw new Error("형식이 다릅니다");
+      const ids = new Set(DATA.rows.map(r => r.id));
+      let n = 0; state = {};
+      data.rows.forEach(x => { if (!ids.has(x.id)) return; state[x.id] = { decision: x.decision, memo: x.memo, checked: !!x.checked }; n++; });
+      save(); renderList(); toast(`${n}개를 불러왔습니다.`);
+    } catch (e) { toast("불러오지 못했습니다: " + e.message); }
+  };
+  reader.readAsText(file, "utf-8");
+}
+
+load();
+renderLegend();
+renderList();
+["q", "kind", "engOnly", "todo", "mine"].forEach(id => document.getElementById(id).addEventListener("input", renderList));
+document.getElementById("export").onclick = exportResult;
+document.getElementById("importBtn").onclick = () => document.getElementById("importFile").click();
+document.getElementById("importFile").onchange = e => { if (e.target.files[0]) importResult(e.target.files[0]); e.target.value = ""; };
+document.getElementById("reset").onclick = () => {
+  if (!confirm("모든 선택·메모·확인 표시를 미리 채운 값으로 되돌릴까요?")) return;
+  state = {}; save(); renderList(); toast("처음 상태로 되돌렸습니다.");
+};
+</script>
+</body>
+</html>

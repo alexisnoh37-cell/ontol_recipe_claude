@@ -99,7 +99,8 @@ def test_held_terms_stay_unmapped(entries, index, overrides):
 
 def test_foodsafety_name_overrides_match_approved_d_entries(entries, overrides):
     expected = {}
-    for e in entries + load_proposal(ROUND3):  # 보정표는 2차·3차(um-4) 승인 D를 함께 담는다
+    later = load_proposal(ROUND3) + load_proposal(ROOT / "docs" / "review" / "unmapped_round4.yaml")
+    for e in entries + later:  # 보정표는 2~4차(um-3~5) 승인 D를 함께 담는다
         if e.kind == "D" and e.decision == "O":
             fix = ({"split": e.split} if e.split else {"drop": e.drop} if e.drop else {"id": e.target})
             for t in e.texts:
