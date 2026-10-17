@@ -18,7 +18,7 @@ ingredients:
   optional: false
   amount: 2.5
   unit: kg
-- ingredient: null
+- ingredient: pear_drink
   raw_text: 갈아만든배 2캔 476ml
   role: sub
   optional: false

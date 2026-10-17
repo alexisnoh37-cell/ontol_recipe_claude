@@ -9,7 +9,7 @@ servings: 5
 source: https://www.youtube.com/watch?v=yM9dQzw--Vw
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '위에 계란' → egg(이름 보정표)
 ingredients:
 - ingredient: soft_tofu
   raw_text: 순두부 400g
@@ -41,7 +41,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 한알
   role: sub
   optional: false
@@ -53,7 +53,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: egg
   raw_text: 위에 계란 한알 / 계란 한알 / 계란
   role: sub
   optional: false

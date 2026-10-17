@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=YBCgwbUl2rI
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '기름 두르고 계란' → egg(이름 보정표); 재료 이름 '끄고 마요네즈' → mayonnaise(이름 보정표)
 ingredients:
 - ingredient: imitation_crab
   raw_text: 크래미
@@ -29,7 +29,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: ketchup
   raw_text: 케챱 1스푼
   role: sub
   optional: false
@@ -59,13 +59,13 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: egg
   raw_text: 기름 두르고 계란 2알 / 달걀 2개 / 계란
   role: sub
   optional: false
   amount: 2
   unit: 개
-- ingredient: null
+- ingredient: mayonnaise
   raw_text: 끄고 마요네즈 2스푼
   role: sub
   optional: false

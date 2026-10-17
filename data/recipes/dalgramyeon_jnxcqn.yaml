@@ -17,7 +17,7 @@ ingredients:
   optional: false
   amount: 200
   unit: g
-- ingredient: null
+- ingredient: instant_noodle_product
   raw_text: 꼬꼬면
   role: sub
   optional: false

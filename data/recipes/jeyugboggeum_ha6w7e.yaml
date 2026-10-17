@@ -9,7 +9,8 @@ servings: null
 source: https://www.youtube.com/watch?v=Ha6w7eAZwbE
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '고추장 크게' → gochujang(이름 보정표); 재료 이름 '잡기위해 다진마늘' → garlic(이름
+  보정표)
 ingredients:
 - ingredient: pork_belly
   raw_text: 대패삼겹살(앞다리살) 400g
@@ -41,7 +42,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: gochujang
   raw_text: 고추장 크게 한 큰술
   role: sub
   optional: false
@@ -53,7 +54,7 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 개
-- ingredient: null
+- ingredient: garlic
   raw_text: 잡기위해 다진마늘 한스푼
   role: sub
   optional: false

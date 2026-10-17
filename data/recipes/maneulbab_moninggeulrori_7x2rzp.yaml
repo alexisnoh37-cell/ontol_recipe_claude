@@ -17,13 +17,13 @@ ingredients:
   optional: false
   amount: 10
   unit: 개
-- ingredient: null
+- ingredient: water_spinach
   raw_text: 공심채 150g
   role: main
   optional: false
   amount: 150
   unit: g
-- ingredient: null
+- ingredient: peperoncino
   raw_text: 페페론치노 5개
   role: sub
   optional: false

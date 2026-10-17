@@ -35,7 +35,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: cooking_oil
   raw_text: 기름 5스푼
   role: sub
   optional: false
@@ -53,7 +53,7 @@ ingredients:
   optional: false
   amount: 3
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 분말육수 2포
   role: sub
   optional: false

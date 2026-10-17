@@ -9,7 +9,7 @@ servings: 1
 source: https://www.youtube.com/watch?v=y2lCM0XJX4k
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '토핑으로 사용할 쪽파' → scallion(이름 보정표)
 ingredients:
 - ingredient: pasta
   raw_text: 파스타면 1인분 / 파스타면
@@ -47,7 +47,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 장
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 1알
   role: sub
   optional: false
@@ -59,7 +59,7 @@ ingredients:
   optional: false
   amount: 400
   unit: ml
-- ingredient: null
+- ingredient: scallion
   raw_text: 토핑으로 사용할 쪽파 3쪽 / 쪽파 3쪽 / 쪽파
   role: sub
   optional: false

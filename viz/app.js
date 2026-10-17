@@ -102,6 +102,9 @@ function renderInfo(scene, n) {
       rows.push(["음식 종류", esc(n.cuisine)], ["난이도", n.difficulty ?? "-"], ["조리시간", n.cook_time_min ? `${n.cook_time_min}분` : "-"], ["매운맛", n.spicy ?? "-"]);
     }
     if (n.required_equipment.length) rows.push(["필수 조리기구", esc(n.required_equipment.join(", "))]);
+    // 시판 제품 안내(um-2): 재료 목록 바로 위에, 알레르기 설정과 무관하게 표시
+    if (n.commercial_notice) rows.push(["시판 제품", `<div class="commercial-notice">⚠️ ${esc(n.commercial_notice.text)}</div>`
+      + chips(n.commercial_notice.ingredients.map((x) => chip(x, "possible")))]);
     for (const role of ["main", "sub", "seasoning", "garnish"]) {
       const ls = out("uses").filter((l) => l.role === role).sort((a, b) => a.line_no - b.line_no);
       if (ls.length) rows.push([ROLE_LABEL[role], chips(ls.map((l) => chip(l.t, l.optional ? "possible" : "")

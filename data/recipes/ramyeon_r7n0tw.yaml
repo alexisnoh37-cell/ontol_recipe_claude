@@ -9,9 +9,10 @@ servings: null
 source: https://www.youtube.com/watch?v=r7n0tWVh9E0
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 줄 '파란부분 올리브유 5스푼' → green_onion, olive_oil로 나눔(이름 보정표); 재료 이름
+  '만두 소' → frozen_dumplings(이름 보정표)
 ingredients:
-- ingredient: null
+- ingredient: instant_noodle_product
   raw_text: 신라면 1개
   role: main
   optional: false
@@ -47,13 +48,19 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: green_onion
+  raw_text: 파란부분 올리브유 5스푼
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: olive_oil
   raw_text: 파란부분 올리브유 5스푼
   role: sub
   optional: false
   amount: 5
   unit: 스푼
-- ingredient: null
+- ingredient: frozen_dumplings
   raw_text: 만두 소 3개 / 만두 3개
   role: sub
   optional: false

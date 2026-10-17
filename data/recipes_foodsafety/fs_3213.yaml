@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3213. 요리종류 일품, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3213. 요리종류 일품, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
 - ingredient: tofu
   raw_text: 두부(8g)
@@ -31,13 +31,13 @@ ingredients:
 - ingredient: potato_starch
   raw_text: 감자전분(50g)
   role: sub
-- ingredient: null
+- ingredient: egg
   raw_text: 달걀흰자(60g)
   role: sub
 - ingredient: zucchini
   raw_text: 애호박(1개)
   role: sub
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 저염 간장(1g)
   role: sub
 - ingredient: vinegar

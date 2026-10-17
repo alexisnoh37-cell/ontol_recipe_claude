@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 336. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 336. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
 ingredients:
 - ingredient: null
   raw_text: 도토리묵
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: null
   raw_text: 검정깨묵 각각 25g
   role: sub
-- ingredient: null
+- ingredient: oats
   raw_text: 귀리밥 150g
   role: sub
 - ingredient: egg
@@ -40,10 +40,10 @@ ingredients:
 - ingredient: onion
   raw_text: 양파 15g
   role: sub
-- ingredient: null
+- ingredient: seasoned_soy_sauce
   raw_text: 맛간장 15g
   role: sub
-- ingredient: null
+- ingredient: black_pepper
   raw_text: 흰후추 1g
   role: sub
 - ingredient: null

@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 884. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 884. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
 ingredients:
 - ingredient: null
   raw_text: 멸치중간것 10g
@@ -34,7 +34,7 @@ ingredients:
 - ingredient: null
   raw_text: 마늘즙 1g
   role: sub
-- ingredient: null
+- ingredient: ginger_juice
   raw_text: 생강즙 0.5g
   role: sub
 - ingredient: mirin
@@ -52,7 +52,7 @@ ingredients:
 - ingredient: sesame_oil
   raw_text: 참기름 0.3g
   role: sub
-- ingredient: null
+- ingredient: sesame
   raw_text: 흑임자 4g
   role: sub
 - ingredient: scallion

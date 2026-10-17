@@ -242,13 +242,21 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
 2. `scripts/convert_foodsafety.py`가 원본을 레시피 YAML(`data/recipes_foodsafety/fs_<일련번호>.yaml`, 커밋)로 바꾼다. 로더(`data/recipes/`)와 골든셋에는 들어가지 않는다.
    - `source: foodsafety`, `status: draft`, `confidence: low`, note에 출처(식품의약품안전처 식품안전나라, 일련번호)와 요리종류·조리방법 원문.
    - 재료: 재료정보(RCP_PARTS_DTLS)를 줄·쉼표(괄호 밖)로 나눠 `raw_text`에 원문을 두고, 양 앞까지의 이름이 별칭 색인과 정확히 일치할 때만 `ingredient`를 채운다. 나머지는 `null`(미매칭). `role`은 모두 `sub`(검수 때 정함).
-   - 줄 나누기: HTML 태그(`<br>`), 줄 중간 대괄호(`[소스소개]`), 공백 사이 하이픈(` - `), `>`는 줄바꿈·머리말 구분으로 본다. 버리는 것은 머리말(고정 단어, 레시피 이름, 분량 "2인분 기준", "…재료")과 이름이 정확히 "물"인 항목(시드 규칙)뿐이다. 머리말이 아닌 소제목("두부구이 : 두부 70g"의 "두부구이")은 버리지 않고 따로 한 항목(미매칭)으로 남긴다.
+   - 줄 나누기: HTML 태그(`<br>`), 줄 중간 대괄호(`[소스소개]`), 공백 사이 하이픈(` - `), `>`는 줄바꿈·머리말 구분으로 본다. 버리는 것은 머리말(고정 단어, 레시피 이름, 분량 "2인분 기준", "…재료")과 이름이 정확히 "물"인 항목(시드 규칙)뿐이다. 머리말이 아닌 소제목("두부구이 : 두부 70g"의 "두부구이")은 버리지 않고 따로 한 항목(미매칭)으로 남긴다. 머리말 단어가 공백으로만 붙은 항목("재료 닭가슴살 100g", "양념 다진 마늘")은 머리말을 떼되, 뒤가 양 표기로 시작하면("소스 1큰술") 그대로 둔다. '장식'은 머리말 단어다(um-2 사람 결정 2026-10-17).
    - `cuisine: 미분류`, `cook_time_min`·`difficulty`·`taste` 없음(API에 없음, 검수 때 채움). 조리 단계는 MANUAL01~20 원문.
    - 재료정보가 없는 레시피는 만들지 않고 보고한다.
 3. 미매칭 재료 빈도와 레시피별 미매칭 수를 `docs/review/foodsafety_unmatched.md`로 만든다. 별칭·재료 보강은 knowledge에 draft로 추가한 뒤 다시 변환한다.
 4. `data/recipes/`로 옮기려면 미매칭 0, cuisine·cook_time_min 채움, 사람 검수가 필요하다(로더가 미분류·cook_time_min 없음을 거부).
 5. 그래프 표시 전용(int-2, D3 통합): 엔진에 적재하지 않고 `GET /graph?display=true`에서만 같은 지식으로 연결해 보여 준다(부록 D-8).
 5. 열람용 정적 HTML 뷰어: `scripts/make_foodsafety_viewer.py`(템플릿 `scripts/foodsafety_viewer_template.html`)가 원본과 같은 변환 규칙으로 `data/recipes_foodsafety/viewer.html`(gitignore)을 만든다. 사진·영양 정보·저감 조리 팁, 재료별 매칭 여부를 보여 준다. 개인용 열람 전용, 외부 게시 금지.
+
+#### 5-3-2. YouTube 레시피 데이터셋 변환과 원본 이름 보정표 (D3 예외, um-2)
+
+1. `scripts/convert_simplecooking.py`(자취요리신)·`scripts/convert_sallimpop.py`(살림팝)가 `kb/youtube_seed.py`로 원본(`data/<name>_recipe_dataset/recipes/<name>/*.yaml`, 읽기만)을 `data/recipes/`(draft)로 바꾼다. 재료는 이름·별칭 정확 일치로만 매핑한다.
+2. **원본 이름 보정표**(`data/recipe_name_overrides.yaml`, um-2 사람 승인 2026-10-17): 원본 재료 이름에 자막 문구·크기·오타가 붙은 경우("맛을 위해 참기름", "고추장 크게", "진강장")를 knowledge 별칭으로 넣지 않고 변환 단계에서 고친다. 항목마다 `id`(이 재료로 매핑) · `drop`(재료에서 뺌) · `split`(한 줄을 여러 재료로) 중 하나.
+   - `drop`은 물(`water`)과, 같은 레시피에 그 재료 줄이 이미 있는 중복(`duplicate:<재료 id>`)에만 쓴다. 변환기는 중복 재료 줄이 실제로 없으면 멈춘다(한 줄 안에 두 표기가 적힌 경우를 중복으로 오판해 알레르기 성분이 빠지지 않게).
+   - 바뀐 내용은 레시피 note와 데이터셋 `CONVERSION.md` "레시피별로 달라진 것"에 남는다. 표에 없는 재료·concept·사유는 오류다.
+3. 미매칭 보강 결정의 근거: `docs/review/unmapped_review.md`(검수표, 기록), `docs/review/unmapped_decisions.json`(사람 결정), `docs/review/unmapped_proposal.yaml`(항목별 decision).
 
 ### 5-4. 데이터 검증 스크립트
 
@@ -274,7 +282,7 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
 **이번 구축 범위는 Phase 0과 Phase 1(MVP)까지다.** Phase 1 관문(알레르기 테스트 100% 통과)은 일정과 관계없이 지킨다.
 
 부가 트랙 ui(사람 요청·승인 2026-10-16): 재료 ↔ 레시피 양방향 조회. 판정·점수는 바꾸지 않는 표시 기능이다.
-- `GET /recipes/{id}?profile_id=&pantry=`: 역할별 전체 재료(원문, 이름, 선택·기본 양념·미매칭 표시)와 조리 단계. 보유 기준(pantry 우선, 없으면 프로필 보유 재료)을 주면 줄마다 `have`를 붙인다. 보유 판정은 엔진 후보 단계와 같은 `owned_ingredients`(보유 재료·기본 양념과 그 is_a 조상, 컴파일 결과 조회만). 대체재는 사용자 안전 확인이 필요해 보지 않는다(추천 카드의 대체 안내를 따른다). 알레르기 설정이 있는 프로필이면 성분표 확인 표시(1-6 결정)를 붙인다. 없는 레시피·프로필 404, 모르는 재료·concept 400.
+- `GET /recipes/{id}?profile_id=&pantry=`: 역할별 전체 재료(원문, 이름, 선택·기본 양념·미매칭 표시)와 조리 단계. 보유 기준(pantry 우선, 없으면 프로필 보유 재료)을 주면 줄마다 `have`를 붙인다. 보유 판정은 엔진 후보 단계와 같은 `owned_ingredients`(보유 재료·기본 양념과 그 is_a 조상, 컴파일 결과 조회만). 대체재는 사용자 안전 확인이 필요해 보지 않는다(추천 카드의 대체 안내를 따른다). 알레르기 설정이 있는 프로필이면 성분표 확인 표시(1-6 결정)를 붙인다. 시판 제품(`config/display.yaml` `commercial_product_notice`의 재료)이 든 레시피는 알레르기 설정과 무관하게 `commercial_notice`("시판 제품으로 제품 성분을 확인해 알레르기 유무를 확인하시기 바랍니다.")를 붙이고 화면은 재료 목록 위에 보여 준다(um-2 사람 결정 2026-10-17, 판정은 그대로 제외). 없는 레시피·프로필 404, 모르는 재료·concept 400.
 - Streamlit 추천 탭: "이번만 재료 직접 고르기"로 고른 재료를 `POST /recommend`의 `pantry`로 보낸다(프로필에 저장하지 않음). 추천 카드마다 "전체 재료·조리 순서 보기"(위 API, 같은 보유 기준).
 - **재료로 레시피 찾기**(ui-2, 사람 결정 2026-10-16): 추천과 별개인 조회 기능. 점수·선호로 순위를 매기지 않는다. `engine/browse.py`(`Recommender.browse`).
   - 보유로 보는 재료 = 고른 재료 + 기본 양념 + 그 is_a 조상(`owned_ingredients`). 대상 레시피 = 고른 재료(기본 양념 제외)로 main 줄 하나 이상이 채워지는 레시피(추천 후보 기준과 같음). 대체재는 쓰지 않는다.

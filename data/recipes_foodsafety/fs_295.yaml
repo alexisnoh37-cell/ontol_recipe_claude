@@ -5,10 +5,10 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 295. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 295. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
 ingredients:
-- ingredient: null
-  raw_text: 재료 바지락(5g)
+- ingredient: manila_clam
+  raw_text: 바지락(5g)
   role: sub
 - ingredient: webfoot_octopus
   raw_text: 주꾸미(60g)
@@ -25,13 +25,13 @@ ingredients:
 - ingredient: green_onion
   raw_text: 대파(5g)
   role: sub
-- ingredient: null
-  raw_text: 육수 멸치(2g)
+- ingredient: anchovy
+  raw_text: 멸치(2g)
   role: sub
-- ingredient: null
-  raw_text: 양념 된장(7g)
+- ingredient: doenjang
+  raw_text: 된장(7g)
   role: sub
-- ingredient: null
+- ingredient: soybean_powder
   raw_text: 콩가루(10g)
   role: sub
 steps:

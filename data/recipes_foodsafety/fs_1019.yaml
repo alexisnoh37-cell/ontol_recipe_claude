@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1019. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1019. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
 ingredients:
 - ingredient: null
   raw_text: 흰살 생선 70g
@@ -13,16 +13,16 @@ ingredients:
 - ingredient: null
   raw_text: 죽순 20g
   role: sub
-- ingredient: null
+- ingredient: green_bell_pepper
   raw_text: 청피망 15g
   role: sub
 - ingredient: null
   raw_text: 홍피망 15g
   role: sub
-- ingredient: null
+- ingredient: shiitake
   raw_text: 건표고버섯 10g
   role: sub
-- ingredient: null
+- ingredient: starch
   raw_text: 전분 5g
   role: sub
 - ingredient: null
@@ -34,7 +34,7 @@ ingredients:
 - ingredient: salt
   raw_text: 소금 적당량
   role: sub
-- ingredient: null
+- ingredient: black_pepper
   raw_text: 흰후춧가루 적당량
   role: sub
 - ingredient: pine_nut

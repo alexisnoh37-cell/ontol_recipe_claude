@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=KEoA8gcbFeY
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '마지막 꿀' → honey(이름 보정표); 재료 이름 '고기양과 동일하게 고추장' → gochujang(이름 보정표)
 ingredients:
 - ingredient: ground_beef
   raw_text: 소고기 다짐육 300g / 다짐육 300g
@@ -53,7 +53,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: honey
   raw_text: 마지막 꿀 2스푼
   role: sub
   optional: false
@@ -65,7 +65,7 @@ ingredients:
   optional: false
   amount: 300
   unit: g
-- ingredient: null
+- ingredient: gochujang
   raw_text: 고기양과 동일하게 고추장 300g
   role: sub
   optional: false

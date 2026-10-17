@@ -59,7 +59,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 육수가루 1포
   role: sub
   optional: false

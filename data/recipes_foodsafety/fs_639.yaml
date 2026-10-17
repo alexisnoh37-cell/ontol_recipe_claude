@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 639. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 639. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
-- ingredient: null
+- ingredient: pumpkin_leaf
   raw_text: 호박잎(5장)
   role: sub
 - ingredient: chicken
@@ -22,7 +22,7 @@ ingredients:
 - ingredient: minari
   raw_text: 미나리(20g)
   role: sub
-- ingredient: null
+- ingredient: ginseng
   raw_text: 인삼(1뿌리)
   role: sub
 - ingredient: salt

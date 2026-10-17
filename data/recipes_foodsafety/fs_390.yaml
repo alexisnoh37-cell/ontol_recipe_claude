@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 390. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 390. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
 ingredients:
 - ingredient: squid
   raw_text: 오징어 1마리(220g)
@@ -13,7 +13,7 @@ ingredients:
 - ingredient: corn
   raw_text: 옥수수 30g
   role: sub
-- ingredient: null
+- ingredient: oats
   raw_text: 귀리밥 50g
   role: sub
 - ingredient: null
@@ -37,7 +37,7 @@ ingredients:
 - ingredient: curry_powder
   raw_text: 카레가루 25g
   role: sub
-- ingredient: null
+- ingredient: black_pepper
   raw_text: 흰후추 1g
   role: sub
 - ingredient: garlic

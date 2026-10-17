@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 419. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 419. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: lotus_root
   raw_text: 연근 200g
@@ -19,10 +19,10 @@ ingredients:
 - ingredient: chestnut
   raw_text: 밤 60g
   role: sub
-- ingredient: null
+- ingredient: yuzu_cheong
   raw_text: 유자청 25g
   role: sub
-- ingredient: null
+- ingredient: turmeric_powder
   raw_text: 강황가루 2g
   role: sub
 - ingredient: pine_nut

@@ -137,6 +137,7 @@ ol.ranks { margin: 6px 0 0; padding-left: 22px; }
 .rcard .sub { color: #8ff0bd; }
 .rcard .note { color: var(--muted); }
 .rcard .note.warn { color: #ffcf8a; }
+.commercial-notice { color: #ffcf8a; margin-bottom: 4px; }
 
 /* 외부 레시피 분석(부록 E) */
 .small { font-size: 12px; }

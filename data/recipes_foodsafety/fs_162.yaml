@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 162. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 162. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
-- ingredient: null
+- ingredient: sweet_potato
   raw_text: 자색고구마 10g(3cm)
   role: sub
 - ingredient: radish
@@ -37,7 +37,7 @@ ingredients:
 - ingredient: corn_syrup
   raw_text: 물엿 50g(1/4컵)
   role: sub
-- ingredient: null
+- ingredient: bell_pepper
   raw_text: 황파프리카 140g(1½개)
   role: sub
 steps:

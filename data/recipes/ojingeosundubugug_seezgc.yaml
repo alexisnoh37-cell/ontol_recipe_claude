@@ -41,7 +41,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 2알
   role: sub
   optional: false
@@ -65,13 +65,13 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: beef_seasoning
   raw_text: 소고기 다시다 1/3스푼
   role: sub
   optional: false
   amount: 0.33
   unit: 스푼
-- ingredient: null
+- ingredient: dasida
   raw_text: 다시다 1/3스푼
   role: seasoning
   optional: false

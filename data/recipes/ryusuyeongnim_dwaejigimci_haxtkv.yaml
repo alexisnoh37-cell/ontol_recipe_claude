@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=haxTkVYyrPQ
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '더해줄 김치국물' → kimchi(이름 보정표)
 ingredients:
 - ingredient: pork_shoulder
   raw_text: 앞다리살 500g
@@ -53,13 +53,13 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 코인육수 1알
   role: sub
   optional: false
   amount: 1
   unit: 알
-- ingredient: null
+- ingredient: kimchi
   raw_text: 더해줄 김치국물 3스푼 / 김치국물 3스푼 / 김치 반포
   role: sub
   optional: false

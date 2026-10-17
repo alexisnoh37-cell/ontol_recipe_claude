@@ -3,14 +3,14 @@
 # --- 알 (법정: 알류(가금류)) ---
 - id: egg
   name: 계란
-  aliases: [달걀, 계란 노른자, 계란 흰자, 유정란, 노른자]
+  aliases: [달걀, 계란 노른자, 계란 흰자, 유정란, 노른자, 삶은 달걀, 삶은계란, 달걀 후라이, 계란후라이, 달걀물, 달걀지단, 달걀흰자, 달걀노른자]
   category: 알
   note: 2026-10-16 자취요리신 데이터 연결로 별칭 추가, 검수 필요('노른자')
   allergens: [{group: egg, certainty: definite}]
   status: reviewed
 - id: quail_egg
   name: 메추리알
-  aliases: [깐 메추리알]
+  aliases: [깐 메추리알, 깐매추리알]
   category: 알
   allergens: [{group: egg, certainty: definite}]
   status: reviewed
@@ -40,7 +40,7 @@
   status: reviewed
 - id: yogurt
   name: 요거트
-  aliases: [플레인요거트, 요구르트, 그릭요거트]
+  aliases: [플레인요거트, 요구르트, 그릭요거트, 플레인 요구르트]
   derived_from: [milk]
   is_processed: true
   category: 유제품
@@ -91,7 +91,7 @@
   status: reviewed
 - id: tofu
   name: 두부
-  aliases: [부침두부, 찌개두부, 연두부]
+  aliases: [부침두부, 찌개두부, 연두부, 으깬 두부]
   derived_from: [soybean]
   is_processed: true
   category: 콩·두부
@@ -126,3 +126,43 @@
   category: 콩·두부
   note: 팥은 대두가 아님
   status: reviewed
+
+# --- um-2 미매칭 보강(2026-10-17, 사람 검수표 승인, 재료 검수 전 draft) ---
+- id: chickpea
+  name: 병아리콩
+  category: 콩·두부
+  note: "대두 아님 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: green_peas
+  name: 완두콩
+  aliases: [완두]
+  category: 콩·두부
+  note: "대두 아님 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: soybean_powder
+  name: 콩가루
+  aliases: [날콩가루, 볶은 콩가루]
+  derived_from:
+    - soybean
+  is_processed: true
+  category: 콩·두부
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: sour_cream
+  name: 사워크림
+  derived_from:
+    - milk
+  is_processed: true
+  category: 유제품
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: ricotta
+  name: 리코타치즈
+  aliases: [리코타]
+  is_a: [cheese]
+  derived_from:
+    - milk
+  is_processed: true
+  category: 유제품
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft

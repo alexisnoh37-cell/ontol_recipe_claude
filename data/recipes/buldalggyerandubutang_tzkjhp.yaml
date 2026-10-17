@@ -29,7 +29,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 장
-- ingredient: null
+- ingredient: buldak_sauce
   raw_text: 불닭소스 2스푼
   role: sub
   optional: false

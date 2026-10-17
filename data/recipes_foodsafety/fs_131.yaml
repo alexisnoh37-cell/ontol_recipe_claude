@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 131. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 131. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
 ingredients:
 - ingredient: somen
   raw_text: 소면 50g
   role: sub
-- ingredient: null
+- ingredient: hamcho
   raw_text: 함초 3g(1/2작은술)
   role: sub
 - ingredient: null
@@ -36,9 +36,6 @@ ingredients:
   role: sub
 - ingredient: soy_sauce
   raw_text: 간장 30g(2큰술)
-  role: sub
-- ingredient: null
-  raw_text: 장식
   role: sub
 - ingredient: egg
   raw_text: 달걀 50g(1개)

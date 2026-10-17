@@ -9,9 +9,10 @@ servings: null
 source: https://www.youtube.com/watch?v=PykubcjRvP4
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '전분가루를 처음에' → starch(이름 보정표); 재료 이름 '돼지고기 탕수육용' → pork(이름
+  보정표)
 ingredients:
-- ingredient: null
+- ingredient: starch
   raw_text: 전분가루를 처음에 8스푼
   role: main
   optional: false
@@ -23,7 +24,7 @@ ingredients:
   optional: false
   amount: 10
   unit: 스푼
-- ingredient: null
+- ingredient: pork
   raw_text: 돼지고기 탕수육용 500g
   role: sub
   optional: false

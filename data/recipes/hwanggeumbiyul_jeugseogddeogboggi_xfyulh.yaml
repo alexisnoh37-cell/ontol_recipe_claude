@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=XfYUlh2PWD4
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '고추장 크게' → gochujang(이름 보정표)
 ingredients:
 - ingredient: tteokbokki_rice_cake
   raw_text: 쌀떡 300g
@@ -41,7 +41,7 @@ ingredients:
   optional: false
   amount: 4
   unit: 개
-- ingredient: null
+- ingredient: gochujang
   raw_text: 고추장 크게 2스푼 / 크게 2스푼
   role: sub
   optional: false

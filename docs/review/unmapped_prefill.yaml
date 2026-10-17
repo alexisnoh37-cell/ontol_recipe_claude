@@ -1,0 +1,245 @@
+# 검수용 HTML(docs/review/unmapped_review.html)에 미리 채울 판단 (um-1, 2026-10-17)
+# 생성: uv run python scripts/make_unmapped_review_html.py
+#
+# 두 외부 검토(docs/review/external/의 Gemini본·reviewed본)와 Claude 의견을 종합한 초안이다. 사람이 화면에서 바꾼다.
+# 자동 규칙(생성 스크립트):
+#   - C(보류) 항목: O(= 미매칭 유지에 동의), 흰색. 두 검토의 O/X는 둘 다 '미매칭 유지'라 결과가 같다.
+#   - 두 검토 모두 O: O, 흰색.
+#   - 두 검토 모두 수정 지시: O + 수정 내용, 파랑. (아래에 적은 항목은 아래가 우선)
+#   - 그 밖(의견이 갈림): 아래에 반드시 적는다(빠지면 생성 오류).
+#
+# decision: O | X | 보류
+# color: red(꼭 봐야 함: 알레르기에 영향 + 의견 갈림) | yellow(포장 확인 등 추가 확인이 필요해 보류) |
+#        blue(수정 내용·근거를 한번 읽어 보면 좋음) | white(넘어가도 됨)
+# memo: 반영할 내용(수정 지시). claude: Claude 의견(근거).
+# 키는 검수표 '표기' 열의 첫 표기.
+
+overrides:
+
+  # ---------------- E 시판 제품 ----------------
+  코인육수:
+    decision: 보류
+    color: yellow
+    memo: "사용하는 제품(예: 시판 코인육수 2~3종)의 포장 알레르기 표시를 확인한 뒤, 확인된 성분으로 목록을 고쳐 O"
+    claude: "효과가 가장 큰 항목(엔진 레시피 43개). 계란·참깨·토마토 알레르기 사용자에게 늘어나는 레시피의 대부분이 코인육수·다시다 덕분이다. Gemini는 '확인 권장'과 함께 O를 줬지만 확인 없이 승인하는 셈이라, 확인 전에는 미매칭 유지가 맞다."
+  다시다:
+    decision: 보류
+    color: yellow
+    memo: "레시피의 '다시다'가 쇠고기 다시다인지(원문 확인), 제품 포장 표시를 확인한 뒤 결정"
+    claude: "엔진 레시피 11개. 멸치·해물·조개 다시다 변종이 있어 해산물 전체를 '가능'으로 잡았다. 확인 전에는 미매칭 유지."
+  너구리:
+    decision: X
+    color: red
+    memo: "미매칭 유지(제품별로 나눠 포장 표시를 확인하면 다시 검토)"
+    claude: "Gemini가 땅콩(가능) 누락을 지적했다(마라탕 등). 추정 목록에서 성분이 빠질 수 있다는 증거다. 목록이 이미 거의 모든 알레르기를 포함해 승인해도 늘어나는 레시피는 복숭아·견과·아황산류 알레르기 정도뿐이라, 위험에 비해 효과가 작다."
+  분말 스프:
+    decision: X
+    color: red
+    memo: "미매칭 유지"
+    claude: "라면 제품과 같은 이유. Gemini는 땅콩(가능) 추가 후 O."
+  냉면 육수:
+    decision: X
+    color: red
+    memo: "미매칭 유지(포장 확인 후 다시 검토)"
+    claude: "Gemini가 돼지고기·조개류(가능) 누락을 지적했다. 추정 목록이 불완전하다."
+  매운 갈비양념:
+    decision: X
+    color: red
+    memo: "미매칭 유지"
+    claude: "Gemini는 '포장 표시 확인 권장'과 함께 O. 확인 전 승인은 피한다."
+  불닭소스:
+    decision: X
+    color: red
+    memo: "미매칭 유지"
+    claude: "Gemini가 계란·참깨(가능) 누락을 지적했다."
+  참소스:
+    decision: X
+    color: red
+    memo: "미매칭 유지"
+    claude: "Gemini는 '포장 표시 확인 권장'과 함께 O. 확인 전 승인은 피한다."
+  짜장분말소스:
+    decision: X
+    color: red
+    memo: "미매칭 유지"
+    claude: "위와 같음."
+  크림스프:
+    decision: X
+    color: red
+    memo: "미매칭 유지"
+    claude: "위와 같음."
+  레트로 미트볼:
+    decision: X
+    color: red
+    memo: "미매칭 유지"
+    claude: "위와 같음."
+  순대:
+    decision: X
+    color: red
+    memo: "미매칭 유지"
+    claude: "Gemini가 계란·우유·쇠고기·참깨(가능) 누락을 지적했다."
+  포카칩:
+    decision: X
+    color: red
+    memo: "미매칭 유지"
+    claude: "Gemini가 육류·계란·토마토(가능) 누락을 지적했다(맛별 시즈닝)."
+  폰즈 소스:
+    decision: X
+    color: red
+    memo: "미매칭 유지"
+    claude: "확인 전 승인은 피한다(엔진 레시피 1개)."
+  갓장아찌:
+    decision: X
+    color: red
+    memo: "미매칭 유지"
+    claude: "위와 같음."
+  팟타이 소스:
+    decision: X
+    color: red
+    memo: "미매칭 유지"
+    claude: "위와 같음."
+
+  # E에 연결된 D(이름 다듬기): 대상 E의 결정을 따른다
+  멸치육수가 없으니 코인육수:
+    decision: 보류
+    color: yellow
+    memo: "코인육수 결정을 따름"
+    claude: "이름만 고치는 줄. 대상(시판 육수)이 승인되어야 의미가 있다."
+  분말가루:
+    decision: 보류
+    color: yellow
+    memo: "원문(영상)에서 분말 육수인지 확인 + 코인육수 결정을 따름"
+    claude: "'분말가루 1개'가 무엇인지 원문에서 확인되지 않았다(Gemini도 확인 후 O 조건)."
+  제일 중요한 시판 냉면육수:
+    decision: X
+    color: red
+    memo: "냉면 육수 결정을 따름"
+    claude: "대상(시판 냉면육수)을 X로 두었다."
+  양념은 불닭소스:
+    decision: X
+    color: red
+    memo: "불닭소스 결정을 따름"
+    claude: "대상을 X로 두었다."
+  색감과 감칠맛을 끌어올릴 짜장가루:
+    decision: X
+    color: red
+    memo: "짜장 분말 결정을 따름"
+    claude: "대상을 X로 두었다."
+  이 위에 팟타이 소스:
+    decision: X
+    color: red
+    memo: "팟타이 소스 결정을 따름"
+    claude: "대상을 X로 두었다."
+
+  # ---------------- A·B·D: 의견이 갈렸거나 근거를 확인한 것 ----------------
+  기름:
+    decision: O
+    color: blue
+    memo: ""
+    claude: "원문 확인함. 5개 레시피(볶음밥·한판탕·고기볶음밥·어묵볶음·카레) 모두 볶음·튀김용 식용유다. Gemini의 확인 조건이 충족됐다."
+  전분:
+    decision: O
+    color: blue
+    memo: "밀(가능) 추가. 기존 감자전분·옥수수전분은 is_a starch로 잇지 않음(밀이 상속되지 않게)"
+    claude: "두 검토 모두 밀(가능) 추가. 밀 전분 제품이 있어 동의한다."
+  전분가루를 처음에:
+    decision: O
+    color: blue
+    memo: "전분 결정(밀 가능 포함)을 따름"
+    claude: "이름만 고치는 줄. 알레르기는 전분을 따른다."
+  배즙:
+    decision: O
+    color: red
+    memo: "갈아만든배·배음료·갈배음료는 '시판 배 음료'로 분리하고 아황산류(가능) 추가. 배즙은 그대로"
+    claude: "Gemini만 시판 음료의 아황산류(가능)를 제안했다. 확인은 못 했지만 추가 비용이 작아(아황산류 알레르기 사용자에게 4개 레시피) 보수적으로 받아들인다."
+  졸아들면 올리브유:
+    decision: O
+    color: blue
+    memo: "'파란부분 올리브유'는 대파 + 올리브유 두 줄로 분리"
+    claude: "원문 확인함('파기름이 중요해서 파. 파란부분 올리브유 5스푼'). 이 레시피에는 대파 줄이 따로 없어 분리가 맞다(두 검토 같은 의견)."
+  발사믹식초:
+    decision: O
+    color: blue
+    memo: "발사믹식초·화이트발사믹식초와 발사믹소스·글레이즈를 별도 재료로 분리"
+    claude: "두 검토 같은 의견. 동의한다."
+  국수:
+    decision: O
+    color: red
+    memo: ""
+    claude: "Gemini는 대두·메밀(가능) 추가를 제안했지만 별칭에는 알레르기를 따로 붙일 수 없다(소면 전체에 붙게 됨). 원문 3개(간장국수·비빔국수·물국수)에 메밀 언급이 없어 소면으로 본다."
+  저는 대식가라 국수:
+    decision: O
+    color: red
+    memo: "국수 결정을 따름"
+    claude: "이름만 고치는 줄."
+  골뱅이:
+    decision: 보류
+    color: yellow
+    memo: "원문의 '골뱅이 1통'은 통조림. 통조림 포장 표시(조미액 성분)를 확인한 뒤 결정"
+    claude: "두 검토 모두 통조림으로 분리하자는 의견. reviewed본은 확인 전 X."
+  코스트코에서:
+    decision: O
+    color: blue
+    memo: "재료에서 뺌(같은 레시피에 '소갈비 2.5kg' 줄이 따로 있음)"
+    claude: "원문 확인함. 양만 중복된 줄이다. 다른 D 줄은 70줄이 그 줄에만 재료가 있어 빼면 안 되고, 이 줄처럼 중복일 때만 뺀다."
+  바질페스토:
+    decision: O
+    color: red
+    memo: "땅콩(가능) 추가"
+    claude: "Gemini가 땅콩·계란(가능)을 제안했다. 땅콩은 비용이 작아(엔진 레시피 1개) 받아들이고, 계란은 근거가 약해 넣지 않았다. 계란도 넣으려면 메모를 고친다."
+  쌍화탕:
+    decision: X
+    color: red
+    memo: "시판 쌍화탕(E)으로 재분류, 성분 확인 전 미매칭 유지"
+    claude: "두 검토 모두 시판품으로 보는 의견. reviewed본은 확인 전 X."
+
+  # ---------------- 식품안전나라 전용(추천에 영향 없음) ----------------
+  맛간장:
+    decision: X
+    color: red
+    memo: "미매칭 유지(성분이 제품·가정식마다 다름)"
+    claude: "추천에는 쓰이지 않는 표기. Gemini는 조개·새우·쇠고기(가능) 추가 후 O, reviewed본은 X."
+  미숫가루:
+    decision: X
+    color: red
+    memo: "혼합 제품으로 보고 미매칭 유지"
+    claude: "추천에는 쓰이지 않는 표기. Gemini는 견과·메밀·우유(가능) 추가 후 O, reviewed본은 X."
+  귀리:
+    decision: O
+    color: red
+    memo: ""
+    claude: "Gemini는 교차오염 대비 밀(가능) 추가를 제안했다. 지금 지식 모델은 어디에도 교차오염을 다루지 않아, 귀리에만 넣으면 기준이 어긋난다(정책으로 따로 정할 문제)."
+  젤라틴:
+    decision: O
+    color: blue
+    memo: "기타 생선(가능) 추가"
+    claude: "생선 젤라틴 제품이 있다. 두 검토 같은 의견."
+  어간장:
+    decision: O
+    color: blue
+    memo: "기타 생선을 확정(definite)으로"
+    claude: "두 검토 같은 의견. Gemini가 덧붙인 새우·게(가능)는 근거가 약해 넣지 않았다."
+  레몬주스:
+    decision: O
+    color: blue
+    memo: "레몬주스를 별도 가공품으로 분리하고 아황산류(가능) 추가"
+    claude: "병에 든 레몬즙에는 보존료가 흔하다. 기존 '레몬즙' 별칭(레몬)도 같은 문제가 있어 따로 검토가 필요하다."
+  목이버섯:
+    decision: O
+    color: blue
+    memo: "흰목이버섯을 별도 재료로 분리"
+    claude: "다른 종이다. 알레르기 영향은 없다."
+  백김치:
+    decision: O
+    color: blue
+    memo: "밀(가능) 추가"
+    claude: "배추김치에 밀가루 풀을 '가능'으로 둔 기준과 맞춘다(초안에서 빠뜨린 것)."
+  함초:
+    decision: O
+    color: blue
+    memo: "분류를 해조류 → 채소로"
+    claude: "함초는 육지 염생식물이다. 화면 분류만 바뀐다."
+  녹차가루:
+    decision: O
+    color: blue
+    memo: "분류를 곡류·가루 → 가공식품으로"
+    claude: "화면 분류만 바뀐다."

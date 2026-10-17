@@ -5,15 +5,15 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 230. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 230. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
 ingredients:
-- ingredient: null
-  raw_text: 재료 닭가슴살(40g)
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(40g)
   role: sub
 - ingredient: cabbage
   raw_text: 양배추(10g)
   role: sub
-- ingredient: null
+- ingredient: cheongpomuk
   raw_text: 청포묵(30g)
   role: sub
 - ingredient: mung_bean_sprouts
@@ -22,10 +22,10 @@ ingredients:
 - ingredient: rice
   raw_text: 쌀(80g)
   role: sub
-- ingredient: null
+- ingredient: egg
   raw_text: 달걀지단(20g)
   role: sub
-- ingredient: null
+- ingredient: radish_sprouts
   raw_text: 무순(5g)
   role: sub
 - ingredient: null

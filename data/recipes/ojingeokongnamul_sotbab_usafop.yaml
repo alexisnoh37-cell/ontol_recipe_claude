@@ -9,9 +9,9 @@ servings: null
 source: https://www.youtube.com/watch?v=USaFop8Vk0w
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '30분 불린 쌀' → rice(이름 보정표)
 ingredients:
-- ingredient: null
+- ingredient: rice
   raw_text: 30분 불린 쌀 2컵 / 쌀 2컵
   role: main
   optional: false

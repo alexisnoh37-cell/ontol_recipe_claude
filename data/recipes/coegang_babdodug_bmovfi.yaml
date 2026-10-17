@@ -9,9 +9,9 @@ servings: null
 source: https://www.youtube.com/watch?v=bMOVfiFZf7I
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '계란후라이에 다대기' → egg(이름 보정표)
 ingredients:
-- ingredient: null
+- ingredient: egg
   raw_text: 계란후라이에 다대기 2스푼
   role: main
   optional: false

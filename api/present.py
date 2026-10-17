@@ -29,6 +29,12 @@ def load_display(config_dir: Path = CONFIG_DIR) -> dict[str, Any]:
     return yaml.safe_load((config_dir / "display.yaml").read_text(encoding="utf-8"))
 
 
+def commercial_products(display: dict[str, Any]) -> tuple[str, frozenset[str]]:
+    """시판 제품 안내(config/display.yaml commercial_product_notice): (문구, 대상 재료 id)."""
+    c = display.get("commercial_product_notice") or {}
+    return c.get("text") or "", frozenset(c.get("ingredients") or ())
+
+
 REQUIRED_ROLES = ("main", "sub", "seasoning")  # 꼭 필요한 재료(기본 양념은 보유로 간주되어 missing에 오지 않음)
 
 
@@ -37,6 +43,7 @@ class RecipeDisplay:
     notices: tuple[str, ...]
     label_check: tuple[str, ...]  # 성분표 확인 대상 재료 id(가공품이면서 confidence: low, 선택·고명 포함)
     required_ids: frozenset[str]  # 선택이 아닌 main·sub·seasoning 줄에 쓰인 재료
+    commercial: tuple[str, ...] = ()  # 시판 제품 안내 대상 재료 id(선택·고명 포함, 원문 순서)
 
 
 class Catalog:
@@ -56,6 +63,10 @@ class Catalog:
         self.vocab = ck.vocab
         self.recipes: dict[str, RecipeSpec] = {r.id: r for r in data.recipes}
         self._aliases = [(a.alias_norm, a.alias, a.ingredient_id, a.is_primary) for a in ck.aliases]
+        self.commercial_text, self.commercial_ids = commercial_products(display)
+        unknown = self.commercial_ids - set(self.ingredients)
+        if unknown:  # 설정 오타로 안내가 조용히 사라지지 않게
+            raise ValueError(f"config/display.yaml commercial_product_notice: 모르는 재료 {sorted(unknown)}")
         self._recipe_display = {r.id: self._build_recipe_display(r) for r in data.recipes}
 
     # --- 알레르기 그룹 -----------------------------------------------------------------------------
@@ -133,7 +144,15 @@ class Catalog:
                        if self.ingredients[i].is_processed and self.ingredients[i].confidence == "low")
         required = frozenset(line.ingredient for line in r.ingredients
                              if line.ingredient and not line.optional and line.role in REQUIRED_ROLES)
-        return RecipeDisplay(tuple(notices), checks, required)
+        commercial = tuple(i for i in dict.fromkeys(ids) if i in self.commercial_ids)
+        return RecipeDisplay(tuple(notices), checks, required, commercial)
+
+    def commercial_notice(self, disp: RecipeDisplay) -> dict[str, Any] | None:
+        """재료 목록 위에 보여 줄 시판 제품 안내. 알레르기 설정과 무관하게 붙인다(um-2)."""
+        if not disp.commercial:
+            return None
+        return {"text": self.commercial_text,
+                "ingredients": [{"id": i, "name": self.names[i]} for i in disp.commercial]}
 
     def recipe_display(self, recipe_id: str) -> RecipeDisplay:
         return self._recipe_display[recipe_id]
@@ -174,6 +193,7 @@ class Catalog:
             "status": r.status,
             "ingredients": lines,
             "steps": [s.text for s in r.steps],
+            "commercial_notice": self.commercial_notice(disp),
             "notices": list(disp.notices),
             "label_check": {
                 "message": self.display["label_check"],
@@ -274,6 +294,7 @@ class Catalog:
                 for s in item.substitutions
             ],
             "notes": [n for n in item.notes if n not in optional_notes],
+            "commercial_notice": self.commercial_notice(disp),
             "notices": list(disp.notices),
             "label_check": {
                 "message": self.display["label_check"],

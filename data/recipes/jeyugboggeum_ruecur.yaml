@@ -9,9 +9,9 @@ servings: null
 source: https://www.youtube.com/watch?v=rUEcur2PlLI
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '양념으로 맛술' → mirin(이름 보정표)
 ingredients:
-- ingredient: null
+- ingredient: pork_belly
   raw_text: 대패삼겹 400g
   role: main
   optional: false
@@ -77,7 +77,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: mirin
   raw_text: 양념으로 맛술 3스푼
   role: sub
   optional: false

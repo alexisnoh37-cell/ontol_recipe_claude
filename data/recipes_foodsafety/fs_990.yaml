@@ -5,39 +5,39 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 990. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 990. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
 ingredients:
 - ingredient: null
   raw_text: 그린비타민 8g
   role: sub
-- ingredient: null
+- ingredient: chicory
   raw_text: 치커리 8g
   role: sub
 - ingredient: pear
   raw_text: 배 15g
   role: sub
-- ingredient: null
+- ingredient: grape_juice
   raw_text: 포도주스 10g
   role: sub
 - ingredient: null
   raw_text: 훈제오리가슴살 30g
   role: sub
-- ingredient: null
+- ingredient: konjac
   raw_text: 실곤약 20g
   role: sub
 - ingredient: null
   raw_text: 산마드래싱
   role: sub
-- ingredient: null
+- ingredient: yam
   raw_text: 산마 10g
   role: sub
 - ingredient: milk
   raw_text: 우유 10g
   role: sub
-- ingredient: null
+- ingredient: lemon_juice
   raw_text: 레몬주스 3g
   role: sub
-- ingredient: null
+- ingredient: orange_juice
   raw_text: 오렌지주스 3g
   role: sub
 - ingredient: walnut

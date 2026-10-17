@@ -53,7 +53,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: beef_seasoning
   raw_text: 소고기다시다 반스푼
   role: sub
   optional: false

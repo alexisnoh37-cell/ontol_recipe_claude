@@ -17,7 +17,7 @@ ingredients:
   optional: false
   amount: 5
   unit: 인분
-- ingredient: null
+- ingredient: luncheon_meat
   raw_text: 스팸 170g
   role: sub
   optional: false

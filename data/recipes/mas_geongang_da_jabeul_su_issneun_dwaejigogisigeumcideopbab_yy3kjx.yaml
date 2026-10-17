@@ -9,7 +9,8 @@ servings: null
 source: https://www.youtube.com/watch?v=yY3KJxe-nt4
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '죽으면 진간장' → soy_sauce(이름 보정표); 재료 이름 '가운데로 재료 잘 모아주고 계란' → egg(이름
+  보정표); 재료 이름 '맛을 위해 참기름' → sesame_oil(이름 보정표)
 ingredients:
 - ingredient: ground_pork
   raw_text: 돼지고기다짐육 100g
@@ -77,19 +78,19 @@ ingredients:
   optional: false
   amount: null
   unit: null
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 죽으면 진간장 1스푼
   role: sub
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: egg
   raw_text: 가운데로 재료 잘 모아주고 계란 한알 / 계란 1개
   role: sub
   optional: false
   amount: 1
   unit: 개
-- ingredient: null
+- ingredient: sesame_oil
   raw_text: 맛을 위해 참기름 한스푼
   role: sub
   optional: false

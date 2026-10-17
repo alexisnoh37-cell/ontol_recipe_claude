@@ -1,0 +1,118 @@
+# 엔진 레시피(자취요리신·살림팝) 원본 재료 이름 보정표 (um-2, 2026-10-17 사람 검수표 승인)
+# 원본 YAML은 그대로 두고, 변환(kb/youtube_seed.py)이 재료를 매핑하기 전에 이 표를 적용한다. 바뀐 내용은 레시피 note와
+# 각 데이터셋 CONVERSION.md "레시피별로 달라진 것"에 남는다.
+#   names: 원본 재료 이름(공백 무시하고 비교)
+#   id: 이 재료로 매핑 / drop: 재료에서 뺌(duplicate:<재료 id> = 같은 레시피에 그 재료 줄이 이미 있을 때만, water = 물)
+#   split: 한 줄을 여러 재료로 나눔(amount: false면 그 줄에는 양을 넣지 않음)
+# 근거: docs/review/unmapped_review.md(D 분류), docs/review/unmapped_proposal.yaml
+overrides:
+- names: [고추장 크게, 고추장 1 크게, 이때 고추장, 고기양과 동일하게 고추장]
+  id: gochujang
+- names: [두르고 된장]
+  id: doenjang
+- names: [진강장, 두꼬집 진간장, 죽으면 진간장]
+  id: soy_sauce
+- names: [살탕, 양념이 등갈비에 다 묻으면 설탕]
+  id: sugar
+- names: [굶은 소금]
+  id: salt
+- names: [마지막 꿀]
+  id: honey
+- names: [고운 고춧가루로, 하시는 분은 고춧가루, 불을 끄고 고춧가루, 으로 민 뒤 불끄고 고추가루, 바꾼 후 고춧가루, 취향껏 고춧가루, 양면이 다 노릇해지면 고춧가루]
+  id: gochugaru
+- names: [양파 작은거, 양파 큰거, 작은 양파, 앙파, 이제 뚜껑열고 채썬 양파, 열이 충분히 올라오면 양파]
+  id: onion
+- names: [감자 큰거, 큰 감자, 감자 작은거]
+  id: potato
+- names: [30분 불린 쌀]
+  id: rice
+- names: [김치 밥공기, 더해줄 김치국물]
+  id: kimchi
+- names: [색감을 위해 홍고추]
+  id: red_chili
+- names: [맛을 위해 청양고추, 위해 청양고추, 매콤한 맛을 위해 청양고추]
+  id: cheongyang_pepper
+- names: [마지막 참기름, 맛을 올리기 위해 참기름, 고소한 맛을 위해 참기름, 맛을 위해 참기름]
+  id: sesame_oil
+- names: [졸아들면 올리브유, 불을 끄고 올리브유]
+  id: olive_oil
+- names: [파란부분 올리브유]
+  split:
+  - {id: green_onion, amount: false}
+  - {id: olive_oil}
+- names: [마지막 킥 다진생강, 하고 날려버릴 다진생강, 생강 작은 조각]
+  id: ginger
+- names: [잡기위해 다진마늘, 다른마늘, 졸아 들었다 싶으면 마늘]
+  id: garlic
+- names: [양파 숨이 죽으면 멸치액젓]
+  id: anchovy_fish_sauce
+- names: [적당히 나오기 시작하면 대파, 대파 흰부분, 볼에 담고 대파, 자른대파]
+  id: green_onion
+- names: [토핑으로 사용할 쪽파]
+  id: scallion
+- names: [잘게 찢은 느타리]
+  id: oyster_mushroom
+- names: [잘 씻은 숙주나물, 숙주 크게, 잘섞이면 숙주]
+  id: mung_bean_sprouts
+- names: [이 육수에 콩나물]
+  id: soybean_sprouts
+- names: [채썬 애호박]
+  id: zucchini
+- names: [가운데에 계란, 재료 잘 모아서 계란후라이, 소면을 삶는 동안 계란, 가운데로 재료 잘 모아주고 계란, 기름 두르고 계란, 마지막 계란, 위에 계란]
+  id: egg
+- names: [큼지막한 새우, 새우는, 새우 취향껏, 코스트코 새우, 잘 해동한 새우]
+  id: shrimp_raw
+- names: [통 수육, 돼지고기 탕수육용]
+  id: pork
+- names: [돼지고기 앞다리살 찌개용]
+  id: pork_shoulder
+- names: [돼지고기 등심 카레용]
+  id: pork_loin
+- names: [돼지갈비찜용]
+  id: pork_ribs
+- names: [코스트코에서]
+  id: beef_short_ribs
+- names: [한번에 파스타면, 부은 후 백원동전크기 파스타면, 파스타면 백원동전 크기, 동전크기]
+  id: pasta
+- names: [저는 대식가라 국수, 국수는 배 금방꺼지니]
+  id: somen
+- names: [올려주는 고추기름]
+  id: chili_oil
+- names: [위에 토마토소스]
+  id: tomato_sauce
+- names: [양념 필요없이 굴소스]
+  id: oyster_sauce
+- names: [양념으로 맛술, 볶다가 맛술]
+  id: mirin
+- names: [잘게자른 오징어젓갈]
+  id: ojingeojeot
+- names: [만두 소]
+  id: frozen_dumplings
+- names: [끄고 마요네즈]
+  id: mayonnaise
+- names: [땅콩버터 크게]
+  id: peanut_butter
+- names: [고형카레 큰거]
+  id: curry_powder
+- names: [통깨를 갈아만든 깨소금, 깨소금이 핵심이에요 영상에서는]
+  id: sesame
+- names: [전분가루를 처음에, 전분물(전분]
+  id: starch
+- names: [멸치육수가 없으니 코인육수]
+  id: instant_stock
+- names: [제일 중요한 시판 냉면육수]
+  id: naengmyeon_broth
+- names: [양념은 불닭소스]
+  id: buldak_sauce
+- names: [색감과 감칠맛을 끌어올릴 짜장가루]
+  id: jjajang_powder
+- names: [이 위에 팟타이 소스]
+  id: pad_thai_sauce
+- names: [더하기 위해 페퍼론치노]
+  id: peperoncino
+- names: [시작하면 물, 뚝배기에 물, 올려주고 물, 이제 물, 2인 기준으로 물, 고추기름이 나오면 물]
+  drop: water
+- names: [없으신 분들은 다시다나 치킨스톡]
+  id: chicken_stock
+- names: [계란후라이에 다대기]
+  id: egg

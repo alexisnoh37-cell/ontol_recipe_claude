@@ -11,7 +11,7 @@ status: draft
 confidence: low
 note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
 ingredients:
-- ingredient: null
+- ingredient: rice
   raw_text: 햇반 2개
   role: main
   optional: false

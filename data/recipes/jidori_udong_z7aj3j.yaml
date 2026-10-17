@@ -11,7 +11,7 @@ status: draft
 confidence: low
 note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리기구 '토치'(선택) 제외(vocab에 없음)
 ingredients:
-- ingredient: null
+- ingredient: instant_noodle_product
   raw_text: 생생우동
   role: main
   optional: false

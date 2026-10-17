@@ -11,13 +11,13 @@ status: draft
 confidence: low
 note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
 ingredients:
-- ingredient: null
+- ingredient: laver
   raw_text: 김밥용 김 2장 / 김 2장
   role: main
   optional: false
   amount: 2
   unit: 장
-- ingredient: null
+- ingredient: luncheon_meat
   raw_text: 스팸 1캔 / 스팸
   role: sub
   optional: false

@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 312. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 312. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
 ingredients:
-- ingredient: null
-  raw_text: 재료 양상추(80g)
+- ingredient: iceberg_lettuce
+  raw_text: 양상추(80g)
   role: sub
-- ingredient: null
+- ingredient: chicory
   raw_text: 치커리(15g)
   role: sub
 - ingredient: null
@@ -25,8 +25,8 @@ ingredients:
 - ingredient: parsley
   raw_text: 파슬리가루(0.1g)
   role: sub
-- ingredient: null
-  raw_text: 소스 설탕(2g)
+- ingredient: sugar
+  raw_text: 설탕(2g)
   role: sub
 - ingredient: vinegar
   raw_text: 식초(1.5g)
@@ -34,7 +34,7 @@ ingredients:
 - ingredient: lemon
   raw_text: 레몬즙(1g)
   role: sub
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 저염간장(3g)
   role: sub
 - ingredient: garlic
@@ -43,7 +43,7 @@ ingredients:
 - ingredient: null
   raw_text: 다진 토마토(50g)
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 다진 양파(4g)
   role: sub
 - ingredient: olive_oil

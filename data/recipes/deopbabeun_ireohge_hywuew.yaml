@@ -11,7 +11,7 @@ status: draft
 confidence: low
 note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에 없음)
 ingredients:
-- ingredient: null
+- ingredient: luncheon_meat
   raw_text: 스팸 340g
   role: main
   optional: false
@@ -47,7 +47,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: allulose
   raw_text: 알룰로스 2스푼
   role: seasoning
   optional: false

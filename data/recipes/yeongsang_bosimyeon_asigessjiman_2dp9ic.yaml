@@ -9,7 +9,8 @@ servings: null
 source: https://www.youtube.com/watch?v=2DP9iCPSRTo
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에 없음)
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에 없음); 재료 이름 '양면이 다 노릇해지면 고춧가루' → gochugaru(이름
+  보정표)
 ingredients:
 - ingredient: null
   raw_text: 적절한 단
@@ -65,7 +66,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: gochugaru
   raw_text: 양면이 다 노릇해지면 고춧가루 1스푼
   role: sub
   optional: false

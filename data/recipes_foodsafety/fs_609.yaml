@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 609. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 609. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
-- ingredient: null
+- ingredient: misutgaru
   raw_text: 미숫가루(50g)
   role: sub
 - ingredient: null
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: banana
   raw_text: 바나나(1개)
   role: sub
-- ingredient: null
+- ingredient: sesame
   raw_text: 흑임자(5g)
   role: sub
 - ingredient: egg
@@ -28,7 +28,7 @@ ingredients:
 - ingredient: milk
   raw_text: 우유(200g)
   role: sub
-- ingredient: null
+- ingredient: mint
   raw_text: 애플민트(10g)
   role: sub
 - ingredient: butter

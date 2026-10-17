@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 849. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 849. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
 ingredients:
 - ingredient: chicken_breast
   raw_text: 닭가슴살 60g
@@ -16,16 +16,16 @@ ingredients:
 - ingredient: onion
   raw_text: 양파 30g
   role: sub
-- ingredient: null
+- ingredient: bell_pepper
   raw_text: 노랑파프리카 24g
   role: sub
 - ingredient: button_mushroom
   raw_text: 양송이버섯 9g
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 양파다진것 6g
   role: sub
-- ingredient: null
+- ingredient: garlic
   raw_text: 마늘다진것 1.2g
   role: sub
 - ingredient: ketchup
@@ -40,16 +40,16 @@ ingredients:
 - ingredient: null
   raw_text: 이탈리안시즈닝
   role: sub
-- ingredient: null
+- ingredient: thyme
   raw_text: 타임 0.9g
   role: sub
-- ingredient: null
+- ingredient: rosemary
   raw_text: 로즈마리 0.9g
   role: sub
 - ingredient: basil
   raw_text: 바질 1.2g
   role: sub
-- ingredient: null
+- ingredient: oregano
   raw_text: 오레가노 1.2g
   role: sub
 steps:

@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3163. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3163. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
 ingredients:
 - ingredient: null
   raw_text: '"배추 17g'
@@ -31,7 +31,7 @@ ingredients:
 - ingredient: minari
   raw_text: 미나리 1.0g
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 깐양파 1.1g
   role: sub
 - ingredient: bell_pepper
@@ -58,10 +58,10 @@ ingredients:
 - ingredient: salt
   raw_text: 굵은소금 0.5g
   role: sub
-- ingredient: null
+- ingredient: shiitake
   raw_text: 건표고버섯 0.1g
   role: sub
-- ingredient: null
+- ingredient: anchovy
   raw_text: 국멸치 0.3g
   role: sub
 steps:

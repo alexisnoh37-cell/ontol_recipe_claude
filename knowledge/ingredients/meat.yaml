@@ -10,14 +10,14 @@
 # --- 돼지고기 ---
 - id: pork
   name: 돼지고기
-  aliases: [돈육]
+  aliases: [돈육, 돼지고기 뒷다리살, 돼지 뒷다리살, 뒷다리살]
   is_a: [meat]
   category: 육류
   allergens: [{group: pork, certainty: definite}]
   status: reviewed
 - id: pork_belly
   name: 삼겹살
-  aliases: [통삼겹, 대패삼겹살, 오겹살, 통삼겹살]
+  aliases: [통삼겹, 대패삼겹살, 오겹살, 통삼겹살, 대패삼겹]
   is_a: [pork]
   category: 육류
   note: 2026-10-16 자취요리신 데이터 연결로 별칭 추가, 검수 필요('통삼겹살')
@@ -30,7 +30,7 @@
   status: reviewed
 - id: pork_shoulder
   name: 돼지고기 앞다리살
-  aliases: [앞다리살, 돼지 앞다리]
+  aliases: [앞다리살, 돼지 앞다리, 돼지앞다리살]
   is_a: [pork]
   category: 육류
   status: reviewed
@@ -54,7 +54,7 @@
   status: reviewed
 - id: ground_pork
   name: 돼지고기 다짐육
-  aliases: [다진 돼지고기, 돼지 다짐육, 돼지고기 간 것]
+  aliases: [다진 돼지고기, 돼지 다짐육, 돼지고기 간 것, 간 돼지고기]
   is_a: [pork]
   category: 육류
   status: reviewed
@@ -62,7 +62,7 @@
 # --- 쇠고기 ---
 - id: beef
   name: 쇠고기
-  aliases: [소고기, 우육]
+  aliases: [소고기, 우육, 샤브샤브용 소고기]
   is_a: [meat]
   category: 육류
   allergens: [{group: beef, certainty: definite}]
@@ -94,7 +94,7 @@
   status: reviewed
 - id: beef_sirloin
   name: 소고기 등심
-  aliases: [소등심, 꽃등심]
+  aliases: [소등심, 꽃등심, 쇠고기등심]
   is_a: [beef]
   category: 육류
   status: reviewed
@@ -106,7 +106,7 @@
   status: reviewed
 - id: ground_beef
   name: 소고기 다짐육
-  aliases: [다진 소고기, 소 다짐육]
+  aliases: [다진 소고기, 소 다짐육, 다진 쇠고기, 쇠고기다진것]
   is_a: [beef]
   category: 육류
   status: reviewed
@@ -128,7 +128,7 @@
 # --- 닭고기·가금류 ---
 - id: chicken
   name: 닭고기
-  aliases: [닭, 생닭, 닭 한 마리, 절단용 닭]
+  aliases: [닭, 생닭, 닭 한 마리, 절단용 닭, 닭고기살]
   is_a: [meat]
   category: 육류
   allergens: [{group: chicken, certainty: definite}]
@@ -188,7 +188,7 @@
   status: reviewed
 - id: sausage
   name: 소시지
-  aliases: [비엔나소시지, 프랑크소시지, 후랑크소시지]
+  aliases: [비엔나소시지, 프랑크소시지, 후랑크소시지, 소세지]
   derived_from:
     - {id: pork, certainty: possible}
     - {id: chicken, certainty: possible}
@@ -203,7 +203,7 @@
   status: reviewed
 - id: luncheon_meat
   name: 통조림햄
-  aliases: [런천미트, 캔햄]
+  aliases: [런천미트, 캔햄, 스팸]
   derived_from:
     - pork
     - {id: chicken, certainty: possible}
@@ -236,3 +236,38 @@
   confidence: low
   note: 만두피는 밀. 소는 제품마다 다름(고기·두부·김치·새우 등). 새우만두는 별도 재료로 두지 않음
   status: reviewed
+
+# --- um-2 미매칭 보강(2026-10-17, 사람 검수표 승인, 재료 검수 전 draft) ---
+- id: meatball
+  name: 미트볼
+  aliases: [레트로 미트볼]
+  derived_from:
+    - {id: pork, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: chicken, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: egg, certainty: possible}
+    - {id: milk, certainty: possible}
+    - {id: tomato, certainty: possible}
+  is_processed: true
+  category: 육가공품
+  confidence: low
+  note: "시판 미트볼(소스 포함 제품 많음) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: sundae
+  name: 순대
+  derived_from:
+    - pork
+    - {id: glass_noodles, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: egg, certainty: possible}
+    - {id: milk, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: sesame, certainty: possible}
+  is_processed: true
+  category: 육가공품
+  confidence: low
+  note: "돼지 창자에 당면·선지. 밀·대두 첨가 제품 있음 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft

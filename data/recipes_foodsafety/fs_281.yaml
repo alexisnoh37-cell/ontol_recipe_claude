@@ -5,10 +5,10 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 281. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 281. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
 ingredients:
 - ingredient: null
-  raw_text: 재료 콩(백태, 30g)
+  raw_text: 콩(백태, 30g)
   role: sub
 - ingredient: oyster_mushroom
   raw_text: 느타리버섯(10g)
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: green_onion
   raw_text: 대파(5g)
   role: sub
-- ingredient: null
+- ingredient: red_chili
   raw_text: 붉은 고추(2g)
   role: sub
 - ingredient: green_chili
@@ -34,7 +34,7 @@ ingredients:
 - ingredient: manila_clam
   raw_text: 바지락(30g)
   role: sub
-- ingredient: null
+- ingredient: doenjang
   raw_text: 저염된장(10g)
   role: sub
 - ingredient: shrimp_raw
@@ -44,7 +44,7 @@ ingredients:
   raw_text: 순두부(120g)
   role: sub
 - ingredient: null
-  raw_text: 육수 마른 다시마(1g)
+  raw_text: 마른 다시마(1g)
   role: sub
 - ingredient: anchovy
   raw_text: 멸치(1g)

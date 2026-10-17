@@ -9,7 +9,7 @@ servings: 2
 source: https://www.youtube.com/watch?v=lkGv_6NnehA
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '마지막 참기름' → sesame_oil(이름 보정표)
 ingredients:
 - ingredient: somen
   raw_text: 소면 2인분 / 소면
@@ -29,7 +29,7 @@ ingredients:
   optional: false
   amount: null
   unit: null
-- ingredient: null
+- ingredient: egg
   raw_text: 삶은계란 1개
   role: sub
   optional: false
@@ -71,7 +71,7 @@ ingredients:
   optional: false
   amount: 4
   unit: 스푼
-- ingredient: null
+- ingredient: maesil_cheong
   raw_text: 매실액 3스푼
   role: seasoning
   optional: false
@@ -95,13 +95,13 @@ ingredients:
   optional: false
   amount: 4
   unit: 스푼
-- ingredient: null
+- ingredient: pear_drink
   raw_text: 갈아만든배 1캔
   role: sub
   optional: false
   amount: 1
   unit: 캔
-- ingredient: null
+- ingredient: sesame_oil
   raw_text: 마지막 참기름 한스푼
   role: sub
   optional: false
@@ -119,7 +119,7 @@ ingredients:
   optional: false
   amount: 4
   unit: 스푼
-- ingredient: null
+- ingredient: pear_drink
   raw_text: 갈아만든 배 한캔
   role: sub
   optional: false

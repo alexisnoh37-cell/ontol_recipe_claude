@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 91. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 91. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
 ingredients:
 - ingredient: null
   raw_text: 버섯구이
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: olive_oil
   raw_text: 올리브유 10g(2작은술)
   role: sub
-- ingredient: null
+- ingredient: chicory
   raw_text: 치커리 10g(3줄기)
   role: sub
 - ingredient: null
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: tofu
   raw_text: 연두부 30g(1/4모)
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 다진 양파 10g(2작은술)
   role: sub
 - ingredient: null
@@ -46,7 +46,7 @@ ingredients:
 - ingredient: honey
   raw_text: 꿀 2g(1/3작은술)
   role: sub
-- ingredient: null
+- ingredient: black_pepper
   raw_text: 흰 후추 약간
   role: sub
 steps:

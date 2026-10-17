@@ -17,7 +17,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 개
-- ingredient: null
+- ingredient: pork
   raw_text: 돼지고기 뒷다리살 600g
   role: sub
   optional: false

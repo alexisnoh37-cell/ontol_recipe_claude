@@ -146,7 +146,7 @@
   status: reviewed
 - id: anchovy
   name: 멸치
-  aliases: [국물용 멸치, 다시멸치, 볶음용 멸치, {text: 잔멸치, form: small}]
+  aliases: [국물용 멸치, 다시멸치, 볶음용 멸치, {text: 잔멸치, form: small}, 국멸치]
   is_a: [fish]
   category: 생선
   allergens: [{group: other_fish, certainty: definite}]
@@ -190,7 +190,7 @@
 # --- 갑각류 ---
 - id: shrimp_raw
   name: 새우
-  aliases: [대하, 칵테일새우, 새우살, 흰다리새우, 냉동새우]
+  aliases: [대하, 칵테일새우, 새우살, 흰다리새우, 냉동새우, 새우 머리]
   is_a: [seafood]
   category: 해산물
   allergens: [{group: shrimp, certainty: definite}]
@@ -213,7 +213,7 @@
 # --- 연체류 ---
 - id: squid
   name: 오징어
-  aliases: [생물 오징어, 한치]
+  aliases: [생물 오징어, 한치, 냉동오징어]
   is_a: [seafood]
   category: 해산물
   allergens: [{group: squid, certainty: definite}]
@@ -391,12 +391,12 @@
 # --- 해조류 ---
 - id: laver
   name: 김
-  aliases: [김밥김, 생김, 구운김]
+  aliases: [김밥김, 생김, 구운김, 김밥용 김]
   category: 해조류
   status: reviewed
 - id: seasoned_laver
   name: 조미김
-  aliases: [맛김, 도시락김]
+  aliases: [맛김, 도시락김, 김가루, 자른김]
   derived_from: [laver, {id: sesame_oil, certainty: possible}, {id: perilla_oil, certainty: possible}]
   is_processed: true
   category: 해조류
@@ -410,7 +410,7 @@
   status: reviewed
 - id: kelp
   name: 다시마
-  aliases: [국물용 다시마]
+  aliases: [국물용 다시마, 건다시마]
   category: 해조류
   status: reviewed
 
@@ -422,3 +422,23 @@
   is_processed: true
   category: 육수·조미료
   status: reviewed
+
+# --- um-2 미매칭 보강(2026-10-17, 사람 검수표 승인, 재료 검수 전 draft) ---
+- id: monkfish
+  name: 아귀
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: whelk
+  name: 골뱅이
+  category: 해산물
+  allergens: [{group: shellfish, certainty: definite}, {group: soybean, certainty: possible}, {group: wheat, certainty: possible}]
+  confidence: low
+  note: "바다 고둥(복족류). 전복과 같이 조개류 그룹으로 둠. 원문은 통조림이라 조미액 대비 대두·밀 possible(um-2 사람 결정) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: hijiki
+  name: 톳
+  category: 해조류
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft

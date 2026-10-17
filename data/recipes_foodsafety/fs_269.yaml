@@ -5,10 +5,10 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 269. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 269. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
-- ingredient: null
-  raw_text: 재료 배추(20g)
+- ingredient: napa_cabbage
+  raw_text: 배추(20g)
   role: sub
 - ingredient: radish
   raw_text: 무(10g)
@@ -22,8 +22,8 @@ ingredients:
 - ingredient: abalone
   raw_text: 전복(100g)
   role: sub
-- ingredient: null
-  raw_text: 육수 쇠고기(양지 50g, 갈비 50g)
+- ingredient: beef
+  raw_text: 쇠고기(양지 50g, 갈비 50g)
   role: sub
 - ingredient: onion
   raw_text: 양파(40g)
@@ -31,8 +31,8 @@ ingredients:
 - ingredient: garlic
   raw_text: 마늘(10g)
   role: sub
-- ingredient: null
-  raw_text: 양념 저염간장(10g)
+- ingredient: soy_sauce
+  raw_text: 저염간장(10g)
   role: sub
 steps:
 - text: 쇠고기는 핏물을 제거한 뒤 양파, 마늘을 넣고 물(300g)을 부어 1시간 이상 끓인 뒤 면포에 걸러 육수를 만든다.

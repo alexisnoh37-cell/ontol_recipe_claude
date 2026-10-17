@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 326. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 326. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
 ingredients:
 - ingredient: null
   raw_text: 갈은 소고기 150g
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: king_oyster_mushroom
   raw_text: 새송이버섯 20g
   role: sub
-- ingredient: null
+- ingredient: hamcho
   raw_text: 함초 30g
   role: sub
 - ingredient: onion
@@ -40,16 +40,16 @@ ingredients:
 - ingredient: sesame
   raw_text: 통깨 5g
   role: sub
-- ingredient: null
+- ingredient: hamcho_salt
   raw_text: 함초소금 1g
   role: sub
-- ingredient: null
+- ingredient: balsamic_vinegar
   raw_text: 발사믹식초 30g
   role: sub
 - ingredient: sugar
   raw_text: 설탕 15g
   role: sub
-- ingredient: null
+- ingredient: black_pepper
   raw_text: 흰후추 1g
   role: sub
 steps:

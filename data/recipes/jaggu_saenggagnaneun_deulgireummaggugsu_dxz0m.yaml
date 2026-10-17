@@ -11,7 +11,7 @@ status: draft
 confidence: low
 note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
 ingredients:
-- ingredient: null
+- ingredient: buckwheat_noodles
   raw_text: 막국수 2인분
   role: main
   optional: false
@@ -35,7 +35,7 @@ ingredients:
   optional: false
   amount: 3
   unit: 스푼
-- ingredient: null
+- ingredient: seasoned_laver
   raw_text: 김가루 넉넉히 / 김가루
   role: garnish
   optional: false

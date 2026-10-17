@@ -5,10 +5,10 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 304. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 304. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
-- ingredient: null
-  raw_text: 재료 감자(80g)
+- ingredient: potato
+  raw_text: 감자(80g)
   role: sub
 - ingredient: onion
   raw_text: 양파(15g)
@@ -34,16 +34,16 @@ ingredients:
 - ingredient: crown_daisy
   raw_text: 쑥갓(5g)
   role: sub
-- ingredient: null
-  raw_text: 육수 멸치(2g)
+- ingredient: anchovy
+  raw_text: 멸치(2g)
   role: sub
 - ingredient: null
   raw_text: 황태포(10g)
   role: sub
-- ingredient: null
-  raw_text: 양념 다진 마늘(1g)
+- ingredient: garlic
+  raw_text: 다진 마늘(1g)
   role: sub
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 저염간장(2g)
   role: sub
 - ingredient: salt

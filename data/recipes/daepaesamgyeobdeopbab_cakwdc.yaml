@@ -9,7 +9,8 @@ servings: null
 source: https://www.youtube.com/watch?v=cAKwDcML8pE
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '적당히 나오기 시작하면 대파' → green_onion(이름 보정표); 재료 이름 '잘게 찢은 느타리' → oyster_mushroom(이름
+  보정표); 재료 이름 '재료 잘 모아서 계란후라이' → egg(이름 보정표)
 ingredients:
 - ingredient: pork_belly
   raw_text: 대패삼겹살 100g / 삼겹살 100g
@@ -59,19 +60,19 @@ ingredients:
   optional: false
   amount: 100
   unit: g
-- ingredient: null
+- ingredient: green_onion
   raw_text: 적당히 나오기 시작하면 대파 1/4쪽 / 대파 1/4쪽 / 대파
   role: sub
   optional: false
   amount: 0.25
   unit: 쪽
-- ingredient: null
+- ingredient: oyster_mushroom
   raw_text: 잘게 찢은 느타리 반팩
   role: sub
   optional: false
   amount: 0.5
   unit: 팩
-- ingredient: null
+- ingredient: egg
   raw_text: 재료 잘 모아서 계란후라이 한알 / 달걀 1알 / 달걀
   role: sub
   optional: false

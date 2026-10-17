@@ -1,0 +1,1093 @@
+# 미매칭 보강 제안 데이터 (um-1, 2026-10-17). 검수표: docs/review/unmapped_review.md
+# 생성: uv run python scripts/make_unmapped_review.py
+#
+# 세 출처(자취요리신·살림팝 = 엔진 레시피, 식품안전나라 = 그래프 표시 전용)의 미매칭 표기를 분류한 **제안**이다.
+# knowledge/와 변환 결과는 아직 바꾸지 않았다. 사람이 검수표 승인 열에 O/X를 적은 뒤 승인분만 반영한다.
+# 식품안전나라 항목은 fs-3 보강안(docs/review/foodsafety_alias_proposal.md)을 그대로 옮겨 왔다.
+#
+# kind
+#   A  별칭: 기존 재료(target)에 표기(terms)를 별칭으로 추가. form은 별칭의 형태(minced 등).
+#   B  새 재료: new에 적은 재료를 draft로 추가. terms 중 name과 다른 것은 별칭.
+#   C  보류: 모호하거나 재료가 불명. 미매칭 유지(알레르기 사용자에게 계속 제외, 안전).
+#   D  이름 다듬기: 원본 재료 이름에 자막 문구·크기·오타가 붙은 것. knowledge는 그대로 두고 변환 단계에서
+#      이름을 고친다(target 재료로 매핑). target이 null이면 재료에서 뺀다(물 등). target이 B·E의 새 재료면
+#      그 항목도 승인되어야 한다.
+#   E  시판 제품: 제품마다 성분이 달라 알레르기를 넓게 possible로 잡은 새 재료(B와 같은 형식) 또는 기존 재료 별칭.
+#      빠진 알레르기가 있으면 위험하다. 포장 표시를 확인할 수 없으면 X(미매칭 유지)가 더 안전하다.
+#
+# 알레르기: 원천 재료는 allergens, 가공품은 derived_from(기존 재료의 알레르기를 상속, certainty possible = 포함 가능).
+# derived_from에 분류 노드(fish, seafood)를 쓰면 그 아래 모든 그룹이 possible이 된다(어묵과 같은 방식).
+
+entries:
+
+# ============================== E. 시판 제품 ==============================
+
+- kind: E
+  decision: O
+  terms: [코인육수, 육수코인, 분말육수, 육수가루, 가루육수]
+  new:
+    id: instant_stock
+    name: 시판 육수(코인·분말)
+    category: 육수·조미료
+    is_processed: true
+    derived_from:
+      - {id: seafood, certainty: possible}
+      - {id: beef, certainty: possible}
+      - {id: pork, certainty: possible}
+      - {id: chicken, certainty: possible}
+      - {id: soybean, certainty: possible}
+      - {id: wheat_flour, certainty: possible}
+      - {id: milk, certainty: possible}
+      - {id: kelp, certainty: possible}
+    confidence: low
+  note: 제품마다 원료가 다름(멸치·디포리·새우·황태·사골·채소). 해산물 전체·육류·대두·밀·우유를 모두 possible로 둠. 쓰는 제품의 표시를 확인하면 줄일 수 있음
+
+- kind: E
+  decision: O
+  terms: [다시다]
+  new:
+    id: dasida
+    name: 조미료(다시다)
+    category: 육수·조미료
+    is_processed: true
+    derived_from:
+      - {id: beef, certainty: possible}
+      - {id: seafood, certainty: possible}
+      - {id: wheat_flour, certainty: possible}
+      - {id: soybean, certainty: possible}
+    confidence: low
+  note: 상표명. 쇠고기 외에 멸치·해물·조개 다시다가 있어 쇠고기 맛 조미료와 구분. 해산물 전체 possible
+
+- kind: A
+  decision: O
+  terms: [소고기 다시다, 소고기다시다, 쇠고기 다시다]
+  target: beef_seasoning
+  note: 상표명(쇠고기 다시다) → 기존 '쇠고기 맛 조미료'(쇠고기·밀·대두 possible, 검수 완료 재료)
+
+- kind: E
+  decision: O
+  terms: [너구리, 신라면, 신라면 더레드, 사리곰탕 라면, 사리곰탕, 멸치칼국수 라면, 멸치칼국수라면, 멸치 칼국수 라면, 불닭볶음면, 까르보 불닭볶음면, 불닭볶음탕면, 짜파게티, 사천짜파게티, 비빔면, 팔도 비빔면, 진짜 쫄면 라면, 진쫄면, 꼬꼬면, 매운 라면, 생생우동, 컵누들 마라탕]
+  new:
+    id: instant_noodle_product
+    name: 시판 라면 제품(면·스프 포함)
+    category: 면·떡·빵
+    is_processed: true
+    derived_from:
+      - wheat_flour
+      - {id: soybean, certainty: possible}
+      - {id: milk, certainty: possible}
+      - {id: egg, certainty: possible}
+      - {id: beef, certainty: possible}
+      - {id: pork, certainty: possible}
+      - {id: chicken, certainty: possible}
+      - {id: seafood, certainty: possible}
+      - {id: sesame, certainty: possible}
+      - {id: tomato, certainty: possible}
+      - {id: buckwheat, certainty: possible}
+      - {id: peanut, certainty: possible}
+    confidence: low
+  note: 상표 제품을 하나로 묶음(제품마다 해물·닭·쇠고기·우유 등 다름). 기존 '라면'(ramen_noodles)은 알레르기 범위가 좁아 별칭으로 두지 않음. 제품별로 나누면 더 많은 레시피를 살릴 수 있으나 포장 표시 확인 필요(컵누들은 녹말면이라 밀 여부도 확인)
+
+- kind: E
+  decision: X
+  terms: [분말 스프, 라면스프, 불닭 스프, 스프, 조미유]
+  new:
+    id: ramen_soup_base
+    name: 라면 스프·조미유
+    category: 육수·조미료
+    is_processed: true
+    derived_from:
+      - {id: wheat_flour, certainty: possible}
+      - {id: soybean, certainty: possible}
+      - {id: milk, certainty: possible}
+      - {id: egg, certainty: possible}
+      - {id: beef, certainty: possible}
+      - {id: pork, certainty: possible}
+      - {id: chicken, certainty: possible}
+      - {id: seafood, certainty: possible}
+      - {id: sesame, certainty: possible}
+      - {id: tomato, certainty: possible}
+    confidence: low
+  note: 라면에 든 분말 스프·조미유(짜파게티 등)만 따로 쓴 경우. 제품별 성분 다름
+
+- kind: E
+  decision: O
+  terms: [불닭소스]
+  new:
+    id: buldak_sauce
+    name: 불닭소스
+    category: 소스
+    is_processed: true
+    derived_from:
+      - {id: chicken, certainty: possible}
+      - {id: soybean, certainty: possible}
+      - {id: wheat_flour, certainty: possible}
+      - {id: milk, certainty: possible}
+      - {id: beef, certainty: possible}
+      - {id: egg, certainty: possible}
+      - {id: sesame, certainty: possible}
+    confidence: low
+  note: 상표 소스. 닭고기 추출물·간장·밀 등 제품별 표시 확인 필요
+
+- kind: E
+  decision: O
+  terms: [매운 갈비양념, 매운 갈비 양념, 찜닭 양념, 찜닭 소스]
+  new:
+    id: bottled_marinade
+    name: 시판 고기 양념(갈비·찜닭)
+    category: 소스
+    is_processed: true
+    derived_from:
+      - {id: soy_sauce, certainty: possible}
+      - {id: wheat_flour, certainty: possible}
+      - {id: soybean, certainty: possible}
+      - {id: sesame, certainty: possible}
+      - {id: beef, certainty: possible}
+      - {id: pork, certainty: possible}
+      - {id: chicken, certainty: possible}
+      - {id: peach, certainty: possible}
+      - {id: tomato, certainty: possible}
+    confidence: low
+  note: 시판 양념장. 간장·과즙(배·복숭아 등)·고기 추출물이 제품마다 다름
+
+- kind: E
+  decision: O
+  terms: [참소스]
+  new:
+    id: cham_sauce
+    name: 참소스
+    category: 소스
+    is_processed: true
+    derived_from:
+      - {id: soy_sauce, certainty: possible}
+      - {id: soybean, certainty: possible}
+      - {id: wheat_flour, certainty: possible}
+      - vinegar
+    confidence: low
+  note: 상표 소스(간장·식초 계열). 대두·밀 표시 확인 필요
+
+- kind: E
+  decision: O
+  terms: [폰즈 소스, 폰즈소스, 폰즈]
+  new:
+    id: ponzu
+    name: 폰즈 소스
+    category: 소스
+    is_processed: true
+    derived_from:
+      - soy_sauce
+      - {id: katsuobushi, certainty: possible}
+      - {id: lemon, certainty: possible}
+    confidence: low
+  note: 간장 + 감귤즙. 가쓰오부시 국물을 넣는 제품이 많음
+
+- kind: E
+  decision: O
+  terms: [짜장분말소스, 짜장가루, 짜장 분말]
+  new:
+    id: jjajang_powder
+    name: 짜장 분말
+    category: 소스
+    is_processed: true
+    derived_from:
+      - {id: chunjang, certainty: possible}
+      - {id: wheat_flour, certainty: possible}
+      - {id: soybean, certainty: possible}
+      - {id: pork, certainty: possible}
+      - {id: milk, certainty: possible}
+    confidence: low
+  note: 분말 짜장(오뚜기 등). 돼지고기·우유 포함 제품 있음
+
+- kind: E
+  decision: O
+  terms: [크림스프, 크림 스프, 크림수프]
+  new:
+    id: cream_soup_powder
+    name: 크림수프 분말
+    category: 소스
+    is_processed: true
+    derived_from:
+      - {id: milk, certainty: possible}
+      - wheat_flour
+      - {id: soybean, certainty: possible}
+      - {id: chicken, certainty: possible}
+      - {id: beef, certainty: possible}
+    confidence: low
+  note: 분말 수프. 밀가루 루 기반, 우유·고기 추출물 제품별 상이
+
+- kind: E
+  decision: O
+  terms: [팟타이 소스]
+  new:
+    id: pad_thai_sauce
+    name: 팟타이 소스
+    category: 소스
+    is_processed: true
+    derived_from:
+      - {id: fish_sauce, certainty: possible}
+      - {id: dried_shrimp, certainty: possible}
+      - {id: peanut, certainty: possible}
+      - {id: soybean, certainty: possible}
+      - {id: wheat_flour, certainty: possible}
+    confidence: low
+  note: 피시소스·타마린드 기반. 새우·땅콩 포함 제품 있음
+
+- kind: E
+  decision: O
+  terms: [냉면 육수, 냉면육수, 시판냉면육수, 시판 냉면육수]
+  new:
+    id: naengmyeon_broth
+    name: 시판 냉면육수
+    category: 육수·조미료
+    is_processed: true
+    derived_from:
+      - {id: beef, certainty: possible}
+      - {id: soy_sauce, certainty: possible}
+      - {id: soybean, certainty: possible}
+      - {id: wheat_flour, certainty: possible}
+      - {id: chicken, certainty: possible}
+      - {id: pork, certainty: possible}
+      - {id: clam, certainty: possible}
+    confidence: low
+  note: 동치미·쇠고기 육수 계열. 제품별 상이
+
+- kind: E
+  decision: O
+  terms: [레트로 미트볼, 미트볼]
+  new:
+    id: meatball
+    name: 미트볼
+    category: 육가공품
+    is_processed: true
+    derived_from:
+      - {id: pork, certainty: possible}
+      - {id: beef, certainty: possible}
+      - {id: chicken, certainty: possible}
+      - {id: wheat_flour, certainty: possible}
+      - {id: soybean, certainty: possible}
+      - {id: egg, certainty: possible}
+      - {id: milk, certainty: possible}
+      - {id: tomato, certainty: possible}
+    confidence: low
+  note: 시판 미트볼(소스 포함 제품 많음)
+
+- kind: E
+  decision: O
+  terms: [순대]
+  new:
+    id: sundae
+    name: 순대
+    category: 육가공품
+    is_processed: true
+    derived_from:
+      - pork
+      - {id: glass_noodles, certainty: possible}
+      - {id: wheat_flour, certainty: possible}
+      - {id: soybean, certainty: possible}
+      - {id: egg, certainty: possible}
+      - {id: milk, certainty: possible}
+      - {id: beef, certainty: possible}
+      - {id: sesame, certainty: possible}
+    confidence: low
+  note: 돼지 창자에 당면·선지. 밀·대두 첨가 제품 있음
+
+- kind: E
+  decision: O
+  terms: [포카칩]
+  new:
+    id: potato_chips
+    name: 감자칩
+    category: 가공식품
+    is_processed: true
+    derived_from:
+      - potato
+      - cooking_oil
+      - {id: milk, certainty: possible}
+      - {id: soybean, certainty: possible}
+      - {id: wheat_flour, certainty: possible}
+      - {id: beef, certainty: possible}
+      - {id: pork, certainty: possible}
+      - {id: chicken, certainty: possible}
+      - {id: egg, certainty: possible}
+      - {id: tomato, certainty: possible}
+    confidence: low
+  note: 상표명 '포카칩'을 별칭으로. 맛별(어니언 등)로 우유·대두·밀 다름
+
+- kind: E
+  decision: X
+  terms: [갓장아찌]
+  new:
+    id: gat_jangajji
+    name: 갓장아찌
+    category: 김치
+    is_processed: true
+    derived_from:
+      - {id: soy_sauce, certainty: possible}
+      - {id: soybean, certainty: possible}
+      - {id: wheat_flour, certainty: possible}
+    confidence: low
+  note: 원문 '갓장아찌(또는 씻은 묵은지)'. 간장 절임 기준. 갓 자체는 미등록
+
+- kind: A
+  decision: O
+  terms: [스팸]
+  target: luncheon_meat
+  note: 상표명. 기존 '통조림햄'(돼지고기, 닭·대두·밀 possible)
+
+- kind: A
+  decision: O
+  terms: [햇반]
+  target: rice
+  note: 상표명(즉석밥). 쌀·물
+
+- kind: A
+  decision: O
+  terms: [김가루]
+  target: seasoned_laver
+  note: 보통 조미한 김을 부순 것. 조미김(참기름·들기름 possible)으로 둠(안전 쪽)
+
+- kind: A
+  decision: O
+  terms: [자른김]
+  target: seasoned_laver
+  note: 조미 여부 불명 → 조미김으로 둠(참깨 possible, 안전 쪽)
+
+# ============================== B. 새 재료 ==============================
+
+- kind: B
+  decision: O
+  terms: [알룰로스]
+  new: {id: allulose, name: 알룰로스, category: 양념, confidence: high}
+
+- kind: B
+  decision: O
+  terms: [매실청, 매실액, 매실원액]
+  new: {id: maesil_cheong, name: 매실청, category: 양념, is_processed: true, derived_from: [maesil, sugar], confidence: high}
+
+- kind: B
+  decision: O
+  terms: [전분, 녹말가루, 녹말, 전분가루, 물전분, 물녹말]
+  new: {id: starch, name: 전분, category: 곡류·가루, is_processed: true, derived_from: [{id: wheat_flour, certainty: possible}], confidence: low}
+  note: 원료 불명(감자·옥수수·고구마·타피오카). 밀 전분 제품도 있으나 드묾 → 알레르기 없음으로 두되 검수 필요. 기존 potato_starch·corn_starch를 is_a starch로 둘지 함께 결정
+
+- kind: B
+  decision: O
+  terms: [페퍼론치노, 페페론치노]
+  new: {id: peperoncino, name: 페퍼론치노, category: 허브·향신료, confidence: high}
+  note: 말린 이탈리아 고추
+
+- kind: B
+  decision: O
+  terms: [아귀]
+  new:
+    id: monkfish
+    name: 아귀
+    category: 생선
+    allergens: [{group: other_fish, certainty: definite}]
+    confidence: high
+
+- kind: B
+  decision: O
+  terms: [골뱅이]
+  new:
+    id: whelk
+    name: 골뱅이
+    category: 해산물
+    allergens: [{group: shellfish, certainty: definite}, {group: soybean, certainty: possible}, {group: wheat, certainty: possible}]
+    confidence: low
+  note: 바다 고둥(복족류). 전복과 같이 조개류 그룹으로 둠. 원문은 통조림이라 조미액 대비 대두·밀 possible(um-2 사람 결정)
+
+- kind: B
+  decision: O
+  terms: [마늘쫑, 마늘종]
+  new: {id: garlic_scape, name: 마늘종, category: 채소, confidence: high}
+
+- kind: B
+  decision: O
+  terms: [공심채, 모닝글로리]
+  new: {id: water_spinach, name: 공심채, category: 채소, confidence: high}
+
+- kind: B
+  decision: O
+  terms: [참송이버섯, 참송이]
+  new: {id: chamsongi_mushroom, name: 참송이버섯, category: 버섯, confidence: low}
+  note: 표고 계열 품종으로 알려짐. 표고 별칭으로 둘지 검수(알레르기 무관)
+
+- kind: B
+  decision: O
+  terms: [병아리콩]
+  new: {id: chickpea, name: 병아리콩, category: 콩·두부, confidence: high}
+  note: 대두 아님
+
+- kind: B
+  decision: O
+  terms: [바질페스토, 바질 페스토]
+  new:
+    id: basil_pesto
+    name: 바질페스토
+    category: 소스
+    is_processed: true
+    derived_from:
+      - basil
+      - {id: olive_oil, certainty: possible}
+      - {id: pine_nut, certainty: possible}
+      - {id: parmesan, certainty: possible}
+      - {id: walnut, certainty: possible}
+      - {id: almond, certainty: possible}
+      - {id: garlic, certainty: possible}
+      - {id: peanut, certainty: possible}
+    confidence: low
+  note: 잣 대신 호두·캐슈를 쓰는 제품 있음
+
+- kind: B
+  decision: O
+  terms: [수제비]
+  new: {id: sujebi, name: 수제비, category: 면·떡·빵, is_processed: true, derived_from: [wheat_flour, {id: potato_starch, certainty: possible}], confidence: low}
+  note: 원문 '냉동 수제비'
+
+- kind: B
+  decision: O
+  terms: [쫄면]
+  new: {id: jjolmyeon_noodles, name: 쫄면 사리, category: 면·떡·빵, is_processed: true, derived_from: [wheat_flour, {id: soybean, certainty: possible}], confidence: low}
+  note: 면만. 소스가 든 제품(진쫄면)은 시판 라면 제품으로 분류
+
+- kind: B
+  decision: O
+  terms: [콜라]
+  new: {id: cola, name: 콜라, category: 가공식품, confidence: high}
+
+- kind: B
+  decision: O
+  terms: [쌍화탕]
+  new: {id: ssanghwatang, name: 쌍화탕, category: 가공식품, is_processed: true, derived_from: [{id: jujube, certainty: possible}, {id: ginger, certainty: possible}, {id: cinnamon, certainty: possible}, {id: sulfite, certainty: possible}], confidence: low}
+  note: 한방 음료(숙지황·당귀·대추·생강·계피 등). 법정 알레르기 성분은 없다고 봄
+
+- kind: B
+  decision: O
+  terms: [미원]
+  new: {id: msg, name: 미원(MSG), category: 육수·조미료, confidence: low}
+  note: 글루탐산나트륨(사탕수수 발효). 법정 알레르기 성분 없음으로 봄. 상표명 별칭
+
+- kind: B
+  decision: O
+  terms: [배즙]
+  new: {id: pear_juice, name: 배즙, category: 과일, is_processed: true, derived_from: [pear], confidence: high}
+
+- kind: B
+  decision: O
+  terms: [갈아만든배, 갈아만든 배, 배음료, 갈배음료]
+  new: {id: pear_drink, name: 시판 배 음료, category: 가공식품, is_processed: true, derived_from: [pear, {id: sulfite, certainty: possible}], confidence: low}
+  note: 상표 음료(갈아만든배 등). 보존료 대비 아황산류 possible(um-2 사람 결정)
+
+# ============================== A. 별칭 (엔진 레시피) ==============================
+
+- kind: A
+  decision: O
+  terms: [삶은 달걀, 삶은계란, 삶은 계란, 달걀 후라이, 계란후라이, 계란 후라이, 달걀물, 달걀지단, 달걀흰자, 달걀노른자]
+  target: egg
+  note: 조리 상태·부위만 다름
+
+- kind: A
+  decision: O
+  terms: [기름]
+  target: cooking_oil
+  note: 문맥상 볶음용 기름(볶음밥·한판탕·고기볶음밥 등 5개). 참기름·들기름일 가능성은 낮으나 레시피 확인 권장
+  confidence: low
+
+- kind: A
+  decision: O
+  terms: [케챱]
+  target: ketchup
+
+- kind: A
+  decision: O
+  terms: [국수]
+  target: somen
+  note: 레시피(간장국수·비빔국수·물국수)상 소면. 메밀국수일 가능성 낮음
+  confidence: low
+
+- kind: A
+  decision: O
+  terms: [막국수]
+  target: buckwheat_noodles
+  note: 메밀면(메밀, 밀 possible)
+
+- kind: A
+  decision: O
+  terms: [돼지앞다리살, 돼지 앞다리살]
+  target: pork_shoulder
+
+- kind: A
+  decision: O
+  terms: [돼지고기 뒷다리살, 돼지 뒷다리살, 뒷다리살]
+  target: pork
+  note: 뒷다리 부위 재료가 없어 상위 '돼지고기'로
+
+- kind: A
+  decision: O
+  terms: [대패삼겹]
+  target: pork_belly
+
+- kind: A
+  decision: O
+  terms: [간 돼지고기]
+  target: ground_pork
+
+- kind: A
+  decision: O
+  terms: [샤브샤브용 소고기]
+  target: beef
+
+- kind: A
+  decision: O
+  terms: [소세지]
+  target: sausage
+
+- kind: A
+  decision: O
+  terms: [새우 머리]
+  target: shrimp_raw
+
+- kind: A
+  decision: O
+  terms: [냉동오징어, 냉동 오징어]
+  target: squid
+
+- kind: A
+  decision: O
+  terms: [깐매추리알]
+  target: quail_egg
+  note: "'매추리'는 '메추리'의 흔한 오기"
+
+- kind: A
+  decision: O
+  terms: [배추 잎, 배춧잎]
+  target: napa_cabbage
+
+- kind: A
+  decision: O
+  terms: [{text: 다진 청양고추, form: minced}]
+  target: cheongyang_pepper
+
+- kind: A
+  decision: O
+  terms: [{text: 간마늘, form: minced}]
+  target: garlic
+
+- kind: A
+  decision: O
+  terms: [고추가루]
+  target: gochugaru
+  note: 흔한 표기 변형
+
+- kind: A
+  decision: O
+  terms: [김밥용 김]
+  target: laver
+
+- kind: A
+  decision: O
+  terms: [통밀 파스타면, 통밀파스타, 통밀 파스타]
+  target: pasta
+  note: 통밀(밀) 그대로
+
+- kind: A
+  decision: O
+  terms: [치킨스톡 가루]
+  target: chicken_stock
+
+- kind: A
+  decision: O
+  terms: [묵은 김치, 김치국물, 김치 국물]
+  target: kimchi
+  note: 김치 국물도 같은 알레르기(새우·생선 possible 등)
+
+# ============================== D. 이름 다듬기 (엔진 레시피 변환) ==============================
+
+- kind: D
+  decision: O
+  terms: [고추장 크게, 고추장 1 크게, 이때 고추장, 고기양과 동일하게 고추장]
+  target: gochujang
+
+- kind: D
+  decision: O
+  terms: [두르고 된장]
+  target: doenjang
+
+- kind: D
+  decision: O
+  terms: [진강장, 두꼬집 진간장, 죽으면 진간장]
+  target: soy_sauce
+  note: 오기·자막 문구
+
+- kind: D
+  decision: O
+  terms: [살탕, 양념이 등갈비에 다 묻으면 설탕]
+  target: sugar
+
+- kind: D
+  decision: O
+  terms: [굶은 소금]
+  target: salt
+
+- kind: D
+  decision: O
+  terms: [마지막 꿀]
+  target: honey
+
+- kind: D
+  decision: O
+  terms: [고운 고춧가루로, 하시는 분은 고춧가루, 불을 끄고 고춧가루, 으로 민 뒤 불끄고 고추가루, 바꾼 후 고춧가루, 취향껏 고춧가루, 양면이 다 노릇해지면 고춧가루]
+  target: gochugaru
+
+- kind: D
+  decision: O
+  terms: [양파 작은거, 양파 큰거, 작은 양파, 앙파, 이제 뚜껑열고 채썬 양파, 열이 충분히 올라오면 양파]
+  target: onion
+
+- kind: D
+  decision: O
+  terms: [감자 큰거, 큰 감자, 감자 작은거]
+  target: potato
+
+- kind: D
+  decision: O
+  terms: [30분 불린 쌀]
+  target: rice
+
+- kind: D
+  decision: O
+  terms: [김치 밥공기, 더해줄 김치국물]
+  target: kimchi
+
+- kind: D
+  decision: O
+  terms: [색감을 위해 홍고추]
+  target: red_chili
+
+- kind: D
+  decision: O
+  terms: [맛을 위해 청양고추, 위해 청양고추, 매콤한 맛을 위해 청양고추]
+  target: cheongyang_pepper
+
+- kind: D
+  decision: O
+  terms: [마지막 참기름, 맛을 올리기 위해 참기름, 고소한 맛을 위해 참기름, 맛을 위해 참기름]
+  target: sesame_oil
+
+- kind: D
+  decision: O
+  terms: [졸아들면 올리브유, 불을 끄고 올리브유]
+  target: olive_oil
+
+- kind: D
+  decision: O
+  terms: [파란부분 올리브유]
+  target: null
+  split: [{id: green_onion, amount: false}, {id: olive_oil}]
+  note: "원문 '파기름이 중요해서 파. 파란부분 올리브유 5스푼' → 대파 + 올리브유 두 줄(대파 줄이 따로 없음, um-2 사람 결정)"
+
+- kind: D
+  decision: O
+  terms: [마지막 킥 다진생강, 하고 날려버릴 다진생강, 생강 작은 조각]
+  target: ginger
+
+- kind: D
+  decision: O
+  terms: [잡기위해 다진마늘, 다른마늘, 졸아 들었다 싶으면 마늘]
+  target: garlic
+  note: "'다른마늘'은 '다진마늘' 오기"
+
+- kind: D
+  decision: O
+  terms: [양파 숨이 죽으면 멸치액젓]
+  target: anchovy_fish_sauce
+
+- kind: D
+  decision: O
+  terms: [적당히 나오기 시작하면 대파, 대파 흰부분, 볼에 담고 대파, 자른대파]
+  target: green_onion
+
+- kind: D
+  decision: O
+  terms: [토핑으로 사용할 쪽파]
+  target: scallion
+
+- kind: D
+  decision: O
+  terms: [잘게 찢은 느타리]
+  target: oyster_mushroom
+
+- kind: D
+  decision: O
+  terms: [잘 씻은 숙주나물, 숙주 크게, 잘섞이면 숙주]
+  target: mung_bean_sprouts
+
+- kind: D
+  decision: O
+  terms: [이 육수에 콩나물]
+  target: soybean_sprouts
+
+- kind: D
+  decision: O
+  terms: [채썬 애호박]
+  target: zucchini
+
+- kind: D
+  decision: O
+  terms: [가운데에 계란, 재료 잘 모아서 계란후라이, 소면을 삶는 동안 계란, 가운데로 재료 잘 모아주고 계란, 기름 두르고 계란, 마지막 계란, 위에 계란]
+  target: egg
+
+- kind: D
+  decision: O
+  terms: [큼지막한 새우, 새우는, 새우 취향껏, 코스트코 새우, 잘 해동한 새우]
+  target: shrimp_raw
+
+- kind: D
+  decision: O
+  terms: [통 수육, 돼지고기 탕수육용]
+  target: pork
+  note: 부위 불명 → 상위 '돼지고기'
+
+- kind: D
+  decision: O
+  terms: [돼지고기 앞다리살 찌개용]
+  target: pork_shoulder
+
+- kind: D
+  decision: O
+  terms: [돼지고기 등심 카레용]
+  target: pork_loin
+
+- kind: D
+  decision: O
+  terms: [돼지갈비찜용]
+  target: pork_ribs
+
+- kind: D
+  decision: O
+  terms: [코스트코에서]
+  target: beef_short_ribs
+  note: "'코스트코에서 2.5kg'은 원본에서 주재료(main) 줄이고 '소갈비 2.5kg'은 부재료(sub) 줄이라, 빼면 주재료가 없어져 소갈비로 연결. um-2 반영 중 확인해 '재료에서 뺌'을 바로잡음(같은 재료라 알레르기 판정 동일)"
+  confidence: low
+
+- kind: D
+  decision: O
+  terms: [한번에 파스타면, 부은 후 백원동전크기 파스타면, 파스타면 백원동전 크기, 동전크기]
+  target: pasta
+  note: "'동전크기 1인분'은 파스타 레시피 2개에서 파스타면 양 표기"
+  confidence: low
+
+- kind: D
+  decision: O
+  terms: [저는 대식가라 국수, 국수는 배 금방꺼지니]
+  target: somen
+  note: A의 '국수 → 소면'과 같은 판단
+
+- kind: D
+  decision: O
+  terms: [올려주는 고추기름]
+  target: chili_oil
+
+- kind: D
+  decision: O
+  terms: [위에 토마토소스]
+  target: tomato_sauce
+
+- kind: D
+  decision: O
+  terms: [양념 필요없이 굴소스]
+  target: oyster_sauce
+
+- kind: D
+  decision: O
+  terms: [양념으로 맛술, 볶다가 맛술]
+  target: mirin
+
+- kind: D
+  decision: O
+  terms: [잘게자른 오징어젓갈]
+  target: ojingeojeot
+
+- kind: D
+  decision: O
+  terms: [만두 소]
+  target: frozen_dumplings
+  note: 원문 '만두 소 3개 / 만두 3개'
+
+- kind: D
+  decision: O
+  terms: [끄고 마요네즈]
+  target: mayonnaise
+
+- kind: D
+  decision: O
+  terms: [땅콩버터 크게]
+  target: peanut_butter
+
+- kind: D
+  decision: O
+  terms: [고형카레 큰거]
+  target: curry_powder
+
+- kind: D
+  decision: O
+  terms: [통깨를 갈아만든 깨소금, 깨소금이 핵심이에요 영상에서는]
+  target: sesame
+
+- kind: D
+  decision: O
+  terms: [전분가루를 처음에, 전분물(전분]
+  target: starch
+  note: B '전분' 승인 필요
+
+- kind: D
+  decision: O
+  terms: [멸치육수가 없으니 코인육수]
+  target: instant_stock
+  note: E '시판 육수' 승인 필요
+
+- kind: D
+  decision: O
+  terms: [제일 중요한 시판 냉면육수]
+  target: naengmyeon_broth
+  note: E '시판 냉면육수' 승인 필요
+
+- kind: D
+  decision: O
+  terms: [양념은 불닭소스]
+  target: buldak_sauce
+  note: "원문은 '양념은 불닭소스 3스푼 / 불닭소스 3스푼' 한 줄(불닭소스 줄이 따로 없음) → 빼지 않고 불닭소스로 연결. um-2 반영 중 확인해 '재료에서 뺌'(중복 줄로 오판한 권장 해석 6번)을 바로잡음"
+
+- kind: D
+  decision: O
+  terms: [색감과 감칠맛을 끌어올릴 짜장가루]
+  target: jjajang_powder
+  note: E '짜장 분말' 승인 필요
+
+- kind: D
+  decision: O
+  terms: [이 위에 팟타이 소스]
+  target: pad_thai_sauce
+  note: E '팟타이 소스' 승인 필요
+
+- kind: D
+  decision: O
+  terms: [더하기 위해 페퍼론치노]
+  target: peperoncino
+  note: B '페퍼론치노' 승인 필요
+
+- kind: D
+  decision: X
+  terms: [분말가루]
+  target: instant_stock
+  note: "'분말가루 1개'(참치애호박찌개·돼지곰탕 등 5개). 분말 육수로 보이나 원문(영상) 확인 권장. E '시판 육수' 승인 필요"
+  confidence: low
+
+- kind: D
+  decision: O
+  terms: [시작하면 물, 뚝배기에 물, 올려주고 물, 이제 물, 2인 기준으로 물, 고추기름이 나오면 물]
+  target: null
+  drop: water
+  note: 물. 식품안전나라 변환과 같이 재료에서 뺀다(알레르기 무관)
+
+# ============================== C. 보류 (엔진 레시피) ==============================
+
+- kind: C
+  decision: O
+  terms: [갈은 깨]
+  note: 참깨/들깨 모호(기존 '깨'와 같음). 참깨 알레르기 판정이 갈림 → 미매칭 유지
+
+- kind: D
+  decision: O
+  terms: [없으신 분들은 다시다나 치킨스톡]
+  target: chicken_stock
+  note: 같은 레시피에 '치킨스톡 1/3스푼' 줄이 있음 → 치킨스톡(um-2 사람 결정)
+
+- kind: D
+  decision: O
+  terms: [계란후라이에 다대기]
+  target: egg
+  note: 다대기는 이 레시피(최강 밥도둑) 자체이고 재료는 다른 줄에 있음 → 계란후라이(um-2 사람 결정)
+
+- kind: C
+  decision: X
+  terms: [양파오이지 채수]
+  note: 집에서 만든 절임물. 원문 확인
+
+- kind: C
+  decision: X
+  terms: [잘 안뭉쳐서]
+  note: "'잘 안뭉쳐서 10스푼'(한판탕). 전분가루로 보이나 원문 확인"
+
+- kind: C
+  decision: X
+  terms: [저도 제일 좋아하는 반찬, 제가 제일 좋아하는 식재료, 000원에, 적절, 볶을때 단단, 볶다가 재료, 비빌 때, 마지막에, 양은, 아니 저는]
+  note: 자막에서 잘못 뽑힌 문구로 재료를 알 수 없음. 원문(영상) 확인 전에는 미매칭 유지
+
+# ============================== 식품안전나라 보강안(fs-3)에서 옮긴 것 ==============================
+# A. 확실한 별칭
+
+- {kind: A, decision: O, terms: [저염간장, 저염국간장], target: soy_sauce, note: 저염 제품. 원료(대두·밀) 같음}
+- {kind: A, decision: O, terms: [흰 후추, 흰후춧가루], target: black_pepper, note: 같은 열매(껍질 제거). 알레르기 없음}
+- {kind: A, decision: O, terms: [{text: 마늘다진것, form: minced}], target: garlic}
+- {kind: A, decision: O, terms: [{text: 다진 양파, form: minced}, {text: 양파다진것, form: minced}, 깐양파], target: onion}
+- {kind: A, decision: O, terms: [청피망], target: green_bell_pepper}
+- {kind: A, decision: O, terms: [튀김기름, 현미유], target: cooking_oil, note: 식용유와 같은 수준의 불특정 기름(콩기름 문제는 식용유와 동일)}
+- {kind: A, decision: O, terms: [흑임자, 검은깨, 검정깨], target: sesame, note: 검은 참깨. 참깨 알레르기 그대로}
+- {kind: A, decision: O, terms: [{text: 생강다진것, form: minced}, 생강가루], target: ginger}
+- {kind: B, decision: O, terms: [생강즙], new: {id: ginger_juice, name: 생강즙, category: 양념, is_processed: true, derived_from: [ginger], confidence: high}, note: um-2 사람 결정(별칭 대신 새 재료)}
+- {kind: A, decision: O, terms: [{text: 다진 대파, form: minced}], target: green_onion}
+- {kind: A, decision: O, terms: [브로컬리], target: broccoli, note: 표기 변형}
+- {kind: A, decision: O, terms: [노랑 파프리카, 빨강 파프리카, 홍파프리카, 황파프리카, 삼색파프리카], target: bell_pepper}
+- {kind: A, decision: O, terms: [저염된장], target: doenjang, note: 저염 제품}
+- {kind: A, decision: O, terms: [붉은 고추, {text: 다진 홍고추, form: minced}], target: red_chili}
+- {kind: A, decision: O, terms: [볶은소금], target: salt}
+- {kind: A, decision: O, terms: [건다시마], target: kelp}
+- {kind: A, decision: O, terms: [아몬드가루], target: almond, note: 기타 견과류 그대로}
+- {kind: A, decision: O, terms: [건 표고버섯, 표고버섯마른것, 생 표고버섯], target: shiitake}
+- {kind: A, decision: O, terms: [닭고기살], target: chicken}
+- {kind: B, decision: O, terms: [레몬주스], new: {id: lemon_juice, name: 레몬주스, category: 가공식품, is_processed: true, derived_from: [lemon, {id: sulfite, certainty: possible}], confidence: low}, note: 병 제품 보존료 대비 아황산류 possible(um-2 사람 결정). 기존 '레몬즙' 별칭(레몬)은 별도 검토}
+- {kind: A, decision: O, terms: [국멸치], target: anchovy, note: 국물용 멸치}
+- {kind: A, decision: O, terms: [{text: 파슬리다진것, form: minced}], target: parsley}
+- {kind: A, decision: O, terms: [다진 쇠고기, 쇠고기다진것], target: ground_beef}
+- {kind: A, decision: O, terms: [쇠고기등심], target: beef_sirloin}
+- {kind: A, decision: O, terms: [불린쌀], target: rice}
+- {kind: A, decision: O, terms: [적채], target: cabbage, note: 적양배추}
+- {kind: A, decision: O, terms: [겨자가루], target: mustard_powder, note: 겨잣가루와 같음}
+- {kind: A, decision: O, terms: [플레인 요구르트], target: yogurt}
+- {kind: A, decision: O, terms: [으깬 두부], target: tofu}
+- {kind: B, decision: O, terms: [바질가루], new: {id: basil_powder, name: 바질가루, category: 양념, is_processed: true, derived_from: [basil], confidence: high}, note: "um-2 사람 결정(별칭 대신 새 재료, 양념)"}
+- {kind: A, decision: O, terms: [{text: 다진청고추, form: minced}, {text: 청고추 다진것, form: minced}], target: green_chili}
+- {kind: A, decision: O, terms: [미니 단호박], target: kabocha}
+- {kind: A, decision: O, terms: [{text: 당근다진것, form: minced}], target: carrot}
+- {kind: B, decision: O, terms: [청국장가루], new: {id: cheonggukjang_powder, name: 청국장가루, category: 양념, is_processed: true, derived_from: [cheonggukjang], confidence: high}, note: "um-2 사람 결정(별칭 대신 새 재료, 양념). 대두 그대로"}
+- {kind: A, decision: O, terms: [볶은현미], target: brown_rice}
+- {kind: A, decision: O, terms: [애느타리버섯], target: oyster_mushroom, note: 품종(README 별칭 규칙)}
+- {kind: A, decision: O, terms: [자색고구마], target: sweet_potato, note: 품종}
+- {kind: A, decision: O, terms: [주키니호박], target: zucchini}
+
+# B. 새 재료
+
+- {kind: B, decision: O, terms: [어린잎채소, 어린잎, 베이비채소], new: {id: baby_greens, name: 어린잎채소, category: 채소, allergens: [{group: buckwheat, certainty: possible}], confidence: low}, note: 혼합 제품. 메밀싹 포함 가능성 → possible}
+- {kind: B, decision: O, terms: [유자청], new: {id: yuzu_cheong, name: 유자청, category: 양념, confidence: high}, note: 유자+설탕. 유자 자체는 미등록}
+- kind: B
+  decision: O
+  terms: [맛간장]
+  new: {id: seasoned_soy_sauce, name: 맛간장, category: 장류, is_processed: true, derived_from: [soy_sauce, {id: katsuobushi, certainty: possible}, {id: anchovy, certainty: possible}], confidence: low}
+  note: 제품·가정식마다 다름. 가쓰오부시·멸치 등 들어갈 수 있어 possible
+- {kind: B, decision: O, terms: [로즈마리, 로즈메리], new: {id: rosemary, name: 로즈마리, category: 허브·향신료, confidence: high}}
+- kind: B
+  decision: O
+  terms: [발사믹식초, 화이트발사믹식초]
+  new: {id: balsamic_vinegar, name: 발사믹식초, category: 양념, is_processed: true, derived_from: [grape, {id: sulfite, certainty: possible}], confidence: low}
+  note: 와인식초 계열이라 아황산 가능. 식초(vinegar)의 별칭으로 두지 않음. 화이트발사믹 포함
+- kind: B
+  decision: O
+  terms: [발사믹소스, 발사믹 글레이즈]
+  new: {id: balsamic_glaze, name: 발사믹 글레이즈, category: 소스, is_processed: true, derived_from: [grape, {id: sulfite, certainty: possible}], confidence: low}
+  note: 졸이거나 당·증점제를 더한 소스(um-2 사람 결정으로 식초와 분리)
+- {kind: B, decision: O, terms: [다시마육수, 다시마국물, 다시마 육수, 다시마물], new: {id: kelp_stock, name: 다시마육수, category: 육수·조미료, is_processed: true, derived_from: [kelp], confidence: high}, note: 다시마만 우린 물. 멸치 들어가면 멸치육수}
+- {kind: B, decision: O, terms: [파인애플], new: {id: pineapple, name: 파인애플, category: 과일, confidence: high}}
+- {kind: B, decision: O, terms: [비트, 비트루트], new: {id: beet, name: 비트, category: 채소, confidence: high}}
+- {kind: B, decision: O, terms: [곤약, 실곤약, 곤약면], new: {id: konjac, name: 곤약, category: 가공식품, confidence: high}}
+- {kind: B, decision: O, terms: [인삼, 수삼, 홍삼], new: {id: ginseng, name: 인삼, category: 채소, confidence: high}, note: 홍삼은 가공품이나 알레르기 차이 없음}
+- {kind: B, decision: O, terms: [생강청], new: {id: ginger_cheong, name: 생강청, category: 양념, is_processed: true, derived_from: [ginger], confidence: high}}
+- {kind: B, decision: O, terms: [무순, 무싹], new: {id: radish_sprouts, name: 무순, category: 채소, confidence: high}}
+- {kind: B, decision: O, terms: [식용 꽃, 식용꽃], new: {id: edible_flower, name: 식용 꽃, category: 채소, confidence: low}, note: 종류 불명. 장식용}
+- {kind: B, decision: O, terms: [완두콩, 완두], new: {id: green_peas, name: 완두콩, category: 콩·두부, confidence: high}, note: 대두 아님}
+- {kind: B, decision: O, terms: [마, 산마, 참마, 장마], new: {id: yam, name: 마, category: 채소, confidence: high}}
+- {kind: B, decision: O, terms: [새싹채소, 새싹], new: {id: sprouts_mix, name: 새싹채소, category: 채소, allergens: [{group: buckwheat, certainty: possible}], confidence: low}, note: 혼합 새싹에 메밀싹이 들어가는 경우가 있어 메밀 possible}
+- {kind: B, decision: O, terms: [참나물], new: {id: chamnamul, name: 참나물, category: 채소, confidence: high}}
+- kind: B
+  decision: O
+  terms: [마늘기름, 마늘오일]
+  new: {id: garlic_oil, name: 마늘기름, category: 기름, is_processed: true, derived_from: [garlic, {id: cooking_oil, certainty: possible}, {id: olive_oil, certainty: possible}], confidence: low}
+  note: 기름 종류 불명
+- {kind: B, decision: O, terms: [이스트, 드라이이스트, 인스턴트 드라이이스트], new: {id: yeast, name: 이스트, category: 첨가물, confidence: high}}
+- {kind: B, decision: O, terms: [함초, 함초가루], new: {id: hamcho, name: 함초, category: 채소, confidence: high}, note: 염생식물}
+- {kind: B, decision: O, terms: [함초소금], new: {id: hamcho_salt, name: 함초소금, category: 양념, is_processed: true, derived_from: [salt, hamcho], confidence: high}}
+- {kind: B, decision: O, terms: [콩가루, 날콩가루, 볶은 콩가루], new: {id: soybean_powder, name: 콩가루, category: 콩·두부, is_processed: true, derived_from: [soybean], confidence: high}}
+- {kind: B, decision: O, terms: [아보카도], new: {id: avocado, name: 아보카도, category: 과일, confidence: high}}
+- {kind: B, decision: O, terms: [크랜베리, 건크랜베리], new: {id: cranberry, name: 크랜베리, category: 과일, confidence: low}, note: 건크랜베리는 오일 코팅 제품 있음}
+- kind: B
+  decision: O
+  terms: [젤라틴, 판젤라틴, 가루젤라틴]
+  new: {id: gelatin, name: 젤라틴, category: 첨가물, is_processed: true, derived_from: [{id: pork, certainty: possible}, {id: beef, certainty: possible}, {id: fish, certainty: possible}], confidence: low}
+  note: 돼지·소 껍질·뼈 유래. 원료 표시 확인 필요
+- {kind: B, decision: O, terms: [블루베리], new: {id: blueberry, name: 블루베리, category: 과일, confidence: high}}
+- {kind: B, decision: O, terms: [치커리], new: {id: chicory, name: 치커리, category: 채소, confidence: high}}
+- kind: B
+  decision: O
+  terms: [견과류, 혼합견과, 모듬견과]
+  new: {id: mixed_nuts, name: 견과류(혼합), category: 견과·씨앗, allergens: [{group: other_tree_nuts, certainty: possible}, {group: peanut, certainty: possible}, {group: pine_nut, certainty: possible}, {group: walnut, certainty: possible}], confidence: high}
+  note: 종류 불명 → 견과 그룹 모두 possible
+- {kind: B, decision: O, terms: [강황가루, 강황, 울금가루], new: {id: turmeric_powder, name: 강황가루, category: 허브·향신료, confidence: high}}
+- kind: B
+  decision: O
+  terms: [어간장, 간편 어간장]
+  new: {id: fish_soy_sauce, name: 어간장, category: 장류, is_processed: true, derived_from: [fish_sauce, anchovy, {id: soy_sauce, certainty: possible}], confidence: low}
+  note: 생선 발효 간장. 대두 포함 여부 제품별 상이
+- {kind: B, decision: O, terms: [베이킹파우더], new: {id: baking_powder, name: 베이킹파우더, category: 첨가물, is_processed: true, derived_from: [{id: wheat_flour, certainty: possible}], confidence: low}, note: 부형제로 밀 전분을 쓰는 제품 가능성 → 확인 필요}
+- {kind: B, decision: O, terms: [귀리, 귀리밥, 오트밀], new: {id: oats, name: 귀리, category: 곡류·가루, confidence: low}, note: "밀 교차오염 제품 있음(법정 '밀' 아님)"}
+- {kind: B, decision: O, terms: [오레가노], new: {id: oregano, name: 오레가노, category: 허브·향신료, confidence: high}}
+- {kind: B, decision: O, terms: [민트, 애플민트], new: {id: mint, name: 민트, category: 허브·향신료, confidence: high}}
+- {kind: B, decision: O, terms: [오렌지주스], new: {id: orange_juice, name: 오렌지주스, category: 과일, is_processed: true, derived_from: [orange], confidence: high}}
+- {kind: B, decision: O, terms: [라이스페이퍼], new: {id: rice_paper, name: 라이스페이퍼, category: 면·떡·빵, is_processed: true, derived_from: [rice], confidence: low}, note: 타피오카 혼합 제품 있음(법정 대상 아님)}
+- {kind: B, decision: O, terms: [콜리플라워, 컬리플라워], new: {id: cauliflower, name: 콜리플라워, category: 채소, confidence: high}}
+- {kind: B, decision: O, terms: [치자가루, 치자], new: {id: gardenia_powder, name: 치자가루, category: 첨가물, confidence: high}, note: 색소용}
+- {kind: B, decision: O, terms: [목이버섯], new: {id: wood_ear, name: 목이버섯, category: 버섯, confidence: high}}
+- {kind: B, decision: O, terms: [흰목이버섯], new: {id: white_wood_ear, name: 흰목이버섯, category: 버섯, confidence: high}, note: 다른 종(um-2 사람 결정)}
+- kind: B
+  decision: O
+  terms: [미숫가루]
+  new: {id: misutgaru, name: 미숫가루, category: 곡류·가루, is_processed: true, derived_from: [{id: soybean, certainty: possible}, {id: sesame, certainty: possible}, {id: wheat_flour, certainty: possible}, {id: peanut, certainty: possible}, {id: walnut, certainty: possible}, {id: almond, certainty: possible}, {id: buckwheat, certainty: possible}, {id: milk, certainty: possible}], confidence: low}
+  note: 곡물 혼합. 제품마다 콩·깨·밀 포함 여부 다름
+- kind: B
+  decision: O
+  terms: [백김치]
+  new: {id: baek_kimchi, name: 백김치, category: 김치, is_processed: true, derived_from: [napa_cabbage, {id: fish_sauce, certainty: possible}, {id: saeujeot, certainty: possible}, {id: oyster, certainty: possible}, {id: wheat_flour, certainty: possible}], confidence: low}
+  note: 젓갈·굴 없이 담그기도 함 → possible(배추김치와 같은 기준)
+- {kind: B, decision: O, terms: [탄산수], new: {id: sparkling_water, name: 탄산수, category: 가공식품, confidence: high}, note: 또는 물처럼 재료에서 제외}
+- {kind: B, decision: O, terms: [파프리카가루], new: {id: paprika_powder, name: 파프리카가루, category: 허브·향신료, is_processed: true, derived_from: [bell_pepper], confidence: high}}
+- {kind: B, decision: O, terms: [백년초가루], new: {id: cactus_fruit_powder, name: 백년초가루, category: 첨가물, confidence: high}, note: 색소용}
+- {kind: B, decision: O, terms: [참외], new: {id: korean_melon, name: 참외, category: 과일, confidence: high}}
+- {kind: B, decision: O, terms: [더덕], new: {id: deodeok, name: 더덕, category: 채소, confidence: high}}
+- {kind: B, decision: O, terms: [캐슈넛, 캐슈너트], new: {id: cashew, name: 캐슈넛, category: 견과·씨앗, allergens: [{group: other_tree_nuts, certainty: definite}], confidence: high}}
+- {kind: B, decision: O, terms: [호박씨], new: {id: pumpkin_seed, name: 호박씨, category: 견과·씨앗, confidence: low}, note: 씨앗. 법정 대상 아님}
+- {kind: B, decision: O, terms: [포도주스], new: {id: grape_juice, name: 포도주스, category: 과일, is_processed: true, derived_from: [grape], confidence: high}}
+- {kind: B, decision: O, terms: [체리], new: {id: cherry, name: 체리, category: 과일, confidence: high}}
+- {kind: B, decision: O, terms: [케일], new: {id: kale, name: 케일, category: 채소, confidence: high}}
+- {kind: B, decision: O, terms: [취나물], new: {id: chwinamul, name: 취나물, category: 채소, confidence: high}}
+- {kind: B, decision: O, terms: [은행, 은행알], new: {id: ginkgo, name: 은행, category: 견과·씨앗, allergens: [{group: other_tree_nuts, certainty: possible}], confidence: low}, note: 견과 분류 여부 불명 → possible}
+- {kind: B, decision: O, terms: [누룽지], new: {id: nurungji, name: 누룽지, category: 곡류·가루, is_processed: true, derived_from: [rice], confidence: high}}
+- {kind: B, decision: O, terms: [오미자], new: {id: omija, name: 오미자, category: 과일, confidence: high}}
+- {kind: B, decision: O, terms: [사워크림], new: {id: sour_cream, name: 사워크림, category: 유제품, is_processed: true, derived_from: [milk], confidence: high}}
+- {kind: B, decision: O, terms: [스테비아], new: {id: stevia, name: 스테비아, category: 양념, confidence: high}}
+- {kind: B, decision: O, terms: [타임], new: {id: thyme, name: 타임, category: 허브·향신료, confidence: high}}
+- {kind: B, decision: O, terms: [피클링스파이스], new: {id: pickling_spice, name: 피클링스파이스, category: 허브·향신료, confidence: low}, note: 혼합 향신료(겨자씨 등). 법정 대상 성분은 없다고 봄}
+- {kind: B, decision: O, terms: [달래], new: {id: dallae, name: 달래, category: 채소, confidence: high}}
+- {kind: B, decision: O, terms: [콜라비], new: {id: kohlrabi, name: 콜라비, category: 채소, confidence: high}}
+- {kind: B, decision: O, terms: [호박잎], new: {id: pumpkin_leaf, name: 호박잎, category: 채소, confidence: high}}
+- {kind: B, decision: O, terms: [리코타치즈, 리코타], new: {id: ricotta, name: 리코타치즈, category: 유제품, is_a: [cheese], is_processed: true, derived_from: [milk], confidence: high}}
+- {kind: B, decision: O, terms: [톳], new: {id: hijiki, name: 톳, category: 해조류, confidence: high}}
+- {kind: B, decision: O, terms: [청포묵, 녹두묵], new: {id: cheongpomuk, name: 청포묵, category: 가공식품, confidence: high}, note: 녹두 전분}
+- {kind: B, decision: O, terms: [소주], new: {id: soju, name: 소주, category: 주류, confidence: low}, note: 원료(쌀·타피오카·고구마) 다양}
+- {kind: B, decision: O, terms: [녹차가루, 말차], new: {id: green_tea_powder, name: 녹차가루, category: 가공식품, confidence: high}}
+
+# C. 보류
+
+- {kind: C, decision: O, terms: [파, 다진 파, 파다진것], note: "대파·쪽파 중 무엇인지 모호(README: '파'는 별칭으로 쓰지 않음)"}
+- {kind: C, decision: O, terms: [깨], note: 참깨/들깨 모호. 참깨 알레르기 판정이 갈림 → 미매칭 유지(안전)}
+- {kind: C, decision: O, terms: [육수, 국물], note: 재료 불명(멸치·사골·해물…). 알레르기 판정 불가 → 미매칭 유지}
+- {kind: C, decision: O, terms: [곁들임채소, 곁들이채소], note: 종류 불명}
+- {kind: C, decision: O, terms: [홍피망], note: 빨간 피망=파프리카로 볼지 결정 필요(알레르기 무관)}
+- {kind: C, decision: O, terms: [칠리소스], note: 제품마다 성분(대두·밀·새우 등) 다름. 스위트칠리/핫칠리 구분 필요}
+- {kind: B, decision: O, terms: [호박], new: {id: squash_unspecified, name: 호박(종류 불명), category: 채소, confidence: low}, note: 애호박·단호박·늙은호박 중 무엇인지 모름. 알레르기 없음(um-2 사람 결정)}
+
+# D. 변환 규칙(식품안전나라: 머리말 단어가 공백으로 붙은 줄)
+
+- {kind: D, decision: O, terms: [재료 닭가슴살], target: chicken_breast, note: "규칙 후보: 머리말 단어(HEADER_WORDS) + 공백으로 시작하면 머리말을 뗀다(약 25종)"}
+- {kind: D, decision: O, terms: [양념 다진 마늘], target: garlic, note: 위 규칙}
+- {kind: D, decision: O, terms: [육수 무], target: radish, note: 위 규칙}
+- {kind: D, decision: O, terms: [장식], target: null, drop: not_ingredient, note: 재료 아님. 머리말 단어에 추가}

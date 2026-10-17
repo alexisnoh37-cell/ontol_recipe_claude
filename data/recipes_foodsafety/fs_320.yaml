@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 320. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 320. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: broccoli
   raw_text: 브로콜리 60g
   role: sub
-- ingredient: null
+- ingredient: oats
   raw_text: 귀리 30g
   role: sub
 - ingredient: chicken_stock
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: milk
   raw_text: 우유150ml
   role: sub
-- ingredient: null
+- ingredient: green_tea_powder
   raw_text: 녹차가루 10g
   role: sub
 - ingredient: almond
@@ -28,7 +28,7 @@ ingredients:
 - ingredient: butter
   raw_text: 무염버터 5g
   role: sub
-- ingredient: null
+- ingredient: black_pepper
   raw_text: 흰후추 3g
   role: sub
 - ingredient: salt
@@ -40,7 +40,7 @@ ingredients:
 - ingredient: heavy_cream
   raw_text: 생크림 50ml
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 다진양파 15g
   role: sub
 steps:

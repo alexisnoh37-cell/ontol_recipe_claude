@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 202. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 202. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: eggplant
   raw_text: 가지 100g(1개)
@@ -13,7 +13,7 @@ ingredients:
 - ingredient: tomato
   raw_text: 토마토 200g(1½개)
   role: sub
-- ingredient: null
+- ingredient: radish_sprouts
   raw_text: 무순 20g
   role: sub
 - ingredient: garlic
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: olive_oil
   raw_text: 올리브오일 25g(2큰술)
   role: sub
-- ingredient: null
+- ingredient: balsamic_vinegar
   raw_text: 발사믹식초 60g(4큰술)
   role: sub
 - ingredient: black_pepper

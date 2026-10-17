@@ -59,7 +59,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 분말육수 2포
   role: sub
   optional: false
@@ -71,7 +71,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 봉
-- ingredient: null
+- ingredient: egg
   raw_text: 삶은 달걀 2개
   role: sub
   optional: false

@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 315. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 315. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: salmon
   raw_text: 연어 60g
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: pine_nut
   raw_text: 잣 5g
   role: sub
-- ingredient: null
+- ingredient: deodeok
   raw_text: 더덕 45g
   role: sub
 - ingredient: garlic
@@ -37,7 +37,7 @@ ingredients:
 - ingredient: olive_oil
   raw_text: 올리브오일 30g
   role: sub
-- ingredient: null
+- ingredient: red_chili
   raw_text: 다진홍고추 15g
   role: sub
 steps:

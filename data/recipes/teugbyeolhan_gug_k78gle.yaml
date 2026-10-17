@@ -11,7 +11,7 @@ status: draft
 confidence: low
 note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
 ingredients:
-- ingredient: null
+- ingredient: pork_shoulder
   raw_text: 돼지 앞다리살 400g
   role: main
   optional: false
@@ -83,7 +83,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: beef_seasoning
   raw_text: 소고기다시다 1스푼
   role: sub
   optional: false

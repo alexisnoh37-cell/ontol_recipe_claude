@@ -24,13 +24,13 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: allulose
   raw_text: 알룰로스 2스푼
   role: seasoning
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: balsamic_vinegar
   raw_text: 화이트발사믹식초 2스푼
   role: sub
   optional: false

@@ -17,7 +17,7 @@ ingredients:
   optional: false
   amount: 300
   unit: g
-- ingredient: null
+- ingredient: instant_noodle_product
   raw_text: 진짜 쫄면 라면
   role: sub
   optional: false

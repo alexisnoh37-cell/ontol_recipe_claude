@@ -335,3 +335,29 @@ def test_browse_max_missing_and_errors(client):
     both = {"ingredients": ["egg"], "profile_id": 1, "allergen_groups": ["egg"]}
     assert client.get("/browse", params=both).status_code == 400
     assert client.get("/browse", params={"ingredients": ["egg"], "max_missing": 9}).status_code == 422
+
+
+def test_commercial_notice_above_ingredients_for_everyone(client, data):
+    """um-2 사람 결정: 시판 제품(라면 제품 등)이 든 레시피는 알레르기 설정과 무관하게 재료 목록 위에 안내를 띄운다."""
+    commercial = {"instant_noodle_product", "naengmyeon_broth", "buldak_sauce", "sundae", "potato_chips",
+                  "ssanghwatang", "misutgaru"}
+    with_it = next(r for r in data.recipes if any(line.ingredient in commercial for line in r.ingredients))
+    without = next(r for r in data.recipes if not any(line.ingredient in commercial for line in r.ingredients))
+    pid = make_profile(client)  # 알레르기 설정 없음
+    d = client.get(f"/recipes/{with_it.id}", params={"profile_id": pid}).json()
+    notice = d["commercial_notice"]
+    assert notice["text"] == "시판 제품으로 제품 성분을 확인해 알레르기 유무를 확인하시기 바랍니다."
+    assert {i["id"] for i in notice["ingredients"]} <= commercial and notice["ingredients"]
+    assert client.get(f"/recipes/{without.id}", params={"profile_id": pid}).json()["commercial_notice"] is None
+    node = next(n for n in client.get("/graph", params={"recipes": "all"}).json()["nodes"]
+                if n["id"] == f"rcp:{with_it.id}")
+    assert node["commercial_notice"]["text"] == notice["text"]
+
+
+def test_commercial_notice_config_rejects_unknown_ingredient(data):
+    from api.present import Catalog, load_display
+
+    display = load_display()
+    display["commercial_product_notice"] = {"text": "x", "ingredients": ["no_such_thing"]}
+    with pytest.raises(ValueError):
+        Catalog(data, display)

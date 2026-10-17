@@ -5,10 +5,10 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 251. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 251. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
 ingredients:
 - ingredient: null
-  raw_text: 재료 콩고기(150g)
+  raw_text: 콩고기(150g)
   role: sub
 - ingredient: onion
   raw_text: 양파(20g)
@@ -40,8 +40,8 @@ ingredients:
 - ingredient: cheongyang_pepper
   raw_text: 청양고추(3g)
   role: sub
-- ingredient: null
-  raw_text: 양념장 설탕(1g)
+- ingredient: sugar
+  raw_text: 설탕(1g)
   role: sub
 - ingredient: null
   raw_text: 저염진간장(10g)
@@ -52,17 +52,17 @@ ingredients:
 - ingredient: pear
   raw_text: 배(5g)
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 다진 양파(5g)
   role: sub
-- ingredient: null
+- ingredient: maesil_cheong
   raw_text: 매실액(10g)
   role: sub
 - ingredient: sesame_oil
   raw_text: 참기름(0.5g)
   role: sub
-- ingredient: null
-  raw_text: 양념 들기름(5g)
+- ingredient: perilla_oil
+  raw_text: 들기름(5g)
   role: sub
 - ingredient: null
   raw_text: 다진 파(5g)

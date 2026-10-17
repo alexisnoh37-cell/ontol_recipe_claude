@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 791. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 791. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
 ingredients:
 - ingredient: rice
   raw_text: 밥 140g
   role: sub
-- ingredient: null
+- ingredient: ground_beef
   raw_text: 쇠고기다진것 15g
   role: sub
 - ingredient: black_pepper
@@ -28,7 +28,7 @@ ingredients:
 - ingredient: cabbage
   raw_text: 양배추 20g
   role: sub
-- ingredient: null
+- ingredient: kale
   raw_text: 케일20g
   role: sub
 - ingredient: null
@@ -42,6 +42,9 @@ ingredients:
   role: sub
 - ingredient: squid
   raw_text: 오징어 10g
+  role: sub
+- ingredient: null
+  raw_text: 소개
   role: sub
 - ingredient: null
   raw_text: 저나트륨 양념간장

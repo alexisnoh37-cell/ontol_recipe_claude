@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 495. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 495. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: chicken
   raw_text: 닭고기(80g)
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: cheongju
   raw_text: 정종(10g)
   role: sub
-- ingredient: null
+- ingredient: baek_kimchi
   raw_text: 백김치(100g)
   role: sub
 - ingredient: tomato
@@ -31,13 +31,13 @@ ingredients:
 - ingredient: carrot
   raw_text: 당근(20g)
   role: sub
-- ingredient: null
+- ingredient: broccoli
   raw_text: 브로컬리(20g)
   role: sub
 - ingredient: iceberg_lettuce
   raw_text: 양상추(50g)
   role: sub
-- ingredient: null
+- ingredient: balsamic_vinegar
   raw_text: 발사믹식초(20g)
   role: sub
 - ingredient: sugar

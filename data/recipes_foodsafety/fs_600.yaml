@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 600. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 600. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
 - ingredient: chicken
   raw_text: 닭고기(가슴살, 200g)
@@ -37,7 +37,7 @@ ingredients:
 - ingredient: cheese
   raw_text: 치즈(1장)
   role: sub
-- ingredient: null
+- ingredient: starch
   raw_text: 전분(20g)
   role: sub
 - ingredient: salt

@@ -9,7 +9,7 @@ servings: 5
 source: https://www.youtube.com/watch?v=6kTSWeOchdY
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준; 재료 이름 '국수는 배 금방꺼지니' → somen(이름 보정표)
 ingredients:
 - ingredient: gochujang
   raw_text: 고추장 반스푼
@@ -47,13 +47,13 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: naengmyeon_broth
   raw_text: 냉면육수 1봉
   role: main
   optional: false
   amount: 1
   unit: 봉
-- ingredient: null
+- ingredient: somen
   raw_text: 국수는 배 금방꺼지니 1.5인분 / 국수 1.5인분
   role: sub
   optional: false

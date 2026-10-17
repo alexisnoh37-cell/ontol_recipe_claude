@@ -5,10 +5,10 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 313. 요리종류 후식, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 313. 요리종류 후식, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
 ingredients:
-- ingredient: null
-  raw_text: 재료 검은깨(8g)
+- ingredient: sesame
+  raw_text: 검은깨(8g)
   role: sub
 - ingredient: bread_crumbs
   raw_text: 빵가루(80g)
@@ -19,16 +19,16 @@ ingredients:
 - ingredient: egg
   raw_text: 달걀(45g)
   role: sub
-- ingredient: null
+- ingredient: starch
   raw_text: 녹말가루(15g)
   role: sub
-- ingredient: null
+- ingredient: ground_beef
   raw_text: 다진 쇠고기(40g)
   role: sub
 - ingredient: null
   raw_text: 다진 땅콩(5g)
   role: sub
-- ingredient: null
+- ingredient: baby_greens
   raw_text: 어린잎채소(2g)
   role: sub
 - ingredient: cherry_tomato

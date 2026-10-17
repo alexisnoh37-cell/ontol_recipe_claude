@@ -3,7 +3,7 @@
 
 - id: kimchi
   name: 배추김치
-  aliases: [김치, 묵은지, 포기김치, 신김치]
+  aliases: [김치, 묵은지, 포기김치, 신김치, 묵은 김치, 김치국물]
   derived_from:
     - napa_cabbage
     - {id: saeujeot, certainty: possible}
@@ -58,3 +58,98 @@
   is_processed: true
   category: 가공식품
   status: reviewed
+
+# --- um-2 미매칭 보강(2026-10-17, 사람 검수표 승인, 재료 검수 전 draft) ---
+- id: potato_chips
+  name: 감자칩
+  aliases: [포카칩]
+  derived_from:
+    - potato
+    - cooking_oil
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: pork, certainty: possible}
+    - {id: chicken, certainty: possible}
+    - {id: egg, certainty: possible}
+    - {id: tomato, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "상표명 '포카칩'을 별칭으로. 맛별(어니언 등)로 우유·대두·밀 다름 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: cola
+  name: 콜라
+  category: 가공식품
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: ssanghwatang
+  name: 쌍화탕
+  derived_from:
+    - {id: jujube, certainty: possible}
+    - {id: ginger, certainty: possible}
+    - {id: cinnamon, certainty: possible}
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "한방 음료(숙지황·당귀·대추·생강·계피 등). 법정 알레르기 성분은 없다고 봄 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: pear_drink
+  name: 시판 배 음료
+  aliases: [갈아만든배, 배음료, 갈배음료]
+  derived_from:
+    - pear
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "상표 음료(갈아만든배 등). 보존료 대비 아황산류 possible(um-2 사람 결정) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: lemon_juice
+  name: 레몬주스
+  derived_from:
+    - lemon
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "병 제품 보존료 대비 아황산류 possible(um-2 사람 결정). 기존 '레몬즙' 별칭(레몬)은 별도 검토 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: konjac
+  name: 곤약
+  aliases: [실곤약, 곤약면]
+  category: 가공식품
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: baek_kimchi
+  name: 백김치
+  derived_from:
+    - napa_cabbage
+    - {id: fish_sauce, certainty: possible}
+    - {id: saeujeot, certainty: possible}
+    - {id: oyster, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 김치
+  confidence: low
+  note: "젓갈·굴 없이 담그기도 함 → possible(배추김치와 같은 기준) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: sparkling_water
+  name: 탄산수
+  category: 가공식품
+  note: "또는 물처럼 재료에서 제외 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: cheongpomuk
+  name: 청포묵
+  aliases: [녹두묵]
+  category: 가공식품
+  note: "녹두 전분 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft
+- id: green_tea_powder
+  name: 녹차가루
+  aliases: [말차]
+  category: 가공식품
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
+  status: draft

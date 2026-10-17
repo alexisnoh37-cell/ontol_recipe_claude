@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3688. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 12개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3688. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
 ingredients:
-- ingredient: null
+- ingredient: oats
   raw_text: 귀리 100g
   role: sub
 - ingredient: almond
@@ -22,7 +22,7 @@ ingredients:
 - ingredient: null
   raw_text: 클로렐라가루 7.5g
   role: sub
-- ingredient: null
+- ingredient: allulose
   raw_text: 알룰로스 50g
   role: sub
 - ingredient: null
@@ -37,7 +37,7 @@ ingredients:
 - ingredient: null
   raw_text: 카카오닙스 25g
   role: sub
-- ingredient: null
+- ingredient: cranberry
   raw_text: 건크랜베리 12.5g
   role: sub
 - ingredient: null

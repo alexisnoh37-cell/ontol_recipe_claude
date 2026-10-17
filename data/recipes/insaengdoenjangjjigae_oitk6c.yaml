@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=OitK6C4uH4Y
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '감자 작은거' → potato(이름 보정표); 재료 이름 '두르고 된장' → doenjang(이름 보정표)
 ingredients:
 - ingredient: tofu
   raw_text: 두부 반모
@@ -29,7 +29,7 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 개
-- ingredient: null
+- ingredient: potato
   raw_text: 감자 작은거 한개 / 작은거 한개
   role: sub
   optional: false
@@ -59,19 +59,19 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: beef_seasoning
   raw_text: 소고기다시다 반스푼
   role: sub
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: doenjang
   raw_text: 2스푼 두르고 된장 1스푼
   role: sub
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: dasida
   raw_text: 다시다 반스푼
   role: seasoning
   optional: false

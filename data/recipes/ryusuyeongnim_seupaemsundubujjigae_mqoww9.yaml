@@ -9,9 +9,9 @@ servings: null
 source: https://www.youtube.com/watch?v=Mqoww9mHIuI
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '살탕' → sugar(이름 보정표)
 ingredients:
-- ingredient: null
+- ingredient: luncheon_meat
   raw_text: 스팸 200g
   role: main
   optional: false
@@ -83,7 +83,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 알
-- ingredient: null
+- ingredient: sugar
   raw_text: 살탕 반스푼
   role: sub
   optional: false
@@ -95,7 +95,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 쪽
-- ingredient: null
+- ingredient: gochugaru
   raw_text: 고추가루 3스푼
   role: sub
   optional: false

@@ -11,7 +11,7 @@ status: draft
 confidence: low
 note: 난이도 추정; 맛 수치 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
 ingredients:
-- ingredient: null
+- ingredient: shrimp_raw
   raw_text: 새우 머리 10개
   role: main
   optional: false
@@ -29,7 +29,7 @@ ingredients:
   optional: false
   amount: 5
   unit: 쪽
-- ingredient: null
+- ingredient: peperoncino
   raw_text: 페퍼론치노 3개
   role: sub
   optional: false
