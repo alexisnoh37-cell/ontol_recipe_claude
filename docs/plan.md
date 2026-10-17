@@ -368,6 +368,7 @@ engine/          순수 Python. DB·FastAPI와 무관
   recommend.py   파이프라인 조립(후보 → 필터 → 점수 → 다양성 → 설명)
 kb/              지식 컴파일러의 순수 로직(DB와 무관). 테스트, 벤치, 엔진 fixture가 공유
   load.py  schema.py  validate.py  graph.py  compiled.py
+  labeling.py    Jev 오프라인 라벨링 질문 스키마·변환·검증(부록 F)
 storage/         SQLAlchemy 테이블, 엔진 입력 변환·조립(engine_source.py: 파일·DB 공급원 공용), 사용자 저장소(users.py), 컴파일 결과 writer
 api/             FastAPI (main.py, schemas.py, present.py: 이름·안내 문구 표시 계층)
 app/             Streamlit (API를 HTTP로 호출)
@@ -375,7 +376,8 @@ knowledge/       allergens.yaml, vocab.yaml, ingredients.yaml 또는 ingredients
 data/recipes/    레시피 시드 YAML(레시피당 1파일)
 data/recipes_foodsafety/  식품안전나라 변환 결과 draft YAML. 적재 대상 아님, 그래프 표시 전용(5-3-1, 부록 D-8)
 data/external/foodsafety/raw/  식품안전나라 API 원본 JSON
-config/          weights.yaml, pantry_staples.yaml, engine.yaml(serve_draft_recipes 등 가중치 외 설정), display.yaml(화면 안내·면책 문구, 표시 전용)
+data/external/jev/  (gitignore) Jev 라벨링 요청·응답 원본(부록 F)
+config/          weights.yaml, pantry_staples.yaml, labeling.yaml(Jev 라벨 확신도 기준, 부록 F), engine.yaml(serve_draft_recipes 등 가중치 외 설정), display.yaml(화면 안내·면책 문구, 표시 전용)
 scripts/         compile_knowledge.py, validate_data.py, load_recipes.py, bench.py (얇은 CLI, 로직은 kb/·storage/)
 migrations/      Alembic
 tests/           allergy/  logic/  golden/  kb/(컴파일러)  storage/(DB 통합, DATABASE_URL이 있을 때만)  support/(fixture 빌더)
@@ -748,3 +750,59 @@ viz-0 설계 기록 → viz-1 `/graph` → viz-2 trace·persona → viz-3 3D 온
 ### E-5. 범위 밖
 
 저장(draft 등록), 미매칭 표기 누적(`unmapped_term`), 자유 문장(LLM) 해석, role·선택 재료 추론. 필요하면 progress.md "다음 단계 제안"에 적는다.
+
+## 부록 F. Jev 오프라인 라벨링 jev (2026-10-17 사람 승인, decisions D6)
+
+목표: 식품안전나라 변환 레시피(5-3-1)처럼 속성이 비어 있는 draft 레시피에 Jev(TypeSafe AI의 결정 모델)로 맛·난이도·cuisine·조리시간·role·필수 조리기구를 채우고, 확신도가 낮은 값만 사람이 검수하게 한다. 추천 실행 경로(`engine/`)는 바꾸지 않는다.
+
+### F-1. 원칙
+
+- **오프라인 전용.** 라벨링은 스크립트로 한 번 돌려 YAML에 값을 쓴다. `engine/`, `api/`는 Jev를 호출하지 않는다.
+- **매핑·알레르기에 쓰지 않는다.** `ingredient`(정규 id)는 Jev가 채우거나 바꾸지 않는다. 미매칭 줄은 미매칭 그대로 둔다. `optional`도 바꾸지 않는다(선택 재료도 알레르기 판정 대상이므로 안전에는 영향이 없지만, 범위를 좁게 둔다).
+- **기존 형식 안에서만.** 새 레시피 필드를 만들지 않는다. 값은 `data/recipes/README.md` 형식과 `knowledge/vocab.yaml` 어휘를 따른다. 범위 밖 값이 오면 쓰지 않고 오류로 남긴다.
+- **draft 유지.** 라벨링한 레시피는 `status: draft`. 레시피 단위 `confidence`는 채운 값 중 하나라도 확신도가 기준 미만이면 `low`, note에 low 항목을 적는다. published 전환은 사람 검수 후에만 한다.
+- **보내는 정보.** 레시피 제목, 재료 원문 줄(`raw_text`), 조리 단계 원문, 원본 요리종류·조리방법(있으면). 사용자 정보는 보내지 않는다.
+- **재현.** 요청과 응답 원본을 `data/external/jev/<레시피 id>.json`(gitignore)에 저장한다. 같은 원본이 있으면 다시 호출하지 않고 저장본으로 변환한다(`--refresh`로만 재호출).
+
+### F-2. 질문 스키마
+
+| 필드 | 유형 | 허용 값 | 비고 |
+|---|---|---|---|
+| `taste.<차원>` (spicy, salty, sweet, sour, umami, savory) | Score | 정수 0~5 | 차원마다 질문 하나(한 질문에 여러 판단을 섞지 않는다) |
+| `difficulty` | Choice | 1, 2, 3 | 1 초급 |
+| `cuisine` | Choice | 한식, 일식, 중식, 양식, 해당 없음 | "해당 없음"이면 `미분류` 유지(적재 안 됨) |
+| `cook_time_min` | Choice | 10, 15, 20, 30, 45, 60, 90, 120 | 구간 대표값(분) |
+| 재료 줄 `role` | Choice | main, sub, seasoning, garnish | 줄마다 질문 하나. 기본 양념(config/pantry_staples.yaml)에 매핑된 줄도 묻는다 |
+| `equipment` | Yes/No | vocab equipment 각각 | "이 도구 없이는 만들 수 없다"에 예이면 `required: true`로 추가. 아니면 넣지 않는다 |
+
+- 질문 문구와 허용 값은 코드(`kb/labeling.py`)의 상수 한 곳에 둔다. 문구를 바꾸면 저장본과 맞지 않으므로 저장본에 스키마 버전을 함께 남긴다.
+- Jev API의 실제 요청·응답 형식은 공개 자료가 적다(confidence: low). 어댑터(`scripts/label_recipes.py`)가 형식 차이를 흡수하고, `kb/labeling.py`는 "질문 → (값, 확신도)" 인터페이스만 안다.
+
+### F-3. 흐름과 파일
+
+1. `scripts/label_recipes.py --source data/recipes_foodsafety [--ids ...] [--refresh] [--fake]`
+   - 대상 YAML을 읽어 질문을 만들고 Jev(또는 Fake)에 레시피당 한 번 묻는다(질문은 한 호출에 병렬).
+   - 응답 → 필드 값 변환, 범위 검증, 확신도 판정 → YAML에 쓴다. 이미 사람이 채운 값(`source`가 foodsafety가 아니거나 검수 표시가 있는 필드)은 덮어쓰지 않는다.
+   - 인증키는 `.env`의 `JEV_API_KEY`. 출력·파일·로그에 남기지 않는다(fetch_foodsafety.py와 같은 방식).
+2. `kb/labeling.py`: 질문 스키마, 결정 모델 인터페이스(Protocol), 변환·검증·확신도 판정. Fake 결정 모델(고정 응답)은 테스트용.
+3. 검수표: `docs/review/foodsafety_labels.md`(low 항목 우선, 레시피별 채운 값과 확신도). 원본 재료 표기 빈도처럼 레시피 본문이 들어가지 않게 한다(D3 보완 2).
+
+### F-4. 확신도 기준
+
+- 필드별 기준값은 F-5 평가 후 사람이 정한다(decisions D6 "미정"). 그 전에는 모든 라벨을 `confidence: low`로 둔다.
+- 기준은 `config/labeling.yaml`에 둔다(코드에 하드코딩하지 않음).
+
+### F-5. 정확도 평가 (jev-3)
+
+- 정답: 사람이 검수한 published 레시피(`data/recipes/`, status published). 같은 질문 스키마로 라벨링해(YAML은 쓰지 않음) 정답과 비교한다.
+- 지표: 필드별 정확 일치율, 맛·난이도·조리시간의 ±1(구간) 일치율, role 줄 단위 일치율, 필수 조리기구 정밀도·재현율, 확신도 구간별 정확도(보정), 같은 입력 3회 반복 일관성.
+- 결과: `docs/review/jev_label_eval.md`. 사람이 필드별 사용 여부와 확신도 기준을 정한다.
+- 한계: 정답 레시피는 에이전트 초안을 사람이 검수한 것이라 식품안전나라 레시피와 문체가 다르다. 식품안전나라 표본 일부를 사람이 직접 채워 추가 검증하는 방안을 함께 보고한다.
+
+### F-6. 테스트
+
+`tests/kb/test_labeling.py`(Fake 결정 모델): 응답 → 필드 변환, 범위 밖 값·vocab 밖 cuisine 거부, "해당 없음" → 미분류 유지, 확신도 기준 미만 → confidence low와 note, `ingredient`·`optional`·`status` 불변, 사람이 채운 값 덮어쓰지 않음, 저장본 재사용(재호출 없음), 인증키가 출력·저장본에 없음. `tests/allergy/`는 바꾸지 않는다.
+
+### F-7. 범위 밖
+
+런타임 추천 연동(상위 N개 재정렬, 사용자 문장 해석), 요리 형태(국·찌개 등) 같은 새 필드, 조리 단계 technique 채우기, 재료 매핑·별칭 제안. 필요하면 progress.md "다음 단계 제안"에 적는다.
