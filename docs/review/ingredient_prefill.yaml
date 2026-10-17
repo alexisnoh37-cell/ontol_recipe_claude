@@ -1,0 +1,62 @@
+# draft 재료 검수 화면(docs/review/ingredient_review.html)에 미리 채울 판단 (ir-1, 2026-10-17)
+# 생성: uv run python scripts/make_ingredient_review_html.py
+#
+# 버튼: O = 검수 완료(status: reviewed) / X = 재료 삭제(그 표기는 다시 미매칭, 알레르기 사용자에게 제외) / 보류 = draft 유지
+# 메모: 고칠 내용(알레르기 추가·삭제, 분류, 별칭 등). 사람이 화면에서 바꾼다.
+#
+# 자동 규칙(생성 스크립트, 아래 overrides가 우선):
+#   - 시판 제품(um 분류 E)과 시판 제품 안내 대상(config/display.yaml commercial_product_notice): 보류, 노랑.
+#     알레르기 목록이 추정이라 포장 표시를 확인하기 전에는 reviewed로 두지 않는다(draft여도 엔진은 그대로 쓴다).
+#   - confidence: low이거나 알레르기가 있는 재료: O, 파랑(알레르기·메모를 한번 읽어 보기).
+#   - 그 밖(confidence: high, 알레르기 없음): O, 흰색.
+# color: red(판단이 필요한 쟁점) | yellow(포장 확인 등 추가 확인 필요) | blue(내용 확인) | white(넘어가도 됨)
+
+overrides:
+  starch:
+    decision: O
+    color: red
+    claude: "밀(가능)을 넣어서 밀 알레르기 사용자에게 전분이 든 레시피가 모두 제외된다(엔진 6개, 식품안전나라 108줄). 대부분 감자·옥수수·고구마 전분이지만 밀 전분 제품이 있어 um-2에서 이렇게 정했다. 유지할지 확인."
+  oats:
+    decision: O
+    color: red
+    claude: "교차오염(같은 시설에서 밀 가공)은 지식 모델 어디에도 반영하지 않아 귀리에도 밀을 넣지 않았다. 교차오염을 다룰지는 전체 정책 문제(um-2에서 Gemini가 밀 가능 추가를 제안했으나 반영 안 함)."
+  ginkgo:
+    decision: O
+    color: red
+    claude: "은행이 견과류 알레르기에 들어가는지 확실하지 않아 '기타 견과류(가능)'로 두었다. 견과류 알레르기 사용자에게 은행 레시피가 제외된다."
+  baby_greens:
+    decision: O
+    color: red
+    claude: "혼합 어린잎에 메밀싹이 들어갈 수 있어 메밀(가능). 메밀 알레르기 사용자에게 어린잎 레시피(식품안전나라 39줄)가 제외된다."
+  sprouts_mix:
+    decision: O
+    color: red
+    claude: "혼합 새싹에 메밀싹이 들어갈 수 있어 메밀(가능). 어린잎채소와 같은 판단."
+  whelk:
+    decision: O
+    color: red
+    claude: "골뱅이(바다 고둥)를 전복과 같이 조개류 그룹으로 분류했다. 원문이 통조림이라 조미액 대비 대두·밀(가능)을 넣었다(um-2 결정). 분류가 맞는지 확인."
+  msg:
+    decision: O
+    color: red
+    claude: "미원(글루탐산나트륨)은 법정 알레르기 성분이 없다고 보고 알레르기 없음으로 두었다. 상표명을 이름에 쓴 것도 확인."
+  squash_unspecified:
+    decision: O
+    color: red
+    claude: "'호박'이 애호박·단호박·늙은호박 중 무엇인지 몰라 따로 둔 재료(알레르기 없음). 보유 재료 판정에서 애호박·단호박과 이어지지 않는다(is_a 없음)."
+  chamsongi_mushroom:
+    decision: O
+    color: red
+    claude: "참송이버섯은 표고 계열 품종으로 알려져 있으나 확실하지 않아 별도 재료로 두었다. 표고버섯 별칭으로 합칠지 결정(알레르기 무관)."
+  pumpkin_seed:
+    decision: O
+    color: red
+    claude: "호박씨는 법정 알레르기 대상이 아니라 알레르기 없음으로 두었다. 견과류 알레르기 사용자에게도 제외되지 않는다."
+  pear_drink:
+    decision: O
+    color: red
+    claude: "갈아만든배 등 시판 배 음료에 보존료 대비 아황산류(가능)를 넣었다(um-2 결정, 실제 표시는 확인 못 함). 아황산류 알레르기 사용자에게 4개 레시피가 제외된다."
+  lemon_juice:
+    decision: O
+    color: red
+    claude: "병 레몬주스에 보존료 대비 아황산류(가능)를 넣었다(um-2 결정). 기존 '레몬즙'은 생레몬(lemon) 별칭이라 같은 문제가 있다 — 레몬즙도 이 재료로 옮길지 함께 결정."
