@@ -3,71 +3,71 @@
 # --- 파·마늘·양념 채소 ---
 - id: green_onion
   name: 대파
-  aliases: [대파 흰대, {text: 다진 대파, form: minced}]
+  aliases: [대파 흰대, {text: 다진 대파, form: minced}, 깐대파, 대파 다진것, 대파뿌리, 대파채, 대파채친것, 파채]
   category: 채소
   status: reviewed
 - id: scallion
   name: 쪽파
-  aliases: [실파]
+  aliases: [실파, 다진 실파, 다진 쪽파, 골파, 실파다진것, 실파송송썬것]
   category: 채소
   status: reviewed
 - id: garlic
   name: 마늘
-  aliases: [깐마늘, 통마늘, {text: 다진 마늘, form: minced}, {text: 편마늘, form: sliced}, {text: 간마늘, form: minced}, {text: 마늘다진것, form: minced}]
+  aliases: [깐마늘, 통마늘, {text: 다진 마늘, form: minced}, {text: 편마늘, form: sliced}, {text: 간마늘, form: minced}, {text: 마늘다진것, form: minced}, 마늘가루, 알마늘, 마늘즙, 마늘칩, 마늘튀김, 풋마늘, 흑마늘진액]
   category: 채소
   status: reviewed
 - id: onion
   name: 양파
-  aliases: [적양파, 자색양파, {text: 다진 양파, form: minced}, {text: 양파다진것, form: minced}, 깐양파]
+  aliases: [적양파, 자색양파, {text: 다진 양파, form: minced}, {text: 양파다진것, form: minced}, 깐양파, 양파즙, 간 양파, 레드어니언, 양파가루, 양파 껍질, 양파작게자른것, 양파채썬것, 양파채친것]
   category: 채소
   status: reviewed
 - id: chive
   name: 부추
-  aliases: [영양부추, 정구지]
+  aliases: [영양부추, 정구지, 차이브, 조선부추, 호부추]
   category: 채소
   status: reviewed
 - id: ginger
   name: 생강
-  aliases: [{text: 다진 생강, form: minced}, {text: 생강다진것, form: minced}, 생강가루]
+  aliases: [{text: 다진 생강, form: minced}, {text: 생강다진것, form: minced}, 생강가루, 깐생강, 통생강]
   category: 채소
   status: reviewed
 - id: green_chili
   name: 풋고추
-  aliases: [청고추, 오이고추, 꽈리고추, {text: 다진청고추, form: minced}, {text: 청고추 다진것, form: minced}]
+  aliases: [청고추, 오이고추, 꽈리고추, {text: 다진청고추, form: minced}, {text: 청고추 다진것, form: minced}, 멕시코고추, 아삭이고추, 다진 풋고추]
   category: 채소
   confidence: low
   note: 오이고추·꽈리고추는 품종이 다르고 맵기도 다름. 별도 재료로 나눌지 검수
   status: reviewed
 - id: cheongyang_pepper
   name: 청양고추
-  aliases: [{text: 다진 청양고추, form: minced}]
+  aliases: [{text: 다진 청양고추, form: minced}, 건청양고추, 말린 청양고추]
   category: 채소
   status: reviewed
 - id: red_chili
   name: 홍고추
-  aliases: [빨간 고추, 홍청양고추, 붉은 고추, {text: 다진 홍고추, form: minced}]
+  aliases: [빨간 고추, 홍청양고추, 붉은 고추, {text: 다진 홍고추, form: minced}, 건고추, 마른 고추, 홍고추 다진것, 간 홍고추, 건홍고추, 말린 홍고추, 다진 붉은 고추, 레드크러쉬드 페퍼, 베트남 건고추, 실고추, 홍고추마른것]
   category: 채소
   status: reviewed
 
 # --- 뿌리·줄기 채소 ---
 - id: potato
   name: 감자
-  aliases: [햇감자, 알감자]
+  aliases: [햇감자, 알감자, 삶은 감자]
   category: 채소
   status: reviewed
 - id: sweet_potato
   name: 고구마
-  aliases: [밤고구마, 호박고구마, 자색고구마]
+  aliases: [밤고구마, 호박고구마, 자색고구마, 삶은 밤고구마, 고구마 다이스, 삶은 자색고구마, 찐 고구마]
   category: 채소
   status: reviewed
 - id: carrot
   name: 당근
-  aliases: [{text: 당근다진것, form: minced}]
+  aliases: [{text: 당근다진것, form: minced}, 다진 당근, 당근퓨레, 당근갈은것, 당근채썬것, 당근 채친것]
   category: 채소
   status: reviewed
 - id: radish
   name: 무
-  aliases: [무우, 조선무, 월동무]
+  aliases: [무우, 조선무, 월동무, 무말랭이, 불린 무말랭이]
   category: 채소
   status: reviewed
 - id: young_radish
@@ -76,6 +76,7 @@
   status: reviewed
 - id: lotus_root
   name: 연근
+  aliases: [깐연근]
   category: 채소
   status: reviewed
 - id: burdock
@@ -84,13 +85,14 @@
   status: reviewed
 - id: bellflower_root
   name: 도라지
+  aliases: [통도라지]
   category: 채소
   status: reviewed
 
 # --- 잎채소 ---
 - id: napa_cabbage
   name: 배추
-  aliases: [알배추, 알배기배추, 절임배추, 배추 잎, 배춧잎]
+  aliases: [알배추, 알배기배추, 절임배추, 배추 잎, 배춧잎, 얼갈이배추, 단배추, 통배추]
   category: 채소
   confidence: low
   note: 절임배추(소금 절임)를 별칭으로 묶음. 별도 재료로 둘지 검수
@@ -103,23 +105,23 @@
   status: reviewed
 - id: cabbage
   name: 양배추
-  aliases: [적양배추, 적채]
+  aliases: [적양배추, 적채, 미니양배추]
   category: 채소
   status: reviewed
 - id: spinach
   name: 시금치
-  aliases: [섬초]
+  aliases: [섬초, 시금치가루, 포항초]
   category: 채소
   status: reviewed
 - id: perilla_leaf
   name: 깻잎
-  aliases: [들깻잎]
+  aliases: [들깻잎, 깻잎순]
   category: 채소
   note: 들깨의 잎. 참깨 알레르기 그룹과 무관
   status: reviewed
 - id: lettuce
   name: 상추
-  aliases: [청상추, 적상추]
+  aliases: [청상추, 적상추, 로메인, 로메인상추, 쌈채, 쌈추]
   category: 채소
   status: reviewed
 - id: iceberg_lettuce
@@ -128,6 +130,7 @@
   status: reviewed
 - id: minari
   name: 미나리
+  aliases: [데친 미나리]
   category: 채소
   status: reviewed
 - id: crown_daisy
@@ -145,21 +148,21 @@
   status: reviewed
 - id: celery
   name: 셀러리
-  aliases: [샐러리]
+  aliases: [샐러리, 샐러리다진것, 샐러리잎, 샐러리 채친것, 셀러리다진것, 셀러리 줄기]
   category: 채소
   status: reviewed
 
 # --- 열매채소 ---
 - id: zucchini
   name: 애호박
-  aliases: [호박(애호박), 주키니, 주키니호박]
+  aliases: [호박(애호박), 주키니, 주키니호박, 돼지호박, 다진 애호박, 쥬키니호박, 돼지호박갈은것]
   category: 채소
   confidence: low
   note: 주키니와 애호박은 품종이 다르나 요리에서 대체로 같이 씀. 별칭으로 둘지 검수
   status: reviewed
 - id: kabocha
   name: 단호박
-  aliases: [미니 단호박]
+  aliases: [미니 단호박, 단호박가루]
   category: 채소
   status: reviewed
 - id: cucumber
@@ -178,36 +181,36 @@
   status: reviewed
 - id: green_bell_pepper
   name: 피망
-  aliases: [청피망]
+  aliases: [청피망, 청피망다진것, 다진 청피망, 피망채친것]
   category: 채소
   status: reviewed
 - id: tomato
   name: 토마토
-  aliases: [완숙토마토, 찰토마토]
+  aliases: [완숙토마토, 찰토마토, 토마토콩카세, 홀토마토, 토마토홀, 다진 토마토, 말린 토마토, 건조토마토, 드라이토마토, 줄기토마토, 캔 토마토, 통조림 홀토마토, 홍토마토]
   category: 채소
   allergens: [{group: tomato, certainty: definite}]
   status: reviewed
 - id: cherry_tomato
   name: 방울토마토
-  aliases: [대추방울토마토, 미니토마토]
+  aliases: [대추방울토마토, 미니토마토, 말린 방울토마토, 체리토마토]
   is_a: [tomato]
   category: 채소
   status: reviewed
 - id: corn
   name: 옥수수
-  aliases: [찰옥수수, 초당옥수수]
+  aliases: [찰옥수수, 초당옥수수, 영콘, 옥수수가루, 옥수수가루플렌타가루, 옥수수알]
   category: 채소
   status: reviewed
 - id: canned_corn
   name: 스위트콘
-  aliases: [옥수수콘, 콘통조림]
+  aliases: [옥수수콘, 콘통조림, 캔 옥수수]
   derived_from: [corn]
   is_processed: true
   category: 채소
   status: reviewed
 - id: broccoli
   name: 브로콜리
-  aliases: [브로컬리]
+  aliases: [브로컬리, 브러컬리, 브로컬리다진것]
   category: 채소
   status: reviewed
 - id: asparagus
@@ -218,6 +221,7 @@
 # --- 나물(콩 유래 포함) ---
 - id: soybean_sprouts
   name: 콩나물
+  aliases: [두절콩나물]
   derived_from: [soybean]
   category: 채소
   confidence: low
@@ -233,22 +237,22 @@
 # --- 버섯 ---
 - id: shiitake
   name: 표고버섯
-  aliases: [표고, {text: 건표고, form: dried}, 건 표고버섯, 표고버섯마른것, 생 표고버섯]
+  aliases: [표고, {text: 건표고, form: dried}, 건 표고버섯, 표고버섯마른것, 생 표고버섯, 마른 표고버섯, 표고버섯가루, 불린 표고버섯, 표고버섯 기둥, 표고버섯 밑동]
   category: 버섯
   status: reviewed
 - id: oyster_mushroom
   name: 느타리버섯
-  aliases: [느타리, 애느타리버섯]
+  aliases: [느타리, 애느타리버섯, 참느타리버섯]
   category: 버섯
   status: reviewed
 - id: enoki
   name: 팽이버섯
-  aliases: [팽이]
+  aliases: [팽이, 황금팽이버섯]
   category: 버섯
   status: reviewed
 - id: king_oyster_mushroom
   name: 새송이버섯
-  aliases: [새송이]
+  aliases: [새송이, 미니새송이, 미니새송이버섯]
   category: 버섯
   status: reviewed
 - id: button_mushroom
@@ -279,14 +283,14 @@
   status: reviewed
 - id: baby_greens
   name: 어린잎채소
-  aliases: [어린잎, 베이비채소]
+  aliases: [어린잎, 베이비채소, 어린채소]
   category: 채소
   confidence: low
   note: "혼합 제품. 메밀싹 포함 가능성 → possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료 메밀(가능)은 ir-2 사람 결정으로 삭제(알레르기 없음)"
   status: reviewed
 - id: beet
   name: 비트
-  aliases: [비트루트]
+  aliases: [비트루트, 비트가루, 알비트]
   category: 채소
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
@@ -310,7 +314,7 @@
   status: reviewed
 - id: sprouts_mix
   name: 새싹채소
-  aliases: [새싹]
+  aliases: [새싹, 각종 새싹, 어린싹]
   category: 채소
   confidence: low
   note: "혼합 새싹에 메밀싹이 들어가는 경우가 있어 메밀 possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료 메밀(가능)은 ir-2 사람 결정으로 삭제(알레르기 없음)"
@@ -322,12 +326,13 @@
   status: reviewed
 - id: hamcho
   name: 함초
-  aliases: [함초가루]
+  aliases: [함초가루, 건함초, 불린 함초]
   category: 채소
   note: "염생식물 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
 - id: chicory
   name: 치커리
+  aliases: [그린치커리, 레드치커리]
   category: 채소
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
@@ -339,11 +344,13 @@
   status: reviewed
 - id: wood_ear
   name: 목이버섯
+  aliases: [건목이버섯]
   category: 버섯
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
 - id: white_wood_ear
   name: 흰목이버섯
+  aliases: [백목이버섯]
   category: 버섯
   note: "다른 종(um-2 사람 결정) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
@@ -354,11 +361,13 @@
   status: reviewed
 - id: kale
   name: 케일
+  aliases: [보라로즈케일, 흰로즈케일]
   category: 채소
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
 - id: chwinamul
   name: 취나물
+  aliases: [건취나물, 데친 취나물, 참취]
   category: 채소
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
@@ -379,7 +388,222 @@
   status: reviewed
 - id: squash_unspecified
   name: 호박
+  aliases: [호박가루]
   category: 채소
   confidence: low
   note: "애호박·단호박·늙은호박 중 무엇인지 모름. 알레르기 없음(um-2 사람 결정) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
+
+# --- um-3 미매칭 2차 보강(2026-10-17, 사람 일괄 승인) ---
+- id: aralia_shoot
+  name: 두릅
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: radish_red
+  name: 래디시
+  aliases: [레디쉬, 래디쉬]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: baekilsongi
+  name: 백일송이버섯
+  aliases: [백일송이]
+  category: 버섯
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: sweet_potato_stem
+  name: 고구마순
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: gondre
+  name: 곤드레나물
+  aliases: [건곤드레, 건곤드레나물, 불린 곤드레나물]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: chard
+  name: 근대
+  aliases: [적근대]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: stonecrop
+  name: 돌나물
+  aliases: [돈나물]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: mugwort
+  name: 쑥
+  aliases: [쑥가루, 쑥 파우더]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: mallow
+  name: 아욱
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: bamboo_shoot
+  name: 죽순
+  aliases: [삶은 죽순, 죽순통조림]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: angelica_leaf
+  name: 당귀잎
+  aliases: [당귀]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: beech_mushroom
+  name: 만가닥버섯
+  aliases: [만송이버섯, 백만송이버섯]
+  category: 버섯
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: amaranth_greens
+  name: 비름나물
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: sebal_greens
+  name: 세발나물
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: turnip
+  name: 순무
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: siraegi
+  name: 시래기
+  aliases: [무청, 무청시래기, 무청시래기 불린 것, 시래기불린것, 시레기]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: watercress
+  name: 워터크레스
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: taro
+  name: 토란
+  aliases: [알토란]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: jalapeno
+  name: 할라피뇨
+  aliases: [할라피뇨 피클, 할라피뇨다진것]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: acanthopanax
+  name: 가시오가피
+  aliases: [오가피]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: vitamin_greens
+  name: 비타민채
+  aliases: [그린비타민, 비타민]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: green_beans
+  name: 그린빈
+  aliases: [그린빈스]
+  category: 채소
+  note: "대두 아님 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: shepherds_purse
+  name: 냉이
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: lions_mane
+  name: 노루궁뎅이버섯
+  category: 버섯
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: jerusalem_artichoke
+  name: 돼지감자
+  aliases: [돼지감자가루]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: butternut_squash
+  name: 땅콩호박
+  category: 채소
+  note: "이름만 땅콩 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: radicchio
+  name: 라디치오
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: arugula
+  name: 루콜라
+  aliases: [루꼴라]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: butterbur_stem
+  name: 머위대
+  aliases: [머윗대]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: water_chestnut
+  name: 물밤
+  aliases: [물밤다진것]
+  category: 채소
+  note: "견과류 아님 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: mushroom_unspecified
+  name: 버섯(종류 불명)
+  aliases: [미니버섯, 버섯가루]
+  category: 버섯
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: dandelion
+  name: 민들레
+  aliases: [민들레 잎]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: angelica_keiskei
+  name: 신선초
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: endive
+  name: 앤다이브
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: red_mustard_greens
+  name: 적겨자
+  category: 채소
+  note: "잎채소. 겨자(가루)와 다름 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: azalea_flower
+  name: 진달래꽃
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: caper
+  name: 케이퍼
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: horseradish
+  name: 홀스래디시
+  aliases: [홀스레디쉬]
+  category: 채소
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
   status: reviewed

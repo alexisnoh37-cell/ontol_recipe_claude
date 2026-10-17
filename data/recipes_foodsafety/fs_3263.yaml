@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3263. 요리종류 기타, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3263. 요리종류 기타, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
 - ingredient: onion
   raw_text: 양파(1개)
@@ -19,16 +19,16 @@ ingredients:
 - ingredient: tomato
   raw_text: 토마토(3개)
   role: sub
-- ingredient: null
+- ingredient: pasta
   raw_text: 탈리아텔레(200g)
   role: sub
-- ingredient: null
+- ingredient: tomato
   raw_text: 말린 토마토(2개)
   role: sub
-- ingredient: null
+- ingredient: parsley
   raw_text: 다진 파슬리(0.5Ts)
   role: sub
-- ingredient: null
+- ingredient: pink_pepper
   raw_text: 핑크 페퍼(5알)
   role: sub
 - ingredient: basil
@@ -55,7 +55,7 @@ ingredients:
 - ingredient: gochugaru
   raw_text: 고운 고춧가루(0.5ts)
   role: sub
-- ingredient: null
+- ingredient: plant_cream
   raw_text: 식물성 생크림(⅔컵)
   role: sub
 - ingredient: soy_milk

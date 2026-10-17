@@ -5,15 +5,15 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1093. 요리종류 후식, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1093. 요리종류 후식, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
-- ingredient: null
+- ingredient: dried_persimmon
   raw_text: 감말랭이(10g)
   role: sub
 - ingredient: rice_flour
   raw_text: 쌀가루(7g)
   role: sub
-- ingredient: null
+- ingredient: barley
   raw_text: 보릿가루(7g)
   role: sub
 - ingredient: wheat_flour
@@ -22,7 +22,7 @@ ingredients:
 - ingredient: sweet_potato
   raw_text: 고구마(13g)
   role: sub
-- ingredient: null
+- ingredient: strawberry
   raw_text: 냉동딸기(13g)
   role: sub
 - ingredient: sesame

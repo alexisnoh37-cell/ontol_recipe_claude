@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 385. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 385. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개. 이름 보정표로 고친 줄 2개'
 ingredients:
-- ingredient: null
+- ingredient: tomato
   raw_text: 홀토마토 200g
   role: sub
 - ingredient: tomato
@@ -19,7 +19,10 @@ ingredients:
 - ingredient: garlic
   raw_text: 다진마늘 20g
   role: sub
-- ingredient: null
+- ingredient: pasta
+  raw_text: 먹물파스타 25g
+  role: sub
+- ingredient: squid_ink
   raw_text: 먹물파스타 25g
   role: sub
 - ingredient: cheese
@@ -43,7 +46,7 @@ ingredients:
 - ingredient: eggplant
   raw_text: 가지 20g
   role: sub
-- ingredient: null
+- ingredient: bell_pepper
   raw_text: 2가지색 파프리카 20g
   role: sub
 - ingredient: zucchini

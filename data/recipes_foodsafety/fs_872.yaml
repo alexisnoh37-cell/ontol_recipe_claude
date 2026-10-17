@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 872. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 872. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개. 이름 보정표로 고친 줄 1개'
 ingredients:
 - ingredient: shrimp_raw
   raw_text: 새우 13g
@@ -16,22 +16,22 @@ ingredients:
 - ingredient: oyster
   raw_text: 굴 25g
   role: sub
-- ingredient: null
+- ingredient: scallop
   raw_text: 패주 5g
   role: sub
 - ingredient: squid
   raw_text: 오징어 10g
   role: sub
-- ingredient: null
+- ingredient: angelica_leaf
   raw_text: 당귀잎 2.5g
   role: sub
 - ingredient: napa_cabbage
   raw_text: 배추잎 2.5g
   role: sub
-- ingredient: null
+- ingredient: celery
   raw_text: 샐러리잎 2.5g
   role: sub
-- ingredient: null
+- ingredient: beech_mushroom
   raw_text: 백만송이버섯 2.5g
   role: sub
 - ingredient: crown_daisy
@@ -49,13 +49,13 @@ ingredients:
 - ingredient: null
   raw_text: 통깨소스
   role: sub
-- ingredient: null
+- ingredient: anchovy_stock
   raw_text: 다시물 9g
   role: sub
-- ingredient: null
+- ingredient: sesame
   raw_text: 볶은통깨 3.8g
   role: sub
-- ingredient: null
+- ingredient: peanut_butter
   raw_text: 피넷버터 5.8g
   role: sub
 - ingredient: mirin
@@ -64,7 +64,7 @@ ingredients:
 - ingredient: vinegar
   raw_text: 식초 1g
   role: sub
-- ingredient: null
+- ingredient: tabasco
   raw_text: 타비스코 소스 1g
   role: sub
 - ingredient: soy_sauce

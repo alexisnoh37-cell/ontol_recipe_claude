@@ -1,0 +1,242 @@
+# 식품안전나라 레시피 재료 이름 보정표 (um-3, 2026-10-17 사람 일괄 승인)
+# 원본은 그대로 두고, 변환(kb/foodsafety.py convert_row)이 별칭 색인보다 먼저 적용한다. 고친 줄 수는 레시피 note에 남는다.
+#   names: 재료 이름(양 표기 앞까지, 공백 무시하고 비교)
+#   id: 이 재료로 매핑 / drop: 재료에서 뺌(water = 물, not_ingredient = 재료 아님) / split: 한 줄을 여러 재료로 나눔
+# 형식은 엔진 레시피 보정표(data/recipe_name_overrides.yaml)와 같다. 근거: docs/review/unmapped_round2.yaml(D 분류)
+overrides:
+- names: [익힌 전복내장]
+  id: abalone
+- names: [알룰로스①, 알룰로스②, 알룰로스③]
+  id: allulose
+- names: [멸치중간것]
+  id: anchovy
+- names: [멸치액적소스]
+  id: anchovy_fish_sauce
+- names: [굵게 다진 사과, 사과작은것]
+  id: apple
+- names: [아보카도작은것]
+  id: avocado
+- names: [발사믹드레싱 발사믹식초]
+  id: balsamic_vinegar
+- names: [보리된장 보리]
+  id: barley
+- names: [잣 바질페이소스]
+  id: basil_pesto
+- names: [앙 금]
+  id: bean_paste_sweet
+- names: [쇠고기샄코기, 얇게 썬 쇠고기, 채 썬 쇠고기]
+  id: beef
+- names: [다진 쇠고기 등심, 소 채끝살]
+  id: beef_sirloin
+- names: [미니파프리카, 적파프리카, 주황파프리카, 다진 파프리카, 노란색파프리카, 붉은 파프리카, 청파프리카, 2가지색 미니파프리카 40g, 2가지색 미니파프리카 70g, 2가지색 파프리카 100g, 2가지색 파프리카 20g, 두 가지 색 파프리카]
+  id: bell_pepper
+- names: [참치밑간 후춧가루, 흰추후]
+  id: black_pepper
+- names: [복분자소스 복분자]
+  id: black_raspberry
+- names: [검정깨묵 각각]
+  id: black_sesame_jelly
+- names: [피시볼반죽 검은콩]
+  id: black_soybean
+- names: [블루베리소스 블루베리잼]
+  id: blueberry_jam
+- names: [청경재]
+  id: bok_choy
+- names: [크루퉁]
+  id: bread
+- names: [메닐튀밥]
+  id: buckwheat
+- names: [녹인 무염 버터]
+  id: butter
+- names: [양송이버섯 밑동, 청국장소스 양송이버섯]
+  id: button_mushroom
+- names: [백련초가루]
+  id: cactus_fruit_powder
+- names: [송송 썬 청양고추]
+  id: cheongyang_pepper
+- names: [닭뼈육수 재료 닭뼈, 토막 낸 닭]
+  id: chicken
+- names: [닭육수 닭다리]
+  id: chicken_thigh
+- names: [병아리콩 삶은 물, 삶은 병아리콩①, 삶은 병아리콩②]
+  id: chickpea
+- names: [부추 또는 실파]
+  id: chive
+- names: [데쳐서 다진 취나물]
+  id: chwinamul
+- names: [게피]
+  id: cinnamon
+- names: [주먹밥 데친 꼬막살]
+  id: cockle
+- names: [무가당 코코아가루①, 무가당 코코아가루②]
+  id: cocoa_powder
+- names: [달래무침 달래]
+  id: dallae
+- names: [닭고기 삶는 재료 된장, 된장육수 된장, 빠금장소스 빠금장, 파스타소스 된장]
+  id: doenjang
+- names: [조]
+  id: foxtail_millet
+- names: [납작 썬 마늘, 닭밑간양념 다진 마늘]
+  id: garlic
+- names: [얇게 썬 생강]
+  id: ginger
+- names: [고기완자양념 생강즙, 쇠고기 양념장 생강즙]
+  id: ginger_juice
+- names: [새알심 찹쌀가루]
+  id: glutinous_rice_flour
+- names: [l고추장]
+  id: gochujang
+- names: [자몽주수]
+  id: grapefruit
+- names: [어슷 썬 풋고추, 청고주]
+  id: green_chili
+- names: [어슷 썬 대파]
+  id: green_onion
+- names: [완두콩드레싱 삶은 완두콩]
+  id: green_peas
+- names: [녹차 우린 물]
+  id: green_tea_powder
+- names: [소 다진 쇠고기]
+  id: ground_beef
+- names: [다진 돼기고기, 완자 다진 돼지고기]
+  id: ground_pork
+- names: [굵은 면발 라면]
+  id: instant_noodle_product
+- names: [단호박작은것]
+  id: kabocha
+- names: [건조다시마 사방, 다시마 사방, 다시마육수 다시마]
+  id: kelp
+- names: [곁들이김치]
+  id: kimchi
+- names: [굴림만두 새송이버섯, 새송이벗서]
+  id: king_oyster_mushroom
+- names: [스테이크반죽 곤약]
+  id: konjac
+- names: [다진 레몬청 과육]
+  id: lemon
+- names: [상추/로메인]
+  id: lettuce
+- names: [따뜻한 우유]
+  id: milk
+- names: [미나리잎장식]
+  id: minari
+- names: [민트장식용]
+  id: mint
+- names: [일식된장 미소]
+  id: miso
+- names: [르네디종 홀그레인머스터, 홀그레인, 홀그레인 머스터즈]
+  id: mustard
+- names: ['"배추']
+  id: napa_cabbage
+- names: [넉맥]
+  id: nutmeg
+- names: [오릴브오일, 올ㄹ브오일]
+  id: olive_oil
+- names: [허브타르타르드레싱 양파, 고기 삶는 재료 양파, 아귀찜양념 다진 양파, 채 썬 양파]
+  id: onion
+- names: [오렌지소스 오렌지]
+  id: orange
+- names: [오렌지소스 오렌지주스]
+  id: orange_juice
+- names: [느타리벗서]
+  id: oyster_mushroom
+- names: [파스리가루]
+  id: parsley
+- names: [펜넬파스타]
+  id: pasta
+- names: [피넷버터]
+  id: peanut_butter
+- names: [배사과소스 배]
+  id: pear
+- names: [파인애플 통조림 국물]
+  id: pineapple
+- names: [채 썬 돼지고기]
+  id: pork
+- names: [돼지목살다진것]
+  id: pork_neck
+- names: [앞다리살 돈육]
+  id: pork_shoulder
+- names: ['] 찐 감자']
+  id: potato
+- names: [미나리볶음고추장 무]
+  id: radish
+- names: [통조림단팥장식용]
+  id: red_bean
+- names: [송송 썬 붉은 고추]
+  id: red_chili
+- names: [볶음밥 쌀]
+  id: rice
+- names: [라이스페퍼]
+  id: rice_paper
+- names: [로즈마리다진것, 로즈마리마다진것]
+  id: rosemary
+- names: [잘게 다진 새우젓]
+  id: saeujeot
+- names: [레몬소금, 허브소금, 녹차소금, 소금①, 소금②, 소금물, 허브오일드레싱 저염소금]
+  id: salt
+- names: [참께]
+  id: sesame
+- names: [밥 밑간 참기름, 두부강된장 참기름]
+  id: sesame_oil
+- names: [건표고버섯 불릴 물]
+  id: shiitake
+- names: [김치주머니 소 새우]
+  id: shrimp_raw
+- names: ['3가지색 소면(분홍, 초록, 흰색) 각 25g씩', 백년초국수, 뽕잎국수, 치자국수]
+  id: somen
+- names: [두유①, 두유②]
+  id: soy_milk
+- names: [(양념) 저염간장 1g, 돼지고기 밑간 간장, 비빔소스 저염간장, 저염간장양념 저염간장, 조림양념 저염간장]
+  id: soy_sauce
+- names: [저염재래된장 콩]
+  id: soybean
+- names: [된장양념 콩가루]
+  id: soybean_powder
+- names: [콩나물무침 콩나물]
+  id: soybean_sprouts
+- names: [레몬소스 설탕, 머스터드소스 설탕, 톳 무침양념 설탕, 간장소스 설탕, 겨자소스 설탕, 고기 밑간 설탕, 단촛물 설탕, 설탕①, 설탕②, 설탕기호에따라, 해초 밑간 설탕, 홍초물 설탕]
+  id: sugar
+- names: [단단한 두부, 두부작은것, 스테이크재료 두부, 연두부큰것]
+  id: tofu
+- names: [토마토소스 토마토]
+  id: tomato
+- names: [2배 양조식초 1.5g, 3배 식초 0.5g, 사과드레싱 식초, 오리엔탈소스 식초, 유자드레싱 식초]
+  id: vinegar
+- names: [고추냉이 갠것, 와사미, 와사비 갠 것]
+  id: wasabi
+- names: [골뱅이 국물]
+  id: whelk
+- names: [그릭요거트 토핑]
+  id: yogurt
+- names: [유자청간장소스 유자청]
+  id: yuzu_cheong
+- names: [얼음, (육수) 물 500ml]
+  drop: water
+- names: [꼬치]
+  drop: not_ingredient
+- names: [각얼음, 따뜻한물]
+  drop: water
+- names: [꼬치용 꼬치, 나무막대기]
+  drop: not_ingredient
+- names: [물미지근한것, 물필요량, 생수]
+  drop: water
+- names: [믹서에 갈아줌]
+  drop: not_ingredient
+- names: [재료 물]
+  drop: water
+- names: [유산지]
+  drop: not_ingredient
+- names: [청홍고추]
+  split: [{id: green_chili}, {id: red_chili}]
+- names: [먹물파스타]
+  split: [{id: pasta}, {id: squid_ink}]
+- names: [잡곡밥흑미 검은콩]
+  split: [{id: rice}, {id: black_soybean}]
+- names: [청·홍고추다진것, 청홍고추 각각]
+  split: [{id: green_chili}, {id: red_chili}]
+- names: [청양고추버터]
+  split: [{id: cheongyang_pepper}, {id: butter}]
+- names: [찰깨빵]
+  split: [{id: bread}, {id: sesame}]
+- names: [홍새우 튀김]
+  split: [{id: shrimp_raw}, {id: frying_mix}]

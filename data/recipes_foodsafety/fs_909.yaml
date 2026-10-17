@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 909. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 909. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개'
 ingredients:
 - ingredient: sweet_potato
   raw_text: 고구마 15g
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: kimchi
   raw_text: 김치 8g
   role: sub
-- ingredient: null
+- ingredient: apple
   raw_text: 사과작은것 95g
   role: sub
 - ingredient: sesame_oil
@@ -24,9 +24,6 @@ ingredients:
   role: sub
 - ingredient: garlic
   raw_text: 마늘다진것 1g
-  role: sub
-- ingredient: null
-  raw_text: 소스1
   role: sub
 - ingredient: soy_sauce
   raw_text: 간장 1g
@@ -43,7 +40,7 @@ ingredients:
 - ingredient: sesame
   raw_text: 통깨 1g
   role: sub
-- ingredient: null
+- ingredient: scallion
   raw_text: 실파송송썬것 1.5g
   role: sub
 - ingredient: sesame_oil

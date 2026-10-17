@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3201. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3201. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: wheat_flour
   raw_text: 통밀가루 50g
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: yeast
   raw_text: 인스턴트 드라이 이스트 3g
   role: sub
-- ingredient: null
+- ingredient: fruit_starter
   raw_text: 사과종 45ml
   role: sub
 - ingredient: salt
@@ -31,7 +31,7 @@ ingredients:
 - ingredient: spinach
   raw_text: 시금치 소량
   role: sub
-- ingredient: null
+- ingredient: cherry_tomato
   raw_text: 말린 방울토마토 4~5개
   role: sub
 - ingredient: spinach
@@ -40,7 +40,7 @@ ingredients:
 - ingredient: garlic
   raw_text: 다진 마늘 3g
   role: sub
-- ingredient: null
+- ingredient: sesame
   raw_text: 볶음 참깨 60g
   role: sub
 - ingredient: olive_oil

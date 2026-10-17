@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3267. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3267. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: ground_pork
   raw_text: 다진 돼지고기(600g)
   role: sub
-- ingredient: null
+- ingredient: rice_paper
   raw_text: 사각 라이스페이퍼(8장)
   role: sub
 - ingredient: saeujeot
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: soy_sauce
   raw_text: 저염 간장(0.5Ts)
   role: sub
-- ingredient: null
+- ingredient: mushroom_unspecified
   raw_text: 버섯가루(1Ts)
   role: sub
 - ingredient: stevia
@@ -31,13 +31,13 @@ ingredients:
 - ingredient: black_pepper
   raw_text: 후춧가루(0.3Ts)
   role: sub
-- ingredient: null
+- ingredient: paprika_powder
   raw_text: 훈제 파프리카파우더(1.5Ts)
   role: sub
-- ingredient: null
+- ingredient: cayenne_pepper
   raw_text: 카옌 페퍼(0.5Ts)
   role: sub
-- ingredient: null
+- ingredient: cumin
   raw_text: 커민(0.5Ts)
   role: sub
 - ingredient: onion

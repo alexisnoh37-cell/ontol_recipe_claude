@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 300. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 300. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 2개'
 ingredients:
-- ingredient: null
+- ingredient: soy_meat
   raw_text: 콩고기(30g)
   role: sub
 - ingredient: avocado
@@ -28,13 +28,13 @@ ingredients:
 - ingredient: dumpling_wrapper
   raw_text: 만두피(20g)
   role: sub
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 저염간장양념 저염간장(2.5g)
   role: sub
 - ingredient: sugar
   raw_text: 설탕(3g)
   role: sub
-- ingredient: null
+- ingredient: salt
   raw_text: 허브오일드레싱 저염소금(1g)
   role: sub
 - ingredient: vinegar

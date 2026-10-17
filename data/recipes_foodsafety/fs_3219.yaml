@@ -5,15 +5,15 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3219. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3219. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
-- ingredient: null
+- ingredient: chicken
   raw_text: 삼계탕용 닭(250g)
   role: sub
 - ingredient: milk
   raw_text: 우유(500㎖)
   role: sub
-- ingredient: null
+- ingredient: samgyetang_herbs
   raw_text: 삼계탕 티백(70g)
   role: sub
 - ingredient: buckwheat_noodles
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: basil
   raw_text: 바질(5장)
   role: sub
-- ingredient: null
+- ingredient: chicken_stock
   raw_text: 삼계탕 육수(100㎖)
   role: sub
 - ingredient: vinegar
@@ -37,7 +37,7 @@ ingredients:
 - ingredient: apple
   raw_text: 사과(½개)
   role: sub
-- ingredient: null
+- ingredient: chicken_stock
   raw_text: 삼계탕 육수(30㎖)
   role: sub
 - ingredient: perilla_powder

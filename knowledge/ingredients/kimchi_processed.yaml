@@ -3,7 +3,7 @@
 
 - id: kimchi
   name: 배추김치
-  aliases: [김치, 묵은지, 포기김치, 신김치, 묵은 김치, 김치국물]
+  aliases: [김치, 묵은지, 포기김치, 신김치, 묵은 김치, 김치국물, 김장김치]
   derived_from:
     - napa_cabbage
     - {id: saeujeot, certainty: possible}
@@ -18,6 +18,7 @@
   status: reviewed
 - id: kkakdugi
   name: 깍두기
+  aliases: [석박지]
   derived_from:
     - radish
     - {id: saeujeot, certainty: possible}
@@ -44,7 +45,7 @@
   status: reviewed
 - id: pickled_radish
   name: 단무지
-  aliases: [김밥 단무지]
+  aliases: [김밥 단무지, 쌈무]
   derived_from: [radish]
   is_processed: true
   category: 가공식품
@@ -53,7 +54,7 @@
   status: reviewed
 - id: pickled_cucumber
   name: 피클
-  aliases: [오이피클]
+  aliases: [오이피클, 다진 오이피클]
   derived_from: [cucumber]
   is_processed: true
   category: 가공식품
@@ -109,6 +110,7 @@
   status: reviewed
 - id: lemon_juice
   name: 레몬주스
+  aliases: [레몬주수, 레몬쥬스]
   derived_from:
     - lemon
     - {id: sulfite, certainty: possible}
@@ -119,7 +121,7 @@
   status: reviewed
 - id: konjac
   name: 곤약
-  aliases: [실곤약, 곤약면]
+  aliases: [실곤약, 곤약면, 곤약국수, 곤약미, 냉동 곤약, 불린 곤약쌀, 판곤약]
   category: 가공식품
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
   status: reviewed
@@ -149,7 +151,227 @@
   status: reviewed
 - id: green_tea_powder
   name: 녹차가루
-  aliases: [말차]
+  aliases: [말차, 가루녹차, 녹차, 잎녹차]
   category: 가공식품
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
+
+# --- um-3 미매칭 2차 보강(2026-10-17, 사람 일괄 승인) ---
+- id: strawberry_jam
+  name: 딸기잼
+  aliases: [딸기쨈]
+  derived_from:
+    - strawberry
+    - sugar
+  is_processed: true
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: lime_juice
+  name: 라임주스
+  derived_from:
+    - lime
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "병 제품 보존료 대비 아황산류 possible(레몬주스와 같은 기준) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: cocoa_powder
+  name: 코코아가루
+  aliases: [무가당 코코아가루, 카카오 닙스, 무가당 코코아 파우더, 카카오매스]
+  category: 가공식품
+  note: "무가당 코코아(우유 혼합 제품 아님) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: almond_milk
+  name: 아몬드우유
+  derived_from:
+    - almond
+  is_processed: true
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: perilla_leaf_pickle
+  name: 깻잎장아찌
+  derived_from:
+    - perilla_leaf
+    - soy_sauce
+  is_processed: true
+  category: 김치
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: cider_soda
+  name: 사이다
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: sikhye
+  name: 식혜
+  derived_from:
+    - rice
+  is_processed: true
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: soy_meat
+  name: 콩고기
+  derived_from:
+    - soybean
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "밀 글루텐 섞는 제품 많음 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: french_fries
+  name: 감자튀김
+  derived_from:
+    - potato
+    - cooking_oil
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "냉동 감자튀김은 밀 코팅 제품 있음 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: black_sesame_jelly
+  name: 검정깨묵
+  derived_from:
+    - sesame
+  is_processed: true
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: sweet_potato_chips
+  name: 고구마칩
+  derived_from:
+    - sweet_potato
+    - cooking_oil
+  is_processed: true
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: pickled_chili
+  name: 고추피클
+  derived_from:
+    - green_chili
+    - vinegar
+  is_processed: true
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: carrot_juice
+  name: 당근주스
+  derived_from:
+    - carrot
+  is_processed: true
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: dongchimi
+  name: 동치미
+  aliases: [동치미국물, 물김치국물]
+  derived_from:
+    - radish
+    - salt
+    - {id: fish_sauce, certainty: possible}
+  is_processed: true
+  category: 김치
+  confidence: low
+  note: "젓갈을 넣는 집도 있어 액젓 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: rakkyo
+  name: 락교
+  derived_from:
+    - vinegar
+    - sugar
+  is_processed: true
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: buckwheat_jelly
+  name: 메밀묵
+  derived_from:
+    - buckwheat
+  is_processed: true
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: myeongi_pickle
+  name: 명이장아찌
+  aliases: [명이김치]
+  derived_from:
+    - {id: soy_sauce, certainty: possible}
+  is_processed: true
+  category: 김치
+  confidence: low
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: radish_pickle
+  name: 무장아찌
+  derived_from:
+    - radish
+    - {id: soy_sauce, certainty: possible}
+  is_processed: true
+  category: 김치
+  confidence: low
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: bean_paste_sweet
+  name: 앙금
+  aliases: [백앙금, 유자앙금, 팥소, 팥앙금, 흰앙금]
+  category: 가공식품
+  confidence: low
+  note: "팥·흰강낭콩 앙금(대두 아님) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: blueberry_jam
+  name: 블루베리잼
+  derived_from:
+    - blueberry
+    - sugar
+  is_processed: true
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: plant_cream
+  name: 식물성 생크림
+  derived_from:
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "카제인(우유 단백)·대두 레시틴 들어가는 제품 있음 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: olbanggae_jelly
+  name: 올방개묵
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: coffee
+  name: 커피
+  category: 가공식품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: crackers
+  name: 크래커
+  derived_from:
+    - wheat_flour
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: sesame, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "시판 과자. 밀 확정 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: fruit_cocktail
+  name: 후르츠칵테일
+  derived_from:
+    - canned_peach
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 가공식품
+  confidence: low
+  note: "복숭아·배·포도 통조림 혼합. 복숭아 확정 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
   status: reviewed

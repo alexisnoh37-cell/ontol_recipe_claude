@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 977. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 977. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: onion
   raw_text: 양파다진것 15g
@@ -19,16 +19,16 @@ ingredients:
 - ingredient: green_chili
   raw_text: 청고추다진것 1g
   role: sub
-- ingredient: null
+- ingredient: shrimp_raw
   raw_text: 새우다진것 25g
   role: sub
 - ingredient: butter
   raw_text: 버터 1g
   role: sub
-- ingredient: null
+- ingredient: lemon_juice
   raw_text: 레몬주수 1g
   role: sub
-- ingredient: null
+- ingredient: fish_stock
   raw_text: 생선육수 3g
   role: sub
 - ingredient: curry_powder
@@ -40,7 +40,7 @@ ingredients:
 - ingredient: egg
   raw_text: 달걀물 5g
   role: sub
-- ingredient: null
+- ingredient: spring_roll_wrapper
   raw_text: 춘권피 20g
   role: sub
 - ingredient: olive_oil

@@ -5,18 +5,18 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 771. 요리종류 후식, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 771. 요리종류 후식, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
-- ingredient: null
+- ingredient: rice_cake
   raw_text: 절편 35
   role: sub
-- ingredient: null
+- ingredient: mung_bean
   raw_text: 거피녹두 12.5
   role: sub
-- ingredient: null
+- ingredient: walnut
   raw_text: 다진 호두 2
   role: sub
-- ingredient: null
+- ingredient: azalea_flower
   raw_text: 진달래꽃 2.5
   role: sub
 - ingredient: sugar

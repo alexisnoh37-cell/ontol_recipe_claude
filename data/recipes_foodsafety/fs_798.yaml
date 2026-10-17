@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 798. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 798. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
-- ingredient: null
+- ingredient: ground_beef
   raw_text: 쇠고기갈은것 50g
   role: sub
 - ingredient: black_soybean
@@ -37,16 +37,16 @@ ingredients:
 - ingredient: garlic
   raw_text: 마늘다진것 0.8g
   role: sub
-- ingredient: null
+- ingredient: bay_leaf
   raw_text: 월계수잎마른것 0.2g
   role: sub
-- ingredient: null
+- ingredient: thyme
   raw_text: 타임마른것 0.3g
   role: sub
 - ingredient: black_pepper
   raw_text: 후춧가루 0.2g
   role: sub
-- ingredient: null
+- ingredient: cayenne_pepper
   raw_text: 카엔페퍼 0.2g
   role: sub
 steps:

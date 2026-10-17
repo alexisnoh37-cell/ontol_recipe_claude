@@ -5,10 +5,28 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 786. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 786. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개'
 ingredients:
 - ingredient: wheat_flour
-  raw_text: 중력분 25g, 강력분 25g, 달걀 12g, 물 12g, 양파 25g, 당근 12g, 토마토 120g  토마토소스
+  raw_text: 중력분 25g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 강력분 25g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 12g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 25g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 12g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 120g
+  role: sub
+- ingredient: tomato_sauce
+  raw_text: 토마토소스
   role: sub
 - ingredient: celery
   raw_text: 셀러리 8g
@@ -22,19 +40,22 @@ ingredients:
 - ingredient: rosemary
   raw_text: 로즈마리 2.5g
   role: sub
-- ingredient: null
-  raw_text: 물필요량
-  role: sub
 - ingredient: sugar
   raw_text: 설탕 2g
   role: sub
 - ingredient: garlic
-  raw_text: 마늘다진것 2g 리코타치즈:우유 125g
+  raw_text: 마늘다진것 2g
+  role: sub
+- ingredient: ricotta
+  raw_text: 리코타치즈
+  role: sub
+- ingredient: milk
+  raw_text: 우유 125g
   role: sub
 - ingredient: lemon
   raw_text: 레몬즙 8g
   role: sub
-- ingredient: null
+- ingredient: chive
   raw_text: 차이브 2.5g
   role: sub
 - ingredient: parmesan

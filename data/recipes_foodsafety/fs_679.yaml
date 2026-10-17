@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 679. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 679. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 2개'
 ingredients:
-- ingredient: null
+- ingredient: chicken
   raw_text: 토막 낸 닭 170g(닭고기살 무게 90g)
   role: sub
 - ingredient: ginseng
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: shiitake
   raw_text: 건표고버섯 8g
   role: sub
-- ingredient: null
+- ingredient: shiitake
   raw_text: 건표고버섯 불릴 물 150g
   role: sub
 - ingredient: potato
@@ -28,10 +28,10 @@ ingredients:
 - ingredient: carrot
   raw_text: 당근 10g
   role: sub
-- ingredient: null
+- ingredient: cheongyang_pepper
   raw_text: 건청양고추 2.5g
   role: sub
-- ingredient: null
+- ingredient: glass_noodles
   raw_text: 건당면 5g
   role: sub
 - ingredient: green_onion
@@ -49,7 +49,7 @@ ingredients:
 - ingredient: oligosaccharide
   raw_text: 올리고당 9g
   role: sub
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 노두유 1g
   role: sub
 - ingredient: black_pepper

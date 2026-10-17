@@ -22,7 +22,8 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from kb import KnowledgeError, compile_paths  # noqa: E402
-from kb.foodsafety import MANUAL_COUNT, SOURCE_LABEL, SERVICE_ID, clean_step, convert_row  # noqa: E402
+from kb.foodsafety import MANUAL_COUNT, NAME_OVERRIDES, SOURCE_LABEL, SERVICE_ID, clean_step, convert_row  # noqa: E402
+from kb.youtube_seed import load_name_overrides  # noqa: E402
 
 DEFAULT_RAW = ROOT / "data" / "external" / "foodsafety" / "raw" / f"{SERVICE_ID}.json"
 DEFAULT_OUT = ROOT / "data" / "recipes_foodsafety" / "viewer.html"
@@ -39,11 +40,11 @@ def _num(value: Any) -> float | None:
 
 
 def viewer_records(rows: list[dict[str, Any]], alias_index: dict[str, str], concept_ids: frozenset[str],
-                   names: dict[str, str]) -> list[dict[str, Any]]:
+                   names: dict[str, str], overrides: dict[str, dict] | None = None) -> list[dict[str, Any]]:
     """원본 행 → 뷰어용 레코드. 재료정보가 없어 변환되지 않는 행은 뺀다(convert_foodsafety와 같은 기준)."""
     out = []
     for row in rows:
-        recipe = convert_row(row, alias_index, concept_ids)
+        recipe = convert_row(row, alias_index, concept_ids, overrides)
         if recipe is None:
             continue
         steps = []
@@ -99,7 +100,7 @@ def main(argv: list[str] | None = None) -> int:
     raw = json.loads(args.raw.read_text(encoding="utf-8"))
     alias_index = {a.alias_norm: a.ingredient_id for a in ck.aliases}
     names = {i.id: i.name for i in ck.ingredients}
-    records = viewer_records(raw["rows"], alias_index, ck.concept_ids, names)
+    records = viewer_records(raw["rows"], alias_index, ck.concept_ids, names, load_name_overrides(ROOT, ck, NAME_OVERRIDES))
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(render(records, raw.get("fetched_on")), encoding="utf-8")
     print(f"레시피 {len(records)}개 → {args.out} ({args.out.stat().st_size / 1e6:.1f}MB)")

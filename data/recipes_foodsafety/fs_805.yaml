@@ -10,7 +10,7 @@ ingredients:
 - ingredient: rice
   raw_text: 밥 100g
   role: sub
-- ingredient: null
+- ingredient: sprouts_mix
   raw_text: 각종 새싹 20g
   role: sub
 - ingredient: radish_sprouts
@@ -22,7 +22,7 @@ ingredients:
 - ingredient: crown_daisy
   raw_text: 쑥갓 5g
   role: sub
-- ingredient: null
+- ingredient: radish_red
   raw_text: 래디쉬 15g
   role: sub
 - ingredient: null
@@ -41,7 +41,13 @@ ingredients:
   raw_text: 참기름 2g
   role: sub
 - ingredient: ground_beef
-  raw_text: 쇠고기다진것 20g  고기양념(5인분):파다진것 2.5g
+  raw_text: 쇠고기다진것 20g
+  role: sub
+- ingredient: null
+  raw_text: 고기양념
+  role: sub
+- ingredient: null
+  raw_text: 파다진것 2.5g
   role: sub
 - ingredient: garlic
   raw_text: 마늘다진것 1.3g

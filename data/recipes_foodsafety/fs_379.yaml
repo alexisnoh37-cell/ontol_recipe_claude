@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 379. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 379. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개. 이름 보정표로 고친 줄 1개'
 ingredients:
 - ingredient: button_mushroom
   raw_text: 양송이 100g
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: null
   raw_text: 소
   role: sub
-- ingredient: null
+- ingredient: ground_pork
   raw_text: 다진 돼기고기 100g
   role: sub
 - ingredient: cheongyang_pepper
@@ -34,7 +34,7 @@ ingredients:
 - ingredient: wheat_flour
   raw_text: 밀가루 5g
   role: sub
-- ingredient: null
+- ingredient: horseradish
   raw_text: 홀스레디쉬 30g
   role: sub
 - ingredient: lemon

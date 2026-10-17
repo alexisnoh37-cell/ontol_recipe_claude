@@ -5,19 +5,22 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 765. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 765. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: duck
   raw_text: 오리고기 50g
   role: sub
-- ingredient: null
+- ingredient: gompi
   raw_text: 곰피 20g
   role: sub
 - ingredient: radish_sprouts
   raw_text: 무순 10g
   role: sub
 - ingredient: olive_oil
-  raw_text: '올리브유 4 소스: 오미자 액기스 1g'
+  raw_text: 올리브유 4
+  role: sub
+- ingredient: omija
+  raw_text: 오미자 액기스 1g
   role: sub
 - ingredient: gochujang
   raw_text: 고추장 6g

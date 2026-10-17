@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 995. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 10개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 995. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개'
 ingredients:
-- ingredient: null
+- ingredient: sea_bream
   raw_text: 도미살 65g
   role: sub
 - ingredient: salt
@@ -16,25 +16,25 @@ ingredients:
 - ingredient: black_pepper
   raw_text: 후추 적당량
   role: sub
-- ingredient: null
+- ingredient: celery
   raw_text: 샐러리 채친것 3g
   role: sub
-- ingredient: null
+- ingredient: carrot
   raw_text: 당근 채친것 3g
   role: sub
-- ingredient: null
+- ingredient: green_onion
   raw_text: 대파채친것 3g
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 양파채친것 6g
   role: sub
-- ingredient: null
+- ingredient: green_bell_pepper
   raw_text: 피망채친것 5g
   role: sub
-- ingredient: null
+- ingredient: broccoli
   raw_text: 브러컬리 5g
   role: sub
-- ingredient: null
+- ingredient: lemon
   raw_text: 레몬제스트 1g
   role: sub
 - ingredient: enoki
@@ -43,10 +43,7 @@ ingredients:
 - ingredient: butter
   raw_text: 버터 2g
   role: sub
-- ingredient: null
-  raw_text: 유산지
-  role: sub
-- ingredient: null
+- ingredient: butter
   raw_text: 허브버터
   role: sub
 - ingredient: butter

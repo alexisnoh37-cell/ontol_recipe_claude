@@ -3,6 +3,7 @@
 # --- 과일 ---
 - id: apple
   name: 사과
+  aliases: [미니사과, 풋사과]
   category: 과일
   status: reviewed
 - id: pear
@@ -12,27 +13,29 @@
   status: reviewed
 - id: lemon
   name: 레몬
-  aliases: [{text: 레몬즙, form: juice}]
+  aliases: [{text: 레몬즙, form: juice}, 레몬 제스트, 레몬껍질, 다진 레몬껍질]
   category: 과일
   confidence: low
   note: 시판 레몬즙에 아황산류가 들어가는 제품이 있는지 검수(있으면 별도 가공품으로 분리)
   status: reviewed
 - id: banana
   name: 바나나
+  aliases: [바나나슬라이스]
   category: 과일
   status: reviewed
 - id: strawberry
   name: 딸기
+  aliases: [냉동딸기]
   category: 과일
   status: reviewed
 - id: grape
   name: 포도
-  aliases: [청포도, 샤인머스캣]
+  aliases: [청포도, 샤인머스캣, 얼린포도알]
   category: 과일
   status: reviewed
 - id: persimmon
   name: 감
-  aliases: [단감, 홍시]
+  aliases: [단감, 홍시, 냉동홍시, 얼린 홍시]
   category: 과일
   status: reviewed
 - id: kiwi
@@ -59,12 +62,12 @@
   status: reviewed
 - id: maesil
   name: 매실
-  aliases: [청매실]
+  aliases: [청매실, 매실장아찌]
   category: 과일
   status: reviewed
 - id: jujube
   name: 대추
-  aliases: [건대추]
+  aliases: [건대추, 대추고, 대추슬라이스, 대추채]
   category: 과일
   status: reviewed
 
@@ -79,7 +82,7 @@
   status: reviewed
 - id: dried_persimmon
   name: 곶감
-  aliases: [반건시]
+  aliases: [반건시, 감말랭이]
   derived_from: [persimmon, {id: sulfite, certainty: possible}]
   is_processed: true
   category: 과일
@@ -98,32 +101,32 @@
 # --- 견과 (법정: 땅콩, 호두, 잣) ---
 - id: peanut
   name: 땅콩
-  aliases: [볶은 땅콩, 땅콩가루, 피넛]
+  aliases: [볶은 땅콩, 땅콩가루, 피넛, 다진 땅콩, 구운 땅콩, 땅콩다진것, 땅콩 분태]
   category: 견과·씨앗
   allergens: [{group: peanut, certainty: definite}]
   status: reviewed
 - id: peanut_butter
   name: 땅콩버터
-  aliases: [피넛버터]
+  aliases: [피넛버터, 땅콩 스프레드, 땅콩잼]
   derived_from: [peanut]
   is_processed: true
   category: 견과·씨앗
   status: reviewed
 - id: walnut
   name: 호두
-  aliases: [호두살, 호두알]
+  aliases: [호두살, 호두알, 다진 호두, 구운 호두, 깐호두, 볶은 호두]
   category: 견과·씨앗
   allergens: [{group: walnut, certainty: definite}]
   status: reviewed
 - id: pine_nut
   name: 잣
-  aliases: [통잣, 잣가루]
+  aliases: [통잣, 잣가루, 다진 잣]
   category: 견과·씨앗
   allergens: [{group: pine_nut, certainty: definite}]
   status: reviewed
 - id: almond
   name: 아몬드
-  aliases: [슬라이스 아몬드, 아몬드 슬라이스, 아몬드가루]
+  aliases: [슬라이스 아몬드, 아몬드 슬라이스, 아몬드가루, 볶은 아몬드 슬라이스, 아몬드 분말, 아몬드 플레이크, 통아몬드]
   category: 견과·씨앗
   allergens: [{group: other_tree_nuts, certainty: definite}]
   confidence: low
@@ -141,7 +144,7 @@
 # --- 씨앗 (참깨는 자체 그룹 sesame) ---
 - id: sesame
   name: 참깨
-  aliases: [통깨, 볶은 참깨, 깨소금, 흰깨, 흑임자, 검은깨, 검정깨]
+  aliases: [통깨, 볶은 참깨, 깨소금, 흰깨, 흑임자, 검은깨, 검정깨, 부순 참깨, 볶은통깨, 볶음 참깨, 볶은 흑임자]
   category: 견과·씨앗
   allergens: [{group: sesame, certainty: definite}]
   note: 별칭 "깨"는 참깨·들깨를 모두 가리킬 수 있어 뺌
@@ -154,7 +157,7 @@
   status: reviewed
 - id: perilla_powder
   name: 들깨가루
-  aliases: [들깻가루]
+  aliases: [들깻가루, 거피들깨가루, 거피한 들깨가루, 깐들깨가루]
   derived_from: [perilla_seed]
   is_processed: true
   category: 견과·씨앗
@@ -171,17 +174,19 @@
   status: reviewed
 - id: pineapple
   name: 파인애플
+  aliases: [파인애플 통조림, 파인애플청]
   category: 과일
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
 - id: avocado
   name: 아보카도
+  aliases: [냉동 아보카도]
   category: 과일
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
 - id: cranberry
   name: 크랜베리
-  aliases: [건크랜베리]
+  aliases: [건크랜베리, 크렌베리, 크린베리]
   category: 과일
   confidence: low
   note: "건크랜베리는 오일 코팅 제품 있음 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
@@ -193,13 +198,14 @@
   status: reviewed
 - id: mixed_nuts
   name: 견과류(혼합)
-  aliases: [견과류, 혼합견과, 모듬견과]
+  aliases: [견과류, 혼합견과, 모듬견과, 다진 견과류, 혼합견과류]
   category: 견과·씨앗
   allergens: [{group: other_tree_nuts, certainty: possible}, {group: peanut, certainty: possible}, {group: pine_nut, certainty: possible}, {group: walnut, certainty: possible}]
   note: "종류 불명 → 견과 그룹 모두 possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
 - id: orange_juice
   name: 오렌지주스
+  aliases: [오렌지즙]
   derived_from:
     - orange
   is_processed: true
@@ -247,6 +253,169 @@
   status: reviewed
 - id: omija
   name: 오미자
+  aliases: [말린오미자, 오미자물, 오미자액, 오미자엑기스, 오미자청, 오미자 액기스]
   category: 과일
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
+
+# --- um-3 미매칭 2차 보강(2026-10-17, 사람 일괄 승인) ---
+- id: lime
+  name: 라임
+  aliases: [라임즙, 라임청]
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: mango
+  name: 망고
+  aliases: [망고퓨레]
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: melon
+  name: 멜론
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: apple_juice
+  name: 사과주스
+  aliases: [사과즙, 사과쥬스]
+  derived_from:
+    - apple
+  is_processed: true
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: plum
+  name: 자두
+  aliases: [말린 자두, 푸룬]
+  category: 과일
+  note: "법정 표시 대상(복숭아)과 별개 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: raspberry
+  name: 라즈베리
+  aliases: [산딸기]
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: olive
+  name: 올리브
+  aliases: [블랙올리브, 블랙올리브 파우더, 절임 올리브]
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: watermelon
+  name: 수박
+  aliases: [수박껍질, 수박 속껍질]
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: grapefruit
+  name: 자몽
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: sunflower_seed
+  name: 해바라기씨
+  category: 견과·씨앗
+  note: "호박씨와 같은 기준(법정 대상 아님) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: tangerine
+  name: 귤
+  aliases: [감귤, 귤병, 귤 즙, 귤통조림]
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: pomegranate
+  name: 석류
+  aliases: [석류 원액, 석류주스, 석류즙]
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: pineapple_juice
+  name: 파인애플주스
+  derived_from:
+    - pineapple
+  is_processed: true
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: pistachio
+  name: 피스타치오
+  category: 견과·씨앗
+  allergens: [{group: other_tree_nuts, certainty: definite}]
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: dried_fig
+  name: 건무화과
+  derived_from:
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 과일
+  confidence: low
+  note: "건과일 보존료 대비 아황산류 possible(건살구와 같은 기준) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: dried_blueberry
+  name: 건블루베리
+  derived_from:
+    - blueberry
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 과일
+  confidence: low
+  note: "건과일 기준 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: dried_cherry
+  name: 건조체리
+  derived_from:
+    - cherry
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 과일
+  confidence: low
+  note: "건과일 기준 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: goji
+  name: 구기자
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: lychee
+  name: 리치
+  aliases: [리치캔]
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: macadamia
+  name: 마카다미아
+  category: 견과·씨앗
+  allergens: [{group: other_tree_nuts, certainty: definite}]
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: fig
+  name: 무화과
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: black_raspberry
+  name: 복분자
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: yuzu
+  name: 유자
+  aliases: [유자필]
+  category: 과일
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: pecan
+  name: 피칸
+  category: 견과·씨앗
+  allergens: [{group: other_tree_nuts, certainty: definite}]
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: hazelnut
+  name: 헤이즐넛
+  category: 견과·씨앗
+  allergens: [{group: other_tree_nuts, certainty: definite}]
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
   status: reviewed

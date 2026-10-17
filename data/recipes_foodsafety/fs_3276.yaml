@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3276. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3276. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: onion
   raw_text: 양파(3개)
@@ -28,13 +28,13 @@ ingredients:
 - ingredient: chicken_wing
   raw_text: 닭봉(20개)
   role: sub
-- ingredient: null
+- ingredient: tomato
   raw_text: 통조림 홀토마토(2캔=822g)
   role: sub
 - ingredient: heavy_cream
   raw_text: 생크림(1컵)
   role: sub
-- ingredient: null
+- ingredient: parmesan
   raw_text: 파르메산 치즈가루(1컵) 월계수잎(1장)
   role: sub
 - ingredient: salt
@@ -52,19 +52,19 @@ ingredients:
 - ingredient: turmeric_powder
   raw_text: 강황(1Ts)
   role: sub
-- ingredient: null
+- ingredient: coriander
   raw_text: 코리앤더가루(0.5Ts)
   role: sub
-- ingredient: null
+- ingredient: cumin
   raw_text: 커민(1Ts)
   role: sub
-- ingredient: null
+- ingredient: red_chili
   raw_text: 레드크러쉬드 페퍼(1Ts)
   role: sub
 - ingredient: basil_powder
   raw_text: 바질가루(0.5Ts)
   role: sub
-- ingredient: null
+- ingredient: oregano
   raw_text: 오레가노가루(1Ts)
   role: sub
 - ingredient: butter

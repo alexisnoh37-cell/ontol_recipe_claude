@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3236. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3236. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: kabocha
   raw_text: 단호박(100g)
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: shiitake
   raw_text: 표고버섯(5g)
   role: sub
-- ingredient: null
+- ingredient: gondre
   raw_text: 불린 곤드레나물(10g)
   role: sub
 - ingredient: rice
@@ -25,16 +25,16 @@ ingredients:
 - ingredient: raisin
   raw_text: 건포도(5g)
   role: sub
-- ingredient: null
+- ingredient: dried_fig
   raw_text: 건무화과(5g)
   role: sub
-- ingredient: null
+- ingredient: walnut
   raw_text: 볶은 호두(5g)
   role: sub
-- ingredient: null
+- ingredient: almond
   raw_text: 볶은 아몬드 슬라이스(5g)
   role: sub
-- ingredient: null
+- ingredient: raspberry
   raw_text: 라즈베리(5g)
   role: sub
 - ingredient: yogurt

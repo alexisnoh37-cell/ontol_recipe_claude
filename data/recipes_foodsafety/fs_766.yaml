@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 766. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 766. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: wheat_flour
   raw_text: 밀가루 50
@@ -32,7 +32,7 @@ ingredients:
   raw_text: 맛술 5
   role: sub
 - ingredient: sesame_oil
-  raw_text: '참기름 2 양념장: 물 25'
+  raw_text: 참기름 2
   role: sub
 - ingredient: oyster_sauce
   raw_text: 굴소스 1.5
@@ -43,7 +43,7 @@ ingredients:
 - ingredient: maesil_cheong
   raw_text: 매실액 1.5
   role: sub
-- ingredient: null
+- ingredient: fish_sauce
   raw_text: 피쉬소스 1
   role: sub
 steps:

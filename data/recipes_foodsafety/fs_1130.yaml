@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1130. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1130. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
-- ingredient: null
+- ingredient: yuzu
   raw_text: 유자(200g)
   role: sub
 - ingredient: chestnut
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: pear
   raw_text: 배(50g)
   role: sub
-- ingredient: null
+- ingredient: pomegranate
   raw_text: 석류(20g)
   role: sub
 - ingredient: honey

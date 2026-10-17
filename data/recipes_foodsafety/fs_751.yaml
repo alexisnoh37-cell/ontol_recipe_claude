@@ -26,9 +26,15 @@ ingredients:
   raw_text: 후추 0.02
   role: sub
 - ingredient: salt
-  raw_text: '소금 0.38 김치조림: 백김치 60'
+  raw_text: 소금 0.38
   role: sub
 - ingredient: null
+  raw_text: 김치조림
+  role: sub
+- ingredient: baek_kimchi
+  raw_text: 백김치 60
+  role: sub
+- ingredient: wine
   raw_text: 적포도주 40
   role: sub
 - ingredient: mirin

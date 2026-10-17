@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 335. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 335. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개. 이름 보정표로 고친 줄 1개'
 ingredients:
-- ingredient: null
+- ingredient: beef
   raw_text: 쇠고기구이용 150g
   role: sub
-- ingredient: null
+- ingredient: garlic
   raw_text: 알마늘 20g
   role: sub
 - ingredient: red_chili
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: radish_sprouts
   raw_text: 무순 2g
   role: sub
-- ingredient: null
+- ingredient: bell_pepper
   raw_text: 노란색파프리카 25g
   role: sub
 - ingredient: garlic_oil
@@ -34,7 +34,7 @@ ingredients:
 - ingredient: seasoned_soy_sauce
   raw_text: 맛간장 15g
   role: sub
-- ingredient: null
+- ingredient: vinegar
   raw_text: 허브식초 15g
   role: sub
 - ingredient: mustard_powder

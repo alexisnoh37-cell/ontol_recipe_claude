@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3689. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3689. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개. 이름 보정표로 고친 줄 6개'
 ingredients:
 - ingredient: almond
   raw_text: 아몬드가루 90g
   role: sub
-- ingredient: null
+- ingredient: cocoa_powder
   raw_text: 무가당 코코아가루① 12g
   role: sub
 - ingredient: oats
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: null
   raw_text: 코코넛오일 20g
   role: sub
-- ingredient: null
+- ingredient: allulose
   raw_text: 알룰로스① 20g
   role: sub
 - ingredient: salt
@@ -28,25 +28,25 @@ ingredients:
 - ingredient: null
   raw_text: 초코필링
   role: sub
-- ingredient: null
+- ingredient: cocoa_powder
   raw_text: 무가당 코코아가루② 12g
   role: sub
 - ingredient: peanut_butter
   raw_text: 땅콩버터 12g
   role: sub
-- ingredient: null
+- ingredient: allulose
   raw_text: 알룰로스② 55g
   role: sub
-- ingredient: null
+- ingredient: almond_milk
   raw_text: 아몬드우유 60ml
   role: sub
-- ingredient: null
+- ingredient: yogurt
   raw_text: 그릭요거트 토핑
   role: sub
 - ingredient: yogurt
   raw_text: 그릭요거트 42g
   role: sub
-- ingredient: null
+- ingredient: allulose
   raw_text: 알룰로스③ 2g
   role: sub
 steps:

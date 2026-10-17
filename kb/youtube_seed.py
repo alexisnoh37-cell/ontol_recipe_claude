@@ -55,12 +55,15 @@ def alias_index(ck: CompiledKnowledge) -> dict[str, str]:
 
 
 NAME_OVERRIDES = Path("data") / "recipe_name_overrides.yaml"  # 원본 재료 이름 보정표(um-2)
-DROP_REASONS = {"duplicate": "같은 재료 줄이 이미 있음", "water": "물"}
+DROP_REASONS = {"duplicate": "같은 재료 줄이 이미 있음", "water": "물", "not_ingredient": "재료 아님"}
 
 
-def load_name_overrides(root: Path, ck: CompiledKnowledge) -> dict[str, dict]:
-    """보정표 → {정규화한 원본 이름: 보정}. 없는 재료·concept·알 수 없는 사유는 오류(조용히 미매칭이 되지 않게)."""
-    path = root / NAME_OVERRIDES
+def load_name_overrides(root: Path, ck: CompiledKnowledge, table: Path = NAME_OVERRIDES) -> dict[str, dict]:
+    """보정표 → {정규화한 원본 이름: 보정}. 없는 재료·concept·알 수 없는 사유는 오류(조용히 미매칭이 되지 않게).
+
+    table: 엔진 레시피 보정표(기본) 또는 식품안전나라 보정표(kb.foodsafety.NAME_OVERRIDES, 같은 형식).
+    """
+    path = root / table
     if not path.is_file():
         return {}
     known = {i.id for i in ck.ingredients} - set(ck.concept_ids)
@@ -68,17 +71,17 @@ def load_name_overrides(root: Path, ck: CompiledKnowledge) -> dict[str, dict]:
     for item in yaml.safe_load(path.read_text(encoding="utf-8"))["overrides"]:
         fix = {k: v for k, v in item.items() if k != "names"}
         if len(fix) != 1 or not set(fix) <= {"id", "drop", "split"}:
-            raise SystemExit(f"{NAME_OVERRIDES}: {item['names']}에는 id·drop·split 중 하나만 적습니다")
+            raise SystemExit(f"{table}: {item['names']}에는 id·drop·split 중 하나만 적습니다")
         ids = [fix["id"]] if "id" in fix else [p["id"] for p in fix.get("split", [])]
         bad = [i for i in ids if i not in known]
         if "drop" in fix and fix["drop"].split(":")[0] not in DROP_REASONS:
             bad.append(fix["drop"])
         if bad:
-            raise SystemExit(f"{NAME_OVERRIDES}: {item['names']}의 알 수 없는 재료·사유 {bad}")
+            raise SystemExit(f"{table}: {item['names']}의 알 수 없는 재료·사유 {bad}")
         for name in item["names"]:
             key = normalize_term(name)
             if key in out:
-                raise SystemExit(f"{NAME_OVERRIDES}: '{name}'가 두 번 있습니다")
+                raise SystemExit(f"{table}: '{name}'가 두 번 있습니다")
             out[key] = fix
     return out
 

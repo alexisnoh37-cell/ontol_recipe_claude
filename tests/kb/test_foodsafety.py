@@ -166,7 +166,8 @@ def test_convert_script_end_to_end(tmp_path, monkeypatch):
     raw.write_text(json.dumps({"fetched_on": "2026-10-16", "rows": [row(), row(RCP_SEQ="8", RCP_PARTS_DTLS="")]},
                               ensure_ascii=False), encoding="utf-8")
     out_dir, review = tmp_path / "out", tmp_path / "review.md"
-    assert module.main(["--raw", str(raw), "--out-dir", str(out_dir), "--review", str(review)]) == 0
+    assert module.main(["--raw", str(raw), "--out-dir", str(out_dir), "--review", str(review),
+                        "--overrides", str(tmp_path / "no_overrides.yaml")]) == 0
     assert [p.name for p in out_dir.glob("*.yaml")] == ["fs_7.yaml"]
     text = review.read_text(encoding="utf-8")
     assert "변환한 레시피: 1개, 재료정보가 없어 건너뜀: 1개" in text

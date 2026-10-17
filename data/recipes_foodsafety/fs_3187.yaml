@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3187. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3187. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
 - ingredient: wheat_flour
   raw_text: 강력분 500g
@@ -19,19 +19,19 @@ ingredients:
 - ingredient: butter
   raw_text: 버터 38g
   role: sub
-- ingredient: null
+- ingredient: yeast
   raw_text: 생이스트 8g
   role: sub
 - ingredient: yeast
   raw_text: 드라이이스트(레드) 4g
   role: sub
-- ingredient: null
+- ingredient: levain
   raw_text: 파트 페레멘테 95g
   role: sub
 - ingredient: milk
   raw_text: 우유 114ml
   role: sub
-- ingredient: null
+- ingredient: cocoa_powder
   raw_text: 카카오 닙스 94g
   role: sub
 - ingredient: walnut
