@@ -89,7 +89,7 @@ ROUND3 = ROOT / "docs" / "review" / "unmapped_round3.yaml"
 
 
 def test_held_terms_stay_unmapped(entries, index, overrides):
-    later = {normalize_term(t) for e in load_proposal(ROUND3) for t in e.texts}  # um-4에서 다시 정한 표기
+    later = {normalize_term(t) for e in load_proposal(ROUND3) + load_proposal(ROOT / "docs" / "review" / "unmapped_round4.yaml") for t in e.texts}  # um-4·5에서 다시 정한 표기
     for e in entries:
         if e.decision != "O" or e.kind == "C":
             for t in [t for t in e.texts if normalize_term(t) not in later]:
@@ -99,13 +99,15 @@ def test_held_terms_stay_unmapped(entries, index, overrides):
 
 def test_foodsafety_name_overrides_match_approved_d_entries(entries, overrides):
     expected = {}
-    later = load_proposal(ROUND3) + load_proposal(ROOT / "docs" / "review" / "unmapped_round4.yaml")
-    for e in entries + later:  # 보정표는 2~4차(um-3~5) 승인 D를 함께 담는다
+    for e in entries + load_proposal(ROUND3):  # 보정표는 2·3차(um-3·4) 승인 D를 담는다
         if e.kind == "D" and e.decision == "O":
             fix = ({"split": e.split} if e.split else {"drop": e.drop} if e.drop else {"id": e.target})
             for t in e.texts:
                 expected[normalize_term(t)] = fix
-    assert overrides == expected
+    # 4차(um-5) 결정은 tests/kb/test_unmapped_round4.py가 검사한다. 여기서는 그 표기만 더 있는지 본다
+    round4 = {normalize_term(t) for e in load_proposal(ROOT / "docs" / "review" / "unmapped_round4.yaml") for t in e.texts}
+    assert {k: v for k, v in overrides.items() if k in expected} == expected
+    assert set(overrides) - set(expected) <= round4
 
 
 def test_converted_recipes_leave_only_held_or_pending_terms(entries):

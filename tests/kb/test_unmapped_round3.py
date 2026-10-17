@@ -56,8 +56,9 @@ def test_approved_terms_map(entries, ck, index, overrides):
             fix = {"split": e.split} if e.split else {"drop": e.drop} if e.drop else {"id": e.target}
             for t in e.texts:
                 assert overrides[normalize_term(t)] == fix, t
-        else:  # C: 미매칭 유지
-            for t in e.texts:
+        else:  # C: 미매칭 유지(um-5에서 다시 정한 표기는 뺀다)
+            later = {normalize_term(t) for x in load_proposal(REVIEW / "unmapped_round4.yaml") for t in x.texts}
+            for t in [t for t in e.texts if normalize_term(t) not in later]:
                 assert normalize_term(t) not in index and normalize_term(t) not in overrides, t
 
 
@@ -84,7 +85,7 @@ def test_commercial_sauces_get_notice(entries):
 def test_converted_recipes_leave_only_human_held_terms(ck):
     """남은 미매칭은 1~3차에서 사람이 보류(C)·제외(X)한 표기뿐(식품안전나라·엔진 모두)."""
     held = set()
-    for name in ("unmapped_proposal.yaml", "unmapped_round2.yaml", "unmapped_round3.yaml"):
+    for name in ("unmapped_proposal.yaml", "unmapped_round2.yaml", "unmapped_round3.yaml", "unmapped_round4.yaml"):
         held |= {normalize_term(t) for e in load_proposal(REVIEW / name) if e.kind == "C" or e.decision == "X" for t in e.texts}
     fs = foodsafety_unmapped(ROOT)
     eng = engine_unmapped(ROOT, ck)
@@ -107,7 +108,7 @@ def test_unmapped_subtitles_are_dropped_but_ingredients_kept(ck, index):
     r = convert_row(_row("밀가루 20g [팥소]팥 15g, 설탕 10g"), index, ck.concept_ids)
     assert "bean_paste_sweet" in [i["ingredient"] for i in r["ingredients"]]
     # 소제목이 아닌 미매칭 줄은 그대로 미매칭
-    r = convert_row(_row("키위소스 20g, 두부 50g"), index, ck.concept_ids)
+    r = convert_row(_row("비법소스 20g, 두부 50g"), index, ck.concept_ids)
     assert [i["ingredient"] for i in r["ingredients"]] == [None, "tofu"]
 
 

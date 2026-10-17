@@ -9,9 +9,10 @@ servings: null
 source: https://www.youtube.com/watch?v=FAZC0FjKrTo
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준; 재료 이름 '제가 제일 좋아하는 식재료' → pork_belly(이름
+  보정표)
 ingredients:
-- ingredient: null
+- ingredient: pork_belly
   raw_text: 제가 제일 좋아하는 식재료 2개
   role: main
   optional: false

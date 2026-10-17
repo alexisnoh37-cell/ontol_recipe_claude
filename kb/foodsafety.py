@@ -222,18 +222,21 @@ def convert_row(row: Mapping[str, Any], alias_index: Mapping[str, str], concept_
     ingredients = []
     fixed = dropped = 0
     for seg in segments:
+        matched = match_ingredient(seg, alias_index, concept_ids)
+        if matched is None and {normalize_term(ingredient_name(seg)), normalize_term(seg)} & subtitles:
+            # um-4: 재료로 연결되지 않는 소제목("구이소스", "곁들임채소")과 그 소제목을 가리키는 줄("겉절이 양념 15g")은
+            # 구성 재료가 소제목 뒤에 따로 적혀 있으므로 재료 줄로 남기지 않는다. 재료로 연결되는 소제목("팥소")은 그대로 둔다.
+            # 이름 보정표보다 먼저 본다(um-5): 보정표의 '볶음 소스'(간편식 소스)가 소제목 '볶음소스:'에 붙지 않게
+            dropped += 1
+            continue
         fix = (overrides or {}).get(normalize_term(ingredient_name(seg)))
         if fix is None:
-            ids = [match_ingredient(seg, alias_index, concept_ids)]
-            if ids == [None] and {normalize_term(ingredient_name(seg)), normalize_term(seg)} & subtitles:
-                # um-4: 재료로 연결되지 않는 소제목("구이소스", "곁들임채소")과 그 소제목을 가리키는 줄("겉절이 양념 15g")은
-                # 구성 재료가 소제목 뒤에 따로 적혀 있으므로 재료 줄로 남기지 않는다. 재료로 연결되는 소제목("팥소")은 그대로 둔다
-                dropped += 1
-                continue
+            parts = [(matched, seg)]
         else:
             fixed += 1
-            ids = [fix["id"]] if "id" in fix else [p["id"] for p in fix.get("split", [])]
-        ingredients += [{"ingredient": i, "raw_text": seg, "role": "sub"} for i in ids]
+            # split의 text: 원문이 재료 이름을 담고 있지 않을 때 화면에 보일 이름(um-5, 재료정보가 '.'뿐인 레시피)
+            parts = ([(fix["id"], seg)] if "id" in fix else [(p["id"], p.get("text", seg)) for p in fix.get("split", [])])
+        ingredients += [{"ingredient": i, "raw_text": text, "role": "sub"} for i, text in parts]
     if not ingredients:
         return None
     unmatched = sum(1 for i in ingredients if i["ingredient"] is None)

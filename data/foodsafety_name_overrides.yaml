@@ -271,3 +271,13 @@ overrides:
 # --- um-5(2026-10-18) 쌍점 오른쪽 '2가지색 …'을 양으로 읽던 문제 수정 뒤 드러난 줄 ---
 - names: [2가지색 미니파프리카 30g]
   id: bell_pepper
+# --- um-5(2026-10-18 사람 검수 승인) 미매칭 4차 정리 ---
+- names: [라면스프]
+  id: instant_noodle_product
+- names: [수제조미료]
+  id: stock_unspecified
+- names: [볶음 소스, 양념장]
+  id: meal_kit_sauce
+# 재료정보가 '.'뿐인 레시피(fs_799): 조리 단계에 나온 재료로 한 줄씩(text = 화면에 보일 재료 이름)
+- names: [.]
+  split: [{id: broccoli, text: 브로콜리}, {id: scallion, text: 실파}, {id: green_beans, text: 그린빈}, {id: carrot, text: 당근}, {id: cabbage, text: 양배추}, {id: bell_pepper, text: 홍파프리카}, {id: onion, text: 양파}, {id: green_chili, text: 청고추}, {id: parsley, text: 파슬리}, {id: wheat_flour, text: 밀가루}, {id: milk, text: 우유}, {id: egg, text: 달걀}, {id: butter, text: 버터}, {id: cooking_oil, text: 식용유}, {id: curry_powder, text: 커리파우더}, {id: chicken_stock, text: 닭육수}]

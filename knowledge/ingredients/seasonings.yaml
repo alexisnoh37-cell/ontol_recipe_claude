@@ -1231,3 +1231,50 @@
   confidence: low
   note: "시판 머스터드소스(허니머스터드 등). 계란(마요네즈)·밀·대두가 들 수 있어 포함 가능. 시판 제품 안내 대상. um-4(2026-10-18) 미매칭 3차 정리, 사람 승인"
   status: reviewed
+
+# --- um-5 미매칭 4차 정리(2026-10-18, 사람 검수 승인) ---
+- id: kiwi_sauce
+  name: 키위소스
+  derived_from:
+    - kiwi
+    - sugar
+    - {id: egg, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판 키위 소스·드레싱은 마요네즈(계란)·대두·밀이 들기도 함. 시판 제품으로 포장 알레르기 표시 확인 권장(재료 목록 위 안내). um-5(2026-10-18) 미매칭 4차 정리, 사람 검수 승인"
+  status: reviewed
+- id: basil_rub
+  name: 바질 럽(양념)
+  aliases: [바질럽드]
+  derived_from:
+    - basil
+    - garlic
+    - olive_oil
+    - {id: pine_nut, certainty: possible}
+    - {id: parmesan, certainty: possible}
+  is_processed: true
+  category: 허브·향신료
+  confidence: low
+  note: "바질 양념(럽). 바질페스토처럼 잣·치즈가 들 수 있어 포함 가능. 시판 제품으로 포장 알레르기 표시 확인 권장(재료 목록 위 안내). um-5(2026-10-18) 미매칭 4차 정리, 사람 검수 승인"
+  status: reviewed
+- id: meal_kit_sauce
+  name: 간편식 동봉 소스
+  derived_from:
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: sesame, certainty: possible}
+    - {id: seafood, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: pork, certainty: possible}
+    - {id: chicken, certainty: possible}
+    - {id: egg, certainty: possible}
+    - {id: milk, certainty: possible}
+    - {id: tomato, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "가정 간편식에 함께 오는 소스('볶음 소스', '양념장' — 식품안전나라 이름 보정표로 연결). 성분 표시가 없어 넓게 포함 가능. 시판 제품으로 포장 알레르기 표시 확인 권장(재료 목록 위 안내). um-5(2026-10-18) 미매칭 4차 정리, 사람 검수 승인"
+  status: reviewed

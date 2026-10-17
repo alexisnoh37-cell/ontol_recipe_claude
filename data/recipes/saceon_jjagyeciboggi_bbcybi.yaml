@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=bBcyBIrQ6Wc
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료 이름 '분말 스프' → instant_noodle_product(이름 보정표); 재료 이름 '조미유' → instant_noodle_product(이름 보정표)
 ingredients:
 - ingredient: instant_noodle_product
   raw_text: 사천짜파게티
@@ -41,7 +41,7 @@ ingredients:
   optional: false
   amount: null
   unit: null
-- ingredient: null
+- ingredient: instant_noodle_product
   raw_text: 분말 스프
   role: seasoning
   optional: false
@@ -53,7 +53,7 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: instant_noodle_product
   raw_text: 조미유
   role: seasoning
   optional: false

@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 78. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 78. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: stonecrop
   raw_text: 돌나물(10g)
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: scallop
   raw_text: 관자(5개)
   role: sub
-- ingredient: null
+- ingredient: edible_flower
   raw_text: 식용 꽃(약간)
   role: sub
 - ingredient: olive_oil

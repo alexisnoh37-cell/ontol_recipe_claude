@@ -60,7 +60,8 @@ DRAFT_INGREDIENTS = frozenset({
     "bottled_marinade", "buldak_sauce", "cham_sauce", "ponzu", "potato_chips", "sundae",
 })
 # ir-2 사람 결정으로 지운 재료(그 표기는 다시 미매칭)
-REMOVED_INGREDIENTS = frozenset({"edible_flower"})
+# (edible_flower는 ir-2에서 지웠다가 um-5 사람 검수로 다시 추가)
+REMOVED_INGREDIENTS: frozenset[str] = frozenset()
 
 
 def test_all_knowledge_is_reviewed(ck):

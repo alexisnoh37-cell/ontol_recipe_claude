@@ -9,8 +9,8 @@ servings: 2
 source: https://www.youtube.com/watch?v=bI0ceoR9TtQ
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '깨소금이 핵심이에요 영상에서는' → sesame(이름 보정표); 재료 이름 '소면을 삶는 동안 계란' → egg(이름 보정표); 재료
-  이름 '통깨를 갈아만든 깨소금' → sesame(이름 보정표)
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '깨소금이 핵심이에요 영상에서는' → sesame(이름 보정표); 재료 이름 '마지막에' → sesame(이름 보정표); 재료 이름 '소면을
+  삶는 동안 계란' → egg(이름 보정표); 재료 이름 '통깨를 갈아만든 깨소금' → sesame(이름 보정표)
 ingredients:
 - ingredient: sesame
   raw_text: 깨소금이 핵심이에요 영상에서는 2스푼
@@ -18,7 +18,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: sesame
   raw_text: 마지막에 한스푼
   role: sub
   optional: false
