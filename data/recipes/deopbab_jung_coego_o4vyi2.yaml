@@ -27,7 +27,7 @@ ingredients:
   raw_text: 대파 1/3쪽 / 대파
   role: sub
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 쪽
 - ingredient: egg
   raw_text: 계란 1알 / 계란

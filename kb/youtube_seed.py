@@ -83,7 +83,8 @@ def convert(ds: YoutubeDataset, ck: CompiledKnowledge, src: dict,
             "raw_text": line["raw_text"],
             "role": line["role"],
             "optional": line["optional"],
-            "amount": line["amount"],
+            # DB 컬럼 numeric(8,2)에 맞춘다(1/3 → 0.33). 그대로 두면 DB 스냅샷이 파일과 달라진다.
+            "amount": None if line["amount"] is None else round(line["amount"], 2),
             "unit": line["unit"],
         })
     note = "; ".join(x for x in [src["note"], *changes] if x) or None

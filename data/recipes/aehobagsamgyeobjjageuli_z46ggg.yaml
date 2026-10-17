@@ -27,7 +27,7 @@ ingredients:
   raw_text: 애호박 2/3개
   role: sub
   optional: false
-  amount: 0.6666666666666666
+  amount: 0.67
   unit: 개
 - ingredient: garlic
   raw_text: 다진 마늘 1스푼

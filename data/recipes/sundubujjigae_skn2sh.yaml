@@ -33,7 +33,7 @@ ingredients:
   raw_text: 대파 1/3쪽 / 대파
   role: sub
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 쪽
 - ingredient: enoki
   raw_text: 팽이버섯 조금 / 팽이버섯
@@ -75,7 +75,7 @@ ingredients:
   raw_text: 굵은 소금 1/3 스푼
   role: sub
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 - ingredient: null
   raw_text: 코인육수 1알
@@ -87,13 +87,13 @@ ingredients:
   raw_text: 굵은소금 1/3스푼
   role: sub
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 - ingredient: salt
   raw_text: 소금 1/3 스푼
   role: seasoning
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 taste:
   spicy: 3

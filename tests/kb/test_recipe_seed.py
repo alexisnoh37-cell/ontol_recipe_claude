@@ -60,6 +60,13 @@ def test_one_recipe_per_file_named_by_id():
         assert Path(where).stem == item["id"], where
 
 
+def test_amounts_fit_db_precision(specs):
+    # recipe_ingredient.amount는 numeric(8,2)라 소수 셋째 자리부터는 DB에서 잘린다(파일 = DB 스냅샷 유지).
+    bad = [(s.id, i.raw_text, i.amount) for s in specs for i in s.ingredients
+           if i.amount is not None and round(i.amount, 2) != i.amount]
+    assert not bad, bad[:5]
+
+
 def test_cuisine_mix(specs):
     # 1-3 검수 완료분의 구성(한식 30·기타 20)은 그대로 유지한다. 전체 구성은 시드에서 센다.
     published = Counter(s.cuisine for s in specs if s.id in PUBLISHED_IDS)

@@ -21,7 +21,7 @@ ingredients:
   raw_text: 두부 1/3모
   role: sub
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 모
 - ingredient: onion
   raw_text: 양파반개

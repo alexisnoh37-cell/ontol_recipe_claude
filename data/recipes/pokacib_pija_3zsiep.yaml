@@ -21,7 +21,7 @@ ingredients:
   raw_text: 우유 / 우유 2/3컵
   role: sub
   optional: false
-  amount: 0.6666666666666666
+  amount: 0.67
   unit: 컵
 - ingredient: mozzarella
   raw_text: 모짜렐라 치즈

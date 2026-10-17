@@ -21,13 +21,13 @@ ingredients:
   raw_text: 대파 2/3쪽 / 대파
   role: sub
   optional: false
-  amount: 0.6666666666666666
+  amount: 0.67
   unit: 쪽
 - ingredient: tofu
   raw_text: 두부 1/3모
   role: sub
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 모
 - ingredient: enoki
   raw_text: 팽이버섯

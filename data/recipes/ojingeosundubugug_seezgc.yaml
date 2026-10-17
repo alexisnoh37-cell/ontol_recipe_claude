@@ -69,13 +69,13 @@ ingredients:
   raw_text: 소고기 다시다 1/3스푼
   role: sub
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 - ingredient: null
   raw_text: 다시다 1/3스푼
   role: seasoning
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 taste:
   spicy: 3

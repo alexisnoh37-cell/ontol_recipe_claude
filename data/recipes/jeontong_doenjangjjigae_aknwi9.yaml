@@ -57,7 +57,7 @@ ingredients:
   raw_text: 고추장 1/3스푼 / 고추장 1/3 스푼
   role: seasoning
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 - ingredient: gochugaru
   raw_text: 고춧가루 반스푼

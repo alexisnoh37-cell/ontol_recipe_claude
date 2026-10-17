@@ -33,7 +33,7 @@ ingredients:
   raw_text: 치킨스톡 1/3스푼
   role: seasoning
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 - ingredient: gochugaru
   raw_text: 고춧가루 1스푼

@@ -63,7 +63,7 @@ ingredients:
   raw_text: 쌈장 1/3스푼
   role: seasoning
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 - ingredient: sugar
   raw_text: 설탕 1/2스푼

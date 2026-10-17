@@ -39,7 +39,7 @@ ingredients:
   raw_text: 굵은소금 1/3스푼
   role: sub
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 - ingredient: garlic
   raw_text: 다진마늘 반스푼
@@ -87,13 +87,13 @@ ingredients:
   raw_text: 굶은 소금 1/3스푼
   role: sub
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 - ingredient: salt
   raw_text: 소금 1/3스푼
   role: seasoning
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 taste:
   spicy: 3

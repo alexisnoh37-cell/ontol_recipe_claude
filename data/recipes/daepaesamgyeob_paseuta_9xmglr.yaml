@@ -45,7 +45,7 @@ ingredients:
   raw_text: 소금 1/3스푼
   role: seasoning
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 - ingredient: null
   raw_text: 양파 숨이 죽으면 멸치액젓 한스푼 / 양파 반개

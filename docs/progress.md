@@ -6,7 +6,7 @@
 
 **MVP 완료(Phase 1-6, 2026-10-03, 태그 `mvp-v1`).** 전체 테스트 323개 통과, 골든셋 상위 3개 적중률 0.88, bench p95 75.5ms(기준 200ms). Phase 2 이후 할 일은 "다음 단계 제안". 단계별 경과는 아래 기록. **tests/allergy/는 수정·삭제·skip 금지**(0-3 승인). 하나라도 실패하면 엔진 결함이다.
 
-**통합 트랙 int-1**(2026-10-16, 브랜치 `feature/ontology-integration`): 기존 브랜치 5개를 새 브랜치에 병합해 레시피 200개(published 50 + draft 150)·재료 255개를 하나의 그래프로 연결. int-2: 살림팝 169개 시드(draft) 변환, 식품안전나라 1153개 그래프 표시 전용 연결 → 그래프 레시피 1522개. 미매칭 보강은 다음 단계. int-3: /viz 기본을 나무 배치(뿌리 알레르기·줄기 재료·가지 가공품·잎 레시피 반구)로, 잎 기준 주재료/음식 종류, 평면 유지. 아래 "통합 트랙" 참조.
+**통합 트랙 int-1**(2026-10-16, 브랜치 `feature/ontology-integration`): 기존 브랜치 5개를 새 브랜치에 병합해 레시피 200개(published 50 + draft 150)·재료 255개를 하나의 그래프로 연결. int-2: 살림팝 169개 시드(draft) 변환, 식품안전나라 1153개 그래프 표시 전용 연결 → 그래프 레시피 1522개. 미매칭 보강은 다음 단계. int-3: /viz 기본을 나무 배치(뿌리 알레르기·줄기 재료·가지 가공품·잎 레시피 반구)로, 잎 기준 주재료/음식 종류, 평면 유지. 아래 "통합 트랙" 참조. int-4(2026-10-17): main 병합 준비 — 롤백 태그 `checkpoint/before-int-4`, DB 포함 전체 473개 통과(DB 통합 테스트에서 분량 반올림 결함 발견·수정), bench p95 79.8ms, PR로 올림. 새 레시피는 계속 draft라 기본 추천 결과는 MVP와 같다.
 
 **부가 트랙 viz 완료**(2026-10-03, 태그 `viz-v1`, 3D 온톨로지 + 추천 워크플로 시각화, docs/plan.md 부록 D). 전체 테스트 390개 통과. 아래 "부가 트랙 viz" 참조.
 
@@ -703,7 +703,24 @@ ui-1은 고른 재료를 추천 엔진에 넣는 방식이라 사람의 의도(�
 - 테스트: 463 통과 + DB 통합 9 건너뜀(`tests/viz/test_page.py`에 배치 선택·tree.js 제공 확인 1개). `tests/allergy` 무변경.
 - 알려진 문제: 잎 무리 이름 일부가 가까우면 조금 겹친다. 식품안전나라 미분류가 음식 종류 배치의 대부분을 차지한다(요리 종류 정보가 없음).
 
+### int-4 main 병합 준비 (2026-10-17)
+
+- 사람 요청: 지금 상태로 롤백할 수 있게 해 두고, DB 테스트·성능 검증 후 PR로 올려 통합 브랜치 작업을 닫는다. 손 인식 게임(poc-1)과 그래프 배치 실험 7종(`feature/viz-layout-lab`)은 통합하지 않고 각자 브랜치에 그대로 둔다. 통합 추천안 PR #3도 그대로 둔다.
+- 롤백 지점: int-3 커밋(`b1b662e`)에 태그 `checkpoint/before-int-4`. 원래 폴더(`feature/adhoc-recipe-analysis`)에 커밋 안 된 채 있던 poc-1 기록·`poc/hand_grab/`·검토 문서 2개(`docs/review/ingredient_layers.md`, `ontology_enhancement.md`)는 그 브랜치에 커밋해 보존(`ae230e5`). `video/`, `.scratch/`, `.claude/`는 개인 작업 파일이라 커밋하지 않음.
+- DB 반영(로컬 Docker PostgreSQL 16, 개발 DB): `alembic upgrade head`(0002, 변경 없음) → `compile_knowledge.py`(재료 255, concept 3, 별칭 648, allergen_closure 369행, 경고 3건 그대로) → `load_recipes.py`(369개: draft 319, published 50) → `validate_data.py --db` 통과.
+- **DB 통합 테스트에서 발견한 결함**: `tests/storage/test_engine_source.py::test_db_source_equals_file_source` 실패. 원인: 자취요리신·살림팝 원본의 분량이 분수(1/3, 2/3)라 시드에 `0.3333333333333333`처럼 그대로 들어갔고, DB 컬럼은 `numeric(8,2)`라 0.33으로 저장되어 DB 스냅샷 ≠ 파일 스냅샷(40개 레시피, 분량 50줄). 지금까지 Docker가 꺼져 있어 이 테스트가 계속 건너뛰어져 드러나지 않았다. 엔진 입력(`recipe_from_spec`)과 추천 결과는 같아 판정·점수 영향은 없다.
+  - 수정: `kb/youtube_seed.py`가 분량을 소수 둘째 자리로 반올림(DB와 같은 정밀도). 두 데이터셋 다시 변환 → 40개 파일의 `amount` 줄만 바뀜, `CONVERSION.md` 무변경.
+  - 테스트 추가: `tests/kb/test_recipe_seed.py::test_amounts_fit_db_precision`(모든 시드 분량이 소수 둘째 자리 이내, DB 없이도 검사). 수정 전 실패 확인.
+- 테스트: **DB 통합 포함 전체 473개 통과**(건너뜀 0). `tests/allergy` 118개 통과, main 대비 무변경.
+- API(DB 모드, `ENGINE_SOURCE` 미지정): `/health` source db·재료 255·레시피 369, `/profiles` 200(이전 기록의 500은 DB가 꺼져 있었기 때문), `POST /recommend {profile_id: 1}` 200(점수 내역·부족 재료 포함). `/viz?display=1`에서 DB 프로필 목록과 출처 토글(1153·169·100·100) 표시, `/graph?recipes=all&display=true` 3.4MB·58ms(캐시 후).
+- 성능(`scripts/bench.py`, 합성 1만 개, 요청 300회, seed 42): **p50 21.4ms · p95 79.8ms · 최대 114.5ms**, 기준 200ms 통과. `--trace` 3회: recommend p95 37~45ms, trace() p95 38~43ms, trace() + 표시 변환 p95 214~229ms(viz-5 기록 87.2ms보다 큼). 같은 측정을 통합 전 코드(원래 폴더, `feature/adhoc-recipe-analysis`)에서 해도 p95 235ms라 통합에 따른 회귀가 아니라 측정 환경 차이로 본다. 표시 변환은 시각화 경로라 엔진 기준 대상이 아니다.
+- 화면 로딩 시간: 이 세션이 앱 창에 열려 있지 않아 브라우저가 백그라운드로만 돌았고 HUD(로딩 시간)가 그려지지 않아 재지 못함 → "사람 확인 필요".
+
 ## 사람 확인 필요
+
+- **(int-4) 병합 PR 리뷰·병합**: `feature/ontology-integration` → main PR. 병합 후 PR #2(레시피 1차 확장)는 이 PR에 포함되어 닫는다. 병합 뒤 레시피를 실제 추천에 쓰려면 아래 fs-3 → data-1·data-2 검수 → 골든셋 처리 → published 전환 순서.
+
+- **(int-4) 그래프 화면 로딩 측정**: 창을 앞에 띄운 상태에서 `/viz?display=1`(1522개)의 HUD 로딩 시간을 잰다(viz-5 기준 1천 개 3~5초). 백그라운드 측정값(1.1~11.6초)은 부정확하다.
 
 - **(adhoc-1) 외부 레시피 분석 확인**: `/viz` "외부 레시피 분석"에서 예시 넣기 → 분석. 안전 관련 판정 테스트(possible·미매칭·concept 제외)를 `tests/api/`에 두었다. `tests/allergy/`로 옮겨 승인 대상으로 둘지 정한다.
 
@@ -751,6 +768,7 @@ ui-1은 고른 재료를 추천 엔진에 넣는 방식이라 사람의 의도(�
 - MVP(Phase 0~1) 완료. Phase 2는 사람이 범위를 정한 뒤 시작한다(아래 "다음 단계 제안").
 - 시각화 트랙 완료(viz-v1). 시연은 README 6-1 "시연 순서"(시연 프로필은 `scripts/seed_demo_profiles.py`).
 - 새 재료를 추가할 때는 status: draft로 넣고 검수표(`scripts/make_review.py`)로 사람 확인 후 reviewed.
+- 통합 트랙(int-4): main 병합 PR 리뷰 대기. 병합 후 레시피 활용(미매칭 보강 → 레시피 검수 → 골든셋 → published 전환)은 main 위에서 단계별로 진행한다.
 - 데이터 확장 트랙(data-1, `feature/recipe-expansion`): 신규 레시피 50개 draft 검수 대기. 승인된 레시피는 published로 바꾸고 `tests/kb/test_recipe_seed.py`의 `PUBLISHED_IDS`에 추가, soft_tofu 승인 시 reviewed로 바꾸고 `tests/kb/test_real_knowledge.py`의 `DRAFT_INGREDIENTS`에서 뺀다. published 전환 전에 골든셋 처리 방법을 정한다.
 
 ## 다음 단계 제안 (Phase 2 이후, 범위 밖)

@@ -27,7 +27,7 @@ ingredients:
   raw_text: 당근 1/3개
   role: sub
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 개
 - ingredient: scallion
   raw_text: 쪽파

@@ -21,7 +21,7 @@ ingredients:
   raw_text: 당근 1/3개
   role: sub
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 개
 - ingredient: cheongyang_pepper
   raw_text: 청양고추 2개

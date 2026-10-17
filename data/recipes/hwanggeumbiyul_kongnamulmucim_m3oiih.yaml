@@ -45,13 +45,13 @@ ingredients:
   raw_text: 소금 1/3 스푼 / 소금 1/3스푼
   role: seasoning
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 - ingredient: sugar
   raw_text: 설탕 1/3 스푼 / 설탕 1/3스푼
   role: seasoning
   optional: false
-  amount: 0.3333333333333333
+  amount: 0.33
   unit: 스푼
 - ingredient: sesame_oil
   raw_text: 참기름 1스푼
