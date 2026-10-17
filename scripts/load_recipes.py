@@ -22,6 +22,7 @@ sys.path.insert(0, str(ROOT))
 
 from kb import KnowledgeError, compile_paths  # noqa: E402
 from kb.recipes import RecipeSeedError, load_recipe_specs  # noqa: E402
+from storage.engine_source import recipe_dirs  # noqa: E402
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -30,12 +31,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--prune", action="store_true", help="시드에 없는 DB 레시피를 삭제한다")
     parser.add_argument("--knowledge-dir", type=Path, default=ROOT / "knowledge")
     parser.add_argument("--pantry", type=Path, default=ROOT / "config" / "pantry_staples.yaml")
-    parser.add_argument("--recipes-dir", type=Path, default=ROOT / "data" / "recipes")
+    parser.add_argument("--recipes-dir", type=Path, action="append",
+                        help="레시피 폴더(여러 번 줄 수 있음). 기본은 config/engine.yaml recipe_dirs")
     args = parser.parse_args(argv)
 
     try:
         ck = compile_paths(args.knowledge_dir, args.pantry)
-        specs = load_recipe_specs(ck, args.recipes_dir, ROOT)
+        specs = load_recipe_specs(ck, args.recipes_dir or recipe_dirs(ROOT), ROOT)
     except FileNotFoundError as exc:
         print(exc, file=sys.stderr)
         return 2

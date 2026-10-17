@@ -25,7 +25,7 @@ from collections.abc import Callable, Sequence
 from pathlib import Path
 from typing import Any, Literal
 
-from engine.candidates import CANDIDATE_ROLES
+from engine.candidates import candidate_roles
 from engine.config import COMPONENTS
 from engine.model import Exclusion, ExclusionReason, RecommendResult
 from engine.trace import RecommendTrace
@@ -353,7 +353,7 @@ class GraphCatalog:
             lines = []
             for m in c.lines:
                 iid = m.line.ingredient_id
-                basis = m.line.role in CANDIDATE_ROLES and (
+                basis = m.line.role in candidate_roles(c.recipe) and (
                     m.status == "substitute" or (m.status == "owned" and iid in from_pantry))
                 lines.append({
                     "line_no": m.line.line_no, "node": ing(iid) if iid else None, "role": m.line.role,

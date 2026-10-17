@@ -1,18 +1,20 @@
-"""레시피 시드 읽기 (data/recipes/*.yaml, 형식: data/recipes/README.md).
+"""레시피 시드 읽기 (data/recipes/*.yaml 등, 형식: data/recipes/README.md).
 
 파일 하나에 레시피 하나. 검증 규칙은 kb.datacheck.check_recipes(RecipeSpec)가 원본이다.
+엔진·DB가 읽는 폴더 목록은 config/engine.yaml의 recipe_dirs다(ar-1: data/recipes + data/recipes_foodsafety).
 scripts/validate_data.py, scripts/load_recipes.py, scripts/make_recipe_review.py가 같은 함수를 쓴다.
 """
 
 from __future__ import annotations
 
+from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
 import yaml
 
 from kb.compiled import CompiledKnowledge
-from kb.datacheck import UNCLASSIFIED_CUISINE, RecipeSpec, check_recipes
+from kb.datacheck import RecipeSpec, check_recipes
 from kb.validate import Issue
 
 # libyaml이 있으면 C 파서(같은 결과, 식품안전나라 1153개 기준 약 6배 빠름)
@@ -40,23 +42,19 @@ def read_recipe_dir(recipes_dir: Path, root: Path | None = None) -> list[tuple[s
     return out
 
 
-def load_recipe_specs(ck: CompiledKnowledge, recipes_dir: Path, root: Path | None = None) -> list[RecipeSpec]:
+def load_recipe_specs(ck: CompiledKnowledge, recipes_dirs: Path | Sequence[Path],
+                      root: Path | None = None) -> list[RecipeSpec]:
     """검증을 통과한 레시피만 돌려준다. 오류가 하나라도 있으면 RecipeSeedError(일부만 적재하지 않는다).
 
-    엔진·DB에 들어가는 레시피라서 draft라도 cuisine 미분류이거나 cook_time_min이 없으면 거부한다
-    (검증 규칙은 draft에 이를 허용한다, docs/plan.md 5-4).
+    폴더를 여러 개 주면 모두 읽어 한 목록으로 검증한다(id 중복은 오류). draft는 cuisine 미분류, 조리시간·난이도·맛
+    없음을 허용하고 엔진이 '모름'으로 다룬다(ar-1, docs/plan.md 5-4). published는 검증 규칙이 모두 요구한다.
     """
-    items = read_recipe_dir(recipes_dir, root)
+    dirs = [recipes_dirs] if isinstance(recipes_dirs, Path) else list(recipes_dirs)
+    items = [item for d in dirs for item in read_recipe_dir(d, root)]
     issues = check_recipes(ck, items)
     if issues:
         raise RecipeSeedError(issues)
     specs = [RecipeSpec.model_validate(item) for _, item in items]
-    issues = [Issue("not_loadable", s.id, "cuisine이 미분류라 적재할 수 없습니다") for s in specs
-              if s.cuisine == UNCLASSIFIED_CUISINE]
-    issues += [Issue("not_loadable", s.id, "조리시간(cook_time_min)이 없어 적재할 수 없습니다") for s in specs
-               if s.cook_time_min is None]
-    if issues:
-        raise RecipeSeedError(issues)
     return sorted(specs, key=lambda r: r.id)
 
 

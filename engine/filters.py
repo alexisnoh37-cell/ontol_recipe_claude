@@ -18,6 +18,7 @@ from engine.model import (
     ExclusionReason,
     KnowledgeSnapshot,
     Recipe,
+    TASTE_LEVEL_MAX,
     RecommendRequest,
     UserContext,
 )
@@ -102,12 +103,17 @@ class UserConstraints:
 
         if recipe.cuisine in self.hard_cuisines:
             add(Exclusion(recipe.id, ExclusionReason.HARD_DISLIKE_CUISINE, target=recipe.cuisine))
-        if self.spicy_max is not None and recipe.taste.spicy > self.spicy_max:
+        if self.spicy_max is not None and self.spicy_max < TASTE_LEVEL_MAX and recipe.taste is None:
+            # 맛 정보가 없으면 매운지 알 수 없다. 매운맛 한도를 정한 사용자에게는 보수적으로 제외한다(ar-1).
+            # 한도가 최대치(5)면 어떤 레시피도 넘지 않으므로 제한이 아니다
+            add(Exclusion(recipe.id, ExclusionReason.SPICY_LIMIT, detail=f"매운맛 정보 없음(한도 {self.spicy_max})"))
+        elif self.spicy_max is not None and recipe.taste is not None and recipe.taste.spicy > self.spicy_max:
             add(Exclusion(recipe.id, ExclusionReason.SPICY_LIMIT, target="spicy",
                           detail=f"매운맛 {recipe.taste.spicy} > 한도 {self.spicy_max}"))
         for equipment in sorted(recipe.required_equipment - self.equipment):
             add(Exclusion(recipe.id, ExclusionReason.EQUIPMENT, target=equipment, detail=f"필수 조리기구 없음: {equipment}"))
-        if self.max_time_min is not None and recipe.cook_time_min > self.max_time_min:
+        # 조리시간을 모르면 시간 필터로 빼지 않는다(ar-1, 판정 근거가 없음)
+        if self.max_time_min is not None and recipe.cook_time_min is not None and recipe.cook_time_min > self.max_time_min:
             add(Exclusion(recipe.id, ExclusionReason.TIME,
                           detail=f"조리시간 {recipe.cook_time_min}분 > 제한 {self.max_time_min}분"))
         return out

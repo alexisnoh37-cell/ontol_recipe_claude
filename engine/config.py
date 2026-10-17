@@ -67,6 +67,9 @@ class ScoringConfig:
     preference_neutral: float
     preference_role_weight: Mapping[str, float]  # main, sub, garnish, optional
     difficulty: Mapping[int, float]  # (레시피 난이도 - 사용자 실력) → 점수
+    difficulty_unknown: float  # 레시피 난이도를 모를 때(ar-1)
+    time_unknown: float  # 희망 시간이 있는데 조리시간을 모를 때
+    taste_unknown: float  # 맛 선호가 있는데 레시피 맛을 모를 때
     taste_dimensions: tuple[str, ...]
     taste_dimension_weight: Mapping[str, float]
     diversity_top_n: int
@@ -95,7 +98,10 @@ class ScoringConfig:
                 cuisine_dislike=float(cui["dislike"]),
                 preference_neutral=float(pref["neutral"]),
                 preference_role_weight={k: float(v) for k, v in pref["role_weight"].items()},
-                difficulty={int(k): float(v) for k, v in raw["difficulty"].items()},
+                difficulty={int(k): float(v) for k, v in raw["difficulty"].items() if k != "unknown"},
+                difficulty_unknown=float(raw["difficulty"]["unknown"]),
+                time_unknown=float(raw["time"]["unknown"]),
+                taste_unknown=float(taste["unknown"]),
                 taste_dimensions=dims,
                 taste_dimension_weight={d: float(taste["dimension_weight"][d]) for d in dims},
                 diversity_top_n=int(div["top_n"]),

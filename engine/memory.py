@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from collections.abc import Iterable
 
-from engine.candidates import CANDIDATE_ROLES
+from engine.candidates import candidate_roles
 from engine.model import KnowledgeSnapshot, Recipe
 
 
@@ -19,13 +19,14 @@ class InMemoryKnowledgeRepository:
 class InMemoryRecipeRepository:
     def __init__(self, recipes: Iterable[Recipe]):
         self._by_id: dict[str, Recipe] = {}
-        self._index: dict[str, list[str]] = {}  # 재료 id → main으로 쓰는 레시피 id(CANDIDATE_ROLES)
+        self._index: dict[str, list[str]] = {}  # 재료 id → 후보 근거 역할(candidate_roles)로 쓰는 레시피 id
         for recipe in recipes:
             if recipe.id in self._by_id:
                 raise ValueError(f"레시피 id 중복: {recipe.id}")
             self._by_id[recipe.id] = recipe
+            roles = candidate_roles(recipe)
             for line in recipe.ingredients:
-                if line.ingredient_id is not None and line.role in CANDIDATE_ROLES:
+                if line.ingredient_id is not None and line.role in roles:
                     ids = self._index.setdefault(line.ingredient_id, [])
                     if recipe.id not in ids:
                         ids.append(recipe.id)

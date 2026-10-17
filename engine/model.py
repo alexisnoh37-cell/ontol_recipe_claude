@@ -68,6 +68,9 @@ class RecipeIngredient:
     raw_text: str = ""
 
 
+TASTE_LEVEL_MAX = 5  # 맛 수치 범위 0~5(레시피 taste, 사용자 preferred_level·max_level)
+
+
 @dataclass(frozen=True)
 class Taste:
     spicy: int = 0
@@ -83,10 +86,10 @@ class Recipe:
     id: str
     title: str
     cuisine: str
-    difficulty: int  # 1~3
-    cook_time_min: int
+    difficulty: int | None  # 1~3. None = 모름(예: 식품안전나라 원본에 없음, ar-1)
+    cook_time_min: int | None  # None = 모름
     ingredients: tuple[RecipeIngredient, ...]
-    taste: Taste = Taste()
+    taste: Taste | None = Taste()  # None = 맛 정보 모름(0으로 채우지 않는다: 매운맛 필터를 통과하면 안 되므로)
     required_equipment: frozenset[str] = frozenset()
     techniques: frozenset[str] = frozenset()  # 조리 단계 technique 집합(대체재 context 판정용)
     status: Literal["draft", "published"] = "published"

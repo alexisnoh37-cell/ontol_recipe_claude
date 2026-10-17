@@ -94,6 +94,8 @@ class UserScorer:
         total = sum(weights[d] for d in self._taste_pref)
         if not total:
             return 0.5
+        if candidate.recipe.taste is None:  # 맛 정보 모름(ar-1)
+            return self._cfg.taste_unknown
         gap = sum(weights[d] * abs(level - getattr(candidate.recipe.taste, d)) for d, level in self._taste_pref.items())
         return max(0.0, 1.0 - (gap / total) / 5.0)
 
@@ -128,13 +130,19 @@ class UserScorer:
         return best
 
     def difficulty(self, candidate: Candidate) -> float:
+        if candidate.recipe.difficulty is None:  # 난이도 모름(ar-1)
+            return self._cfg.difficulty_unknown
         diff = max(-2, min(2, candidate.recipe.difficulty - self._skill))
         return self._cfg.difficulty[diff]
 
     def time(self, candidate: Candidate) -> float:
         w = self._wish
         t = candidate.recipe.cook_time_min
-        if w is None or t <= w:
+        if w is None:
+            return 1.0
+        if t is None:  # 희망 시간은 있는데 조리시간을 모름(ar-1)
+            return self._cfg.time_unknown
+        if t <= w:
             return 1.0
         if w <= 0:
             return 0.0
@@ -163,7 +171,12 @@ def rank(scored: Sequence[Scored]) -> list[Scored]:
 
 def _rank_key(s: Scored) -> tuple:
     return (-round(s.score, 3), -round(s.breakdown["I"], 3), missing_count(s.candidate),
-            s.candidate.recipe.cook_time_min, s.candidate.recipe.id)
+            _time_key(s.candidate.recipe.cook_time_min), s.candidate.recipe.id)
+
+
+def _time_key(t: int | None) -> tuple[bool, int]:
+    """조리시간 짧은 순. 모르는 조리시간은 뒤로."""
+    return (t is None, t or 0)
 
 
 def missing_count(candidate: Candidate) -> int:

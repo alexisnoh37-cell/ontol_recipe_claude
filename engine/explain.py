@@ -39,8 +39,13 @@ def build_item(snapshot: KnowledgeSnapshot, candidate: Candidate, score: float, 
                 missing.append(line.ingredient_id)
     if breakdown.get("I") == 1.0 and not substitutions:
         notes.insert(0, "필요한 주재료와 부재료를 모두 갖고 있습니다")
-    if breakdown.get("M", 1.0) < 1.0:
-        notes.append(f"희망 시간보다 오래 걸립니다(약 {candidate.recipe.cook_time_min}분)")
+    recipe = candidate.recipe
+    if breakdown.get("M", 1.0) < 1.0 and recipe.cook_time_min is not None:
+        notes.append(f"희망 시간보다 오래 걸립니다(약 {recipe.cook_time_min}분)")
+    unknown = [label for label, missing in (("조리시간", recipe.cook_time_min is None), ("난이도", recipe.difficulty is None),
+                                            ("맛", recipe.taste is None)) if missing]
+    if unknown:
+        notes.append(f"{', '.join(unknown)} 정보가 없는 레시피입니다(점수는 중간값으로 계산)")
     if candidate.recipe.status != "published":
         notes.append("검수 전 레시피입니다")
     return RecommendItem(

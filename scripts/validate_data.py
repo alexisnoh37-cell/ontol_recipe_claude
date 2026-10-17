@@ -22,17 +22,19 @@ ROOT = Path(__file__).resolve().parent.parent
 from kb import Issue, KnowledgeError, compile_paths  # noqa: E402
 from kb.datacheck import check_pantry, check_preferences, check_recipes  # noqa: E402
 from kb.recipes import read_recipe_dir  # noqa: E402
+from storage.engine_source import recipe_dirs  # noqa: E402
 
 
-def load_recipes(recipes_dir: Path) -> list[tuple[str, object]]:
-    return read_recipe_dir(recipes_dir, ROOT)
+def load_recipes(recipes_dirs: list[Path]) -> list[tuple[str, object]]:
+    return [item for d in recipes_dirs for item in read_recipe_dir(d, ROOT)]
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--knowledge-dir", type=Path, default=ROOT / "knowledge")
     parser.add_argument("--pantry", type=Path, default=ROOT / "config" / "pantry_staples.yaml")
-    parser.add_argument("--recipes-dir", type=Path, default=ROOT / "data" / "recipes")
+    parser.add_argument("--recipes-dir", type=Path, action="append",
+                        help="레시피 폴더(여러 번 줄 수 있음). 기본은 config/engine.yaml recipe_dirs")
     parser.add_argument("--db", action="store_true", help="DB의 사용자 데이터도 검사(DATABASE_URL 필요)")
     args = parser.parse_args(argv)
 
@@ -49,7 +51,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     print(f"지식: 통과 (재료 {len(ck.ingredients)}개, 경고 {len(ck.warnings)}건)")
 
-    recipes = load_recipes(args.recipes_dir)
+    recipes = load_recipes(args.recipes_dir or recipe_dirs(ROOT))
     recipe_issues = check_recipes(ck, recipes)
     errors += recipe_issues
     print(f"레시피: {len(recipes)}개 검사, 오류 {len(recipe_issues)}건")

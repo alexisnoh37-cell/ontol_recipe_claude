@@ -216,22 +216,16 @@ def test_recipe_origins_cover_all_seed_recipes(client, data):
         assert n["has_unmapped"] == bool(n["unmapped_lines"])
 
 
-def test_display_recipes_join_graph_but_not_engine(client, data):
-    """display=true면 식품안전나라(엔진 미적재)가 같은 지식으로 연결되어 실린다. 추천 엔진은 그 레시피를 모른다."""
-    base = get_graph(client, recipes="all")
+def test_foodsafety_recipes_are_engine_recipes_not_display_only(client, data):
+    """ar-1: 식품안전나라는 엔진에 적재되어 그래프에도 엔진 레시피로 실린다. 표시 전용 레시피는 더 없다."""
     g = get_graph(client, recipes="all", display="true")
-    shown = [n for n in g["nodes"] if n["kind"] == "recipe" and n["engine"] is False]
-    assert shown and {n["origin"] for n in shown} == {"foodsafety"}
-    assert g["stats"]["display_recipes"] == len(shown)
-    assert g["stats"]["recipes"] == base["stats"]["recipes"] + len(shown)
-    assert all(n["cuisine"] == "미분류" and n["status"] == "draft" and n["spicy"] is None for n in shown)
-    shown_ids = {n["id"] for n in shown}
-    uses = [lk for lk in g["links"] if lk["type"] == "uses" and lk["source"] in shown_ids]
+    fs = [n for n in g["nodes"] if n["kind"] == "recipe" and n["origin"] == "foodsafety"]
+    assert len(fs) == sum(r.source == "foodsafety" for r in data.recipes) > 1000
+    assert all(n["engine"] is True and n["cuisine"] == "미분류" and n["spicy"] is None for n in fs)
+    assert g["stats"]["display_recipes"] == 0
+    assert g["stats"]["recipes"] == len(data.recipes)
+    fs_ids = {n["id"] for n in fs}
+    uses = [lk for lk in g["links"] if lk["type"] == "uses" and lk["source"] in fs_ids]
     node_ids = {n["id"] for n in g["nodes"]}
-    assert uses and all(lk["target"] in node_ids for lk in uses)  # 매핑된 줄은 기존 재료 노드에 연결
-    assert any(n["allergens"] for n in shown)  # 같은 컴파일 closure로 걸리는 알레르기를 보여 준다
-    engine_ids = {f"rcp:{r.id}" for r in data.recipes}
-    assert shown_ids.isdisjoint(engine_ids)
-    r1 = client.get("/graph", params={"recipes": "all"})
-    r2 = client.get("/graph", params={"recipes": "all", "display": "true"})
-    assert r1.headers["etag"] != r2.headers["etag"]
+    assert uses and all(lk["target"] in node_ids for lk in uses)
+    assert any(n["allergens"] for n in fs)
