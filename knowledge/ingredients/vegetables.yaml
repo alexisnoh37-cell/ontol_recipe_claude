@@ -99,8 +99,8 @@
   name: 봄동
   category: 채소
   confidence: low
-  note: 2026-10-16 자취요리신 데이터 연결로 추가. 배추 품종이지만 is_a napa_cabbage로 둘지(배추 보유로 매칭) 검수 필요
-  status: draft
+  note: 2026-10-16 자취요리신 데이터 연결로 추가. 배추 품종이지만 is_a napa_cabbage로 둘지(배추 보유로 매칭) 검수 필요 ir-2(2026-10-17) 사람 재료 검수 완료
+  status: reviewed
 - id: cabbage
   name: 양배추
   aliases: [적양배추, 적채]
@@ -262,133 +262,124 @@
   name: 마늘종
   aliases: [마늘쫑]
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: water_spinach
   name: 공심채
   aliases: [모닝글로리]
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: chamsongi_mushroom
   name: 참송이버섯
   aliases: [참송이]
   category: 버섯
   confidence: low
-  note: "표고 계열 품종으로 알려짐. 표고 별칭으로 둘지 검수(알레르기 무관) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "표고 계열 품종으로 알려짐. 표고 별칭으로 둘지 검수(알레르기 무관) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: baby_greens
   name: 어린잎채소
   aliases: [어린잎, 베이비채소]
   category: 채소
-  allergens: [{group: buckwheat, certainty: possible}]
   confidence: low
-  note: "혼합 제품. 메밀싹 포함 가능성 → possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "혼합 제품. 메밀싹 포함 가능성 → possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료 메밀(가능)은 ir-2 사람 결정으로 삭제(알레르기 없음)"
+  status: reviewed
 - id: beet
   name: 비트
   aliases: [비트루트]
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: ginseng
   name: 인삼
   aliases: [수삼, 홍삼]
   category: 채소
-  note: "홍삼은 가공품이나 알레르기 차이 없음 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "홍삼은 가공품이나 알레르기 차이 없음 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: radish_sprouts
   name: 무순
   aliases: [무싹]
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
-- id: edible_flower
-  name: 식용 꽃
-  category: 채소
-  confidence: low
-  note: "종류 불명. 장식용 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: yam
   name: 마
   aliases: [산마, 참마, 장마]
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: sprouts_mix
   name: 새싹채소
   aliases: [새싹]
   category: 채소
-  allergens: [{group: buckwheat, certainty: possible}]
   confidence: low
-  note: "혼합 새싹에 메밀싹이 들어가는 경우가 있어 메밀 possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "혼합 새싹에 메밀싹이 들어가는 경우가 있어 메밀 possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료 메밀(가능)은 ir-2 사람 결정으로 삭제(알레르기 없음)"
+  status: reviewed
 - id: chamnamul
   name: 참나물
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: hamcho
   name: 함초
   aliases: [함초가루]
   category: 채소
-  note: "염생식물 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "염생식물 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: chicory
   name: 치커리
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: cauliflower
   name: 콜리플라워
   aliases: [컬리플라워]
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: wood_ear
   name: 목이버섯
   category: 버섯
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: white_wood_ear
   name: 흰목이버섯
   category: 버섯
-  note: "다른 종(um-2 사람 결정) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "다른 종(um-2 사람 결정) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: deodeok
   name: 더덕
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: kale
   name: 케일
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: chwinamul
   name: 취나물
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: dallae
   name: 달래
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: kohlrabi
   name: 콜라비
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: pumpkin_leaf
   name: 호박잎
   category: 채소
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: squash_unspecified
-  name: 호박(종류 불명)
-  aliases: [호박]
+  name: 호박
   category: 채소
   confidence: low
-  note: "애호박·단호박·늙은호박 중 무엇인지 모름. 알레르기 없음(um-2 사람 결정) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "애호박·단호박·늙은호박 중 무엇인지 모름. 알레르기 없음(um-2 사람 결정) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed

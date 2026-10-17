@@ -338,9 +338,11 @@ def test_browse_max_missing_and_errors(client):
 
 
 def test_commercial_notice_above_ingredients_for_everyone(client, data):
-    """um-2 사람 결정: 시판 제품(라면 제품 등)이 든 레시피는 알레르기 설정과 무관하게 재료 목록 위에 안내를 띄운다."""
-    commercial = {"instant_noodle_product", "naengmyeon_broth", "buldak_sauce", "sundae", "potato_chips",
-                  "ssanghwatang", "misutgaru"}
+    """um-2·ir-2 사람 결정: 시판 제품이 든 레시피는 알레르기 설정과 무관하게 재료 목록 위에 안내를 띄운다."""
+    from api.present import commercial_products, load_display
+
+    _, commercial = commercial_products(load_display())
+    assert {"instant_noodle_product", "instant_stock", "starch"} <= commercial
     with_it = next(r for r in data.recipes if any(line.ingredient in commercial for line in r.ingredients))
     without = next(r for r in data.recipes if not any(line.ingredient in commercial for line in r.ingredients))
     pid = make_profile(client)  # 알레르기 설정 없음

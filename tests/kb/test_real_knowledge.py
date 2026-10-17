@@ -7,7 +7,6 @@ from pathlib import Path
 import pytest
 
 from kb import compile_paths
-from kb.unmapped_review import load_proposal
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -54,15 +53,12 @@ def test_ambiguous_alias_removed_and_soybean_oil_separate(ck):
 
 
 # 검수 대기 중인 재료. 사람이 검수표로 승인하면 reviewed로 바꾸고 여기서 뺀다.
-# um-2(2026-10-17): 미매칭 보강 검수표에서 승인한 새 재료는 제안 데이터(decision O, new)에 적힌 것과 정확히 같아야 한다.
-UM2_NEW_INGREDIENTS = frozenset(
-    e.new["id"] for e in load_proposal(ROOT / "docs" / "review" / "unmapped_proposal.yaml")
-    if e.decision == "O" and e.new
-)
+# ir-2(2026-10-17): draft 재료 검수 화면에서 '보류'로 둔 시판 제품(포장 알레르기 표시 확인 전)만 남았다.
 DRAFT_INGREDIENTS = frozenset({
-    "soft_tofu",  # 레시피 1차 확장(2026-10-04)
-    "beef_plate", "bomdong",  # 자취요리신 데이터 연결(2026-10-16)
-}) | UM2_NEW_INGREDIENTS
+    "bottled_marinade", "buldak_sauce", "cham_sauce", "ponzu", "potato_chips", "sundae",
+})
+# ir-2 사람 결정으로 지운 재료(그 표기는 다시 미매칭)
+REMOVED_INGREDIENTS = frozenset({"edible_flower"})
 
 
 def test_all_knowledge_is_reviewed(ck):
@@ -70,6 +66,7 @@ def test_all_knowledge_is_reviewed(ck):
     assert {i.id for i in ck.ingredients if i.status != "reviewed"} == DRAFT_INGREDIENTS
     assert all(ck_i.status == "draft" for ck_i in ck.ingredients if ck_i.id in DRAFT_INGREDIENTS)
     assert all(g.status == "reviewed" for g in ck.allergen_groups)
+    assert not REMOVED_INGREDIENTS & {i.id for i in ck.ingredients}
 
 
 def test_soft_tofu_is_soybean(ck):

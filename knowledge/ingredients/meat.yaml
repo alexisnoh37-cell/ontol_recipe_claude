@@ -78,8 +78,8 @@
   aliases: [우삼겹살]
   is_a: [beef]
   category: 육류
-  note: 2026-10-16 자취요리신 데이터 연결로 추가(소 양지 쪽 얇게 썬 부위). 쇠고기 알레르기는 beef에서 상속. 검수 필요
-  status: draft
+  note: 2026-10-16 자취요리신 데이터 연결로 추가(소 양지 쪽 얇게 썬 부위). 쇠고기 알레르기는 beef에서 상속. 검수 필요 ir-2(2026-10-17) 사람 재료 검수 완료
+  status: reviewed
 - id: beef_bulgogi_cut
   name: 불고기용 소고기
   aliases: [불고기감, 소불고기감]
@@ -253,8 +253,8 @@
   is_processed: true
   category: 육가공품
   confidence: low
-  note: "시판 미트볼(소스 포함 제품 많음) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "시판 미트볼(소스 포함 제품 많음) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: sundae
   name: 순대
   derived_from:

@@ -13,11 +13,50 @@ ingredient_notices:
 recipe_notices:
   salmon_don: "횟감용 생연어 사용"
 
-# 시판 제품 안내(um-2 사람 결정 2026-10-17): 이 재료가 든 레시피를 보여 줄 때 재료 목록 위에 표시.
+# 시판 제품 안내(um-2·ir-2 사람 결정 2026-10-17): 이 재료가 든 레시피를 보여 줄 때 재료 목록 위에 표시.
 # 알레르기 설정과 무관하게 모두에게 보인다. 제품마다 성분이 달라 알레르기 목록이 추정이기 때문이다(판정은 그대로 제외).
 commercial_product_notice:
   text: "시판 제품으로 제품 성분을 확인해 알레르기 유무를 확인하시기 바랍니다."
-  ingredients: [instant_noodle_product, naengmyeon_broth, buldak_sauce, sundae, potato_chips, ssanghwatang, misutgaru]
+  # um-2 사람 결정 7개 + ir-2(2026-10-17) 재료 검수에서 '포장 알레르기 표시 확인 권장' 메모를 단 재료(검수 화면 순서)
+  ingredients:
+    - instant_stock
+    - instant_noodle_product
+    - dasida
+    - starch
+    - naengmyeon_broth
+    - pear_drink
+    - bottled_marinade
+    - buldak_sauce
+    - jjajang_powder
+    - balsamic_vinegar
+    - cham_sauce
+    - whelk
+    - jjolmyeon_noodles
+    - cola
+    - cream_soup_powder
+    - meatball
+    - msg
+    - pad_thai_sauce
+    - ponzu
+    - potato_chips
+    - ssanghwatang
+    - sujebi
+    - sundae
+    - seasoned_soy_sauce
+    - konjac
+    - kelp_stock
+    - gelatin
+    - fish_soy_sauce
+    - rice_paper
+    - sparkling_water
+    - balsamic_glaze
+    - cactus_fruit_powder
+    - grape_juice
+    - misutgaru
+    - sour_cream
+    - cheongpomuk
+    - pickling_spice
+    - ricotta
 
 # 알레르기 설정이 있는 사용자에게만, 가공품(is_processed)이면서 confidence: low인 재료가 든 레시피 카드에 표시(1-6 결정)
 label_check: "제품 성분표를 확인하세요"

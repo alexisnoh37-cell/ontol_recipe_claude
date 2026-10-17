@@ -167,86 +167,86 @@
     - pear
   is_processed: true
   category: 과일
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: pineapple
   name: 파인애플
   category: 과일
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: avocado
   name: 아보카도
   category: 과일
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: cranberry
   name: 크랜베리
   aliases: [건크랜베리]
   category: 과일
   confidence: low
-  note: "건크랜베리는 오일 코팅 제품 있음 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "건크랜베리는 오일 코팅 제품 있음 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: blueberry
   name: 블루베리
   category: 과일
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: mixed_nuts
   name: 견과류(혼합)
   aliases: [견과류, 혼합견과, 모듬견과]
   category: 견과·씨앗
   allergens: [{group: other_tree_nuts, certainty: possible}, {group: peanut, certainty: possible}, {group: pine_nut, certainty: possible}, {group: walnut, certainty: possible}]
-  note: "종류 불명 → 견과 그룹 모두 possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "종류 불명 → 견과 그룹 모두 possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: orange_juice
   name: 오렌지주스
   derived_from:
     - orange
   is_processed: true
   category: 과일
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: korean_melon
   name: 참외
   category: 과일
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: cashew
   name: 캐슈넛
   aliases: [캐슈너트]
   category: 견과·씨앗
   allergens: [{group: other_tree_nuts, certainty: definite}]
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: pumpkin_seed
   name: 호박씨
   category: 견과·씨앗
   confidence: low
-  note: "씨앗. 법정 대상 아님 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "씨앗. 법정 대상 아님 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: grape_juice
   name: 포도주스
   derived_from:
     - grape
   is_processed: true
   category: 과일
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: cherry
   name: 체리
   category: 과일
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: ginkgo
   name: 은행
   aliases: [은행알]
   category: 견과·씨앗
   allergens: [{group: other_tree_nuts, certainty: possible}]
   confidence: low
-  note: "견과 분류 여부 불명 → possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "견과 분류 여부 불명 → possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: omija
   name: 오미자
   category: 과일
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed

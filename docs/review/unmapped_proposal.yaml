@@ -994,7 +994,7 @@ entries:
 - {kind: B, decision: O, terms: [인삼, 수삼, 홍삼], new: {id: ginseng, name: 인삼, category: 채소, confidence: high}, note: 홍삼은 가공품이나 알레르기 차이 없음}
 - {kind: B, decision: O, terms: [생강청], new: {id: ginger_cheong, name: 생강청, category: 양념, is_processed: true, derived_from: [ginger], confidence: high}}
 - {kind: B, decision: O, terms: [무순, 무싹], new: {id: radish_sprouts, name: 무순, category: 채소, confidence: high}}
-- {kind: B, decision: O, terms: [식용 꽃, 식용꽃], new: {id: edible_flower, name: 식용 꽃, category: 채소, confidence: low}, note: 종류 불명. 장식용}
+- {kind: B, decision: X, terms: [식용 꽃, 식용꽃], new: {id: edible_flower, name: 식용 꽃, category: 채소, confidence: low}, note: "종류 불명. 장식용. um-2에서 추가했으나 ir-2(2026-10-17) 사람 재료 검수에서 X로 삭제(미매칭으로 되돌림)"}
 - {kind: B, decision: O, terms: [완두콩, 완두], new: {id: green_peas, name: 완두콩, category: 콩·두부, confidence: high}, note: 대두 아님}
 - {kind: B, decision: O, terms: [마, 산마, 참마, 장마], new: {id: yam, name: 마, category: 채소, confidence: high}}
 - {kind: B, decision: O, terms: [새싹채소, 새싹], new: {id: sprouts_mix, name: 새싹채소, category: 채소, allergens: [{group: buckwheat, certainty: possible}], confidence: low}, note: 혼합 새싹에 메밀싹이 들어가는 경우가 있어 메밀 possible}

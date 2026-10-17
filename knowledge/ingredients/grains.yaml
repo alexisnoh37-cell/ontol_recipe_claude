@@ -251,8 +251,8 @@
   is_processed: true
   category: 면·떡·빵
   confidence: low
-  note: "상표 제품을 하나로 묶음(제품마다 해물·닭·쇠고기·우유 등 다름). 기존 '라면'(ramen_noodles)은 알레르기 범위가 좁아 별칭으로 두지 않음. 제품별로 나누면 더 많은 레시피를 살릴 수 있으나 포장 표시 확인 필요(컵누들은 녹말면이라 밀 여부도 확인) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "상표 제품을 하나로 묶음(제품마다 해물·닭·쇠고기·우유 등 다름). 기존 '라면'(ramen_noodles)은 알레르기 범위가 좁아 별칭으로 두지 않음. 제품별로 나누면 더 많은 레시피를 살릴 수 있으나 포장 표시 확인 필요(컵누들은 녹말면이라 밀 여부도 확인) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: starch
   name: 전분
   aliases: [녹말가루, 녹말, 전분가루, 물전분, 물녹말]
@@ -261,8 +261,8 @@
   is_processed: true
   category: 곡류·가루
   confidence: low
-  note: "원료 불명(감자·옥수수·고구마·타피오카). 밀 전분 제품도 있으나 드묾 → 알레르기 없음으로 두되 검수 필요. 기존 potato_starch·corn_starch를 is_a starch로 둘지 함께 결정 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "원료 불명(감자·옥수수·고구마·타피오카). 밀 전분 제품도 있으나 드묾 → 알레르기 없음으로 두되 검수 필요. 기존 potato_starch·corn_starch를 is_a starch로 둘지 함께 결정 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: sujebi
   name: 수제비
   derived_from:
@@ -271,8 +271,8 @@
   is_processed: true
   category: 면·떡·빵
   confidence: low
-  note: "원문 '냉동 수제비' um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "원문 '냉동 수제비' um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: jjolmyeon_noodles
   name: 쫄면 사리
   aliases: [쫄면]
@@ -282,15 +282,15 @@
   is_processed: true
   category: 면·떡·빵
   confidence: low
-  note: "면만. 소스가 든 제품(진쫄면)은 시판 라면 제품으로 분류 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "면만. 소스가 든 제품(진쫄면)은 시판 라면 제품으로 분류 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: oats
   name: 귀리
   aliases: [귀리밥, 오트밀]
   category: 곡류·가루
   confidence: low
-  note: "밀 교차오염 제품 있음(법정 '밀' 아님) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "밀 교차오염 제품 있음(법정 '밀' 아님) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: rice_paper
   name: 라이스페이퍼
   derived_from:
@@ -298,8 +298,8 @@
   is_processed: true
   category: 면·떡·빵
   confidence: low
-  note: "타피오카 혼합 제품 있음(법정 대상 아님) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "타피오카 혼합 제품 있음(법정 대상 아님) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: misutgaru
   name: 미숫가루
   derived_from:
@@ -314,13 +314,13 @@
   is_processed: true
   category: 곡류·가루
   confidence: low
-  note: "곡물 혼합. 제품마다 콩·깨·밀 포함 여부 다름 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "곡물 혼합. 제품마다 콩·깨·밀 포함 여부 다름 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: nurungji
   name: 누룽지
   derived_from:
     - rice
   is_processed: true
   category: 곡류·가루
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
