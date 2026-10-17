@@ -1,0 +1,6073 @@
+{
+ "tag": "baseline/v1",
+ "commit": "4760c1b",
+ "recipes": 1522,
+ "recipes_by_origin": {
+  "draft 시드": 319,
+  "published": 50,
+  "식품안전나라": 1153
+ },
+ "top_n": 20,
+ "scenarios": [
+  {
+   "id": "korean_lover",
+   "title": "한식파 직장인",
+   "description": "한식을 좋아하고 매운 음식도 잘 먹는 중급자. 냉장고에 김치와 삼겹살이 있다.",
+   "pantry": [
+    "계란",
+    "대파",
+    "두부",
+    "배추김치",
+    "삼겹살",
+    "쌀",
+    "양파"
+   ],
+   "allergen_groups": [],
+   "recommendable": 881,
+   "recommendable_by_origin": {
+    "published": 20,
+    "draft 시드": 67,
+    "식품안전나라": 794
+   },
+   "excluded_by_reason": {
+    "equipment": 3
+   },
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "jeyuk_bokkeum",
+     "title": "제육볶음",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.915,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "양배추는 선택 재료라 빼고 조리할 수 있습니다",
+      "생강은 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "kimchi_jjigae",
+     "title": "돼지고기 김치찌개",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.915,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "daepaesamgyeob_daepamucim_q7u_vm",
+     "title": "대패삼겹 대파무침",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.915,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "kimchi_bokkeumbap",
+     "title": "김치볶음밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.9,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "김은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "dubu_jorim",
+     "title": "두부조림",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.9,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "samgyeobsal_gireume_gimci_lxlb2n",
+     "title": "삼겹살 기름에 김치",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.888,
+     "breakdown": {
+      "I": 0.875,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "eolkeun_gyeranjug_p4w0fy",
+     "title": "얼큰 계란죽",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.885,
+     "breakdown": {
+      "I": 0.9,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "dwaeji_ganjang_bulgogi",
+     "title": "돼지고기 간장불고기",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.87,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.7,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "dwaejigimcinabe_rxxq8t",
+     "title": "돼지김치나베",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.87,
+     "breakdown": {
+      "I": 0.818,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "gyeran_mari",
+     "title": "계란말이",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.865,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "obun_gimcijjim_pvrcuh",
+     "title": "5분 김치찜",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.865,
+     "breakdown": {
+      "I": 0.9,
+      "K": 1.0,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 12,
+     "recipe_id": "gyeranguk",
+     "title": "계란국",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.855,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "gyeranjjim",
+     "title": "계란찜",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.855,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "새우젓은 선택 재료라 빼고 조리할 수 있습니다",
+      "멸치육수는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "samgyeopsal_gui",
+     "title": "삼겹살 구이",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.855,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "상추는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "ganjanggyeranhurai_wivrrn",
+     "title": "간장계란후라이",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.848,
+     "breakdown": {
+      "I": 0.778,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "jeyugboggeum_ha6w7e",
+     "title": "제육볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.839,
+     "breakdown": {
+      "I": 0.714,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "doenjang_jjigae",
+     "title": "된장찌개",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.835,
+     "breakdown": {
+      "I": 0.833,
+      "K": 1.0,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "애호박은 선택 재료라 빼고 조리할 수 있습니다",
+      "감자는 선택 재료라 빼고 조리할 수 있습니다",
+      "청양고추는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 18,
+     "recipe_id": "usamgyeob_dubujorim_vaatqh",
+     "title": "우삼겹 두부조림",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.835,
+     "breakdown": {
+      "I": 0.7,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 19,
+     "recipe_id": "samgyeobsaltang_ogjl8w",
+     "title": "삼겹살탕",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.82,
+     "breakdown": {
+      "I": 0.833,
+      "K": 1.0,
+      "T": 0.7,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 20,
+     "recipe_id": "yeogdaegeub_kongnamuldeopbab_u8mw1h",
+     "title": "역대급 콩나물덮밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.816,
+     "breakdown": {
+      "I": 0.636,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "beginner",
+   "title": "요리 초보 자취생",
+   "description": "요리를 거의 해 본 적 없는 초급자. 간단하고 빠른 요리를 원한다.",
+   "pantry": [
+    "감자",
+    "계란",
+    "배추김치",
+    "쌀",
+    "양파",
+    "햄"
+   ],
+   "allergen_groups": [],
+   "recommendable": 49,
+   "recommendable_by_origin": {
+    "published": 16,
+    "draft 시드": 33
+   },
+   "excluded_by_reason": {
+    "equipment": 1,
+    "spicy_limit": 709
+   },
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "egg_fried_rice",
+     "title": "계란볶음밥",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.765,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "굴소스는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "gamja_bokkeum",
+     "title": "감자볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.765,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "ham_gamja_bokkeum",
+     "title": "햄 감자볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.765,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "gyeranjjim",
+     "title": "계란찜",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.765,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "새우젓은 선택 재료라 빼고 조리할 수 있습니다",
+      "멸치육수는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "kimchi_bokkeumbap",
+     "title": "김치볶음밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 0.75,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "김은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "gamja_jorim",
+     "title": "감자조림",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.74,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 0.75
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "희망 시간보다 오래 걸립니다(약 25분)"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "omurice",
+     "title": "오므라이스",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.647,
+     "breakdown": {
+      "I": 0.889,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 0.75
+     },
+     "missing": 1,
+     "notes": [
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "희망 시간보다 오래 걸립니다(약 25분)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "ganjanggyeranhurai_wivrrn",
+     "title": "간장계란후라이",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.728,
+     "breakdown": {
+      "I": 0.778,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "gyeran_mari",
+     "title": "계란말이",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.705,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "eolkeun_gyeranjug_p4w0fy",
+     "title": "얼큰 계란죽",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.705,
+     "breakdown": {
+      "I": 0.7,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "kimchijeon",
+     "title": "김치전",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.705,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": []
+    },
+    {
+     "rank": 12,
+     "recipe_id": "gimcimaligugsu_jh4i_q",
+     "title": "김치말이국수",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.682,
+     "breakdown": {
+      "I": 0.625,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "yangpagocujangajji_l6f4a2",
+     "title": "양파고추장아찌",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.675,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "gamjajeon",
+     "title": "감자전",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.655,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 0.5
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "감자전분은 선택 재료라 빼고 조리할 수 있습니다",
+      "풋고추는 선택 재료라 빼고 조리할 수 있습니다",
+      "희망 시간보다 오래 걸립니다(약 30분)"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "gyeranguk",
+     "title": "계란국",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.645,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "jeonseolyi_ddaengcogimbab_jqcreb",
+     "title": "전설의 땡초김밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.624,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "gyeranoibibimbab_mh4ukp",
+     "title": "계란오이비빔밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.624,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 18,
+     "recipe_id": "insaeng_gimci_5jsomc",
+     "title": "인생 김치",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.623,
+     "breakdown": {
+      "I": 0.625,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 19,
+     "recipe_id": "salmon_don",
+     "title": "연어덮밥",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.615,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "쪽파는 선택 재료라 빼고 조리할 수 있습니다",
+      "와사비는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 20,
+     "recipe_id": "tomato_egg_stirfry",
+     "title": "토마토 계란볶음",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.615,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "대파는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "multi_allergy",
+   "title": "알레르기 많은 아이 부모",
+   "description": "아이가 계란·우유·갑각류 알레르기가 있다. 고기와 채소는 넉넉하다.",
+   "pantry": [
+    "감자",
+    "당근",
+    "돼지고기",
+    "두부",
+    "불고기용 소고기",
+    "쌀",
+    "양파"
+   ],
+   "allergen_groups": [
+    "crustacean_bundle",
+    "egg",
+    "milk"
+   ],
+   "recommendable": 18,
+   "recommendable_by_origin": {
+    "published": 9,
+    "draft 시드": 9
+   },
+   "excluded_by_reason": {
+    "allergen": 434,
+    "equipment": 3,
+    "spicy_limit": 741,
+    "unmapped_ingredient": 534
+   },
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "gamjajeon",
+     "title": "감자전",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.825,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "감자전분은 선택 재료라 빼고 조리할 수 있습니다",
+      "풋고추는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "gamja_bokkeum",
+     "title": "감자볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.815,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "gamja_jorim",
+     "title": "감자조림",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.815,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "bulgogi",
+     "title": "소불고기",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.815,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "배는 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "jjajang_deopbap",
+     "title": "짜장덮밥",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.743,
+     "breakdown": {
+      "I": 0.727,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "애호박은 선택 재료라 빼고 조리할 수 있습니다",
+      "양배추는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "suyuk",
+     "title": "돼지고기 수육",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.739,
+     "breakdown": {
+      "I": 0.714,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "월계수잎은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "gyudon",
+     "title": "규동",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.733,
+     "breakdown": {
+      "I": 0.727,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "생강은 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "nikujaga",
+     "title": "니쿠자가(소고기 감자조림)",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.798,
+     "breakdown": {
+      "I": 0.909,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "salmon_don",
+     "title": "연어덮밥",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.665,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "쪽파는 선택 재료라 빼고 조리할 수 있습니다",
+      "와사비는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "yaki_udon",
+     "title": "야키우동",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.651,
+     "breakdown": {
+      "I": 0.455,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "가쓰오부시는 선택 재료라 빼고 조리할 수 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "doenjang_jjigae",
+     "title": "된장찌개",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.735,
+     "breakdown": {
+      "I": 0.833,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "애호박은 선택 재료라 빼고 조리할 수 있습니다",
+      "청양고추는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 12,
+     "recipe_id": "dwaeji_ganjang_bulgogi",
+     "title": "돼지고기 간장불고기",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.729,
+     "breakdown": {
+      "I": 0.714,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "sogogi_beoseot_bokkeum",
+     "title": "소고기 버섯볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.703,
+     "breakdown": {
+      "I": 0.625,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "gochu_japchae",
+     "title": "고추잡채",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.645,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "파프리카는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "teriyaki_chicken_don",
+     "title": "데리야키 치킨 덮밥",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.644,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "생강은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "jingjiang_rousi",
+     "title": "경장육슬",
+     "origin": "draft 시드",
+     "cuisine": "중식",
+     "score": 0.637,
+     "breakdown": {
+      "I": 0.375,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "오이는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "dubu_jorim",
+     "title": "두부조림",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.635,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": []
+    },
+    {
+     "rank": 18,
+     "recipe_id": "buchu_japchae",
+     "title": "부추잡채",
+     "origin": "draft 시드",
+     "cuisine": "중식",
+     "score": 0.615,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "low_spice",
+   "title": "매운 것 못 먹는 사람",
+   "description": "매운맛을 거의 못 먹는다(한도 1). 닭고기와 계란을 자주 산다.",
+   "pantry": [
+    "감자",
+    "계란",
+    "닭다리살",
+    "당근",
+    "두부",
+    "쌀",
+    "양파"
+   ],
+   "allergen_groups": [],
+   "recommendable": 43,
+   "recommendable_by_origin": {
+    "published": 14,
+    "draft 시드": 29
+   },
+   "excluded_by_reason": {
+    "equipment": 3,
+    "spicy_limit": 848
+   },
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "gyeran_mari",
+     "title": "계란말이",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.825,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "gamjajeon",
+     "title": "감자전",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.825,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "감자전분은 선택 재료라 빼고 조리할 수 있습니다",
+      "풋고추는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "egg_fried_rice",
+     "title": "계란볶음밥",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.815,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "굴소스는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "gamja_bokkeum",
+     "title": "감자볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.815,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "gamja_jorim",
+     "title": "감자조림",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.815,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "gyeranjjim",
+     "title": "계란찜",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.815,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "새우젓은 선택 재료라 빼고 조리할 수 있습니다",
+      "멸치육수는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "teriyaki_chicken_don",
+     "title": "데리야키 치킨 덮밥",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.772,
+     "breakdown": {
+      "I": 0.857,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "생강은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "chicken_steak",
+     "title": "치킨 스테이크",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 0.75,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "브로콜리는 선택 재료라 빼고 조리할 수 있습니다",
+      "레몬은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "dak_ganjang_jorim",
+     "title": "닭다리살 간장조림",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.815,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "생강은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "omurice",
+     "title": "오므라이스",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.792,
+     "breakdown": {
+      "I": 0.889,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "햄은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "oyakodon",
+     "title": "오야코동",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.761,
+     "breakdown": {
+      "I": 0.786,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "쪽파는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 12,
+     "recipe_id": "doenjang_jjigae",
+     "title": "된장찌개",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.735,
+     "breakdown": {
+      "I": 0.833,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "애호박은 선택 재료라 빼고 조리할 수 있습니다",
+      "청양고추는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "dak_chaeso_bokkeum",
+     "title": "닭고기 채소볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.729,
+     "breakdown": {
+      "I": 0.714,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "nikujaga",
+     "title": "니쿠자가(소고기 감자조림)",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.716,
+     "breakdown": {
+      "I": 0.636,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "ham_gamja_bokkeum",
+     "title": "햄 감자볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.703,
+     "breakdown": {
+      "I": 0.625,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "gyeranguk",
+     "title": "계란국",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.695,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "potato_soup",
+     "title": "감자 수프",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.682,
+     "breakdown": {
+      "I": 0.556,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "생크림은 선택 재료라 빼고 조리할 수 있습니다",
+      "파슬리는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 18,
+     "recipe_id": "jjimdak",
+     "title": "찜닭",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.678,
+     "breakdown": {
+      "I": 0.692,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 0.75
+     },
+     "missing": 2,
+     "notes": [
+      "홍고추는 선택 재료라 빼고 조리할 수 있습니다",
+      "희망 시간보다 오래 걸립니다(약 50분)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 19,
+     "recipe_id": "japanese_curry",
+     "title": "일본식 카레라이스",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.678,
+     "breakdown": {
+      "I": 0.643,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": []
+    },
+    {
+     "rank": 20,
+     "recipe_id": "yangnyeomgalbi_mas_dalggui_o9xd",
+     "title": "양념갈비 맛 닭구이",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.675,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "western_lover",
+   "title": "양식 좋아하는 사람",
+   "description": "파스타와 스테이크를 좋아하는 중급자. 오븐이 있다. 한식은 덜 좋아한다.",
+   "pantry": [
+    "베이컨",
+    "생크림",
+    "소고기 등심",
+    "양송이버섯",
+    "양파",
+    "토마토소스",
+    "파스타"
+   ],
+   "allergen_groups": [],
+   "recommendable": 621,
+   "recommendable_by_origin": {
+    "published": 5,
+    "draft 시드": 27,
+    "식품안전나라": 589
+   },
+   "excluded_by_reason": {},
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "cream_pasta",
+     "title": "베이컨 크림파스타",
+     "origin": "published",
+     "cuisine": "양식",
+     "score": 0.862,
+     "breakdown": {
+      "I": 0.889,
+      "K": 1.0,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "우유는 선택 재료라 빼고 조리할 수 있습니다",
+      "파마산치즈는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "tomato_pasta",
+     "title": "토마토 파스타",
+     "origin": "published",
+     "cuisine": "양식",
+     "score": 0.837,
+     "breakdown": {
+      "I": 0.889,
+      "K": 1.0,
+      "T": 0.7,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "바질은 선택 재료라 빼고 조리할 수 있습니다",
+      "파마산치즈는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "mushroom_risotto",
+     "title": "버섯 크림 리조또",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.785,
+     "breakdown": {
+      "I": 0.583,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "파마산치즈는 선택 재료라 빼고 조리할 수 있습니다",
+      "파슬리는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "ryusuyeongnimyi_weonpaentomatobeoteopaseuta_iiz3qv",
+     "title": "류수영님의 원팬토마토버터파스타",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.782,
+     "breakdown": {
+      "I": 0.625,
+      "K": 1.0,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "beef_steak",
+     "title": "소고기 스테이크",
+     "origin": "published",
+     "cuisine": "양식",
+     "score": 0.745,
+     "breakdown": {
+      "I": 0.5,
+      "K": 1.0,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "아스파라거스는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "aglio_olio",
+     "title": "알리오 올리오",
+     "origin": "published",
+     "cuisine": "양식",
+     "score": 0.78,
+     "breakdown": {
+      "I": 0.6,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "홍고추는 선택 재료라 빼고 조리할 수 있습니다",
+      "파슬리는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "keurimpaseuta_dh_l2n",
+     "title": "크림파스타",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.775,
+     "breakdown": {
+      "I": 0.7,
+      "K": 1.0,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "carbonara",
+     "title": "베이컨 까르보나라",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.774,
+     "breakdown": {
+      "I": 0.545,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "bolognese",
+     "title": "볼로네제 파스타",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.766,
+     "breakdown": {
+      "I": 0.571,
+      "K": 1.0,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "파마산치즈는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "jangjorim",
+     "title": "소고기 장조림",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.65,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.1,
+      "T": 0.7,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 0.5
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "메추리알은 선택 재료라 빼고 조리할 수 있습니다",
+      "풋고추는 선택 재료라 빼고 조리할 수 있습니다",
+      "희망 시간보다 오래 걸립니다(약 60분)"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "deulgireumnaengpaseuta_ukvrse",
+     "title": "들기름냉파스타",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.735,
+     "breakdown": {
+      "I": 0.5,
+      "K": 1.0,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 12,
+     "recipe_id": "tuumbapaseuta_d93cqw",
+     "title": "투움바파스타",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.712,
+     "breakdown": {
+      "I": 0.474,
+      "K": 1.0,
+      "T": 0.7,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 5,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "nuguna_mandeul_su_issneun_weonpaenkeurimpaseuta_pbgzbp",
+     "title": "누구나 만들 수 있는 원팬크림파스타",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.694,
+     "breakdown": {
+      "I": 0.529,
+      "K": 1.0,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "maeu_jungdogjeogin_paseuta_0hdvec",
+     "title": "매우 중독적인 파스타",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.685,
+     "breakdown": {
+      "I": 0.3,
+      "K": 1.0,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "weonpaen_jjajangmyeon_ycsyad",
+     "title": "원팬 짜장면",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.677,
+     "breakdown": {
+      "I": 0.357,
+      "K": 1.0,
+      "T": 0.7,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 5,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "weonpaenpaseuta_pxx1nd",
+     "title": "원팬파스타",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.675,
+     "breakdown": {
+      "I": 0.417,
+      "K": 1.0,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "dalggaseumsal_buldalgpaseuta_z52qn6",
+     "title": "닭가슴살 불닭파스타",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.672,
+     "breakdown": {
+      "I": 0.389,
+      "K": 1.0,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 5,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 18,
+     "recipe_id": "euro_jjolmyeon_pcwmvr",
+     "title": "으로 쫄면",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.655,
+     "breakdown": {
+      "I": 0.25,
+      "K": 1.0,
+      "T": 0.7,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "깻잎은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 19,
+     "recipe_id": "beikeonmaneul_weonpaenpaseuta_xahqx6",
+     "title": "베이컨마늘 원팬파스타",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.642,
+     "breakdown": {
+      "I": 0.357,
+      "K": 1.0,
+      "T": 0.4,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 20,
+     "recipe_id": "gguudeoghan_keurimpaseuta_lpo3ep",
+     "title": "꾸우덕한 크림파스타",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.636,
+     "breakdown": {
+      "I": 0.188,
+      "K": 1.0,
+      "T": 0.7,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 7,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "japanese_lover",
+   "title": "일식 좋아하는 사람",
+   "description": "덮밥과 우동을 좋아한다. 쯔유를 늘 갖고 있다.",
+   "pantry": [
+    "계란",
+    "닭다리살",
+    "쌀",
+    "양파",
+    "연어",
+    "우동면",
+    "쯔유"
+   ],
+   "allergen_groups": [],
+   "recommendable": 769,
+   "recommendable_by_origin": {
+    "published": 14,
+    "draft 시드": 58,
+    "식품안전나라": 697
+   },
+   "excluded_by_reason": {
+    "equipment": 2
+   },
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "kake_udon",
+     "title": "가케우동",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.915,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "어묵은 선택 재료라 빼고 조리할 수 있습니다",
+      "유부는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "salmon_don",
+     "title": "연어덮밥",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.9,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "쪽파는 선택 재료라 빼고 조리할 수 있습니다",
+      "와사비는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "salmon_shioyaki",
+     "title": "연어 소금구이",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.9,
+     "breakdown": {
+      "I": 1.0,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "무는 선택 재료라 빼고 조리할 수 있습니다",
+      "레몬은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "oyakodon",
+     "title": "오야코동",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.889,
+     "breakdown": {
+      "I": 0.929,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "쪽파는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "omurice",
+     "title": "오므라이스",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.877,
+     "breakdown": {
+      "I": 0.889,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "햄은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "dak_ganjang_jorim",
+     "title": "닭다리살 간장조림",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.8,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "생강은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "gyeran_mari",
+     "title": "계란말이",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.795,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "teriyaki_chicken_don",
+     "title": "데리야키 치킨 덮밥",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.857,
+     "breakdown": {
+      "I": 0.857,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "생강은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "chicken_steak",
+     "title": "치킨 스테이크",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.735,
+     "breakdown": {
+      "I": 0.75,
+      "K": 0.5,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "감자는 선택 재료라 빼고 조리할 수 있습니다",
+      "브로콜리는 선택 재료라 빼고 조리할 수 있습니다",
+      "레몬은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "gyudon",
+     "title": "규동",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.791,
+     "breakdown": {
+      "I": 0.636,
+      "K": 1.0,
+      "T": 0.9,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "생강은 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "egg_fried_rice",
+     "title": "계란볶음밥",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.785,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "굴소스는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 12,
+     "recipe_id": "gyeranjjim",
+     "title": "계란찜",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.785,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "새우젓은 선택 재료라 빼고 조리할 수 있습니다",
+      "멸치육수는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "yaki_udon",
+     "title": "야키우동",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.751,
+     "breakdown": {
+      "I": 0.455,
+      "K": 1.0,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "가쓰오부시는 선택 재료라 빼고 조리할 수 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "chicken_katsu",
+     "title": "치킨가스",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.745,
+     "breakdown": {
+      "I": 0.5,
+      "K": 1.0,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "양배추는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "dalggalbi_boggeumbab_q3fav6",
+     "title": "닭갈비 볶음밥",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.73,
+     "breakdown": {
+      "I": 0.583,
+      "K": 1.0,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 5,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "dak_chaeso_bokkeum",
+     "title": "닭고기 채소볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.699,
+     "breakdown": {
+      "I": 0.714,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "maeun_keurim_saeu_udong_2or5hr",
+     "title": "매운 크림 새우 우동",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.68,
+     "breakdown": {
+      "I": 0.417,
+      "K": 1.0,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 18,
+     "recipe_id": "gimciboggeumudong_gi3_tq",
+     "title": "김치볶음우동",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.68,
+     "breakdown": {
+      "I": 0.385,
+      "K": 1.0,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 6,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 19,
+     "recipe_id": "eolkeun_gyeranjug_p4w0fy",
+     "title": "얼큰 계란죽",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.665,
+     "breakdown": {
+      "I": 0.7,
+      "K": 0.5,
+      "T": 0.6,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 20,
+     "recipe_id": "gyeranguk",
+     "title": "계란국",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.665,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "few_ingredients",
+   "title": "냉장고가 빈 사람",
+   "description": "재료가 다섯 가지뿐이다. 있는 것으로 한 끼를 해결하고 싶다.",
+   "pantry": [
+    "감자",
+    "계란",
+    "대파",
+    "쌀",
+    "양파"
+   ],
+   "allergen_groups": [],
+   "recommendable": 805,
+   "recommendable_by_origin": {
+    "draft 시드": 32,
+    "published": 15,
+    "식품안전나라": 758
+   },
+   "excluded_by_reason": {
+    "equipment": 3
+   },
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "gyeranguk",
+     "title": "계란국",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "egg_fried_rice",
+     "title": "계란볶음밥",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "굴소스는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "gamja_bokkeum",
+     "title": "감자볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "gyeranjjim",
+     "title": "계란찜",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "새우젓은 선택 재료라 빼고 조리할 수 있습니다",
+      "멸치육수는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "gamja_jorim",
+     "title": "감자조림",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "gamjajeon",
+     "title": "감자전",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.69,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "감자전분은 선택 재료라 빼고 조리할 수 있습니다",
+      "풋고추는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "salmon_don",
+     "title": "연어덮밥",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.6,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "쪽파 대신 대파를 쓸 수 있습니다",
+      "와사비는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "japanese_curry",
+     "title": "일본식 카레라이스",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.6,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": []
+    },
+    {
+     "rank": 9,
+     "recipe_id": "gyeran_mari",
+     "title": "계란말이",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.69,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "ganjanggyeranhurai_wivrrn",
+     "title": "간장계란후라이",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.683,
+     "breakdown": {
+      "I": 0.778,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "gyeran_tang",
+     "title": "계란탕",
+     "origin": "draft 시드",
+     "cuisine": "중식",
+     "score": 0.664,
+     "breakdown": {
+      "I": 0.714,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 12,
+     "recipe_id": "gesalgyerandeopbab_8cltko",
+     "title": "게살계란덮밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.66,
+     "breakdown": {
+      "I": 0.7,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "eolkeun_gyeranjug_p4w0fy",
+     "title": "얼큰 계란죽",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.66,
+     "breakdown": {
+      "I": 0.7,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "omurice",
+     "title": "오므라이스",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.657,
+     "breakdown": {
+      "I": 0.889,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "햄은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "ham_gamja_bokkeum",
+     "title": "햄 감자볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.637,
+     "breakdown": {
+      "I": 0.625,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "kimchi_bokkeumbap",
+     "title": "김치볶음밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.637,
+     "breakdown": {
+      "I": 0.625,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "김은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "yangpagocujangajji_l6f4a2",
+     "title": "양파고추장아찌",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.63,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 18,
+     "recipe_id": "potato_soup",
+     "title": "감자 수프",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.617,
+     "breakdown": {
+      "I": 0.556,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "생크림은 선택 재료라 빼고 조리할 수 있습니다",
+      "파슬리는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 19,
+     "recipe_id": "tomato_egg_stirfry",
+     "title": "토마토 계란볶음",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.6,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": []
+    },
+    {
+     "rank": 20,
+     "recipe_id": "gyerandeopbab_i_fl6b",
+     "title": "계란덮밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.6,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "seafood_expert",
+   "title": "해산물 좋아하는 숙련자",
+   "description": "요리 실력이 좋고 해산물을 좋아하지만 돼지고기는 덜 좋아한다. 시간 여유가 있다.",
+   "pantry": [
+    "계란",
+    "고등어",
+    "무",
+    "부침가루",
+    "애호박",
+    "오징어",
+    "쪽파"
+   ],
+   "allergen_groups": [],
+   "recommendable": 33,
+   "recommendable_by_origin": {
+    "published": 11,
+    "draft 시드": 22
+   },
+   "excluded_by_reason": {
+    "equipment": 1,
+    "spicy_limit": 496
+   },
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "godeungeo_jorim",
+     "title": "고등어 무조림",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.786,
+     "breakdown": {
+      "I": 0.825,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.654,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "양파는 선택 재료라 빼고 조리할 수 있습니다",
+      "대파 대신 쪽파를 쓸 수 있습니다",
+      "청주는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "musaengchae",
+     "title": "무생채",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.775,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "대파 대신 쪽파를 쓸 수 있습니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "haemul_pajeon",
+     "title": "해물파전",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.741,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.4,
+      "P": 0.607,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "새우는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "gyeran_mari",
+     "title": "계란말이",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.725,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.4,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "대파 대신 쪽파를 쓸 수 있습니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "gyeranjjim",
+     "title": "계란찜",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.723,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.4,
+      "P": 0.55,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "새우젓은 선택 재료라 빼고 조리할 수 있습니다",
+      "대파 대신 쪽파를 쓸 수 있습니다",
+      "멸치육수는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "gyeran_tang",
+     "title": "계란탕",
+     "origin": "draft 시드",
+     "cuisine": "중식",
+     "score": 0.612,
+     "breakdown": {
+      "I": 0.657,
+      "K": 0.5,
+      "T": 0.4,
+      "P": 0.5,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "대파 대신 쪽파를 쓸 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "jjambbongbab_tndkcf",
+     "title": "짬뽕밥",
+     "origin": "draft 시드",
+     "cuisine": "중식",
+     "score": 0.61,
+     "breakdown": {
+      "I": 0.259,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.552,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 7,
+     "notes": [
+      "대파 대신 쪽파를 쓸 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "ojingeo_bokkeum",
+     "title": "오징어볶음",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.705,
+     "breakdown": {
+      "I": 0.657,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.654,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "대파 대신 쪽파를 쓸 수 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "양배추는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "ooojeosgal_boggeumbab_n_qjab",
+     "title": "OOO젓갈 볶음밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.695,
+     "breakdown": {
+      "I": 0.55,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.6,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "대파 대신 쪽파를 쓸 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "gyeranguk",
+     "title": "계란국",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.691,
+     "breakdown": {
+      "I": 0.92,
+      "K": 0.5,
+      "T": 0.4,
+      "P": 0.5,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "대파 대신 쪽파를 쓸 수 있습니다",
+      "양파는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "ojingeo_deumbbug_neoheun_kongnamulgugbab_qisgbn",
+     "title": "오징어 듬뿍 넣은 콩나물국밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.676,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.643,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 12,
+     "recipe_id": "cueogyi_ojingeogug_qhcyx",
+     "title": "추억의 오징어국",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.655,
+     "breakdown": {
+      "I": 0.55,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.6,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "대파 대신 쪽파를 쓸 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "gyeranoibibimbab_mh4ukp",
+     "title": "계란오이비빔밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.634,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "hobakjeon",
+     "title": "애호박전",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.629,
+     "breakdown": {
+      "I": 0.714,
+      "K": 0.5,
+      "T": 0.4,
+      "P": 0.5,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": []
+    },
+    {
+     "rank": 15,
+     "recipe_id": "aesuni_ojingeogug_b1h_t",
+     "title": "애순이 오징어국",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.626,
+     "breakdown": {
+      "I": 0.44,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.56,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "대파 대신 쪽파를 쓸 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "camciaehobagjjigae_7xtbrx",
+     "title": "참치애호박찌개",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.613,
+     "breakdown": {
+      "I": 0.46,
+      "K": 0.5,
+      "T": 0.8,
+      "P": 0.5,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "대파 대신 쪽파를 쓸 수 있습니다",
+      "확인되지 않은 재료가 있습니다: 분말가루 1개",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "ojingeosundubugug_seezgc",
+     "title": "오징어순두부국",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.612,
+     "breakdown": {
+      "I": 0.307,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.6,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": 6,
+     "notes": [
+      "대파 대신 쪽파를 쓸 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 18,
+     "recipe_id": "ganjanggyeranhurai_wivrrn",
+     "title": "간장계란후라이",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.605,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 19,
+     "recipe_id": "aehobak_bokkeum",
+     "title": "애호박볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.595,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.4,
+      "P": 0.5,
+      "D": 0.8,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 20,
+     "recipe_id": "ryusuyeongnim_deunggalbi_ohiyjy",
+     "title": "류수영님 등갈비",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.595,
+     "breakdown": {
+      "I": 0.267,
+      "K": 0.5,
+      "T": 1.0,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "대파 대신 쪽파를 쓸 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fs_friendly",
+   "title": "식품안전나라에 유리한 재료",
+   "description": "단호박·우유·꿀(식품안전나라 레시피가 많이 쓰는 재료)",
+   "pantry": [
+    "꿀",
+    "단호박",
+    "우유"
+   ],
+   "allergen_groups": [],
+   "recommendable": 245,
+   "recommendable_by_origin": {
+    "식품안전나라": 244,
+    "draft 시드": 1
+   },
+   "excluded_by_reason": {},
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "fs_712",
+     "title": "단호박푸딩",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.625,
+     "breakdown": {
+      "I": 0.75,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "fs_1128",
+     "title": "자두 라떼",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.6,
+     "breakdown": {
+      "I": 0.667,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "확인되지 않은 재료가 있습니다: 자두(200g)",
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "fs_40",
+     "title": "호박 고구마 스프",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.6,
+     "breakdown": {
+      "I": 0.667,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "fs_1138",
+     "title": "감자주스",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.55,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "fs_813",
+     "title": "단호박전",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.55,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "ryusuyeongnim_uyubeoteopaseuta_43ruep",
+     "title": "류수영님 우유버터파스타",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.54,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "fs_1111",
+     "title": "단호박두부팬케이크",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.52,
+     "breakdown": {
+      "I": 0.4,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "확인되지 않은 재료가 있습니다: 타가토스(10g)",
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "fs_353",
+     "title": "치즈리조또",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.52,
+     "breakdown": {
+      "I": 0.4,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "확인되지 않은 재료가 있습니다: 유기농 아기치즈 27g",
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "fs_1055",
+     "title": "우유 생강차",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.52,
+     "breakdown": {
+      "I": 0.4,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "fs_1135",
+     "title": "군고구마 라떼",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "확인되지 않은 재료가 있습니다: 고구마칩(5g)",
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "fs_1121",
+     "title": "자색고구마찹쌀푸딩",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 12,
+     "recipe_id": "fs_3183",
+     "title": "바나나미숫가루쉐이크",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "fs_940",
+     "title": "야채 과일 돌구이",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "fs_1134",
+     "title": "렌틸콩 두유",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "확인되지 않은 재료가 있습니다: 렌틸콩(레드, 70g)",
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "fs_948",
+     "title": "고구마 경단",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "확인되지 않은 재료가 있습니다: 카스텔라 20g",
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "fs_3095",
+     "title": "단호박떡볶이",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "fs_3244",
+     "title": "치즈 단호박",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "확인되지 않은 재료가 있습니다: 그라나파다노치즈(1Ts)",
+      "확인되지 않은 재료가 있습니다: 아몬드 플레이크(2Ts)",
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 18,
+     "recipe_id": "fs_683",
+     "title": "깻잎단호박튀김",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 19,
+     "recipe_id": "fs_350",
+     "title": "매생이찰범벅",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.486,
+     "breakdown": {
+      "I": 0.286,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "확인되지 않은 재료가 있습니다: 매생이 20g",
+      "확인되지 않은 재료가 있습니다: 녹차소금 1g",
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 20,
+     "recipe_id": "fs_2954",
+     "title": "단호박견과류샐러드",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.486,
+     "breakdown": {
+      "I": 0.286,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "확인되지 않은 재료가 있습니다: 건블루베리(5g)",
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "almost_empty",
+   "title": "냉장고 거의 빔",
+   "description": "계란·밥만",
+   "pantry": [
+    "계란",
+    "쌀"
+   ],
+   "allergen_groups": [],
+   "recommendable": 338,
+   "recommendable_by_origin": {
+    "published": 12,
+    "draft 시드": 17,
+    "식품안전나라": 309
+   },
+   "excluded_by_reason": {
+    "equipment": 2
+   },
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "egg_fried_rice",
+     "title": "계란볶음밥",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "굴소스는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "gyeranjjim",
+     "title": "계란찜",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "새우젓은 선택 재료라 빼고 조리할 수 있습니다",
+      "멸치육수는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "gyeran_mari",
+     "title": "계란말이",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.69,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "salmon_don",
+     "title": "연어덮밥",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.6,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "양파는 선택 재료라 빼고 조리할 수 있습니다",
+      "쪽파는 선택 재료라 빼고 조리할 수 있습니다",
+      "와사비는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "jeonseolyi_ddaengcogimbab_jqcreb",
+     "title": "전설의 땡초김밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.579,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "gyeranguk",
+     "title": "계란국",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.63,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "양파는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "ganjanggyeranhurai_wivrrn",
+     "title": "간장계란후라이",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.617,
+     "breakdown": {
+      "I": 0.556,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "fs_1106",
+     "title": "코마레티",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "확인되지 않은 재료가 있습니다: 코코넛슬라이스(50g)",
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "fs_344",
+     "title": "크렌베리귀리밥",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "확인되지 않은 재료가 있습니다: 크렌베리 15g",
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "fs_1073",
+     "title": "바나나를 감싼 일본식 달걀말이",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "tomato_egg_stirfry",
+     "title": "토마토 계란볶음",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.6,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "대파는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 12,
+     "recipe_id": "gesalgyerandeopbab_8cltko",
+     "title": "게살계란덮밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.6,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "eolkeun_gyeranjug_p4w0fy",
+     "title": "얼큰 계란죽",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.6,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 5,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "omurice",
+     "title": "오므라이스",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.59,
+     "breakdown": {
+      "I": 0.667,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "햄은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "gyeran_tang",
+     "title": "계란탕",
+     "origin": "draft 시드",
+     "cuisine": "중식",
+     "score": 0.579,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "teriyaki_chicken_don",
+     "title": "데리야키 치킨 덮밥",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.579,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "양파는 선택 재료라 빼고 조리할 수 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "생강은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "gyeranoibibimbab_mh4ukp",
+     "title": "계란오이비빔밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.579,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 18,
+     "recipe_id": "kimchi_bokkeumbap",
+     "title": "김치볶음밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.562,
+     "breakdown": {
+      "I": 0.375,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "양파는 선택 재료라 빼고 조리할 수 있습니다",
+      "김은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 19,
+     "recipe_id": "chamchi_mayo_deopbap",
+     "title": "참치마요 덮밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.562,
+     "breakdown": {
+      "I": 0.375,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "양파는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 20,
+     "recipe_id": "french_toast",
+     "title": "프렌치토스트",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.54,
+     "breakdown": {
+      "I": 0.3,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "꿀은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "common_veg",
+   "title": "흔한 채소와 계란",
+   "description": "양파·감자·당근·계란·대파",
+   "pantry": [
+    "감자",
+    "계란",
+    "당근",
+    "대파",
+    "양파"
+   ],
+   "allergen_groups": [],
+   "recommendable": 802,
+   "recommendable_by_origin": {
+    "published": 9,
+    "draft 시드": 25,
+    "식품안전나라": 768
+   },
+   "excluded_by_reason": {
+    "equipment": 2
+   },
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "gyeran_mari",
+     "title": "계란말이",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "gamjajeon",
+     "title": "감자전",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "감자전분은 선택 재료라 빼고 조리할 수 있습니다",
+      "풋고추는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "gyeranguk",
+     "title": "계란국",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.74,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "gamja_bokkeum",
+     "title": "감자볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.74,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "gyeranjjim",
+     "title": "계란찜",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.74,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "새우젓은 선택 재료라 빼고 조리할 수 있습니다",
+      "멸치육수는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "nikujaga",
+     "title": "니쿠자가(소고기 감자조림)",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.641,
+     "breakdown": {
+      "I": 0.636,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "gamja_jorim",
+     "title": "감자조림",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.74,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "fs_37",
+     "title": "된장국",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.58,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "fs_629",
+     "title": "새송이등갈비",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.58,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "gyeran_tang",
+     "title": "계란탕",
+     "origin": "draft 시드",
+     "cuisine": "중식",
+     "score": 0.654,
+     "breakdown": {
+      "I": 0.714,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "ooojeosgal_boggeumbab_n_qjab",
+     "title": "OOO젓갈 볶음밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.637,
+     "breakdown": {
+      "I": 0.625,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 12,
+     "recipe_id": "ham_gamja_bokkeum",
+     "title": "햄 감자볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.628,
+     "breakdown": {
+      "I": 0.625,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "yangpagocujangajji_l6f4a2",
+     "title": "양파고추장아찌",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.62,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "omurice",
+     "title": "오므라이스",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.617,
+     "breakdown": {
+      "I": 0.556,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "햄은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "ryusuyeongnim_deunggalbi_ohiyjy",
+     "title": "류수영님 등갈비",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.617,
+     "breakdown": {
+      "I": 0.556,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "bab_3gonggi_ddugddag_halsu_issneun_gamjacamcijjageuli_0_72mg",
+     "title": "밥 3공기 뚝딱 할수 있는 감자참치짜글이",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.612,
+     "breakdown": {
+      "I": 0.538,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "ganjanggyeranhurai_wivrrn",
+     "title": "간장계란후라이",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.607,
+     "breakdown": {
+      "I": 0.556,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 18,
+     "recipe_id": "potato_soup",
+     "title": "감자 수프",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.607,
+     "breakdown": {
+      "I": 0.556,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "생크림은 선택 재료라 빼고 조리할 수 있습니다",
+      "파슬리는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 19,
+     "recipe_id": "haemul_pajeon",
+     "title": "해물파전",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.597,
+     "breakdown": {
+      "I": 0.489,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "쪽파 대신 대파를 쓸 수 있습니다",
+      "새우는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 20,
+     "recipe_id": "egg_fried_rice",
+     "title": "계란볶음밥",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.59,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "굴소스는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shrimp_allergy",
+   "title": "새우 알레르기",
+   "description": "김치·돼지고기·두부, 새우 알레르기",
+   "pantry": [
+    "돼지고기",
+    "두부",
+    "배추김치"
+   ],
+   "allergen_groups": [
+    "shrimp"
+   ],
+   "recommendable": 51,
+   "recommendable_by_origin": {
+    "published": 7,
+    "draft 시드": 8,
+    "식품안전나라": 36
+   },
+   "excluded_by_reason": {
+    "allergen": 51,
+    "equipment": 1,
+    "unmapped_ingredient": 134
+   },
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "dubu_jorim",
+     "title": "두부조림",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.62,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": []
+    },
+    {
+     "rank": 2,
+     "recipe_id": "doenjang_jjigae",
+     "title": "된장찌개",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.59,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "애호박은 선택 재료라 빼고 조리할 수 있습니다",
+      "감자는 선택 재료라 빼고 조리할 수 있습니다",
+      "청양고추는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "suyuk",
+     "title": "돼지고기 수육",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.579,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "월계수잎은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "dwaeji_ganjang_bulgogi",
+     "title": "돼지고기 간장불고기",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.569,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "jeyuk_bokkeum",
+     "title": "제육볶음",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.569,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "양배추는 선택 재료라 빼고 조리할 수 있습니다",
+      "생강은 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "mapo_tofu",
+     "title": "마파두부",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.532,
+     "breakdown": {
+      "I": 0.273,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 5,
+     "notes": [
+      "고추기름은 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "fs_632",
+     "title": "양배추 고기말이",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.52,
+     "breakdown": {
+      "I": 0.4,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "fs_772",
+     "title": "딸기연두부쉐이크",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "fs_932",
+     "title": "흑임자 두부국",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.5,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "fs_3238",
+     "title": "연두부 카프레제",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.486,
+     "breakdown": {
+      "I": 0.286,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 5,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "jingjiang_rousi",
+     "title": "경장육슬",
+     "origin": "draft 시드",
+     "cuisine": "중식",
+     "score": 0.562,
+     "breakdown": {
+      "I": 0.375,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "오이는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 12,
+     "recipe_id": "buchu_japchae",
+     "title": "부추잡채",
+     "origin": "draft 시드",
+     "cuisine": "중식",
+     "score": 0.54,
+     "breakdown": {
+      "I": 0.333,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "양파는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "gochu_japchae",
+     "title": "고추잡채",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.54,
+     "breakdown": {
+      "I": 0.3,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "파프리카는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "usamgyeob_dubujorim_vaatqh",
+     "title": "우삼겹 두부조림",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.54,
+     "breakdown": {
+      "I": 0.3,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "jjajang_deopbap",
+     "title": "짜장덮밥",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.532,
+     "breakdown": {
+      "I": 0.273,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "애호박은 선택 재료라 빼고 조리할 수 있습니다",
+      "감자는 선택 재료라 빼고 조리할 수 있습니다",
+      "양배추는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "buldalggyerandubutang_tzkjhp",
+     "title": "불닭계란두부탕",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.53,
+     "breakdown": {
+      "I": 0.3,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "yaki_udon",
+     "title": "야키우동",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.522,
+     "breakdown": {
+      "I": 0.273,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "가쓰오부시는 선택 재료라 빼고 조리할 수 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 18,
+     "recipe_id": "japanese_curry",
+     "title": "일본식 카레라이스",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.504,
+     "breakdown": {
+      "I": 0.214,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 5,
+     "notes": []
+    },
+    {
+     "rank": 19,
+     "recipe_id": "dububibimbab_qanlhk",
+     "title": "두부비빔밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.504,
+     "breakdown": {
+      "I": 0.214,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 6,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 20,
+     "recipe_id": "fs_37",
+     "title": "된장국",
+     "origin": "식품안전나라",
+     "cuisine": "미분류",
+     "score": 0.46,
+     "breakdown": {
+      "I": 0.2,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.5,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "조리시간, 난이도, 맛 정보가 없는 레시피입니다(점수는 중간값으로 계산)",
+      "검수 전 레시피입니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "no_spicy",
+   "title": "매운 것 못 먹음(한도 1)",
+   "description": "닭고기·감자·양파, 매운맛 한도 1",
+   "pantry": [
+    "감자",
+    "닭고기",
+    "양파"
+   ],
+   "allergen_groups": [],
+   "recommendable": 15,
+   "recommendable_by_origin": {
+    "published": 2,
+    "draft 시드": 13
+   },
+   "excluded_by_reason": {
+    "equipment": 1,
+    "spicy_limit": 568
+   },
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "gamjajeon",
+     "title": "감자전",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "감자전분은 선택 재료라 빼고 조리할 수 있습니다",
+      "풋고추는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "gamja_bokkeum",
+     "title": "감자볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.74,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "gamja_jorim",
+     "title": "감자조림",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.74,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "dak_ganjang_jorim",
+     "title": "닭다리살 간장조림",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.74,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "생강은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "chicken_steak",
+     "title": "치킨 스테이크",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.675,
+     "breakdown": {
+      "I": 0.75,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "브로콜리는 선택 재료라 빼고 조리할 수 있습니다",
+      "레몬은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "dak_chaeso_bokkeum",
+     "title": "닭고기 채소볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.654,
+     "breakdown": {
+      "I": 0.714,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "ham_gamja_bokkeum",
+     "title": "햄 감자볶음",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.628,
+     "breakdown": {
+      "I": 0.625,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "baeksuk",
+     "title": "닭백숙",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.62,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "쌀은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "mecurial_yangpa_kare_osfrbb",
+     "title": "메추리알 양파 카레",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.519,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "jjimdak",
+     "title": "찜닭",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.612,
+     "breakdown": {
+      "I": 0.538,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "홍고추는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "potato_soup",
+     "title": "감자 수프",
+     "origin": "draft 시드",
+     "cuisine": "양식",
+     "score": 0.607,
+     "breakdown": {
+      "I": 0.556,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "생크림은 선택 재료라 빼고 조리할 수 있습니다",
+      "파슬리는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 12,
+     "recipe_id": "nikujaga",
+     "title": "니쿠자가(소고기 감자조림)",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.586,
+     "breakdown": {
+      "I": 0.455,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "teriyaki_chicken_don",
+     "title": "데리야키 치킨 덮밥",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.569,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "참깨는 선택 재료라 빼고 조리할 수 있습니다",
+      "생강은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "chicken_katsu",
+     "title": "치킨가스",
+     "origin": "draft 시드",
+     "cuisine": "일식",
+     "score": 0.54,
+     "breakdown": {
+      "I": 0.3,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "양배추는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "yuringi",
+     "title": "유린기",
+     "origin": "draft 시드",
+     "cuisine": "중식",
+     "score": 0.472,
+     "breakdown": {
+      "I": 0.273,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.4,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "청양고추는 선택 재료라 빼고 조리할 수 있습니다",
+      "홍고추는 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "quick_meal",
+   "title": "빨리 먹고 싶음(20분 엄수)",
+   "description": "계란·양파·밥·김치, 희망 20분(절대 조건)",
+   "pantry": [
+    "계란",
+    "배추김치",
+    "쌀",
+    "양파"
+   ],
+   "allergen_groups": [],
+   "recommendable": 712,
+   "recommendable_by_origin": {
+    "published": 8,
+    "draft 시드": 21,
+    "식품안전나라": 683
+   },
+   "excluded_by_reason": {
+    "equipment": 2,
+    "time": 11
+   },
+   "top": [
+    {
+     "rank": 1,
+     "recipe_id": "gyeran_mari",
+     "title": "계란말이",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.75,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "당근은 선택 재료라 빼고 조리할 수 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 2,
+     "recipe_id": "egg_fried_rice",
+     "title": "계란볶음밥",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.74,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 0,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "대파는 선택 재료라 빼고 조리할 수 있습니다",
+      "굴소스는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 3,
+     "recipe_id": "gyeranjjim",
+     "title": "계란찜",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.74,
+     "breakdown": {
+      "I": 1.0,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "필요한 주재료와 부재료를 모두 갖고 있습니다",
+      "새우젓은 선택 재료라 빼고 조리할 수 있습니다",
+      "멸치육수는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 4,
+     "recipe_id": "kimchi_bokkeumbap",
+     "title": "김치볶음밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.665,
+     "breakdown": {
+      "I": 0.75,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "김은 선택 재료라 빼고 조리할 수 있습니다",
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 5,
+     "recipe_id": "gimcimaligugsu_jh4i_q",
+     "title": "김치말이국수",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.628,
+     "breakdown": {
+      "I": 0.625,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 6,
+     "recipe_id": "yangpagocujangajji_l6f4a2",
+     "title": "양파고추장아찌",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.62,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 7,
+     "recipe_id": "salmon_don",
+     "title": "연어덮밥",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.59,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "쪽파는 선택 재료라 빼고 조리할 수 있습니다",
+      "와사비는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 8,
+     "recipe_id": "ganjanggyeranhurai_wivrrn",
+     "title": "간장계란후라이",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.673,
+     "breakdown": {
+      "I": 0.778,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 9,
+     "recipe_id": "eolkeun_gyeranjug_p4w0fy",
+     "title": "얼큰 계란죽",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.65,
+     "breakdown": {
+      "I": 0.7,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 4,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 10,
+     "recipe_id": "gyeranguk",
+     "title": "계란국",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.62,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 11,
+     "recipe_id": "kimchijeon",
+     "title": "김치전",
+     "origin": "published",
+     "cuisine": "한식",
+     "score": 0.62,
+     "breakdown": {
+      "I": 0.6,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": []
+    },
+    {
+     "rank": 12,
+     "recipe_id": "tomato_egg_stirfry",
+     "title": "토마토 계란볶음",
+     "origin": "published",
+     "cuisine": "중식",
+     "score": 0.59,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 1,
+     "notes": [
+      "대파는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 13,
+     "recipe_id": "gesalgyerandeopbab_8cltko",
+     "title": "게살계란덮밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.59,
+     "breakdown": {
+      "I": 0.5,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 14,
+     "recipe_id": "gandanhage_deopbab_utvar",
+     "title": "간단하게 덮밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.586,
+     "breakdown": {
+      "I": 0.455,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 5,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 15,
+     "recipe_id": "cheese_omelet",
+     "title": "치즈 오믈렛",
+     "origin": "published",
+     "cuisine": "양식",
+     "score": 0.579,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 1.0,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "우유는 선택 재료라 빼고 조리할 수 있습니다",
+      "파프리카는 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 16,
+     "recipe_id": "gyudon",
+     "title": "규동",
+     "origin": "published",
+     "cuisine": "일식",
+     "score": 0.576,
+     "breakdown": {
+      "I": 0.455,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "생강은 선택 재료라 빼고 조리할 수 있습니다"
+     ]
+    },
+    {
+     "rank": 17,
+     "recipe_id": "gyeran_tang",
+     "title": "계란탕",
+     "origin": "draft 시드",
+     "cuisine": "중식",
+     "score": 0.569,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 18,
+     "recipe_id": "gimcijeon_qnnx06",
+     "title": "김치전",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.569,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 19,
+     "recipe_id": "jeonseolyi_ddaengcogimbab_jqcreb",
+     "title": "전설의 땡초김밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.569,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 2,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    },
+    {
+     "rank": 20,
+     "recipe_id": "gyeranoibibimbab_mh4ukp",
+     "title": "계란오이비빔밥",
+     "origin": "draft 시드",
+     "cuisine": "한식",
+     "score": 0.569,
+     "breakdown": {
+      "I": 0.429,
+      "K": 0.5,
+      "T": 0.5,
+      "P": 0.5,
+      "D": 0.9,
+      "M": 1.0
+     },
+     "missing": 3,
+     "notes": [
+      "검수 전 레시피입니다"
+     ]
+    }
+   ]
+  }
+ ]
+}
