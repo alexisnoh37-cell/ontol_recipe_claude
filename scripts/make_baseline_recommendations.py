@@ -122,7 +122,7 @@ def main() -> int:
     eng = data_src.recommender()
     specs = {s.id: s for s in data_src.recipes}
     names = {i.id: i.name for i in data_src.knowledge.ingredients}
-    commit = subprocess.run(["git", "rev-parse", "--short", TAG], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+    commit = subprocess.run(["git", "rev-parse", "--short", f"{TAG}^{{commit}}"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     scenarios = [run_scenario(eng, specs, names, p.id, p.name, p.description, p.user, p.request) for p in load_personas()]
     scenarios += [run_scenario(eng, specs, names, *x) for x in EXTRA]
     data = {
