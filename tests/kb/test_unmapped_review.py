@@ -101,7 +101,9 @@ def test_simulate_counts_recipes_without_unmapped():
 
 def test_review_is_up_to_date_and_keeps_approvals():
     # 검수표는 생성기 결과와 같아야 한다(승인 열은 기존 파일에서 가져와 유지).
-    assert (ROOT / OUT).read_text(encoding="utf-8") == make(ROOT)
+    assert (ROOT / OUT).read_text(encoding="utf-8").replace("
+", "
+") == make(ROOT)
     assert isinstance(read_approvals(ROOT / OUT), dict)
 
 
@@ -110,3 +112,26 @@ def test_foodsafety_counts_match_conversion_report():
     assert fs.recipe_count == 1153
     report = (ROOT / "docs" / "review" / "foodsafety_unmatched.md").read_text(encoding="utf-8")
     assert f"미매칭: {sum(u.lines for u in fs.terms.values())}개" in report
+
+
+def _html_script():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("make_unmapped_review_html", ROOT / "scripts" / "make_unmapped_review_html.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def test_review_html_is_up_to_date_and_prefill_covers_disagreements():
+    # 두 검토가 갈린 줄은 모두 미리 채울 판단(unmapped_prefill.yaml)이 있어야 생성된다. 화면 파일은 생성 결과와 같아야 한다.
+    mod = _html_script()
+    html, data = mod.build()
+    assert (ROOT / "docs" / "review" / "unmapped_review.html").read_text(encoding="utf-8").replace("
+", "
+") == html.replace("
+", "
+")
+    assert len(data) == len(load_proposal(ROOT / PROPOSAL))
+    assert {d["prefill"]["decision"] for d in data} <= {"O", "X", "보류"}
+    # 시판 제품(E)은 포장 확인 전 승인으로 미리 채우지 않는다.
+    assert all(d["prefill"]["decision"] != "O" for d in data if d["kind"] == "E")

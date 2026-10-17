@@ -70,6 +70,7 @@ uv run python scripts/load_recipes.py                # 검증 후 DB 반영 (지
 uv run python scripts/load_recipes.py --prune        # 시드에 없는 DB 레시피도 삭제
 uv run python scripts/make_recipe_review.py          # docs/review/recipes_review.md 다시 만들기
 uv run python scripts/make_unmapped_review.py        # docs/review/unmapped_review.md(세 출처 미매칭 보강 검수표) 다시 만들기
+uv run python scripts/make_unmapped_review_html.py   # docs/review/unmapped_review.html(검수 화면: O·X·보류 선택, 결과 내보내기) 다시 만들기
 uv run python scripts/make_review.py                 # docs/review/ingredients_review.md 다시 만들기
 ```
 
