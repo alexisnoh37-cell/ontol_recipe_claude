@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_327
+title: 삼색소면
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 327. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 3가지색 소면(분홍, 초록, 흰색) 각 25g씩
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파 20g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 20g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 10g
+  role: sub
+- ingredient: null
+  raw_text: 국물
+  role: sub
+- ingredient: null
+  raw_text: 다시마물 400g
+  role: sub
+- ingredient: hard_clam
+  raw_text: 모시조개 200g
+  role: sub
+- ingredient: null
+  raw_text: 볶은소금 1g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 15g
+  role: sub
+steps:
+- text: 모시조개는 볶은소금을 넣어서 해감시킨다.
+- text: 준비된 다시마물에 준비된 채소의 국물재료를 넣고 국물을 만들어준다.
+- text: 만들어진 국물에 모시조개를 넣고 청주를 부어서 국물을 만들어준다.
+- text: 쪽파는 송송 다지고 마늘은 곱게 다져주고 청홍고추는 가늘게 채 썰어준다.
+- text: 면을 각각 삶아준다.
+- text: 삼색 면을 그릇에 담고 만들어진 국물을 부워서 완성한다.

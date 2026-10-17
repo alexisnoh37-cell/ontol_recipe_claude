@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3066
+title: 새뱅이찌개
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3066. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: kelp
+  raw_text: 다시마 2g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 15g
+  role: sub
+- ingredient: null
+  raw_text: 새뱅이 30g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 20g
+  role: sub
+- ingredient: null
+  raw_text: 호박 10g
+  role: sub
+- ingredient: radish
+  raw_text: 무 10g
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 5g
+  role: sub
+- ingredient: null
+  raw_text: 파10g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 5g
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓 5g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 3g
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 3g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 2g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+steps:
+- text: 다시마, 양파와 물을 넣고 육수를 만든다.
+- text: 새뱅이는 불순문을 제거하여 세척하고, 밀가루에 물을 넣어 손수제비 반죽을 한다.
+- text: 무와 호박은 나박썰기, 고추와 파는 어슷썰기, 마늘은 다진다.
+- text: 들기름 두른 냄비에 무, 고추장, 고춧가루를 볶다가 육수를 부워 끓인다.
+- text: 새뱅이와 호박, 고추 마늘을 넣어 끓인다.
+- text: 손수제비와 파를 넣고 간을 맞추고 마지막에 쑥갓을 올린다.

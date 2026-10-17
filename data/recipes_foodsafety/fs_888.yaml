@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_888
+title: 연어냉채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 888. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 훈재연어 40g
+  role: sub
+- ingredient: null
+  raw_text: 흰후춧가루 0.01g
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루 2.4g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 3.8g
+  role: sub
+- ingredient: null
+  raw_text: 래디쉬 15g
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리 7.5g
+  role: sub
+- ingredient: pear
+  raw_text: 배 7.5g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨파인애플소스
+  role: sub
+- ingredient: null
+  raw_text: 파인애플 3g
+  role: sub
+- ingredient: null
+  raw_text: 파인애플 통조림 국물 4.5g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 3.6g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 1.5g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 4.5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1.5g
+  role: sub
+steps:
+- text: 연어는 주사위모양으로 썬다.
+- text: 흰후춧가루를 살짝 뿌린 후 녹말가루를 묻힌다.
+- text: 녹말을 묻힌 연어는 김 오른 찜통에 찌고 식혀둔다.
+- text: 오이, 래디쉬, 셀러리, 배는 곱게 채썰어 냉수에 담갔다가 건진다.
+- text: 캔 파인애플을 잘게 썰어 분량의 재료들과 함께 믹서기에 곱게 간다.
+- text: 접시에 준비된 채소와 찐 연어를 담고 소스를 곁들인다.

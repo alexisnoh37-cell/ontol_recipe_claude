@@ -1,0 +1,38 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_85
+title: 케일 오미자 샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 85. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 케일 샐러드
+  role: sub
+- ingredient: null
+  raw_text: 보라로즈케일 15g(3장)
+  role: sub
+- ingredient: null
+  raw_text: 흰로즈케일 15g(3장)
+  role: sub
+- ingredient: null
+  raw_text: 케일 15g(3장)
+  role: sub
+- ingredient: null
+  raw_text: 오미자 드레싱
+  role: sub
+- ingredient: null
+  raw_text: 오미자물 100g(1/2컵)
+  role: sub
+- ingredient: null
+  raw_text: 요리당 15g(1큰술)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 2g(1/2작은술)
+  role: sub
+steps:
+- text: 케일은 깨끗이 씻어 잎은한입 크기로 자르고 줄기는 잘게 다진다.
+- text: 오미자물, 요리당, 식초를 섞는다.
+- text: (1)의 케일의 다진 줄기를 넣어 드레싱을 만든다.
+- text: 그릇에 케일을 담고 오미자 드레싱을 끼얹는다.

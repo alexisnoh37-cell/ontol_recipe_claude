@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_732
+title: 오징어채소말이와 치킨양념소스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 732. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 오징어채소말이
+  role: sub
+- ingredient: null
+  raw_text: 오징어 몸통 80g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 20g
+  role: sub
+- ingredient: null
+  raw_text: 빨강파프리카 20g
+  role: sub
+- ingredient: null
+  raw_text: 노랑파프리카 20g
+  role: sub
+- ingredient: null
+  raw_text: 치킨양념소스
+  role: sub
+- ingredient: ketchup
+  raw_text: 토마토케첩 8g
+  role: sub
+- ingredient: null
+  raw_text: 다진 양파 8g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 2g
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 2g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2.5g
+  role: sub
+steps:
+- text: 오징어 몸통을 가르고 껍질을 벗긴 후 씻어서 물기를 제거 한다.
+- text: 오징어 안쪽에 대각선으로 0.3cm 간격의 칼집을 넣고 반대방향으로도 칼집을 넣는다.
+- text: 오이와 파프리카는 0.4cm 폭으로 길게 썬다.
+- text: 오징어의 칼집을 넣지 않은 부분에 오이와 파프리카를 얹고 김밥처럼 말아 실로 엮은 후 찜통에 넣고 찐다.
+- text: 치킨양념소스는 다진 마늘과 다진 양파를 팬에 기름을 두르지 않고 살짝 구워 향을 낸 후 고추장, 토마토케첩, 물엿을 넣고 소스를 만든다.
+- text: 익은 오징어 말이는 2~3cm 길이로 썰고 5의 소스를 곁들인다.

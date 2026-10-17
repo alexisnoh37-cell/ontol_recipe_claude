@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_545
+title: 전복죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 545. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: rice
+  raw_text: 쌀(50g)
+  role: sub
+- ingredient: abalone
+  raw_text: 전복(50g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우살(20g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(10g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(10g)
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(5g)
+  role: sub
+steps:
+- text: 깨끗이 씻은 쌀에 물을 2배 정도 넣고 약 30분 정도 충분히 불려 준비한다.
+- text: 전복은 수저를 이용하여 껍질에서 떼어내어 내장을 분리해 놓는다.
+- text: 내장을 제거한 전복은 깨끗이 씻어, 썰어 놓는다.
+- text: 새우살은 꼬리를 제거하고 입자있게 썰어 놓는다.
+- text: 양송이는 껍질을 벗겨 입자있게 썰고, 당근도 양송이 크기에 맞게 썰어 놓는다.
+- text: 냄비에 참기름을 두르고, 전복을 은근히 볶다가, 다시 불린 쌀을 넣고 볶은 뒤 물을 넣고 약 20분 정도 끓인다. 죽이 끓으면 새우와 양송이, 당근을 넣고 은근히 저어가면서 다시 20분 정도 더 끓여, 죽이 어우러지면 잣을 올리고 저염간장을 함께 제공한다.

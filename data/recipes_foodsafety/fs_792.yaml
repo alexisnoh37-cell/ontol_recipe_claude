@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_792
+title: 영양밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 792. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: rice
+  raw_text: 쌀 30g
+  role: sub
+- ingredient: null
+  raw_text: 현미찹쌀 30g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 30g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 30g
+  role: sub
+- ingredient: jujube
+  raw_text: 대추 7.5g
+  role: sub
+- ingredient: null
+  raw_text: 은행 3g
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤 12g
+  role: sub
+- ingredient: null
+  raw_text: 다시마 육수 20g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨 간장양념장
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+- ingredient: null
+  raw_text: 사과쥬스 4g
+  role: sub
+- ingredient: mustard_powder
+  raw_text: 겨자 0.5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 3g
+  role: sub
+- ingredient: sesame
+  raw_text: 깨소금 1g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 1g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 1g
+  role: sub
+steps:
+- text: 쌀과 현미찹쌀을 씻어 불린다.
+- text: 표고버섯, 당근은 은행크기로 썬다
+- text: 대추도 돌려깍아 은행크기로 썬다.
+- text: 1에 표고버섯, 당근, 대추와 은행, 밤을 고루 섞어 솥에 담는다.
+- text: 다시마 육수를 평상시 밥물보다 적게 넣고 밥을 짓는다.
+- text: 밥이 뜸이 들면 간장양념과 함께 제공한다.

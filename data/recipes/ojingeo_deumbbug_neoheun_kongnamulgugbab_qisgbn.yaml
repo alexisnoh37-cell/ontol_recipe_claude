@@ -1,0 +1,72 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: ojingeo_deumbbug_neoheun_kongnamulgugbab_qisgbn
+title: 오징어 듬뿍 넣은 콩나물국밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=QIsgBNTwRRg
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: squid
+  raw_text: 오징어 한마리 / 오징어
+  role: main
+  optional: false
+  amount: 1
+  unit: 마리
+- ingredient: null
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- ingredient: soy_sauce
+  raw_text: 국간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진 마늘 2스푼 / 다진마늘 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: egg
+  raw_text: 달걀 1알 / 달걀
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+- ingredient: null
+  raw_text: 이 육수에 콩나물 300g / 콩나물 300g
+  role: sub
+  optional: false
+  amount: 300
+  unit: g
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 물이 끓으면 코스트코에서 사온 냉동오징어 해동해서 2분간 뒤집어가며 잘 데쳐주세요.
+  technique: 끓이기
+- text: 이 육수에 콩나물 300g 넣어서 3분간 삶아주고 청양고추 올리고 육수 네 국자 부은 후 끓인다.
+  technique: 끓이기
+- text: 끓고나면 달걀 한알 풀어주고 새우젓 조금, 김가루로 간해서 잘 섞어 먹어보면….
+  technique: 끓이기

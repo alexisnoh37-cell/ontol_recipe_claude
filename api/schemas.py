@@ -96,3 +96,31 @@ class RecommendIn(Strict):
         if (self.profile_id is None) == (self.persona_id is None):
             raise ValueError("profile_id와 persona_id 중 정확히 하나를 주세요")
         return self
+
+
+IngredientText = Annotated[str, Field(max_length=300)]
+
+
+class AnalyzeRecipeIn(Strict):
+    """외부 레시피 일회성 분석(docs/plan.md 부록 E). 재료는 text 또는 ingredients 중 정확히 하나, 사용자는 최대 하나."""
+
+    title: Annotated[str, Field(min_length=1, max_length=100)]
+    text: Annotated[str, Field(max_length=5000)] | None = None  # 재료 원문(줄·쉼표 구분)
+    ingredients: Annotated[list[IngredientText], Field(max_length=100)] | None = None  # 재료 한 줄씩
+    profile_id: int | None = None
+    persona_id: str | None = None
+    allergen_groups: Annotated[list[str], Field(max_length=50)] | None = None  # 저장 없이 알레르기만 줄 때
+
+    @model_validator(mode="after")
+    def _shape(self) -> AnalyzeRecipeIn:
+        if not self.title.strip():
+            raise ValueError("title이 비어 있습니다")
+        if (self.text is None) == (self.ingredients is None):
+            raise ValueError("text와 ingredients 중 정확히 하나를 주세요")
+        subjects = [x for x in (self.profile_id, self.persona_id, self.allergen_groups) if x is not None]
+        if len(subjects) > 1:
+            raise ValueError("profile_id, persona_id, allergen_groups 중 최대 하나만 주세요")
+        return self
+
+    def source_text(self) -> str:
+        return self.text if self.text is not None else "\n".join(self.ingredients or [])

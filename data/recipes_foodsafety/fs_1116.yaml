@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1116
+title: 단호박몽블랑
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1116. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: kabocha
+  raw_text: 단호박(150g)
+  role: sub
+- ingredient: null
+  raw_text: 아몬드가루(45g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 박력분(15g)
+  role: sub
+- ingredient: null
+  raw_text: 스테비아(2g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(2.5개)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(40g)
+  role: sub
+- ingredient: null
+  raw_text: 가루녹차(1.5g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(210g)
+  role: sub
+- ingredient: null
+  raw_text: 판젤라틴(2g)
+  role: sub
+- ingredient: null
+  raw_text: 마스카르포네치즈(35g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(15g)
+  role: sub
+steps:
+- text: 달걀흰자와 올리고당(50g)을 섞어 머랭을 만들고 아몬드가루, 스테비아, 박력분, 가루녹차를 섞는다.
+- text: 짤주머니에 반죽을 담아 원형틀에 짜 넣고 170℃ 오븐에서 15분 간 굽는다.
+- text: 마스카르포네치즈(20g)와 설탕을 섞어 부드럽게 만든 뒤 생크림(120g)을 섞고 젤라틴으로 농도를 맞춘다.
+- text: 단호박을 삶은 후 볶아 수분을 날리고 올리고당, 계피가루, 마스카르포네치즈를 넣고 섞는다.
+- text: 4번에 생크림(90g)을 넣고 잘 섞은 뒤 젤라틴으로 농도를 맞춘다.
+- text: 가루녹차 다쿠아즈를 깔고 그 위에 짤주머니로 치즈크림, 단호박크림 순으로 올린다.

@@ -1,0 +1,97 @@
+id: gandanhage_deopbab_utvar
+title: 간단하게 덮밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 간단하게 덮밥?
+  video_url: https://www.youtube.com/watch?v=-UTVAr6WODg
+  published_at: '2025-04-21'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 양파
+  raw_text: 양파 1개 / 양파 한개
+  role: main
+  optional: false
+  amount: 1
+  unit: 개
+- name: 계란
+  raw_text: 계란 2알 / 계란 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 청양고추
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 올리브유
+  raw_text: 올리브유2스푼 / 올리브유 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 참치액
+  raw_text: 참치액 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 치킨스톡
+  raw_text: 치킨스톡 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 알룰로스
+  raw_text: 알룰로스 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 참기름
+  raw_text: 참기름 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 청양고추 만으로 달달 퐁신 매톰한 덮밥 월요일 출근 시작인텐데 저녁에 양파계란덮밥.
+  technique: null
+- text: 청양고추 2개 잘게 썰어서 준비한다.
+  technique: null
+- text: 아이랑 함께 먹는거면 없어도 되지만 넣으면.
+  technique: null
+- text: 올리브유 2스푼 두르고 양파 2분간 잘 볶는다.
+  technique: 볶음
+- text: 물 100ml 넣고 진간장 반스푼, 참치액 1스푼, 알룰로스 반스푼, 치킨스톡 반스푼 넣고.
+  technique: null
+- text: 잘 섞은 후 위에 풀어논 계란, 청양고추 올려줄게요. 이대로 뚜껑닫고 2분간 끓어주면.
+  technique: 끓이기
+- text: 통깨 솔솔 마무리 참기름 한스푼 넣어서 고소한 맛.
+  technique: null

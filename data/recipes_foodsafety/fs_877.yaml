@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_877
+title: 김자반
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 877. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: laver
+  raw_text: 김 10g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 8g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 5g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 1.3g
+  role: sub
+- ingredient: null
+  raw_text: 양념간장
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 1g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 1g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 1g
+  role: sub
+steps:
+- text: 김은 티를 골라낸다.
+- text: 홍고추, 마늘, 생강은 곱게 채썬다.
+- text: 간장소스의 양념들은 모두 합하여 20분 가량 낮은 불에서 끓여서 식힌다.
+- text: 김은 먹기 좋은 크기로 12~18등분으로 자른다.
+- text: 양념간장에 마늘, 생강, 홍고추채를 섞는다.
+- text: 김을 차곡차곡 쌓은 뒤 양념간장을 위에 부어준다.

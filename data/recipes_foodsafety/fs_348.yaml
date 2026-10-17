@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_348
+title: 초계샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 348. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 250g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 60g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 25g
+  role: sub
+- ingredient: green_bell_pepper
+  raw_text: 피망 25g
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카 25g
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 50g
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣 20g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+- ingredient: mustard_powder
+  raw_text: 연겨자 15g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 15g
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨 15g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: jujube
+  raw_text: 대추 10g
+  role: sub
+steps:
+- text: 닭가슴살은 데친 후 가늘게 찢어준다.
+- text: 달걀은 황백지단을 부쳐서 다이아몬드 모양 으로 잘라준다.
+- text: 오이, 피망, 파프리카도 마름모로 잘라준다.
+- text: 시금치는 살짝 데쳐서 수분을 짜서 한입 크기로 잘라준다.
+- text: 소스 재료를 믹서에 갈아 소스를 만들어준다.
+- text: 대추는 돌려깎기 해서 잘라주고 준비된 모든 재료를 섞어 샐러드를 만들고 대추채를 올려 완성한다.

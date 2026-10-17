@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_867
+title: 돼지고기 수육 부추부침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 867. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 돼지고기 삼겹살 40g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 5g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 1.5g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추 0.5g
+  role: sub
+- ingredient: chive
+  raw_text: 영양부추 10g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 2.5g
+  role: sub
+- ingredient: radish
+  raw_text: 무 15g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.1g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 1.5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1g
+  role: sub
+- ingredient: null
+  raw_text: 매운소스
+  role: sub
+- ingredient: chili_oil
+  raw_text: 고추기름 1g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: null
+  raw_text: 발사믹식초 10g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 5g 저나트륨 두부 된장소스:두부 15g
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 2g
+  role: sub
+- ingredient: null
+  raw_text: 청·홍고추다진것 1g
+  role: sub
+steps:
+- text: 돼지고기는 덩어리로 준비해 충분히 무르도록 대파, 마늘, 생강, 통후추를 넣어 삶는다.
+- text: 부추와 양파는 3cm 길이로 썰어 매운 소스 양념에 가볍게 무친다.
+- text: 무는 채썰어 소금, 설탕, 식초에 절였다가 꼭 짠다.
+- text: 삶은 돼지고기를 건져 얇게 저민다.
+- text: 저민 돼지고기와 양념한 부추, 무를 곁들여 접시에 담는다.
+- text: 두부를 곱게 다져 분량의 소스 재료와 섞어 저나트륨 두부 된장소스를 만들어 수육과 함께 낸다.

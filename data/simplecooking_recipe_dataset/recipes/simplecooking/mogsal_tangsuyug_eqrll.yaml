@@ -1,0 +1,69 @@
+id: mogsal_tangsuyug_eqrll
+title: 목살 탕수육
+cuisine: 중식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 중국집 사장님 정말 죄송합니다.
+  video_url: https://www.youtube.com/watch?v=-EqrLlPekyo
+  published_at: '2026-07-22'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 목살
+  raw_text: 목살 500g
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- name: 감자 전분
+  raw_text: 감자 전분
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 양파
+  raw_text: 양파 / 양파 1/4개
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 개
+- name: 식용유
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 소금
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 식용유 두른 팬에 길쭉하게 썰은 목살에 소금간 하고 굽는다.
+  technique: 구이
+- text: 목살이 익으면 감자전분 2스푼을 흩 흩뿌려 볶은 다음 덜어 둔다.
+  technique: 볶음
+- text: 키친타월로 기름을 제거한다.
+  technique: null
+- text: 남은 전분 가루에 물 1/2컵, 양파 1/4개, 돈가스소스 3스푼, 케찹 3스푼을 끓인다.
+  technique: 끓이기
+- text: 만든 소스를 목살 에 흩뿌린다.
+  technique: null

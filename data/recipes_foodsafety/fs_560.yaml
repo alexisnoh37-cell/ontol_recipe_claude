@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_560
+title: 매실소스를 곁들인 돼지고기만두
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 560. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(안심, 120g)
+  role: sub
+- ingredient: glass_noodles
+  raw_text: 당면(50g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(1/2개)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(30g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(20g)
+  role: sub
+- ingredient: null
+  raw_text: 목이버섯(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(50g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(100g)
+  role: sub
+- ingredient: null
+  raw_text: 매실액(50g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.2g)
+  role: sub
+steps:
+- text: 돼지고기 안심을 요리망치로 얇게 두드려 펴고 후춧가루로 밑간한다.
+- text: 목이버섯은 불려 잘게 썰고 양파와 마늘은 입자있게 다진다
+- text: 당면은 따뜻한 물에 충분히 불려 썰고 애호박, 당근, 표고버섯은 잘게 썬다.
+- text: 팬에 기름을 두르고 다진 양파와 마늘을 볶는다.
+- text: 4번에 매실액과 잘게 자른 애호박, 당근, 표고버섯, 목이버섯, 당면을 넣고 볶아 만두소를 만든다.
+- text: 돼지고기는 넓게 펴서 만두소를 넣고 주머니를 만들어 실로 묶고 토마토와 함께 오븐에 굽는다.

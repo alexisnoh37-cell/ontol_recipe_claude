@@ -1,0 +1,73 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_588
+title: 두유 마 떡갈비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 588. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(120g)
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기(120g)
+  role: sub
+- ingredient: tteokbokki_rice_cake
+  raw_text: 떡볶이떡(100g)
+  role: sub
+- ingredient: null
+  raw_text: 흑미(20g)
+  role: sub
+- ingredient: brown_rice
+  raw_text: 현미(20g)
+  role: sub
+- ingredient: rice
+  raw_text: 백미(20g)
+  role: sub
+- ingredient: null
+  raw_text: 조(10g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(1/4개)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(150g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(30g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+steps:
+- text: 표고버섯은 뜨거운 물에 약 1시간 정도 불려 다지듯이 썬다.
+- text: 마는 껍질을 벗겨 썰어서 갈아주고, 연근은 껍질을 벗겨 팬에 굽는다.
+- text: 애호박은 반달모양으로 썰어 끓는 물에 감자와 함께 데친다.
+- text: 소고기와 돼지고기는 곱게 다져 저염간장, 설탕, 다진마늘 및 간 마를 넣고 골고루 치대어 떡갈비를 만들고, 팬에 기름을 두르고 앞뒤로 굽는다
+- text: 깻잎은 저염간장에 살짝 절인다
+- text: 구워 놓은 떡갈비와 깻잎, 표고버섯, 연근, 애호박 및 감자를 접시에 담고 간 마와 두유를 섞어 자작하게 끓여 만든 소스를 그 밑에 담아 완성한다

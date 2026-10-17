@@ -1,0 +1,56 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: suyugramyeon_7ylfwn
+title: 수육라면
+cuisine: 한식
+difficulty: 1
+cook_time_min: 40
+servings: null
+source: https://www.youtube.com/watch?v=7yLfwNaYDL0
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- ingredient: null
+  raw_text: 신라면 2봉
+  role: main
+  optional: false
+  amount: 2
+  unit: 봉
+- ingredient: pork_belly
+  raw_text: 통삼겹살 500g
+  role: sub
+  optional: false
+  amount: 500
+  unit: g
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 물 1.2L, 라면스프 2개, 통삼겹살을 더한 뒤 뚜껑 덮고 20분, 뒤집어서 다시 20분 끓인다.
+  technique: 끓이기
+- text: 만든 수육은 얇게 자른다.
+  technique: null
+- text: 수육 삶은 물에 라면을 더한 뒤 끓인다.
+  technique: 끓이기
+- text: 수육, 대파, 후추를 뿌려 마친다.
+  technique: null

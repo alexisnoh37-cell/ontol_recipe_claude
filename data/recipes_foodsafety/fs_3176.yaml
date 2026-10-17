@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3176
+title: 누룽지상추샐러드&유자드레싱
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3176. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 누룽지 5g
+  role: sub
+- ingredient: null
+  raw_text: 로메인상추 7.5g
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(빨간색/노란색) 12.5g
+  role: sub
+- ingredient: null
+  raw_text: 유자청 7.5g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 500g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 3.5g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 1g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.1g
+  role: sub
+steps:
+- text: 로메인 상추를 한 입 크기로 썬다.
+- text: 파프리카는 사방 0.3cm 크기로 썬다.
+- text: 누룽지를 튀긴 후 으깬다.
+- text: 유자청, 레몬즙, 올리브유, 식초, 후추를 섞어 드레싱을 만든다.
+- text: 로메인 상추 위에 파프리카와 튀긴 누룽지를 고명으로 올린다.
+- text: 드레싱을 얹어 낸다.

@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_250
+title: 단호박제육볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 250. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 돼지고기(불고기용, 100g)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(50g)
+  role: sub
+- ingredient: null
+  raw_text: 죽순(15g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: null
+  raw_text: 마른 표고버섯(10g)
+  role: sub
+- ingredient: null
+  raw_text: 양념장 저염간장(5g)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(10g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(5g)
+  role: sub
+- ingredient: null
+  raw_text: 된장육수 된장(5g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 다진 마늘(3g)
+  role: sub
+- ingredient: null
+  raw_text: 부순 참깨(1g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(1g)
+  role: sub
+steps:
+- text: 돼지고기는 핏물을 제거하고 된장육수에 살짝 데친다.
+- text: 데친 돼지고기에 양념장을 넣고 재운다.
+- text: 단호박은 도톰하게 썰고, 죽순, 양파는 채 썰고, 대파는 어슷 썰고, 마른 표고버섯은 불린 뒤 먹기 좋은 크기로 썬다.
+- text: 팬에 올리브유를 두르고 재운 돼지고기와 된장육수(50g)를 넣고 볶는다.
+- text: 반 정도 익었을 때 단호박과 죽순, 양파, 대파, 표고버섯, 다진 마늘을 넣고 볶는다.
+- text: 부순 참깨와 참기름을 넣어 마무리한다.

@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1037
+title: 꽃게볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1037. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: crab
+  raw_text: 꽃게 70g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 2g
+  role: sub
+- ingredient: null
+  raw_text: 전분 3g
+  role: sub
+- ingredient: scallion
+  raw_text: 실파 5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2g
+  role: sub
+- ingredient: null
+  raw_text: 건고추 3g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 3g
+  role: sub
+- ingredient: null
+  raw_text: 생강다진것 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루적당량
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 3g
+  role: sub
+steps:
+- text: 솔을 이용해 게를 깨끗이 씻어 물기를 뺀 뒤 등딱지를 떼고 먹기 좋은 크기로 토막내 소금, 후춧가루, 청주로 밑간 한다.
+- text: 전분을 묻힌 뒤 찜통에 찐다.
+- text: 마늘, 생강은 얇게 편썰고 실파는 3cm 길이로 썰고 건 고추는 어슷하게 썬다.
+- text: 팬에 기름을 두르고 마늘, 생강, 건고추를 넣고 볶는다.
+- text: 매콤한 향이 나면 양념장을 넣고 살짝 볶으면서 찐 게를 넣어 맛이 베이도록 뒤적이며 볶는다.
+- text: 마지막에 실파를 넣고 참기름으로 향을 낸다.

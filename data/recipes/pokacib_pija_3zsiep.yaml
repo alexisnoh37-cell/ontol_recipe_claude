@@ -1,0 +1,54 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: pokacib_pija_3zsiep
+title: 포카칩 피자
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=3ZSiepGOu5U
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 영상에 여러 레시피가 있어 첫 번째 레시피만 구조화
+ingredients:
+- ingredient: null
+  raw_text: 포카칩 66g
+  role: main
+  optional: false
+  amount: 66
+  unit: g
+- ingredient: milk
+  raw_text: 우유 / 우유 2/3컵
+  role: sub
+  optional: false
+  amount: 0.67
+  unit: 컵
+- ingredient: mozzarella
+  raw_text: 모짜렐라 치즈
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: cooking_oil
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 포카칩은 잘게 부숴준 뒤 우유 2/3컵을 부어서 반죽을 만든다.
+  technique: null
+- text: 식용유 두른 팬에 반죽을 얹어 바삭하게 굽는다.
+  technique: 구이
+- text: 토마토 소스, 토핑, 모짜렐라 치즈를 올려 치즈를 녹인다.
+  technique: null

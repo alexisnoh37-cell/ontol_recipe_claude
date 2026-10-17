@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_602
+title: 세 가지 미니 에피타이저
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 602. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: salmon
+  raw_text: 연어(훈제연어, 120g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(3마리)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(1/2개)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(1/4개)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(1/4개)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/4개)
+  role: sub
+- ingredient: null
+  raw_text: 석류주스(200g)
+  role: sub
+- ingredient: null
+  raw_text: 판젤라틴(1장)
+  role: sub
+steps:
+- text: 훈제 연어는 슬라이스로 썰어서 굽는다.
+- text: 사과는 채썬다.
+- text: 판젤라티은 찬물에 담궈 불린 후 중탕해서 녹인다.
+- text: 석류주스를 끓인 뒤 중탕한 젤라틴을 넣고 굳혀 접시에 담는다.
+- text: 애호박은 껍질을 벗겨 끓는 물에 소금을 넣고 살짝 데치고, 새우는 살짝 데쳐 껍질을 벗겨 포를 뜬 뒤 다시 굽는다.
+- text: 석류주스 젤리가 담긴 접시에 새우와 애호박을 담고 소스를 올린 뒤 연어와 사과, 호박을 올려 담는다.

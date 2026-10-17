@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1059
+title: 청국장지짐 케일쌈밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1059. 요리종류 밥, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(20g)
+  role: sub
+- ingredient: cheonggukjang
+  raw_text: 청국장(30g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(100g)
+  role: sub
+- ingredient: null
+  raw_text: 케일(50g)
+  role: sub
+- ingredient: anchovy
+  raw_text: 멸치(10g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(40g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(80g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(100g)
+  role: sub
+steps:
+- text: 멸치와 무, 양파 절반, 사과를 끓여 육수를 만든다.
+- text: 남은 양파와 돼지고기는 곱게 다진다.
+- text: 청국장에 육수, 다진 양파, 돼지고기를 넣고 볶는다.
+- text: 케일은 끓는 물에 살짝 데친 뒤 식히고 물기를 없앤다.
+- text: 밥에 청국장 지짐을 비빈 뒤 케일로 돌돌 말아 반을 자른다.
+- text: 그릇에 담고 어슷썬 홍고추로 장식한다.

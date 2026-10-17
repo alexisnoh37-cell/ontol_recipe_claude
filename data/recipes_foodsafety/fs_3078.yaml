@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3078
+title: 과일삼겹살조림&파채무침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3078. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(삼겹살) 70.8g
+  role: sub
+- ingredient: null
+  raw_text: 새싹채소 2.8g
+  role: sub
+- ingredient: null
+  raw_text: 깐대파 3.5g
+  role: sub
+- ingredient: null
+  raw_text: 파인애플 1.5g
+  role: sub
+- ingredient: pear
+  raw_text: 배 1.5g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 1.5g
+  role: sub
+- ingredient: null
+  raw_text: 깐양파 2g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 진간장 1.2g
+  role: sub
+- ingredient: garlic
+  raw_text: 깐마늘 1.2g
+  role: sub
+- ingredient: null
+  raw_text: 깐생강 0.3g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 0.17g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬 1g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 0.4g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 0.1g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 국간장 0.1g
+  role: sub
+steps:
+- text: 삼겹살은 덩어리로 준비하여 삶아낸다.
+- text: 배, 사과, 파인애플, 양파, 깐마늘, 깐생강은 갈아서 체에 거르고 간장과 함께 끓인다.
+- text: ②에 삶아낸 삼겹살을 넣어 윤기 나게 조린다.
+- text: 대파는 가늘게 채 썰고, 새싹채소는 깨끗하게 씻는다.
+- text: 레몬즙, 식초, 설탕, 국간장, 고춧가루를 넣어 만든 소스를 야채에 버무린다.
+- text: 한입 크기로 썬 삼겹살과 ⑤를 곁들여 낸다.

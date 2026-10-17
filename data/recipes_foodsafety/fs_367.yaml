@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_367
+title: 두부까나페
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 367. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 단단한 두부 150g
+  role: sub
+- ingredient: ham
+  raw_text: 슬라이스햄 25g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 15g
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리 1g
+  role: sub
+- ingredient: null
+  raw_text: 볶은소금 1g
+  role: sub
+- ingredient: null
+  raw_text: 샐러드
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 30g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 50g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 25g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 15g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 5g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.5g
+  role: sub
+steps:
+- text: 두부는 1cm 두께로 잘라 볶은소금을 뿌려 수분을 제거한다.
+- text: 오이는 껍질 부분만 송송 썰어준다.
+- text: 당근, 양파는 송송 썰어준다.
+- text: 두부는 노릇하게 구워준다.
+- text: 오이, 당근, 양파를 소스에 버무려 샐러드를 만들고 소스도 함께 만든다.
+- text: 두부를 한입 크기로 잘라준 후 슬라이스햄과 샐러드를 올려 소스랑 함께 완성한다.

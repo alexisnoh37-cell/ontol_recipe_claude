@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1065
+title: 먹골배 카레주먹밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1065. 요리종류 밥, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: rice
+  raw_text: 쌀(150g)
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루(70g)
+  role: sub
+- ingredient: kimchi
+  raw_text: 묵은지(15g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(15g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(5g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(5g)
+  role: sub
+- ingredient: tuna
+  raw_text: 참치(50g)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(20g)
+  role: sub
+steps:
+- text: 카레가루를 미지근한 물에 개어 쌀을 넣고 밥을 한다.
+- text: 묵은지는 헹궈서 다지고 양파도 다진다.
+- text: 참치의 기름을 빼고 묵은지, 양파를 넣고 마요네즈에 버무린다.
+- text: 3번을 넣고 카레밥으로 주먹밥을 만든다.
+- text: 주먹밥을 배 모양으로 만든다.
+- text: 애호박과 가지 껍질로 배 꼭지와 잎을 만들어 장식한다.

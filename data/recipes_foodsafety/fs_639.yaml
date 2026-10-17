@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_639
+title: 호박잎 삼계탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 639. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 호박잎(5장)
+  role: sub
+- ingredient: chicken
+  raw_text: 닭고기(가슴살, 120g)
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀(100g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(3알)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(20g)
+  role: sub
+- ingredient: null
+  raw_text: 인삼(1뿌리)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.01g)
+  role: sub
+steps:
+- text: 찹쌀은 깨끗이 씻어 30분 정도 불린다
+- text: 불린 찹쌀은 냄비에 넣고 질게 밥을 한다.
+- text: 닭가슴살은 넓게 펴서 소금, 후춧가루를 뿌린다.
+- text: 호박잎과 미나리는 끓는 물에 살짝 데치고, 대추는 돌려 깎아 씨를 제거하고 인삼은 뇌두를 제거한 뒤 채를 썰어둔다.
+- text: 데친 호박잎에 닭 가슴살을 올린다.
+- text: 닭 가슴살위에 찹쌀밥과 준비한 야채와 대추를 올려 돌돌 말아 질게 된 찹쌀밥에 넣고 약 20분 정도 더 쪄낸다.

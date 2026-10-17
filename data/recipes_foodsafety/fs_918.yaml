@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_918
+title: 밥스틱
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 918. 요리종류 밥, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 당근다진것 10g
+  role: sub
+- ingredient: null
+  raw_text: 양파다진것 15g
+  role: sub
+- ingredient: null
+  raw_text: 홍피망다진것 10g
+  role: sub
+- ingredient: null
+  raw_text: 청피망다진것 10g
+  role: sub
+- ingredient: null
+  raw_text: 햄다진것 10g
+  role: sub
+- ingredient: rice
+  raw_text: 밥 10g
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루 2g
+  role: sub
+- ingredient: null
+  raw_text: 춘권피 30g
+  role: sub
+- ingredient: cheese
+  raw_text: 치즈 5g
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름 3g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 적당량
+  role: sub
+steps:
+- text: 당근, 양파, 청피망, 홍피망, 햄은 곱게 다진다.
+- text: 달군 팬에 1을 넣고 볶는다.
+- text: 2에 밥을 넣고 볶으면서 카레가루와 소금, 후춧가루로 간을 맞춘다.
+- text: 치즈는 적당한 크기로 잘라준다.
+- text: 춘권피에 3과 4를 넣고 스틱 모양으로 만든다.
+- text: 팬에 기름을 넉넉히 두르고 5를 튀겨준다

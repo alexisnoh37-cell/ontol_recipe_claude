@@ -1,0 +1,109 @@
+id: ryusuyeongnim_dalggalbi_mxac1y
+title: 류수영님 닭갈비
+cuisine: 일식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 나만 몰랐던 닭갈비 레시피 (류수영님 닭갈비 레시피에요)
+  video_url: https://www.youtube.com/watch?v=mxac1YY8Wjs
+  published_at: '2024-01-23'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 양배추
+  raw_text: 양배추 1/4통
+  role: main
+  optional: false
+  amount: 0.25
+  unit: 통
+- name: 고구마
+  raw_text: 고구마 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 대파
+  raw_text: 대파 2쪽 / 대파
+  role: sub
+  optional: false
+  amount: 2
+  unit: 쪽
+- name: 닭다리살
+  raw_text: 닭다리살 700g
+  role: sub
+  optional: false
+  amount: 700
+  unit: g
+- name: 카레가루
+  raw_text: 카레가루 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 양조간장
+  raw_text: 양조간장 5 스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- name: 식초
+  raw_text: 식초 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- name: 참기름
+  raw_text: 참기름 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 배음료
+  raw_text: 배음료 한캔
+  role: sub
+  optional: false
+  amount: 1
+  unit: 캔
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 소스 잘 흔들어서 섞고 소금 1t스푼 기름을 세바퀴 두르고 야채 다 넣고.
+  technique: 무침
+- text: 강불로 볶아준다 (파기름내고 양배추넣고 고구마 넣고) 닭다리살 투하 잘 익히다가.
+  technique: 볶음
+- text: 소스 추가해주며 계속 볶는다. 마지막 떡을 넣고 위에 소스추가 해준다.
+  technique: 볶음
+- text: 마지막 깻잎 잔뜩 넣고 깨소금으로.
+  technique: null

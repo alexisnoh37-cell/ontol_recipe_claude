@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_260
+title: 카레가자미조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 260. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 고구마(10g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(30g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(10g)
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리(8g)
+  role: sub
+- ingredient: flatfish
+  raw_text: 가자미(50g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(15g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(30g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 치킨스톡(200g)
+  role: sub
+- ingredient: null
+  raw_text: 코코넛 밀크(14g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(16g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(2g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 다진 마늘(10g)
+  role: sub
+- ingredient: tomato_paste
+  raw_text: 토마토페이스트(10g)
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루(5g)
+  role: sub
+- ingredient: null
+  raw_text: 강황가루(2g)
+  role: sub
+steps:
+- text: 고구마, 당근, 양파, 파프리카는 깍둑 썰고, 양송이버섯은 4등분해 썰고, 브로콜리는 먹기 좋게 썬다.
+- text: 가자미에 밀가루, 달걀물을 묻혀 버터를 두른 팬에 바삭하게 굽는다.
+- text: 식용유를 두른 팬을 약한 불로 달궈 다진 마늘을 볶다가 토마토페이스트를 넣어 볶는다.
+- text: 당근, 양파, 고구마를 넣어 볶다가 브로콜리와 치킨스톡, 카레가루, 강황가루을 넣어 잘 섞어 끓인다.
+- text: 코코넛 밀크와 생크림, 파프리카, 양송이버섯을 넣어 살짝 더 끓인다.
+- text: 구운 가자미와 청양고추를 넣고 조려 마무리한다.

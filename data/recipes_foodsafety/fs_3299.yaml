@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3299
+title: 새우채소 김치롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3299. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: kimchi
+  raw_text: 김치(¼포기)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(1개)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(노랑, 빨강 각 1개)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(5장)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(2마리)
+  role: sub
+- ingredient: null
+  raw_text: 달걀물(2개 분량)
+  role: sub
+- ingredient: null
+  raw_text: 무순(⅓줌)
+  role: sub
+- ingredient: imitation_crab
+  raw_text: 크래미(2줄)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(0.3ts)
+  role: sub
+steps:
+- text: 김치는 깨끗하게 씻어 찬물에 30분간 담근 뒤 건져내고, 물기를 꼭 짠 뒤 윗동을 약간 자른다.
+- text: 오이와 파프리카는 5cm 길이로 채 썰고, 깻잎과 무순은 깨끗하게 씻어 물기를 빼고, 크래미는 낱낱이 가른다.
+- text: 새우는 껍질을 벗기고, 끓는 물에 익을 때까지 데쳤다 건져 길게 2등분한다.
+- text: 약한 불로 달군 팬에 식용유를 두르고, 달걀물을 부어 지단을 부친다.
+- text: 김발에 김치를 한 장씩 겹쳐 넓게 펼친다.
+- text: 김치 위에 지단, 손질한 채소, 새우를 올리고, 돌돌 말아 한입 크기로 썰어 마무리한다.

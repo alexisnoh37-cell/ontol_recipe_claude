@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3274
+title: 꽈리고추 닭강정
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3274. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: green_chili
+  raw_text: 꽈리고추(2줌=100g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(½개)
+  role: sub
+- ingredient: null
+  raw_text: 건고추(3개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10쪽)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(1대)
+  role: sub
+- ingredient: null
+  raw_text: 닭다릿살(400g)
+  role: sub
+- ingredient: null
+  raw_text: 백후춧가루(0.3Ts)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(8Ts)
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨(0.3Ts)
+  role: sub
+- ingredient: null
+  raw_text: 전분(2Ts)
+  role: sub
+- ingredient: null
+  raw_text: 달걀흰자(1개)
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스(1.5Ts)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(1Ts)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(0.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 생강가루(0.5Ts)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.25Ts)
+  role: sub
+steps:
+- text: 꽈리고추, 양파, 건고추는 3cm 길이로 썰고, 마늘은 2등분하고, 대파는 송송 썬다.
+- text: 닭다릿살은 4×4cm 크기로 썰고, 백후춧가루에 버무린 뒤 튀김옷 재료를 입힌다.
+- text: 약한 불로 달군 팬에 식용유를 두른 뒤 손질한 건고추, 마늘, 대파를 넣고 볶아 기름을 낸다.
+- text: 튀김옷을 입힌 닭다릿살을 넣어 노릇해 질 때까지 튀기듯 볶고, 양파를 넣어 투명해질 때까지 볶는다.
+- text: 센 불로 올린 뒤 양념장을 넣어 재빠르게 볶고, 꽈리고추를 넣어 10초간 볶아 꺼낸다.
+- text: 참깨를 뿌려 마무리한다.

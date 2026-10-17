@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_505
+title: 둥지튀김
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 505. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 닭고기살(150g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.2g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 백년초국수(20g)
+  role: sub
+- ingredient: null
+  raw_text: 뽕잎국수(20g)
+  role: sub
+- ingredient: null
+  raw_text: 치자국수(20g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(400g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: null
+  raw_text: 연유(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(10g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(5g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(20g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(20g)
+  role: sub
+steps:
+- text: 닭고기살은 작게 썰어 소금과 후춧 가루를 살짝 뿌려 밑간을 하고 달걀을 넣어 섞는다.
+- text: 달걀을 넣어 섞은 닭고기 살에 녹말 가루를 넣어 골고루 묻힌다.
+- text: 국수는 각각 끓는 물에 살짝 데쳐 물기를 빼놓는다.
+- text: 물기가 빠진 국수는 튀김기름 170℃ 온도에서 각각 작은 채에 그대로 살짝 튀겨 둥지를 만든 후 기름을 냅킨에 빼 놓는다.
+- text: 녹말가루를 묻힌 닭고기살도 튀김 기름에 튀겨 기름을 빼 놓은 둥지국수 위에 올린다.
+- text: 냄비에 레몬과 설탕을 넣고 물을 넣어 끓이다가 레몬은 건져 내고, 마늘과 생강, 연유, 식초, 녹말을 풀어 넣고 살짝 한 번 더 끓여 녹말소스를 만들어, 튀겨진 닭고기 위에 올려 완성한다.

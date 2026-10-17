@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_943
+title: 영양 달걀찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 943. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 죽순 5g
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤 5g
+  role: sub
+- ingredient: null
+  raw_text: 찐 어묵 5g
+  role: sub
+- ingredient: null
+  raw_text: 건표고버섯 3g
+  role: sub
+- ingredient: null
+  raw_text: 은행 5g
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우 5g
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣 1g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 20g
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓 1g
+  role: sub
+- ingredient: anchovy_stock
+  raw_text: 멸치 육수 50g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 죽순은 빗살을 살려 썰고 밤은 껍질을 벗겨 4등분한다.
+- text: 찐 어묵은 얇게 썰고 표고버섯은 미지근한 물에 불려 어슷하게 4등분 한다.
+- text: 볼에 달걀 풀고 달걀 부피의 2.5배의 멸치 육수를 넣고 소금으로 간을 한 뒤 거품기로 잘 풀어 체에 내린다.
+- text: 끓는 물에 은행, 죽순, 밤, 새우 순으로 데친다.
+- text: 데쳐 낸 은행은 껍질을 벗기고 새우는 머리와 껍질을 제거한다.
+- text: 찜 용기에 준비한 속 재료들을 담고 준비한 달걀 물을 부어 찜통에서 약 12분간 찐다.

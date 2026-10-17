@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3688
+title: 클로－바
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3688. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 12개'
+ingredients:
+- ingredient: null
+  raw_text: 귀리 100g
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드슬라이스 25g
+  role: sub
+- ingredient: null
+  raw_text: 피칸 25g
+  role: sub
+- ingredient: peanut_butter
+  raw_text: 땅콩버터 25g
+  role: sub
+- ingredient: null
+  raw_text: 클로렐라가루 7.5g
+  role: sub
+- ingredient: null
+  raw_text: 알룰로스 50g
+  role: sub
+- ingredient: null
+  raw_text: 코코넛우유 45ml
+  role: sub
+- ingredient: null
+  raw_text: 아몬드우유 80ml
+  role: sub
+- ingredient: null
+  raw_text: 대추채 12.5g
+  role: sub
+- ingredient: null
+  raw_text: 카카오닙스 25g
+  role: sub
+- ingredient: null
+  raw_text: 건크랜베리 12.5g
+  role: sub
+- ingredient: null
+  raw_text: 초콜릿
+  role: sub
+- ingredient: null
+  raw_text: 카카오매스 40g
+  role: sub
+- ingredient: null
+  raw_text: 다크초콜릿 25g
+  role: sub
+steps:
+- text: 프라이팬에 물에 불린 귀리, 아몬드슬라이스, 피칸을 넣고 살짝 볶는다.
+- text: 볼에 땅콩버터, 클로렐라가루, 알룰로스를 넣고 섞다가 코코넛우유, 아몬드우유를 넣어 고루 섞는다.
+- text: 볶은 귀리, 아몬드슬라이스, 피칸과 대추채, 카카오닙스, 건크랜베리를 넣고 섞어 크런치 토핑을 만든다.
+- text: 볼에 카카오매스, 다크초콜릿을 넣고 전자레인지에서 20~25초 동안 녹인다.
+- text: 팬에 유산지를 깔고 크런치 토핑을 넣고 평평하게 편 후 녹인 초콜릿을 코팅하듯 바른다.
+- text: 냉동실에 20분 동안 넣어 굳히고 먹기 좋은 크기로 썰어 마무리한다.

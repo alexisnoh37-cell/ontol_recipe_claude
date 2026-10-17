@@ -1,9 +1,14 @@
 // 시각화 페이지 진입점: 데이터 로딩, 검색, 층·간선 토글, 노드 정보, 범례, HUD(로딩 시간·fps), 추천 과정 재생 연결.
+// 외부 레시피 분석(부록 E)은 adhoc.js가 POST /analyze-recipe 결과를 그래프에 겹쳐 그린다.
 // 데이터: GET /graph(기본). ?graph=<url>이면 그 JSON을, ?recipes=all|none이면 그 범위를 불러온다(viz-5 측정용).
+// ?display=1이면 표시 전용 레시피(식품안전나라, 엔진 미적재)도 불러온다. 레시피는 출처(origin)별 색·토글(int-2).
+// ?layout=tree-ingredient(기본)|tree-cuisine|flat: 나무(주재료 방향·음식 종류) 또는 평면 배치(부록 D-9). 화면에서 바로 바꾼다.
 
-import { GROUP_CATEGORY_LABEL, LAYER_LABEL, LINK_COLOR, LINK_LABEL, NODE_COLOR, PLAY_COLOR, REASON_COLOR, ROLE_LABEL } from "./palette.js";
+import { GROUP_CATEGORY_LABEL, LAYER_LABEL, LINK_COLOR, LINK_LABEL, NODE_COLOR, ORIGIN_COLOR, PLAY_COLOR, REASON_COLOR, ROLE_LABEL } from "./palette.js";
+import { setupAdhoc } from "./adhoc.js";
+import { setupBrowse } from "./browse.js";
 import { setupPlayback } from "./playback.js";
-import { createScene } from "./scene.js";
+import { LAYOUTS, createScene } from "./scene.js";
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -12,9 +17,13 @@ const norm = (s) => String(s ?? "").toLowerCase().replace(/\s+/g, "");
 const params = new URLSearchParams(location.search);
 const t0 = performance.now();
 let playback = null;
+let browse = null;
+let originLabels = {};
+const withDisplay = ["1", "true"].includes(params.get("display"));
 
 async function loadGraph() {
-  const url = params.get("graph") || `/graph?recipes=${encodeURIComponent(params.get("recipes") || "published")}`;
+  const scope = encodeURIComponent(params.get("recipes") || (withDisplay ? "all" : "published"));
+  const url = params.get("graph") || `/graph?recipes=${scope}${withDisplay ? "&display=true" : ""}`;
   const res = await fetch(url);
   if (!res.ok) throw new Error(`${url} → ${res.status}`);
   return res.json();
@@ -24,15 +33,23 @@ async function loadGraph() {
 
 function nodeKindText(n) {
   if (n.kind === "allergen_group") return GROUP_CATEGORY_LABEL[n.category];
-  if (n.kind === "recipe") return "레시피";
+  if (n.kind === "recipe") return n.adhoc ? "외부 레시피(분석용, 저장 안 함)" : "레시피";
+  if (n.kind === "unmapped") return n.concept ? "분류에만 맞음(미매칭)" : "미매칭 재료(온톨로지에 없음)";
   if (n.is_concept) return "분류(concept)";
   return n.layer === 3 ? (n.is_processed ? "가공품" : "가공품 아님(원천 재료에서 파생)") : "원천 재료";
 }
 
 function tooltip(n) {
   const lines = [`<b>${esc(n.name)}</b> <span class="sub">${esc(nodeKindText(n))}</span>`];
-  if (n.kind === "recipe") {
-    lines.push(`${esc(n.cuisine)} · 난이도 ${n.difficulty ?? "-"} · ${n.cook_time_min}분 · 매운맛 ${n.spicy}`);
+  if (n.kind === "recipe" && n.adhoc) {
+    lines.push("붙여 넣은 재료로 분석한 임시 노드");
+  } else if (n.kind === "unmapped") {
+    lines.push(`${n.line_no}번째 줄: ${esc(n.raw_text)}`);
+  } else if (n.kind === "recipe") {
+    lines.push(`${esc(n.cuisine)} · 난이도 ${n.difficulty ?? "-"} · ${n.cook_time_min ?? "-"}분 · 매운맛 ${n.spicy ?? "-"}`);
+    const from = [originLabels[n.origin] || n.origin, n.engine === false ? "추천에 쓰지 않음" : null,
+      n.unmapped_lines?.length ? `미매칭 ${n.unmapped_lines.length}/${n.lines}줄` : null].filter(Boolean);
+    if (from.length) lines.push(esc(from.join(" · ")));
   } else if (n.kind === "ingredient") {
     const flags = [];
     if (n.is_pantry_staple) flags.push("기본 양념");
@@ -72,8 +89,18 @@ function renderInfo(scene, n) {
     rows.push(["가공품", chips(into("derived_from").map((l) => chip(l.s)))]);
     rows.push(["쓰는 레시피", `${into("uses").length}개`]);
     if (n.confidence === "low") rows.push(["확신", "낮음(검수표 확인)"]);
+  } else if (n.kind === "unmapped") {
+    rows.push(["원문", esc(n.raw_text)], ["줄 번호", n.line_no]);
+    rows.push(["상태", n.concept ? `분류(concept)에만 맞음: ${chip(n.concept)}<br><span class="muted">더 구체적인 재료로 적어야 합니다</span>`
+      : "정규 재료에 없음(별칭·재료 추가는 knowledge 검수로)"]);
+    rows.push(["알레르기", "판정하지 못함. 알레르기가 있는 사용자에게는 이 레시피가 제외됩니다"]);
   } else if (n.kind === "recipe") {
-    rows.push(["음식 종류", esc(n.cuisine)], ["난이도", n.difficulty ?? "-"], ["조리시간", `${n.cook_time_min}분`], ["매운맛", n.spicy]);
+    if (n.adhoc) rows.push(["구분", "외부 레시피(일회성 분석, 저장 안 함)"]);
+    else {
+      rows.push(["출처", esc(originLabels[n.origin] || n.origin || "-")]);
+      if (n.engine === false) rows.push(["추천", "쓰지 않음(그래프 표시 전용, 엔진·DB 미적재)"]);
+      rows.push(["음식 종류", esc(n.cuisine)], ["난이도", n.difficulty ?? "-"], ["조리시간", n.cook_time_min ? `${n.cook_time_min}분` : "-"], ["매운맛", n.spicy ?? "-"]);
+    }
     if (n.required_equipment.length) rows.push(["필수 조리기구", esc(n.required_equipment.join(", "))]);
     for (const role of ["main", "sub", "seasoning", "garnish"]) {
       const ls = out("uses").filter((l) => l.role === role).sort((a, b) => a.line_no - b.line_no);
@@ -88,8 +115,16 @@ function renderInfo(scene, n) {
       return `<div class="path">${chip(a.group, strong ? "alert" : "possible")}`
         + `<span class="tag">${tags.join(" · ")}</span> <span class="muted">${hits.join(", ")}</span></div>`;
     }).join("") : chips([])]);
-    if (n.has_unmapped) rows.push(["미매칭", "정규 재료에 매핑되지 않은 재료가 있음(알레르기가 있으면 제외)"]);
-    if (n.status !== "published") rows.push(["상태", "검수 전"]);
+    const raws = out("unmapped");
+    if (raws.length) {
+      rows.push(["미매칭", chips(raws.map((l) => chip(l.t, "alert")))
+        + '<br><span class="muted">알레르기를 판정하지 못함(알레르기가 있으면 제외)</span>']);
+    } else if (n.has_unmapped) {
+      const items = (n.unmapped_lines || []).map((u) => `<span class="chip alert">${esc(u.raw_text)}</span>`);
+      rows.push(["미매칭", `${items.length}/${n.lines}줄 ${chips(items)}`
+        + '<br><span class="muted">정규 재료에 없음. 알레르기를 판정하지 못함(알레르기가 있으면 제외)</span>']);
+    }
+    if (n.status !== "published" && !n.adhoc) rows.push(["상태", "검수 전"]);
   } else {
     rows.push(["구분", GROUP_CATEGORY_LABEL[n.category]]);
     if (n.members.length) rows.push(["구성", chips(n.members.map((m) => chip(m)))]);
@@ -180,6 +215,37 @@ function setupSearch(scene) {
 
 // --- 토글·범례·HUD ------------------------------------------------------------------------------
 
+function setupOrigins(scene, data) {
+  originLabels = Object.fromEntries((data.origins || []).map((o) => [o.id, o.label]));
+  const box = $("#origin-toggles");
+  const display = $("#display-toggle");
+  for (const o of data.origins || []) {
+    const label = document.createElement("label");
+    label.innerHTML = `<input type="checkbox" checked data-origin="${esc(o.id)}"> `
+      + `<span class="sw" style="background:${ORIGIN_COLOR[o.id] || NODE_COLOR.recipe}"></span>${esc(o.label)} ${o.recipes}`;
+    label.querySelector("input").addEventListener("change", (e) => scene.setOrigin(o.id, e.target.checked));
+    box.insertBefore(label, display.closest("label"));
+  }
+  display.checked = withDisplay;
+  display.addEventListener("change", () => {
+    const next = new URLSearchParams(location.search);
+    if (display.checked) next.set("display", "1"); else next.delete("display");
+    location.search = next.toString();
+  });
+}
+
+function setupLayout(scene) {
+  const sel = $("#layout-mode");
+  sel.innerHTML = Object.entries(LAYOUTS).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("");
+  sel.value = scene.layout;
+  sel.addEventListener("change", () => {
+    scene.setLayoutMode(sel.value);
+    const next = new URLSearchParams(location.search);
+    next.set("layout", sel.value);
+    history.replaceState(null, "", `${location.pathname}?${next}`);
+  });
+}
+
 function setupToggles(scene) {
   for (const el of document.querySelectorAll("[data-layer]")) {
     el.addEventListener("change", () => scene.setLayer(Number(el.dataset.layer), el.checked));
@@ -203,7 +269,10 @@ function renderLegend() {
     sw(NODE_COLOR.raw, "원천 재료(구)", "border-radius:50%"),
     sw("transparent", "분류 concept(와이어프레임)", `border:1px dashed ${NODE_COLOR.concept};border-radius:50%`),
     sw(NODE_COLOR.processed, "가공품(이십면체)"),
-    sw(NODE_COLOR.recipe, "레시피(원기둥)"),
+    sw(NODE_COLOR.recipe, "레시피(원기둥, 색 = 출처)"),
+    ...Object.entries(ORIGIN_COLOR).filter(([k]) => originLabels[k]).map(([k, c]) => sw(c, `　레시피: ${esc(originLabels[k])}`)),
+    sw(NODE_COLOR.adhoc, "외부 레시피(분석용, 저장 안 함)"),
+    sw("transparent", "외부 레시피의 미매칭 줄(사면체)", `border:1px dashed ${NODE_COLOR.unmapped}`),
     sw("transparent", "확신 낮음(노란 고리)", `border:2px solid ${NODE_COLOR.lowConfidence};border-radius:50%`),
     "<h3>간선</h3>",
     ...Object.entries(LINK_LABEL).map(([k, v]) => ln(LINK_COLOR[k], v)),
@@ -253,12 +322,20 @@ async function main() {
     return;
   }
   const tFetched = performance.now();
-  const scene = createScene($("#graph"), data, { tooltip, onSelect: (n) => renderInfo(scene, n) });
+  const scene = createScene($("#graph"), data, {
+    tooltip, onSelect: (n) => { renderInfo(scene, n); browse?.onNodeSelect(n); }, layout: params.get("layout") || "tree-ingredient",
+  });
   const tScene = performance.now();
   $("#loading").remove();
+  setupLayout(scene);
+  setupOrigins(scene, data);
   setupSearch(scene);
   setupToggles(scene);
   renderLegend();
+  browse = setupBrowse({
+    scene, $, attachSearch,
+    ingredientIndex: searchIndex(scene, (n) => n.kind === "ingredient" && !n.is_concept),
+  });
   playback = setupPlayback({
     scene, $, attachSearch,
     ingredientIndex: searchIndex(scene, (n) => n.kind === "ingredient" && !n.is_concept),
@@ -268,6 +345,7 @@ async function main() {
     window.__vizTimings = { fetch: tFetched - t0, scene: tScene - tFetched, firstFrame: now - tScene, ...scene.timings };
     startHud(scene, data, now); // 페이지 이동 시작부터(CDN 모듈 로딩 포함) 첫 화면까지
   }));
+  setupAdhoc({ scene, $, esc, select: (id) => focusNode(scene, id) });
   window.__viz = scene; // 디버깅·측정용
 }
 

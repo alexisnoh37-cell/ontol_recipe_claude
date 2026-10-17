@@ -1,0 +1,48 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: french_toast
+title: 프렌치토스트
+cuisine: 양식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: bread
+  raw_text: 식빵 4장
+  role: main
+- ingredient: egg
+  raw_text: 계란 2개
+  role: main
+- ingredient: milk
+  raw_text: 우유 1/2컵
+  role: sub
+- ingredient: butter
+  raw_text: 버터 1큰술
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: honey
+  raw_text: 꿀 약간
+  role: garnish
+  optional: true
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 3
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 계란, 우유, 설탕, 소금을 섞는다.
+- text: 식빵을 계란물에 앞뒤로 적신다.
+- text: 팬에 버터를 녹이고 약불에서 앞뒤로 노릇하게 굽는다. 꿀을 곁들인다.
+  technique: 구이

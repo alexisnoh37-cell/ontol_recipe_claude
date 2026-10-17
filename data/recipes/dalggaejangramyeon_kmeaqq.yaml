@@ -1,0 +1,88 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: dalggaejangramyeon_kmeaqq
+title: 닭개장라면
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source: https://www.youtube.com/watch?v=KMEAQqDML9s
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- ingredient: chicken_thigh
+  raw_text: 닭다리살 정육 200g / 닭다리살
+  role: main
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: null
+  raw_text: 사리곰탕
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: gochugaru
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: cooking_oil
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: ssamjang
+  raw_text: 쌈장 1/3스푼
+  role: seasoning
+  optional: false
+  amount: 0.33
+  unit: 스푼
+- ingredient: egg
+  raw_text: 계란
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: salt
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 식용유 넉넉히 두른 뒤 닭다리살 정육에 소금간 해준 뒤 충분히 굽는다.
+  technique: 구이
+- text: 닭 겉면만 구워졌으면 대파 한대도 굵직하게 썰어서 같이 볶는다.
+  technique: 구이
+- text: 고춧가루 2스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 물 500ml, 사리곰탕의 스프, 면, 쌈장 1/3스푼을 더한 뒤 끓인다.
+  technique: 끓이기
+- text: 계란물, 후추를 뿌려 마친다.
+  technique: null

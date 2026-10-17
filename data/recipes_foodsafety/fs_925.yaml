@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_925
+title: 어린이 스시
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 925. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: rice
+  raw_text: 밥 120g
+  role: sub
+- ingredient: null
+  raw_text: 달걀 삶은것 20g
+  role: sub
+- ingredient: ham
+  raw_text: 슬라이스햄 5g
+  role: sub
+- ingredient: sliced_cheese
+  raw_text: 슬라이스치즈 5g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 3g
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리 3g
+  role: sub
+- ingredient: null
+  raw_text: 캔참치 3g
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 칵테일새우 5g
+  role: sub
+- ingredient: null
+  raw_text: 날치알 3g
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 5g
+  role: sub
+- ingredient: null
+  raw_text: 초대리
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 3g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 초대리 재료를 분량대로 섞어 설탕, 소금이 녹을 정도로만 가열해 초대리를 만들어 고슬고슬하게 지은 따듯한 밥에 넣고 섞어 식힌다.
+- text: 달걀은 삶아 흰자와 노른자로 따로 체에 내려 가루를 만들어 놓는다.
+- text: 햄, 치즈는 원하는 모양틀로 찍는다.
+- text: 기름을 제거한 참치에 다진 양파와 셀러리, 마요네즈를 섞는다.
+- text: 칵테일 새우는 데쳐서 식힌다.
+- text: 모양틀에 밥을 찍어내고 그 위에 준비한 재료들을 올려 완성한다.

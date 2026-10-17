@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_384
+title: 웰빙카레죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 384. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: curry_powder
+  raw_text: 카레가루 45g
+  role: sub
+- ingredient: null
+  raw_text: 귀리밥 200g
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 150g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 25g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 60g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 100g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 100g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 15g
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 칵테일새우 30g
+  role: sub
+steps:
+- text: 카레가루를 물에 풀어서 30분 정도 숙성 시켜준다.
+- text: 닭가슴살은 사방 1cm 크기로 잘라주고, 칵테일새우도 세척해 준비한다.
+- text: 알 마 늘 , 감자는 사 방 1 c m 길이로 잘라 물 400g에 먼저 익혀준다.
+- text: 방울토마토, 애호박은 사방 1cm 크기로 썰어준다.
+- text: 끓고 있는 냄비에 풀어 놓은 카레가루를 섞어 다시 끓여준다.
+- text: 양파는 사방 1cm 길이로 잘라주고 끓고 있는 카레에 양파, 방울토마토, 애호박을 넣고 끓여 완성한다.

@@ -1,0 +1,76 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: siweonhan_mulgugsu_6ktswe
+title: 시원한 물국수
+cuisine: 한식
+difficulty: 1
+cook_time_min: 10
+servings: 5
+source: https://www.youtube.com/watch?v=6kTSWeOchdY
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: gochujang
+  raw_text: 고추장 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: vinegar
+  raw_text: 식초 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 양조간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 냉면육수 1봉
+  role: main
+  optional: false
+  amount: 1
+  unit: 봉
+- ingredient: null
+  raw_text: 국수는 배 금방꺼지니 1.5인분 / 국수 1.5인분
+  role: sub
+  optional: false
+  amount: 1.5
+  unit: 인분
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 1
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 삶아주고 소스도 간단한다. 고추장 반 잘 섞는다. 삶은 국수 먼저.
+  technique: 끓이기
+- text: 넣고 소스 부어주고 얼음 덩동 띄우는.
+  technique: null

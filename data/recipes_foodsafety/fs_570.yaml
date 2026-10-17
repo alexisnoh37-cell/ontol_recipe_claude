@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_570
+title: 연어비트 절임샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 570. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: salmon
+  raw_text: 연어(150g)
+  role: sub
+- ingredient: null
+  raw_text: 비트(100g)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(1개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(50g)
+  role: sub
+- ingredient: null
+  raw_text: 새싹(20g)
+  role: sub
+- ingredient: null
+  raw_text: 식용꽃(20g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+steps:
+- text: 비트는 껍질을 벗겨 채 썬다.
+- text: 양파를 얇게 채 썬 후 물에 담근 뒤 건져 물기를 뺀다.
+- text: 비트와 오렌지에 절여진 연어를 얇게 슬라이스한다.
+- text: 식용꽃과 새싹은 물에 담궈 싱싱함을 살리고 건져 물기를 뺀다.
+- text: 새싹과 양파를 접시에 깔고 그 위에 연어를 올린다.
+- text: 올리브오일, 식초, 소금 및 설탕을 잘 섞어서 만든 드레싱을 올리고 식용꽃으로 장식한다

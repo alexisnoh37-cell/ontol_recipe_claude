@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_798
+title: 쇠고기와 검은콩 요리
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 798. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 쇠고기갈은것 50g
+  role: sub
+- ingredient: black_soybean
+  raw_text: 서리태 30g
+  role: sub
+- ingredient: celery
+  raw_text: 셀러리 3g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 7.5g
+  role: sub
+- ingredient: null
+  raw_text: 청피망 4.5g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 61.5g
+  role: sub
+- ingredient: bacon
+  raw_text: 베이컨 4.5g
+  role: sub
+- ingredient: brown_rice
+  raw_text: 현미 30g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 30g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 0.8g
+  role: sub
+- ingredient: null
+  raw_text: 월계수잎마른것 0.2g
+  role: sub
+- ingredient: null
+  raw_text: 타임마른것 0.3g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.2g
+  role: sub
+- ingredient: null
+  raw_text: 카엔페퍼 0.2g
+  role: sub
+steps:
+- text: 서리태를 2시간 정도 물에 불려둔다.
+- text: 셀러리, 양파, 청피망, 토마토를 굵게 다지고 베이컨은 얇게 채썬다.
+- text: 팬에 식용유를 두르고 다진 마늘을 넣어 볶아 향을 낸 뒤 다진 소고기를 넣어 볶는다.
+- text: 팬에 식용유를 두르고 베이컨, 양파, 셀러리, 토마토, 청피망 순으로 넣어 볶는다.
+- text: 냄비에 현미, 볶은 소고기, 닭육수를 넣어 현미가 반쯤 익도록 끓인다.
+- text: 불린 서리태, 볶은 채소, 월계수잎, 타임, 카엔페퍼를 넣고 현미와 서리태가 완전히 익도록 낮은불에서 은근히 끓인다.

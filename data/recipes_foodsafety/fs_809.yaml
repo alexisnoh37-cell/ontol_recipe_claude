@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_809
+title: 고추잡채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 809. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기 30g
+  role: sub
+- ingredient: null
+  raw_text: 청피망 30g
+  role: sub
+- ingredient: null
+  raw_text: 죽순통조림 6g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 1.4g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 7g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.4g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 5g
+  role: sub
+- ingredient: null
+  raw_text: 고기 밑간 양념
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 0.1g
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종 1g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 4g
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루 3g
+  role: sub
+steps:
+- text: 고추는 반으로 갈라 속을 제거한다.
+- text: 손질한 고추는 3cm 길이로 채썬다.
+- text: 죽순, 표고버섯, 대파, 생강을 채썬다.
+- text: 돼지고기는 얇게 저민 후 0.3x5cm 길이로 곱게 채썰어 밑간 한다.
+- text: 밑간 한 돼지고기를 달걀흰자, 녹말가루에 묻혀 놓는다.
+- text: 팬에 식용유를 넣고 생강을 볶아 향을 내고 채소, 고기를 넣어 볶다가 간을 한 다음 참기름을 두르고 굽는다.

@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_442
+title: 황태탕수육
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 442. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: dried_pollock
+  raw_text: 황태채(100g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(30g)
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 삼색분말(각 10g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(200g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(30g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(30g)
+  role: sub
+- ingredient: null
+  raw_text: 파인애플(30g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: null
+  raw_text: 물녹말(녹말가루 10g, 물 10g)
+  role: sub
+steps:
+- text: 황태는 가위로 약 3cm 길이로 잘라 스프레이로 물기를 준다.
+- text: 밀가루를 세 군데로 나눠 각각 찹쌀 가루와 녹말가루, 삼색 가루를 넣어 세 가지의 색을 만든다.
+- text: 만들어 놓은 밀가루에 달걀을 넣어 골고루 섞는다.
+- text: 튀김 반죽(③)에 황태(①)를 넣어 섞은 후, 튀김 기름 170℃ 의 온도에서 약 1분 정도 튀겨 기름을 빼 놓는다.
+- text: 파프리카는 속씨를 제거하고, 양파와 당근, 오이, 파인애플과 함께 썰어 준비 한다.
+- text: 저염간장에 설탕과 식초를 넣어 골고루 섞은 후 냄비에서 바글바글 끓이다가 물녹말을 넣고, 썰어놓은 채소를 넣어 한 번 더 끓인 후 황태 탕수육(④)에 곁들여 완성한다.

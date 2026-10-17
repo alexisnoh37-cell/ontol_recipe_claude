@@ -1,0 +1,50 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: coehwajeongnimyi_cogandan_ganjanggugsu_cc1gyz
+title: 최화정님의 초간단 간장국수
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: 2
+source: https://www.youtube.com/watch?v=cc1GyZIskWM
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: somen
+  raw_text: 소면 2인분 / 소면
+  role: main
+  optional: false
+  amount: 2
+  unit: 인분
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: tsuyu
+  raw_text: 쯔유 100ml
+  role: sub
+  optional: false
+  amount: 100
+  unit: ml
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 이건 진짜 면만 삶으면 바로 완성 되는데 소면 2인분 2분 30초간 삶아주는데.
+  technique: 끓이기
+- text: 부어주시면 돼요. 다 삶아진 소면은 쯔유 100ml, 물 100ml 1:1 비율로 섞어서.
+  technique: 끓이기
+- text: 만들고 여기로 청양고추 쏭쏭 썰어 넣는다.
+  technique: null
+- text: 소면에 물 넣고 얼음 동동 띄워 시원하게.
+  technique: null

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_413
+title: 더덕비트물김치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 413. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 더덕 50g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 15g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 15g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 10g
+  role: sub
+- ingredient: null
+  raw_text: 국물
+  role: sub
+- ingredient: null
+  raw_text: 비트 20g
+  role: sub
+- ingredient: null
+  raw_text: 함초소금 5g
+  role: sub
+- ingredient: null
+  raw_text: 생강청 30g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+steps:
+- text: 물과 식초가 포함된 물에 담가서 쓴맛을 빼준다.
+- text: 물에 절여진 더덕은 키친타월을 이용해 물기를 완전히 빼준다.
+- text: 양파, 청고추, 홍고추도 어슷하게 썰어준다.
+- text: 비트를 편으로 썰어서 국물을 만들어준다.
+- text: 그릇에 더덕부터 30분 정도 담가 물을 살짝 들여준다.
+- text: 나머지 재료도 함께 담가 간을 배게 한 뒤 24 시간 후부터 먹을 수가 있다.

@@ -1,0 +1,76 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_542
+title: 삼겹선
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 542. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: pork_belly
+  raw_text: 삼겹살(100g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.05g)
+  role: sub
+- ingredient: null
+  raw_text: 생강즙(10g)
+  role: sub
+- ingredient: null
+  raw_text: 조(20g)
+  role: sub
+- ingredient: rice
+  raw_text: 쌀(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(30g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(20g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(5g)
+  role: sub
+- ingredient: null
+  raw_text: 파(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 매실액(20g)
+  role: sub
+steps:
+- text: 삼겹살에 소금, 후춧가루, 생강즙, 정종을 넣고 약 30분 정도 숙성을 시킨다.
+- text: 조와 쌀은 물에 약 30분 정도 불려 밥을 짓고, 밥이 다 익으면, 뚜껑을 열어 주걱 으로 골고루 섞어 한 김을 빼 놓는다.
+- text: 파는 길게 채를 썰어 물에 담그어 파채가 둥글게 말리도록 한다.
+- text: 설탕과 식초, 레몬, 소금, 고춧가루, 매실액을 골고루 섞어 소스를 만들어 놓는다.
+- text: 파프리카는 속을 제거하고 양파, 당근, 파프리카를 양파와 같은 길이로 채를 썰고, 새송이와 표고버섯은 살짝 데쳐 채를 썰고, 깻잎도 채를 썰어 놓는다.
+- text: 파프리카는 속을 제거하고 양파, 당근, 파프리카를 양파와 같은 길이로 채를 썰고, 새송이와 표고버섯은 살짝 데쳐 채를 썰고, 깻잎도 채를 썰어 놓는다.

@@ -2,3 +2,6 @@
 # serve_draft_recipes: true면 검수 전(draft) 레시피도 추천한다(화면에 "검수 전" 표시). 기본은 published만.
 # draft를 제공해도 알레르기·제약 필터는 똑같이 적용된다.
 serve_draft_recipes: false
+
+# 재료로 레시피 찾기(GET /browse, ui-2): 꼭 필요한 재료가 이 개수 이하로 모자란 레시피를 "거의 가능"으로 보여 준다
+browse_max_missing: 2

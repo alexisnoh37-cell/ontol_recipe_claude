@@ -1,0 +1,100 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: kalkaldalkeunhan_dwaejigogiaehobagjjigae_b0nycc
+title: 칼칼달큰한 돼지고기애호박찌개
+cuisine: 한식
+difficulty: 3
+cook_time_min: 19
+servings: null
+source: https://www.youtube.com/watch?v=B0NyccZ-kIQ
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pork_shoulder
+  raw_text: 돼지고기 앞다리살 500g / 앞다리살 500g
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- ingredient: zucchini
+  raw_text: 애호박 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: onion
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: gochugaru
+  raw_text: 고춧가루 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: doenjang
+  raw_text: 된장 반 스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 국간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: '>> 제일 자주 끓여 먹는게 돼지고기 500g 넣어 줘.'
+  technique: 끓이기
+- text: '>> 그냥 넣어서 볶으면 돼요.'
+  technique: 볶음
+- text: 볶으면서도 나오지만 끓이면서 계속 쭉 이렇게 살짝 익으면서 기름이 조금씩.
+  technique: 볶음
+- text: 된장은 반 스푼만 넣어 주고 양념 잘 베일 수 있게 한번 섞어 줘. 여기에.
+  technique: 무침
+- text: 뚜껑 닫고 7분간 끓여 주면 돼.
+  technique: 끓이기
+- text: '>> 이제 7분 끓였지.'
+  technique: 끓이기
+- text: '>> 양파 반개 청양고추 두 개 넣었는데 맛이다. 에오박 익을 때까지 5분간만.'
+  technique: null
+- text: 더 끓이면 돼. 재료가 많이 들어간.
+  technique: 끓이기

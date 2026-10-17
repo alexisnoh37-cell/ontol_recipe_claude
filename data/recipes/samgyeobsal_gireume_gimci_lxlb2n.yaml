@@ -1,0 +1,70 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: samgyeobsal_gireume_gimci_lxlb2n
+title: 삼겹살 기름에 김치
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: 2
+source: https://www.youtube.com/watch?v=lxlb2NCdyUE
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pork_belly
+  raw_text: 삼겹살 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: null
+  raw_text: 김치 밥공기 한컵
+  role: sub
+  optional: false
+  amount: 1
+  unit: 컵
+- ingredient: green_onion
+  raw_text: 대파 한쪽 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 쪽
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 같이 볶아 먹어 보면 와 이건 진심 올려주고 기름이 충분히 나올 때까지.
+  technique: 볶음
+- text: 기름에 김치 밥 한공기 불량 넣고 이분간 먹다가 대파 한 쪽 넣어주고.
+  technique: null
+- text: 스푼, 두 소스 한 스푼 넣어서 섞는다. 마무리 구운고기 잘라서 넣고.
+  technique: 무침
+- text: 1분만 더 볶아주면 완성입니다. 그냥 덮밥으로 만들어 달걀 노른자 하나.
+  technique: 볶음
+- text: 올려 비벼 먹어 보면 식당 제육덮밥.
+  technique: null

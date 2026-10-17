@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_581
+title: 파프리카더덕소고기깻잎롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 581. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(살치살, 120g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(50g)
+  role: sub
+- ingredient: null
+  raw_text: 더덕(100g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(3장)
+  role: sub
+- ingredient: null
+  raw_text: 파인애플(50g)
+  role: sub
+- ingredient: asparagus
+  raw_text: 아스파라거스(3개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(50g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(20g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/4개)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.01g)
+  role: sub
+steps:
+- text: 소고기는 후춧가루, 올리브오일로 밑간을 한다.
+- text: 더덕은 칼로 껍질을 돌려 깎고, 파프리카, 아스파라거스와 함께 가늘게 채썬다.
+- text: 파인애플, 양파, 당근, 대파는 채썬다.
+- text: 밑간한 고기를 팬에 굽는다.
+- text: 따로 갈아 놓은 파인애플과 레몬즙 꿀을 섞어 드레싱을 만는다
+- text: 구워 놓은 고기에 더덕과 파인애플 아스파라거스 깻잎을 넣어 돌돌 말고, 팬에 발사믹 소스를 끓인 뒤 말아 놓은 소고기롤을 넣어 졸인다.

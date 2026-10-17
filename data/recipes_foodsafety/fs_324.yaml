@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_324
+title: 된장시금치옹심이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 324. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: spinach
+  raw_text: 시금치 150g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 80g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 30g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 50g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 15g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 15g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 30g
+  role: sub
+- ingredient: null
+  raw_text: 국물
+  role: sub
+- ingredient: manila_clam
+  raw_text: 바지락 100g
+  role: sub
+- ingredient: null
+  raw_text: 저염된장 25g
+  role: sub
+- ingredient: null
+  raw_text: 볶은소금 1g
+  role: sub
+steps:
+- text: 바지락은 볶은 소금에 담가 해감을 시켜준다.
+- text: 물 400g에 저염 된장과 바지락을 넣어 국물을 만들어준다.
+- text: 시금치 는 데 친 후 물기를 제거해 송송 다져준다.
+- text: 당근, 양파와 청홍고추는 채 썰고 애호박과 감자는 반달모양으로 썰어준다.
+- text: 다진 시금치와 밀가루를 이용해 완자를 만들어준다.
+- text: 만들어진 국물에 옹심이를 넣어 끓여주고 나머지 채소를 넣어 완성한다.

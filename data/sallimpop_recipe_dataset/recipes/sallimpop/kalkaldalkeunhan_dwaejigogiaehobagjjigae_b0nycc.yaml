@@ -1,0 +1,105 @@
+id: kalkaldalkeunhan_dwaejigogiaehobagjjigae_b0nycc
+title: 칼칼달큰한 돼지고기애호박찌개
+cuisine: 한식
+difficulty: 3
+cook_time_min: 19
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 칼칼달큰한 돼지고기애호박찌개
+  video_url: https://www.youtube.com/watch?v=B0NyccZ-kIQ
+  published_at: '2025-11-26'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 돼지고기 앞다리살
+  raw_text: 돼지고기 앞다리살 500g / 앞다리살 500g
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- name: 애호박
+  raw_text: 애호박 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 양파
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 청양고추
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 고춧가루
+  raw_text: 고춧가루 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 된장
+  raw_text: 된장 반 스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 국간장
+  raw_text: 국간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 코인육수
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: '>> 제일 자주 끓여 먹는게 돼지고기 500g 넣어 줘.'
+  technique: 끓이기
+- text: '>> 그냥 넣어서 볶으면 돼요.'
+  technique: 볶음
+- text: 볶으면서도 나오지만 끓이면서 계속 쭉 이렇게 살짝 익으면서 기름이 조금씩.
+  technique: 볶음
+- text: 된장은 반 스푼만 넣어 주고 양념 잘 베일 수 있게 한번 섞어 줘. 여기에.
+  technique: 무침
+- text: 뚜껑 닫고 7분간 끓여 주면 돼.
+  technique: 끓이기
+- text: '>> 이제 7분 끓였지.'
+  technique: 끓이기
+- text: '>> 양파 반개 청양고추 두 개 넣었는데 맛이다. 에오박 익을 때까지 5분간만.'
+  technique: null
+- text: 더 끓이면 돼. 재료가 많이 들어간.
+  technique: 끓이기

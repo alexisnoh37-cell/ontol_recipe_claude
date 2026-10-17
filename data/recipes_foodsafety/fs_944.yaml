@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_944
+title: 유부 달걀찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 944. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: fried_tofu
+  raw_text: 유부 8g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 30g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 7g
+  role: sub
+- ingredient: anchovy_stock
+  raw_text: 멸치 육수 50g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 유부는 윗면을 잘라 내고 입을 벌려서 주머니를 만든다.
+- text: 1을 끓는 물에 데친 뒤 냉수에 헹군다.
+- text: 달걀을 그릇에 풀고 다진 당근과 소금을 넣고 섞는다.
+- text: 2에 3을 넣어 꼬지로 주름을 잡아 끝부분을 마무리한다.
+- text: 냄비에 멸치 육수와 간장, 설탕, 소금을 넣는다.
+- text: 5에 4를 넣어 10분정도 끓인다.

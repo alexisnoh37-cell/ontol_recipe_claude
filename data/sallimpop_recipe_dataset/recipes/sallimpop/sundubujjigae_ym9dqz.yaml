@@ -1,0 +1,87 @@
+id: sundubujjigae_ym9dqz
+title: 순두부찌개
+cuisine: 양식
+difficulty: 2
+cook_time_min: 12
+servings: 5
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 순두부찌개의 정석
+  video_url: https://www.youtube.com/watch?v=yM9dQzw--Vw
+  published_at: '2024-05-31'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 순두부
+  raw_text: 순두부 400g
+  role: main
+  optional: false
+  amount: 400
+  unit: g
+- name: 파스타면
+  raw_text: 파스타면 0.5인분 / 파스타면
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 인분
+- name: 고춧가루
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 굴소스
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 국간장
+  raw_text: 국간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 코인육수
+  raw_text: 코인육수 한알
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+- name: 마늘
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 위에 계란
+  raw_text: 위에 계란 한알 / 계란 한알 / 계란
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 파스타면 0.5인분 끓는 물에 넣어 12분간 삶아주고 삶는 동안 재료 손질할게요.
+  technique: 끓이기
+- text: 양파 반개 얇게 채썰어 주고 대파 반쪽도 잘게 어슷 썰어줄게요. 마늘 3개도 잘게.
+  technique: null
+- text: 대파 양파 넣고 볶다가 고춧가루 2스푼 넣어 고추기름 내줄게요. 여기에 물 500ml 넣고.
+  technique: 볶음
+- text: 다진 마늘 넣는다. 물이 끓기 준비된 파스타면 넣어주고 자른 순두부도 넣어줄게요.
+  technique: 끓이기
+- text: 위에 계란 한알 깨서 넣고 후추 넉넉히 뿌려주면 완성이에요.
+  technique: null

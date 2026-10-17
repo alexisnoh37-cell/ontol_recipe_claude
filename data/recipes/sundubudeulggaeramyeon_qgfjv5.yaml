@@ -1,0 +1,60 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: sundubudeulggaeramyeon_qgfjv5
+title: 순두부들깨라면
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=QGfjV5jqlso
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 영상에 여러 레시피가 있어 첫 번째 레시피만 구조화
+ingredients:
+- ingredient: null
+  raw_text: 사리곰탕
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: soft_tofu
+  raw_text: 순두부 / 순두부 1봉
+  role: sub
+  optional: false
+  amount: 1
+  unit: 봉
+- ingredient: perilla_powder
+  raw_text: 들깨가루
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 물 2컵, 분말스프, 건더기스프, 멸치액젓 1/2스푼을 더한 뒤 끓인다.
+  technique: 끓이기
+- text: 면, 순두부 1봉을 더한 뒤 면을 익힌다.
+  technique: null
+- text: 대파, 들깨가루 2스푼을 더한 뒤 섞는다.
+  technique: 무침

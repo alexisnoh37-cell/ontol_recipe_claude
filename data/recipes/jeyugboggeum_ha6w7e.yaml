@@ -1,0 +1,96 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: jeyugboggeum_ha6w7e
+title: 제육볶음
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source: https://www.youtube.com/watch?v=Ha6w7eAZwbE
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pork_belly
+  raw_text: 대패삼겹살(앞다리살) 400g
+  role: main
+  optional: false
+  amount: 400
+  unit: g
+- ingredient: sugar
+  raw_text: 설탕 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: black_pepper
+  raw_text: 후추 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: vinegar
+  raw_text: 식초 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 고추장 크게 한 큰술
+  role: sub
+  optional: false
+  amount: 1
+  unit: 큰술
+- ingredient: onion
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: null
+  raw_text: 잡기위해 다진마늘 한스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: pork_shoulder
+  raw_text: 앞다리살
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: gochujang
+  raw_text: 고추장
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 제육볶음 진짜 딱 이렇게만 해보세요. :) 얇게 썰은 삼겹살이나 앞다리살.
+  technique: null
+- text: 후추 넉넉히, 식초 한스푼 넣고 잘 섞는다. 얇게 썰은 양파 반개.
+  technique: 무침
+- text: 듬성듬성 썰은 대파 반단도 준비해 고기 먼저 센불에 익힌다.
+  technique: null
+- text: 얇아서 금방 익을거에요. 넣고 양파, 대파 넣어서 빠르게 볶아주면 고기는 이미 익혀있고.
+  technique: 볶음
+- text: 기사식당 스타일의 제육볶음이 돼요.
+  technique: null
+- text: 마지막 쯤 물엿 두 스푼 넣어서 윤기 올려줄게요.
+  technique: null

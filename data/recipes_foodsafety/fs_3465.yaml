@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3465
+title: 해산물 완자볼을 곁들인 양장피 콩국수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3465. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 새우(50g)
+  role: sub
+- ingredient: squid
+  raw_text: 오징어(60g)
+  role: sub
+- ingredient: null
+  raw_text: 양장피 면(60g)
+  role: sub
+- ingredient: null
+  raw_text: 건목이버섯(10g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(4g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(110g)
+  role: sub
+- ingredient: null
+  raw_text: 볶음 소스(20g)
+  role: sub
+- ingredient: null
+  raw_text: 크레미(40g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(40g)
+  role: sub
+- ingredient: green_bell_pepper
+  raw_text: 피망(45g)
+  role: sub
+- ingredient: null
+  raw_text: 붉은 파프리카(45g)
+  role: sub
+- ingredient: null
+  raw_text: 달걀지단(20g)
+  role: sub
+- ingredient: null
+  raw_text: 콩국물(1컵=200g)
+  role: sub
+- ingredient: null
+  raw_text: 딜(1g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(35g)
+  role: sub
+- ingredient: null
+  raw_text: 달걀흰자(15g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(700g)
+  role: sub
+steps:
+- text: 오징어, 새우, 당근, 양파를 믹서에 갈아 달걀흰자를 넣어 치댄 후 완자를 만들어 160도로 예열한 식용유에 4분 정도 튀긴다.
+- text: 붉은 파프리카와 피망은 올리브유에 살짝 볶는다.
+- text: 양장피 면은 끓는 물에 5분간 데치고, 같은 냄비에 건목이버섯을 데친다.
+- text: 양장피 면이 서로 달라붙지 않게 참기름에 버무리고 돌돌 말아 접시 위에 올린다.
+- text: 크레미, 데친 건목이버섯, 달걀지단을 면 위에 올리고, 튀겨낸 완자, 딜, 볶은 파프리카와 피망을 올린다.
+- text: 콩국물을 붓고 볶음 소스를 곁들여 마무리한다.

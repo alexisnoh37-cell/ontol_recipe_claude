@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_624
+title: 두유 라이크 파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 624. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: pasta
+  raw_text: 스파게티(100g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: bacon
+  raw_text: 베이컨(20g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(1개)
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리(50g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(1개)
+  role: sub
+- ingredient: soy_milk
+  raw_text: 두유(200g)
+  role: sub
+- ingredient: null
+  raw_text: 견과류(20g)
+  role: sub
+- ingredient: cheese
+  raw_text: 치즈(1장)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+steps:
+- text: 스파게티면은 10분 삶아 건진다.
+- text: 팬에 올리브오일을 넣고 삶은 스파게티를 볶는다.
+- text: 베이컨은 끓는 물에 살짝 데친다.
+- text: 양파, 브로컬리, 홍보추, 베이컨은 썰고, 견과류는 다진다.
+- text: 팬에 올리브오일을 넣고 ④를 볶는다.
+- text: 야채가 볶아지면 두유를 넣고 끓이다가 스파게티, 치즈를 넣고 끓인 뒤 그릇에 담고 견과류를 올린다

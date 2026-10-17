@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_509
+title: 유자삼치구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 509. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: spanish_mackerel
+  raw_text: 삼치(150g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말(20g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(10g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(10g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(50g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(20g)
+  role: sub
+steps:
+- text: 삼치는 반으로 잘라지지 않게 편으로 떠서 소금을 살짝 뿌려 잠시 말려 놓는다.
+- text: 손질을 한 삼치에 녹말가루를 입혀 팬에 기름을 두르고 구워 접시에 담아 놓는다.
+- text: 생강은 잘게 썰어, 물에 섞은 후 거름종이에 걸러 생강즙을 만든다.
+- text: 유자청에 만들어 놓은 생강즙을 넣고 섞는다.
+- text: 냄비에 레몬을 넣고, 물을 넣고 은근히 끓인다.
+- text: 레몬을 끓인 물에 ④번을 넣고 졸여 소스를 만든 후 접시에 담아 놓은 삼치 위에 소스로 올려 완성한다.

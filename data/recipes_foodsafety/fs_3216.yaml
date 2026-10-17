@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3216
+title: 비트 단호박 파스타
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3216. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 삶은 스파게티(80g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(10g)
+  role: sub
+- ingredient: null
+  raw_text: 파르메산 치즈가루(약간)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎채소(약간)
+  role: sub
+- ingredient: null
+  raw_text: 비트(40g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(30g)
+  role: sub
+- ingredient: null
+  raw_text: 스리라차소스(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 미니 단호박(70g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(100g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(3g)
+  role: sub
+steps:
+- text: 믹서에 비트소스 재료를 넣어 곱게 갈아 삶은 스파게티에 넣어 버무린다.
+- text: 미니 단호박은 잘게 자른 뒤 끓는 물에 3분간 익혀 건진다.
+- text: 익힌 미니 단호박은 믹서에 곱게 간 뒤 생크림으로 농도를 맞추고 설탕으로 간하여 단호박소스를 만든다.
+- text: 감자는 얇게 모양대로 썬다.
+- text: 중간 불로 달군 팬에 얇게 썬 감자를 2분간 볶아 바삭하게 만들어 잘게 부순다.
+- text: 그릇에 단호박소스를 붓고, 비트소스를 버무린 스파게티를 담은 뒤 어린잎채소, 파르메산 치즈가루, 잘게 부순 감자를 올려 마무리한다.

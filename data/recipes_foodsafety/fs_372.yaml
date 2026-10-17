@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_372
+title: 안심스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 372. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 안심 160g
+  role: sub
+- ingredient: asparagus
+  raw_text: 아스파라거스 60g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 25g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 60g
+  role: sub
+- ingredient: walnut
+  raw_text: 호두 40g
+  role: sub
+- ingredient: null
+  raw_text: 망고 150g
+  role: sub
+- ingredient: null
+  raw_text: 블루베리잼 30g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 15g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 15g
+  role: sub
+- ingredient: wine
+  raw_text: 포도주 15g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 15g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: null
+  raw_text: 볶은소금 1g
+  role: sub
+steps:
+- text: 망고를 먹기 좋은 크기로 자르고 소스재료로 소스를 만들어준다.
+- text: 호두를 곱게 다져준다.
+- text: 안심에 만들어진 소스를 발라주고 곱게 다진 호두가루를 발라준다.
+- text: 감자, 당근, 아스파라거스는 먹기 좋은 크기로 잘라서 버터에 볶아준다.
+- text: 호두를 발라준 안심을 구워준다.
+- text: 남은 망고소스를 다시 졸여서 구워진 안심 위에 뿌려주고 볶은 채소랑 완성한다.

@@ -1,0 +1,78 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: ganjanggyeranhurai_wivrrn
+title: 간장계란후라이
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=WIVrrNU7kOQ
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 영상에 여러 레시피가 있어 첫 번째 레시피만 구조화
+ingredients:
+- ingredient: egg
+  raw_text: 계란 3알 / 계란
+  role: main
+  optional: false
+  amount: 3
+  unit: 알
+- ingredient: onion
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: soy_sauce
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: cooking_oil
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: rice
+  raw_text: 밥
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 1
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 식용유 두른 팬에 다진 마늘 1/2스푼, 다진 양파를 볶는다.
+  technique: 볶음
+- text: 계란 3알, 설탕 1스푼, 진간장 2스푼, 청양고추를 올리고 뚜껑 덮고 30초 기다린다.
+  technique: null
+- text: 밥 위에 얹는다.
+  technique: null

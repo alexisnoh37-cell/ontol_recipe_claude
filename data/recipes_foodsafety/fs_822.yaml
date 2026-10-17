@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_822
+title: 얼갈이 무침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 822. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 얼갈이 배추 60g, 홍고추 0.6g [소스소개저나트륨 무침양념
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 30g
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 3.5g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 1.5g
+  role: sub
+- ingredient: null
+  raw_text: 깨 2g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 20g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 5g
+  role: sub
+steps:
+- text: 얼갈이 배추를 씻는다.
+- text: 씻은 배추는 끓는 물에 데친다.
+- text: 홍고추는 씨를 빼고 어슷하게 채썬다.
+- text: 데친 얼갈이 배추를 차가운 물에 씻어 꼭 짠다.
+- text: 저나트륨 무침양념 재료들을 믹서에 넣고 간다.
+- text: 4에 채썬 고추와 무침 양념을 넣고 버무린다.

@@ -1,0 +1,79 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_481
+title: 함박스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 481. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: ground_beef
+  raw_text: 다진 소고기(90g)
+  role: sub
+- ingredient: ground_pork
+  raw_text: 다진 돼지고기(90g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(15g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(7g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(3g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(5g)
+  role: sub
+- ingredient: quail_egg
+  raw_text: 메추리알(35g)
+  role: sub
+- ingredient: null
+  raw_text: 숙성
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(15g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(3g)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(7g)
+  role: sub
+- ingredient: null
+  raw_text: 마른고추(3g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(5g)
+  role: sub
+- ingredient: wine
+  raw_text: 와인(15g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(5g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(5g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(5g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(5g)
+  role: sub
+steps:
+- text: 마늘과 양파는 입자있게 다져 볶아서 준비한다.
+- text: 다진 소고기와 돼지고기에 볶아놓은 마늘과 양파를 넣고, 소금과 후춧가루, 달걀물, 빵가루, 녹말가루를 넣어 골고루 치대어 숙성시킨다.
+- text: 깻잎은 곱게 채를 썰어 찬물에 담가 싱싱해 지면 건져 숙성된 고기에 넣는다.
+- text: 깻잎을 넣은 고기를 지름 4cm 크기의 함박스테이크 형태를 만들어 팬에 올리브오일을 넣고 익힌다
+- text: 냄비에 마른고추와 대파, 마늘, 와인, 저염간장, 올리고당, 설탕을 넣어 끓이다가, 토마토(2/3 분량)를 다져넣고, 뭉근하게 졸여 체에 걸러 놓는다.
+- text: 남은 토마토는 원형을 살려 슬라이스하여 접시에 깔아준 뒤 익힌 함박스테이를 얹고 메추리알은 한 개씩 반숙 지단을 부쳐 익힌 함박스테이크 위에 올린다.

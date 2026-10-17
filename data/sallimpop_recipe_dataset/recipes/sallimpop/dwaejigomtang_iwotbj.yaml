@@ -1,0 +1,105 @@
+id: dwaejigomtang_iwotbj
+title: 돼지곰탕
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 돼지곰탕
+  video_url: https://www.youtube.com/watch?v=iwOTBjIRhCU
+  published_at: '2026-01-21'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 돼지고기 앞다리살
+  raw_text: 돼지고기 앞다리살 1kg / 앞다리살 1kg
+  role: main
+  optional: false
+  amount: 1
+  unit: kg
+- name: 대파
+  raw_text: 대파 3쪽 / 대파
+  role: sub
+  optional: false
+  amount: 3
+  unit: 쪽
+- name: 마늘
+  raw_text: 통마늘 10알
+  role: seasoning
+  optional: false
+  amount: 10
+  unit: 알
+- name: 생강 작은 조각
+  raw_text: 생강 작은 조각 하나
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 표고버섯
+  raw_text: 표고버섯 3개
+  role: sub
+  optional: false
+  amount: 3
+  unit: 개
+- name: 양파
+  raw_text: 양파 1/4 쪽 / 양파
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 쪽
+- name: 굵은소금
+  raw_text: 굵은소금 반스푼
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 국간장
+  raw_text: 국간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 참치액
+  raw_text: 참치액 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 분말가루
+  raw_text: 분말가루 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 생강
+  raw_text: 생강
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 집에서 끓인 돼지탕이 이렇게 추천드릴게요. 끓는물에 돼지고기 앞다리살 1kg 10분간 삶아주고.
+  technique: 끓이기
+- text: 냄비에 돼지고기 넣고 자르는 대파 표고보서 세 개 넣어 주고 양파는.
+  technique: null
+- text: 많이 넣으면 단맛이 나니 1/4쪽만 넣어주고 물 2.5L 부어 줄게요.
+  technique: null
+- text: 이대로 뚜껑 닫고 한시간 푹 끓여 넣고 10분만 더 끓여주면 육수는.
+  technique: 끓이기
+- text: 올려 주세요. 마무리 후추 툭툭 뿌려.
+  technique: null

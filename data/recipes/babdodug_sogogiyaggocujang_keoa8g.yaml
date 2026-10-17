@@ -1,0 +1,98 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: babdodug_sogogiyaggocujang_keoa8g
+title: 밥도둑 소고기약고추장
+cuisine: 한식
+difficulty: 1
+cook_time_min: 6
+servings: null
+source: https://www.youtube.com/watch?v=KEoA8gcbFeY
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: ground_beef
+  raw_text: 소고기 다짐육 300g / 다짐육 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: gochujang
+  raw_text: 고추장 300g
+  role: seasoning
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: sugar
+  raw_text: 설탕 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 깨소금 2스푼
+  role: garnish
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 마지막 꿀 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: ground_beef
+  raw_text: 소고기다짐육 300g
+  role: sub
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: null
+  raw_text: 고기양과 동일하게 고추장 300g
+  role: sub
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: honey
+  raw_text: 꿀 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 물기 한번 제거해주고 볼에 넣은 후 설탕 2스푼, 예열 된 프라이팬에 준비한 고기 넣고 중불에 잘.
+  technique: null
+- text: 볶는다. 수분을 충분히 날려줘야 보존 기간이 늘어나니 수분 날려준다 생각하면서 볶아주면.
+  technique: 볶음
+- text: 돼요. 볶고나면 키친타올 깔고 고기 올려서 넣고 끓이면서 1분정도 잘 저어주세요. 여기에.
+  technique: 볶음
+- text: 볶은 소고기 넣고 5분정도 중불에 수분 날려주세요.
+  technique: null

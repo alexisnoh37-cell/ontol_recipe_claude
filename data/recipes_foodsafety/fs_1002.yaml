@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1002
+title: 야채칩
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1002. 요리종류 후식, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: lotus_root
+  raw_text: 연근 20g
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마 20g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 20g
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박 20g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 20g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 준비된 야채들을 깨끗이 씻는다.
+- text: 연근, 고구마, 감자, 단호박, 당근은 0.2cm 두께로 썬다.
+- text: 연근, 고구마, 감자는 물에 담궈 둔다.
+- text: 오븐 팬에 썰어 놓은 재료를 넣고 소량의 소금을 뿌린다.
+- text: 130~150℃로 예열한 오븐에 4를 굽는다.
+- text: 구워진 야채칩을 식혀 담는다.

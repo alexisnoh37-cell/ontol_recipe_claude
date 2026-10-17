@@ -1,0 +1,28 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2971
+title: 홍시에이드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2971. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: persimmon
+  raw_text: 홍시 50g
+  role: sub
+- ingredient: pear
+  raw_text: 배 20g
+  role: sub
+- ingredient: null
+  raw_text: 탄산수 50g
+  role: sub
+- ingredient: null
+  raw_text: 사이다 50g
+  role: sub
+steps:
+- text: 홍시를 반으로 가르고 껍질을 벗긴다.
+- text: 씨를 제거한 뒤 3등분으로 썬다.
+- text: 배는 1/4로 나눠 껍질을 벗긴다.
+- text: 믹서에 배, 홍시를 넣고 간다.
+- text: 4를 냉동실에서 살짝 얼린다.
+- text: 반쯤 얼었을 때 탄산수와 사이다를 섞는다.

@@ -140,12 +140,12 @@
   status: reviewed
 - id: pasta
   name: 파스타
-  aliases: [스파게티, 스파게티면, 펜네, 링귀니]
+  aliases: [스파게티, 스파게티면, 펜네, 링귀니, 파스타면]
   derived_from: [wheat_flour, {id: egg, certainty: possible}]
   is_processed: true
   category: 면·떡·빵
   confidence: low
-  note: 듀럼밀(밀). 생면·에그파스타는 계란 포함
+  note: 듀럼밀(밀). 생면·에그파스타는 계란 포함. 2026-10-16 자취요리신 데이터 연결로 별칭 추가, 검수 필요('파스타면')
   status: reviewed
 - id: buckwheat_noodles
   name: 메밀면

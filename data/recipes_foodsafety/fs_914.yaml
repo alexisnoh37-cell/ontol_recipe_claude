@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_914
+title: 돼지고기 토마토 두부볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 914. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: pork_neck
+  raw_text: 돼지고기목살 30g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 30g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 50g
+  role: sub
+- ingredient: null
+  raw_text: 생강다진것 5g
+  role: sub
+- ingredient: null
+  raw_text: 파다진것 5g
+  role: sub
+- ingredient: null
+  raw_text: 땅콩기름 5g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 5g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수 10g
+  role: sub
+- ingredient: null
+  raw_text: 물전분 10g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 돼지고기는 깨끗이 손질한 뒤 잘게다진다.
+- text: 두부는 1cm 정사각형 모양으로 썬다
+- text: 토마토는 껍질과 씨를 제거한 뒤 두부와 같은 크기로 썬다.
+- text: 기름을 두른 팬에 파와 생강을 넣고 볶아 향이 나면 1을 넣고 볶은 뒤 따로 담아둔다.
+- text: 기름을 두른 팬에 토마토, 두부, 고기를 넣고 볶다가 육수를 자작하게 부은 뒤 간장, 소금으로 간을 한다.
+- text: 소스가 졸아들면 두부를 넣고 물 전분을 넣어 소스 농도를 맞춘다.

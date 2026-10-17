@@ -1,0 +1,60 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: buchu_japchae
+title: 부추잡채
+cuisine: 중식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: chive
+  raw_text: 부추 1/2단
+  role: main
+- ingredient: pork
+  raw_text: 돼지고기(채 썬 것) 150g
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/4개
+  role: sub
+  optional: true
+- ingredient: potato_starch
+  raw_text: 감자전분 1작은술
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1큰술
+  role: seasoning
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 1
+  sour: 0
+  umami: 4
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 돼지고기에 간장 1작은술, 전분, 후추를 버무린다.
+- text: 기름 두른 팬에 마늘과 고기를 볶아 익힌다.
+  technique: 볶음
+- text: 양파와 부추를 넣고 굴소스, 남은 간장으로 센 불에 30초만 볶는다.
+  technique: 볶음
+- text: 참기름을 둘러 마무리한다.
+  technique: 볶음

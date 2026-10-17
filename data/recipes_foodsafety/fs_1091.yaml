@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1091
+title: 삼색 버터롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1091. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: persimmon
+  raw_text: 홍시(25g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(25g)
+  role: sub
+- ingredient: dried_persimmon
+  raw_text: 곶감(25g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(25g)
+  role: sub
+- ingredient: null
+  raw_text: 블루베리(25g)
+  role: sub
+- ingredient: null
+  raw_text: 크랜베리(25g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 강력분(275g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(20g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(40g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 이스트(11g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(5g)
+  role: sub
+- ingredient: null
+  raw_text: 탈지분유(8g)
+  role: sub
+- ingredient: null
+  raw_text: 제빵개량제(2.5g)
+  role: sub
+steps:
+- text: 강력분, 꿀, 달걀, 이스트, 소금, 탈지분유, 제빵개량제, 물을 믹서에 넣고 섞는다.
+- text: 가루가 모두 녹아 섞이면 버터를 넣고 완전히 섞은 뒤 세 덩어리로 나눈다.
+- text: 60분 간 1차 발효 후 40g씩 분할하여 둥글리기하고 15분 간 중간 발효 한다.
+- text: 반죽을 손으로 굴려 뭉툭한 원뿔 모양을 만들고 밀대로 밀어 긴 삼각형 모양을 만든다.
+- text: 각 반죽에 홍시/호두, 곶감/대추, 블루베리/크랜베리를 넣고 버터롤을 모양을 만든다.
+- text: 40분 간 2차 발효 후 210℃ 오븐에서 10분 간 굽는다.

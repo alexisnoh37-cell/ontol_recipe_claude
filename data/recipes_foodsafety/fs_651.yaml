@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_651
+title: 돼지고기 숙주덮밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 651. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: katsuobushi
+  raw_text: 가다랑어포(10g)
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기(100g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(1개)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(20g)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파(10g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: rice
+  raw_text: 쌀(90g)
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주(50g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(1g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(5g)
+  role: sub
+steps:
+- text: 다시마 우린 물에 가다랑어포를 넣고 10분간 담갔다가 체에 거르고, 쌀로 밥을 짓는다.
+- text: 돼지고기는 소금과 후춧가루로 밑간을 한 뒤 굽는다.
+- text: 양파, 표고버섯, 팽이버섯은 채 썰고, 쪽파는 버섯 길이로 썬다.
+- text: 육수에 저염간장을 넣어 한소끔 끓이다가 양파와 버섯을 넣고 끓인다.
+- text: 다시 한 번 끓어오르면 쪽파와 달걀을 고루 풀어 넣고 젓지 말고 그대로 끓인다.
+- text: 그릇에 밥을 담고, 돼지고기와 숙주를 올린 뒤 뜨거운 육수를 부어 마무리한다.

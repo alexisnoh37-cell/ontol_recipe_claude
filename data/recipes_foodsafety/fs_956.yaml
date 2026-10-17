@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_956
+title: 김치떡
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 956. 요리종류 후식, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: buckwheat_flour
+  raw_text: 메밀가루 20g
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루 20g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 20g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: kimchi
+  raw_text: 김치 20g
+  role: sub
+- ingredient: squid
+  raw_text: 오징어 30g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 5g
+  role: sub
+- ingredient: sesame
+  raw_text: 깨소금 1g
+  role: sub
+- ingredient: null
+  raw_text: 파다진것 4g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 3g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+steps:
+- text: 메밀가루, 밀가루, 찹쌀가루에 소금을 넣어 체에 내린 뒤 끓는 물을 넣어 익반죽한다.
+- text: 김치는 송송 썰고 오징어는 껍질을 벗겨 굵게 다진다.
+- text: 가열된 팬에 기름을 두르고 김치를 볶은 다음 오징어를 넣고 볶아 식힌다.
+- text: 반죽을 떼어 10cm 둥근 모양으로 빚은 다음 가운데에 3을 넣고 반달모양으로 접어 모양을 만든다.
+- text: 김이 오른 찜통에 면보를 깔고 14분간 찐 다음 5분 정도 뜸을 들인다.
+- text: 한 김 식힌 뒤 접시에 담아낸다.

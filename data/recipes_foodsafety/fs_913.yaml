@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_913
+title: 대추죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 913. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 좁쌀 15g
+  role: sub
+- ingredient: jujube
+  raw_text: 대추 10g
+  role: sub
+- ingredient: chestnut
+  raw_text: 깐밤 5g
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루 10g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 좁쌀을 씻어 불린다.
+- text: 대추와 깐 밤을 냄비에 넣고 물 4컵을 넣고 대추가 무르도록 삶는다.
+- text: 삶은 대추를 손으로 주물러 대추 속살이 나오도록 한 뒤 밤과 함께 체에 거른다.
+- text: 좁쌀은 5배의 물을 부어 저어가면서 익힌다.
+- text: 3을 4에 넣어 잘 섞은 뒤 찹쌀물을 넣어 농도가 나도록 끓인다.
+- text: 소금으로 간을 맞추고 준비한 그릇에 담아낸다.

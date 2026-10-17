@@ -59,6 +59,16 @@ def test_unmapped_ingredient_fails(ck):
     assert codes(check_recipes(ck, [("r.yaml", bad)])) == ["unmapped"]
 
 
+def test_unmapped_ingredient_allowed_only_in_draft(ck):
+    # draft의 미매칭은 허용(검수 전 원문 보존). 엔진은 알레르기 사용자에게 이 레시피를 제외한다.
+    lines = [{"ingredient": "kimchi", "raw_text": "김치", "role": "main"},
+             {"ingredient": None, "raw_text": "비법 소스", "role": "sub"}]
+    assert check_recipes(ck, [("r.yaml", recipe(status="draft", ingredients=lines))]) == []
+    # 매핑했지만 없는 id는 draft여도 오류
+    bad = [*lines[:1], {"ingredient": "dragon_fruit", "raw_text": "용과", "role": "sub"}]
+    assert codes(check_recipes(ck, [("r.yaml", recipe(status="draft", ingredients=bad))])) == ["bad_ref"]
+
+
 def test_unknown_ingredient_fails(ck):
     bad = recipe(ingredients=[{"ingredient": "dragon_fruit", "raw_text": "용과", "role": "main"}])
     assert codes(check_recipes(ck, [("r.yaml", bad)])) == ["bad_ref"]
@@ -98,3 +108,14 @@ def test_preference_targets_must_exist(ck):
         (1, "allergen_group", "sesame"),
     ]
     assert codes(check_preferences(ck, rows)) == ["bad_ref"] * 3
+
+
+def test_draft_may_omit_cook_time_and_use_unclassified_cuisine(ck):
+    """식품안전나라 가져오기(plan 5-3-1): draft에 한해 cook_time_min 없음, cuisine 미분류 허용."""
+    draft = recipe(status="draft", cuisine="미분류", cook_time_min=None, taste=None, difficulty=None)
+    assert check_recipes(ck, [("r.yaml", draft)]) == []
+
+
+def test_published_requires_cook_time_and_vocab_cuisine(ck):
+    bad = recipe(cuisine="미분류", cook_time_min=None)
+    assert sorted(codes(check_recipes(ck, [("r.yaml", bad)]))) == ["bad_vocab", "published_incomplete"]

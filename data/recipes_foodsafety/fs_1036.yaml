@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1036
+title: 고등어 강정
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1036. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: mackerel
+  raw_text: 고등어 35g
+  role: sub
+- ingredient: null
+  raw_text: 전분 5g
+  role: sub
+- ingredient: peanut
+  raw_text: 땅콩 1g
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름 5g
+  role: sub
+- ingredient: null
+  raw_text: 고등어 밑 양념
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 1g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루 적당량
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 3g
+  role: sub
+- ingredient: ketchup
+  raw_text: 토마토케첩 3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 3g
+  role: sub
+steps:
+- text: 고등어는 머리를 자른 뒤 내장을 빼고 잘 씻어 물기를 제거한다.
+- text: 1의 살만 포를 떠서 한입 크기로 자른 뒤 청주, 생강즙, 소금, 후춧가루를 뿌려 밑간 한다.
+- text: 전분을 앞, 뒤로 묻혀 170℃ 튀김 기름에 2번 바삭하게 튀긴다.
+- text: 땅콩은 껍질을 벗긴 뒤 비닐봉지에 담아 밀대로 찧어 굵게 다진다.
+- text: 냄비에 간장, 고추장, 설탕, 물엿을 넣고 끓여 조림장을 만든다.
+- text: 조림장이 반으로 졸아들면 튀긴 고등어와 땅콩을 넣고 살살 뒤집어가며 윤기나게 버무린다.

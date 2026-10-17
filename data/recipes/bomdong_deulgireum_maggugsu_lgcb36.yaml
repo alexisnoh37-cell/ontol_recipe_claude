@@ -1,0 +1,90 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: bomdong_deulgireum_maggugsu_lgcb36
+title: 봄동 들기름 막국수
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=lGcb36RVnd0
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리기구 '기타 조리도구'(선택) 제외(vocab에 없음)
+ingredients:
+- ingredient: buckwheat_noodles
+  raw_text: 냉동 메밀면
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: bomdong
+  raw_text: 봄동
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: null
+  raw_text: 김가루
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: soy_sauce
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: perilla_oil
+  raw_text: 들기름 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: vinegar
+  raw_text: 식초 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: null
+  raw_text: 깨
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment: []
+steps:
+- text: 깨끗한 봄동은 세로로 길쭉하게 자른다.
+  technique: null
+- text: 멸치액젓 1스푼, 설탕 1/2스푼, 식초 1스푼, 고춧가루 살짝 더한 뒤 무친다.
+  technique: null
+- text: 메밀면에 들기름 2스푼, 진간장 1스푼, 설탕 1/2스푼, 김가루를 잘 고르게 비빈다.
+  technique: null
+- text: 완성된 들기름 막국수에 봄동 무침을 얹는다.
+  technique: null

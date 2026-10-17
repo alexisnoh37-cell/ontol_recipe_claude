@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_916
+title: 미니버거
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 916. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 양파다진것 3g
+  role: sub
+- ingredient: null
+  raw_text: 브로컬리다진것 3g
+  role: sub
+- ingredient: null
+  raw_text: 당근다진것 3g
+  role: sub
+- ingredient: null
+  raw_text: 바질다진것 1g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 6g
+  role: sub
+- ingredient: null
+  raw_text: 쇠고기다진것 25g
+  role: sub
+- ingredient: null
+  raw_text: 돼지고기갈은것 10g
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루 5g
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 1g
+  role: sub
+- ingredient: ketchup
+  raw_text: 토마토케첩 1g
+  role: sub
+- ingredient: null
+  raw_text: 미니
+  role: sub
+- ingredient: null
+  raw_text: 버거빵 12g
+  role: sub
+- ingredient: iceberg_lettuce
+  raw_text: 양상추 2g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 8g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 적당량
+  role: sub
+steps:
+- text: 바질과 양파, 브로콜리, 당근은 곱게 다진다.
+- text: 소고기와 돼지고기는 곱게 간다.
+- text: 2를 1:1 비율로 섞고 1과 달걀, 케첩, 후추, 빵가루와 섞어 패티를 만든다.
+- text: 미니버거빵의 안쪽 면에 버터를 바른 후 팬에서 살짝 구워준다.
+- text: 3을 팬에서 갈색이 나도록 익혀준다.
+- text: 4에 마요네즈를 바르고 양상추, 패티, 케첩, 토마토, 양상추 순으로 올리고 마요네즈를 바른 빵으로 덮는다.

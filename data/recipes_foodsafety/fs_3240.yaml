@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3240
+title: 포니언 스프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3240. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: potato
+  raw_text: 감자(100g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(40g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(30g)
+  role: sub
+- ingredient: null
+  raw_text: 시판 크루통(7g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(1g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(5g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.3g)
+  role: sub
+steps:
+- text: 감자는 슬라이스하고, 양파는 채 썬다.
+- text: 끓는 물(5컵)에 감자를 넣어 7분간 삶아 건진다.
+- text: 중간 불로 달군 팬에 버터를 두른 뒤 양파를 넣어 3~5분간 볶아 꺼낸다.
+- text: 믹서에 삶은 감자와 양파, 우유를 넣어 곱게 간다.
+- text: 냄비에 믹서에 간 재료들을 넣어 약한 불로 3분간 끓여 농도를 맞춘다.
+- text: 소금과 후춧가루로 간을 맞춘 뒤 시판 크루통과 파슬리가루를 올린다.

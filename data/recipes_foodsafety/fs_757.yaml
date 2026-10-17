@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_757
+title: 해초탕수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 757. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 불린 미역(혹은 물미역) 7
+  role: sub
+- ingredient: null
+  raw_text: 파래(생것) 10
+  role: sub
+- ingredient: laver
+  raw_text: 김 1.3
+  role: sub
+- ingredient: onion
+  raw_text: 양파 7
+  role: sub
+- ingredient: null
+  raw_text: 유자청 15
+  role: sub
+- ingredient: null
+  raw_text: 다진 파 4
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 1
+  role: sub
+- ingredient: potato_starch
+  raw_text: 감자전분 10
+  role: sub
+- ingredient: egg
+  raw_text: 계란 7
+  role: sub
+- ingredient: soybean_oil
+  raw_text: 콩기름 4
+  role: sub
+steps:
+- text: 미역과 파래는 깨끗이 씻어 물기를 짜서 잘게 다지고, 김은 살짝 구워 부스러뜨린다.
+- text: 양파와 유자청 건더기는 잘게 다진다.
+- text: 1과 2를 합해 감자전분과 달걀을 넣어 반죽한다.
+- text: 반죽을 동그랗게 뭉쳐 기름에 튀긴다.
+- text: 유자청 국물에 물을 섞어 팬에 넣고 걸쭉하게 끓여 소스를 만든다.
+- text: 해초튀김에 소스를 곁들여 낸다.

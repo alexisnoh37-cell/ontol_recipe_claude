@@ -1,0 +1,46 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: gyeran_tang
+title: 계란탕
+cuisine: 중식
+difficulty: 1
+cook_time_min: 10
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+note: 소금 간(간장·치킨스톡 없음)
+ingredients:
+- ingredient: egg
+  raw_text: 계란 2개
+  role: main
+- ingredient: green_onion
+  raw_text: 대파 1/4대
+  role: sub
+- ingredient: corn_starch
+  raw_text: 옥수수전분 1큰술
+  role: sub
+- ingredient: salt
+  raw_text: 소금 1/2작은술
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 2
+  savory: 2
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 물 3컵을 끓여 소금으로 간한다.
+  technique: 끓이기
+- text: 전분을 물에 풀어 넣고 걸쭉해지면 계란물을 가늘게 붓는다.
+  technique: 끓이기
+- text: 대파, 후추, 참기름을 넣는다.

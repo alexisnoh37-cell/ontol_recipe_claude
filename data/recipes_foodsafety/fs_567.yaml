@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_567
+title: 삼계치킨롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 567. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(1마리)
+  role: sub
+- ingredient: null
+  raw_text: 인삼(2뿌리)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(3알)
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀(100g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(50g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(5g)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(2장)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추(10알)
+  role: sub
+steps:
+- text: 닭은 살을 발라 소금, 후춧가루로 밑간을 하고 닭뼈는 삶아 육수를 만든다.
+- text: 인삼은 뇌두를 제거하고 깨끗이 씻어 채 썰고, 대추도 씨를 제거 한 후 채 썬다.
+- text: 양파, 대파, 당근은 채썰고, 찹쌀은 깨끗이 씻어 충분히 불린 뒤 함께 볶는다.
+- text: 충분히 볶아지면 육수를 자작하게 넣고 익힌다.
+- text: 랩에 닭살을 놓고 찹쌀과 인삼채, 대추채를 올려 돌돌 만다.
+- text: 마늘, 생강, 월계수잎 및 통후추를 넣고 끓인 물에 김이 올라오면 말아놓은 닭살을 찜통에서 20분 정도 찌고 한 김 식으면 썰어 접시에 담는다.

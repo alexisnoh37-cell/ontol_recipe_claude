@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_513
+title: 오징어순대
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 513. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 통오징어(100g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(20g)
+  role: sub
+- ingredient: null
+  raw_text: 견과류(20g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(50g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(10g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(10g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(10g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(5g)
+  role: sub
+steps:
+- text: 통오징어는 다리를 떼어내고 내장을 제거시켜 통째로 깨끗이 씻어 준비 한다.
+- text: 양파와 당근, 부추, 생강은 입자있게 썰고, 견과류는 다져 준비한다.
+- text: 두부는 물기를 짠 후 수저로 으깨어 놓는다.
+- text: 잘게 썰은 오징어 다리와 썰어 놓은 채소, 견과류(②), 곱게 다진 대파와 마늘, 그리고 소금과 녹말가루를 두부 (③)와 함께 골고루 섞어 순대속을 만든다.
+- text: 손질된 오징어 속 안에 준비한 속을 채워 넣는다.
+- text: 오징어순대에 레몬즙과 정종, 생강즙을 섞어 바른 뒤 찜통에 김이 오르면 오징어순대를 넣어 약 10분 정도 쪄서 완성한다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_669
+title: 콜라비오미자 물김치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 669. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 콜라비(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 오미자(20g)
+  role: sub
+- ingredient: null
+  raw_text: 무화과(20g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(50g)
+  role: sub
+- ingredient: green_bell_pepper
+  raw_text: 피망(30g)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 건새우(10g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+steps:
+- text: 다시마와 건새우를 넣고 은근히 끓여 차갑게 식힌 뒤 육수를 만든다.
+- text: 차갑게 식힌 육수는 체에 걸려내고 오미자를 넣고 소금으로 간을 한다.
+- text: 콜라비, 피망, 파프리카는 납작하게 썬다.
+- text: 육수는 체에 거른다
+- text: 오미자를 넣고 소금으로 간을 한다.
+- text: 통에 썰어놓은 야채와 무화과를 담고 ?를 넣는다.

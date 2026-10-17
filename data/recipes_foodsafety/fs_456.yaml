@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_456
+title: 단호박리조또
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 456. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: brown_rice
+  raw_text: 현미(100g)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(100g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(20g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(30g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: null
+  raw_text: 단호박가루(20g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 요거트(10g)
+  role: sub
+- ingredient: null
+  raw_text: 캐슈넛(20g)
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드(20g)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(10g)
+  role: sub
+steps:
+- text: 현미쌀은 깨끗이 씻어 약 30분 이상 충분히 불린다.
+- text: 단호박은 껍질을 벗겨 먹기 좋게 썰어 불린 현미 쌀과 함께 밥을 짓는다.
+- text: 양송이와 양파는 다져, 냄비에 볶다가 우유와 설탕, 호박가루를 넣는다.
+- text: 끓고 있는 냄비에 단호박 현미밥(②)을 넣고 끓인다.
+- text: 밥이 어느 정도 어우러지면, 생크림과 요거트를 섞어 한 번 더 젓는다.
+- text: 만들어진 리조또(⑤) 위에 캐슈넛과 아몬드, 어린잎 채소를 올려 함께 완성한다.

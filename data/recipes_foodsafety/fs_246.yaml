@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_246
+title: 삼계선
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 246. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 닭가슴살(200g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(40g)
+  role: sub
+- ingredient: null
+  raw_text: 수삼(10g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(30g)
+  role: sub
+- ingredient: null
+  raw_text: 블루베리소스 블루베리잼(20g)
+  role: sub
+- ingredient: wine
+  raw_text: 화이트와인(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(30g)
+  role: sub
+steps:
+- text: 닭가슴살을 다져서 두부와 섞어준다.
+- text: 수삼과 파프리카를 채 썰고, 대추는 돌려서 깎아준다.
+- text: 닭가슴살두부반죽을 얇게 편 후 파프리카, 수삼, 대추를 올린 뒤 풀리지 않게 종이포일로 만다.
+- text: 김 오른 찜기에 20분간 쪄준다.
+- text: 블루베리잼과 화이트와인을 졸인 뒤 설탕을 넣고 블루베리소스를 만든다.
+- text: 쪄낸 삼계선을 2㎝두께로 잘라 담고 블루베리소스를 곁들여 마무리한다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_640
+title: 황태미역 곤약스프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 640. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: dried_pollock
+  raw_text: 황태채(100g)
+  role: sub
+- ingredient: null
+  raw_text: 곤약(100g)
+  role: sub
+- ingredient: seaweed
+  raw_text: 건미역(20g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깨가루(20g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(50g)
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장(10g)
+  role: sub
+- ingredient: fish_sauce
+  raw_text: 액젓(10g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(1개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+steps:
+- text: 된장에 두부를 넣고 골고루 섞는다.
+- text: 표고버섯과 마늘은 함께 갈아둔다.
+- text: 미역은 충분히 불린다.
+- text: 냄비에 황태채와 갈아둔 표고버섯, 마늘을 넣고 은근히 끓여 육수를 만든다.
+- text: 곤약은 납작납작하게 썰어 끓는 물에 데친다.
+- text: 육수에서 황태를 건져 두부된장과 함께 갈아 육수에 붓고, 미역, 곤약, 들깨가루를 넣고 약 20분 정도 끓인 후 액젓으로 간을 한다.

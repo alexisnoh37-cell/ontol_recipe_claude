@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1003
+title: 잡곡강정
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1003. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 검은콩튀밥 10g
+  role: sub
+- ingredient: null
+  raw_text: 쌀튀밥 10g
+  role: sub
+- ingredient: null
+  raw_text: 메닐튀밥 10g
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 6g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 6g
+  role: sub
+steps:
+- text: 검은콩, 쌀, 메밀의 튀밥을 준비한다.
+- text: 물엿에 설탕, 물을 넣고 약한불에서 투명하게 녹인다.
+- text: 오목한 팬에 2를 넣는다.
+- text: 3의 팬에 1을 넣고 시럽에서 실이 생길 때 까지 불 위에서 젓는다.
+- text: 강정이 굳기 전에 타원형 모양으로 빚거나 밀대로 밀어 편다.
+- text: 밀어 편 강정을 마름모 모양으로 자른다.

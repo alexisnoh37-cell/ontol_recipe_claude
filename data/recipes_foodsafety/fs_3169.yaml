@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3169
+title: 달콤과일깍두기
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3169. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: radish
+  raw_text: 무(20g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(10g)
+  role: sub
+- ingredient: null
+  raw_text: 참외(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(1g)
+  role: sub
+- ingredient: saeujeot
+  raw_text: 새우젓(0.5g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(0.5g)
+  role: sub
+- ingredient: scallion
+  raw_text: 실파(1g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(1g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(0.5g)
+  role: sub
+steps:
+- text: 배와 참외는 1~1.5cm 크기로 깍둑 썬다.
+- text: 무는 1~1.5cm 크기로 깍둑 썬다.
+- text: 실파는 1cm 길이로 썬다.
+- text: 새우젓, 마늘, 생강은 곱게 다진다.
+- text: 고춧가루, 새우젓, 마늘, 생강, 통깨를 버무려 양념장을 만든다.
+- text: 배, 참외, 무, 실파에 양념장을 넣어 버무린다.

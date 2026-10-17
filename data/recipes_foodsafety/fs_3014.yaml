@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3014
+title: 유린기
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3014. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: chicken_thigh
+  raw_text: 닭다리살(110g)
+  role: sub
+- ingredient: iceberg_lettuce
+  raw_text: 양상추(25g)
+  role: sub
+- ingredient: null
+  raw_text: 그린치커리(5g)
+  role: sub
+- ingredient: null
+  raw_text: 라디치오(5g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(5g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(5g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(5g)
+  role: sub
+- ingredient: null
+  raw_text: 무순(3g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(1g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(1g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(3g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(5g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(5g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(2g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(1g)
+  role: sub
+- ingredient: corn_starch
+  raw_text: 옥수수전분(5g)
+  role: sub
+steps:
+- text: 양상추와 그린치커리, 라디치오는 먹기 좋은 크기로 찢고, 고추는 잘게 다진다.
+- text: 대파와 생강, 마늘은 곱게 다지고, 팬에 식용유를 두른 뒤 볶는다.
+- text: 소스 재료를 넣어 약한 불에서 5분 정도 끓인다.
+- text: 소스를 식힌 뒤 잘게 썬 고추를 섞는다.
+- text: 닭다리살에 옥수수전분을 묻히고, 팬에 식용유를 두른 뒤 노릇하게 굽는다.
+- text: 그릇에 손질한 채소를 깔고, 구운 닭다리살을 올린 뒤 소스와 무순을 올려 마무리한다.

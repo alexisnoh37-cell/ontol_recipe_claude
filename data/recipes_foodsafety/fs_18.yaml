@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_18
+title: 버섯 두유 소스 볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 18. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 버섯볶음
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯 100g(3개)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 10g(2작은술)
+  role: sub
+- ingredient: null
+  raw_text: 두유 소스
+  role: sub
+- ingredient: soy_milk
+  raw_text: 두유 20g(1⅓큰술)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 10g(2작은술)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 5g(1/2개)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: sub
+- ingredient: null
+  raw_text: 새싹채소 20g
+  role: sub
+steps:
+- text: 새송이버섯은 굵게 채썬 후 달군 프라이팬에 기름을 두르고 노릇하게 볶는다.
+- text: 소스 팬에 두유, 생크림, 청양고추, 후추를 넣고 약한 불에 뭉근하게 졸인다.
+- text: 볶은 새송이버섯을 소스에 넣고 고루 섞어 가며 조금 더 볶아 접시에 담은 후 새싹채소를 함께 곁들인다.

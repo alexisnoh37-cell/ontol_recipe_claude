@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_507
+title: 함초삼겹
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 507. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: pork_belly
+  raw_text: 통삼겹살(150g)
+  role: sub
+- ingredient: null
+  raw_text: 함초가루(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.2g)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(30g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(5g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(20g)
+  role: sub
+- ingredient: ssamjang
+  raw_text: 쌈장(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: tofu
+  raw_text: 연두부(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+steps:
+- text: 통 삼겹살에 함초와 소금, 후춧가루를 뿌려 숙성을 시킨다.
+- text: 부추는 약 6cm 길이로 썰고, 양파는 채를 썰어 놓고, 당근은 납작하게 편으로 썰어 준비한다.
+- text: 연두부는 잘게 다져 놓는다.
+- text: 유자청에 쌈장과 설탕, 생크림을 넣어 골고루 섞는다.
+- text: 골고루 섞은 유자청에 다져 놓은 연두부를 넣어 섞어 냄비에 넣고, 썰어 놓은 양파와 당근을 넣어 은근히 끓여 소스를 만들어 놓는다.
+- text: 숙성시킨 통삼겹은 버터를 녹인 팬에 살짝 구워 다시 오븐에서 20분 정도 익힌 후 먹기 좋게 썰은 뒤, 접시에 부추를 깔고 그 위에 구워진 삼겹을 올리고 소스를 얹어 완성한다.

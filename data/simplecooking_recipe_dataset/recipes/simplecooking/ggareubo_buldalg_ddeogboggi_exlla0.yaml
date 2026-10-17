@@ -1,0 +1,91 @@
+id: ggareubo_buldalg_ddeogboggi_exlla0
+title: 까르보 불닭 떡볶이
+cuisine: 기타
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 불닭 100배 더 맛있게 먹는 방법. 대존맛.
+  video_url: https://www.youtube.com/watch?v=Exlla0AkUUI
+  published_at: '2026-09-14'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 까르보 불닭볶음면
+  raw_text: 까르보 불닭볶음면
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- name: 슬라이스 치즈
+  raw_text: 슬라이스 치즈 / 치즈 3장
+  role: sub
+  optional: false
+  amount: 3
+  unit: 장
+- name: 떡볶이 떡
+  raw_text: 떡볶이 떡
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 비엔나소시지
+  raw_text: 비엔나 소시지 / 비엔나소시지
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 불닭 스프
+  raw_text: 불닭 스프
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 마요네즈
+  raw_text: 마요네즈 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 노른자
+  raw_text: 노른자
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 우유
+  raw_text: 우유 2컵
+  role: sub
+  optional: false
+  amount: 2
+  unit: 컵
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 냄비에 치즈 3장, 마요네즈 1스푼, 노른자, 불닭 스프, 고추장 1/2스푼을 더한 뒤 섞는다.
+  technique: 무침
+- text: 우유 2컵과 물 1컵을 붓고 끓인다.
+  technique: 끓이기
+- text: 끓기 시작하면 면, 떡, 비엔나소시지를 더한다.
+  technique: 끓이기
+- text: 면과 떡이 익고 소스가 꾸덕해질 때까지 끓이면 마친다.
+  technique: 끓이기

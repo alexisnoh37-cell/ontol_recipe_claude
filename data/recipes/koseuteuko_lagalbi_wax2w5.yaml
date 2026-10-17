@@ -1,0 +1,87 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: koseuteuko_lagalbi_wax2w5
+title: 코스트코 LA갈비
+cuisine: 한식
+difficulty: 1
+cook_time_min: 10
+servings: null
+source: https://www.youtube.com/watch?v=wAx2W5KPCOg
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에
+  없음)
+ingredients:
+- ingredient: beef_short_ribs
+  raw_text: LA갈비 2.5kg
+  role: main
+  optional: false
+  amount: 2.5
+  unit: kg
+- ingredient: null
+  raw_text: 갈아만든배 2캔 476ml
+  role: sub
+  optional: false
+  amount: 2
+  unit: 캔
+- ingredient: soy_sauce
+  raw_text: 진간장 150g
+  role: seasoning
+  optional: false
+  amount: 150
+  unit: g
+- ingredient: mirin
+  raw_text: 맛술 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 깨소금 3스푼
+  role: garnish
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: black_pepper
+  raw_text: 후추 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: green_onion
+  raw_text: 대파 1쪽 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 쪽
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 1
+  savory: 3
+equipment: []
+steps:
+- text: 설탕 두 스푼 넣어 한시간 담궈 씻어 주셔야 하는데 LA 갈비는 뼈를.
+  technique: null
+- text: 더 잘 섞는다. 그 후 고기만.
+  technique: 무침

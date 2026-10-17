@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3764
+title: 쿠스쿠스 삼계롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3764. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 쿠스쿠스 30g
+  role: sub
+- ingredient: chicken_thigh
+  raw_text: 닭다리살 200g
+  role: sub
+- ingredient: chestnut
+  raw_text: 밤 10g
+  role: sub
+- ingredient: null
+  raw_text: 은행 5g
+  role: sub
+- ingredient: jujube
+  raw_text: 대추 5g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 5g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 5g
+  role: sub
+- ingredient: null
+  raw_text: 닭뼈육수 재료 닭뼈 250g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 30g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 50g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 5g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 5g
+  role: sub
+- ingredient: null
+  raw_text: 양념 들깻가루 20g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 1g
+  role: sub
+steps:
+- text: 팬에 손질한 닭뼈를 넣고 살짝 굽는다. 냄비에 구운 닭뼈와 나머지 닭뼈육수 재료를 모두 넣고 30분간 끓여 닭뼈육수를 만든다.
+- text: 볼에 쿠스쿠스를 넣고 뜨거운 닭뼈육수를 잠길 만큼 넣는다. 10분간 익힌 후 포크로 부드럽게 풀어준다.
+- text: 닭뼈육수에 들깻가루를 넣고 한소끔 끓인다.
+- text: 손질한 닭다리살에 소금, 후추로 간한다. 랩을 깔고 닭다리살을 넓게 펴고 밤, 은행, 대추를 올려 돌돌 말아 15분간 찐 후 식혀 삼계롤을 만든다.
+- text: 삼계롤을 한입 크기로 썰고, 대파와 홍고추를 잘게 썰어 고명을 만든다.
+- text: 그릇에 삼계롤, 닭뼈육수를 넣고, 쿠스쿠스, 대파와 홍고추 고명을 올려 마무리한다.

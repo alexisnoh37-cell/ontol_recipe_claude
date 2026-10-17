@@ -1,0 +1,86 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: beoteoddeogboggi_2pyfhn
+title: 버터떡볶이
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: 2
+source: https://www.youtube.com/watch?v=2pYFhNIt8dc
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: tteokbokki_rice_cake
+  raw_text: 밀떡 350g
+  role: main
+  optional: false
+  amount: 350
+  unit: g
+- ingredient: butter
+  raw_text: 무염버터 20g
+  role: sub
+  optional: false
+  amount: 20
+  unit: g
+- ingredient: peanut_butter
+  raw_text: 땅콩버터 10g
+  role: sub
+  optional: false
+  amount: 10
+  unit: g
+- ingredient: soy_sauce
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: tuna_extract
+  raw_text: 참치액 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: chicken_stock
+  raw_text: 치킨스톡 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: oligosaccharide
+  raw_text: 올리고당 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 버터와 땅콩버터 콜라보 떡볶이? 🤣 버터떡볶이 만들어봤어요 :).
+  technique: null
+- text: 버터떡볶이!! 만들기도 너무 쉬우니 땅콩버터 10g, 다진마늘 1스푼 넣는다.
+  technique: null
+- text: 살짝 마늘 향이 올라오면 떡도 같이 넣어줄게요. 2분정도 버터 묻혀가며 볶다가 진간장 1스푼.
+  technique: 볶음
+- text: 올리고당 1스푼 넣은 후 3분간만 더 조리해주면.
+  technique: 조림

@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_763
+title: 가자미쑥국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 763. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: flatfish
+  raw_text: 가자미 50
+  role: sub
+- ingredient: hard_clam
+  raw_text: 모시조개 15
+  role: sub
+- ingredient: null
+  raw_text: 쑥 20
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 9
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 4
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깨가루 6
+  role: sub
+steps:
+- text: 가자미는 비늘, 내장, 지느러미를 제거하고 3등분 한다.
+- text: 물에 된장을 풀어 끓인다.
+- text: 가자미와 모시조개를 넣고 20분 더 끓인다.
+- text: 쑥을 넣고 5분간 팔팔 끓인다.
+- text: 대파와 들깨가루를 넣어 살짝 끓여낸다.
+- text: 그릇에 가자미, 쑥을 우선 담고 국믈을 곁에 부어주며 담아낸다.

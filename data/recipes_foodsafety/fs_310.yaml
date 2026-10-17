@@ -1,0 +1,41 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_310
+title: 유자샐러드라면
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 310. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 라면(55g)
+  role: sub
+- ingredient: iceberg_lettuce
+  raw_text: 양상추(40g)
+  role: sub
+- ingredient: null
+  raw_text: 케일(5g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: null
+  raw_text: 비타민(5g)
+  role: sub
+- ingredient: null
+  raw_text: 유자드레싱 식초(2g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(5g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(15g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(1g)
+  role: sub
+steps:
+- text: 끓는 물(600g)에 라면을 넣어 데친다.
+- text: 면은 찬물에 헹궈 물기를 뺀다.
+- text: 양상추, 케일, 파프리카는 얇게 채 썰고, 비타민은 먹기 좋은 크기로 자른다.
+- text: 유자드레싱을 고루 섞은 뒤 라면, 채소를 버무려 마무리한다.

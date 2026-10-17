@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_82
+title: 건강그린 샐러드와 고소한 두유드레싱
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 82. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 건강그린 샐러드
+  role: sub
+- ingredient: iceberg_lettuce
+  raw_text: 양상추 40g(1장)
+  role: sub
+- ingredient: null
+  raw_text: 치커리 10g(3줄기)
+  role: sub
+- ingredient: null
+  raw_text: 레드치커리 10g(3줄기)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 40g(4개)
+  role: sub
+- ingredient: null
+  raw_text: 주황 파프리카 10g(5ⅹ3cm)
+  role: sub
+- ingredient: null
+  raw_text: 두유 드레싱
+  role: sub
+- ingredient: soy_milk
+  raw_text: 두유 40g(2⅔큰술)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 15g(1큰술)
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 3g(2/3작은술)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 3g(2/3작은술)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 약간
+  role: sub
+steps:
+- text: 두유, 마요네즈, 물엿, 식초, 설탕, 물을 잘 섞어서 두유 드레싱을 만든다.
+- text: 양상추, 치커리, 레드치커리는 찬물에 담갔다가 물기를 빼서 한입 크기로 찢고 방울토마토는 꼭지를 떼고 반으로 자른다.
+- text: 주황 파프리카는 얇게 채를 썰고 그릇에 양상추, 치커리, 레드치커리, 파프리카, 방울토마토를 담고 두유 드레싱을 곁들인다.

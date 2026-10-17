@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_193
+title: 고추장 라따뚜이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 193. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: zucchini
+  raw_text: 애호박 70g(1½개)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯 60g(3개)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지 70g(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 저염살라미 25g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 60g(1/3개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파 40g(1/5개)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 10g(2개)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 600g(3개)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 10g(2작은술)
+  role: sub
+- ingredient: basil
+  raw_text: 바질 50g
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 15g(1큰술)
+  role: sub
+steps:
+- text: 양파와 마늘은 다져서 볶다가 토마토 과육과 설탕, 바질을 넣고 고추장을 섞어 토마토 소스를 만든다.
+- text: 가지, 양송이버섯, 애호박, 사과는 썰고 살라미는 데친다.
+- text: 오븐용 팬에 토마토 소스를 넓게 펴준 뒤 애호박, 가지, 양송이버섯, 살라미를 겹치게 넣고 180℃로 예열한 오븐에 넣고 30분 구워 완성한다

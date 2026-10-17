@@ -1,0 +1,85 @@
+id: niggugamatama_udong_ta6cbt
+title: 니꾸가마타마 우동
+cuisine: 일식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 제발 당장 편의점 달려가세요.
+  video_url: https://www.youtube.com/watch?v=ta6cBTDzEWk
+  published_at: '2026-06-16'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 생생우동
+  raw_text: 생생우동
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- name: 차돌박이
+  raw_text: 냉동 차돌박이
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 표고버섯
+  raw_text: 표고버섯
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 계란
+  raw_text: 계란
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 마늘
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 노른자
+  raw_text: 노른자
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 설탕
+  raw_text: 설탕 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 기타 조리도구
+  required: false
+steps:
+- text: 우동면은 뜨거운 물에 불린다.
+  technique: null
+- text: 우동면, 후레이크 1봉, 액상스프 1/2봉을 섞는다.
+  technique: 무침
+- text: 차돌박이 150g, 표고버섯 1개, 액상스프 1/2봉, 설탕 1/2스푼, 다진 마늘 1/2스푼 섞어준 뒤 굽는다.
+  technique: 구이
+- text: 우동면 위에 구운 고기, 대파, 계란 노른자를 얹는다.
+  technique: null

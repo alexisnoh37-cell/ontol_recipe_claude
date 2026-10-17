@@ -1,0 +1,76 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_261
+title: 타콤소스닭조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 261. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 양파(80g)
+  role: sub
+- ingredient: celery
+  raw_text: 셀러리(15g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(15g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(30g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(20g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(17.5g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(15g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(125g)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(35g)
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리(25g)
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(150g)
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭육수(200g)
+  role: sub
+- ingredient: null
+  raw_text: 닭밑간양념 다진 마늘(4g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(2.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.3g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 다진 마늘(3g)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(1g=2장)
+  role: sub
+- ingredient: null
+  raw_text: 오레가노(0.25g)
+  role: sub
+- ingredient: basil
+  raw_text: 바질(0.25g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(0.1g)
+  role: sub
+steps:
+- text: 양파와 셀러리, 당근, 사과, 버섯은 잘게 다지고, 가지, 양파는 한입 크기로 썰고, 토마토는 십자로 칼집을 내고 살짝 데쳐 껍질을 벗긴 뒤 씨를 제거해 다진다.
+- text: 단호박과 브로콜리는 한입 크기로 썰어 데친다.
+- text: 닭가슴살은 칼집을 내 닭밑간양념한 뒤 팬에 식용유(10g)를 둘러 80%정도 익힌다.
+- text: 팬에 식용유를 두르고 다진 마늘을 먼저 볶다가 양파와 셀러리, 당근을 넣어 볶고, 양파가 투명하게 변하면 사과와 버섯을 넣어 볶는다.
+- text: 토마토를 넣어 3분 정도 더 볶다가 닭육수와 월계수잎을 넣어 5분 정도 푹 끓인 뒤 한 김 식혀 오레가노와 바질을 넣고 믹서기에 곱게 갈아 타콤소스를 만든다.
+- text: 단호박과 브로콜리, 양파, 가지를 센 불에서 빠르게 볶은 뒤 닭고기와 타콤소스를 넣어 조리다가 닭고기가 다 익으면 접시에 담고, 파슬리가루를 뿌려 마무리.

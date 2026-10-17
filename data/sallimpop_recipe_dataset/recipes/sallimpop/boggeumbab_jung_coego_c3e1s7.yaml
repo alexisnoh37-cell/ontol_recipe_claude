@@ -1,0 +1,89 @@
+id: boggeumbab_jung_coego_c3e1s7
+title: 볶음밥 중 최고 :)
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: 1
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 볶음밥 중 최고 :)
+  video_url: https://www.youtube.com/watch?v=C3E1S7yHyrQ
+  published_at: '2024-09-30'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 보리새우
+  raw_text: 보리새우 3스푼
+  role: main
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 계란
+  raw_text: 달걀 2알 / 달걀
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- name: 대파
+  raw_text: 대파 1/4 쪽 / 대파 1/4쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 쪽
+- name: 마늘
+  raw_text: 다진마늘 1스푼 / 마늘 3개
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 개
+- name: 기름
+  raw_text: 기름 5스푼
+  role: sub
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 반 스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 올리고당
+  raw_text: 올리고당 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 맛소금
+  raw_text: 맛소금 2꼬집 / 맛소금
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 꼬집
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 고소하면서 식감도 좋은 보리새우볶음밥❤ 기름 5스푼 부어주고 대파, 마늘 넣고.
+  technique: null
+- text: 1분정도 볶다가 보리새우 넣고 1분 더 볶아 줄게요. 한스푼 넣고 재료 잘 섞는다. 재료 한쪽으로.
+  technique: 볶음
+- text: 밀고 달걀 잘 저어가며 익혀주고 70% 정도 익으면 밥 한공기 넣고 잘 섞어주면 완성이에요.
+  technique: 무침

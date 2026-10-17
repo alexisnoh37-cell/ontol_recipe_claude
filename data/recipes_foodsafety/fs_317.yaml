@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_317
+title: 한입꼬치구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 317. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: pork_belly
+  raw_text: 통삼겹 200g
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마 100g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 40g
+  role: sub
+- ingredient: null
+  raw_text: 2가지색 미니파프리카 40g
+  role: sub
+- ingredient: null
+  raw_text: 청피망 40g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이 40g
+  role: sub
+- ingredient: null
+  raw_text: 건고추 3g
+  role: sub
+- ingredient: null
+  raw_text: 어간장 10g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추 1g
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리 1g. 마늘기름 15g
+  role: sub
+- ingredient: null
+  raw_text: 오렌지주스 100g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 15g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 15g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 1g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 10g
+  role: sub
+steps:
+- text: 통삼겹살은 어간장, 마늘기름, 로즈마리, 통후추에 재워준다.
+- text: 양송이, 피망, 파프리카는 먹기 좋게 썰어서 마늘기름에 구워준다.
+- text: 고구마는 먹기 좋게 잘라 기름 없이 구워준다.
+- text: 재워 놓은 통삼겹은 작은 크기로 잘라서 건고추를 넣어 물에 데쳐낸다.
+- text: 모든 재료를 꼬치에 끼워서 살짝 구워준다.
+- text: 레몬껍질을 채 썰어서 소스를 만들어주고 꼬치와 함께 완성한다.

@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3466
+title: 토마토 채소 가지롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3466. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: soft_tofu
+  raw_text: 순두부(1/2봉지=175g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(150g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(40g)
+  role: sub
+- ingredient: null
+  raw_text: 파(30g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(8g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(33g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(18g)
+  role: sub
+- ingredient: beef_brisket
+  raw_text: 차돌박이(87g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(260g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(120g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(50g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(8g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(15g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추(6g)
+  role: sub
+steps:
+- text: 껍질을 벗긴 토마토, 마늘, 파, 양파, 애호박, 느타리버섯, 팽이버섯을 다진다.
+- text: 팬에 올리브유(20g)를 두르고 마늘, 양파를 넣고 볶다가 토마토를 넣고 소금(4g), 후추(3g)로 간하고 졸여 토마토 소스를 만든다.
+- text: 믹서에 순두부, 올리브유(10g), 소금(4g), 레몬즙을 넣고 갈아 순두부크림 소스를 만든다.
+- text: 팬에 올리브유(5g)를 두르고 차돌박이를 구운 후, 같은 팬에 올리브유(15g)를 두르고 파, 애호박, 느타리버섯, 팽이버섯을 볶고 소금(7g)으로 간한다.
+- text: 가지를 얇게 잘라 팬에 가볍게 굽고 ④를 올리고 돌돌 말아준다.
+- text: 토마토 소스를 아래에 깔고 ⑤를 올리고, 순두부크림 소스를 올려 마무리한다.

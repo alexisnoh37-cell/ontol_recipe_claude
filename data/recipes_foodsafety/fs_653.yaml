@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_653
+title: 들깨곤약수제비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 653. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 곤약(150g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(1개)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(1개)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깨가루(200g)
+  role: sub
+- ingredient: beef_bone_broth
+  raw_text: 사골육수(400g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(5g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(0.3g)
+  role: sub
+steps:
+- text: 곤약은 얇게 썬다.
+- text: 끓는 물에 식초를 한두 방울 넣고, 썰어 놓은 곤약을 데친다.
+- text: 표고는 불려서 채를 썬다.
+- text: 마늘을 다져서 냄비에 볶는다.
+- text: 냄비에 표고버섯과 새송이버섯을 넣고 함께 볶는다.
+- text: 냄비에 들깨가루와 사골육수를 넣고 끓인 뒤 데친 곤약을 넣은 뒤 한소끔 더 끓인다.

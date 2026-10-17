@@ -1,0 +1,76 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: coegang_babdodug_bmovfi
+title: 최강 밥도둑
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source: https://www.youtube.com/watch?v=bMOVfiFZf7I
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: null
+  raw_text: 계란후라이에 다대기 2스푼
+  role: main
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 300g
+  role: sub
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: green_chili
+  raw_text: 풋고추 200g
+  role: sub
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: garlic
+  raw_text: 다진마늘 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 국간장 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 3스푼 / 멸치 100g
+  role: seasoning
+  optional: false
+  amount: 100
+  unit: g
+- ingredient: mirin
+  raw_text: 맛술 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 전자레인지
+  required: true
+steps:
+- text: 계란후라이에 다대기 2스푼 넣고 참기름만 넣으면 감칠맛 수직상승하고요 :).
+  technique: null
+- text: 다지는게 번거롭지만 한번 만들어놓으면.
+  technique: null
+- text: 청양고추 300g 야채다짐기에 넣고 잘게 잘게 다져줄게요. 멸치 100g은 전자레인지에서.
+  technique: null
+- text: 고추 다 넣고 국간장 3스푼 넣은 후 중불에서 볶다보면 물이 생길거에요. 이때 물 100ml.
+  technique: null
+- text: 멸치액젓 3스푼 다진마늘 2스푼 넣어줄게요. 멸치 넣고 맛술 2스푼 넣어줄게요. 맛술이.
+  technique: null

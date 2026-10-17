@@ -1,0 +1,59 @@
+id: gimcijeon_qnnx06
+title: 김치전
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 진작 이렇게 만들걸 그랬네요. 개쉬움.
+  video_url: https://www.youtube.com/watch?v=QnNX06tEfbk
+  published_at: '2026-10-01'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 김치
+  raw_text: 자른 김치 / 김치 1컵
+  role: main
+  optional: false
+  amount: 1
+  unit: 컵
+- name: 부침가루
+  raw_text: 부침가루
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 대패삼겹살
+  raw_text: 대패삼겹살 / 대패삼겹살 150g
+  role: sub
+  optional: false
+  amount: 150
+  unit: g
+- name: 식용유
+  raw_text: 식용유 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 0
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 자른 김치 1컵, 부침가루 1컵, 물 1컵, 대패삼겹살 150g, 식용유 3스푼을 고르게 섞는다.
+  technique: 부침
+- text: 중약불에서 은은하게 구워주다가 뒤집는다.
+  technique: 구이
+- text: 테투리에 식용유를 추가해주고 이어서 굽는다.
+  technique: 구이

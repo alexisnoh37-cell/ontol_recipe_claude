@@ -1,0 +1,118 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: ryusuyeongnim_seupaemsundubujjigae_n5bfcu
+title: 류수영님 스팸순두부찌개
+cuisine: 한식
+difficulty: 3
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=N5bFCU9SFIc
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: null
+  raw_text: 스팸 200g
+  role: main
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: green_onion
+  raw_text: 대파 1대 / 대파 1쪽 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 쪽
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: zucchini
+  raw_text: 애호박 1/3개
+  role: sub
+  optional: false
+  amount: 0.33
+  unit: 개
+- ingredient: onion
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: garlic
+  raw_text: 다진마늘 한 스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 반 스푼 / 설탕 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 양조간장 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: soft_tofu
+  raw_text: 순두부 1봉
+  role: sub
+  optional: false
+  amount: 1
+  unit: 봉
+- ingredient: null
+  raw_text: 불을 끄고 고춧가루 3스푼
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: null
+  raw_text: 마지막 계란 2알 / 계란 2알 / 계란
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 대파 1쪽 쫑쫑 썰어주고 양파 반개도 깍뚝 자른다.
+  technique: null
+- text: 청양고추 2개도 썰어주고, 스팸은 흐르는 물에 한번 씻어주고 반은 칼등으로 으깨주고 반은.
+  technique: null
+- text: 볶아주고 여기에 다진마늘 1스푼, 청양고추, 대파, 설탕 반스푼 넣고.
+  technique: 볶음
+- text: 잘 볶는다.
+  technique: 볶음
+- text: 불을 끄고 고춧가루 3스푼 넣어주고 양조간장 3스푼 넣고 와르르.
+  technique: null
+- text: 끓인다.
+  technique: 끓이기
+- text: 굴소스 2스푼넣고 재료와 잘 섞어 준 뒤 물 300ml 넣고.
+  technique: 무침
+- text: 애호박 양파 넣고 뚜껑닫고 5분간 끓여줄게요. 순두두, 스팸 넣어주고 위에 통후추.
+  technique: 끓이기

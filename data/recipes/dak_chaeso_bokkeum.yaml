@@ -1,0 +1,59 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: dak_chaeso_bokkeum
+title: 닭고기 채소볶음
+cuisine: 한식
+difficulty: 1
+cook_time_min: 20
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(가슴살 또는 다리살) 300g
+  role: main
+- ingredient: bell_pepper
+  raw_text: 파프리카 1개
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/4개
+  role: sub
+  optional: true
+- ingredient: soy_sauce
+  raw_text: 간장 2큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1작은술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+- ingredient: cooking_oil
+  raw_text: 식용유 1큰술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 약간
+  role: seasoning
+  optional: true
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 1
+  sour: 0
+  umami: 2
+  savory: 2
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 닭고기와 채소를 비슷한 크기로 썬다.
+- text: 기름 두른 팬에 마늘과 닭고기를 볶아 익힌다.
+  technique: 볶음
+- text: 채소를 넣고 간장, 설탕, 후추로 간해 센 불에 빠르게 볶는다.
+  technique: 볶음

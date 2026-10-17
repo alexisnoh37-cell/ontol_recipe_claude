@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_827
+title: 고추 장떡
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 827. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: green_chili
+  raw_text: 청고추 10g
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎 10g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 20g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 5g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 50g
+  role: sub
+- ingredient: null
+  raw_text: 고추자 3g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 5g
+  role: sub
+steps:
+- text: 애호박은 다진다.
+- text: 깻잎은 송송 썰어 굵게 다진다.
+- text: 풋고추와 홍고추는 반을 갈라 얇게 썬다.
+- text: 밀가루에 물을 넣어 되게 반죽한 후 고추장을 풀어준다.
+- text: 반죽에 채소를 넣어 섞은 후 기름 두른 팬에 장떡을 두껍지 않게 부친다.
+- text: 썰어놓은 청고추와 홍고추로 장떡을 장식한다.

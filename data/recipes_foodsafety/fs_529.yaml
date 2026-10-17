@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_529
+title: 탕평채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 529. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 청포묵(150g)
+  role: sub
+- ingredient: salt
+  raw_text: 맛소금(1g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: beef
+  raw_text: 소고기(30g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(20g)
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주(20g)
+  role: sub
+- ingredient: null
+  raw_text: 홍파프리카(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(30g)
+  role: sub
+- ingredient: laver
+  raw_text: 김(3g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(3g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+steps:
+- text: 청포묵을 약 6~7cm 길이로 썰어 맛소금과 참기름에 살짝 버무려 놓는다.
+- text: 소고기는 채를 썰어 간장과 설탕, 참기름에 볶아놓고 미나리는 데쳐 찬물에 식혀 5~6cm 길이로 썰고, 숙주는 머리와 꼬리를 떼어 내고, 뜨거운 물에 데쳐 식혀 준비한다.
+- text: 홍파프리카는 씨를 제거하고 약 6cm 길이로 썰어 놓는다.
+- text: 달걀은 황백으로 나눠 각각 지단을 부쳐 채를 썰어 놓는다.
+- text: 김은 살짝 구어 봉투에 넣고 부수어 김가루를 만들어 놓는다.
+- text: 저염간장에 설탕과 식초를 넣어 골고루 섞어 탕평채 양념장을 만들고, 접시에 준비한 청포묵을 담고, 그 위에 채소와 고기를 올리고, 맨 위에 달걀지단과 김가루를 올린 후 양념장을 끼얹어 완성 한다.

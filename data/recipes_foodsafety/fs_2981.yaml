@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2981
+title: 비타 오이 물김치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2981. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: cucumber
+  raw_text: 오이 30g
+  role: sub
+- ingredient: radish
+  raw_text: 무 50g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 10g
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카 20g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 20g
+  role: sub
+- ingredient: minari
+  raw_text: 미나리 10g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 30g
+  role: sub
+- ingredient: pear
+  raw_text: 배 30g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 10g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 5g
+  role: sub
+steps:
+- text: 오이와 무를 필러로 길게 슬라이스 한다.
+- text: 설탕물을 만들어 무가 잘 구부러질 때 까지 재운 뒤 씻어낸다.
+- text: 당근과 홍고추, 파프리카는 5cm 길이로 채 썬다.
+- text: 미나리를 데쳐 식힌 뒤 한 줄씩 찢는다.
+- text: 오이, 무를 겹쳐 채 썬 재료를 넣고 말아준 뒤 데친 미나리로 묶는다.
+- text: 배를 갈아 물, 식초, 고춧가루와 섞어 양념장을 만든 뒤 5를 넣고 재운다.

@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_646
+title: 깻잎애호박찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 646. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: zucchini
+  raw_text: 애호박(1개)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(3장)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: green_bell_pepper
+  raw_text: 피망(30g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(50g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(50g)
+  role: sub
+- ingredient: null
+  raw_text: 매실액(20g)
+  role: sub
+steps:
+- text: 애호박은 길게 반으로 자른다.
+- text: 자른 애호박에 칼집을 넣는다.
+- text: 깻잎은 잘게 썰고, 양파는 곱게 다지고 피망, 파프리카는 입자있게 썬다.
+- text: 저염간장에 다진 양파와 매실액을 넣고 잘 섞어 양념장을 만든다.
+- text: 양념장에 피망, 파프리카, 깻잎을 섞는다.
+- text: ?번을 칼집낸 호박 가운데 넣고 찜통 에서 5분 정도 쪄 낸 뒤 그릇에 담아 저 염간장소스를 한번 더 올린다.

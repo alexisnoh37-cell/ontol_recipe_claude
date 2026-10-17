@@ -3,8 +3,9 @@
 # --- 알 (법정: 알류(가금류)) ---
 - id: egg
   name: 계란
-  aliases: [달걀, 계란 노른자, 계란 흰자, 유정란]
+  aliases: [달걀, 계란 노른자, 계란 흰자, 유정란, 노른자]
   category: 알
+  note: 2026-10-16 자취요리신 데이터 연결로 별칭 추가, 검수 필요('노른자')
   allergens: [{group: egg, certainty: definite}]
   status: reviewed
 - id: quail_egg
@@ -90,11 +91,21 @@
   status: reviewed
 - id: tofu
   name: 두부
-  aliases: [부침두부, 찌개두부, 순두부, 연두부]
+  aliases: [부침두부, 찌개두부, 연두부]
   derived_from: [soybean]
   is_processed: true
   category: 콩·두부
+  note: 2026-10-04 별칭 '순두부'를 soft_tofu로 옮김(이름 중복 방지)
   status: reviewed
+- id: soft_tofu
+  name: 순두부
+  aliases: [찌개용 순두부]
+  is_a: [tofu]
+  derived_from: [soybean]
+  is_processed: true
+  category: 콩·두부
+  note: 1차 레시피 확장(순두부찌개)용으로 추가. 2026-10-04 is_a tofu 결정(두부 절대 불선호가 순두부에도 적용되도록). 검수 필요
+  status: draft
 - id: fried_tofu
   name: 유부
   aliases: [유부초밥용 유부, 사각유부]

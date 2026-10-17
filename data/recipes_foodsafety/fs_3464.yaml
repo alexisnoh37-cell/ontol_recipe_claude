@@ -1,0 +1,73 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3464
+title: 깻잎 쌈두부 라자냐
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3464. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 쌈두부(18g)
+  role: sub
+- ingredient: null
+  raw_text: 소고기 양지(120g)
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주(80g)
+  role: sub
+- ingredient: bok_choy
+  raw_text: 청경채(30g)
+  role: sub
+- ingredient: napa_cabbage
+  raw_text: 배추(60g)
+  role: sub
+- ingredient: glass_noodles
+  raw_text: 당면(30g)
+  role: sub
+- ingredient: null
+  raw_text: 쌈두부(1팩=100g)
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모차렐라 치즈(1컵=100g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(10g)
+  role: sub
+- ingredient: tomato
+  raw_text: 완숙 토마토(80g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(80g)
+  role: sub
+- ingredient: ground_beef
+  raw_text: 소고기 다짐육(100g)
+  role: sub
+- ingredient: wine
+  raw_text: 화이트 와인(50g)
+  role: sub
+- ingredient: null
+  raw_text: 오레가노(5g)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수 잎(1g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(20g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(30g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추(3g)
+  role: sub
+steps:
+- text: 껍질 벗긴 토마토는 주사위 모양으로 썰고, 양파, 배추, 청경채, 숙주는 잘게 썬다.
+- text: 팬에 소고기 양지를 구운 뒤 꺼내고, 같은 팬에 식용유를 두르고 다진 마늘과 손질한 채소를 넣고 물기가 없어질 때까지 볶는다.
+- text: ②에 소고기 다짐육을 넣어 볶다가 손질한 완숙 토마토, 월계수 잎, 화이트 와인, 오레가노를 넣어 끓이고 소금, 후추로 간하여 소스를 만든다.
+- text: 당면은 6cm 길이로 잘라 끓는 물에 7분간 삶아 ③에 넣는다.
+- text: 쌈두부 → 구운 소고기 양지 → 소스 → 모차렐라 치즈 순으로 켜켜이 올리고 180도로 예열한 오븐에 8분간 익힌다.
+- text: 깻잎을 돌돌 말아 채 썰어 올려 마무리한다.

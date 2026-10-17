@@ -1,0 +1,86 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: keurimkaredangmyeon_wn5yqc
+title: 크림카레당면
+cuisine: 일식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=WN5yqc1Waj4
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- ingredient: onion
+  raw_text: 양파 / 양파 1개
+  role: main
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: sausage
+  raw_text: 비엔나 소시지 / 소시지 150g
+  role: sub
+  optional: false
+  amount: 150
+  unit: g
+- ingredient: curry_powder
+  raw_text: 고형카레
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: glass_noodles
+  raw_text: 당면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sliced_cheese
+  raw_text: 체다치즈
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: gochujang
+  raw_text: 고추장 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: parsley
+  raw_text: 파슬리
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- ingredient: cooking_oil
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: milk
+  raw_text: 우유 400ml
+  role: sub
+  optional: false
+  amount: 400
+  unit: ml
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 식용유를 두르고 채썬 양파 1개를 볶는다.
+  technique: 볶음
+- text: 비엔나 소시지 150g을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 우유 400ml, 고형카레 2칸, 고추장 1/2스푼, 케찹 1스푼, 당면 사리를 더한 뒤 사리를 완전히 익힌다.
+  technique: null
+- text: 체다치즈 1장, 파슬리를 뿌려 마친다.
+  technique: null

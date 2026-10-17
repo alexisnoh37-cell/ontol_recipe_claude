@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3192
+title: 단호박크림을 곁들인 브로콜리 베이글
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3192. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 강력분 225g
+  role: sub
+- ingredient: null
+  raw_text: 블루베리 발효원종 550g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 3g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 15g
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리 100g
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박 600g
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림 250g
+  role: sub
+steps:
+- text: (속재료) 익힌 단호박과 생크림을 믹싱하여 단호박 크림을 만든다. ★ 단호박은 쪄서 사용하는게 좋아요.
+- text: 브로콜리를 제외한 반죽 재료를 넣고 최종단계까지 믹싱한 후 삶아서 다진 브로콜리를 넣고 섞어준다. 1차 발효를 고온발효로 27℃에서 1시간 발효한다.
+- text: 130g씩 분할하여 둥글리기 후 중간 발효를 20분간 한다.
+- text: 반죽을 30cm ~35cm 정도 늘린 후 링 모양으로 정형하여 팬닝한 후 35℃, 85%의 습도 환경에서 60분간 2차 발효 해주고 끓는 물에 양쪽 면을 데친다.
+- text: 210℃에서 15분간 구워주고 식힘망에서 식힌다.
+- text: '"식은 빵을 갈라 단호박 크림을 샌드한다. ★빵이 식은 후 크림을 올려야 녹지 않아요."'

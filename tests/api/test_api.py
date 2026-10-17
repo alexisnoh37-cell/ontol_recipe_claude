@@ -7,6 +7,7 @@ DB 저장소는 tests/storage/test_users.py가 같은 동작을 검사한다.
 from __future__ import annotations
 
 import json
+from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
@@ -225,7 +226,112 @@ def test_missing_split_required_vs_nice_to_have(client, data):
         assert {m["id"] for m in item["missing"]} <= {m["id"] for m in item["required_missing"] + item["nice_to_have"]}
 
 
-def test_vocab_and_health(client):
+def test_vocab_and_health(client, data):
     v = client.get("/vocab").json()
     assert "한식" in v["cuisines"] and "오븐" in v["equipment"] and v["disclaimer"]
-    assert client.get("/health").json()["recipes"] == 50
+    # 레시피 수는 시드에서 센다(draft 포함, 파일 하나 = 레시피 하나)
+    seed_files = sorted((Path(__file__).resolve().parents[2] / "data" / "recipes").glob("*.yaml"))
+    assert client.get("/health").json()["recipes"] == len(data.recipes) == len(seed_files) >= 50
+
+
+# --- 레시피 상세 (ui-1) -----------------------------------------------------------------------------
+
+
+def test_recipe_detail_lists_all_lines_by_role(client, data):
+    body = client.get("/recipes/kimchi_jjigae").json()
+    spec = next(r for r in data.recipes if r.id == "kimchi_jjigae")
+    assert body["title"] == spec.title and body["cuisine"] == spec.cuisine
+    assert [x["raw_text"] for x in body["ingredients"]] == [line.raw_text for line in spec.ingredients]
+    labels = {"main": "주재료", "sub": "부재료", "seasoning": "양념", "garnish": "고명"}
+    for x in body["ingredients"]:
+        assert x["role_label"] == labels[x["role"]]
+        assert x["have"] is None  # 보유 기준이 없으면 판단하지 않는다
+        if x["id"]:
+            assert x["name"] != x["id"]
+    assert [s for s in body["steps"]] == [s.text for s in spec.steps]
+    assert body["label_check"] is None
+
+
+def test_recipe_detail_have_follows_engine_rule(client):
+    """보유 = 보유 재료·기본 양념과 is_a 조상. 삼겹살 보유 → '돼지고기' 줄 충족, 반대 방향은 아님."""
+    have = {x["id"]: x["have"] for x in
+            client.get("/recipes/kimchi_jjigae", params={"pantry": ["pork_belly", "kimchi"]}).json()["ingredients"]}
+    assert have["pork"] is True and have["kimchi"] is True
+    assert have["garlic"] is True  # 기본 양념
+    assert have["tofu"] is False
+    pid = make_profile(client, pantry=["kimchi"])
+    have = {x["id"]: x["have"] for x in
+            client.get("/recipes/kimchi_jjigae", params={"profile_id": pid}).json()["ingredients"]}
+    assert have["kimchi"] is True and have["pork"] is False
+    # pantry를 주면 프로필 보유 재료 대신 쓴다
+    have = {x["id"]: x["have"] for x in
+            client.get("/recipes/kimchi_jjigae", params={"profile_id": pid, "pantry": ["pork"]}).json()["ingredients"]}
+    assert have["kimchi"] is False and have["pork"] is True
+
+
+def test_recipe_detail_errors(client):
+    assert client.get("/recipes/no_such").status_code == 404
+    assert client.get("/recipes/kimchi_jjigae", params={"profile_id": 999}).status_code == 404
+    assert client.get("/recipes/kimchi_jjigae", params={"pantry": ["nope"]}).status_code == 400
+    assert client.get("/recipes/kimchi_jjigae", params={"pantry": ["seafood"]}).status_code == 400  # concept
+
+
+def test_recipe_detail_label_check_only_with_allergy(client, data):
+    ing = {i.id: i for i in data.knowledge.ingredients}
+    rid = next(r.id for r in data.recipes
+               if any(line.ingredient and ing[line.ingredient].is_processed and ing[line.ingredient].confidence == "low"
+                      for line in r.ingredients))
+    pid = make_profile(client)
+    assert client.get(f"/recipes/{rid}", params={"profile_id": pid}).json()["label_check"] is None
+    set_prefs(client, pid, [{"target_type": "allergen_group", "target_id": "shrimp"}])
+    check = client.get(f"/recipes/{rid}", params={"profile_id": pid}).json()["label_check"]
+    assert check and check["ingredients"]
+
+
+# --- 재료로 레시피 찾기 (ui-2) ----------------------------------------------------------------------
+
+
+def test_browse_cookable_and_near_with_names(client):
+    body = client.get("/browse", params={"ingredients": ["pork_belly", "kimchi"]}).json()
+    assert body["selected"] == [{"id": "pork_belly", "name": "삼겹살"}, {"id": "kimchi", "name": "배추김치"}]
+    cookable = {i["recipe_id"]: i for i in body["cookable"]}
+    jj = cookable["kimchi_jjigae"]  # 삼겹살 → "돼지고기" 충족(is_a), 양념은 기본 양념, 두부·양파 선택, 대파 고명
+    assert jj["missing"] == [] and jj["missing_count"] == 0
+    assert [u["id"] for u in jj["used"]] == ["pork_belly", "kimchi"]
+    assert {m["id"] for m in jj["optional_missing"]} >= {"tofu", "green_onion"}
+    assert jj["allergy_warnings"] == [] and body["allergy_notice"] is None
+    assert jj["graph"]["recipe"] == "rcp:kimchi_jjigae" and "ing:pork_belly" in jj["graph"]["used_nodes"]
+    for item in body["near"]:
+        assert 1 <= item["missing_count"] <= 2 and len(item["missing"]) == item["missing_count"]
+        for m in item["missing"]:
+            assert m["name"] and m["role"] in {"main", "sub", "seasoning"} and not m["optional"]
+
+
+def test_browse_allergy_warns_instead_of_excluding(client):
+    params = {"ingredients": ["pork_belly", "kimchi"], "allergen_groups": ["shrimp"]}
+    body = client.get("/browse", params=params).json()
+    jj = next(i for i in body["cookable"] if i["recipe_id"] == "kimchi_jjigae")
+    assert any(w["reason"] == "allergen" and w["group"] == "shrimp" and w["certainty"] == "possible"
+               for w in jj["allergy_warnings"])  # 김치(새우 포함 가능) → 경고, 목록에는 남는다
+    assert body["allergy_notice"]
+    pid = make_profile(client, pantry=["pork_belly", "kimchi"])
+    set_prefs(client, pid, [{"target_type": "allergen_group", "target_id": "shrimp"}])
+    by_profile = client.get("/browse", params={"ingredients": ["pork_belly", "kimchi"], "profile_id": pid}).json()
+    assert by_profile["cookable"] == body["cookable"]
+    # 추천은 그대로 제외한다
+    rec = client.post("/recommend", json={"profile_id": pid}).json()
+    assert "kimchi_jjigae" not in [i["recipe_id"] for i in rec["items"]]
+
+
+def test_browse_max_missing_and_errors(client):
+    zero = client.get("/browse", params={"ingredients": ["pork_belly", "kimchi"], "max_missing": 0}).json()
+    assert zero["near"] == [] and zero["cookable"]
+    assert client.get("/browse").status_code == 422
+    assert client.get("/browse", params={"ingredients": ["nope"]}).status_code == 400
+    assert client.get("/browse", params={"ingredients": ["seafood"]}).status_code == 400  # concept
+    assert client.get("/browse", params={"ingredients": ["egg"], "allergen_groups": ["no_group"]}).status_code == 400
+    assert client.get("/browse", params={"ingredients": ["egg"], "profile_id": 999}).status_code == 404
+    assert client.get("/browse", params={"ingredients": ["egg"], "persona_id": "nope"}).status_code == 404
+    both = {"ingredients": ["egg"], "profile_id": 1, "allergen_groups": ["egg"]}
+    assert client.get("/browse", params=both).status_code == 400
+    assert client.get("/browse", params={"ingredients": ["egg"], "max_missing": 9}).status_code == 422

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_753
+title: 코다리 양념구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 753. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: pollock
+  raw_text: 코다리 50
+  role: sub
+- ingredient: null
+  raw_text: 누룽지가루 7.5
+  role: sub
+- ingredient: soybean_oil
+  raw_text: 콩기름 4
+  role: sub
+- ingredient: null
+  raw_text: 다진 홍고추 2
+  role: sub
+- ingredient: null
+  raw_text: '다진 실파 2 양념장: 간장 3'
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1.5
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 1.25
+  role: sub
+- ingredient: null
+  raw_text: 고운 고추가루 1
+  role: sub
+- ingredient: null
+  raw_text: 간 양파 5
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 1
+  role: sub
+steps:
+- text: 코다리는 배를 갈라 길이로 2등분하여 뼈를 제거한다.
+- text: 손질한 코다리를 반으로 잘라 안쪽에 누룽지 가루를 묻힌다.
+- text: 분량의 재료를 섞어 양념장을 만든다.
+- text: 팬에 기름을 두르고 코다리를 굽는다.
+- text: 코다리에 양념장을 발라 다시 한번 살짝 굽는다.
+- text: 다진 홍고추와 실파를 뿌려 마무리한다.

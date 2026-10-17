@@ -1,0 +1,91 @@
+id: cijeusunduburamyeon_kqnekj
+title: 치즈순두부라면
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 이거 너무 맛있어서 다음날 못 일어납니다.
+  video_url: https://www.youtube.com/watch?v=kqnekJeFaXM
+  published_at: '2026-03-12'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- name: 매운 라면
+  raw_text: 매운 라면
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- name: 순두부
+  raw_text: 순두부
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 대패삼겹살
+  raw_text: 대패삼겹살 / 대패삼겹살 100g
+  role: sub
+  optional: false
+  amount: 100
+  unit: g
+- name: 체다 치즈
+  raw_text: 체다치즈
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 마늘
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 대패삼겹살 100g과 대파를 볶는다.
+  technique: 볶음
+- text: 다진 마늘 1스푼, 고춧가루 1스푼을 더한 뒤 10초만 볶는다.
+  technique: 볶음
+- text: 물 500ml, 멸치액젓 1스푼, 분말스프, 건더기스프, 면, 순두부를 더한 뒤 익힌다.
+  technique: null
+- text: 체다치즈 1장, 후추를 뿌려 마친다.
+  technique: null

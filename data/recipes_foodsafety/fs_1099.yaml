@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1099
+title: 크랜베리 샤브레 쿠키
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1099. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 크랜베리(8g)
+  role: sub
+- ingredient: null
+  raw_text: 슈가파우더(10g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 박력분(30g)
+  role: sub
+- ingredient: null
+  raw_text: 아몬드가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 백년초가루(2g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(3g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(25g)
+  role: sub
+steps:
+- text: 실온에 둔 버터를 휘핑기로 풀어준 뒤 슈가파우더를 넣고 섞는다.
+- text: 박력분, 아몬드가루, 백년초가루를 넣고 섞는다.
+- text: 크랜베리를 넣고 섞는다.
+- text: 우유를 넣고 섞는다.
+- text: 동그란 원기둥 모양으로 만들어 냉동실에서 1시간 정도 굳힌다.
+- text: 굳은 반죽을 1cm 두께로 잘라 180℃ 오븐에서 15분 간 굽는다.

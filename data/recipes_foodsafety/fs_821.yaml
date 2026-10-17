@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_821
+title: 양배추 깻잎 피클
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 821. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: cabbage
+  raw_text: 양배추 16g
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎 6g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 1g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 1g
+  role: sub
+- ingredient: null
+  raw_text: 피클소스
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 2g. 소금 1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추 0.5g
+  role: sub
+steps:
+- text: 물, 식초, 설탕, 소금, 통후추를 살짝 끓인 후 식혀 준비한다.
+- text: 양배추와 깻잎을 한장씩 켜켜이 쌓는다.
+- text: 깻잎 크기에 맞추어 썬다.
+- text: 청, 홍고추는 어슷썰어 씨를 털어낸다.
+- text: 그릇에 양배추, 깻잎, 청·홍고추를 무거운 것으로 눌러놓아 뜨지 않게 한 다음 준비한 피클국물을 붓는다.
+- text: 뚜껑을 닫아 밀봉하여 냉장고에 보관한다.

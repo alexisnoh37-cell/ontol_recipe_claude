@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_483
+title: 과일겉절이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 483. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: apple
+  raw_text: 사과(50g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(30g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: banana
+  raw_text: 바나나(50g)
+  role: sub
+- ingredient: kiwi
+  raw_text: 키위(30g)
+  role: sub
+- ingredient: null
+  raw_text: 파인애플(30g)
+  role: sub
+- ingredient: null
+  raw_text: 마(50g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(5g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(5g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+steps:
+- text: 사과와 배는 껍질을 베이킹파우더에 깨끗이 씻어 납작하게 썰어 설탕물에 담그어 색이 변하지 않게 준비한다.
+- text: 바나나는 동글하게 썰고, 키위는 껍질을 제거하고 은행잎 모양으로 썰고, 파인애플은 가운데 심을 제거하고 사각형 모양으로 썰어놓는다.
+- text: 마는 껍질을 벗겨 동글하게 썰어 준비 한다.
+- text: 마늘은 입자있게 다져, 팬에 식용유를 두르고 살짝 볶는다.
+- text: 고춧가루에 볶은 마늘(④), 식초. 설탕, 간장, 고춧가루를 넣고, 골고루 섞어 양념장을 만든다.
+- text: 설탕물에 사과와 배를 건지고, 준비한 과일과 마를 담은 후 먹기 직전에 만들어 놓은 양념장을 넣어 버무려 완성한다.

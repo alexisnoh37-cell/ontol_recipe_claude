@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_949
+title: 두부 깻잎 과자
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 949. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: tofu
+  raw_text: 두부 30g
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎 10g
+  role: sub
+- ingredient: null
+  raw_text: 밀가루박력분 10g
+  role: sub
+- ingredient: null
+  raw_text: 베이킹파우더 2g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 10g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 20g
+  role: sub
+- ingredient: null
+  raw_text: 검은깨 3g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 두부는 면보를 이용해 물기를 꼭 짠 후 곱게 으깬다.
+- text: 밀가루와 베이킹파우더를 섞어 체에 내린다.
+- text: 으깬 두부를 볼에 담고 설탕, 달걀, 검은깨를 넣고 거품기로 잘 저어준다.
+- text: 3에 채 썬 깻잎을 넣은 뒤 2의 밀가루를 넣어 반죽한다.
+- text: 도마에 밀가루를 살짝 뿌리고 4를 밀대로 2mm 두께로 민 뒤 너비 1cm, 길이 4cm의 직사각형으로 자른다.
+- text: 자른 반죽을 오븐팬에 올려 180℃로 예열된 오븐에 10분간 굽는다.

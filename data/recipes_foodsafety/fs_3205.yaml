@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3205
+title: 치아바타 피자빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3205. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 블루베리 발효원종 250g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 강력분 250g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 3g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 150g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이 버섯 50g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 50g
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카 50g
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리 5g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 10g
+  role: sub
+- ingredient: null
+  raw_text: 저염치즈 200g
+  role: sub
+steps:
+- text: (소스) 소스에 들어가는 재료는 전부 다진 후 기름 두른 팬에 양파를 먼저 볶다가 남은 재료를 넣고 볶아 준 뒤 물을 넣고 끓여 조린다.
+- text: 반죽 재료를 넣고 27℃ 최종단계 까지 믹싱한 후 1차 발효는 고온발효로 27℃에서 1시간 발효한다.
+- text: 150g씩 분할하여 모양을 성형한 후 면포 위에 팬닝한다. ★반죽이 많이 질어요. 손에 묻으면 덧밀가루를 뿌려가며 진행하세요.
+- text: 2차 발효는 온도는 30℃, 수분은 75%에서 60분간 발효한 후 오븐팬에 팬닝한다.
+- text: 반죽 위에 만들어 놓은 토마토 소스를 바르고 스팀 160℃/230℃에서 13분간 굽는다.
+- text: 치즈를 올리고 4분간 구워낸다.

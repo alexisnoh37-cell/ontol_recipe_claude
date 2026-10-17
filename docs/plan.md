@@ -148,7 +148,7 @@ knowledge/*.yaml  ──(scripts/compile_knowledge.py)──▶  DB 테이블 + 
 ### 4-3. 제약 필터
 
 - **알레르기**: 사용자 알레르기 그룹의 원천 재료에서 is_a 하위와 derived_from 파생을 모두 모은 집합(`allergen_closure`)에 걸리는 재료가 하나라도 있으면 제외한다. 선택(optional) 재료와 고명도 제외 대상이다(D2).
-- **절대 불선호**: is_hard 재료는 `ingredient_contains`로 판정해 is_a 하위와 derived_from 파생까지 제외한다("새우 못 먹음"이면 새우젓, 김치도 제외). is_hard 음식 종류는 해당 cuisine을 제외한다.
+- **절대 불선호**: is_hard 재료는 `ingredient_contains`(부록 C)로 판정한다. 레시피 재료가 불선호 재료 자신이거나, 그 재료를 포함(가능)하면 제외한다. 포함에는 불선호 재료의 is_a 하위와 derived_from 파생("새우 못 먹음"이면 새우젓, 김치도 제외)뿐 아니라, 불선호 재료를 is_a 하위로 가진 넓은 재료도 possible로 들어간다("순두부 못 먹음"이면 순두부가 두부의 하위이므로 두부를 쓰는 레시피도 제외, 2026-10-04 확인). is_hard 음식 종류는 해당 cuisine을 제외한다.
 - **매운맛 한도**: 레시피 spicy가 사용자 max_level을 넘으면 제외한다.
 - **조리기구, 시간**: 필수 조리기구가 없거나, 사용자가 시간을 절대 조건(`time_is_hard`)으로 두고 초과한 경우 제외한다. 식단 조건은 Phase 2에서 추가한다.
 - **미매칭 재료**: 정규 ID로 매핑되지 않은 재료가 있는 레시피는 알레르기가 있는 사용자에게 제외한다.
@@ -231,19 +231,34 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
 
 ### 5-3. 레시피 수집과 검수
 
-1. 출처는 `docs/decisions.md`를 따른다. 외부 레시피 본문은 복제하지 않는다.
+1. 출처는 `docs/decisions.md`를 따른다. 외부 레시피 본문은 복제하지 않는다. 예외: 식품안전나라 조리식품 레시피 DB(D3 보완 2, 개인용 범위·출처 표시).
 2. 재료, 양, 역할, 맛 프로필, 난이도, 조리기구를 구조화한다.
 3. 재료를 별칭 테이블로 정규 ID에 매핑한다. 실패한 재료는 검수 큐로 보낸다.
 4. 사람이 검수표를 확인하고 승인하면 status를 published로 바꾼다.
 
+#### 5-3-1. 식품안전나라 레시피 가져오기 (D3 보완 2)
+
+1. `scripts/fetch_foodsafety.py`가 Open API(COOKRCP01)에서 원본을 내려받아 `data/external/foodsafety/raw/`에 저장한다. 인증키는 `.env`의 `FOODSAFETY_API_KEY`. 원본은 커밋한다(D3 보완 3).
+2. `scripts/convert_foodsafety.py`가 원본을 레시피 YAML(`data/recipes_foodsafety/fs_<일련번호>.yaml`, 커밋)로 바꾼다. 로더(`data/recipes/`)와 골든셋에는 들어가지 않는다.
+   - `source: foodsafety`, `status: draft`, `confidence: low`, note에 출처(식품의약품안전처 식품안전나라, 일련번호)와 요리종류·조리방법 원문.
+   - 재료: 재료정보(RCP_PARTS_DTLS)를 줄·쉼표(괄호 밖)로 나눠 `raw_text`에 원문을 두고, 양 앞까지의 이름이 별칭 색인과 정확히 일치할 때만 `ingredient`를 채운다. 나머지는 `null`(미매칭). `role`은 모두 `sub`(검수 때 정함).
+   - 줄 나누기: HTML 태그(`<br>`), 줄 중간 대괄호(`[소스소개]`), 공백 사이 하이픈(` - `), `>`는 줄바꿈·머리말 구분으로 본다. 버리는 것은 머리말(고정 단어, 레시피 이름, 분량 "2인분 기준", "…재료")과 이름이 정확히 "물"인 항목(시드 규칙)뿐이다. 머리말이 아닌 소제목("두부구이 : 두부 70g"의 "두부구이")은 버리지 않고 따로 한 항목(미매칭)으로 남긴다.
+   - `cuisine: 미분류`, `cook_time_min`·`difficulty`·`taste` 없음(API에 없음, 검수 때 채움). 조리 단계는 MANUAL01~20 원문.
+   - 재료정보가 없는 레시피는 만들지 않고 보고한다.
+3. 미매칭 재료 빈도와 레시피별 미매칭 수를 `docs/review/foodsafety_unmatched.md`로 만든다. 별칭·재료 보강은 knowledge에 draft로 추가한 뒤 다시 변환한다.
+4. `data/recipes/`로 옮기려면 미매칭 0, cuisine·cook_time_min 채움, 사람 검수가 필요하다(로더가 미분류·cook_time_min 없음을 거부).
+5. 그래프 표시 전용(int-2, D3 통합): 엔진에 적재하지 않고 `GET /graph?display=true`에서만 같은 지식으로 연결해 보여 준다(부록 D-8).
+5. 열람용 정적 HTML 뷰어: `scripts/make_foodsafety_viewer.py`(템플릿 `scripts/foodsafety_viewer_template.html`)가 원본과 같은 변환 규칙으로 `data/recipes_foodsafety/viewer.html`(gitignore)을 만든다. 사진·영양 정보·저감 조리 팁, 재료별 매칭 여부를 보여 준다. 개인용 열람 전용, 외부 게시 금지.
+
 ### 5-4. 데이터 검증 스크립트
 
-- 모든 recipe_ingredient가 정규 ID에 매핑되어 있다.
+- 모든 recipe_ingredient가 정규 ID에 매핑되어 있다. 단, draft 레시피는 미매칭(NULL)을 허용하고 검수표에 표시한다. published는 예외 없음(2026-10-16 승인, 자취요리신 데이터 연결). 미매칭 레시피는 알레르기 사용자에게 제외된다(4-3 제약 필터).
 - is_processed 재료는 derived_from 관계가 1개 이상 있다.
 - 모든 published 레시피에 맛 프로필과 난이도가 있다.
 - is_a, derived_from, 그리고 두 그래프의 합집합에 순환 관계가 없다.
 - concept 노드가 레시피 재료나 보유 재료로 쓰이지 않는다.
-- 레시피의 cuisine, equipment, technique이 `knowledge/vocab.yaml` 어휘에 있다.
+- 레시피의 cuisine, equipment, technique이 `knowledge/vocab.yaml` 어휘에 있다. 예외: draft 레시피는 cuisine `미분류`를 쓸 수 있다(vocab에는 넣지 않는다).
+- cook_time_min은 published 레시피에 필수이고, draft는 비워 둘 수 있다. 다만 엔진·DB에 적재(`kb.recipes.load_recipe_specs`)할 때는 cuisine `미분류`이거나 cook_time_min이 없는 레시피를 거부한다(DB 컬럼은 NOT NULL 유지).
 - user_preference의 target_id가 실제로 존재한다.
 
 ## 6. 단계별 로드맵
@@ -258,7 +273,19 @@ S = 0.30·I + 0.20·K + 0.15·T + 0.15·P + 0.10·D + 0.10·M
 
 **이번 구축 범위는 Phase 0과 Phase 1(MVP)까지다.** Phase 1 관문(알레르기 테스트 100% 통과)은 일정과 관계없이 지킨다.
 
+부가 트랙 ui(사람 요청·승인 2026-10-16): 재료 ↔ 레시피 양방향 조회. 판정·점수는 바꾸지 않는 표시 기능이다.
+- `GET /recipes/{id}?profile_id=&pantry=`: 역할별 전체 재료(원문, 이름, 선택·기본 양념·미매칭 표시)와 조리 단계. 보유 기준(pantry 우선, 없으면 프로필 보유 재료)을 주면 줄마다 `have`를 붙인다. 보유 판정은 엔진 후보 단계와 같은 `owned_ingredients`(보유 재료·기본 양념과 그 is_a 조상, 컴파일 결과 조회만). 대체재는 사용자 안전 확인이 필요해 보지 않는다(추천 카드의 대체 안내를 따른다). 알레르기 설정이 있는 프로필이면 성분표 확인 표시(1-6 결정)를 붙인다. 없는 레시피·프로필 404, 모르는 재료·concept 400.
+- Streamlit 추천 탭: "이번만 재료 직접 고르기"로 고른 재료를 `POST /recommend`의 `pantry`로 보낸다(프로필에 저장하지 않음). 추천 카드마다 "전체 재료·조리 순서 보기"(위 API, 같은 보유 기준).
+- **재료로 레시피 찾기**(ui-2, 사람 결정 2026-10-16): 추천과 별개인 조회 기능. 점수·선호로 순위를 매기지 않는다. `engine/browse.py`(`Recommender.browse`).
+  - 보유로 보는 재료 = 고른 재료 + 기본 양념 + 그 is_a 조상(`owned_ingredients`). 대상 레시피 = 고른 재료(기본 양념 제외)로 main 줄 하나 이상이 채워지는 레시피(추천 후보 기준과 같음). 대체재는 쓰지 않는다.
+  - 꼭 필요한 재료 = 선택이 아닌 main·sub·seasoning 줄(미매칭 줄은 채울 수 없으므로 부족). 부족 0개 = 조리 가능, 1~`browse_max_missing`개(config/engine.yaml, 기본 2) = 거의 가능.
+  - **알레르기는 제외하지 않고 주의 표시**(사람 결정 2026-10-16, 이 조회 기능 한정). 판정은 추천 필터와 같은 `UserConstraints.check`(possible·선택·고명·기본 양념 포함, 미매칭 = 안전 보장 불가)를 쓰고 알레르기·미매칭 사유만 경고로 돌려준다. 경고가 있는 레시피는 같은 묶음 안에서 뒤로 정렬하고, 결과 위에 안내 문구(`config/display.yaml` `browse_allergy_notice`)를 둔다. 추천(`/recommend`)의 제외 규칙과 tests/allergy는 바뀌지 않는다.
+  - `GET /browse?ingredients=..&profile_id=|persona_id=|allergen_groups=..&max_missing=`: 알레르기 기준은 최대 하나. 응답: `selected`, `cookable`, `near`(레시피별 쓴 고른 재료, 부족 줄, 없어도 되는 줄, `allergy_warnings`, 그래프 강조용 노드·링크 id), `allergy_notice`. 모르는 재료·concept·알레르기 그룹 400, 없는 프로필·페르소나 404.
+  - 화면: Streamlit "재료로 레시피 찾기" 탭(프로필 알레르기로 주의 표시 선택), `/viz` "재료로 레시피 찾기" 카드(검색 또는 그래프 재료 노드 클릭으로 고르기, 알레르기 기준 페르소나·프로필 선택, 결과를 그래프에 강조: 고른 재료 초록, 조리 가능 레시피 연두, 거의 가능 노랑, 알레르기 주의 빨강, 모자란 재료 주황).
+
 부가 트랙 viz(mvp-v1 이후, 사람 요청·승인 2026-10-03): 지식그래프와 추천 과정 3D 시각화. Phase 2 기능(LLM·개인화·장보기)과 무관한 읽기 전용 화면이다. 상세는 부록 D.
+
+부가 트랙 adhoc(사람 요청·승인 2026-10-16): DB에 없는 레시피(AI가 만든 레시피 등)를 붙여 넣으면 재료·알레르기 구조를 분석해 온톨로지 그래프 위에 겹쳐 보여 준다. 저장하지 않는 일회성 분석이고 LLM을 쓰지 않는다. 상세는 부록 E.
 
 ## 7. 테스트와 검증
 
@@ -336,6 +363,8 @@ api/             FastAPI (main.py, schemas.py, present.py: 이름·안내 문구
 app/             Streamlit (API를 HTTP로 호출)
 knowledge/       allergens.yaml, vocab.yaml, ingredients.yaml 또는 ingredients/*.yaml, substitutes.yaml, README.md
 data/recipes/    레시피 시드 YAML(레시피당 1파일)
+data/recipes_foodsafety/  식품안전나라 변환 결과 draft YAML. 적재 대상 아님, 그래프 표시 전용(5-3-1, 부록 D-8)
+data/external/foodsafety/raw/  식품안전나라 API 원본 JSON
 config/          weights.yaml, pantry_staples.yaml, engine.yaml(serve_draft_recipes 등 가중치 외 설정), display.yaml(화면 안내·면책 문구, 표시 전용)
 scripts/         compile_knowledge.py, validate_data.py, load_recipes.py, bench.py (얇은 CLI, 로직은 kb/·storage/)
 migrations/      Alembic
@@ -606,6 +635,8 @@ ALTER TABLE allergen_group
 
 ### D-1. 층 배치(서버가 `layer`로 내려줌)
 
+아래 표는 "평면" 배치다. 기본 화면은 D-9의 "나무" 배치이고, 화면에서 평면으로 바꿀 수 있다(층 번호 `layer`는 그대로).
+
 | 층 | 노드 | 규칙 |
 | --- | --- | --- |
 | 1 | 알레르기 그룹 | 기본 그룹 안쪽 원, 묶음 바깥 원. 법정/자체/묶음을 색·모양으로 구분 |
@@ -643,3 +674,58 @@ viz-5 결과(2026-10-03, 사람 결정): 회전 111fps 통과, 로딩 3.1~4.9초
 ### D-7. 단계
 
 viz-0 설계 기록 → viz-1 `/graph` → viz-2 trace·persona → viz-3 3D 온톨로지 화면 → viz-4 워크플로 재생 → viz-5 성능 측정·문서. 테스트는 `tests/viz/`: 그래프 개수·층 규칙·closure 경로 걷기(via 연속 쌍이 링크로 이어짐), trace 제외 결과 = 일반 `/recommend` 제외 결과, 후보 = 통과 ∪ 제외, 순위 = items 순서.
+
+### D-8. 레시피 출처 구분과 표시 전용 레시피 (int-2, 2026-10-16 사람 승인)
+
+- 레시피 노드에 `origin`(출처 id), `engine`(엔진 적재 여부), `lines`(재료 줄 수), `unmapped_lines`(미매칭 줄 번호·원문)를 싣는다. 출처 규칙은 `config/display.yaml` `graph_recipe_origins`(위에서부터 처음 맞는 것: `source` 값 일치, 또는 `dataset` 원본의 영상 URL 일치). 표시 전용이며 판정에 쓰지 않는다.
+- `GET /graph?display=true`: `display_dir`가 있는 출처(식품안전나라)의 레시피를 `kb.recipes.load_display_specs`로 읽어(draft 검증만, 적재 거부 규칙 없음, 지식과 맞지 않는 파일만 건너뜀) 같은 컴파일 closure로 재료·알레르기에 연결해 함께 싣는다(`engine: false`). 처음 요청 때만 읽고 캐시한다. 응답에 출처별 레시피 수(`origins`)와 `stats.display_recipes`.
+- 맛 정보가 없는 레시피는 `spicy: null`. 추천·trace·재료로 찾기는 적재된 레시피만 쓴다(표시 전용 레시피는 추천에 나오지 않음).
+- 화면: 레시피 원기둥 색 = 출처, 상단 "출처" 토글(출처별 표시·숨김), "표시 전용 포함"(`?display=1`로 다시 불러옴). 정보 패널에 출처·추천 사용 여부·미매칭 줄 원문.
+
+### D-9. 나무 배치 (int-3, 2026-10-16 사람 요청·승인)
+
+레시피가 1천 개를 넘으면 평면 원판 한 장에 겹쳐 읽기 어렵다. 층 구조를 나무로 바꿔 보인다. 표시 전용이며 판정·데이터는 바뀌지 않는다.
+
+| 부위 | 층 | 규칙(`viz/tree.js`, 결정적·force 없음) |
+| --- | --- | --- |
+| 뿌리 | 1 알레르기 그룹 | 줄기 밑에서 아래·바깥으로. 묶음 그룹은 더 깊고 넓게 |
+| 줄기 | 2 원천 재료·분류 | 좁은 기둥. 분류(category)마다 같은 방향, 높이를 따라 쌓음. concept는 줄기 꼭대기 가운데 |
+| 가지 | 3 가공품 | 줄기 꼭대기에서 분류 방향으로 위·바깥으로 뻗음(줄기와 같은 분류 각도) |
+| 잎 | 4 레시피 | 반구(돔) 표면의 고른 점(해바라기 배치)에 방위각 순으로 배정 |
+
+- 잎 배치 기준 두 가지(화면 "배치" 선택, `?layout=`): `tree-ingredient`(기본) 레시피가 매달린 재료(주재료 줄 중 번호가 가장 앞선 것, 없으면 매핑된 첫 줄)의 방향 순 → 같은 재료 레시피가 한 부채꼴. `tree-cuisine` 음식 종류별 부채꼴(폭은 레시피 수에 비례). 큰 잎 무리 이름(재료 이름·레시피 수)을 이웃끼리 높이를 엇갈려 표시. `flat` 기존 평면(D-1).
+- 잔가지 = 레시피-재료 간선: "레시피-재료" 체크박스로 전부 보이기/숨기기, 숨겨도 노드를 고르면 그 노드의 간선은 보인다(기존 규칙 그대로).
+- 전환은 좌표만 바꾼다(모든 노드 fx·fy·fz 고정, `d3ReheatSimulation`으로 한 번 동기화, graphData 재설정 없음). 평면은 처음 고를 때만 force warmup(비동기)을 돌리고, 평면에서 나갈 때 좌표를 저장해 다시 쓴다.
+- 나무 배치는 warmup이 없어 첫 화면이 빠르다(D-6의 원인이던 warmup 1.6~2.5초가 없음). 외부 레시피 노드(부록 E)는 수관 꼭대기 위에 고정.
+
+## 부록 E. 외부 레시피 일회성 분석 adhoc (2026-10-16 사람 승인)
+
+목표: DB에 없는 레시피(AI가 만든 레시피, 웹에서 본 레시피 등)의 재료 목록을 붙여 넣으면, 이미 컴파일된 지식을 조회해 재료 매핑, is_a·derived_from 구조, 알레르기 경로를 보여 주고 `/viz` 그래프 위에 임시 노드로 겹쳐 그린다. 사람이 정한 범위(2026-10-16): 일회성 분석만(저장 안 함), 화면은 `/viz` 입력 카드, 사용자 판정은 선택 입력.
+
+### E-1. 원칙
+
+- **저장하지 않는다.** DB, `knowledge/`, `data/recipes/`, 그래프 캐시를 바꾸지 않는다. 등록하려면 기존 절차(draft YAML → 검수 → published)를 따른다.
+- **결정적 규칙만 쓴다.** 재료 줄 분리는 식품안전나라 변환과 같은 `kb.foodsafety.ingredient_segments`(버리는 것은 고정 머리말 단어, 레시피 이름, 분량 표기, "…재료", 물뿐이고 버린 항목은 응답에 그대로 보여 준다). 매핑은 별칭 색인 정확 일치만. LLM·유사도 매핑 없음.
+- **concept 노드에 맞은 줄은 미매칭과 같이 다룬다**(A1). 응답에는 어떤 분류에 맞았는지 보여 주고 더 구체적인 재료를 적도록 안내한다.
+- **판정은 엔진의 기존 필터를 그대로 쓴다.** 사용자를 주면 임시 `Recipe`(모든 줄 role sub, 선택 아님)를 만들어 `UserConstraints.check`로 판정한다. 추천과 같은 기준이므로 possible도 제외, 미매칭 줄이 있으면 알레르기 사용자에게 제외. 매운맛·조리기구·조리시간·음식 종류는 입력에 정보가 없어 판정하지 않는다고 응답에 밝힌다. 제외되면 `logs/exclusions.jsonl`에 기록한다(recipe_id는 `adhoc_<해시>`).
+- 구조 표시(줄별 알레르기 경로, is_a 조상, derived_from 원천)는 컴파일 결과 행을 조회만 한다(부록 D와 같은 표시 계층, 요청 중 그래프 탐색 없음).
+
+### E-2. API
+
+`POST /analyze-recipe`
+
+- 입력: `title`(1~100자), `text`(재료 원문, 줄·쉼표 구분) 또는 `ingredients`(문자열 목록) 중 정확히 하나, 사용자는 `profile_id`·`persona_id`·`allergen_groups` 중 최대 하나(없으면 구조만). 모양 오류 422, 재료를 하나도 찾지 못함·모르는 알레르기 그룹 400, 없는 프로필·페르소나 404.
+- 출력: `recipe_id`(`adhoc_<해시>`), `lines`(줄 번호, 원문, 이름, `status`: mapped·concept·unmapped, 재료 id·이름, is_a 조상, derived_from 원천, 기본 그룹 알레르기 행: certainty·via·path_links), `skipped`(버린 항목), `allergens`(레시피 단위 요약, `/graph` 레시피 노드와 같은 모양), `counts`(전체·매핑·미매칭·concept), `judgement`(사용자를 준 경우: `excluded`, 제외 사유 목록(부록 D-3 trace exclusions와 같은 모양), 판정한 항목·판정하지 않은 항목), `graph`(겹쳐 그릴 노드·간선), `notice`, `disclaimer`.
+- 그래프 겹쳐 보기: 레시피 노드 `rcp:adhoc_<해시>`(kind recipe, `adhoc: true`), 매핑된 줄은 `uses` 간선(`use:adhoc_<해시>#줄번호`), 미매칭·concept 줄은 온톨로지에 연결되지 않은 노드 `raw:adhoc_<해시>#줄번호`(kind unmapped)와 `unmapped` 간선.
+
+### E-3. 화면
+
+`/viz` 오른쪽 패널의 "외부 레시피 분석" 카드: 제목, 재료 원문, 판정 기준(구조만 / 페르소나 / 저장 프로필) → 분석. 결과는 요약(매핑 수, 걸리는 알레르기), 판정, 줄별 표(매핑 재료·분류·알레르기 경로), 버린 항목. 그래프에는 레시피 층 위 가운데에 임시 레시피 노드를 고정 위치로 추가하고 선택해 알레르기 경로를 강조한다(기존 선택 강조 재사용). 다시 분석하거나 지우면 이전 임시 노드를 뺀다. 데이터가 바뀌는 경우라 `graphData`를 다시 넣되 warmup 없이 넣어 기존 배치는 움직이지 않는다.
+
+### E-4. 테스트
+
+`tests/api/test_analyze_recipe.py`: 매핑·concept·미매칭 구분, 버린 항목, 알레르기 행이 `/graph` 재료 노드와 같음, path_links가 실제 링크, 저장 안 함(`/graph` ETag·레시피 수 불변), 사용자 판정이 추천 필터와 같은 결과(possible 제외, 미매칭 제외, 알레르기 없는 사용자는 미매칭이어도 통과), 입력 검증, 제외 로그. `tests/allergy/`는 바꾸지 않는다.
+
+### E-5. 범위 밖
+
+저장(draft 등록), 미매칭 표기 누적(`unmapped_term`), 자유 문장(LLM) 해석, role·선택 재료 추론. 필요하면 progress.md "다음 단계 제안"에 적는다.

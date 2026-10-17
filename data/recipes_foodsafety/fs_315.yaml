@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_315
+title: 연어롤샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 315. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: salmon
+  raw_text: 연어 60g
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박 50g
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 4개
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 50g
+  role: sub
+- ingredient: chive
+  raw_text: 영양부추 50g
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣 5g
+  role: sub
+- ingredient: null
+  raw_text: 더덕 45g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 5g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 30g
+  role: sub
+- ingredient: null
+  raw_text: 다진홍고추 15g
+  role: sub
+steps:
+- text: 영양부추, 시금치는 먹기 좋게 잘라 물에 담가준다.
+- text: 단호박은 삶아서 체에 내려준다.
+- text: 토마토는 곱게 다져주고 시금치도 데친 후 단호박, 연두부와 섞어준다.
+- text: 연어를 포를 떠서 만들어진 단호박과 연두부를 연어에 돌돌 말아 냉동실에 살짝 얼려준다.
+- text: 소스재료로 소스를 만든다.
+- text: 접시에 준비된 채소를 깔고 연어를 올리고 소스를 올려 완성한다.

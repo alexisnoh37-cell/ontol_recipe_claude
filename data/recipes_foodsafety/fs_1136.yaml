@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1136
+title: 배·라임 모히또
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1136. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: pear
+  raw_text: 배(1개)
+  role: sub
+- ingredient: null
+  raw_text: 라임(1개)
+  role: sub
+- ingredient: null
+  raw_text: 탄산수(500g)
+  role: sub
+- ingredient: null
+  raw_text: 애플민트(5g)
+  role: sub
+- ingredient: null
+  raw_text: 스테비아(5g)
+  role: sub
+steps:
+- text: 라임을 반으로 잘라 즙을 짠다.
+- text: 라임즙과 배를 믹서에 넣고 간다.
+- text: 2번에 애플민트와 올리고당,탄산수를 넣고 믹서로 간다.
+- text: 냉동실에 3번을 넣고 얼린다.
+- text: 얼린 모히또를 믹서에 갈아 슬러시처럼 만든다.
+- text: 잔에 담고 애플민트로 장식한다.

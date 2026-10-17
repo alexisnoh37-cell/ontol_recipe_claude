@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_439
+title: 파프리카볶음밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 439. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: null
+  raw_text: 쥬키니호박(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(10g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(10g)
+  role: sub
+- ingredient: null
+  raw_text: 파인애플(20g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(50g)
+  role: sub
+- ingredient: null
+  raw_text: 닭고기살(30g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(10g)
+  role: sub
+- ingredient: null
+  raw_text: 토마토 페스트(10g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(20g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카 (50g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(30g)
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모짜렐라치즈(20g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(0.5g)
+  role: sub
+steps:
+- text: 당근, 양파, 호박, 버섯은 입자있게 다지고, 파인애플은 작은 깍뚝썰기로 썰어 준비한다.
+- text: 닭고기살은 작게 썰어 팬에 저염간장과 양파, 다진마늘, 올리고당을 넣어 볶으면서 졸인다.
+- text: 팬에 버터를 녹인 후 준비한 밥을 넣고 볶는다.
+- text: 볶은밥(③)에 썰어놓은 채소(①)를 넣고, 다시 볶아준다.
+- text: 밥과 채소가 볶아지면, 닭고기살(②)을 넣고, 토마토 페스트와 토마토를 다져넣고 볶는다.
+- text: 파프리카의 속을 파내고, 그 안에 볶아진 밥(⑤)을 넣고, 달걀물을 씌우고 모짜렐라치즈를 뿌려 치즈가 녹을 때까지 팬에 뚜껑을 덮어 약불에서 익힌 후 파슬리가루를 올려 완성한다.

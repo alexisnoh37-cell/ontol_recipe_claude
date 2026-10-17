@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_937
+title: 새우 완자탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 937. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 새우 살 40g
+  role: sub
+- ingredient: null
+  raw_text: 달걀흰자 5g
+  role: sub
+- ingredient: null
+  raw_text: 전분 4g
+  role: sub
+- ingredient: null
+  raw_text: 당면불린것 10g
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯 10g
+  role: sub
+- ingredient: chive
+  raw_text: 부추 5g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 3g
+  role: sub
+- ingredient: null
+  raw_text: 다시마육수 70g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 국간장 1g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: null
+  raw_text: 흰 후춧가루 적당량
+  role: sub
+steps:
+- text: 곱게 다진 새우살에 소금, 흰 후춧가루로 밑간한다.
+- text: 1에 달걀흰자, 전분을 넣어 치댄후 지름 2cm 정도의 완자를 만든다.
+- text: 불린 당면, 팽이버섯, 부추는 5cm 길이로 자르고 홍고추는 2cm 길이로 채썬다.
+- text: 냄비에 다시마 육수를 넣어 끓으면 2의 완자를 넣고 불을 줄인다.
+- text: 완자가 떠오르면 불린 당면, 팽이버섯, 부추, 홍고추 순으로 넣는다.
+- text: 다진마늘, 국간장, 소금으로 간한다.

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_636
+title: 우렁된장소스 배추롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 636. 요리종류 일품, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(50g)
+  role: sub
+- ingredient: null
+  raw_text: 배춧잎(5장)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(30g)
+  role: sub
+- ingredient: rice
+  raw_text: 쌀(100g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(2개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(50g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 우렁이(100g)
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장(30g)
+  role: sub
+steps:
+- text: 끓는 물에 배춧잎을 데친다.
+- text: 당근, 호박, 표고버섯, 양파는 입자있게 다진다.
+- text: 돼지고기를 썰어 불린 쌀, 다진 야채와 함께 밥을 짓는다.
+- text: 데친 배춧잎에 지어놓은 밥을 올려 돌돌만다.
+- text: 말아 놓은 배춧잎을 부추로 묶는다.
+- text: 찜통에 김이 오르면 ?번을 넣고 약 5분 정도 찐다.

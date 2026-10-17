@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1070
+title: 순창 고추장 두부강정
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1070. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(불고기용, 60g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(400g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(40g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(15g)
+  role: sub
+- ingredient: null
+  raw_text: 생강가루(5g)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(50g)
+  role: sub
+- ingredient: frying_mix
+  raw_text: 튀김가루(200g)
+  role: sub
+- ingredient: null
+  raw_text: 전분(20g)
+  role: sub
+- ingredient: null
+  raw_text: 맥주(200ml)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(15g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(15g)
+  role: sub
+- ingredient: ketchup
+  raw_text: 케첩(45g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(15g)
+  role: sub
+steps:
+- text: 당근, 새송이버섯, 소고기, 양파는 가늘게 채 썰어 간장, 꿀, 생강가루, 다진 마늘로 양념한 뒤 볶는다.
+- text: 두부는 반으로 잘라 속에 칼집을 낸 뒤 소금을 뿌려 수분을 제거한다.
+- text: 두부에 전분을 골고루 묻힌다.
+- text: 볶은 야채와 고기를 두부 사이에 넣는다.
+- text: 튀김가루, 전분, 차가운 맥주를 섞어 튀김 반죽을 만든 뒤 두부에 입혀 170℃기름에 튀긴다.
+- text: 고추장, 케첩, 올리고당을 섞고 냄비에 졸여 소스를 만들고 튀긴 두부를 지진다.

@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_282
+title: 버섯순두부찌개
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 282. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: shiitake
+  raw_text: 표고버섯(3g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(10g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(3g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(3g)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(1g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(1g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(1g)
+  role: sub
+- ingredient: soft_tofu
+  raw_text: 순두부(100g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(3g)
+  role: sub
+- ingredient: null
+  raw_text: 표고버섯 밑동(3g)
+  role: sub
+- ingredient: null
+  raw_text: 저염된장(5g)
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루(3g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(1g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깻가루(7g)
+  role: sub
+- ingredient: null
+  raw_text: 저염국간장(1g)
+  role: sub
+steps:
+- text: 표고버섯은 머리와 밑동을 분리하고, 머리 부분은 잘게 썬다.
+- text: 애호박, 감자, 양파는 한입 크기로 썰고, 미나리와 부추는 3cm 길이로 썰고, 대파와 청양고추는 송송 썬다.
+- text: 물에 다시마, 표고버섯 밑동을 넣고 끓으면 건더기를 건져 육수를 만든다.
+- text: 육수에 저염된장과 찹쌀가루를 풀어 한소끔 끓이고, 감자와 다진마늘을 넣어 끓인다.
+- text: 애호박과 표고버섯을 넣고, 순두부, 양파, 들깻가루, 저염국간장을 넣어 한소끔 끓인다.
+- text: 대파, 청양고추, 미나리, 부추를 듬뿍 올려 마무리한다.

@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3573
+title: 오리들깨 겨자소스 초무침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3573. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: duck
+  raw_text: 오리고기(90g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(10g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(10g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깻가루(8g)
+  role: sub
+- ingredient: mustard_powder
+  raw_text: 겨잣가루(4g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(5g)
+  role: sub
+steps:
+- text: 달군 팬에 오리고기를 넣고 센 불에서 볶는다.
+- text: 들깻가루, 겨잣가루, 식초, 레몬즙, 물을 섞어 양념장을 만든다.
+- text: 양파, 당근, 오이는 채 썬다.
+- text: 볶은 오리고기는 한 김 식힌다.
+- text: 볼에 오리고기, 손질한 채소, 양념장을 넣고 버무린다.
+- text: 접시에 담아 마무리한다.

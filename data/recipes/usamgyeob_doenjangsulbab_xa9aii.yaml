@@ -1,0 +1,84 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: usamgyeob_doenjangsulbab_xa9aii
+title: 우삼겹 된장술밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 8
+servings: null
+source: https://www.youtube.com/watch?v=XA9aiI76AFE
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: beef_plate
+  raw_text: 우삼겹 100g
+  role: main
+  optional: false
+  amount: 100
+  unit: g
+- ingredient: tofu
+  raw_text: 두부 1/3모
+  role: sub
+  optional: false
+  amount: 0.33
+  unit: 모
+- ingredient: onion
+  raw_text: 양파반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: green_onion
+  raw_text: 대파 1/4쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 쪽
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: doenjang
+  raw_text: 된장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 코인육수 1알
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 냄비에 우삼겹 100g 넣고 2분간 기름내면서 굽는다. 여기에 밥 한공기 넣은 후.
+  technique: 구이
+- text: 넣고 밥알 하나하나 양념 코팅을 해주면 더 대파 1/4쪽, 청양고추 2개, 두부 1/3모 넣고.
+  technique: null
+- text: 마무리 코인육수 1알 넣어줄게요. 이대로 양파가 익을 때까지 6분만 더 끓여주면 완성입니다.
+  technique: 끓이기

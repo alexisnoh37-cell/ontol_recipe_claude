@@ -1,0 +1,98 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: weonpaenhaejangpaseuta_vpvdlr
+title: 원팬해장파스타
+cuisine: 양식
+difficulty: 1
+cook_time_min: 25
+servings: 1
+source: https://www.youtube.com/watch?v=VpVdlrRm3xA
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pasta
+  raw_text: 파스타면 1인분 / 파스타면
+  role: main
+  optional: false
+  amount: 1
+  unit: 인분
+- ingredient: squid
+  raw_text: 오징어 1마리 / 오징어
+  role: sub
+  optional: false
+  amount: 1
+  unit: 마리
+- ingredient: shrimp_raw
+  raw_text: 새우 4마리 / 냉동새우 4마리 / 새우
+  role: sub
+  optional: false
+  amount: 4
+  unit: 마리
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: green_onion
+  raw_text: 대파 1/4쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 쪽
+- ingredient: null
+  raw_text: 고추장 크게 1스푼 / 크게 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: mirin
+  raw_text: 맛술 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: tuna_extract
+  raw_text: 참치액 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 코인육수 1알
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+- ingredient: gochujang
+  raw_text: 고추장
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 4
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 파스타면 1인분 준비 된 팬에 넣어주고 고추장 중강불에 12분간 끓인다. 물이 끓는 동안.
+  technique: 끓이기
+- text: 재료 손질 해볼게요. 해동한 오징어 한마리 청양고추 2개는 얇게 어슷 썰어주고 대파 1/4쪽도.
+  technique: null
+- text: 반으로 갈라 얇게 썰어줄게요. 10분 후에 오징어, 새우, 대파 넣는다. 오징어 새우를 늦게 넣는.
+  technique: null
+- text: 방지하는거에요. 3분간만 더 끓여주면 완성입니다. 마무리로 청양고추 넣어 잘 섞어주면 칼칼하면서.
+  technique: 끓이기

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1030
+title: 클럽 샌드위치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1030. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: bread
+  raw_text: 식빵 40g
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 2g
+  role: sub
+- ingredient: null
+  raw_text: 삶은달걀 15g
+  role: sub
+- ingredient: iceberg_lettuce
+  raw_text: 양상추 8g
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 13g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 20g
+  role: sub
+- ingredient: null
+  raw_text: 치즈슬라이스 4g
+  role: sub
+- ingredient: ham
+  raw_text: 슬라이스햄 4g
+  role: sub
+- ingredient: bacon
+  raw_text: 베이컨 4g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량
+  role: sub
+steps:
+- text: 식빵은 앞뒤로 바삭하게 굽는다.
+- text: 양상추는 뜯어서 찬물에 담가 두고 토마토는 얇게 슬라이스 하고 달걀도 삶아 egg slicer로 자른다.
+- text: 닭가슴살에 소금, 후추로 간을 한 뒤 팬에서 익히고 햄과 베이컨도 살짝 굽는다.
+- text: 식빵 한 면에 마요네즈를 바른 뒤 양상추, 베이컨, 토마토를 얹고 다시 식빵 양면에 마요네즈를 바르고 토마토 위에 얹는다.
+- text: 그 위에 양상추, 치즈, 햄, 달걀, 닭고기를 올린 다음 나머지 빵 한 면에 마요네즈를 바른다.
+- text: 빵 칼로 샌드위치의 사방의 테두리를 잘라내고 대각선으로 먹기 좋게 썬다.

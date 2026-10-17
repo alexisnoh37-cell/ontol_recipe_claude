@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_453
+title: 떡완자조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 453. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 다진 쇠고기(70g)
+  role: sub
+- ingredient: ground_pork
+  raw_text: 다진 돼지고기(30g)
+  role: sub
+- ingredient: null
+  raw_text: 매실액(10g)
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: tteokbokki_rice_cake
+  raw_text: 떡볶이떡(100g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(20g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(20g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.03g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(3g)
+  role: sub
+steps:
+- text: 소고기와 돼지고기를 섞어, 후춧가루, 매실액, 맛술을 넣어 재워둔다.
+- text: 양파와 당근, 새송이, 대파는 입자있게 다지고 마늘은 곱게 다져 준비한다.
+- text: 재워둔 고기(①)에 파, 마늘, 양파, 당근, 새송이를 넣고 골고루 섞는다.
+- text: 떡은 잘게 썰어 뜨거운 물에 잠시 담그어 놓는다.
+- text: 섞어 놓은 고기(③)에 불려 놓은 떡을 섞는다.
+- text: 고기반죽(⑤)을 조금씩 떼어 둥글게 완자를 빚고, 팬에 기름을 둘러 굴리듯이 굽는다. 냄비에 간장과 올리고당을 넣고 끓이다가 구운 완자와 참기름을 넣어 은근히 졸인 뒤 통깨를 얹어 완성한다.

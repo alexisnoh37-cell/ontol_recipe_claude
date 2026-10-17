@@ -1,0 +1,74 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: agwisuyug_enhnd6
+title: 아귀수육
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=enhnd6gIm2E
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: null
+  raw_text: 아귀 한마리
+  role: main
+  optional: false
+  amount: 1
+  unit: 마리
+- ingredient: soybean_sprouts
+  raw_text: 콩나물 200g
+  role: sub
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: minari
+  raw_text: 미나리 200g
+  role: sub
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: soy_sauce
+  raw_text: 진간장 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: perilla_oil
+  raw_text: 들기름 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 두꼬집 진간장 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: mirin
+  raw_text: 맛술 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 식감 깡패에요 :) 야채가득 올려 아귀살과 물 1리터 끓여주시고 굵은 소금.
+  technique: 끓이기
+- text: 맛술 2스푼 넣는다. 여기에 손질된 아귀간, 아귀위, 살 다 넣어줄게요.
+  technique: null
+- text: 데친 후 빼주고 미나리도 1분 데치고 미나리 듬뿍 넣어주고 아귀 살, 위.
+  technique: 데치기
+- text: 간 차곡차곡 올려줄게요. 위에 육수 참소스에 연겨자 듬뿍 올려주세요.
+  technique: null

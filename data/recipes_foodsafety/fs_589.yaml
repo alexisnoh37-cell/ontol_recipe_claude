@@ -1,0 +1,73 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_589
+title: 떡갈비와 미니잡곡밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 589. 요리종류 밥, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: beef
+  raw_text: 소고기(120g)
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기(120g)
+  role: sub
+- ingredient: tteokbokki_rice_cake
+  raw_text: 떡볶이떡(100g)
+  role: sub
+- ingredient: null
+  raw_text: 흑미(20g)
+  role: sub
+- ingredient: brown_rice
+  raw_text: 현미(20g)
+  role: sub
+- ingredient: rice
+  raw_text: 백미(20g)
+  role: sub
+- ingredient: null
+  raw_text: 조(10g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(1/4개)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(150g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(30g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+steps:
+- text: 떡볶이떡은 잘게 다진다.
+- text: 현미, 흑미, 백미 및 조는 깨끗이 씻어 물에 불린다.
+- text: 소고기와 돼지고기에 소금, 다진 마늘, 설탕 및 참기름을 넣고 양념한다
+- text: 당근과 호박은 잘게 다진다
+- text: 달걀은 황백으로 나눠 지단을 부친다.
+- text: 불린 쌀로 밥을 짓고, 밥과 3번과 4번을 섞어 미니 떡갈비를 만들어 팬에 기름을 두르고 익힌 뒤 황백지단으로 장식한다.

@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_876
+title: 금태찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 876. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 금태 50g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.1g
+  role: sub
+- ingredient: null
+  raw_text: 흰후춧가루 0.1g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 3g
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 3g
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루 1g
+  role: sub
+- ingredient: soybean_sprouts
+  raw_text: 콩나물 16g
+  role: sub
+- ingredient: minari
+  raw_text: 미나리 12g
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯 16g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 0.8g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 4g
+  role: sub
+- ingredient: radish
+  raw_text: 무 16g
+  role: sub
+- ingredient: null
+  raw_text: 찜소스
+  role: sub
+- ingredient: null
+  raw_text: 다시마국물 100g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 2g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 1g
+  role: sub
+steps:
+- text: 금태는 아가미와 내장을 제거 한 후 몸통에 어슷하게 칼집을 넣어 소금, 흰후추, 청주, 생강즙으로 밑간을 해둔다.
+- text: 밑간 한 금태의 수분을 닦고 녹말가루를 고루 묻힌다.
+- text: 콩나물은 머리와 꼬리를 떼고 미나리는 7cm 길이로 썰고 느타리버섯은 굵게 찢고 홍고추, 대파, 당근, 무는 채썬다.
+- text: 다시마 국물에 간장, 맛술, 식초를 섞어 찜소스를 만든다.
+- text: 찜그릇에 무, 당근 채썬 것을 놓고 녹말 입힌 도미와 찜소스를 얹어 찐다.
+- text: 중간 중간 소스를 뿌려 주고 느타리버섯, 미나리, 홍고추, 콩나물, 채썬 대파를 얹어 찐다.

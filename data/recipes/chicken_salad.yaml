@@ -1,0 +1,56 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: chicken_salad
+title: 닭가슴살 샐러드
+cuisine: 양식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+note: 닭가슴살 요리라 부위를 지정함(닭다리살 보유로는 매칭되지 않음)
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 1장(150g)
+  role: main
+- ingredient: iceberg_lettuce
+  raw_text: 양상추 1/4통
+  role: main
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 6개
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 1/3개
+  role: sub
+  optional: true
+- ingredient: olive_oil
+  raw_text: 올리브유 2큰술
+  role: seasoning
+- ingredient: vinegar
+  raw_text: 식초 1큰술
+  role: seasoning
+- ingredient: honey
+  raw_text: 꿀 1작은술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 1
+  sour: 2
+  umami: 2
+  savory: 2
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 닭가슴살을 소금물에 15분 삶아 식힌 뒤 찢는다.
+  technique: 끓이기
+- text: 양상추는 한입 크기로 뜯고 방울토마토와 오이를 썬다.
+- text: 올리브유, 식초, 꿀, 소금, 후추를 섞어 드레싱을 만들어 채소와 닭고기에 뿌린다.
+  technique: 무침

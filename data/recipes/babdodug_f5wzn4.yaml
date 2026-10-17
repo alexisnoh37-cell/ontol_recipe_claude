@@ -1,0 +1,86 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: babdodug_f5wzn4
+title: 밥도둑
+cuisine: 한식
+difficulty: 1
+cook_time_min: 18
+servings: 4
+source: https://www.youtube.com/watch?v=F5wZn4zY8gQ
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: ground_pork
+  raw_text: 돼지고기 다짐육 200g / 다짐육 200g
+  role: main
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: potato
+  raw_text: 감자 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯 1팩
+  role: sub
+  optional: false
+  amount: 1
+  unit: 팩
+- ingredient: green_onion
+  raw_text: 대파 반쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 쪽
+- ingredient: napa_cabbage
+  raw_text: 배추 2장
+  role: sub
+  optional: false
+  amount: 2
+  unit: 장
+- ingredient: doenjang
+  raw_text: 된장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: tuna_extract
+  raw_text: 참치액 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 자른다. 느타리버섯 1팩도 잘게 썰어주고 배추 2장도 반으로 잘라 잘게.
+  technique: null
+- text: 썰어줄게요. 대파 1반쪽도 어슷자른다.
+  technique: null
+- text: 배추 넣어 준 후 여기에 된장 1스푼, 물400ml 넣어줄게요. 이대로 물이.
+  technique: null
+- text: 작해질때까지 중불에 15분간 끓여준 후 마무리로 대파 넣고 3분간 더 끓여주면.
+  technique: 끓이기

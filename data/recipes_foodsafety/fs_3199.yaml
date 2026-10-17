@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3199
+title: 고구마 공갈빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3199. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 강력분 300g
+  role: sub
+- ingredient: null
+  raw_text: 이스트 6g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 4g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 10g
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마 3~4개
+  role: sub
+- ingredient: milk
+  raw_text: 우유20g
+  role: sub
+steps:
+- text: (속재료) 고구마를 삶아서 껍질을 제거하고 우유를 넣어가며 으깨서 부드러운 무스 상태로 만든다. ★ 고구마를 물에 삶으면 수분이 많아 우유량을 조절해야 해요.
+- text: 버터를 제외한 모든 반죽 재료를 넣고 클린업 단계까지 믹싱하다가 버터를 넣어 최종단계까지 믹싱한다.
+- text: 반죽은 처음 부피의 2배 정도 되도록 1차 발효하여 50g씩 분할하여 둥글리기 한 다음 중간 발효(10-15분)한다.
+- text: 중간 발효가 끝난 반죽은 납작하게 펴고 만들어 놓은 고구마무스를 넣어 동그란 모양으로 일정하게 만든 후 팬닝한다.
+- text: 팬닝된 반죽을 호떡처럼 윗면을 살짝 눌러준다.
+- text: 190℃에서 15분 정도 굽는다.

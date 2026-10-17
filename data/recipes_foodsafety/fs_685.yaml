@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_685
+title: 수박껍질풋고추볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 685. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 수박 속껍질 50g
+  role: sub
+- ingredient: green_chili
+  raw_text: 풋고추 15g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 5g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 포도씨유 4g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 1g(절일 때 0.5g, 간 맞출 때 0.5g)
+  role: sub
+steps:
+- text: 수박껍질의 녹색부분을 제거하고 얄팍하게 채 썬다.
+- text: 채 썬 수박껍질에 소금을 뿌려 살짝 절여 물기를 짠다.
+- text: 고추는 길이로 2등분하여 씨를 뺀다.
+- text: 씨를 뺀 고추는 굵게 채 썬다.
+- text: 팬에 기름을 두르고 수박껍질과 고추를 넣어 살짝 볶는다.
+- text: 소금으로 간을 맞추고 마무리한다.

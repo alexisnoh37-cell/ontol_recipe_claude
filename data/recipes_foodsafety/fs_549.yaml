@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_549
+title: 숙주라면
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 549. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: mussel
+  raw_text: 홍합(20g)
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주(50g)
+  role: sub
+- ingredient: bok_choy
+  raw_text: 청경채(20g)
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추(5g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(5g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(10g)
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스(10g)
+  role: sub
+- ingredient: ramen_noodles
+  raw_text: 라면(100g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: anchovy
+  raw_text: 멸치(20g)
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 건새우(10g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+steps:
+- text: 멸치, 건새우, 무, 양파, 마늘을 넣고 육수를 만들어 소창에 걸러 준비한다.
+- text: 홍합은 끓는 물에 살짝 데쳐 놓는다.
+- text: 숙주는 씻어 놓고 청경채는 반으로 자르고 청 ․ 홍고추는 어슷썰어 준비 한다.
+- text: 만들어 놓은 육수에 고춧가루와 굴소스를 넣어 끓인다.
+- text: 달걀은 풀어 준비한다.
+- text: 육수(④)가 끓으면 라면을 넣고, 다시 한 번 더 끓으면 홍합을 넣어 끓이다가, 불을 줄인 뒤 달걀을 넣어 줄알을 치고, 청경채와 숙주, 홍고추와 대파를 넣고 살짝 끓은 뒤 그릇에 담아 완성한다.

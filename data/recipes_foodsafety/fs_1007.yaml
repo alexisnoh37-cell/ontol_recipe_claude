@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1007
+title: 고기완두조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1007. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 돼지고기살코기 40g
+  role: sub
+- ingredient: null
+  raw_text: 완두콩 30g
+  role: sub
+- ingredient: null
+  raw_text: 육수 10g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 7g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: null
+  raw_text: 전분 5g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 3g
+  role: sub
+steps:
+- text: 돼지고기는 손질한 뒤 완두콩 크기로 썬다.
+- text: 완두콩을 믹서에 곱게 간다.
+- text: 기름을 두른 팬에 1을 넣고 달라붙지 않게 볶는다.
+- text: 2에 3과 설탕을 넣고 끓인다.
+- text: 4에 소금으로 간을 한다.
+- text: 물전분으로 소스의 농도를 맞춘다.

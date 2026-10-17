@@ -1,0 +1,87 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_296
+title: 곤약함박스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 296. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 새송이버섯(10g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(10g)
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리(15g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(30g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(15g)
+  role: sub
+- ingredient: asparagus
+  raw_text: 아스파라거스(10g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(10g)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎채소(5g)
+  role: sub
+- ingredient: null
+  raw_text: 스테이크반죽 곤약(80g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(80g)
+  role: sub
+- ingredient: beef
+  raw_text: 쇠고기(40g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(5g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(5g)
+  role: sub
+- ingredient: celery
+  raw_text: 셀러리(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(2g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(3g)
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술(7.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(2g)
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루(30g)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(10g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청간장소스 유자청(20g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(5g)
+  role: sub
+steps:
+- text: 곤약을 식촛물에 살짝 데친 뒤 나머지 반죽 재료와 함께 믹서에 넣고 갈아 치댄다.
+- text: 스테이크 반죽을 동글납작하게 빚고 팬에 식용유를 살짝 둘러 구운 뒤 140℃로 달군 오븐에서 30분간 굽는다.
+- text: 새송이버섯, 가지, 브로콜리, 양파, 파프리카, 방울토마토, 아스파라거스는 올리브유에 구워 준비한다.
+- text: 팬에 유자청과 저염간장, 물을 넣고 끓여 유자청간장소스를 만든다.
+- text: 접시에 곤약함박스테이크를 담고 어린잎채소를 올리고, 구운 채소와 유자청간장소스를 곁들여 마무리한다.

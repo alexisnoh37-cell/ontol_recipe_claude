@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_920
+title: 버섯 참치 무른밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 920. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 불린 쌀 30g
+  role: sub
+- ingredient: null
+  raw_text: 참치살 10g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 5g
+  role: sub
+- ingredient: radish
+  raw_text: 무 5g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 불린 쌀은 믹서나 절구를 이용하여 간다.
+- text: 참치 살, 표고버섯, 무, 양파는 곱게 다진다.
+- text: 팬에 참기름을 두르고 1과 다진 표고버섯, 무, 양파를 볶는다.
+- text: 3에 물을 넣어 무른 밥을 짓는다.
+- text: 4의 밥이 끓어오르면 다진 참치 살을 넣고 저어가며 끓인다.
+- text: 참치 살이 다 익으면 통깨를 뿌린다.

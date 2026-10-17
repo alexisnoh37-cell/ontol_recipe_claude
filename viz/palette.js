@@ -14,6 +14,16 @@ export const NODE_COLOR = {
   processed: "#0090ff", // 가공품(derived_from 있음)
   recipe: "#e8dcc0",
   lowConfidence: "#f5d90a", // confidence: low 고리
+  adhoc: "#3dd6d0", // 외부 레시피(분석용 임시 노드, 부록 E)
+  unmapped: "#c2414b", // 외부 레시피의 미매칭 줄(온톨로지에 연결되지 않음)
+};
+
+// 레시피 출처별 색(origin, config/display.yaml graph_recipe_origins, int-2). 없는 출처는 NODE_COLOR.recipe
+export const ORIGIN_COLOR = {
+  seed: "#e8dcc0", // 기본·확장 시드
+  simplecooking: "#ffb86b", // 자취요리신
+  sallimpop: "#ff8fb1", // 살림팝
+  foodsafety: "#9fb3c8", // 식품안전나라(그래프 표시 전용, 엔진 미적재)
 };
 
 export const LINK_COLOR = {
@@ -25,6 +35,7 @@ export const LINK_COLOR = {
   sub: "#12a594",
   seasoning: "#b4a7d6",
   garnish: "#e93d82",
+  unmapped: "#c2414b",
 };
 
 export const LINK_LABEL = {
@@ -36,6 +47,7 @@ export const LINK_LABEL = {
   sub: "레시피-재료: 부재료",
   seasoning: "레시피-재료: 양념",
   garnish: "레시피-재료: 고명",
+  unmapped: "외부 레시피 → 미매칭 줄",
 };
 
 export const GROUP_CATEGORY_LABEL = { official: "법정 표시 대상", custom: "자체 그룹", bundle: "묶음 그룹" };
@@ -50,6 +62,7 @@ export function linkAlpha(link) {
 }
 
 export function linkRestAlpha(link) {
+  if (link.type === "unmapped") return 0.6;
   if (link.type === "uses") return link.optional ? 0.2 : 0.4;
   if (link.type === "is_a" || link.type === "bundle_member") return 0.2;
   return link.certainty === "possible" ? 0.09 : 0.15; // derived_from·알레르기 지정

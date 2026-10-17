@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_548
+title: 소고기채소불고기
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 548. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 소불고기(120g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(20g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(5g) 양배추(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(5g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(10g) 당근(10g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(5g)
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추(5g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(5g)
+  role: sub
+- ingredient: null
+  raw_text: 곁들임 채소
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(10g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(1g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(5g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(5g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(2g) 다진마늘(5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.1g)
+  role: sub
+steps:
+- text: 배는 껍질을 벗겨 배즙을 갈아 준비한다.
+- text: 소고기에 배즙과 정종을 넣어 버무려 숙성시킨다.
+- text: 양배추와 양파, 깻잎, 표고버섯은 채 썰고 대파와 당근은 납작하게 5cm 길이로 썰고 청·홍고추는 어슷 썰어 준비한다.
+- text: 간장과 올리고당, 참기름, 다진마늘, 후춧가루를 넣어 소스를 만든다.
+- text: 만든 소스를 소불고기에 넣어 2차 숙성을 시킨다.
+- text: 팬에 고기를 볶고 별도로 채소를 볶은 뒤 씨를 빼고 얇게 썬 대추와 통깨를 얹어 접시에 함께 담아 완성한다.

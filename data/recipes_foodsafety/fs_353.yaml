@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_353
+title: 치즈리조또
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 353. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: kabocha
+  raw_text: 단호박 50g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 180mg
+  role: sub
+- ingredient: null
+  raw_text: 유기농 아기치즈 27g
+  role: sub
+- ingredient: rice
+  raw_text: 멥쌀 60g
+  role: sub
+- ingredient: null
+  raw_text: 생 표고버섯 15g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 5g
+  role: sub
+- ingredient: null
+  raw_text: 볶은소금 1g
+  role: sub
+steps:
+- text: 쌀은 30분전에 불려준다.
+- text: 단호박은 찐 후 체에 내려준다.
+- text: 생 표고버섯은 뜨거운 물에 데친 후 아주 가늘게 채를 썰어준다.
+- text: 반은 채 썰어서 참기름으로 간을 해 준다.
+- text: 팬에 표고를 먼저 볶아주다가 불린 쌀을 넣어 볶고 볶은소금으로 간을 해준다.
+- text: 볶아주던 쌀에 우유를 넣어가면서 계속 볶아 주고 단호박과 치즈를 넣어 완성한다.

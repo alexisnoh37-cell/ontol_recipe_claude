@@ -1,0 +1,73 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_254
+title: 토마토두루치기
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 254. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 양배추(40g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(15g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(10g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(30g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(10g)
+  role: sub
+- ingredient: green_bell_pepper
+  raw_text: 피망(10g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(2g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(30g)
+  role: sub
+- ingredient: null
+  raw_text: 비트(0.5g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(5g)
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기(100g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 소금(0.5g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(1g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.2g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(1g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(0.1g)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(5g)
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿(3g)
+  role: sub
+steps:
+- text: 양배추, 양파, 표고버섯, 양송이버섯, 파프리카, 피망은 먹기 좋은 크기로 깍둑 썰고, 대파는 어슷 썬다.
+- text: 마늘은 편 썰어 기름 두른 팬에 투명해질 때까지 4~5분 정도 볶는다.
+- text: 토마토는 김 오른 찜기에 찐 후 껍질을 벗겨 양파와 함께 으깨가며 볶는다.
+- text: 비트도 곱게 갈아 넣고 함께 볶는다.
+- text: 식용유를 두른 팬에 돼지고기를 넣고 토마토비트소스와 함께 볶는다.
+- text: 양념을 넣어 간을 맞춘 후 양배추, 표고버섯, 양송이버섯, 파프리카, 피망, 대파를 넣고 살짝 볶아 마무리한다.

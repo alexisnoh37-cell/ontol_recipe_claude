@@ -1,0 +1,36 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_273
+title: 백김치콩비지찌개
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 273. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 풋고추(10g)
+  role: sub
+- ingredient: null
+  raw_text: 백김치(100g)
+  role: sub
+- ingredient: null
+  raw_text: 콩비지(100g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 참기름(8g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.2g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(10g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(2g)
+  role: sub
+steps:
+- text: 풋고추는 잘게 다진다.
+- text: 백김치는 먹기 좋은 크기로 썬다.
+- text: 냄비에 백김치를 볶다가 김치가 익으면 참기름, 후춧가루, 다진 마늘을 넣고 볶는다.
+- text: 물(200g)을 넣고 끓인다.
+- text: 물이 끓으면 콩비지와 간장, 풋고추를 넣어 약한 불에서 15분 정도 끓여 마무리한다.

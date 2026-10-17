@@ -1,0 +1,110 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: dububibimbab_qanlhk
+title: 두부비빔밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 6
+servings: null
+source: https://www.youtube.com/watch?v=QANlhk12N6Y
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: tofu
+  raw_text: 두부 600g
+  role: main
+  optional: false
+  amount: 600
+  unit: g
+- ingredient: salt
+  raw_text: 맛소금 5꼬집 / 맛소금
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 꼬집
+- ingredient: sesame_oil
+  raw_text: 참기름 1스푼 / 참기름 2스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soybean_sprouts
+  raw_text: 콩나물
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: carrot
+  raw_text: 당근
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: zucchini
+  raw_text: 애호박
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: null
+  raw_text: 달걀 후라이 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: soy_sauce
+  raw_text: 진간장 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 국간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 알룰로스 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 깨소금 1스푼
+  role: garnish
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: egg
+  raw_text: 달걀
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 보세요. 두부 600g 팬에 넣고 한 스푼 넣어 밑간해 주고 1분만 더.
+  technique: null
+- text: 볶는다. 야채는 어떤 걸 넣어도 콩나물 삶아서 준비하고 [음악] 당근.
+  technique: 볶음
+- text: 채썰어 놓고 에오박과 5분간 쪄서 깨서금 한 스푼 넣고 잘 섞어서.
+  technique: 무침
+- text: 달걀 후라이 하나 올려주고 마무리 양념장 올려서 비벼 먹어 보면 식감도.
+  technique: null

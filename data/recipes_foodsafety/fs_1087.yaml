@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1087
+title: 과일 김치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1087. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: apple
+  raw_text: 사과(30g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(10g)
+  role: sub
+- ingredient: peach
+  raw_text: 복숭아(15g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(25g)
+  role: sub
+- ingredient: null
+  raw_text: 치커리(3g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(2g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3g)
+  role: sub
+- ingredient: null
+  raw_text: 깨(2g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(2g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+steps:
+- text: 토마토는 십자로 칼집을 내고 끓는 물에 살짝 데쳐 껍질을 벗긴다.
+- text: 사과, 복숭아는 깍둑썰고 소금에 10분 정도 절인다.
+- text: 배를 강판에 갈고, 마늘은 다진다.
+- text: 갈아둔 배에 고춧가루, 다진 마늘, 깨, 참기름을 섞어 양념을 만든다.
+- text: 절여둔 과일을 양념과 섞는다.
+- text: 치커리를 넣고 섞는다.

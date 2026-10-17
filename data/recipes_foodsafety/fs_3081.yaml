@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3081
+title: 매실입은가지닭볶음탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3081. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기 100g
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지 30g
+  role: sub
+- ingredient: null
+  raw_text: 매실엑기스 5g
+  role: sub
+- ingredient: null
+  raw_text: 파 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘2g
+  role: sub
+- ingredient: soybean_oil
+  raw_text: 대두유 3g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 2g
+  role: sub
+- ingredient: mirin
+  raw_text: 미림 2g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 2g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+steps:
+- text: 닭과 가지는 먹기 좋은 사이즈로 토막 낸다.
+- text: 다진파, 다진 마늘, 맛술, 참기름, 올리고당에 닭을 재운다.
+- text: 매실엑기스, 간장, 식초, 다진마늘, 미림, 물을 섞어 소스를 만든다.
+- text: 가지와 닭은 오븐에 구워준다.
+- text: 구워진 닭과 가지를 매실소스에 버무린다.
+- text: 팬에 소스 묻은 닭과 가지를 볶아 낸다.

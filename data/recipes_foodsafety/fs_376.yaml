@@ -1,0 +1,63 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_376
+title: 베이컨밀푀유
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 376. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: napa_cabbage
+  raw_text: 알배추 8장(200g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎 12장(20g)
+  role: sub
+- ingredient: bacon
+  raw_text: 베이컨 80g
+  role: sub
+- ingredient: radish
+  raw_text: 무 100g
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주 120g
+  role: sub
+- ingredient: null
+  raw_text: 청경재 80g
+  role: sub
+- ingredient: null
+  raw_text: 백일송이 25g
+  role: sub
+- ingredient: null
+  raw_text: 국물
+  role: sub
+- ingredient: null
+  raw_text: 채소국물 8컵(표고버섯, 다시마, 무, 마늘, 대파뿌리, 양파)
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 15g
+  role: sub
+- ingredient: null
+  raw_text: 멸치간장 15g
+  role: sub
+- ingredient: wasabi
+  raw_text: 와사비 10g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 15g
+  role: sub
+- ingredient: null
+  raw_text: 칠리소스 30g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 15g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 15g
+  role: sub
+steps:
+- text: 베이컨은 뜨거운 물에 살짝 데쳐준다.
+- text: 배춧잎 위에 깻잎 2장을 양쪽으로 깔고, 그 사이에 베이컨을 얹는 방식으로 반복하여 겹겹이 올려준 후 먹기 좋게 잘라준다.
+- text: 냄비 바닥에 끓인 무와 청경채, 숙주나물을 깔아준다.
+- text: 2가지 소스를 만들어준다.
+- text: 가운데 부분은 백일송이버섯으로 채워주고 먹기 직전에 만든 육수를 부어 끓여주고 소스와 함께 완성한다.

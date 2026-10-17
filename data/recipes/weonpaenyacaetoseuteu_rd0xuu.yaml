@@ -1,0 +1,64 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: weonpaenyacaetoseuteu_rd0xuu
+title: 원팬야채토스트
+cuisine: 양식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=rd0XuUHXCjc
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: bread
+  raw_text: 식빵 1장
+  role: main
+  optional: false
+  amount: 1
+  unit: 장
+- ingredient: egg
+  raw_text: 달걀 2알 / 달걀
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- ingredient: carrot
+  raw_text: 당근 1/4개
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 개
+- ingredient: cabbage
+  raw_text: 양배추 반줌
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 줌
+- ingredient: sliced_cheese
+  raw_text: 체다치즈 2장
+  role: sub
+  optional: false
+  amount: 2
+  unit: 장
+- ingredient: butter
+  raw_text: 무염버터 20g
+  role: sub
+  optional: false
+  amount: 20
+  unit: g
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 2
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 약불로 예열된 팬에 무염버터 20g 넣고 얇게 채썬 당근, 양배추 넣어서 2분간.
+  technique: null
+- text: 볶아줄게요. 여기에 잘 풀어놓은 달걀 2알 넣어주고 위에 식빵 1장 반으로 잘라 올려줄게요.
+  technique: 볶음

@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_740
+title: 물파래콩전
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 740. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 물파래 5g
+  role: sub
+- ingredient: soybean
+  raw_text: 노란콩 25g(불린것 52g)
+  role: sub
+- ingredient: null
+  raw_text: 우리밀가루 10g
+  role: sub
+- ingredient: null
+  raw_text: 현미유 5g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 2g
+  role: sub
+- ingredient: null
+  raw_text: 파 1g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 0.5g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.2g
+  role: sub
+steps:
+- text: 물파래는 씻어 체에 걸러 물기를 제거하고 잘게 썬다.
+- text: 물에 5시간정도 불린 노란콩은 물 반컵을 넣고 약 10분가량 삶아 건져 믹서에 곱게 간다.
+- text: 파는 다지고 홍고추는 어슷썰기 한다.
+- text: 밀가루에 1,2와 물 20g을 넣어 반죽을 한다.
+- text: 팬에 현미유를 두르고 반죽을 떠서 지름 8cm 가량의 크기로 동그랗게 부치면서 윗면에 홍고추로 장식한다.
+- text: 간장, 파, 식초, 통깨를 넣고 초간장을 만들어 물파래콩전과 곁들인다.

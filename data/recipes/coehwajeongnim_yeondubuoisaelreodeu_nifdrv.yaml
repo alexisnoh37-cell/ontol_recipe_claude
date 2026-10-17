@@ -1,0 +1,71 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: coehwajeongnim_yeondubuoisaelreodeu_nifdrv
+title: 최화정님 연두부오이샐러드
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=NiFdRvxM_M0
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에
+  없음)
+ingredients:
+- ingredient: cucumber
+  raw_text: 오이 2개
+  role: main
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: soy_sauce
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 알룰로스 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 화이트발사믹식초 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: olive_oil
+  raw_text: 올리브오일 3스푼
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 통깨 1스푼
+  role: garnish
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: tofu
+  raw_text: 연두부 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 2
+  umami: 1
+  savory: 3
+equipment: []
+steps:
+- text: 하죠. 오이 두 개 깨끗이 씻순 체칼로 얇게 자른다. 슬라이스.
+  technique: null
+- text: 한 오이에 소금 반스푼 정도 넣고 오일 세 스푼. 통깨 한 스푼 넣고.
+  technique: null
+- text: 잘 섞어 주시면 됩니다. 절여진 오이.
+  technique: 무침

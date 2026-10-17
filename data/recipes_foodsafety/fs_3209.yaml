@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3209
+title: 코코넛워터 토마토카레
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3209. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파(75g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(50g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(40g)
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(100g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(150g)
+  role: sub
+- ingredient: null
+  raw_text: 코코넛워터(100㎖)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(100㎖)
+  role: sub
+- ingredient: brown_rice
+  raw_text: 현미밥(150g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(10g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(3g)
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루(10g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 그릭요거트(45g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(10g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(15g)
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루(10g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(0.5g)
+  role: sub
+steps:
+- text: 양파(30g)는 다지고, 나머지 양파와 감자, 당근, 닭가슴살은 한입 크기로 썬다.
+- text: 닭가슴살은 밑간해 고루 버무려 재운다.
+- text: 끓는 물에 토마토를 넣어 20초간 데쳐 건진 뒤 껍질을 벗겨 8등분한다.
+- text: 중간 불로 달군 팬에 올리브유(10g)를 두른 뒤 다진 양파와 올리고당, 다진 마늘, 카레가루를 넣어 2분간 볶다가 손질한 토마토를 넣고 으깨듯 볶는다.
+- text: 손질한 채소와 밑간한 닭가슴살을 넣고 2분간 볶은 뒤 코코넛워터와 우유를 부어 끓인다.
+- text: 그릇에 현미밥을 담고 카레를 부은 뒤 요거트소스와 파슬리가루(0.5g)를 올려 마무리한다.

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2968
+title: 삼색나물, 토마토양념장
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2968. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: tomato
+  raw_text: 토마토 35g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 20g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 15g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+- ingredient: bellflower_root
+  raw_text: 도라지 15g
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 30g
+  role: sub
+- ingredient: bracken
+  raw_text: 고사리 20g
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 20g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 2g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 5g
+  role: sub
+steps:
+- text: 토마토를 데쳐 껍질을 벗겨낸 뒤 잘게 썬다.
+- text: 마늘과 양파를 잘게 다진 뒤 썰어둔 토마토, 고추장, 꿀, 식초와 골고루 섞는다.
+- text: 도라지는 껍질을 벗긴 뒤 물에 담궈 쓴맛을 제거하고 길이 5cm, 두께 0.5cm로 찢는다.
+- text: 시금치는 뿌리를 잘라내고 2~4등분으로 나눈다.
+- text: 고사리는 깨끗하게 씻은 뒤 물에 불린다.
+- text: 끓는 물에 소금을 넣고 도라지, 시금치, 고사리 순으로 데친 뒤 찬물에 헹궈 물기를 짜고 양념장을 곁들인다.

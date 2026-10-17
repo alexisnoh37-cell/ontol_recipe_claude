@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_803
+title: 단호박 경단
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 803. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: kabocha
+  raw_text: 단호박 18g
+  role: sub
+- ingredient: glutinous_rice_flour
+  raw_text: 찹쌀가루 18g
+  role: sub
+- ingredient: null
+  raw_text: 카스텔라 18g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+- ingredient: raisin
+  raw_text: 건포도 2g
+  role: sub
+- ingredient: null
+  raw_text: 호박씨 0.8g
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣 2g
+  role: sub
+steps:
+- text: 카스텔라는 굵게 떼어 믹서기에 곱게간다.
+- text: 단호박은 깨끗이 씻어 찜통에 넣고 쪄낸 뒤 껍질을 제거하고 뜨거울 때 체에 내린다.
+- text: 찹쌀가루에 소금을 넣고 뜨거운 물을 조금씩 부으면서 익반죽 하다가 2의 으깬 단호박을 넣고 되직해질 때까지 반죽한다.
+- text: 3의 반죽을 떼어내 손바닥으로 동그랗게 굴려서 가운데 잣을 하나씩 넣고 동그랗게 빚는다.
+- text: 끓는 물에 4의 경단을 넣고 삶아 둥둥 떠오르면 잠시 두었다 건져 차가운 물에 헹군다.
+- text: 경단에 카스텔라 가루를 1/3가량 뭍하고 건포도와 호박씨로 장식한다.

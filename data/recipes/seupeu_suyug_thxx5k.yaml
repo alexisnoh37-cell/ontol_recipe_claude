@@ -1,0 +1,46 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: seupeu_suyug_thxx5k
+title: 스프 수육
+cuisine: 한식
+difficulty: 1
+cook_time_min: 45
+servings: null
+source: https://www.youtube.com/watch?v=ThXx5kDpR5s
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pork_shoulder
+  raw_text: 돼지고기 앞다리살 500g / 앞다리살 500g
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- ingredient: null
+  raw_text: 신라면 더레드 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: null
+  raw_text: 스프 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 스프 2개 넣어줄게요. 광고 아니예요. 여기에 앞다리살 500g 넣고 뚜껑 닫은.
+  technique: null
+- text: 후 45분간 중강불에 한번 푹 삶아주기만 하면 완성입니다. 썰어서 한번 먹어볼게요.
+  technique: 끓이기

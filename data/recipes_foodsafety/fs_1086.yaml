@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1086
+title: 파프리카깍두기(어린이용)
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1086. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: radish
+  raw_text: 무(80g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(5g)
+  role: sub
+- ingredient: brown_rice
+  raw_text: 현미(5g)
+  role: sub
+- ingredient: scallion
+  raw_text: 실파(0.5g)
+  role: sub
+- ingredient: anchovy
+  raw_text: 멸치(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3g)
+  role: sub
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓(5g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(2g)
+  role: sub
+- ingredient: salt
+  raw_text: 천일염(5g)
+  role: sub
+steps:
+- text: 무를 깍둑썰기하여 소금에 30분 간 절인다.
+- text: 실파를 잘게 다진다.
+- text: 파프리카, 사과, 멸치액젓, 올리고당을 믹서에 넣고 간다.
+- text: 멸치로 다시물을 만들고 현미밥과 다시물을 1:1로 넣어 끓인 후 현미풀을 만든다.
+- text: 3번에 실파, 현미풀, 다진 마늘을 넣고 양념을 만든다.
+- text: 절인 무를 체에 받쳐 소금물을 제거하고 양념을 넣어 버무린다.

@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_967
+title: 사과와 양파를 곁들인 돼지등심 요리
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 967. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: pork_loin
+  raw_text: 돼지등심 100g
+  role: sub
+- ingredient: null
+  raw_text: 오레가노마른것 1g
+  role: sub
+- ingredient: null
+  raw_text: 바질마른것 1g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 1g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 15g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 20g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: null
+  raw_text: 통후추부순것 2g
+  role: sub
+steps:
+- text: 돼지등심은 4cm 정도 두께로 썬다.
+- text: 볼에 건오레가노, 건바질, 소금, 통후추 간 것을 섞어 허브 믹스를 만들어 1에 골고루 묻힌다.
+- text: 팬을 가열하여 올리브오일을 두르고 등심의 양면이 갈색이 되게 구운 뒤 알루미늄 호일에 싸서 오븐에서 완전히 익힌다.
+- text: 양파는 슬라이스하고, 사과는 껍질과 씨를 제거한 후 얇게 슬라이스 한다.
+- text: 또 다른 팬에 기름을 두르고 고기가 완전히 익을 동안 양파와 사과를 옅은 갈색이 나도록 볶아준다.
+- text: 고기가 다 익었으면 꺼내서 적당한 두께로 썰고 볶은 양파와 사과를 곁들인다.

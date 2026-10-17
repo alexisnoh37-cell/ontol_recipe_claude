@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3683
+title: 땅콩 밀푀유 샌드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3683. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 박력 밀가루 65g
+  role: sub
+- ingredient: null
+  raw_text: 강력 밀가루 65g
+  role: sub
+- ingredient: butter
+  raw_text: 무염버터 120g
+  role: sub
+- ingredient: null
+  raw_text: 소금① 3g
+  role: sub
+- ingredient: null
+  raw_text: 땅콩 분태 5g
+  role: sub
+- ingredient: null
+  raw_text: 크림 스프레드
+  role: sub
+- ingredient: yogurt
+  raw_text: 그릭요거트 45g
+  role: sub
+- ingredient: cream_cheese
+  raw_text: 크림치즈 30g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 4g
+  role: sub
+- ingredient: null
+  raw_text: 땅콩 스프레드
+  role: sub
+- ingredient: null
+  raw_text: 구운 땅콩 45g
+  role: sub
+- ingredient: null
+  raw_text: 소금② 1g
+  role: sub
+- ingredient: cinnamon
+  raw_text: 계피가루 1g
+  role: sub
+steps:
+- text: 볼에 체 친 박력 밀가루, 강력 밀가루, 잘게 자른 무염버터를 넣고 콩알 크기가 될 때까지 잘라가며 섞는다.
+- text: 차가운 물, 소금①을 넣고 고루 섞은 후 비닐에 담아 납작하게 편 상태로 냉장고에서 30분 동안 휴지시켜 반죽을 만든다.
+- text: 반죽을 밀대로 밀어 3번 접고 냉장고에서 20분 동안 휴지한다. 같은 작업을 2번 반복한다.
+- text: 반죽을 5mm 두께로 밀고, 가장자리를 잘라 오븐 팬에 올린다. 포크로 구멍을 뚫고, 종이 포일을 올린 뒤 무거운 팬을 올려 부풀지 않게 한다. ① 200°C로 예열한 오븐에서 10분, ② 190°C에서 20분 동안 굽고 식힌 뒤 적당한 크기로 자른다.
+- text: 그릭요거트, 크림치즈, 꿀을 섞어 크림 스프레드를 만든다. 믹서에 구운 땅콩, 소금②, 계피가루를 넣고 갈아 땅콩 스프레드를 만든다.
+- text: 밀푀유에 크림 스프레드, 땅콩 스프레드를 바르고 땅콩 분태를 뿌려 마무리한다.

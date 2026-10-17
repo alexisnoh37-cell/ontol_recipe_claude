@@ -1,0 +1,51 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: baeksuk
+title: 닭백숙
+cuisine: 한식
+difficulty: 1
+cook_time_min: 70
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+note: 간은 소금·후추만 사용(간장·된장 없음)
+ingredients:
+- ingredient: chicken
+  raw_text: 닭 1마리(약 1kg)
+  role: main
+- ingredient: garlic
+  raw_text: 통마늘 10쪽
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 1대
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+  optional: true
+- ingredient: rice
+  raw_text: 불린 쌀 1/2컵(죽용)
+  role: sub
+  optional: true
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 2
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 닭을 깨끗이 씻고 기름기를 떼어 낸다.
+- text: 냄비에 닭, 통마늘, 대파, 양파와 물을 넣고 센 불에서 끓이다 중약불로 50분 삶는다.
+  technique: 끓이기
+- text: 닭을 건져 소금, 후추를 곁들여 낸다. 남은 국물에 불린 쌀을 넣고 끓이면 죽이 된다.
+  technique: 끓이기

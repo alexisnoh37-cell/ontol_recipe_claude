@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1117
+title: 렌틸콩 크레이프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1117. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 렌틸콩(레드, 20g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 중력분(15g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1/2개)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(50g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(30g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(3g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(2g)
+  role: sub
+- ingredient: cream_cheese
+  raw_text: 크림치즈(10g)
+  role: sub
+- ingredient: null
+  raw_text: 귤(60g)
+  role: sub
+- ingredient: kiwi
+  raw_text: 키위(60g)
+  role: sub
+- ingredient: null
+  raw_text: 블루베리(20g)
+  role: sub
+steps:
+- text: 렌틸콩을 삶아 믹서에 갈고 체 친 중력분과 섞은 뒤 달걀을 섞는다.
+- text: 1번에 우유, 생크림을 섞은 뒤 녹인 버터를 빠르게 섞어 크레이프 반죽을 만들어 팬에 굽는다.
+- text: 크림치즈에 생크림(10g)을 조금씩 넣으면서 섞는다.
+- text: 냄비에 3번과 우유를 끓이다가 설탕, 달걀노른자를 조금씩 섞어 끓인 뒤 얼음물에 받쳐 식힌다.
+- text: 귤, 키위, 블루베리를 먹기 좋은 크기로 자른다.
+- text: 크레이프 안쪽에 크림치즈 크림을 바르고 과일을 담은 뒤 4번의 소스를 올린다.

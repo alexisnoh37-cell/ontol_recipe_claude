@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1006
+title: 감자 주먹밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1006. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: potato
+  raw_text: 감자 80g
+  role: sub
+- ingredient: rice
+  raw_text: 밥 80g
+  role: sub
+- ingredient: null
+  raw_text: 당근다진것 20g
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 20g
+  role: sub
+- ingredient: anchovy
+  raw_text: 잔멸치 5g
+  role: sub
+- ingredient: null
+  raw_text: 삶은 달걀 노른자 5g
+  role: sub
+- ingredient: null
+  raw_text: 검은깨 1g
+  role: sub
+- ingredient: sesame
+  raw_text: 흰깨 2g
+  role: sub
+- ingredient: null
+  raw_text: 밥양념
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: null
+  raw_text: 흰 후춧가루 적당량
+  role: sub
+steps:
+- text: 감자를 깨끗하게 씻어 찜통에 찐 뒤 껍질을 벗기고 체에 내린다.
+- text: 기름 두른 팬에 다진 당근을 볶으면서 소금 간을 하고 시금치는 손질하여 데친 뒤 냉수에 헹궈 물기를 짜고 잘게 다진다.
+- text: 잔멸치는 팬에 살짝 볶아서 굵직하게 다진다.
+- text: 볼에 1, 2, 3, 4를 넣고 소금과 흰 후춧가루, 참기름을 넣고 섞는다.
+- text: 삶은 달걀노른자를 체에 내린다.
+- text: 4를 원형 또는 삼각형으로 만들어 달걀 노른자와 검은깨, 흰깨에 골고루 굴려 묻힌다.

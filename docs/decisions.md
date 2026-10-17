@@ -22,6 +22,21 @@
 - 대안: 공공데이터(예: 식품안전나라 조리식품 레시피 DB) 활용. 이용 조건 확인 후 사용.
 - 외부 블로그·사이트 레시피 본문은 복제하지 않는다.
 - 결정: 기본값
+- 보완(2026-10-04, 사람 결정): 1차 확장으로 50개를 추가해 합계 100개. 출처는 계속 `agent_draft`(에이전트가 일반적인 가정식으로 직접 작성), 외부 레시피 본문 복제 금지. 신규 50개는 모두 `status: draft`로 두고, 사람이 검수표(`docs/review/recipes_review.md`)로 승인하기 전에는 published로 바꾸지 않는다.
+
+- 보완 2(2026-10-16, 사람 결정): 식품안전나라 조리식품 레시피 DB(Open API COOKRCP01)를 가져온다.
+  - 이용 조건: API 안내에 공공누리 유형이 표시되어 있지 않고, 식약처 저작권정책은 "공공누리 미부착 자료는 담당 부서와 사전 협의, 출처 명시"를 요구한다. 상업적 이용·변경 허용은 명시되어 있지 않다. 이를 확인한 상태에서 **개인용 범위(D1)로 출처를 표시하고 사용**하기로 했다. 외부 공개·상업화 전에는 식약처에 이용 조건을 문의한다.
+  - 원본과 변환 결과는 git에 올리지 않는다(재배포 방지, `data/external/`, `data/recipes_foodsafety/` gitignore).
+  - 변환 결과는 `source: foodsafety`, `status: draft`, `confidence: low`, cuisine `미분류`, role `sub`. draft에 한해 cook_time_min을 비울 수 있다. 상세: docs/plan.md 5-3-1.
+- 보완 3(2026-10-16, 사람 결정): 식품안전나라 원본(`data/external/foodsafety/raw/`)과 변환 결과(`data/recipes_foodsafety/`)를 git에 커밋한다. 보완 2의 "git에 올리지 않는다"를 대체한다.
+  - 저장소가 공개(PUBLIC) 상태임을 확인하고, 공공누리 미표시·사전 협의 요구 조건도 안내받은 상태에서 내린 결정이다. 근거: 이 온톨로지는 백엔드 동작을 시각적으로 보여 주는 용도다.
+  - 출처 표시는 유지한다(레시피마다 `source: foodsafety`, note에 식품의약품안전처 식품안전나라·일련번호, 원본 JSON의 `source`). 상업화 전에는 식약처에 이용 조건을 문의한다.
+  - 커밋에 API 인증키가 들어가지 않는다(`.env`만 사용, 원본 JSON에 키 없음 확인).
+- 예외(2026-10-16, 사람 결정): 자취요리신 YouTube 데이터셋(`data/simplecooking_recipe_dataset/`) 100개는 설명란 원문(raw_text·조리 단계)을 유지한 채 `data/recipes/`에 draft로만 넣는다. `source`에 영상 URL을 남긴다. published로 바꾸기 전에 출처 이용 조건과 본문 표현을 다시 검토한다.
+- 통합(2026-10-16, 사람 승인, 브랜치 `feature/ontology-integration` int-2, 추천안 `docs/review/ontology_integration_proposal.md`):
+  - 살림팝 YouTube 데이터셋(`data/sallimpop_recipe_dataset/`) 169개에도 위 예외를 그대로 적용한다(원문 유지, draft, source는 영상 URL, published 전 재검토).
+  - 식품안전나라 1153개는 엔진·DB에 적재하지 않고 그래프 표시 전용으로만 연결한다(요리권·조리시간·난이도·맛이 없어 추측값이 필요하기 때문). `GET /graph?display=true`.
+  - 출처가 다른 같은 이름의 요리는 합치지 않는다(재료·분량이 달라 알레르기 결과가 다를 수 있음).
 
 ## D4. 알레르기 그룹 기준
 
@@ -43,4 +58,7 @@
 
 | 날짜 | 항목 | 변경 내용 | 이유 |
 | --- | --- | --- | --- |
+| 2026-10-16 | D3 | 식품안전나라 레시피 DB 가져오기(개인용·출처 표시, git 미포함, draft·미분류·role sub, draft cook_time_min 선택) | 레시피 수 확대, 재료 표기 다양성(미매칭률) 측정 |
+| 2026-10-04 | D3 | 1차 확장 50개 추가(합계 100), 출처 agent_draft 유지, 신규는 검수 전 draft | 레시피 공백(김치볶음밥, 맵지 않은 닭 요리, 햄 활용 요리 등) 보완 |
 | 2026-10-03 | D4 | 알레르기 그룹 목록 확정(법정 19개 + 자체 2개 + 묶음 4개). 이전 example의 `fish`(생선) 그룹은 `mackerel`(고등어)과 `other_fish`(기타 생선)로 나눔 | Phase 0-4 시작 전 확정 필요 |
+| 2026-10-16 | D3 | 자취요리신 YouTube 레시피 100개를 원문 유지 draft로 허용(published 전 재검토) | 온톨로지 확장용 실제 레시피 데이터 연결 |

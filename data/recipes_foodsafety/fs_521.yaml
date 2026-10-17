@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_521
+title: 양배추버섯말이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 521. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: cabbage
+  raw_text: 양배추(120g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(20g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(30g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(20g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(30g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(30g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+- ingredient: beef
+  raw_text: 소고기(100g)
+  role: sub
+- ingredient: null
+  raw_text: 파(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술(10g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+steps:
+- text: 양배추는 깨끗이 씻어 찜기에 김이 오르면 쪄서 식혀 준비한다.
+- text: 느타리, 표고 ,팽이버섯, 당근, 오이는 약 5cm 길이로 채를 썰어 준비한다.
+- text: 소고기도 가늘게 채를 썰어 준비하고, 파, 마늘, 참기름, 설탕을 넣어 양념을 한다.
+- text: 팬에 준비한 채소에 소량의 소금을 넣어 먼저 볶다가 양념한 소고기를 넣고 재빠르게 볶아 식혀 준비한다.
+- text: 쪄 놓은 양배추를 김발 위에 올려 넣고, 볶아놓은 채소와 소고기를 넣는다.
+- text: 김발을 이용하여 양배추를 돌돌 말고, 미나리를 데쳐 끈으로 묶어 접시에 올리고, 간장과 맛술, 참기름을 섞은 간장소스를 만들어 담는다.

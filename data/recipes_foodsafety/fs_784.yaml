@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_784
+title: 두부 채소 볶음밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 784. 요리종류 밥, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: rice
+  raw_text: 밥 150g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 70g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(마른것) 10g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 5g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 5g
+  role: sub
+- ingredient: null
+  raw_text: 청피망 5g
+  role: sub
+- ingredient: null
+  raw_text: 홍피망 5g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 10g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 10g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 0.5g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 0.5g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.2g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2g
+  role: sub
+- ingredient: null
+  raw_text: 다시마물 5g
+  role: sub
+steps:
+- text: 두부는 으깨서 소창을 이용하여 물기를 짠다.
+- text: 후라이팬에 납작하게 펴서 노릇하게 굽는다.
+- text: 구워진 두부를 대충 부서뜨린 후 간장을 넣어서 볶는다.
+- text: 당근, 감자, 피망, 애호박, 불린 표고버섯, 오이는 작은 정육면체로 썰어 각각 소금간 해서 볶는다.
+- text: 팬에 감자, 표고버섯, 두부, 밥을 넣고 볶다가 나머지 채소를 넣어 볶는다.
+- text: 양념장을 만들어 함께 낸다.

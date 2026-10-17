@@ -1,0 +1,79 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3073
+title: 과일퓨레수제함박스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3073. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: beef
+  raw_text: 쇠고기(우둔) 12g
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기(전지) 23g
+  role: sub
+- ingredient: bellflower_root
+  raw_text: 도라지 1.3g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 2.2g
+  role: sub
+- ingredient: pear
+  raw_text: 배 2.2g
+  role: sub
+- ingredient: null
+  raw_text: 깐연근 1.7g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 9g
+  role: sub
+- ingredient: null
+  raw_text: 깐양파 9.5g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯 1.3g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 11.4g
+  role: sub
+- ingredient: null
+  raw_text: 청피망 2.3g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 7g
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루 5g
+  role: sub
+- ingredient: null
+  raw_text: 파인애플 6.6g
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 3g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 1.2g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 1.2g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬 0.8g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 1g
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.1g
+  role: sub
+steps:
+- text: 도라지, 사과, 배, 연근은 갈아서 뭉근하게 조려 퓨레를 만든다.
+- text: 연근, 토마토, 양파, 양송이버섯, 당근, 청피망 등 모든 채소는 곱게 다진다.
+- text: 고기에 퓨레, 달걀, 후추, 생강, 빵가루를 넣어 찰지게 반죽하고 납작하게 빚어서 오븐에 굽는다.
+- text: 소스제조를 위해 밀가루, 버터를 볶아 루를 만든다.
+- text: ④에 ②에서 다져놓은 야채를 넣어 끓이고, 소금간과 레몬즙을 뿌려준다.
+- text: 구운 수제함박스테이크에 새싹채소-파인애플-방울토마토 순으로 장식하고 소스와 함께 제공한다.

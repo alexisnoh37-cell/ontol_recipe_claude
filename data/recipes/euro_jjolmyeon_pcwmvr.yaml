@@ -1,0 +1,114 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: euro_jjolmyeon_pcwmvr
+title: 으로 쫄면
+cuisine: 양식
+difficulty: 2
+cook_time_min: 14
+servings: 1
+source: https://www.youtube.com/watch?v=pcWMVrJBvIc
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pasta
+  raw_text: 파스타면 1인분 / 파스타면
+  role: main
+  optional: false
+  amount: 1
+  unit: 인분
+- ingredient: soybean_sprouts
+  raw_text: 콩나물 200g
+  role: sub
+  optional: false
+  amount: 200
+  unit: g
+- ingredient: null
+  raw_text: 삶은 달걀 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: cucumber
+  raw_text: 오이
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: perilla_leaf
+  raw_text: 깻잎 (취향껏)
+  role: sub
+  optional: true
+  amount: null
+  unit: null
+- ingredient: gochugaru
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 고추장 크게 1스푼 / 고추장 크게 한스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 양조간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: vinegar
+  raw_text: 양조식초 3스푼
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: oligosaccharide
+  raw_text: 올리고당 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: null
+  raw_text: 다시다 1/3스푼
+  role: seasoning
+  optional: false
+  amount: 0.33
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: egg
+  raw_text: 달걀 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 1
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 거기에 특제 양념장 섞어서 먹어보면 계속 삶은 달걀 1개 파스타면 1인분 13분간 푹 익혀줄게요.
+  technique: 끓이기
+- text: 콩나물 200g은 끓는 물에 1분간만 데쳐 아삭한 식감 유지할게요. 삶은 콩나물은.
+  technique: 끓이기
+- text: 찬물에 씻어서 온기 빼주고 채반에 놓고 채썰어주고 깻잎2장도 얇게.
+  technique: null
+- text: 썰어줄게요. 삶은 면도 찬물에 한번 넣고 잘 섞는다. 볼에 파스타면.
+  technique: 끓이기
+- text: 콩나물 넣고 양념장 부은 후 잘 섞는다.
+  technique: 무침
+- text: 마무리로 참기름 한스푼 넣어 고소함 올려줄게요.
+  technique: null

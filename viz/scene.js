@@ -1,4 +1,6 @@
 // 3D 장면: 층 배치, 노드·간선 표현, 강조(재질만 변경), 재생용 보기(view)·높이 이동·경로 빛. 판정하지 않는다(docs/plan.md 부록 D).
+// 배치는 세 가지(부록 D-9): 나무(주재료 방향, 기본) · 나무(음식 종류) · 평면(기존 층 원판). 나무는 tree.js가 좌표를
+// 정하고(force 없음, warmup 0), 평면은 처음 고를 때 한 번 force로 계산해 둔다. 전환은 좌표만 바꾼다(graphData 재설정 없음).
 //
 // 성능 규칙(부록 D-6, 목표 레시피 1천 개)
 //   - y는 층으로 고정(fy), x·z만 warmup 동안 계산하고 cooldownTicks(0)으로 멈춘다.
@@ -6,11 +8,16 @@
 //   - 강조는 노드 메시의 재질만 바꾼다(graphData 재설정 금지). 재질은 (색, 투명도)별로 공유한다.
 //   - 높이 이동은 node.y만 바꾸고 d3ReheatSimulation()으로 위치 동기화 한 번(cooldownTicks 0이라 force tick은 돌지 않음).
 //   - 텍스트 스프라이트는 층·구역 이름, 선택·재생 단계가 고른 노드만. 화면에서 일정한 크기(sizeAttenuation 끔).
+//   - 외부 레시피 겹쳐 보기(부록 E)만 데이터가 바뀌므로 graphData를 다시 넣는다. warmup 없이 넣어 기존 배치는 그대로다.
 
 import ForceGraph3D from "https://cdn.jsdelivr.net/npm/3d-force-graph@1.80.1/+esm";
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.186.1/+esm";
 
-import { BUNDLE_DY, LAYER_LABEL, LAYER_Y, NODE_COLOR, linkAlpha, linkBaseColor, linkRestAlpha, rgba } from "./palette.js";
+import { BUNDLE_DY, LAYER_LABEL, LAYER_Y, NODE_COLOR, ORIGIN_COLOR, linkAlpha, linkBaseColor, linkRestAlpha, rgba } from "./palette.js";
+import { TREE, TREE_CAMERA, treeLayout } from "./tree.js";
+
+export const LAYOUTS = { "tree-ingredient": "나무: 주재료 방향", "tree-cuisine": "나무: 음식 종류", flat: "평면(층 원판)" };
+const treeKind = (mode) => (mode === "tree-cuisine" ? "cuisine" : "ingredient");
 
 const DIM = { select: 0.07, play: 0.025 }; // 강조 밖 노드 투명도(재생 중에는 더 흐리게)
 const LINK_DIM = { select: 0.03, play: 0.01 };
@@ -20,12 +27,16 @@ const LABEL_PX = { layer: 20, sector: 15, selected: 16, node: 12 };
 const MAX_NEIGHBOR_LABELS = 60;
 const FAINT_LINK = 0.28; // 선택 강조 안의 흐린 경로(포함 가능·선택 재료)
 const FAINT_NODE = 0.55;
+const OVERLAY = { x: 0, z: 60, dy: 150, ring: 70 }; // 외부 레시피 노드: 레시피 층 위 가운데(고정), 미매칭 줄은 둘레
 
 export function nodeStyle(n) {
   if (n.kind === "allergen_group") {
     return { color: NODE_COLOR[n.category], shape: n.group_kind === "bundle" ? "octa" : "box", hollow: n.category === "custom" };
   }
-  if (n.kind === "recipe") return { color: NODE_COLOR.recipe, shape: "cylinder" };
+  if (n.kind === "recipe") {
+    return { color: n.adhoc ? NODE_COLOR.adhoc : ORIGIN_COLOR[n.origin] || NODE_COLOR.recipe, shape: "cylinder" };
+  }
+  if (n.kind === "unmapped") return { color: NODE_COLOR.unmapped, shape: "tetra", wire: true };
   if (n.is_concept) return { color: NODE_COLOR.concept, shape: "sphere", wire: true };
   if (n.layer === 3) return { color: NODE_COLOR.processed, shape: "icosa" };
   return { color: NODE_COLOR.raw, shape: "sphere" };
@@ -114,6 +125,7 @@ const GEOMETRY = {
   box: new THREE.BoxGeometry(9, 9, 9),
   octa: new THREE.OctahedronGeometry(11, 0),
   cylinder: new THREE.CylinderGeometry(9, 9, 5, 14),
+  tetra: new THREE.TetrahedronGeometry(7, 0),
 };
 const EDGES = { box: new THREE.EdgesGeometry(GEOMETRY.box), octa: new THREE.EdgesGeometry(GEOMETRY.octa) };
 const RING = new THREE.TorusGeometry(7, 0.5, 4, 16);
@@ -162,6 +174,7 @@ function textSprite(text, { px = 12, color = "#e6e8ec", background = "rgba(14,15
   }));
   sprite.userData.px = px * (canvas.height / size); // 배경 여백 포함 높이
   sprite.userData.aspect = canvas.width / canvas.height;
+  sprite.userData.text = text;
   if (above) sprite.center.set(0.5, -0.35);
   sprite.renderOrder = 20;
   return sprite;
@@ -174,7 +187,7 @@ function disposeSprite(sprite) {
 
 // --- 장면 ----------------------------------------------------------------------------------------
 
-export function createScene(el, data, { tooltip, onSelect } = {}) {
+export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingredient" } = {}) {
   const nodes = data.nodes.map((n) => ({ ...n }));
   const links = data.links.map((l) => ({ ...l, s: l.source, t: l.target })); // s·t: 원래 id(라이브러리가 source를 객체로 바꿈)
   const byId = new Map(nodes.map((n) => [n.id, n]));
@@ -184,11 +197,15 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
     incident.get(l.s)?.push(l);
     incident.get(l.t)?.push(l);
   }
-  const sectors = initialLayout(nodes);
+  let mode = LAYOUTS[layout] ? layout : "tree-ingredient";
+  let flatPos = null; // 평면 배치 좌표. force warmup은 비동기라 평면에서 다른 배치로 바꿀 때 저장한다
+  const flatSectors = mode === "flat" ? initialLayout(nodes) : null;
+  if (mode !== "flat") applyPositions(treeLayout(nodes, incident, byId, treeKind(mode)).pos);
 
   const state = {
     layers: { 1: true, 2: true, 3: true, 4: true },
-    linkTypes: { is_a: true, derived_from: true, allergen: true, bundle_member: true, uses: false },
+    origins: {}, // 레시피 출처별 표시(false면 숨김, int-2)
+    linkTypes: { is_a: true, derived_from: true, allergen: true, bundle_member: true, uses: false, unmapped: true },
     selection: null, // 클릭한 노드의 강조 { mode, nodes: Map<id, style>, links: Map<link, style>, labels }
     view: null, // 재생 단계가 정한 강조(같은 모양). 선택이 있으면 선택이 우선
     selected: null,
@@ -197,7 +214,7 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
   const objects = new Map(); // node id → THREE.Mesh
 
   function nodeVisible(n) {
-    return state.layers[n.layer];
+    return state.layers[n.layer] && !(n.kind === "recipe" && state.origins[n.origin] === false);
   }
   function linkVisible(l) {
     const a = byId.get(l.s);
@@ -266,7 +283,7 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
     .linkOpacity(1)
     .linkWidth(0)
     .enableNodeDrag(false)
-    .warmupTicks(nodes.length > 600 ? 120 : 160)
+    .warmupTicks(mode === "flat" ? flatWarmup() : 0)
     .cooldownTicks(0)
     .d3VelocityDecay(0.35)
     .onNodeClick((n) => select(n.id))
@@ -285,14 +302,23 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
   const tData = performance.now();
   graph.graphData({ nodes, links });
   const tLayout = performance.now();
-  const fixedLabels = decorate(graph.scene(), sectors);
+  let flatDecor = null; // 평면: 층 원판·층 이름·구역 이름
+  let treeDecor = null; // 나무: 줄기·수관 윤곽, 부위 이름, 잎 무리 이름
+  const fixedLabels = []; // 지금 보이는 장식 라벨(화면 크기 맞춤 대상)
+  if (mode === "flat") {
+    flatDecor = decorate(graph.scene(), flatSectors);
+  } else {
+    treeDecor = decorateTree(graph.scene(), treeLayout(nodes, incident, byId, treeKind(mode)).labels);
+  }
+  syncDecor();
   const timings = { graphData: tLayout - tData, decorate: performance.now() - tLayout };
 
   function resetCamera(ms = 0) {
-    const pitch = (CAMERA.pitchDeg * Math.PI) / 180;
+    const cam = mode === "flat" ? CAMERA : TREE_CAMERA;
+    const pitch = (cam.pitchDeg * Math.PI) / 180;
     graph.cameraPosition(
-      { x: 0, y: CAMERA.targetY + CAMERA.distance * Math.sin(pitch), z: CAMERA.distance * Math.cos(pitch) },
-      { x: 0, y: CAMERA.targetY, z: 0 }, ms);
+      { x: 0, y: cam.targetY + cam.distance * Math.sin(pitch), z: cam.distance * Math.cos(pitch) },
+      { x: 0, y: cam.targetY, z: 0 }, ms);
   }
   resetCamera();
 
@@ -386,6 +412,7 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
   function repaint() {
     const sectorOpacity = focus() ? 0.3 : 1; // 강조 중에는 구역 이름을 흐리게(노드 라벨이 읽히도록)
     for (const sp of fixedLabels) if (sp.userData.sector) sp.material.opacity = sectorOpacity;
+    if (treeDecor) for (const m of treeDecor.guides) m.material.opacity = m.userData.opacity * (focus() ? 0.4 : 1);
     for (const n of nodes) paintNode(n);
     refreshLinks();
     applyLabels();
@@ -543,8 +570,121 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
     graph.cameraPosition({ x: n.x + (n.x / len) * d, y: n.y + 160, z: n.z + (n.z / len) * d }, { x: n.x, y: n.y, z: n.z }, 900);
   }
 
+  // --- 외부 레시피 겹쳐 보기(부록 E): 이전 임시 노드·간선을 빼고 새로 넣는다. 배열은 제자리에서 바꾼다 ----
+
+  let overlay = { nodes: [], links: [] };
+  function setOverlay(data) {
+    const dropNodes = new Set(overlay.nodes.map((n) => n.id));
+    const dropLinks = new Set(overlay.links);
+    if (dropNodes.has(state.selected)) { state.selected = null; state.selection = null; }
+    for (let i = nodes.length - 1; i >= 0; i--) if (dropNodes.has(nodes[i].id)) nodes.splice(i, 1);
+    for (let i = links.length - 1; i >= 0; i--) if (dropLinks.has(links[i])) links.splice(i, 1);
+    for (const l of dropLinks) {
+      linkById.delete(l.id);
+      for (const id of [l.s, l.t]) {
+        const inc = incident.get(id);
+        if (inc && inc.includes(l)) inc.splice(inc.indexOf(l), 1);
+      }
+    }
+    for (const id of dropNodes) { byId.delete(id); incident.delete(id); objects.delete(id); }
+    overlay = { nodes: [], links: [] };
+    if (data) {
+      const y = mode === "flat" ? LAYER_Y[4] + OVERLAY.dy : TREE.domeY + TREE.domeR + OVERLAY.dy; // 나무: 수관 꼭대기 위
+      const raws = data.nodes.filter((n) => n.kind === "unmapped");
+      for (const src of data.nodes) {
+        const n = { ...src };
+        const k = raws.indexOf(src);
+        const angle = k < 0 ? 0 : (2 * Math.PI * k) / raws.length - Math.PI / 2;
+        const r = k < 0 ? 0 : OVERLAY.ring;
+        n.fx = n.x = OVERLAY.x + r * Math.cos(angle);
+        n.fz = n.z = OVERLAY.z + r * Math.sin(angle);
+        n.fy = n.y = n.baseY = y;
+        nodes.push(n);
+        byId.set(n.id, n);
+        incident.set(n.id, []);
+        overlay.nodes.push(n);
+      }
+      for (const src of data.links) {
+        if (!byId.has(src.source) || !byId.has(src.target)) continue;
+        const l = { ...src, s: src.source, t: src.target };
+        links.push(l);
+        linkById.set(l.id, l);
+        incident.get(l.s).push(l);
+        incident.get(l.t).push(l);
+        overlay.links.push(l);
+      }
+    }
+    graph.warmupTicks(0).graphData({ nodes, links });
+    graph.d3ReheatSimulation(); // cooldownTicks 0: 위치만 한 번 동기화
+    repaint();
+  }
+
+  // --- 배치 전환 -------------------------------------------------------------------------------
+
+  function snapshot() {
+    return new Map(nodes.map((n) => [n.id, { x: n.x, y: n.y, z: n.z }]));
+  }
+
+  function applyPositions(pos) {
+    // 노드를 그 자리에 고정(fx·fy·fz). baseY는 재생 높이 이동의 기준
+    for (const [id, p] of pos) {
+      const n = byId.get(id);
+      if (!n) continue;
+      n.fx = n.x = p.x;
+      n.fy = n.y = n.baseY = p.y;
+      n.fz = n.z = p.z;
+    }
+  }
+
+  function syncDecor() {
+    fixedLabels.length = 0;
+    for (const d of [flatDecor, treeDecor]) {
+      if (!d) continue;
+      d.group.visible = d === (mode === "flat" ? flatDecor : treeDecor);
+      if (d.group.visible) fixedLabels.push(...d.sprites);
+    }
+    for (const sp of fixedLabels) rescale(sp);
+  }
+
+  function setLayoutMode(next) {
+    if (!LAYOUTS[next] || next === mode) return;
+    if (mode === "flat") flatPos = snapshot(); // warmup이 끝난 평면 좌표
+    mode = next;
+    const keep = overlay.nodes.map((n) => n.id);
+    if (mode === "flat" && !flatPos) {
+      // 평면은 처음 고를 때 force로 한 번 계산(기존 규칙 그대로). 외부 레시피 노드는 고정 위치라 영향 없다
+      for (const n of nodes) { if (!keep.includes(n.id)) { delete n.fx; delete n.fz; } }
+      const sectors = initialLayout(nodes.filter((n) => !keep.includes(n.id)));
+      graph.warmupTicks(flatWarmup()).graphData({ nodes, links }); // warmup은 라이브러리가 다음 갱신 때 돈다
+      flatDecor = decorate(graph.scene(), sectors);
+    } else {
+      const tl = mode === "flat" ? null : treeLayout(nodes, incident, byId, treeKind(mode));
+      applyPositions(tl ? tl.pos : flatPos);
+      if (tl) {
+        if (treeDecor) { graph.scene().remove(treeDecor.group); treeDecor.sprites.forEach(disposeSprite); }
+        treeDecor = decorateTree(graph.scene(), tl.labels);
+      }
+    }
+    // 외부 레시피 노드를 새 배치의 자리로
+    const y = mode === "flat" ? LAYER_Y[4] + OVERLAY.dy : TREE.domeY + TREE.domeR + OVERLAY.dy;
+    for (const n of overlay.nodes) { n.fy = n.y = n.baseY = y; }
+    graph.d3ReheatSimulation(); // cooldownTicks 0: force tick 없이 위치만 한 번 동기화
+    syncDecor();
+    for (const entry of shownLabels) placeLabel(entry);
+    resetCamera(900);
+    repaint();
+  }
+
   function setLayer(layer, on) {
     state.layers[layer] = on;
+    graph.nodeVisibility((n) => nodeVisible(n));
+    refreshLinks();
+    applyLabels();
+    syncPulses();
+  }
+
+  function setOrigin(origin, on) {
+    state.origins[origin] = on;
     graph.nodeVisibility((n) => nodeVisible(n));
     refreshLinks();
     applyLabels();
@@ -566,8 +706,11 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
 
   return {
     graph, nodes, links, byId, linkById, incident, timings, THREE,
-    select, setView, setOffsets, flyTo, resetCamera, setLayer, setLinkType,
+    select, setView, setOffsets, flyTo, resetCamera, setLayer, setOrigin, setLinkType, setOverlay, setLayoutMode,
     get selected() { return state.selected; },
+    get layout() { return mode; },
+    // 점검용: 지금 보이는 장식 라벨(층·부위·구역·잎 무리 이름)
+    get decorLabels() { return fixedLabels.map((sp) => sp.userData.text); },
     // 점검용: 겹침 정리 대상 라벨의 표시 여부(viz-5)
     get labelStates() { return shownLabels.filter((e) => e.priority !== undefined).map((e) => ({ id: e.id, priority: e.priority, visible: e.sprite.visible })); },
     // 점검용: 선택 강조에 그려진 기본 그룹 id → 진한 경로 여부
@@ -575,8 +718,15 @@ export function createScene(el, data, { tooltip, onSelect } = {}) {
   };
 }
 
+function flatWarmup() {
+  return 160; // 평면 force 배치 warmup 틱(부록 D-6)
+}
+
 function decorate(scene, sectors) {
   // 층 원판과 층·구역 이름(고정 개수의 스프라이트, 화면 일정 크기)
+  const group = new THREE.Group();
+  scene.add(group);
+  scene = group;
   const labels = [];
   for (const layer of [1, 2, 3, 4]) {
     const y = LAYER_Y[layer] + (layer === 1 ? BUNDLE_DY / 2 : 0);
@@ -601,5 +751,37 @@ function decorate(scene, sectors) {
     scene.add(t);
     labels.push(t);
   }
-  return labels;
+  return { group, sprites: labels };
+}
+
+function decorateTree(scene, labels) {
+  // 나무 윤곽(아주 흐린 줄기 원기둥·수관 반구)과 부위·잎 무리 이름
+  const group = new THREE.Group();
+  scene.add(group);
+  const guides = [];
+  const trunkH = TREE.trunkTop - TREE.trunkBottom + 80;
+  const trunk = new THREE.Mesh(
+    new THREE.CylinderGeometry(TREE.trunkR * 0.9, TREE.trunkR * 1.5, trunkH, 24, 1, true),
+    new THREE.MeshBasicMaterial({ color: "#8a6a4a", transparent: true, opacity: 0.07, side: THREE.DoubleSide, depthWrite: false }),
+  );
+  trunk.position.y = TREE.trunkBottom + trunkH / 2 - 40;
+  const dome = new THREE.Mesh(
+    new THREE.SphereGeometry(TREE.domeR - 12, 48, 16, 0, Math.PI * 2, 0, TREE.thetaMax),
+    new THREE.MeshBasicMaterial({ color: "#46a758", transparent: true, opacity: 0.035, side: THREE.DoubleSide, depthWrite: false }),
+  );
+  dome.position.y = TREE.domeY;
+  for (const m of [trunk, dome]) { m.userData.opacity = m.material.opacity; group.add(m); guides.push(m); }
+  const sprites = [];
+  for (const lb of labels) {
+    const part = lb.role === "part";
+    const t = textSprite(lb.text, part
+      ? { px: LABEL_PX.layer, color: "#e6e8ec", above: false }
+      : { px: LABEL_PX.sector, color: "#b8bfca", background: "rgba(14,15,18,0.5)", above: false });
+    if (part) t.center.set(1, 0.5);
+    t.position.set(lb.x, lb.y, lb.z);
+    t.userData.sector = !part;
+    group.add(t);
+    sprites.push(t);
+  }
+  return { group, sprites, guides };
 }

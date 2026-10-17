@@ -1,0 +1,55 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: chicken_steak
+title: 치킨 스테이크
+cuisine: 양식
+difficulty: 2
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+note: 소금·후추 간(간장·버터 없음)
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(닭다리살 권장) 2장(400g)
+  role: main
+- ingredient: potato
+  raw_text: 감자 1개(곁들임)
+  role: sub
+  optional: true
+- ingredient: broccoli
+  raw_text: 브로콜리 약간(곁들임)
+  role: sub
+  optional: true
+- ingredient: lemon
+  raw_text: 레몬 1/4개
+  role: garnish
+  optional: true
+- ingredient: garlic
+  raw_text: 마늘 3쪽
+  role: seasoning
+- ingredient: olive_oil
+  raw_text: 올리브유 1큰술
+  role: seasoning
+- ingredient: salt
+  raw_text: 소금 약간
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 4
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 닭고기에 소금, 후추를 뿌려 10분 둔다.
+- text: 팬에 올리브유를 두르고 껍질 쪽부터 눌러 가며 바삭하게 굽고 뒤집어 속까지 익힌다.
+  technique: 구이
+- text: 같은 팬에 마늘과 곁들임 채소를 굽고 레몬을 곁들인다.
+  technique: 구이

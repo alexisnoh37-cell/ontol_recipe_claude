@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_800
+title: 양송이버섯 달걀 크레페
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 800. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: button_mushroom
+  raw_text: 양송이버섯 12.8g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 11g
+  role: sub
+- ingredient: null
+  raw_text: 에벤탈치즈 20g
+  role: sub
+- ingredient: buckwheat_flour
+  raw_text: 메밀가루 20g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 22g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 20g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 80g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 10g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 8g
+  role: sub
+- ingredient: null
+  raw_text: 파슬리다진것 0.4g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 20g
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리다진것 0.2g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 1.2g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 1g
+  role: sub
+steps:
+- text: 메밀가루, 달걀, 우유, 밀가루, 설탕을 믹서에 갈아 놓는다.
+- text: 양송이버섯과 양파는 얇게 썬다. 감자는 1cm 정육면체로 잘라서 삶아 놓는다.
+- text: 팬에 식용유를 두르고 다진 마늘과 로즈마리, 파슬리, 감자를 볶는다.
+- text: 또 다른 팬에서는 양파를 볶다가 양송이버섯을 넣고 볶아둔다.
+- text: 팬에 1의 반죽을 얇게 부친 뒤 뒤집어 볶은 양송이버섯과 3의 감자, 달걀을 올린다.
+- text: 에멘탈 치즈를 고루 뿌리고 반을 접어 완성한다.

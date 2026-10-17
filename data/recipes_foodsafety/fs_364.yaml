@@ -1,0 +1,45 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_364
+title: 두가지묵샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 364. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: null
+  raw_text: 두가지 묵(올방개묵, 검정깨묵) 각 25g씩
+  role: sub
+- ingredient: null
+  raw_text: 당귀잎 10g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 40g
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 노란 파프리카 25g
+  role: sub
+- ingredient: napa_cabbage
+  raw_text: 알배추 20g
+  role: sub
+- ingredient: null
+  raw_text: 저염간장 15g
+  role: sub
+- ingredient: null
+  raw_text: 유자청 30g
+  role: sub
+- ingredient: null
+  raw_text: 다진청고추 7g
+  role: sub
+- ingredient: null
+  raw_text: 다진홍고추 7g
+  role: sub
+- ingredient: null
+  raw_text: 다진대파 7g
+  role: sub
+steps:
+- text: 당귀는 잎만 떼어 먹기 좋게 잘라서 물에 담가준다.
+- text: 두가지묵은 먹기 좋게 길이로 잘라준다.
+- text: 양파, 파프리카, 알배추는 가늘게 채 썰어준다.
+- text: 소스를 만들어준다.
+- text: 모든 재료를 담고 소스에 통깨를 섞은 뒤 샐러드에 뿌려 완성한다.

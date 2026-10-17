@@ -1,0 +1,51 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_426
+title: 논우렁순무섞박지
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 426. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 콜라비 200g
+  role: sub
+- ingredient: null
+  raw_text: 논우렁 100g
+  role: sub
+- ingredient: minari
+  raw_text: 미나리 25g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 15g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 15g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 10g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 20g
+  role: sub
+- ingredient: null
+  raw_text: 생강청 15g
+  role: sub
+- ingredient: null
+  raw_text: 저염간장 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 15g
+  role: sub
+- ingredient: null
+  raw_text: 플레인요구르트 15g
+  role: sub
+steps:
+- text: 콜라비는 껍질을 벗긴 후 저염간장에 30분 정도 절여준다.
+- text: 우렁은 뜨거운 물에 데친 후 행군 뒤 물기를 빼준다.
+- text: 미나리는 먹기 좋은 크기로 잘라준다.
+- text: 다진대파, 청홍고추, 양파는 송송 잘라준다.
+- text: 양념장에 콜라비부터 버무린 뒤 모든 재료를 섞어서 완성한다.

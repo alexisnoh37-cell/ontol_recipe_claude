@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_541
+title: 닭가슴살현미스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 541. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살(150g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(10g)
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 현미쌀(50g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(200g)
+  role: sub
+- ingredient: tomato_sauce
+  raw_text: 토마토소스(50g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: null
+  raw_text: 곁들임채소
+  role: sub
+- ingredient: cabbage
+  raw_text: 적양배추(20g)
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추(20g)
+  role: sub
+steps:
+- text: 닭가슴살에 칼을 1/3 쯤 넣고 양쪽으로 포를 뜨고, 정종을 살짝 발라놓는다.
+- text: 포뜬 닭가슴살 위에 카레가루를 솔솔 뿌려 숙성을 시킨다.
+- text: 현미쌀은 물에 충분히 불려, 물기를 빼 놓고, 양배추와 적 양배추는 곱게 채를 썰어 각각 찬물에 담그어 싱싱 해 지면 건져 물기를 빼놓는다.
+- text: 냄비에 토마토소스를 끓이다가 생크림을 넣고 살짝 한 번 더 끓여놓는다.
+- text: 튀김기름에 온도가 약 170℃ 정도가 되면, 불려 놓은 현미쌀의 물기를 제거한 뒤 튀겨 기름을 제거해 놓는다.
+- text: 숙성된 닭가슴살(①)에 튀긴 현미쌀 (⑤)을 앞뒤로 골고루 바르고 다시 170℃ 온도의 튀김 기름에 약 3~5분 정도 튀겨내고, 양배추와 적채를 깔고 그 위에 튀겨진 닭가슴살을 올리고, 토마토소스를 뿌려 완성한다.

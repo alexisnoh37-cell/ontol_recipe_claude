@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3184
+title: 홍시잼 식빵
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3184. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 강력분 500g
+  role: sub
+- ingredient: null
+  raw_text: 인스턴트 이스트 5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 7g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 50g(1개)
+  role: sub
+- ingredient: milk
+  raw_text: 우유 250g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 포도씨유 50g
+  role: sub
+- ingredient: persimmon
+  raw_text: 홍시 1000g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 3g
+  role: sub
+steps:
+- text: (속재료) 홍시는 껍질을 제거하고 체에 거른 다음 냄비에 레몬즙을 넣고 졸여서 잼을 만든다.
+- text: 강력분, 소금, 인스던트 이스트를 먼저 섞다가 달걀, 포도씨유, 미지근하게 데운 우유를 넣어 가며 반죽한다. ★ 액체 온도가 60℃가 넘어가면 이스트가 죽을 수 있어 조심해 주세요.
+- text: 완성된 반죽을 1~2시간동안 실온에서 1차 발효 시킨 후, 세 덩어리로 나누어 15분 정도 2차 발효한다.
+- text: 반죽을 60g씩 8개의 덩어리로 만들어 밀대를 사용하여 피자도우처럼 얇게 편다.
+- text: 얇게 핀 반죽 위에 홍시 잼을 바르고 그 위에 핀 반죽을 올리는 걸 반복한 후 맨 위에 홍시 잼을 바르지 않은 반죽을 올리고 소량의 포도씨유를 바른 큐브식빵 틀에 담는다.
+- text: '"180도로 예열한 오븐에 식빵 틀을 넣고 40분정도 굽는다. ★ 윗 면의 색이 많이 나면 종이 호일을 덮고 속까지 익혀요."'

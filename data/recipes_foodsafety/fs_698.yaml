@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_698
+title: 달래두부김치무침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 698. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: tofu
+  raw_text: 두부 40g
+  role: sub
+- ingredient: null
+  raw_text: 달래 10g
+  role: sub
+- ingredient: kimchi
+  raw_text: 배추김치 20g
+  role: sub
+- ingredient: null
+  raw_text: 홍피망 2g
+  role: sub
+- ingredient: null
+  raw_text: 다진 파 2.5g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2.5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.5g
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루 0.5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+steps:
+- text: 두부는 5cm× 1.5cm× 1cm 크기로 썬다.
+- text: 썰어논 두부는 기름을 두르지 않고 팬에 노릇노릇 굽는다 .
+- text: 달래는 2cm 가량의 크기로 썬다 .
+- text: 배추김치는 물기를 적당히 짜고 2cm 가량으로 가늘게 채썬다 .
+- text: 홍피망은 2cm 가량으로 가늘게 채썰고 3, 4와 파, 마늘, 설탕, 참기름, 통깨, 고춧가루, 소금을 넣고 조물조물 무친다.
+- text: 두부위에 5의 김치달래무침을 곁들인다.

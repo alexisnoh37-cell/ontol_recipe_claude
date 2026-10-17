@@ -1,0 +1,73 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3287
+title: 사과채소타코
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3287. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+ingredients:
+- ingredient: iceberg_lettuce
+  raw_text: 양상추(2장)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(½개)
+  role: sub
+- ingredient: tortilla
+  raw_text: 토르티야(4장)
+  role: sub
+- ingredient: null
+  raw_text: 슈레드 모차렐라치즈(약간)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(⅛개)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(⅛개)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(½개)
+  role: sub
+- ingredient: null
+  raw_text: 할라피뇨 피클(4개)
+  role: sub
+- ingredient: null
+  raw_text: 스리라차 소스(1Ts)
+  role: sub
+- ingredient: null
+  raw_text: 스테비아(0.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 아보카도(½개)
+  role: sub
+- ingredient: null
+  raw_text: 살사소스(1Ts)
+  role: sub
+- ingredient: null
+  raw_text: 라임즙(1Ts)
+  role: sub
+- ingredient: null
+  raw_text: 무가당 플레인 요거트(2Ts)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(1Ts)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(1Ts)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(0.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 라임즙(1Ts)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(약간)
+  role: sub
+steps:
+- text: 양상추는 채 썰고, 사과는 모양대로 얇게 썰고, 양파, 파프리카, 토마토, 할라피뇨 피클은 잘게 다진다.
+- text: 다진 양파, 파프리카, 토마토, 할라피뇨 피클에 나머지 살사소스 재료를 넣어 고루 섞는다.
+- text: 아보카도는 씨와 껍질을 제거하고, 골고루 으깬 뒤 나머지 과카몰레 재료와 고루 섞는다.
+- text: 갈릭요거트소스를 만든다.
+- text: 약한 불로 달군 마른 팬에 토르티야를 올려 1~2분간 구워 꺼내고, 맥주잔에 감아 모양을 잡는다.
+- text: 토르티야에 채 썬 양상추, 사과, 슈레드 모차렐라치즈를 올리고 살사소스, 과카몰레, 갈릭요거트소스를 곁들여 마무리한다.

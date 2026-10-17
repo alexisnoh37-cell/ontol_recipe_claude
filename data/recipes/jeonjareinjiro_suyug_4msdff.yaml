@@ -1,0 +1,58 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: jeonjareinjiro_suyug_4msdff
+title: 전자레인지로 수육
+cuisine: 한식
+difficulty: 2
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=4MSDfF_b7KQ
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: null
+  raw_text: 통 수육 500g
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- ingredient: onion
+  raw_text: 양파 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: garlic
+  raw_text: 통마늘 10개
+  role: seasoning
+  optional: false
+  amount: 10
+  unit: 개
+- ingredient: salt
+  raw_text: 굵은소금 반스푼
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: black_pepper
+  raw_text: 후추 넉넉히 / 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 1
+equipment:
+- name: 전자레인지
+  required: true
+steps:
+- text: 양파 한 개 썰어주고 통마늘 열 위에 수육 올려 주세요. 소금은 굵은.
+  technique: null
+- text: 골고로 뿌려주고 마무리 후추 툭툭 한다. 이대로 전자레인지 15분만.
+  technique: null

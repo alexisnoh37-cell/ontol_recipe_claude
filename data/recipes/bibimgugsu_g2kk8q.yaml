@@ -1,0 +1,118 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: bibimgugsu_g2kk8q
+title: 비빔국수
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: 2
+source: https://www.youtube.com/watch?v=G2kk8Qq0sgk
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 한개
+  role: main
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: sugar
+  raw_text: 설탕 2스푼 / 설탕 4스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: vinegar
+  raw_text: 양조식초 4스푼
+  role: sub
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: salt
+  raw_text: 소금 4꼬집 / 소금
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 꼬집
+- ingredient: gochugaru
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 참깨2스푼 / 참깨 2스푼
+  role: garnish
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 양조간장 6스푼
+  role: seasoning
+  optional: false
+  amount: 6
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진 마늘 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: null
+  raw_text: 케챱 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 듬뿍 1스푼 / 고추장
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: black_pepper
+  raw_text: 후추 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: null
+  raw_text: 양파오이지 채수 4스푼 / 오이1개 / 오이 한개 / 양파 반개 / 채수 4스푼
+  role: sub
+  optional: false
+  amount: 4
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 오이 한개 얇게 썰어주고 양파 반개도 최대한 얇게 채썰어줄게요. 닭가슴살 한개 결대로.
+  technique: null
+- text: 채자른다. 오이 양파지부터 만들거에요. 뿌리고 설탕이 녹을 수 있도록 잘 섞는다.
+  technique: 무침
+- text: 냉장고에 잠시 넣어두고 국수 삶을게요. 끓는 물에 2분 30초 삶고 찬물로 치대 더.
+  technique: 끓이기
+- text: 후추 반스푼, 양파오이지 채수 4스푼 넣고 잘 섞는다. 접시에 국수 올리고 재료 순서대로.
+  technique: 무침
+- text: 올려 준 후 양념장 뿌려주면 완성이에요.
+  technique: null

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1096
+title: 땅콩호박 타르트
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1096. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 땅콩호박(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 아몬드가루(13g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(15g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 박력분(35g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 요거트(10g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1/2개)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 전분(5g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(5g)
+  role: sub
+steps:
+- text: 차가운 버터에 박력분, 아몬드가루, 소금을 넣어 으깨가면서 섞는다.
+- text: 달걀과 물을 넣고 섞어 반죽을 만들어 휴지시킨다.
+- text: 휴지시킨 반죽을 밀대로 밀어 커터로 모양을 찍은 뒤 180℃ 오븐에 굽는다.
+- text: 땅콩호박을 삶아 체에 걸러 으깬 뒤 사과즙, 달걀을 넣고 중탕하여 섞는다.
+- text: 4번에 전분을 조금씩 넣으면서 농도를 맞춘 뒤 요거트를 넣는다.
+- text: 5번을 짤주머니에 담은 뒤 3번 위에 굵게 짜주고 다진 호두를 뿌린다.

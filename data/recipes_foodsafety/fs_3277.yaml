@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3277
+title: 치즈토마토 가지구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3277. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(1개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(½개)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(2~3개)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(2개)
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기(목살, 200g)
+  role: sub
+- ingredient: null
+  raw_text: 슈레드 모차렐라치즈(½컵)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(1Ts)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(2Ts)
+  role: sub
+- ingredient: ssamjang
+  raw_text: 쌈장(0.5Ts)
+  role: sub
+- ingredient: null
+  raw_text: 파프리카가루(약간)
+  role: sub
+- ingredient: basil
+  raw_text: 바질잎(3~4장)
+  role: sub
+steps:
+- text: 새송이버섯, 양파, 토마토는 굵게 다지고, 가지는 모양대로 길게 썰고, 돼지고기는 한입 크기로 썬다.
+- text: 중간 불로 달군 마른 팬에 가지를 올려 앞뒤로 노릇하게 굽는다.
+- text: 같은 팬에 올리브유를 두르고 다진 마늘을 넣어 노릇하게 볶고, 양파와 새송이버섯을 넣어 양파가 투명해질 때까지 볶는다.
+- text: 중간 불로 올린 뒤 목살을 넣어 겉면의 색이 변할 때까지 볶고, 토마토를 넣어 으깬다.
+- text: 쌈장과 파프리카가루를 넣어 고루 섞고, 토마토 국물이 배어 나오면 바질을 손으로 뜯어 넣은 뒤 국물이 자작해질 때까지 끓인다.
+- text: 그릇에 ⑤의 재료를 담은 뒤 가지를 엇갈려 올리고, 치즈를 얹은 뒤 전자레인지에 넣어 모차렐라치즈가 녹을 때까지 조리해 마무리한다.

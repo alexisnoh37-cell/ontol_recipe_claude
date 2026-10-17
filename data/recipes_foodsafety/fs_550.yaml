@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_550
+title: 곤약냉면
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 550. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 실곤약(100g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: null
+  raw_text: 홍파프리카(20g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(20g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(20g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(30g)
+  role: sub
+- ingredient: null
+  raw_text: 국물
+  role: sub
+- ingredient: null
+  raw_text: 동치미국물(200g)
+  role: sub
+- ingredient: null
+  raw_text: 배즙(10g)
+  role: sub
+- ingredient: null
+  raw_text: 홍초(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: mustard_powder
+  raw_text: 겨자(5g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(10g)
+  role: sub
+steps:
+- text: 곤약은 끓는 물에 넣어 데친다.
+- text: 데친 곤약은 찬물에 헹구어 채에 받쳐 물기를 빼 놓는다.
+- text: 무는 얇게 썰어 식초, 소금, 설탕에 넣어 김치를 만든다.
+- text: 파프리카는 5cm 길이로 썰고, 배와 오이도 같은 길이로 얇게 썬 뒤 오이는 살짝 절인다.
+- text: 달걀은 삶아 껍질을 벗겨, 실로 잘라 놓는다.
+- text: 동치미 국물에 배즙 , 홍초, 설탕 , 겨자, 식초를 넣어 섞는다. 그릇에 곤약국수를 담고, 무김치(③)와 준비한 채소(④)를 올리고, 삶은 달걀(⑤)을 얹고, 국물을 살며시 넣어 완성한다.

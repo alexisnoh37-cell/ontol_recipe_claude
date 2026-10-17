@@ -1,0 +1,91 @@
+id: mogsaldeopbab_spelkf
+title: 목살덮밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: SNS에서 난리난 대존맛 조합
+  video_url: https://www.youtube.com/watch?v=SpeLKF1oPW8
+  published_at: '2026-05-23'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 목살
+  raw_text: 목살 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- name: 감자
+  raw_text: 감자 1알
+  role: sub
+  optional: false
+  amount: 1
+  unit: 알
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 굴소스
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 식용유
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 마늘
+  raw_text: 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 설탕
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 밥
+  raw_text: 밥
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 식용유 두른 팬에 목살, 감자를 얹어 볶는다.
+  technique: 볶음
+- text: 감자전분 1/2스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 설탕 1스푼, 돈가스소스 1스푼, 굴소스 1스푼, 대파, 다진마늘 1/2스푼, 후추를 뿌려 볶는다.
+  technique: 볶음
+- text: 밥 위에 얹어 마친다.
+  technique: null

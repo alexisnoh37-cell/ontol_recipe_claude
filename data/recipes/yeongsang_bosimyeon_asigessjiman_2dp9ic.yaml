@@ -1,0 +1,86 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: yeongsang_bosimyeon_asigessjiman_2dp9ic
+title: 영상 보시면 아시겠지만
+cuisine: 한식
+difficulty: 1
+cook_time_min: 10
+servings: null
+source: https://www.youtube.com/watch?v=2DP9iCPSRTo
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에 없음)
+ingredients:
+- ingredient: null
+  raw_text: 적절한 단
+  role: main
+  optional: false
+  amount: 1
+  unit: 단
+- ingredient: pork_belly
+  raw_text: 삼겹살 300g
+  role: sub
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: salt
+  raw_text: 소금 2꼬집 / 소금
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 꼬집
+- ingredient: mirin
+  raw_text: 맛술 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: green_onion
+  raw_text: 대파 1쪽 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 쪽
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: doenjang
+  raw_text: 된장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 양면이 다 노릇해지면 고춧가루 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment: []
+steps:
+- text: 소금 2꼬집, 맛술 2스푼, 잘게 썰은 대파 1쪽 넣은 후 잘 섞어서 익혀주다가.
+  technique: 무침
+- text: 다진마늘 1스푼 넣고 잘 섞어서 익힌다.
+  technique: 무침

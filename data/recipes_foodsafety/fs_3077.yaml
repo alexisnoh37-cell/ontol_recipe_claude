@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3077
+title: 된장숙성저수분수육
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3077. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 앞다리살 돈육(보쌈용) 100g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 40g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 20g
+  role: sub
+- ingredient: null
+  raw_text: 저염된장 4g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추 1g
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎 1g
+  role: sub
+- ingredient: null
+  raw_text: 생강가루 2g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 4g
+  role: sub
+steps:
+- text: 돼지고기 앞다리 살에 칼집을 낸다.
+- text: 돼지고기에 된장, 생강가루, 다진마늘, 통후추, 월계수잎을 입혀 숙성시킨다.
+- text: 파와 대파는 큼지막하게 썰어 준비한다.
+- text: 냄비 혹은 오븐용기의 밑 부분에 양파와 대파를 놓아준다.
+- text: ④에 숙성시킨 돼지고기를 올려 약 50분 정도 가열하여 완전히 익혀준다.
+- text: 0.5cm 두께로 썰어서 제공한다.

@@ -1,0 +1,58 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: dwaeji_ganjang_bulgogi
+title: 돼지고기 간장불고기
+cuisine: 한식
+difficulty: 1
+cook_time_min: 25
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(앞다리살 또는 목살 불고기용) 400g
+  role: main
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/4개
+  role: sub
+  optional: true
+- ingredient: green_onion
+  raw_text: 대파 1/2대
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1큰술
+  role: seasoning
+- ingredient: corn_syrup
+  raw_text: 물엿 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1큰술
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 1큰술
+  role: seasoning
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 3
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 간장, 설탕, 물엿, 마늘, 후추, 참기름을 섞어 돼지고기를 15분 재운다.
+- text: 팬에 고기를 펼쳐 센 불에서 볶는다.
+  technique: 볶음
+- text: 고기가 거의 익으면 채소를 넣고 국물이 졸아들 때까지 볶는다.
+  technique: 볶음

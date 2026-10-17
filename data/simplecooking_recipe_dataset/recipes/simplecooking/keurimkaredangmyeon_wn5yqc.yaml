@@ -1,0 +1,91 @@
+id: keurimkaredangmyeon_wn5yqc
+title: 크림카레당면
+cuisine: 일식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 초간단 크림카레당면
+  video_url: https://www.youtube.com/watch?v=WN5yqc1Waj4
+  published_at: '2026-03-16'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 양파
+  raw_text: 양파 / 양파 1개
+  role: main
+  optional: false
+  amount: 1
+  unit: 개
+- name: 비엔나소시지
+  raw_text: 비엔나 소시지 / 소시지 150g
+  role: sub
+  optional: false
+  amount: 150
+  unit: g
+- name: 고형 카레
+  raw_text: 고형카레
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 당면
+  raw_text: 당면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 체다 치즈
+  raw_text: 체다치즈
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 고추장
+  raw_text: 고추장 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 파슬리
+  raw_text: 파슬리
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- name: 식용유
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 우유
+  raw_text: 우유 400ml
+  role: sub
+  optional: false
+  amount: 400
+  unit: ml
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 식용유를 두르고 채썬 양파 1개를 볶는다.
+  technique: 볶음
+- text: 비엔나 소시지 150g을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 우유 400ml, 고형카레 2칸, 고추장 1/2스푼, 케찹 1스푼, 당면 사리를 더한 뒤 사리를 완전히 익힌다.
+  technique: null
+- text: 체다치즈 1장, 파슬리를 뿌려 마친다.
+  technique: null

@@ -1,0 +1,86 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: dalggaseumsal_buldalgpaseuta_z52qn6
+title: 닭가슴살 불닭파스타
+cuisine: 양식
+difficulty: 1
+cook_time_min: 10
+servings: 1
+source: https://www.youtube.com/watch?v=Z52qN6AwhDU
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pasta
+  raw_text: 파스타면 1인분 / 파스타면
+  role: main
+  optional: false
+  amount: 1
+  unit: 인분
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 1팩
+  role: sub
+  optional: false
+  amount: 1
+  unit: 팩
+- ingredient: butter
+  raw_text: 버터 20g
+  role: seasoning
+  optional: false
+  amount: 20
+  unit: g
+- ingredient: cheese
+  raw_text: 치즈 2장
+  role: sub
+  optional: false
+  amount: 2
+  unit: 장
+- ingredient: onion
+  raw_text: 양파 반개 / 양파반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: tomato_sauce
+  raw_text: 토마토소스 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: milk
+  raw_text: 우유 300ml
+  role: sub
+  optional: false
+  amount: 300
+  unit: ml
+- ingredient: butter
+  raw_text: 무염버터 20g
+  role: sub
+  optional: false
+  amount: 20
+  unit: g
+- ingredient: null
+  raw_text: 양념은 불닭소스 3스푼 / 불닭소스 3스푼
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 파스타면 1인분 팬에 넣어주고 닭가슴살 1팩은 잘게 찢어서 넣는다. 여기에.
+  technique: null
+- text: 무염버터 20g, 치즈 2장, 양파반개 넣고 우유 300ml, 물 300ml 넣어줄게요.
+  technique: null
+- text: 1스푼만 넣어주면 됩니다.
+  technique: null
+- text: 이대로 중강불에 물이 끓기 시작하고 10분간 끓여주면 되는데 이렇게 수분이.
+  technique: 끓이기

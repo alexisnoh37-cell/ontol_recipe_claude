@@ -1,0 +1,78 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: hanpantang_rsibjb
+title: 한판탕
+cuisine: 중식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=rsiBjbpuqiQ
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: null
+  raw_text: 돼지고기 등심 카레용 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: potato_starch
+  raw_text: 감자전분 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- ingredient: null
+  raw_text: 기름 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: black_pepper
+  raw_text: 후추 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: salt
+  raw_text: 맛소금 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: vinegar
+  raw_text: 식초 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 고기 넣고 감자 전분 다섯 스푼, 물 스푼, 맛소금은 반 스푼 넣은 후 잘.
+  technique: null
+- text: 섞는다. 따로 버무일 필요 없이 크면 뒤집기 힘들어져요. 양면.
+  technique: 무침
+- text: 스푼 넣고 섞어 가면 한번 바르 끓여주면 완성. 조금씩 뜯어서 소스.
+  technique: 끓이기

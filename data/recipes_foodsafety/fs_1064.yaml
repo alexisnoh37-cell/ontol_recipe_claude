@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1064
+title: 대추닭살리조또
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1064. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(가슴살, 30g)
+  role: sub
+- ingredient: rice
+  raw_text: 쌀(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(10g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(2알)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(5g)
+  role: sub
+- ingredient: green_bell_pepper
+  raw_text: 피망(5g)
+  role: sub
+- ingredient: cheese
+  raw_text: 치즈(10g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(50g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.1g)
+  role: sub
+steps:
+- text: 쌀을 씻어 밥을 짓는다.
+- text: 양파, 표고버섯, 당근, 피망은 입자있게 다지고 대추는 씨를 제거한 뒤 다진다.
+- text: 닭가슴살은 먹기 좋은 크기로 썬다.
+- text: 팬에 기름을 두르고 다진 마늘을 볶은 뒤 닭가슴살을 볶는다
+- text: 닭가슴살이 다 익으면 손질한 채소를 넣고 볶다가 밥, 우유, 치즈, 대추를 넣고 끓인다.
+- text: 우유가 반으로 졸아들면 불을 줄이고 소금, 후추로 간한다.

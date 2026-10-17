@@ -1,0 +1,30 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_316
+title: 비타민이유식
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 316. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 멜론 300g
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리 30g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 60g
+  role: sub
+- ingredient: yogurt
+  raw_text: 요거트 15g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 5g
+  role: sub
+steps:
+- text: 브로콜리는 데쳐낸 후 송송 다져준다.
+- text: 감자는 삶아준 후 체에 내려준다.
+- text: 멜론은 씨를 제거하고 껍질을 벗긴 후 믹서에 갈아 체에 내려준다.
+- text: 체에 내린 감자와 브로콜리 그리고 멜론즙을 함께 섞어준다.
+- text: 설탕으로 간을 해주고 볼에 담고 요거트로 장식을 해 완성한다.

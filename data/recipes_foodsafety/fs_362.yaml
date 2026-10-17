@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_362
+title: 곤약잡채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 362. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 실곤약(50g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(10g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(5g)
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추(10g)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추(10g)
+  role: sub
+- ingredient: chive
+  raw_text: 영양부추(10g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(30g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(3g)
+  role: sub
+- ingredient: null
+  raw_text: 맛간장(5g)
+  role: sub
+- ingredient: sugar
+  raw_text: 흑설탕(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(2g)
+  role: sub
+- ingredient: null
+  raw_text: 다진대파(2g)
+  role: sub
+- ingredient: null
+  raw_text: 흰후추(0.5g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(3g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(3g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(10g)
+  role: sub
+steps:
+- text: 실곤약은 세척해 물기를 빼준 뒤 레몬즙을 살짝 뿌려준다.
+- text: 당근, 양파, 홍고추, 청고추는 채 썰어 볶는다.
+- text: 오이는 돌려깎기 해주고 팽이와 영양부추는 적당한 크기로 잘라 각각 살짝 볶아 건진다.
+- text: 달걀은 황백지단으로 만들어 채 썰어준다.
+- text: 소스를 팬에 만들어 준 뒤 곤약을 볶아준다.
+- text: 볶은 곤약에 ②를 넣고 한 번 더 볶은 뒤 ③을 섞어 그릇에 담고, 지단채를 올리고 참기름, 통깨를 뿌려 마무리한다.

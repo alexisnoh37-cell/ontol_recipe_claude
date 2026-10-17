@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_592
+title: 망고자몽드레싱 해산물전체
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 592. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: scallop
+  raw_text: 관자(2개)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(4마리)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(2개)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(50g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리(5g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(30g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(50g)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(1/4개)
+  role: sub
+- ingredient: broccoli
+  raw_text: 브로콜리(30g)
+  role: sub
+- ingredient: potato
+  raw_text: 감자(50g)
+  role: sub
+- ingredient: null
+  raw_text: 망고(1/2개)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(1/4개)
+  role: sub
+- ingredient: null
+  raw_text: 자몽(1/2개)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.1g)
+  role: sub
+steps:
+- text: 감자는 삶아 껍질을 벗긴다
+- text: 새우와 관자는 끓는 물에 레몬즙을 넣고 삶아 건져 껍질을 벗긴다.
+- text: 오이, 당근, 단호박은 껍질을 벗겨 슬라이스 썬다.
+- text: 데친 관자는 토치로 한 번 더 익혀 썬다
+- text: 믹서에 간 망고와 레몬에 설탕, 소금을 약간 넣고 소스를 만든다.
+- text: 토마토는 먹기 좋은 크기로 자르고, 접시에 준비한 야채와 해산물을 담고, 소스는 먹기 직전에 올린다

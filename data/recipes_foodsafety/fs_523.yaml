@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_523
+title: 배추만두탕
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 523. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: napa_cabbage
+  raw_text: 배추(100g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(20g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부((30g), 부추(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(20g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리(20g)
+  role: sub
+- ingredient: beef
+  raw_text: 소고기(30g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(10g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.05g)
+  role: sub
+- ingredient: null
+  raw_text: 양지육(50g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(30g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+steps:
+- text: 냄비에 무와 양지육, 마늘을 넣고 은근히 끓여 육수를 만들어 놓는다.
+- text: 배추와 미나리는 면보를 깔고 찜통에서 약 10분 정도 쪄서 식혀놓는다.
+- text: 두부는 면보에 넣어 손으로 물기를 짜 놓는다.
+- text: 부추는 송송 썰고, 표고, 느타리버섯은 잘게 다지고, 소고기도 다져 놓고, 저염 간장과 파, 마늘, 참기름, 후춧가루, 통깨를 넣고 잘 섞어서 만두속을 만들 어 놓는다.
+- text: 쪄놓은 배추를 한 장 펴놓고, 그 위에 만들어 놓은 만두속을 넣어 양 쪽을 접어 말아준다.
+- text: 말아놓은 배추만두를 쪄 놓은 미나리 끈으로 묶은 후, 만들어 놓은 육수가 끓으면 배추만두를 넣고 간장으로 간을 한 뒤 한 번 더 끓여서 완성한다.

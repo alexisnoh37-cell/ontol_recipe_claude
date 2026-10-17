@@ -93,6 +93,12 @@
   confidence: low
   note: 절임배추(소금 절임)를 별칭으로 묶음. 별도 재료로 둘지 검수
   status: reviewed
+- id: bomdong
+  name: 봄동
+  category: 채소
+  confidence: low
+  note: 2026-10-16 자취요리신 데이터 연결로 추가. 배추 품종이지만 is_a napa_cabbage로 둘지(배추 보유로 매칭) 검수 필요
+  status: draft
 - id: cabbage
   name: 양배추
   aliases: [적양배추]

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_895
+title: 아보카도 두부 샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 895. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: tofu
+  raw_text: 연두부 50g
+  role: sub
+- ingredient: null
+  raw_text: 아보카도작은것 35g
+  role: sub
+- ingredient: null
+  raw_text: 게살냉동 50g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 25g
+  role: sub
+- ingredient: null
+  raw_text: 민트 0.25g
+  role: sub
+- ingredient: null
+  raw_text: 고추냉이 드레싱
+  role: sub
+- ingredient: null
+  raw_text: 고추냉이 갠것 6g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.2g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 10g
+  role: sub
+- ingredient: null
+  raw_text: 올리브유엑스트라버전 30g
+  role: sub
+steps:
+- text: 아보카도는 검은 빛이 돌면서 윤기가 흐르는 것을 골라 세로로 칼날을 넣어 칼날이 씨에 닿으면 한바퀴 돌린다.
+- text: 양손으로 아보카도 양 끝을 잡고 비틀면서 반으로 나누고 칼날 안쪽 모서리로 씨를 찔러서 빼낸다.
+- text: 아보카도 과육을 5cm 두께로 썬다.
+- text: 냉동 게살은 하룻밤 전에 냉장고로 옮겨 놓거나, 실온에서 해동시킨 후 잘게 찢는다. 양파는 얇게 채썰고 민트도 잘게 썬다.
+- text: 고추냉이 드레싱 재료를 섞는다.
+- text: 두부는 원형틀로 찍어두고 양파와 게살, 아보카도를 곁들이고 민트를 올린 뒤 드레싱을 뿌린다.

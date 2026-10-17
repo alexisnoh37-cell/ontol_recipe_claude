@@ -1,0 +1,103 @@
+id: baecumalijeongol_tgix70
+title: 배추말이전골
+cuisine: 한식
+difficulty: 1
+cook_time_min: 10
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 배추말이전골
+  video_url: https://www.youtube.com/watch?v=TGIx70ZlRNM
+  published_at: '2024-03-28'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 배추 잎
+  raw_text: 배추 잎 10장
+  role: main
+  optional: false
+  amount: 10
+  unit: 장
+- name: 샤브샤브용 소고기
+  raw_text: 샤브샤브용 소고기 400g / 소고기 400g
+  role: sub
+  optional: false
+  amount: 400
+  unit: g
+- name: 당근
+  raw_text: 당근 1/3개
+  role: sub
+  optional: false
+  amount: 0.3333333333333333
+  unit: 개
+- name: 쪽파
+  raw_text: 쪽파
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- name: 팽이버섯
+  raw_text: 팽이버섯
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 깻잎
+  raw_text: 깻잎 20장
+  role: sub
+  optional: false
+  amount: 20
+  unit: 장
+- name: 국간장
+  raw_text: 국간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 맛술
+  raw_text: 맛술 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 잘 씻은 숙주나물
+  raw_text: 잘 씻은 숙주나물 200g / 숙주나물 200g
+  role: sub
+  optional: false
+  amount: 200
+  unit: g
+- name: 소금
+  raw_text: 소금 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 끓는 물에 소금 1스푼 넣어주고 배추잎 찬물로 한번 씻어주고 물기 한번 쫙.
+  technique: 끓이기
+- text: 잘 씻은 숙주나물 200g 바닥에 깔아주고 냄비 가득 배추 올려줄게요. 물 300ml.
+  technique: null
+- text: 넣은 후 국간장 1스푼 멸치액젓 2스푼 맛술 2스푼 넣어줄게요.
+  technique: null
+- text: 뚜껑 닫고 중강불로 10분만 끓여주시면.
+  technique: 끓이기

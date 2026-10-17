@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3087
+title: 잎채소튀김
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3087. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: perilla_leaf
+  raw_text: 깻잎 5g
+  role: sub
+- ingredient: lettuce
+  raw_text: 상추 6g
+  role: sub
+- ingredient: napa_cabbage
+  raw_text: 배추 7g
+  role: sub
+- ingredient: egg
+  raw_text: 계란 10g
+  role: sub
+- ingredient: frying_mix
+  raw_text: 튀김가루 10g
+  role: sub
+- ingredient: soybean_oil
+  raw_text: 콩기름 5g
+  role: sub
+- ingredient: null
+  raw_text: 얼음
+  role: sub
+steps:
+- text: 볼에 튀김가루, 계란 물을 섞어 반죽을 만든 후 얼음을 넣어 차갑게 한다.
+- text: 깻잎, 상추, 배추는 깨끗하게 씻어 준비한다.
+- text: 재료를 먹기 좋은 크기로 썬다.
+- text: 냄비에 콩기름을 부은 후 적당한 온도가 될 때까지 가열한다.
+- text: 야채에 반죽을 입힌다.
+- text: 노릇하게 튀긴다.

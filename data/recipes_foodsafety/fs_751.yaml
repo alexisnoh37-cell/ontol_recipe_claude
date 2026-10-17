@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_751
+title: 돼지갈비구이와 백김치와인조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 751. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: pork_ribs
+  raw_text: 돼지등갈비 200(갈비살 70)
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장 2
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 10
+  role: sub
+- ingredient: ginger
+  raw_text: 생강 3
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 4
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 0.02
+  role: sub
+- ingredient: salt
+  raw_text: '소금 0.38 김치조림: 백김치 60'
+  role: sub
+- ingredient: null
+  raw_text: 적포도주 40
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 15
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 3
+  role: sub
+steps:
+- text: 냄비에 물을 넣고 된장을 풀어 대파, 생강을 넣고 끓인다.
+- text: 물이 끓으면 돼지갈비를 넣고 5분간 삶는다.
+- text: 백김치는 5cm 길이로 자른다.
+- text: 적포도주를 냄비에 넣고 불에 올려 알코올을 날려준 뒤 김치, 맛술, 꿀을 넣고 맛이 배도록 졸인다.
+- text: 삶아 낸 등갈비에 소금을 뿌리고 올리브유를 발라 팬에 구워낸다.
+- text: 구운 갈비에 백김치 와인조림을 곁들여 낸다.

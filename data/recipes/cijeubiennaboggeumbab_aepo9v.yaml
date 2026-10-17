@@ -1,0 +1,80 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: cijeubiennaboggeumbab_aepo9v
+title: 치즈비엔나볶음밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=AePO9VDfO3g
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 영상에 여러 레시피가 있어 첫 번째 레시피만 구조화
+ingredients:
+- ingredient: sausage
+  raw_text: 비엔나소시지 한 줌
+  role: main
+  optional: false
+  amount: 1
+  unit: 줌
+- ingredient: mozzarella
+  raw_text: 모차렐라 치즈
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: null
+  raw_text: 김가루
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- ingredient: gochujang
+  raw_text: 고추장 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: cooking_oil
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sesame
+  raw_text: 통깨
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- ingredient: ketchup
+  raw_text: 케첩 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: rice
+  raw_text: 밥
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 2
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 비엔나소시지를 한입 크기로 자른 뒤 식용유에 갈색이 돌 때까지 볶는다.
+  technique: 볶음
+- text: 밥, 고추장 1/2스푼, 케첩 1스푼을 더한 뒤 고르게 볶는다.
+  technique: 볶음
+- text: 모차렐라 치즈를 더해 섞는다.
+  technique: 무침
+- text: 김가루와 통깨를 뿌리면 마친다.
+  technique: null

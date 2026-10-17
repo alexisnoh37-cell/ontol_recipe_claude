@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_293
+title: 토마토요구르트된장국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 293. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 표고버섯(15g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(35g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이(30g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(17g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(25g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(3g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(3g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(25g)
+  role: sub
+- ingredient: null
+  raw_text: 된장양념 콩가루(5g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 요구르트(15g)
+  role: sub
+- ingredient: null
+  raw_text: 저염된장(10g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 멸치(2g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(1g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 다진 마늘(2g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(0.7g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깻가루(8g)
+  role: sub
+steps:
+- text: 버섯은 밑동을 제거해 먹기 좋게 손질하고, 양파는 채 썰고, 대파와 청양고추는 어슷 썬다.
+- text: 토마토는 아주 잘게 다진다.
+- text: 된장양념을 만든다.
+- text: 냄비에 육수 재료를 넣고 15분간 끓인 뒤 체로 건더기를 건지고, 된장양념을 체에 내리면서 푼다.
+- text: 버섯을 넣고 끓으면 토마토, 다진 마늘, 고춧가루, 들깻가루, 채 썬 양파를 넣고 끓인다.
+- text: 송송 썬 대파와 청양고추를 넣고 조금 더 끓여 마무리한다.

@@ -1,0 +1,92 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: saeu_kongnamuljjim_f3x2qc
+title: 새우 콩나물찜
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=f3x2qCS6LAY
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 한국어 공개 자막 없음; 설명란 기준
+ingredients:
+- ingredient: null
+  raw_text: 멸치칼국수 라면
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: shrimp_raw
+  raw_text: 냉동 새우 100g / 새우 100g
+  role: sub
+  optional: false
+  amount: 100
+  unit: g
+- ingredient: soybean_sprouts
+  raw_text: 콩나물
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: gochugaru
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sesame
+  raw_text: 통깨
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 면과 냉동 새우는 2~3분만 끓여서 덜어 둔다.
+  technique: 끓이기
+- text: 면 위에 콩나물, 대파, 청양고추, 양념장을 얹는다.
+  technique: null
+- text: 면수를 부어주면서 콩나물을 익힌다.
+  technique: null
+- text: 참기름, 통깨를 뿌려 마친다.
+  technique: null

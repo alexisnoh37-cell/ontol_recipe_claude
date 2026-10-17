@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_407
+title: 미역줄기두부무침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 407. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 건조미역줄기 10g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 70g
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리 1g
+  role: sub
+- ingredient: null
+  raw_text: 혼합견과류 25g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 15g
+  role: sub
+- ingredient: null
+  raw_text: 다진양파 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 5g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 3g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 5g
+  role: sub
+steps:
+- text: 두부는 물기를 꼭 짜준 후 으깬다.
+- text: 미역줄기는 불린 후 먹기 좋게 자른다.
+- text: 양념장을 만들어준다.
+- text: 준비된 견과류를 송송 다져준다.
+- text: 불린 미역줄기에 소스를 섞어 재워준다.
+- text: 불린 미역줄기에 두부를 넣어 섞어준다.

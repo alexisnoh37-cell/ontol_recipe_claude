@@ -1,0 +1,87 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: bomdongbibimbab_c0p8zj
+title: 봄동비빔밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source: https://www.youtube.com/watch?v=C0P8ZjGFaTU
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에
+  없음)
+ingredients:
+- ingredient: bomdong
+  raw_text: 봄동 1포
+  role: main
+  optional: false
+  amount: 1
+  unit: 포
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: tuna_extract
+  raw_text: 참치액 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 매실액 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: vinegar
+  raw_text: 식초1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment: []
+steps:
+- text: 없어요. 봄똥만 넣고 계란 후라이만 넣어서 먹는다. 아니죠. 고추장이랑.
+  technique: null
+- text: 이게 식초물에 한번 깨끗이 씻어 갖고 같이 넣어서 잘라 주면 돼요. 좀.
+  technique: null
+- text: 게 자게 썰어 줄게요.
+  technique: null
+- text: 넣어 줄게요. 그래야 때도 나오고 더 봄똥만 넣고 계란 후라이만 넣어서.
+  technique: null
+- text: 밥 세공기 물량 넣어주고 참기름 두 스하게 비벼 놨었죠. 넉넉히 넣어.
+  technique: null

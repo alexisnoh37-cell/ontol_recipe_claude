@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_468
+title: L..A갈비구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 468. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: L.A갈비(200g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: bay_leaf
+  raw_text: 월계수잎(5g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추(5g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(20g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 정종(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: null
+  raw_text: 매실액(10g)
+  role: sub
+- ingredient: null
+  raw_text: 대파 다진것(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(20g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(3g)
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨(5g)
+  role: sub
+steps:
+- text: L.A 갈비는 물에 담그어 핏물과 갈비 톱밥을 제거시켜 놓는다.
+- text: 강판에 배와 양파를 곱게 갈아 준비 한다.
+- text: 핏물을 제거한 갈비에 배즙과 양파즙을 넣어 숙성시킨다.
+- text: 냄비에 저염간장과 월계수잎, 통후추, 올리고당, 정종, 설탕, 물, 매실액을 넣어 은근히 약 30분 정도 끓여 식힌다.
+- text: 끓여 식힌 간장에 파, 마늘, 참기름, 통깨를 넣는다.
+- text: 숙성시킨 L.A 갈비에 만들어 놓은 양념을 넣고 다시 하루 정도 더 숙성 후 팬에 구워 완성한다.

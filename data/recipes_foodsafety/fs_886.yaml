@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_886
+title: 부추조개살 콩비지조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 886. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 콩비지 20g
+  role: sub
+- ingredient: clam
+  raw_text: 조갯살 20g
+  role: sub
+- ingredient: chive
+  raw_text: 부추 5g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 5g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 1g
+  role: sub
+- ingredient: null
+  raw_text: 조미술 1g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1g
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 1g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 0.5g
+  role: sub
+steps:
+- text: 조갯살은 연한 소금물로 헹구어 물기를 뺀다.
+- text: 부추는 2~3cm 길이로 썰고 당근은 짧게 채 썬다.
+- text: 냄비에 분량의 조림장 재료를 전부 넣고 한소큼 끓어 오르면 조갯살을 넣어 살짝 데쳐 건져둔다.
+- text: 3의 냄비에 물 3컵을 더 넣고 당근을 넣어 조림장 분량이 2/3정도가 될 때까지 졸인다.
+- text: 다른 팬에 기름을 두르지 않고 콩비지를 넣어 보슬보슬해질 때 까지 볶는다.
+- text: 5에 4를 전부 붓고 채썬 부추와 데친 조갯살도 넣어 간이 고루 들도록 저어가며 볶는다.

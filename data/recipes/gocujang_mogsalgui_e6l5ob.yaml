@@ -1,0 +1,78 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: gocujang_mogsalgui_e6l5ob
+title: 고추장 목살구이
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=E6l5Ob8Bcdo
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리기구 '토치'(선택) 제외(vocab에 없음)
+ingredients:
+- ingredient: pork_neck
+  raw_text: 목살 500g
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- ingredient: onion
+  raw_text: 양파 / 양파 1/2개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: garlic
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 1
+  savory: 1
+equipment: []
+steps:
+- text: 목살은 앞뒤 노릇하게 굽는다.
+  technique: 구이
+- text: 양파 1/2개를 더한 뒤 기름에 같이 볶는다.
+  technique: 볶음
+- text: 고추장 2스푼, 진간장 2스푼, 설탕 2스푼, 다진 마늘 1스푼, 고춧가루 1스푼, 후추를 더한 뒤 볶는다.
+  technique: 볶음
+- text: 토치로 표면을 가볍게 그을린다.
+  technique: 구이

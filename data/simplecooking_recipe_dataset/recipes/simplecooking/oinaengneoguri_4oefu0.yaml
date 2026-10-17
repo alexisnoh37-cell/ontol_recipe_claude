@@ -1,0 +1,97 @@
+id: oinaengneoguri_4oefu0
+title: 오이냉너구리
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 제발 라면 이렇게 드셔보세요. 역대급 맛있습니다.
+  video_url: https://www.youtube.com/watch?v=4OEfU0TMrXo
+  published_at: '2026-08-27'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 영상에 여러 레시피가 있어 첫 번째 레시피만 구조화
+ingredients:
+- name: 너구리
+  raw_text: 너구리
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- name: 콩나물
+  raw_text: 콩나물
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 냉면 육수
+  raw_text: 냉면 육수
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 계란
+  raw_text: 삶은 계란 / 계란
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 양파
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 오이
+  raw_text: 오이
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 분말 스프
+  raw_text: 분말 스프 1/2봉
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 봉
+- name: 통깨
+  raw_text: 통깨
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- name: 식초
+  raw_text: 식초1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 끓는 물에 면, 건더기 스프, 콩나물을 더해 삶은 뒤 찬물에 헹군다.
+  technique: 끓이기
+- text: 냉면 육수에 분말 스프 1/2봉, 설탕 1스푼, 식초1스푼을 더해 섞는다.
+  technique: 무침
+- text: 면을 담고 얇게 채 썬 양파와 오이를 얹는다.
+  technique: null
+- text: 얼음, 삶은 계란, 통깨를 올리면 마친다.
+  technique: 끓이기

@@ -1,0 +1,117 @@
+id: gajisotbab_hccde8
+title: 가지솥밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 36
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 가지솥밥
+  video_url: https://www.youtube.com/watch?v=HCcDE82-Ayg
+  published_at: '2026-06-22'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 쌀
+  raw_text: 쌀 200ml
+  role: main
+  optional: false
+  amount: 200
+  unit: ml
+- name: 올리브유
+  raw_text: 올리브유 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 쯔유
+  raw_text: 쯔유 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 가지
+  raw_text: 가지 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 대파
+  raw_text: 대파 반쪽 / 대파 3스푼
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 2스푼 / 진간장 5스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 참치액
+  raw_text: 참치액 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 분말육수
+  raw_text: 분말육수 1포
+  role: sub
+  optional: false
+  amount: 1
+  unit: 포
+- name: 식초
+  raw_text: 식초 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 마늘
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 참기름
+  raw_text: 참기름 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 통깨
+  raw_text: 통깨 2스푼
+  role: garnish
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 냄비에 올리브유 두 스푼 넣고 30분간 불린살 한 컵 넣는다.
+  technique: null
+- text: 1분간 기름에 잘 코팅하면서 볶아주고 물 300ml 넣고 감칠맛을 위해.
+  technique: 볶음
+- text: 쭈유한 스푼 넣은 후 뚜껑 닫고 대파 반쪽도 방 자기 자른다.
+  technique: null
+- text: 펜에 올리브유 두 스푼 대파 넣고 1분간 파기름 내주다가 가지 넣고.
+  technique: null
+- text: 분말육수 한포 넣고 4분간 볶아 올리고 잘 섞어 주면 완성입니다.
+  technique: 볶음

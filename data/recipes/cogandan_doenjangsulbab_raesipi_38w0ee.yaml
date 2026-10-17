@@ -1,0 +1,78 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: cogandan_doenjangsulbab_raesipi_38w0ee
+title: 초간단 된장술밥 래시피
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=38W0EEMUFEQ
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: beef_brisket
+  raw_text: 차돌박이 100g
+  role: main
+  optional: false
+  amount: 100
+  unit: g
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯 한줌
+  role: sub
+  optional: false
+  amount: 1
+  unit: 줌
+- ingredient: tofu
+  raw_text: 두부 1/4모
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 모
+- ingredient: green_onion
+  raw_text: 대파 1/4쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 쪽
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: doenjang
+  raw_text: 된장 2큰술
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 큰술
+- ingredient: gochujang
+  raw_text: 고추장 1큰술
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 큰술
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 넣고 잘 섞는다 여기에 밥 한 공기 넣고 밥알의 양념 코팅을 해.
+  technique: 무침
+- text: 줄게요 이렇게 미리 볶아 놓으면 있어요 물 500ml 넣고 준비한.
+  technique: 볶음
+- text: 재료 다 넣는다 양파가 익을 때까지만 끓여 주시면 돼요 별로 한.
+  technique: 끓이기

@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_491
+title: 황태볶음면
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 491. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: dried_pollock
+  raw_text: 황태(100g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(20g)
+  role: sub
+- ingredient: squid
+  raw_text: 오징어(30g)
+  role: sub
+- ingredient: salt
+  raw_text: 굵은 소금(5g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(10g)
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추(20g)
+  role: sub
+- ingredient: ramen_noodles
+  raw_text: 라면(70g)
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주(30g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(10g)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(5g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: null
+  raw_text: 볶음간장
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(5g)
+  role: sub
+- ingredient: null
+  raw_text: 생강즙(5g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+steps:
+- text: 다시마는 깨끗이 씻어 찬물에 넣고 은근히 끓여 다시마 육수를 만들어 생강즙과 저염간장을 넣어 약한 불에서 졸여 볶음 간장을 만들어 놓는다.
+- text: 황태는 강판에 갈아 곱게 가루를 만들어 놓는다.
+- text: 새우는 씻어놓고, 오징어는 소금을 이용하여 껍질을 벗기고, 안쪽에 사선 으로 칼집을 넣어 모양을 만들어 살짝 데쳐 준비한다.
+- text: 양파와 마늘은 입자있게 다지고, 대파는 5cm 길이로 썰어놓고, 표고버섯과 양배추도 채를 썰고, 숙주는 다듬어 놓는다.
+- text: 라면은 끓는 물에 데쳐 준비한다.
+- text: 팬에 올리브오일을 넣어 따근해지면, 오징어와 새우를 넣어 볶다가, 다시 숙주와 마요네즈, 설탕, ①번 소스와 채소를 넣어 센 불에서 재빠르게 볶고, 다시 면을 넣어 볶아 완성한다.

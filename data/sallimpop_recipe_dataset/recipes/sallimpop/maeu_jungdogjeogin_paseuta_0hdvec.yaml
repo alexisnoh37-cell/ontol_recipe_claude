@@ -1,0 +1,71 @@
+id: maeu_jungdogjeogin_paseuta_0hdvec
+title: 매우 중독적인 파스타
+cuisine: 양식
+difficulty: 2
+cook_time_min: 13
+servings: 5
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 매우 중독적인 파스타
+  video_url: https://www.youtube.com/watch?v=0HdveCRL9m4
+  published_at: '2026-06-24'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 파스타
+  raw_text: 파스타 1봉
+  role: main
+  optional: false
+  amount: 1
+  unit: 봉
+- name: 계란
+  raw_text: 달걀 2알 / 달걀
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- name: 올리브유
+  raw_text: 올리브유 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 가염버터
+  raw_text: 가염버터 20g
+  role: sub
+  optional: false
+  amount: 20
+  unit: g
+- name: 쯔유
+  raw_text: 쯔유 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 봉 다 삶아서 소분해서 보관하면 맛이네요. 물이 끓이면 굵은 소금 한.
+  technique: 끓이기
+- text: 스푼 넣고 파스타면 한 봉지 다 넣어 12분간 삶아 주세요. 뜨거운 상태로.
+  technique: 끓이기
+- text: 넣어 주시면 돼요. 이래야 수분이 넣고 달걀 두알 스크램블 한다.
+  technique: null
+- text: 20g 줄 두 스푼 넣고 버터가 녹을 때까지 잘 섞어 주는 소분한면 넣고.
+  technique: 무침
+- text: 1분간 볶아주면 완성이에요. 저는 여기에 크러시드 페퍼론치노 넣어서 잘.
+  technique: 볶음
+- text: 섞어서 먹는데 느끼한 맛 그리고.
+  technique: 무침

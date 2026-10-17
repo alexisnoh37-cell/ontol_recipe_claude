@@ -22,11 +22,13 @@ from fastapi import FastAPI, HTTPException, Query, Request, Response
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
+from api.adhoc import analyze as analyze_adhoc
 from api.present import TASTE_DIMENSIONS, Catalog, load_display
-from api.schemas import PreferencesIn, ProfileCreate, ProfileOut, ProfileUpdate, RecommendIn
-from api.viz import GraphCatalog, RecipeScope
+from api.schemas import AnalyzeRecipeIn, PreferencesIn, ProfileCreate, ProfileOut, ProfileUpdate, RecommendIn
+from api.viz import GraphCatalog, RecipeOrigins, RecipeScope
 from engine.model import Preference, RecommendRequest, RecommendResult, TastePreference, UserContext
 from engine.recommend import Recommender
+from kb.recipes import load_display_specs
 from storage.engine_source import CONFIG_DIR, ROOT, EngineData
 from storage.personas import Persona, load_personas
 from storage.users import (
@@ -55,8 +57,14 @@ class State:
     def reload(self) -> None:
         data = self.loader()
         recommender = data.recommender(config_dir=self.config_dir)
-        catalog = Catalog(data, load_display(self.config_dir))
-        graph = GraphCatalog(data)
+        display = load_display(self.config_dir)
+        catalog = Catalog(data, display)
+        origins = RecipeOrigins(display.get("graph_recipe_origins") or [], ROOT)
+
+        def display_loader() -> list[Any]:  # 표시 전용 레시피(엔진·DB 미적재), 처음 요청 때만 읽는다
+            return [s for _, d in origins.display_dirs for s in load_display_specs(data.knowledge, ROOT / d, ROOT)[0]]
+
+        graph = GraphCatalog(data, origins, display_loader)
         with self.lock:
             self.recommender: Recommender = recommender
             self.catalog: Catalog = catalog
@@ -153,11 +161,54 @@ def create_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir
                            include_concepts: bool = False) -> list[dict[str, Any]]:
         return state.catalog.search(q, limit=limit, include_concepts=include_concepts)
 
+    @app.get("/browse")
+    def browse(ingredients: list[str] = Query(..., min_length=1, max_length=50), profile_id: int | None = None,
+               persona_id: str | None = None, allergen_groups: list[str] | None = Query(None, max_length=50),
+               max_missing: int | None = Query(None, ge=0, le=5)) -> dict[str, Any]:
+        """재료로 레시피 찾기(조회, engine/browse.py). 고른 재료(+기본 양념, is_a 상속)로 조리 가능한 레시피와
+        꼭 필요한 재료가 max_missing개 이하로 모자란 레시피. 알레르기 기준(프로필·페르소나·그룹 중 최대 하나)을 주면
+        알레르기 레시피를 제외하지 않고 경고를 붙인다(사람 결정 2026-10-16)."""
+        if sum(x is not None for x in (profile_id, persona_id, allergen_groups)) > 1:
+            raise bad("profile_id, persona_id, allergen_groups 중 최대 하나만 주세요")
+        check_pantry(ingredients)
+        groups: frozenset[str] = frozenset(allergen_groups or ())
+        if profile_id is not None:
+            groups = user_context(get_profile(profile_id)).allergen_groups
+        elif persona_id is not None:
+            persona = persona_index.get(persona_id)
+            if persona is None:
+                raise HTTPException(status_code=404, detail=f"페르소나 {persona_id}이(가) 없습니다")
+            groups = persona.user.allergen_groups
+        with state.lock:
+            recommender, catalog = state.recommender, state.catalog
+        try:
+            result = recommender.browse(ingredients, groups, max_missing=max_missing)
+        except ValueError as exc:  # 모르는 알레르기 그룹
+            raise bad(str(exc)) from None
+        return catalog.browse(result, has_allergy=bool(groups))
+
+    @app.get("/recipes/{recipe_id}")
+    def recipe_detail(recipe_id: str, profile_id: int | None = None,
+                      pantry: list[str] | None = Query(None)) -> dict[str, Any]:
+        """레시피 상세(역할별 전체 재료·조리 단계). 보유 여부 기준: pantry를 주면 그것, 아니면 profile_id의 보유 재료.
+        둘 다 없으면 보유 여부(have)는 null이다."""
+        catalog = state.catalog
+        if recipe_id not in catalog.recipes:
+            raise HTTPException(status_code=404, detail=f"레시피 {recipe_id}이(가) 없습니다")
+        profile = get_profile(profile_id) if profile_id is not None else None
+        if pantry is not None:
+            owned: frozenset[str] | None = frozenset(check_pantry(pantry))
+        else:
+            owned = frozenset(profile.pantry) if profile is not None else None
+        has_allergy = profile is not None and any(r.target_type == "allergen_group" for r in profile.preferences)
+        return catalog.recipe_detail(recipe_id, pantry=owned, has_allergy=has_allergy)
+
     @app.get("/graph")
     def graph(request: Request, response: Response, recipes: RecipeScope = "published",
-              max_recipes: int | None = Query(None, ge=0)) -> Any:
-        """3D 시각화용 노드·간선(부록 D). 데이터가 바뀌지 않으면 ETag가 같아 304로 응답한다."""
-        body, etag = state.graph.graph(recipes, max_recipes)
+              max_recipes: int | None = Query(None, ge=0), display: bool = False) -> Any:
+        """3D 시각화용 노드·간선(부록 D). display=true면 표시 전용 레시피(식품안전나라 등)도 싣는다.
+        데이터가 바뀌지 않으면 ETag가 같아 304로 응답한다."""
+        body, etag = state.graph.graph(recipes, max_recipes, display)
         if request.headers.get("if-none-match") == etag:
             return Response(status_code=304, headers={"ETag": etag})
         response.headers["ETag"] = etag
@@ -291,6 +342,32 @@ def create_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir
             out["trace"] = graph.trace(result, trace, weights=dict(recommender.scoring.weights),
                                        labels=catalog.display["exclusion_labels"], limit=req.limit)
             out["trace"]["breakdown_labels"] = dict(catalog.display["breakdown_labels"])  # 재생 4단계 hover 표시용
+        return out
+
+    @app.post("/analyze-recipe")
+    def analyze_recipe(body: AnalyzeRecipeIn) -> dict[str, Any]:
+        """DB에 없는 레시피의 재료·알레르기 구조(부록 E). 저장하지 않는다. 사용자를 주면 추천 필터와 같은 기준으로 판정."""
+        profile_id: int | None = None
+        user: UserContext | None = None
+        if body.persona_id is not None:
+            persona = persona_index.get(body.persona_id)
+            if persona is None:
+                raise HTTPException(status_code=404, detail=f"페르소나 {body.persona_id}이(가) 없습니다")
+            user = persona.user
+        elif body.profile_id is not None:
+            profile = get_profile(body.profile_id)
+            profile_id, user = profile.id, user_context(profile)
+        elif body.allergen_groups is not None:
+            user = UserContext(allergen_groups=frozenset(body.allergen_groups))
+        with state.lock:
+            catalog, graph = state.catalog, state.graph
+        try:
+            out, exclusions = analyze_adhoc(graph, catalog.snapshot, title=body.title.strip(), text=body.source_text(),
+                                            user=user, exclusion_labels=catalog.display["exclusion_labels"])
+        except ValueError as exc:  # 재료 없음, 모르는 알레르기 그룹·재료 id
+            raise bad(str(exc)) from None
+        log_exclusions(profile_id, RecommendResult(items=(), exclusions=tuple(exclusions)), body.persona_id)
+        out["disclaimer"] = catalog.display["disclaimer"]
         return out
 
     @app.post("/admin/reload")

@@ -1,0 +1,82 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3470
+title: 밀푀유 채소 웰링턴
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3470. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: napa_cabbage
+  raw_text: 배추(200g)
+  role: sub
+- ingredient: beef
+  raw_text: 소고기(200g)
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주(80g)
+  role: sub
+- ingredient: bok_choy
+  raw_text: 청경채(30g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(20g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(50g)
+  role: sub
+- ingredient: null
+  raw_text: 백목이버섯(3g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(10g)
+  role: sub
+- ingredient: perilla_leaf
+  raw_text: 깻잎(5g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(150g)
+  role: sub
+- ingredient: null
+  raw_text: 머스타드(17g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(35g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(200g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(60g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깨가루(30g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(60g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장(30g)
+  role: sub
+- ingredient: null
+  raw_text: 로즈메리(2잎=10g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(8g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추(4g)
+  role: sub
+- ingredient: null
+  raw_text: 전분(15g)
+  role: sub
+steps:
+- text: 표고버섯, 양파, 마늘은 다지고, 끓는 물에 배추, 숙주, 청경채를 데친다. 토마토는 껍질을 벗기고, 소고기는 키친타월로 핏물을 제거하고 두부는 물기를 제거한다.
+- text: 팬에 올리브유(20g)를 두르고 손질한 표고버섯, 양파(15g), 마늘을 볶은 뒤 간장(15g), 들깨가루, 우유를 넣어 덕셀을 만들고 식힌다.
+- text: 양파(20g)를 볶은 뒤 물을 붓고 다시마, 새송이버섯, 백목이버섯, 토마토를 넣고 중약 불에서 15분 동안 끓여 갈고 간장(15g), 소금(3g)으로 간해 브라운 소스를 만든다.
+- text: 소고기에 머스타드, 덕셀을 바르고 깻잎, 두부, 숙주, 청경채를 넣어 감싸준 후 소금(5g), 후추를 뿌리고, 팬에 올리브유(20g)를 두르고 소고기를 굽고, 로즈메리를 넣는다.
+- text: 종이 포일에 올리브유(20g)를 뿌리고, 데친 배추를 올린 후 위에 구운 고기와 덕셀(30g)을 올리고 돌돌 말아 에어프라이어에 200도, 10분간 굽는다.
+- text: 접시에 웰링턴을 담고 여분의 덕셀, 브라운 소스를 올리고 마무리한다.

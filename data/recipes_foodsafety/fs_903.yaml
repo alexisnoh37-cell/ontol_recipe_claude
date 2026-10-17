@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_903
+title: 과일 주스 조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 903. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: peach
+  raw_text: 천도복숭아 30g
+  role: sub
+- ingredient: null
+  raw_text: 자두 20g
+  role: sub
+- ingredient: null
+  raw_text: 체리 40g
+  role: sub
+- ingredient: null
+  raw_text: 산딸기 20g
+  role: sub
+- ingredient: null
+  raw_text: 블루베리 10g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 30g
+  role: sub
+- ingredient: grape
+  raw_text: 포도 10g
+  role: sub
+- ingredient: null
+  raw_text: 포도주스 50g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 20g
+  role: sub
+steps:
+- text: 천도복숭아는 반으로 잘라 씨를 제거하고 각각 2등분하고 자두는 반으로 갈라 씨를 제거한다.
+- text: 사과는 8등분하여 씨를 제거한다.
+- text: 포도는 알알이 떼어내고 체리는 꼭지를 떼어내고 블루베리와 산딸기는 분량대로 준비한다.
+- text: 냄비에 포도주스와 설탕, 준비한 과일을 넣고 약한불에서 끓인다.
+- text: 천도복숭아가 부드러워지고 포도주스에 농도가 생기면 불을 끈다.
+- text: 접시에 졸인 과일과 주스를 함께 담는다.

@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_434
+title: 훈제연어롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 434. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 훈제연어(100g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: pickled_cucumber
+  raw_text: 피클(20g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.02g)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(30g)
+  role: sub
+- ingredient: null
+  raw_text: 오렌지 주스(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(10g)
+  role: sub
+- ingredient: null
+  raw_text: 물녹말(10g)
+  role: sub
+- ingredient: null
+  raw_text: 스위트칠리(20g)
+  role: sub
+- ingredient: null
+  raw_text: 곁들임채소
+  role: sub
+- ingredient: asparagus
+  raw_text: 아스파라거스(20g)
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(10g)
+  role: sub
+steps:
+- text: 훈제연어를 살포시 포를 뜬다.
+- text: 양파와 피클은 곱게 다져 준비한다.
+- text: 포를 떠 놓은 훈제 연어에 살짝 후춧 가루를 뿌리고, 양파와 피클을 넣어 말아준다.
+- text: 오렌지는 껍질과 과육을 분리해서 썰어 준비한다.
+- text: 냄비에 오렌지주스와 설탕과 레몬, 분리시킨 오렌지를 넣고 끓여준다.
+- text: 끓고 있는 오렌지소스에 물녹말과 스위 트칠리소스를 넣고 한 소큼만 끓인 후 말아 놓은 훈제 연어롤을 접시에 담고, 어린잎을 한쪽에 놓아주고, 오렌지 소스를 함께 올려 완성한다.

@@ -1,0 +1,90 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: manduboggeumbab_wvnfm
+title: 만두볶음밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: null
+source: https://www.youtube.com/watch?v=wvnfM_5E4eE
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: frozen_dumplings
+  raw_text: 냉동만두 5개
+  role: main
+  optional: false
+  amount: 5
+  unit: 개
+- ingredient: egg
+  raw_text: 달걀 2알 / 달걀
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- ingredient: green_onion
+  raw_text: 대파 1/4쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 쪽
+- ingredient: olive_oil
+  raw_text: 올리브유 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: tuna_extract
+  raw_text: 참치액 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: chicken_stock
+  raw_text: 치킨스톡 1/3스푼
+  role: seasoning
+  optional: false
+  amount: 0.33
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame
+  raw_text: 통깨 1스푼
+  role: garnish
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 전자레인지
+  required: true
+steps:
+- text: 전자레인지 3분만 돌려 줄게요 예열된 냉동만두 고춧가루 한 스푼 넣은 후.
+  technique: null
+- text: 스푼 넣어 간해 줄게요 마무리로 밥 한 공기 넣은 후 참기름 두 스푼.
+  technique: null
+- text: 통깨 한 스푼 넣어 자석 주면.
+  technique: null

@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_267
+title: 양지해장국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 267. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 쇠고기육수(30g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(10g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(20g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(1g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토(80g)
+  role: sub
+- ingredient: soybean_sprouts
+  raw_text: 콩나물(50g)
+  role: sub
+- ingredient: null
+  raw_text: 양념 다진 마늘(8g)
+  role: sub
+- ingredient: null
+  raw_text: 저염국간장(2.5g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+steps:
+- text: 육수를 끓인 양지는 건져 얇게 썬다.
+- text: 버섯은 잘게 찢고, 애호박은 반달모양으로 납작 썰고, 고추와 대파는 어슷하게 썬다.
+- text: 방울토마토에 열십자로 칼집을 넣고 끓는 물에 데쳐 껍질을 벗긴다.
+- text: 냄비에 식용유(10g)를 두른 뒤 다진 마늘을 넣고 볶아 향을 낸 뒤 방울토마토를 넣고 볶는다.
+- text: 육수(300g), 콩나물, 쇠고기, 느타리버섯, 애호박을 넣고 국간장과 소금으로 간해 끓인다.
+- text: 어슷 썬 청양고추와 대파를 넣어 마무리한다.

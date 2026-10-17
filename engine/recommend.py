@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
-from collections.abc import Mapping
+from collections.abc import Iterable, Mapping
 
+from engine.browse import BrowseResult, find_by_ingredients
 from engine.candidates import generate_candidates
 from engine.config import EngineConfig, ScoringConfig
 from engine.explain import build_item
@@ -43,6 +44,15 @@ class Recommender:
         result, trace = self._run(user, req, collect=True)
         assert trace is not None
         return result, trace
+
+    def browse(self, selected: Iterable[str], allergen_groups: Iterable[str] = (), *,
+               max_missing: int | None = None) -> BrowseResult:
+        """재료로 레시피 찾기(조회, engine/browse.py). 알레르기는 제외하지 않고 경고로 붙인다."""
+        return find_by_ingredients(
+            self.knowledge.snapshot(), self.recipes, selected, allergen_groups=allergen_groups,
+            max_missing=self.config.browse_max_missing if max_missing is None else max_missing,
+            serve_draft_recipes=self.config.serve_draft_recipes,
+        )
 
     def _run(self, user: UserContext, req: RecommendRequest, *,
              collect: bool) -> tuple[RecommendResult, RecommendTrace | None]:

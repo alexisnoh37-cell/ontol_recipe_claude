@@ -1,0 +1,86 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: nurungji_dalgdari_whvyyj
+title: 누룽지 닭다리
+cuisine: 한식
+difficulty: 1
+cook_time_min: 7
+servings: null
+source: https://www.youtube.com/watch?v=WhVYyjxumfg
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- ingredient: chicken_thigh
+  raw_text: 닭다리살 500g
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- ingredient: rice
+  raw_text: 밥
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: canned_corn
+  raw_text: 스위트콘
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: soy_sauce
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: vinegar
+  raw_text: 식초 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 닭다리살을 익힌 다음 덜어 둔다.
+  technique: 구이
+- text: 밥 1공기, 물 1/2컵, 스위트콘 3~4스푼을 펼쳐준 뒤 구운 닭다리살을 얹는다.
+  technique: null
+- text: 뚜껑 덮고 중불에서 7분 끓인다.
+  technique: 끓이기
+- text: 양념장을 올려 곁들인다.
+  technique: null

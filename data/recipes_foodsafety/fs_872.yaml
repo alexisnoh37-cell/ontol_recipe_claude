@@ -1,0 +1,79 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_872
+title: 해산물 샤브샤브
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 872. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 11개'
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 새우 13g
+  role: sub
+- ingredient: hard_clam
+  raw_text: 모시조개 15g
+  role: sub
+- ingredient: oyster
+  raw_text: 굴 25g
+  role: sub
+- ingredient: null
+  raw_text: 패주 5g
+  role: sub
+- ingredient: squid
+  raw_text: 오징어 10g
+  role: sub
+- ingredient: null
+  raw_text: 당귀잎 2.5g
+  role: sub
+- ingredient: null
+  raw_text: 배추잎 2.5g
+  role: sub
+- ingredient: null
+  raw_text: 샐러리잎 2.5g
+  role: sub
+- ingredient: null
+  raw_text: 백만송이버섯 2.5g
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓 1.3g
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯 1.3g
+  role: sub
+- ingredient: null
+  raw_text: 곤약 2.5g
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박 5g
+  role: sub
+- ingredient: null
+  raw_text: 통깨소스
+  role: sub
+- ingredient: null
+  raw_text: 다시물 9g
+  role: sub
+- ingredient: null
+  raw_text: 볶은통깨 3.8g
+  role: sub
+- ingredient: null
+  raw_text: 피넷버터 5.8g
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 0.5g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 1g
+  role: sub
+- ingredient: null
+  raw_text: 타비스코 소스 1g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 진간장 1g
+  role: sub
+steps:
+- text: 새우는 내장을 제거하고 오징어는 껍질을 벗겨 안쪽에 대각선으로 칼집을 넣어 5x6cm로 썬다.
+- text: 굴은 소금물에 흔들어 씻고 패주는 3등분 하고 모시조개는 소금물에 담가 해감시킨다.
+- text: 곤약은 2x4cm로 썰어 가운데 칼집을 넣어 꼬아주고 버섯들은 찢어 준비한다.
+- text: 쑥갓, 셀러리, 당귀잎은 잎만 뜯어 준비하고 배추잎은 저며 썬다.
+- text: 통깨를 갈고 그 밖에 재료들은 모두 섞어 가는 체에 내려 땅콩 소스를 만든다.
+- text: 냄비에 다시마 국물을 붓고 소금으로 약하게 간을 한 다음 해산물과 채소를 번갈아 가면서 익혀 소스에 찍어 먹는다.

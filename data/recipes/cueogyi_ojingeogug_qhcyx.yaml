@@ -1,0 +1,92 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: cueogyi_ojingeogug_qhcyx
+title: 추억의 오징어국
+cuisine: 한식
+difficulty: 1
+cook_time_min: 8
+servings: null
+source: https://www.youtube.com/watch?v=-qhCyXdL0og
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: squid
+  raw_text: 오징어 1마리 / 오징어
+  role: main
+  optional: false
+  amount: 1
+  unit: 마리
+- ingredient: radish
+  raw_text: 무 1/4통
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 통
+- ingredient: green_onion
+  raw_text: 대파 1/4쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 쪽
+- ingredient: garlic
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: null
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- ingredient: soy_sauce
+  raw_text: 국간장 1 스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 2 스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고운 고춧가루 가득 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 두꺼우면 오래 끓여야 하니 좀 작게 미리 손질하고 청양 고추도 잘라.
+  technique: 끓이기
+- text: 주세요 냄비에 물 700ml 넣고 코인 육수 두알 무 넣는다 솔기.
+  technique: null
+- text: 두 스푼 넣는다 8분 정도 뚜껑 닫고 무 익을 때까지 끓여주고 오징어.
+  technique: 끓이기
+- text: 넣는다 대파 청양 고추 다진마늘도 넣는다 마지막.
+  technique: null

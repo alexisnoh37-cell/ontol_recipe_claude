@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_74
+title: 돌나물 샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 74. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 돌나물 90g
+  role: sub
+- ingredient: null
+  raw_text: 미니새송이버섯 60g(7개)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 약간
+  role: sub
+- ingredient: null
+  raw_text: 레몬마요네즈 소스
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 10g(2작은술)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 20g(1⅓큰술)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 5g(1/2개)
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 5g(1/2개)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 약간
+  role: sub
+steps:
+- text: 청양고추와 홍고추를 다져서 참기름에 살짝 볶은 후 볶은 고추에 마요네즈와 레몬즙을 넣어 소스를 만든다.
+- text: 돌나물은 손질하여 찬물에 담구고 새송이버섯은 달군 프라이팬에 참기름을 두르고 노릇 하게 굽는다.
+- text: 돌나물은 물기를 빼고 구운 새송이버섯과 레몬마요네즈 소스를 넣고 버무려 접시에 담는다.

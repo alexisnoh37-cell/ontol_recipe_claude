@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_474
+title: 주꾸미보리죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 474. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: webfoot_octopus
+  raw_text: 주꾸미(100g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 보리(100g)
+  role: sub
+- ingredient: minari
+  raw_text: 미나리(10g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(400g)
+  role: sub
+- ingredient: null
+  raw_text: 저염치즈(20g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(100g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(5g)
+  role: sub
+steps:
+- text: 보리는 깨끗이 씻어 물을 충분히 붓고 약 30분 정도 불려 준비한다.
+- text: 주꾸미는 밀가루를 넣고 조물조물 주물러 다시 깨끗이 씻어 준비한다.
+- text: 씻어놓은 주꾸미는 살짝 데쳐 입자 있게 다져 놓는다.
+- text: 미나리와 당근, 양파는 입자있게 다져 놓는다.
+- text: 냄비에 참기름을 두르고, 주꾸미를 먼저 볶다가 불린 보리쌀을 넣고 다시 볶은 뒤 썰어놓은 채소(④)를 넣는다.
+- text: 냄비에 육수를 넣고 나무주걱으로 은근히 저어가면 끓이다가 죽이 어우러 지면, 우유와 치즈, 간장을 살짝 넣고 한 번 더 끓여 완성한다.

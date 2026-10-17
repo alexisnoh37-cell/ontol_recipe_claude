@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_416
+title: 조기까스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 416. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: yellow_croaker
+  raw_text: 조기 1마리(250g)
+  role: sub
+- ingredient: null
+  raw_text: 허브크러스트 100g
+  role: sub
+- ingredient: null
+  raw_text: 흰 후추 1g
+  role: sub
+- ingredient: wine
+  raw_text: 화이트와인 15g
+  role: sub
+- ingredient: null
+  raw_text: 마늘오일 15g
+  role: sub
+- ingredient: null
+  raw_text: 전분 15g
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장 15g
+  role: sub
+- ingredient: null
+  raw_text: 저염간장 15g
+  role: sub
+- ingredient: wine
+  raw_text: 화이트와인 15g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 5g
+  role: sub
+- ingredient: null
+  raw_text: 다진양파 15g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: null
+  raw_text: 마늘오일 15g
+  role: sub
+steps:
+- text: 다진마늘을 버터에 충분히 볶아준다.
+- text: 화이트와인을 뿌려주고 소스재료로 소스를 만들어준다.
+- text: 찜기에 살짝 져 준다. 이때 80% 정도까지만 익혀준다.
+- text: 쪄준 조기는 와인과 후추로 밑간을 해준 후 전분을 발라준다.
+- text: 전분를 바른 조기에 허브크러스트를 두툼하게 올려준다.
+- text: 팬에 기름을 두르고 조기를 한쪽부터 구운 뒤, 뒤집어서 다시 구워주고 소스를 뿌려 완성한다.

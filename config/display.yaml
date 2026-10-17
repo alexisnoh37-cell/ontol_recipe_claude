@@ -55,3 +55,24 @@ breakdown_labels:
   P: 재료 선호
   D: 난이도 적합
   M: 조리시간 적합
+
+# 레시피 상세의 재료 역할 표기(GET /recipes/{id})
+role_labels:
+  main: 주재료
+  sub: 부재료
+  seasoning: 양념
+  garnish: 고명
+
+# 재료로 레시피 찾기(GET /browse): 알레르기 설정이 있을 때 결과 위에 표시(사람 결정 2026-10-16: 조회에서는 제외하지 않고 주의 표시)
+browse_allergy_notice: >-
+  재료로 찾기 결과에는 알레르기 성분이 든 레시피도 표시됩니다. ⚠️ 표시가 있는 레시피는 알레르기 성분(포함 가능 포함)이나
+  확인되지 않은 재료가 있으니 조리하지 마세요. 추천 탭은 이런 레시피를 처음부터 제외합니다.
+
+# 그래프 레시피 출처 구분(표시 전용, int-2 사람 승인 2026-10-16). 위에서부터 처음 맞는 것을 쓴다.
+#   source: 레시피 source 값과 정확히 같으면 / dataset: 그 원본 데이터셋 YAML의 영상 URL(video_url)과 같으면
+#   display_dir: 엔진·DB에 적재하지 않고 그래프에만 보여 줄 레시피 폴더(GET /graph?display=true). 판정에는 쓰지 않는다
+graph_recipe_origins:
+  - {id: seed, label: 기본·확장 시드, source: agent_draft}
+  - {id: simplecooking, label: 자취요리신, dataset: data/simplecooking_recipe_dataset/recipes/simplecooking}
+  - {id: sallimpop, label: 살림팝, dataset: data/sallimpop_recipe_dataset/recipes/sallimpop}
+  - {id: foodsafety, label: 식품안전나라(그래프 표시 전용), source: foodsafety, display_dir: data/recipes_foodsafety}

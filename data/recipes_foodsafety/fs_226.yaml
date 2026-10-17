@@ -1,0 +1,67 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_226
+title: 참치비빔밥롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 226. 요리종류 밥, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 11개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 멥쌀(60g)
+  role: sub
+- ingredient: null
+  raw_text: 완두콩(30g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(80g)
+  role: sub
+- ingredient: null
+  raw_text: 주키니호박(15g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(15g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(15g)
+  role: sub
+- ingredient: tuna
+  raw_text: 참치(25g)
+  role: sub
+- ingredient: null
+  raw_text: 김밥용 김(2g)
+  role: sub
+- ingredient: null
+  raw_text: 케일(3g)
+  role: sub
+- ingredient: null
+  raw_text: 참치밑간 후춧가루(3g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(5g)
+  role: sub
+- ingredient: null
+  raw_text: 사과드레싱 식초(3g)
+  role: sub
+- ingredient: null
+  raw_text: 굵게 다진 사과(8g)
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리(2g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(5g)
+  role: sub
+- ingredient: null
+  raw_text: 토마토소스 토마토(50g)
+  role: sub
+- ingredient: null
+  raw_text: 고추(5g)
+  role: sub
+steps:
+- text: 쌀을 물에 불린 뒤 완두콩을 함께 넣고 밥을 짓는다.
+- text: 달걀을 풀어 체에 내린 뒤 지단을 부치면서 반 정도 익었을 때 그 위에 얇게 썬 주키니호박, 당근, 가지를 올려 익힌다.
+- text: 참치를 참치밑간에 재운 뒤 겉만 살짝 익힌다.
+- text: 김에 밥을 올리고, 뒤집어 참치를 올려 만 뒤 그 위에 지단을 올려 한 번 더 만다.
+- text: 사과드레싱을 만들고, 토마토소스 재료를 간 뒤 체에 거른다.
+- text: 참치비빔밥롤을 담은 뒤 토마토소스를 곁들이고, 케일에 사과드레싱을 뿌려 마무리한다.

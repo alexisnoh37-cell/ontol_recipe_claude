@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1102
+title: 삼색 머핀
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1102. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: carrot
+  raw_text: 당근(10g)
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치(10g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(10g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(5g)
+  role: sub
+- ingredient: null
+  raw_text: 크랜베리(5g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 박력분(150g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(15g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(90g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(2개)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1.5g)
+  role: sub
+- ingredient: null
+  raw_text: 베이킹소다(0.6g)
+  role: sub
+- ingredient: null
+  raw_text: 베이킹파우더(2.4g)
+  role: sub
+steps:
+- text: 당근, 시금치, 사과는 물에 익힌 후 각각 갈아 퓨레를 만든다.
+- text: 볼에 버터를 부드럽게 풀고 소금, 꿀을 섞어 녹이고 달걀을 2~3회 나눠 넣으며 크림을 만든다.
+- text: 2번에 박력분, 베이킹소다, 베이킹파우더를 체쳐 넣고 가볍게 섞는다.
+- text: 반죽을 3등분 한 뒤 당근퓨레/ 사과퓨레/시금치퓨레를 각각 섞고 크랜베리, 호두로 장식한다.
+- text: 잘 섞은 반죽을 머핀틀에 70% 채워 넣는다.
+- text: 175℃ 오븐에서 30분 간 굽는다.

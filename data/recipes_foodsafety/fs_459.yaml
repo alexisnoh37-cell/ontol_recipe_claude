@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_459
+title: 양송이크림볶음밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 459. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 닭고기살(50g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이(60g)
+  role: sub
+- ingredient: tteokbokki_rice_cake
+  raw_text: 떡볶이떡(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(30g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(100g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(50g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(50g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(10g)
+  role: sub
+- ingredient: cheese
+  raw_text: 치즈(10g)
+  role: sub
+steps:
+- text: 닭살은 삶아 입자있게 썰고, 양송이도 껍질을 벗겨 입자있게 썰어 준비한다.
+- text: 떡볶이떡과 양파도 입자있게 썰어 놓는다.
+- text: 당근은 소금을 넣고 삶아 꼬마 당근을 만들어 장식을 준비한다.
+- text: 냄비에 버터를 두르고 양파를 먼저 볶는다.
+- text: 볶아지는 냄비에 닭살과 떡볶이떡, 양파를 넣어 다시 볶는다.
+- text: ⑤번에 밥을 넣고 육수와 우유, 생크림을 넣어 볶으면서 치즈를 넣고 한 번 더 고실 하게 볶아 완성하고 삶은 당근은 꼬마 당근을 만들어 장식으로 올려 준다.

@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3574
+title: 과카몰리 갈치구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3574. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: hairtail
+  raw_text: 갈치(70g(1토막))
+  role: sub
+- ingredient: null
+  raw_text: 아보카도(35g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(10g)
+  role: sub
+- ingredient: null
+  raw_text: 라임(10g)
+  role: sub
+- ingredient: basil
+  raw_text: 바질(5g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(12g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(1g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추(1g)
+  role: sub
+steps:
+- text: 아보카도는 반으로 갈라 씨를 제거하고 과육을 으깬다. 레몬은 반으로 갈라 즙을 짜고, 라임은 얇게 자른다.
+- text: 토마토, 양파, 마늘은 깍둑썰고, 바질은 곱게 다진다
+- text: 볼에 손질한 아보카도, 토마토, 양파, 마늘, 바질을 넣고 올리브유, 레몬즙, 소금, 후추를 섞어 과카몰리를 만든다.
+- text: 깨끗이 씻은 갈치는 칼집을 낸 후 달군 팬에 노릇하게 굽는다.
+- text: 접시에 갈치구이를 담고 과카몰리를 곁들인다.
+- text: 접시에 손질한 라임을 담고 마무리한다.

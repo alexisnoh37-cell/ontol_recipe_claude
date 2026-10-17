@@ -1,0 +1,93 @@
+id: bomdongbibimbab_c0p8zj
+title: 봄동비빔밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 봄동 이렇게 먹어보셨어요? 정말 맛있습니다 (봄동비빔밥)
+  video_url: https://www.youtube.com/watch?v=C0P8ZjGFaTU
+  published_at: '2026-03-13'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 봄동
+  raw_text: 봄동 1포
+  role: main
+  optional: false
+  amount: 1
+  unit: 포
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 참치액
+  raw_text: 참치액 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 매실청
+  raw_text: 매실액 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 식초
+  raw_text: 식초1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 참기름
+  raw_text: 참기름 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 마늘
+  raw_text: 다진마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 기타 조리도구
+  required: false
+steps:
+- text: 없어요. 봄똥만 넣고 계란 후라이만 넣어서 먹는다. 아니죠. 고추장이랑.
+  technique: null
+- text: 이게 식초물에 한번 깨끗이 씻어 갖고 같이 넣어서 잘라 주면 돼요. 좀.
+  technique: null
+- text: 게 자게 썰어 줄게요.
+  technique: null
+- text: 넣어 줄게요. 그래야 때도 나오고 더 봄똥만 넣고 계란 후라이만 넣어서.
+  technique: null
+- text: 밥 세공기 물량 넣어주고 참기름 두 스하게 비벼 놨었죠. 넉넉히 넣어.
+  technique: null

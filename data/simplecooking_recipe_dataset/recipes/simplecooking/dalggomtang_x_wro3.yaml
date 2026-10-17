@@ -1,0 +1,83 @@
+id: dalggomtang_x_wro3
+title: 닭곰탕
+cuisine: 한식
+difficulty: 1
+cook_time_min: 11
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 다른건 몰라도 이건 꼭 드셔보세요.
+  video_url: https://www.youtube.com/watch?v=X_Wro3Zw5BQ
+  published_at: '2026-03-14'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- name: 닭다리살
+  raw_text: 닭다리살 정육 300g / 닭다리살
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 당면
+  raw_text: 당면 / 당면 한 줌
+  role: sub
+  optional: false
+  amount: 1
+  unit: 줌
+- name: 마늘
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- name: 액젓
+  raw_text: 액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 소금
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 닭 다리 살은 소금 간만 해주고 겉면을 굽는다.
+  technique: 구이
+- text: 물 500ml, 멸치 액젓 1스푼, 굴 소스 1스푼, 설탕 1/2스푼, 불리지 않은 당면 한 줌을 더한 뒤 약불에서 7~8분간 끓인다.
+  technique: 끓이기
+- text: 다진 마늘 1/2스푼, 대파 듬뿍, 후추를 뿌려주고 2~3분간 더 끓인다.
+  technique: 끓이기

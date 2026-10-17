@@ -1,0 +1,129 @@
+id: hanpantang_pykubc
+title: 한판탕
+cuisine: 중식
+difficulty: 1
+cook_time_min: 10
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 한판탕수육
+  video_url: https://www.youtube.com/watch?v=PykubcjRvP4
+  published_at: '2024-04-09'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 전분가루를 처음에
+  raw_text: 전분가루를 처음에 8스푼
+  role: main
+  optional: false
+  amount: 8
+  unit: 스푼
+- name: 잘 안뭉쳐서
+  raw_text: 잘 안뭉쳐서 10스푼
+  role: sub
+  optional: false
+  amount: 10
+  unit: 스푼
+- name: 돼지고기 탕수육용
+  raw_text: 돼지고기 탕수육용 500g
+  role: sub
+  optional: false
+  amount: 500
+  unit: g
+- name: 새송이 버섯
+  raw_text: 새송이 버섯 2개 / 버섯 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 청양고추
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- name: 홍고추
+  raw_text: 홍고추 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 마늘
+  raw_text: 다진마늘 3스푼 / 다진마늘 1스푼 / 마늘 5개
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 개
+- name: 대파
+  raw_text: 대파 3스푼 / 대파 1/3쪽
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 감자전분
+  raw_text: 감자전분 10스푼
+  role: seasoning
+  optional: false
+  amount: 10
+  unit: 스푼
+- name: 맛소금
+  raw_text: 맛소금 2꼬집 / 맛소금
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 꼬집
+- name: 굴소스
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 맛술
+  raw_text: 맛술 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 양조간장
+  raw_text: 양조간장 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 물엿
+  raw_text: 물엿 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 기름을 너무 많이 안넣어도 되요. 전 부치듯.
+  technique: 부침
+- text: 저처럼 너무 크게 부치지말고 작게 나눠 부치면.
+  technique: 부침

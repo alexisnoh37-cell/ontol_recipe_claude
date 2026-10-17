@@ -1,0 +1,105 @@
+id: gimcijjim_0cqmc2
+title: 김치찜
+cuisine: 한식
+difficulty: 2
+cook_time_min: 50
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 최강 돼지갈비김치찜
+  video_url: https://www.youtube.com/watch?v=0cQmC2EfAE0
+  published_at: '2024-09-23'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 돼지갈비찜용
+  raw_text: 돼지갈비찜용 1kg
+  role: main
+  optional: false
+  amount: 1
+  unit: kg
+- name: 김치
+  raw_text: 김치 1/4 포 / 김치 1/4포
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 포
+- name: 마늘
+  raw_text: 다진마늘 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 양파
+  raw_text: 양파 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- name: 국간장
+  raw_text: 국간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 매실청
+  raw_text: 매실청 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 코인육수
+  raw_text: 코인육수 2알
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- name: 후추
+  raw_text: 후추 1/3스푼
+  role: seasoning
+  optional: false
+  amount: 0.3333333333333333
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 생강
+  raw_text: 다진생강 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 2
+  umami: 3
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 간단한다 :) 재료, 조미료 넣고 끓여주기만 돼지갈비 1키로 큰 볼에 넣고 뼈 컷팅이 있는.
+  technique: 끓이기
+- text: 부위라 찬물에 3번 정도 씻어줄게요. 잘게 자른다. 대파 반개는 반으로 갈라.
+  technique: null
+- text: 양파, 대파 넣고 다진마늘 5스푼, 고춧가루 1스푼, 물 1L 넣고 뚜껑 닫은 후 끓기.
+  technique: 끓이기
+- text: 시작하면 중불에 40분 끓여주시면 됩니다.
+  technique: 끓이기
+- text: 일반 냄비는 1시간 10분 정도 끓인다. 완성이에요.
+  technique: 끓이기

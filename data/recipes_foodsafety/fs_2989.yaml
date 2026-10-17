@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2989
+title: 유부 우엉 잡채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2989. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: burdock
+  raw_text: 우엉 20g
+  role: sub
+- ingredient: fried_tofu
+  raw_text: 유부 6g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 10g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 5g
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당 6g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 5g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 0.5g
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨 0.5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1g
+  role: sub
+steps:
+- text: 우엉을 깨끗이 씻어 채 썬다.
+- text: 양파와 당근을 채 썬다.
+- text: 간장과 양념들을 넣고 채 썬 우엉을 졸인다.
+- text: 3이 80% 정도 졸았을 대 채 썬 양파와 당근을 넣는다.
+- text: 거의 다 졸여지면 채 썬 유부를 넣는다.
+- text: 참깨를 뿌려 마무리한다.

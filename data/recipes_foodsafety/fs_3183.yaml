@@ -1,0 +1,25 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3183
+title: 바나나미숫가루쉐이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3183. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 미숫가루 15g
+  role: sub
+- ingredient: banana
+  raw_text: 바나나 50g
+  role: sub
+- ingredient: milk
+  raw_text: 우유 100ml
+  role: sub
+steps:
+- text: 바나나 껍질을 벗긴다.
+- text: 바나나를 알맞은 크기로 잘라 준비해 둔다.
+- text: 우유와 미숫가루를 알맞은 양으로 계량한다.
+- text: ③과 바나나를 믹서기에 넣는다.
+- text: 건더기가 생기지 않을 정도로 간다.
+- text: 컵에 담아 완성시킨다.

@@ -1,0 +1,34 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1125
+title: 톡톡! 오미자 펀치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1125. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 말린오미자(5g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(50g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(5g)
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣(3알)
+  role: sub
+- ingredient: null
+  raw_text: 생수(150g)
+  role: sub
+- ingredient: null
+  raw_text: 각얼음(3개)
+  role: sub
+steps:
+- text: 말린오미자는 깨끗이 씻은 뒤 생수 150g을 부어 하루정도 우려낸다.
+- text: 우려낸 오미자를 체에 거른다.
+- text: 배를 강판에 곱게 간 뒤 면포에 싸서 배즙을 짠다.
+- text: 우린 오미자와 배즙을 섞은 후 꿀을 넣고 골고루 섞는다.
+- text: 믹서기에 얼음을 갈아 한 스푼 얹는다.
+- text: 잣을 띄워 장식한다.

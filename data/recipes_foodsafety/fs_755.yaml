@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_755
+title: 잔멸치땅콩볶음
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 755. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: peanut
+  raw_text: 땅콩 10
+  role: sub
+- ingredient: anchovy
+  raw_text: 잔멸치 10
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 2.5
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 2
+  role: sub
+- ingredient: null
+  raw_text: 건홍고추 1
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 1
+  role: sub
+- ingredient: soybean_oil
+  raw_text: 콩기름 1
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 1
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스 0.3
+  role: sub
+- ingredient: doubanjiang
+  raw_text: 두반장 1
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 6
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.5
+  role: sub
+steps:
+- text: 멸치를 마른팬에 넣고 볶는다.
+- text: 살짝 볶아낸 멸치에 올리브유와 맛술을 넣고 부드러워질 때까지 볶는다.
+- text: 땅콩을 찬물에 20분 담갔다 체에 건져 물기를 뺀다.
+- text: 건고추는 송송 썬다.
+- text: 팬에 올리브유, 참기름, 콩기름을 섞어 두르고 다진 마늘을 넣어 향을 낸 후 땅콩과 고추를 넣어 볶는다.
+- text: 볶은 멸치와 굴소스, 두반장, 물엿을 넣고 고루 섞은 다음 통깨를 뿌려낸다.

@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1019
+title: 생선찜 채소말이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1019. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 흰살 생선 70g
+  role: sub
+- ingredient: null
+  raw_text: 죽순 20g
+  role: sub
+- ingredient: null
+  raw_text: 청피망 15g
+  role: sub
+- ingredient: null
+  raw_text: 홍피망 15g
+  role: sub
+- ingredient: null
+  raw_text: 건표고버섯 10g
+  role: sub
+- ingredient: null
+  raw_text: 전분 5g
+  role: sub
+- ingredient: null
+  raw_text: 치즈슬라이스 10g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 적당량
+  role: sub
+- ingredient: salt
+  raw_text: 소금 적당량
+  role: sub
+- ingredient: null
+  raw_text: 흰후춧가루 적당량
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣 3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 3g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 3g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 흰 살 생선을 얇게 포를 떠서 소금과 흰 후춧가루로 밑간을 한 뒤 생선살의 물기를 제거한다.
+- text: 죽순은 5cm 길이로 채 썬 뒤 끓는 물에 데쳐 소금과 참기름으로 무치고 청, 홍피망은 같은 길이로 채썰어 팬에 볶으면서 소금 간 한다.
+- text: 건 표고버섯을 불려서 얇게 포를 떠 채 썬 뒤 소금과 참기름으로 무쳐서 볶고 슬라이스 치즈도 같은 길이로 채 썬다.
+- text: 1의 생선살을 2장씩 겹쳐 놓고 전분을 위에 뿌려 준비한 속 재료를 올려 돌돌 말아준 뒤 겉면에서 전분을 묻혀 찜통에서 8분간 찐다.
+- text: 믹서에 잣과 물, 설탕, 소금, 레몬즙, 간장을 넣고 뽀얗게 즙이 나도록 소스를 만든다.
+- text: 완성된 찜에 소스를 곁들여 낸다.

@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3244
+title: 치즈 단호박
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3244. 요리종류 일품, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: kabocha
+  raw_text: 단호박(1개=800g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1개)
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술(1T)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(1T)
+  role: sub
+- ingredient: mozzarella
+  raw_text: 모차렐라치즈(30g)
+  role: sub
+- ingredient: null
+  raw_text: 그라나파다노치즈(1Ts)
+  role: sub
+- ingredient: null
+  raw_text: 아몬드 플레이크(2Ts)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(1Ts)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(약간)
+  role: sub
+steps:
+- text: 단호박은 3mm 정도 윗부분을 도려내 씨를 제거한 뒤 전자레인지에 5분간 돌려 익힌다.
+- text: 단호박 씨를 제거한 뒤 속(50g)을 파서 덜어놓는다.
+- text: 달걀은 곱게 풀어 체에 내린 뒤 맛술, 우유, 모차렐라치즈(20g), 덜어 놓은 호박과 함께 믹서에 넣어 간다.
+- text: 속을 파낸 단호박에 간 재료를 넣은 뒤 뚜껑을 닫고 전자레인지에 8분간 돌려 익힌다.
+- text: 뚜껑을 열고 모차렐라치즈(10g)를 올려 전자레인지에 3분간 돌려 녹인다.
+- text: 단호박을 6~7등분해 그릇에 담고 꿀과 그라나파다노치즈, 아몬드 플레이크, 파슬리가루를 뿌린다.

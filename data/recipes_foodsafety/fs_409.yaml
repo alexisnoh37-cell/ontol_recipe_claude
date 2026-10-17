@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_409
+title: 주꾸미보양샐러드
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 409. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: webfoot_octopus
+  raw_text: 주꾸미 50g
+  role: sub
+- ingredient: apple
+  raw_text: 사과 60g
+  role: sub
+- ingredient: null
+  raw_text: 더덕 40g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 60g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 15g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 15g
+  role: sub
+- ingredient: null
+  raw_text: 마늘기름 30g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 5g
+  role: sub
+- ingredient: null
+  raw_text: 다진대파 5g
+  role: sub
+- ingredient: null
+  raw_text: 레몬소금 1g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: null
+  raw_text: 다진청고추 15g
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 15g
+  role: sub
+steps:
+- text: 더덕은 손질해 어슷하게 잘라 소금물에 살짝 담가준다.
+- text: 사과는 먹기 좋게 썰어서 레몬즙에 살짝 뿌려준다.
+- text: 주꾸미는 레몬즙을 넣어 살짝 데쳐준다.
+- text: 청고추, 홍고추는 씨를 제거하고 사과처럼 잘라주고. 양파도 잘라준다.
+- text: 소스를 만들어준다.
+- text: 모든 채소와 주꾸미를 섞어 소스랑 한데 버무려 완성한다.

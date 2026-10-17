@@ -1,0 +1,28 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_940
+title: 야채 과일 돌구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 940. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: kabocha
+  raw_text: 단호박 30g
+  role: sub
+- ingredient: sweet_potato
+  raw_text: 고구마 30g
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지 30g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 냄비 전체에 작은 돌을 깔고 돌이 뜨거워질 때까지 불에 올려놓는다.
+- text: 단호박, 고구마, 오렌지를 0.5cm 두께로 자른다.
+- text: 2의 표면에 소금을 살짝 뿌린다.
+- text: 뜨거워진 돌 위에 3을 올린다.
+- text: 뚜껑을 닫고 약한 불에서 속이 익을 때 까지 굽는다.
+- text: 소금, 된장소스, 참깨소스 등 취향에 맞는 소스를 골라 찍어 먹는다.

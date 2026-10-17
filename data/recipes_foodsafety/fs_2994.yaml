@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2994
+title: 비름나물 된장무침
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2994. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 비름나물(70g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(1g)
+  role: sub
+- ingredient: null
+  raw_text: 다시마 육수
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(5g)
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장(2g)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(1g)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(2g)
+  role: sub
+- ingredient: gochugaru
+  raw_text: 고춧가루(1g)
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨(1g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(4g)
+  role: sub
+steps:
+- text: 비름나물을 적당한 길이로 잘라 다시마육수에 데친 뒤 찬물에 헹궈 물기를 뺀다.
+- text: 양파는 2mm 두께로 채 썰고 생강과 마늘은 곱게 다진다.
+- text: 된장을 곱게 다진 뒤 구멍이 큰 체에 걸러 식감을 살리고 고추장, 마요네즈, 고춧가루와 섞는다.
+- text: 양념장에 다진 생강, 마늘을 섞는다.
+- text: 비름나물에 양파, 양념장을 넣고 골고루 무친다.
+- text: 참기름을 둘러 가볍게 섞은 뒤 깨를 뿌려 마무리한다.

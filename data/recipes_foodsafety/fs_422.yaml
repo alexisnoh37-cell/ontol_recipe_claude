@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_422
+title: 사과장아찌
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 422. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 풋사과 200g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 80g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 20g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 20g
+  role: sub
+- ingredient: null
+  raw_text: 맛간장 30g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 30g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 10g
+  role: sub
+- ingredient: null
+  raw_text: 생강청 30g
+  role: sub
+- ingredient: null
+  raw_text: 매실청 15g
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주 30g
+  role: sub
+steps:
+- text: 사과는 8조각으로 잘라 씨를 제거한다.
+- text: 청고추, 홍고추는 어슷하게 잘라준다.
+- text: 양파도 먹기 좋은 크기로 잘라준다.
+- text: 사과는 식초 물에 살짝 절여준다.
+- text: 양념장을 만든다.
+- text: 양념장에 준비된 재료를 모두 섞어 완성한다.

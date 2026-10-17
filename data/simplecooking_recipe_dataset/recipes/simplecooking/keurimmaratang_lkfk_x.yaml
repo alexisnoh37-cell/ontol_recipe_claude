@@ -1,0 +1,81 @@
+id: keurimmaratang_lkfk_x
+title: 크림마라탕
+cuisine: 중식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 이걸 싫어하는 여자는 제가 본 적이 없습니다.
+  video_url: https://www.youtube.com/watch?v=LkFK_XcaFQg
+  published_at: '2026-05-07'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 컵누들 마라탕
+  raw_text: 컵누들 마라탕 2개
+  role: main
+  optional: false
+  amount: 2
+  unit: 개
+- name: 우삼겹
+  raw_text: 우삼겹 150g
+  role: sub
+  optional: false
+  amount: 150
+  unit: g
+- name: 양파
+  raw_text: 양파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 우유
+  raw_text: 우유
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 생크림
+  raw_text: 생크림
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 진간장
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 후추
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 우삼겹, 양파를 더한 뒤 볶는다.
+  technique: 볶음
+- text: 진간장 1스푼, 마라 소스 2봉을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 컵라면 선에 맞춰 우유와 그 절반 양으로 생크림을 더한다.
+  technique: null
+- text: 면, 건더기 스프, 체다치즈 1장을 더한 뒤 꾸덕하게 끓인다.
+  technique: 끓이기
+- text: 마라 기름, 후추를 넉넉하게 뿌려 마친다.
+  technique: null

@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_528
+title: 귀리죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 528. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: null
+  raw_text: 귀리(100g)
+  role: sub
+- ingredient: rice
+  raw_text: 쌀(30g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(20g)
+  role: sub
+- ingredient: beef
+  raw_text: 소고기(20g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(50g)
+  role: sub
+- ingredient: null
+  raw_text: 흑임자(2g)
+  role: sub
+steps:
+- text: 귀리는 깨끗이 씻어 물에 불린다.
+- text: 쌀도 씻어 따로 불려 놓는다.
+- text: 양파와 부추는 송송 썰어 준비한다.
+- text: 냄비에 참기름을 넣고, 소고기를 먼저 볶는다.
+- text: 볶아지는 냄비에 다시 불린 귀리와 쌀을 넣어 볶아준다.
+- text: 충분히 귀리가 볶아지면 물을 넣고 끓이다가, 썰어 놓은 채소를 넣고, 죽이 어우러지게 끓인 뒤 달걀을 풀어 넣고 다시 저어가면 끓여주고, 죽 위에 흑임자를 올려 완성한다.

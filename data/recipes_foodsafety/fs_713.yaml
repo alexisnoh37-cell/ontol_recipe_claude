@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_713
+title: 고등어된장구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 713. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: mackerel
+  raw_text: 고등어 50g
+  role: sub
+- ingredient: soybean_oil
+  raw_text: 콩기름 2g
+  role: sub
+- ingredient: null
+  raw_text: 양파 껍질 2g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 5g
+  role: sub
+- ingredient: null
+  raw_text: 일식된장 미소 3g
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈 2g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 0.3g
+  role: sub
+- ingredient: mirin
+  raw_text: 맛술 3.75g
+  role: sub
+- ingredient: null
+  raw_text: 생강즙 1.25g
+  role: sub
+- ingredient: null
+  raw_text: 다시마 국물 3.75g
+  role: sub
+steps:
+- text: 고등어의 내장을 제거한다.
+- text: 내장을 제거한 고등어를 길이로 반을 갈라 각각 2등분 한다.
+- text: 양념장 재료를 모두 섞어 양념장을 만든다.
+- text: 고등어에 양념장을 발라 30분 이상 재운다.
+- text: 고등어의 양념장을 가볍게 긁어낸다.
+- text: 팬에 기름을 두르고 양파 속껍질과 얇게 썬 양파 위에 고등어를 올려 굽는다.

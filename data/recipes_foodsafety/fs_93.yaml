@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_93
+title: 구운채소와 간장레몬 소스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 93. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 8개'
+ingredients:
+- ingredient: null
+  raw_text: 구운채소
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지 20g(3cm)
+  role: sub
+- ingredient: null
+  raw_text: 호박 50g(1/3개)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯 15g(3개)
+  role: sub
+- ingredient: onion
+  raw_text: 양파 15g(1/8개)
+  role: sub
+- ingredient: null
+  raw_text: 발사믹크레마 15g(1큰술)
+  role: sub
+- ingredient: null
+  raw_text: 빨강 파프리카 3g(3×1cm)
+  role: sub
+- ingredient: null
+  raw_text: 노랑 파프리카 3g(3×1cm)
+  role: sub
+- ingredient: null
+  raw_text: 청피망 3g(3×1cm)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유 약간
+  role: sub
+- ingredient: null
+  raw_text: 간장 레몬 소스
+  role: sub
+- ingredient: null
+  raw_text: 저염간장 5g(1작은술)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 15g(1큰술)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 10g(1큰술)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙 5g(1작은술)
+  role: sub
+steps:
+- text: 저염간장, 식초, 레몬즙, 설탕을 혼합하여 간장레몬 소스를 만든다.
+- text: 호박, 가지, 새송이버섯은 3cm 길이로 자른 후 얇은 편으로 채 썰고, 양파, 파프리카, 피망은 호박 길이로 썬다.
+- text: 가지, 호박, 새송이버섯, 양파, 파프리카, 피망에 올리브유를 바르고 달궈진 그릴 팬에 구운 후 접시에 담고 발사믹 크레타를 뿌리고 간장레몬 소스를 곁들인다.

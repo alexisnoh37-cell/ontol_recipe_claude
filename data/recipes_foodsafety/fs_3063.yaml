@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3063
+title: 바지락가자미완탕국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3063. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 가자미살 40g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 10g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 5g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 1.1g
+  role: sub
+- ingredient: null
+  raw_text: 전분 3g
+  role: sub
+- ingredient: manila_clam
+  raw_text: 바지락 60g
+  role: sub
+- ingredient: radish
+  raw_text: 무우 40g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2g
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓 1g
+  role: sub
+- ingredient: null
+  raw_text: 청홍고추 0.1g
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯 0.1g
+  role: sub
+steps:
+- text: 가시를 제거한 가자미와 양파, 대파는 다진다.
+- text: ①에 으깬두부와 후추를 넣어 동그랗게 완자를 만든다.
+- text: 무는 나박 썰기, 청?홍고추는 어슷썰기한다.
+- text: 바지락은 해감 후 무와 함께 끓인다.
+- text: 바지락 육수에 완자를 넣어 한소끔 끊인다.
+- text: 마지막에 쑥갓, 청홍고추, 팽이버섯을 넣어 마무리한다.

@@ -1,0 +1,96 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: dalgdoritang_nk9h
+title: 닭도리탕
+cuisine: 한식
+difficulty: 1
+cook_time_min: 23
+servings: null
+source: https://www.youtube.com/watch?v=-_nK9H2trq0
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- ingredient: chicken
+  raw_text: 절단용 닭 1kg
+  role: main
+  optional: false
+  amount: 1
+  unit: kg
+- ingredient: potato
+  raw_text: 감자 2~3알
+  role: sub
+  optional: false
+  amount: null
+  unit: 알
+- ingredient: onion
+  raw_text: 양파 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: green_onion
+  raw_text: 대파 1대 / 대파
+  role: sub
+  optional: false
+  amount: 1
+  unit: 대
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 2~3개 / 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: 개
+- ingredient: garlic
+  raw_text: 다진 마늘 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: chicken_stock
+  raw_text: 치킨스톡 1/3스푼
+  role: seasoning
+  optional: false
+  amount: 0.33
+  unit: 스푼
+- ingredient: gochugaru
+  raw_text: 고춧가루 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: soy_sauce
+  raw_text: 진간장 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 닭은 끓는 물에 2~3분간 데친 다음 덜어 둔다.
+  technique: 끓이기
+- text: 데친 닭에 물 5컵, 고추장 크게 1스푼, 진간장 3스푼, 고춧가루 3스푼, 설탕 3스푼, 다진 마늘 1스푼, 치킨스톡 1/3스푼, 감자를 더한 뒤 센불에서 15분간 끓인다.
+  technique: 끓이기
+- text: 물이 절반 정도 졸았을 때 양파, 대파, 청양고추를 더한 뒤 5분간 더 끓인다.
+  technique: 조림

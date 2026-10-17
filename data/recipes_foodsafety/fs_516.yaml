@@ -1,0 +1,70 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_516
+title: 해물칼국수
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 516. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 밀가루(180g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 덧밀가루(50g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(20g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: mussel
+  raw_text: 홍합(20g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(20g)
+  role: sub
+- ingredient: null
+  raw_text: 미더덕(10g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(10g)
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 건새우(10g)
+  role: sub
+- ingredient: anchovy
+  raw_text: 멸치(10g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(5g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+steps:
+- text: 밀가루에 소금과 녹말가루를 넣고 반죽을 한다.
+- text: 냄비에 건새우와 머리와 내장을 제거한 멸치, 다시마, 무, 마늘, 양파를 넣고 약30분 정도 끓여 체에 걸러 육수를 만들어 놓는다.
+- text: 호박은 반달모양으로 썰고, 느타리는 손으로 찢고, 양파와 대파는 길게 썰어 준비한다.
+- text: 새우는 요지를 이용하여 새우등의 내장을 제거하고, 홍합은 족사를 때어 내고 솔을 이용하여 껍질을 깨끗이 씻어낸 후 흐르는 물에 깨끗하게 행구고, 미더덕은 깨끗이 씻어 놓는다.
+- text: 반죽을 해 놓은 밀가루에 덧 밀가루를 뿌려가며 얇게 밀어준다.
+- text: 얇게 밀어 놓은 밀가루를 칼로 썰어 덧밀가루를 털어내고, 만들어 놓은 육수에 칼국수를 넣고, 준비한 채소 (③)와 해물(④)을 넣고 간장으로 간을 맞추어 완성한다.

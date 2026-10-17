@@ -13,6 +13,10 @@
       <input id="search" type="search" placeholder="재료·별칭·레시피 검색" autocomplete="off" aria-label="재료·레시피 검색">
       <ul id="search-results" class="search-results" role="listbox" hidden></ul>
     </div>
+    <fieldset class="toggles" aria-label="배치">
+      <legend>배치</legend>
+      <select id="layout-mode" aria-label="배치 선택"></select>
+    </fieldset>
     <fieldset class="toggles" aria-label="층 표시">
       <legend>층</legend>
       <label><input type="checkbox" data-layer="1" checked> 1 알레르기</label>
@@ -28,6 +32,10 @@
       <label><input type="checkbox" data-link="bundle_member" checked> 묶음</label>
       <label><input type="checkbox" data-link="uses"> 레시피-재료</label>
     </fieldset>
+    <fieldset class="toggles" id="origin-toggles" aria-label="레시피 출처 표시">
+      <legend>출처</legend>
+      <label title="엔진에 적재하지 않는 레시피(식품안전나라)도 그래프에 불러옵니다"><input type="checkbox" id="display-toggle"> 표시 전용 포함</label>
+    </fieldset>
   </header>
 
   <main class="layout">
@@ -41,6 +49,20 @@
       <section class="card">
         <h2>노드 정보</h2>
         <div id="info" class="info"><p class="muted">노드를 클릭하면 연결된 관계만 강조합니다. 빈 곳 클릭 또는 Esc로 해제.</p></div>
+      </section>
+      <section class="card" id="browse-card">
+        <h2>재료로 레시피 찾기</h2>
+        <p class="muted small-text">재료를 여러 개 고르면 고른 재료와 기본 양념만으로 만들 수 있는 레시피를 찾습니다(상위 재료 상속, 대체 재료 미사용).</p>
+        <div id="browse-chips" class="pantry"></div>
+        <div class="search small">
+          <input id="browse-add" type="search" placeholder="재료 추가(재료·별칭)" autocomplete="off" aria-label="찾을 재료 추가">
+          <ul id="browse-results" class="search-results" role="listbox" hidden></ul>
+        </div>
+        <label class="check"><input type="checkbox" id="browse-pick"> 그래프에서 재료 노드를 클릭해 고르기</label>
+        <label class="field">알레르기 <select id="browse-subject" aria-label="알레르기 표시 기준"><option value="">알레르기 표시 안 함</option></select></label>
+        <div class="run-row"><button type="button" id="browse-run" class="primary" disabled>레시피 찾기</button>
+          <button type="button" id="browse-clear" class="link" hidden>지우기</button><span id="browse-status" class="muted"></span></div>
+        <div id="browse-list" class="browse-list"></div>
       </section>
       <section class="card" id="play-card">
         <h2>추천 과정 재생</h2>
@@ -64,6 +86,20 @@
           <h3 id="step-title" class="step-title"></h3>
           <div id="step-body" class="step-body"></div>
         </div>
+      </section>
+      <section class="card" id="adhoc-card">
+        <h2>외부 레시피 분석 <span class="muted small">저장 안 함</span></h2>
+        <label class="field">이름 <input id="adhoc-title" type="text" maxlength="100" placeholder="예) AI 마파두부" autocomplete="off"></label>
+        <textarea id="adhoc-text" rows="6" maxlength="5000" aria-label="재료 원문"
+          placeholder="재료를 줄이나 쉼표로 나눠 붙여 넣기&#10;예) 두부 1모, 다진 돼지고기 100g&#10;두반장 1큰술"></textarea>
+        <label class="field">판정 기준 <select id="adhoc-subject" aria-label="판정 기준"><option value="">구조만 보기(판정 안 함)</option></select></label>
+        <div class="run-row">
+          <button type="button" id="adhoc-run" class="primary">분석해서 그래프에 표시</button>
+          <button type="button" id="adhoc-example" class="link">예시 넣기</button>
+          <button type="button" id="adhoc-clear" class="link">지우기</button>
+        </div>
+        <p id="adhoc-status" class="muted small"></p>
+        <div id="adhoc-result" class="adhoc-result" hidden></div>
       </section>
       <section class="card" id="cards-card" hidden>
         <h2>추천 카드</h2>

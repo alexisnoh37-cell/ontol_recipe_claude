@@ -9,18 +9,27 @@
   4층 레시피
 
 노드 id는 종류 접두어(ing:, ag:, rcp:)를 붙여 재료·레시피 id 충돌을 막는다. 링크 id는 trace의 path_links가 가리킨다.
+
+레시피 노드의 origin은 출처 구분(config/display.yaml graph_recipe_origins, 표시 전용)이다. display=true면 엔진에
+적재하지 않는 표시 전용 레시피(식품안전나라 등, engine: false)를 같은 지식으로 연결해 함께 싣는다(int-2).
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
+import re
+import threading
+from collections import Counter
+from collections.abc import Callable, Sequence
+from pathlib import Path
 from typing import Any, Literal
 
 from engine.candidates import CANDIDATE_ROLES
 from engine.config import COMPONENTS
 from engine.model import Exclusion, ExclusionReason, RecommendResult
 from engine.trace import RecommendTrace
+from kb.datacheck import RecipeSpec
 from storage.engine_source import EngineData
 
 RecipeScope = Literal["none", "published", "all"]
@@ -71,12 +80,45 @@ def use_link(recipe: str, line_no: int) -> str:
     return f"use:{recipe}#{line_no}"
 
 
+_VIDEO_URL = re.compile(r"^\s*video_url:\s*['\"]?(\S+?)['\"]?\s*$", re.M)
+
+
+class RecipeOrigins:
+    """레시피 → 출처 id(표시 전용). 규칙은 config/display.yaml graph_recipe_origins, 위에서부터 처음 맞는 것."""
+
+    def __init__(self, rules: Sequence[dict[str, Any]], root: Path):
+        self.rules = [dict(r) for r in rules]
+        self.labels = {r["id"]: r["label"] for r in self.rules}
+        self._urls: dict[str, frozenset[str]] = {}
+        for r in self.rules:
+            if "dataset" in r:  # 원본 YAML의 video_url 줄만 읽는다(YAML 파싱 없이, 시작 비용을 줄이려고)
+                urls: set[str] = set()
+                for p in sorted((root / r["dataset"]).glob("*.yaml")):
+                    urls.update(_VIDEO_URL.findall(p.read_text(encoding="utf-8")))
+                self._urls[r["id"]] = frozenset(urls)
+
+    @property
+    def display_dirs(self) -> list[tuple[str, str]]:
+        return [(r["id"], r["display_dir"]) for r in self.rules if "display_dir" in r]
+
+    def of(self, recipe: RecipeSpec) -> str | None:
+        for r in self.rules:
+            if r.get("source") == recipe.source or recipe.source in self._urls.get(r["id"], ()):
+                return r["id"]
+        return None
+
+
 class GraphCatalog:
     """EngineData 하나 위의 그래프 응답. 데이터 reload 때 새로 만든다(요청 중에는 캐시만 읽음)."""
 
-    def __init__(self, data: EngineData):
+    def __init__(self, data: EngineData, origins: RecipeOrigins | None = None,
+                 display_loader: Callable[[], list[RecipeSpec]] | None = None):
         ck = data.knowledge
         self.data = data
+        self.origins = origins
+        self._display_loader = display_loader
+        self._display: list[RecipeSpec] | None = None  # 처음 display=true 요청 때 읽는다(시작 비용 없음)
+        self._lock = threading.Lock()
         self.groups = {g.id: g for g in ck.allergen_groups}
         self.members: dict[str, list[str]] = {}
         for m in ck.group_members:
@@ -91,7 +133,8 @@ class GraphCatalog:
         self._link_ids |= {der_link(r.from_id, r.to_id) for r in ck.relations if r.type == "derived_from"}
         # 재료 노드 정보용: 기본 그룹 closure(묶음은 구성원의 합이라 중복). 경로는 컴파일된 via를 링크 id로 옮긴 것
         self._base_closure: dict[str, list[Any]] = {}
-        base_hits: dict[str, list[dict[str, Any]]] = {}
+        self.base_hits: dict[str, list[dict[str, Any]]] = {}
+        base_hits = self.base_hits
         for c in sorted(ck.allergen_closure, key=lambda c: (c.ingredient_id, c.allergen_group_id)):
             if self.groups[c.allergen_group_id].kind == "base":
                 self._base_closure.setdefault(c.ingredient_id, []).append(c)
@@ -131,7 +174,7 @@ class GraphCatalog:
         for m in ck.group_members:
             self._knowledge_links.append({"id": mem_link(m.bundle_id, m.member_id), "source": ag(m.bundle_id),
                                           "target": ag(m.member_id), "type": "bundle_member"})
-        self._cache: dict[tuple[str, int | None], tuple[dict[str, Any], str]] = {}
+        self._cache: dict[tuple[str, int | None, bool], tuple[dict[str, Any], str]] = {}
 
         # trace 표시용 조회 색인(요청 중 그래프 탐색 없이 링크 id를 찾는다)
         self._link_ids |= {lk["id"] for lk in self._knowledge_links}
@@ -142,6 +185,10 @@ class GraphCatalog:
                     self._lines.setdefault((r.id, line.ingredient), []).append(n)
         self._closure = {(c.allergen_group_id, c.ingredient_id): c for c in ck.allergen_closure}
         self._isa = {(r.from_id, r.to_id) for r in ck.relations if r.type == "is_a"}
+        self.sources: dict[str, list[tuple[str, str]]] = {}  # 가공품 → [(원천, certainty)] 직접 derived_from 행
+        for r in ck.relations:
+            if r.type == "derived_from":
+                self.sources.setdefault(r.from_id, []).append((r.to_id, r.certainty))
 
     def group_category(self, group_id: str) -> str:
         g = self.groups[group_id]
@@ -149,28 +196,48 @@ class GraphCatalog:
             return "bundle"
         return "official" if g.official else "custom"
 
-    def graph(self, recipes: RecipeScope = "published", max_recipes: int | None = None) -> tuple[dict[str, Any], str]:
+    def graph(self, recipes: RecipeScope = "published", max_recipes: int | None = None,
+              display: bool = False) -> tuple[dict[str, Any], str]:
         """(응답 본문, ETag). 같은 인자면 처음 만든 결과를 그대로 돌려준다."""
-        key = (recipes, max_recipes)
-        if key not in self._cache:
-            body = self._build(recipes, max_recipes)
-            blob = json.dumps(body, ensure_ascii=False, sort_keys=True).encode("utf-8")
-            self._cache[key] = (body, '"' + hashlib.sha256(blob).hexdigest()[:20] + '"')
-        return self._cache[key]
+        key = (recipes, max_recipes, display)
+        with self._lock:
+            if key not in self._cache:
+                body = self._build(recipes, max_recipes, display)
+                blob = json.dumps(body, ensure_ascii=False, sort_keys=True).encode("utf-8")
+                self._cache[key] = (body, '"' + hashlib.sha256(blob).hexdigest()[:20] + '"')
+            return self._cache[key]
 
-    def _build(self, scope: RecipeScope, max_recipes: int | None) -> dict[str, Any]:
+    def display_recipes(self) -> list[RecipeSpec]:
+        """표시 전용 레시피(엔진 미적재). 적재된 레시피와 id가 겹치면 뺀다."""
+        if self._display is None:
+            loaded = self._display_loader() if self._display_loader else []
+            seed_ids = {r.id for r in self.data.recipes}
+            self._display = [r for r in loaded if r.id not in seed_ids]
+        return self._display
+
+    def _build(self, scope: RecipeScope, max_recipes: int | None, display: bool) -> dict[str, Any]:
         specs = [] if scope == "none" else [r for r in self.data.recipes if scope == "all" or r.status == "published"]
+        extra = self.display_recipes() if display else []
+        rows = [(r, True) for r in specs] + [(r, False) for r in extra]
         if max_recipes is not None:
-            specs = specs[:max_recipes]
+            rows = rows[:max_recipes]
         nodes = list(self._knowledge_nodes)
         links = list(self._knowledge_links)
-        for r in specs:
+        origins: Counter[str] = Counter()
+        for r, in_engine in rows:
+            origin = self.origins.of(r) if self.origins else None
+            origins[origin or "other"] += 1
             nodes.append({
                 "id": rcp(r.id), "kind": "recipe", "layer": 4, "name": r.title, "cuisine": r.cuisine,
                 "difficulty": r.difficulty, "cook_time_min": r.cook_time_min,
-                "spicy": r.taste.spicy if r.taste else 0, "status": r.status, "confidence": r.confidence,
+                "spicy": r.taste.spicy if r.taste else None,  # None: 맛 정보 없음(표시 전용 레시피)
+                "status": r.status, "confidence": r.confidence,
                 "required_equipment": sorted(e.name for e in r.equipment if e.required),
                 "has_unmapped": any(line.ingredient is None for line in r.ingredients),
+                "lines": len(r.ingredients),
+                "unmapped_lines": [{"line_no": n, "raw_text": line.raw_text}
+                                   for n, line in enumerate(r.ingredients, start=1) if line.ingredient is None],
+                "origin": origin, "engine": in_engine,
                 "allergens": self.recipe_allergens(r),
             })
             for n, line in enumerate(r.ingredients, start=1):  # line_no는 엔진 recipe_from_spec과 같은 번호
@@ -183,24 +250,32 @@ class GraphCatalog:
             "layers": list(LAYERS),
             "nodes": nodes,
             "links": links,
-            "stats": {"nodes": len(nodes), "links": len(links), "recipes": len(specs)},
+            "stats": {"nodes": len(nodes), "links": len(links), "recipes": len(rows),
+                      "display_recipes": sum(not e for _, e in rows)},
+            "origins": [{"id": o, "label": self.origins.labels.get(o, o) if self.origins else o, "recipes": n}
+                        for o, n in sorted(origins.items(), key=lambda kv: (-kv[1], kv[0]))],
         }
 
     def recipe_allergens(self, recipe: Any) -> list[dict[str, Any]]:
-        """레시피 정보 패널의 "걸리는 알레르기": 재료 줄마다 컴파일된 기본 그룹 closure 행을 모은다(판정 없음, 표시용).
+        """레시피 정보 패널의 "걸리는 알레르기": 재료 줄마다 컴파일된 기본 그룹 closure 행을 모은다(판정 없음, 표시용)."""
+        return self.lines_allergens((n, line.ingredient, line.role, line.optional)
+                                    for n, line in enumerate(recipe.ingredients, start=1))
+
+    def lines_allergens(self, lines: Any) -> list[dict[str, Any]]:
+        """(줄 번호, 재료 id 또는 None, role, optional) 목록 → 기본 그룹별 closure 행 모음(외부 레시피 분석도 쓴다).
 
         certainty는 그룹에 걸린 줄 중 하나라도 definite면 definite. optional_only는 선택 재료 줄로만 걸렸는지.
         """
         out: dict[str, dict[str, Any]] = {}
-        for n, line in enumerate(recipe.ingredients, start=1):
-            for c in self._base_closure.get(line.ingredient or "", []):
+        for n, ingredient_id, role, optional in lines:
+            for c in self._base_closure.get(ingredient_id or "", []):
                 g = out.setdefault(c.allergen_group_id, {"group": ag(c.allergen_group_id), "certainty": "possible",
                                                          "optional_only": True, "hits": []})
-                g["hits"].append({"ingredient": ing(line.ingredient), "certainty": c.certainty, "role": line.role,
-                                  "optional": line.optional, "line_no": n})
+                g["hits"].append({"ingredient": ing(ingredient_id), "certainty": c.certainty, "role": role,
+                                  "optional": optional, "line_no": n})
                 if c.certainty == "definite":
                     g["certainty"] = "definite"
-                if not line.optional:
+                if not optional:
                     g["optional_only"] = False
         return [out[k] for k in sorted(out)]
 
@@ -225,14 +300,17 @@ class GraphCatalog:
         hit = same or [m for m in members if (m, ingredient_id) in self._closure]
         return hit[0] if hit else target
 
-    def exclusion(self, e: Exclusion, labels: dict[str, str]) -> dict[str, Any]:
+    def exclusion(self, e: Exclusion, labels: dict[str, str],
+                  lines: dict[tuple[str, str], list[int]] | None = None) -> dict[str, Any]:
+        """제외 한 건 → 화면 데이터. lines는 (레시피, 재료) → 줄 번호 색인(없으면 적재된 레시피의 색인)."""
         out: dict[str, Any] = {
             "recipe": rcp(e.recipe_id), "reason": e.reason.value, "label": labels.get(e.reason.value, e.reason.value),
             "ingredient": ing(e.ingredient_id) if e.ingredient_id else None, "target": e.target, "target_node": None,
             "source_group": None, "certainty": e.certainty, "via": [ing(x) for x in e.via], "path_links": [],
             "detail": e.detail,
         }
-        uses = [use_link(e.recipe_id, n) for n in self._lines.get((e.recipe_id, e.ingredient_id or ""), [])]
+        index = self._lines if lines is None else lines
+        uses = [use_link(e.recipe_id, n) for n in index.get((e.recipe_id, e.ingredient_id or ""), [])]
         if e.reason == ExclusionReason.ALLERGEN and e.target and e.ingredient_id:
             base = self.source_group(e.target, e.ingredient_id, e.via)
             out["target_node"], out["source_group"] = ag(e.target), ag(base)

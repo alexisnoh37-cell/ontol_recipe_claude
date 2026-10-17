@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_464
+title: 목살스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 464. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 돼지목살(120g)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(5g)
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리(2g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.1g)
+  role: sub
+- ingredient: null
+  raw_text: 칠리소스(20g)
+  role: sub
+- ingredient: ketchup
+  raw_text: 케첩(20g)
+  role: sub
+- ingredient: null
+  raw_text: 포도주스(100g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+- ingredient: null
+  raw_text: 브로컬리(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: null
+  raw_text: 적채(20g)
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리(20g)
+  role: sub
+steps:
+- text: 돼지목살에 생강즙과 로즈마리, 소금, 후춧가루를 뿌려 숙성시킨다.
+- text: 양파와 마늘, 샐러리는 입자있게 다진다.
+- text: 칠리소스와 케첩, 포도주스를 섞는다.
+- text: 브로컬리는 살짝 데쳐, 작게 썰고, 당근과 적채 채를 썰어 준비한다.
+- text: 냄비에 버터를 넣고, 양파와 마늘을 넣어 볶는다.
+- text: 볶은 냄비(⑤)에 샐러리를 넣고 포도 주스(③)와 채소(④)를 넣고 자작하게 졸인 후 팬에 버터를 살짝 바르고, 팬이 따끈해 지면 숙성한 목살을 넣어 익힌다. 목살이 익혀지면, 자작하게 졸인 소스에 넣어 다시 한 번 더 졸여 완성한다.

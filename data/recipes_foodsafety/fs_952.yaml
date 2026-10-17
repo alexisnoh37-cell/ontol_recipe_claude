@@ -1,0 +1,31 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_952
+title: 복숭아 화채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 952. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 오미자 5g
+  role: sub
+- ingredient: peach
+  raw_text: 천도복숭아 30g
+  role: sub
+- ingredient: pear
+  raw_text: 배 10g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 10g
+  role: sub
+- ingredient: pine_nut
+  raw_text: 잣 1g 설탕시럼 설탕과 물을 동량으로 하여 중불에서 서서히 녹인다. 기호에 맞게 만든다.
+  role: sub
+steps:
+- text: 오미자에 7배의 물에 8시간 담궈 맛과 색이 우러나도록 한다.
+- text: 천도복숭아는 사방 0.5cm의 주사위모양으로 썰어 설탕을 뿌려 30분 정도 절인다.
+- text: 배를 모양 틀로 찍어 0.3cm 두께로 썰어 설탕에 절인다.
+- text: 오미자 국물을 면보에 거르고 시럽으로 단맛을 맞춘다.
+- text: 4에 복숭아와 배를 넣는다.
+- text: 5에 잣과 얼음을 띄운다.

@@ -1,0 +1,85 @@
+id: maekomhan_jjimdalg_tnmsvf
+title: 매콤한 찜닭
+cuisine: 한식
+difficulty: 1
+cook_time_min: 13
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 사실 만들기 너무 쉬워서 올릴까 말까 고민했습니다.
+  video_url: https://www.youtube.com/watch?v=TNmsvf9zL7Q
+  published_at: '2026-05-11'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- name: 닭다리살
+  raw_text: 닭다리살 정육 500g / 닭다리살
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- name: 감자
+  raw_text: 감자
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 찜닭 소스
+  raw_text: 찜닭 소스
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 통깨
+  raw_text: 통깨
+  role: garnish
+  optional: false
+  amount: null
+  unit: null
+- name: 당면
+  raw_text: 당면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 닭다리살 정육은 굽는다.
+  technique: 구이
+- text: 물 500ml, 감자, 당면, 찜닭 소스 6스푼, 고추장 1/2스푼, 고춧가루 1스푼을 더한 뒤 약불에서 10분 이상 끓인다.
+  technique: 찜
+- text: 대파 더한 뒤 2~3분간 더 끓인다.
+  technique: 끓이기
+- text: 통깨를 뿌려 마친다.
+  technique: null

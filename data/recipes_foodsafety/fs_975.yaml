@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_975
+title: 알록달록 시금치 당근 수제비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 975. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: spinach
+  raw_text: 시금치 10g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 15g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 50g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 10g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 15g
+  role: sub
+- ingredient: scallion
+  raw_text: 실파 5g
+  role: sub
+- ingredient: anchovy_stock
+  raw_text: 멸치육수 200g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 2g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 1g
+  role: sub
+steps:
+- text: 시금치와 당근은 각각 믹서에 물을 넣고 간다.
+- text: 밀가루는 반으로 나눠 시금치 즙과 당근 즙을 넣고 소금을 넣어 각각 반죽 한다.
+- text: 2의 반죽을 직경 1.5cm 정도의 동그란 경단모양으로 빚는다.
+- text: 감자와 애호박은 1.5cm 주사위모양으로 자르고 실파는 2cm 길이로 썬다.
+- text: 멸치 육수에 감자, 수제비 경단, 애호박, 다진마늘, 실파 순서로 넣고 끓인다.
+- text: 5에 간장과 소금으로 간한다.

@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3763
+title: 애호박전 멘보샤와 콩국뇨끼
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3763. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 주재료 애호박 150g
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우 100g
+  role: sub
+- ingredient: null
+  raw_text: 전분 35g
+  role: sub
+- ingredient: frying_mix
+  raw_text: 튀김가루 200g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 15g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 50g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 60g
+  role: sub
+- ingredient: null
+  raw_text: 콩물 100g
+  role: sub
+- ingredient: null
+  raw_text: 양념 식용유 180g
+  role: sub
+- ingredient: vinegar
+  raw_text: 사과식초 20g
+  role: sub
+- ingredient: null
+  raw_text: 알룰로스 20g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 1g
+  role: sub
+steps:
+- text: 애호박은 둥글게 썰고 키친타월에 올려 수분을 제거한다. 새우는 칼로 다진 뒤 전분(15g)을 섞어 애호박에 올린다.
+- text: 애호박 사이에 다진 새우를 넣고 튀김가루를 묻힌다. 식용유를 넣고 160°C로 예열한 팬에서 튀겨 멘보샤를 만든다.
+- text: 볼에 잘게 다진 오이(15g), 양파, 토마토를 넣고 사과식초, 알룰로스(10g)로 간하여 샐러드를 만든다.
+- text: 감자를 잘게 썰어 10분간 찐다. 찐 감자를 볼에 담고 소금(0.5g), 후추로 간하고 전분(20g)을 섞어 뇨끼 반죽을 만든다.
+- text: 뇨끼 반죽을 한입 크기로 떼어 동그랗게 만들고 포크로 모양을 낸 뒤 끓는 물에 데쳐 뇨끼를 만든다. 볼에 콩물을 담고 알룰로스(10g), 소금(0.5g)으로 간하고 뇨끼를 넣는다.
+- text: 그릇에 멘보샤, 샐러드, 콩국뇨끼를 담고 채 썬 오이(5g)를 뇨끼에 고명으로 올려 마무리한다.

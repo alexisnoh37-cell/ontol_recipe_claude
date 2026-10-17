@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_275
+title: 해물김치찌개
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 275. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: webfoot_octopus
+  raw_text: 주꾸미(40g)
+  role: sub
+- ingredient: kimchi
+  raw_text: 김치(40g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(3g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(10g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(3g)
+  role: sub
+- ingredient: null
+  raw_text: 배즙(10g)
+  role: sub
+- ingredient: enoki
+  raw_text: 팽이버섯(3g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(5g)
+  role: sub
+- ingredient: anchovy
+  raw_text: 멸치(10g)
+  role: sub
+steps:
+- text: 냄비에 육수 재료를 넣고 끓이다가 물이 끓어오르면 다시마를 건지고 조금 더 끓여 육수를 우려낸다.
+- text: 주꾸미는 내장과 입, 눈을 제거하고 4cm 크기로 잘라 준비한다.
+- text: 김치는 국물을 꽉 짜서 한입 크기로 썰고, 무는 편 썰고, 마늘은 다지고, 대파는 어슷 썰고, 양파는 굵게 채 썰고, 두부는 납작하게 썬다.
+- text: 냄비에 참기름을 두르고, 김치, 무, 양파가 투명해질 때까지 볶다가 육수를 붓고 끓으면 주꾸미, 다진 마늘을 넣어 더 끓인다.
+- text: 김칫국물과 배즙을 2:1로 섞은 뒤 찌개에 넣어 간을 맞춘다.
+- text: 두부, 팽이버섯을 넣고 한소끔 끓여 마무리한다

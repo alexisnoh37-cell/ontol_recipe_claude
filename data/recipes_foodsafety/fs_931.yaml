@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_931
+title: 향향 볶음밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 931. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: potato
+  raw_text: 감자 10g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 10g
+  role: sub
+- ingredient: null
+  raw_text: 목이버섯 5g
+  role: sub
+- ingredient: chicken
+  raw_text: 닭고기 15g
+  role: sub
+- ingredient: chicken_stock
+  raw_text: 닭 육수 10g
+  role: sub
+- ingredient: rice
+  raw_text: 밥 50g
+  role: sub
+- ingredient: null
+  raw_text: 파 9g
+  role: sub
+- ingredient: null
+  raw_text: 식물성기름 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+steps:
+- text: 닭고기를 깍둑썰기한다.
+- text: 감자, 오이는 깍둑썰기 하고 목이버섯은 물에 불린다.
+- text: 기름을 두른 팬에 1을 넣고 볶다가 닭 육수를 넣는다.
+- text: 닭고기가 익으면 감자, 목이버섯을 넣고 끓인 뒤 건진다.
+- text: 깨끗한 팬에 기름을 두르고 밥과 송송 썬 파를 넣고 볶는다.
+- text: 5에 오이와 익힌 닭고기, 목이버섯, 소금을 넣어 볶는다.

@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_489
+title: 닭강정
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 489. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(200g)
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름(400g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(20g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: honey
+  raw_text: 꿀(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(10g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 요거트(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(20g)
+  role: sub
+- ingredient: ketchup
+  raw_text: 케첩(10g)
+  role: sub
+steps:
+- text: 닭은 깨끗이 씻어 여러 번 토막을 낸다.
+- text: 토막 낸 닭을 카레가루와 녹말가루에 버무려 놓는다.
+- text: 양파와 당근, 파프리카, 오이는 크기를 작은 깍두기 모양으로 썰어 준비한다.
+- text: 팬에 식용유를 두르고 다진마늘를 살짝 볶은 뒤 저염간장에 레몬즙과 설탕, 꿀, 볶은 마늘을 넣어 섞는다.
+- text: 요거트에 썰어 놓은 양파와 당근, 파프리카, 오이, 케첩을 넣어 섞어준다.
+- text: 튀김기름 온도가 170℃가 되면 버무려 놓은 닭(②)을 넣고 두 번 튀겨, 기름을 제거하고, ④번 소스에 살짝 버무려 접시에 담아, 준비한 요거트소스(⑤)를 올려 완성한다.

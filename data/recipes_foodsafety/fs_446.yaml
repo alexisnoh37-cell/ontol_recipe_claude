@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_446
+title: 버섯만두찜
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 446. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: wheat_flour
+  raw_text: 밀가루(100g)
+  role: sub
+- ingredient: null
+  raw_text: 시금치가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 호박가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 백년초가루(10g)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(3g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(30g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(30g)
+  role: sub
+- ingredient: tofu
+  raw_text: 두부(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.5g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(200g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+steps:
+- text: 밀가루를 세 개로 나눠 호박가루와 백년초가루, 시금치가루를 각각 넣고 물, 식용유, 소금을 넣어 반죽 한 후 비닐봉지에 담아 1~2시간 정도 숙성 시킨다.
+- text: 양파, 마늘, 버섯들은 입자있게 다져 준비한다.
+- text: 두부는 소창을 이용하여 물기를 짜낸다.
+- text: 새우는 껍질과 내장을 제거하고 다져, 마늘을 넣고 골고루 섞어준다.
+- text: 다진 채소(②), 으깬 두부(③), 새우 (④)를 넣고 섞어서 만두소를 만들어 준다.
+- text: 숙성된 만두 반죽(①)을 얇게 밀어 꽃 모양으로 찍어 만두소(⑤)를 넣은 뒤, 반죽을 맞잡아 모양을 만든다. 우유와 생크림을 끓인 뒤 만들어 놓은 만두를 넣고 은근히 찜을 하듯이 익혀 완성한다.

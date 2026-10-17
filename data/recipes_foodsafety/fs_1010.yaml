@@ -1,0 +1,64 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1010
+title: 니고랭
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1010. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 달걀물 10g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 1g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 3g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 1g
+  role: sub
+- ingredient: chicken_breast
+  raw_text: 닭가슴살 12g
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우 12g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 12g
+  role: sub
+- ingredient: bok_choy
+  raw_text: 청경채 20g
+  role: sub
+- ingredient: pasta
+  raw_text: 스파게티면 40g
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 15g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 적당량
+  role: sub
+- ingredient: null
+  raw_text: 소야소스
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3g
+  role: sub
+- ingredient: null
+  raw_text: 발사믹식초 1g
+  role: sub
+- ingredient: oyster_sauce
+  raw_text: 굴소스 2g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 3g
+  role: sub
+steps:
+- text: 팬에 기름을 두르고 홍고추와 마늘을 향이 날 때까지 볶는다.
+- text: 1에 달걀물을 넣고 달걀이 부드럽게 부풀어 오르도록 기다렸다가 반 정도 익었을 때 가볍게 젓는다.
+- text: 2에 닭고기, 새우, 양파를 넣고 볶는다.
+- text: 3에 준비된 스파게티면을 넣고 한 번 볶은 뒤 소야소스를 넣고 면에 간이 충분히 베이도록 볶는다.
+- text: 면이 볶아지면 청경채, 방울토마토를 넣고 살짝 볶는다.
+- text: 5에 차갑게 한 버터를 넣어 소스에 윤기와 농도가 나도록 한다.

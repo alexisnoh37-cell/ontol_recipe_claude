@@ -1,0 +1,91 @@
+id: nurungji_dalgdari_whvyyj
+title: 누룽지 닭다리
+cuisine: 한식
+difficulty: 1
+cook_time_min: 7
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 제발 복날에 삼계탕 사 먹지 마세요 .
+  video_url: https://www.youtube.com/watch?v=WhVYyjxumfg
+  published_at: '2026-07-18'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- name: 닭다리살
+  raw_text: 닭다리살 500g
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- name: 밥
+  raw_text: 밥
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 스위트콘
+  raw_text: 스위트콘
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 마늘
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 식초
+  raw_text: 식초 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 대파
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 설탕
+  raw_text: 설탕 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 2
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 닭다리살을 익힌 다음 덜어 둔다.
+  technique: 구이
+- text: 밥 1공기, 물 1/2컵, 스위트콘 3~4스푼을 펼쳐준 뒤 구운 닭다리살을 얹는다.
+  technique: null
+- text: 뚜껑 덮고 중불에서 7분 끓인다.
+  technique: 끓이기
+- text: 양념장을 올려 곁들인다.
+  technique: null

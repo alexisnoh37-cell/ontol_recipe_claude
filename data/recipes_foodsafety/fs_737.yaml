@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_737
+title: 홍합 쌀옹심이국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 737. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: rice_flour
+  raw_text: 쌀가루 50g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 25g
+  role: sub
+- ingredient: mussel
+  raw_text: 홍합살 20g
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박 20g
+  role: sub
+- ingredient: null
+  raw_text: 달걀노른자 20g
+  role: sub
+- ingredient: onion
+  raw_text: 양파 5g
+  role: sub
+- ingredient: null
+  raw_text: 다진 파 5g
+  role: sub
+- ingredient: null
+  raw_text: 국멸치 3g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 2.5g
+  role: sub
+- ingredient: green_chili
+  raw_text: 청고추 2.5g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2.5g
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마 2g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 국간장 2g
+  role: sub
+- ingredient: null
+  raw_text: 현미유 1g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.3g
+  role: sub
+steps:
+- text: 물 1컵 반에 홍합, 국멸치, 건다시마, 양파를 넣고 멸치다시마국물 1컵을 내고 다시마는 건져 채 썬다.
+- text: 감자는 껍질을 벗겨 찜통에 찐 후 으깬다.
+- text: 2의 재료에 쌀가루, 달걀노른자, 현미유, 소금을 넣고 반죽하여 구슬크기의 옹심이를 10개 정도 만든다.
+- text: 호박은 돌려깍기하여 2cm 가량으로 채 썰고 파, 홍고추, 청고추는 어슷썰기 한다.
+- text: 멸치다시마국물이 끓으면 옹심이를 넣고 익어서 떠오르면 홍합, 호박, 다진 파, 다진 마늘, 다시마를 넣고 국간장으로 간을 한다.
+- text: 홍고추와 청고추로 장식한다.

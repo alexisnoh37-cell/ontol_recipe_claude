@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_785
+title: 라비올리 크림소스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 785. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파 17.5g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 2.1g
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우살 70g
+  role: sub
+- ingredient: crab
+  raw_text: 게살 17.5g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 4.2g
+  role: sub
+- ingredient: null
+  raw_text: 크림 17.5g
+  role: sub
+- ingredient: parmesan
+  raw_text: 파마산치즈 4.9g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 2.1g
+  role: sub
+- ingredient: null
+  raw_text: 라비올리 반죽
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 중력분 35g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 강력분 100g
+  role: sub
+- ingredient: egg
+  raw_text: 달걀 38.5g
+  role: sub
+- ingredient: spinach
+  raw_text: 시금치 3.5g
+  role: sub
+- ingredient: null
+  raw_text: 비트 3.5g
+  role: sub
+steps:
+- text: 양파, 마늘, 새우살, 게살을 다진다. 팬에 마늘과 양파를 볶다가 새우살과 게살을 넣고 볶아 식힌다.
+- text: 시금치는 데친 뒤 믹서에 갈아 즙을 내고, 비트도 갈아 체에 걸러 즙을 낸 뒤 밀가루, 달걀과 섞어 라비올리 반죽을 색깔별로 만든다.
+- text: 라비올리 반죽을 0.1mm 두께로 밀어 편다.
+- text: 반죽을 5X5cm크기로 자른 후 볶아둔 새우살 등의 속을 가운데 놓고 삼각형으로 반을 접어 모서리를 봉한다.
+- text: 끓는 물에 라비올리를 삶는다.
+- text: 팬에 식용유를 넣고 다진 양파를 볶다가 크림을 넣고 졸인 뒤 라비올리, 파마산치즈, 비트를 넣는다.

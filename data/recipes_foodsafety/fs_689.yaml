@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_689
+title: 전복영양밥과 부추양념장
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 689. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: null
+  raw_text: 전복영양밥
+  role: sub
+- ingredient: rice
+  raw_text: 쌀 90g
+  role: sub
+- ingredient: null
+  raw_text: 전복살 40g
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이 버섯 13g
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯 15g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 15g
+  role: sub
+- ingredient: null
+  raw_text: 건다시마 5g
+  role: sub
+- ingredient: null
+  raw_text: 부추양념장
+  role: sub
+- ingredient: null
+  raw_text: 다시마국물 5g
+  role: sub
+- ingredient: chive
+  raw_text: 부추 5g
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 5g
+  role: sub
+- ingredient: scallion
+  raw_text: 실파 2.5g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 2.5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 0.5g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 0.5g
+  role: sub
+steps:
+- text: 물 2컵에 건다시마를 넣어 다시마국물을 1컵 반 정도를 낸다.
+- text: 우린 다시마와 전복살은 잘게 다진다.
+- text: 표고버섯, 양송이버섯, 당근은 0.5~0.7cm 주사위모양으로 썬다.
+- text: 쌀은 씻어 2와 3을 넣고 다시마국물 1컵 반을 부어 30분 정도 불린 후 밥을 짓는다.
+- text: 부추와 실파는 다지고 참기름, 다진 마늘, 통깨, 다시마국물, 간장을 넣어 양념장을 만든다.
+- text: 전복영양밥과에 부추양념장을 곁들인다.

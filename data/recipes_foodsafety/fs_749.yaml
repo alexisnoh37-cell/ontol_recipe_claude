@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_749
+title: 누룽지굴죽
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 749. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: oyster
+  raw_text: 굴 50
+  role: sub
+- ingredient: null
+  raw_text: 누룽지 50
+  role: sub
+- ingredient: null
+  raw_text: 다시마국물(건다시마 2, 물 450)
+  role: sub
+- ingredient: chive
+  raw_text: 부추 10
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 3
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2
+  role: sub
+- ingredient: null
+  raw_text: 파래김 0.5
+  role: sub
+steps:
+- text: 굴은 소금물에 흔들어 씻어 굵게 다진다.
+- text: 부추는 씻어 송송 썬다.
+- text: 누룽지에 다시마국물을 넣고 2분간 불린 뒤 끓인다.
+- text: 누룽지가 거의 퍼졌을 때 굴을 넣고 살짝 끓인다.
+- text: 죽이 퍼지면 부추를 넣고 잠시 끓인다.
+- text: 그릇에 담고 구운 파래김을 부스러뜨려 얹어낸다.

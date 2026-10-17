@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1092
+title: 고구마빵&과일잼
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1092. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: sweet_potato
+  raw_text: 고구마(75g)
+  role: sub
+- ingredient: null
+  raw_text: 제철과일(25g)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(1/2개)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(7g)
+  role: sub
+- ingredient: null
+  raw_text: 크랜베리(7g)
+  role: sub
+- ingredient: almond
+  raw_text: 아몬드(5g)
+  role: sub
+- ingredient: walnut
+  raw_text: 호두(5g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(3g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(7g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(3g)
+  role: sub
+steps:
+- text: 고구마는 껍질을 벗기고 적당한 크기로 썰어 삶은 뒤 50g은 으깨고 25g은 작게 자른다.
+- text: 으깬 고구마에 달걀노른자, 우유를 넣고 섞는다.
+- text: 달걀흰자는 머랭을 만들어 2번과 섞은 뒤 크랜베리, 잘라둔 고구마와 살살 섞는다.
+- text: 유리용기 안쪽에 올리브오일을 바르고 잘게 부순 아몬드와 호두를 뿌린 뒤 3번을 담고 전자레인지로 7분 간 가열한다.
+- text: 제철과일을 중불에서 10분 간 끓인 뒤 올리고당을 넣고 한소끔 끓이고, 레몬즙을 넣고 다시 한소끔 끓여 저당 과일잼을 만든다.
+- text: 4번을 접시에 뒤집어 담고 저당 과일잼을 곁들인다.

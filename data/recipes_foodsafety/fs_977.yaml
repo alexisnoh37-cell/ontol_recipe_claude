@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_977
+title: 인도식만두구이(사모사)
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 977. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+ingredients:
+- ingredient: null
+  raw_text: 양파다진것 15g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 2g
+  role: sub
+- ingredient: null
+  raw_text: 생강다진것 1g
+  role: sub
+- ingredient: null
+  raw_text: 청고추다진것 1g
+  role: sub
+- ingredient: null
+  raw_text: 새우다진것 25g
+  role: sub
+- ingredient: butter
+  raw_text: 버터 1g
+  role: sub
+- ingredient: null
+  raw_text: 레몬주수 1g
+  role: sub
+- ingredient: null
+  raw_text: 생선육수 3g
+  role: sub
+- ingredient: curry_powder
+  raw_text: 카레가루 2g
+  role: sub
+- ingredient: tomato_paste
+  raw_text: 토마토페이스트 3g
+  role: sub
+- ingredient: null
+  raw_text: 달걀물 5g
+  role: sub
+- ingredient: null
+  raw_text: 춘권피 20g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 1g
+  role: sub
+steps:
+- text: 양파, 마늘, 생강, 고추, 새우를 다진다.
+- text: 버터를 두른 팬에 양파, 생강, 마늘, 고추, 카레가루 순으로 볶는다.
+- text: 2에 토마토페이스트, 레몬즙, 새우를 넣고 볶는다.
+- text: 3에 육수를 약간 붓고 약한 불로 끓이면서 수분을 증발시킨 뒤 볼에 담아 식힌다.
+- text: 춘권피에 4를 적당히 넣고 끝부분에 달걀물을 발라 붙여 완성한다.
+- text: 겉면에 올리브 오일을 약간 발라 오븐 팬에 놓고 170℃ 오븐에서 바삭하게 굽는다.

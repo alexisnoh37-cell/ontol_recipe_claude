@@ -1,0 +1,67 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: jjimdak
+title: 찜닭
+cuisine: 한식
+difficulty: 2
+cook_time_min: 50
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: chicken
+  raw_text: 닭고기(볶음탕용) 600g
+  role: main
+- ingredient: potato
+  raw_text: 감자 1개
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 1/3개
+  role: sub
+- ingredient: onion
+  raw_text: 양파 1/2개
+  role: sub
+- ingredient: glass_noodles
+  raw_text: 당면 50g(불린 것)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 1/2대
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 1개
+  role: garnish
+  optional: true
+- ingredient: soy_sauce
+  raw_text: 간장 5큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 2큰술
+  role: seasoning
+- ingredient: corn_syrup
+  raw_text: 물엿 1큰술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1큰술
+  role: seasoning
+- ingredient: black_pepper
+  raw_text: 후추 약간
+  role: seasoning
+taste:
+  spicy: 1
+  salty: 3
+  sweet: 3
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 닭고기를 끓는 물에 한 번 데쳐 헹군다.
+  technique: 데치기
+- text: 냄비에 닭고기, 간장, 설탕, 물엿, 마늘, 물을 넣고 20분 끓인다.
+  technique: 끓이기
+- text: 감자와 당근을 넣고 10분, 양파와 불린 당면을 넣고 5분 더 조린다.
+  technique: 조림
+- text: 대파와 홍고추를 올리고 후추를 뿌려 마무리한다.
+  technique: 조림

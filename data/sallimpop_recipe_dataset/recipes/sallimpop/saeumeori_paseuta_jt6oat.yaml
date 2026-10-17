@@ -1,0 +1,81 @@
+id: saeumeori_paseuta_jt6oat
+title: 새우머리 파스타
+cuisine: 양식
+difficulty: 2
+cook_time_min: 13
+servings: 1
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 새우머리 파스타
+  video_url: https://www.youtube.com/watch?v=Jt6oATCot94
+  published_at: '2025-09-24'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 새우 머리
+  raw_text: 새우 머리 10개
+  role: main
+  optional: false
+  amount: 10
+  unit: 개
+- name: 파스타면
+  raw_text: 파스타면 1인분 / 파스타면
+  role: sub
+  optional: false
+  amount: 1
+  unit: 인분
+- name: 마늘
+  raw_text: 마늘 5쪽 / 마늘
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 쪽
+- name: 페퍼론치노
+  raw_text: 페퍼론치노 3개
+  role: sub
+  optional: false
+  amount: 3
+  unit: 개
+- name: 올리브오일
+  raw_text: 올리브오일 5스푼
+  role: sub
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 참치액
+  raw_text: 참치액 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 소금
+  raw_text: 소금 1/4스푼
+  role: seasoning
+  optional: false
+  amount: 0.25
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 1/4 넣고 12분간 삶아 주세요.
+  technique: 끓이기
+- text: 삶는 동안 재료 준비하면 됩니다.
+  technique: 끓이기
+- text: 넣고 새우 머리 이용해 오일 감침맛 다섯 쪽 세페러치도 세 개 부셔 넣고.
+  technique: null
+- text: 스푼만 넣는다. 여기에 완성된면 넣고 면수 세 스푼 넣어 줄게요.
+  technique: null
+- text: 1분간만 볶아서면 코팅해 주시면 치즈 갈아넣어 주면 훨씬 맛이 더.
+  technique: 볶음

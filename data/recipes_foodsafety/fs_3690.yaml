@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3690
+title: 세 가지 맛 공기과자
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3690. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: black_soybean
+  raw_text: 검은콩 20g
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박 70g
+  role: sub
+- ingredient: null
+  raw_text: 비트 70g
+  role: sub
+- ingredient: null
+  raw_text: 달걀흰자 120g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 10g
+  role: sub
+- ingredient: null
+  raw_text: 달걀노른자 20g
+  role: sub
+- ingredient: null
+  raw_text: 박력 밀가루 24g
+  role: sub
+- ingredient: null
+  raw_text: 허브가루 약간
+  role: sub
+steps:
+- text: 냄비에 검은콩을 넣고 20분 동안 삶아 체에 거르고 으깨어 검은콩 퓨레를 만든다.
+- text: 달걀흰자에 설탕을 넣으며 단단한 머랭을 만든다. 달걀노른자, 박력 밀가루를 머랭에 넣고 자르듯이 섞어 머랭 반죽을 만든다.
+- text: 퓨레에 머랭 반죽을 나누어 섞어 3가지 반죽을 만든다.
+- text: 종이컵에 각각의 반죽을 2/3 정도 넣고, 전자레인지에 50~55초 동안 굽는다.
+- text: 10분 동안 식혀 종이컵에서 분리한다
+- text: 모양을 내어 자른 후 허브가루를 뿌리고 접시에 담아 마무리한다.

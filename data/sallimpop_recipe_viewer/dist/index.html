@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="살림팝 레시피 169개를 검색하고 분류별로 살펴보는 레시피 카탈로그">
+  <meta name="theme-color" content="#173d2d">
+  <title>오늘 뭐 먹지? · 살림팝 레시피</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="처음으로">
+      <span class="brand-mark" aria-hidden="true">ㅅ</span>
+      <span><b>살림팝 레시피</b><small>집밥을 고르는 가장 쉬운 방법</small></span>
+    </a>
+    <nav class="header-actions" aria-label="바로가기">
+      <button class="ghost-button" id="randomRecipe" type="button">
+        <span aria-hidden="true">↻</span> 아무거나 골라줘
+      </button>
+      <a class="youtube-link" href="https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D" target="_blank" rel="noreferrer">YouTube ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow">169가지 집밥 아카이브</span>
+        <h1 id="hero-title">오늘은 어떤 집밥이<br><em>당기세요?</em></h1>
+        <p>살림팝의 공개 레시피를 한곳에 모았습니다. 재료나 요리 이름을 검색하고, 시간과 난이도로 가볍게 골라보세요.</p>
+        <label class="hero-search">
+          <span class="search-icon" aria-hidden="true"></span>
+          <span class="sr-only">레시피 검색</span>
+          <input id="searchInput" type="search" placeholder="예: 두부, 닭갈비, 파스타" autocomplete="off">
+          <kbd>Ctrl K</kbd>
+        </label>
+        <div class="quick-searches" aria-label="추천 검색어">
+          <span>많이 찾는 재료</span>
+          <button type="button" data-query="두부">두부</button>
+          <button type="button" data-query="계란">계란</button>
+          <button type="button" data-query="돼지고기">돼지고기</button>
+          <button type="button" data-query="파스타">파스타</button>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="plate">
+          <div class="plate-ring"></div>
+          <span class="food food-a">●</span>
+          <span class="food food-b">◒</span>
+          <span class="food food-c">✦</span>
+          <span class="food food-d">〰</span>
+          <span class="food food-e">●</span>
+        </div>
+        <div class="hero-note"><b>오늘의 한 그릇</b><span>빠르고 든든한 집밥</span></div>
+      </div>
+    </section>
+
+    <section class="summary-strip" aria-label="데이터 요약">
+      <div><strong id="totalRecipes">169</strong><span>수집 레시피</span></div>
+      <div><strong id="koreanRecipes">135</strong><span>한식 레시피</span></div>
+      <div><strong id="quickRecipes">–</strong><span>20분 이내</span></div>
+      <div><strong id="ingredientTypes">–</strong><span>서로 다른 재료</span></div>
+    </section>
+
+    <section class="catalog-section" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow dark">Recipe collection</span>
+          <h2 id="catalog-title">레시피 둘러보기</h2>
+        </div>
+        <p>카드를 눌러 재료와 조리 순서를 확인하세요.</p>
+      </div>
+
+      <div class="filter-bar" aria-label="레시피 필터">
+        <div class="cuisine-tabs" id="cuisineTabs" role="group" aria-label="요리 분류">
+          <button class="active" type="button" data-cuisine="전체">전체</button>
+          <button type="button" data-cuisine="한식">한식</button>
+          <button type="button" data-cuisine="양식">양식</button>
+          <button type="button" data-cuisine="일식">일식</button>
+          <button type="button" data-cuisine="중식">중식</button>
+          <button type="button" data-cuisine="기타">기타</button>
+        </div>
+        <div class="select-group">
+          <label>난이도
+            <select id="difficultyFilter">
+              <option value="all">전체</option>
+              <option value="1">쉬움</option>
+              <option value="2">보통</option>
+              <option value="3">어려움</option>
+            </select>
+          </label>
+          <label>조리 시간
+            <select id="timeFilter">
+              <option value="all">전체</option>
+              <option value="15">15분 이내</option>
+              <option value="30">30분 이내</option>
+              <option value="60">60분 이내</option>
+            </select>
+          </label>
+          <label>정렬
+            <select id="sortOrder">
+              <option value="recommended">추천순</option>
+              <option value="time">빠른 순</option>
+              <option value="ingredients">재료 적은 순</option>
+              <option value="title">이름순</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="catalog-layout">
+        <aside class="insights" aria-label="레시피 통계">
+          <div class="insight-card cuisine-card">
+            <span class="insight-label">분류 한눈에 보기</span>
+            <div class="donut-wrap">
+              <div class="donut" id="cuisineDonut"><span>169<small>recipes</small></span></div>
+            </div>
+            <div class="legend" id="cuisineLegend"></div>
+          </div>
+          <div class="insight-card">
+            <span class="insight-label">자주 쓰는 재료</span>
+            <div class="ingredient-rank" id="ingredientRank"></div>
+          </div>
+          <div class="review-note">
+            <span aria-hidden="true">!</span>
+            <p><b>검수 전 데이터예요</b>시간·난이도·맛 수치는 추정값이 포함되어 있습니다.</p>
+          </div>
+        </aside>
+
+        <div class="results-panel">
+          <div class="results-meta">
+            <p><b id="resultCount">169</b>개의 레시피</p>
+            <button id="clearFilters" type="button">필터 초기화</button>
+          </div>
+          <div class="recipe-grid" id="recipeGrid" aria-live="polite"></div>
+          <div class="empty-state" id="emptyState" hidden>
+            <span aria-hidden="true">⌕</span>
+            <h3>조건에 맞는 레시피가 없어요</h3>
+            <p>검색어나 필터를 조금 넓혀보세요.</p>
+            <button type="button" id="emptyReset">전체 레시피 보기</button>
+          </div>
+          <button class="load-more" id="loadMore" type="button">레시피 더 보기</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><b>살림팝 레시피 아카이브</b><span>공개 영상 정보를 보기 좋게 정리한 비공식 카탈로그입니다.</span></div>
+    <span>데이터 기준일 2026.10.16 · 모든 레시피는 draft</span>
+  </footer>
+
+  <dialog id="recipeDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-shell">
+      <button class="dialog-close" type="button" aria-label="닫기">×</button>
+      <div id="dialogContent"></div>
+    </div>
+  </dialog>
+
+  <script src="recipes-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

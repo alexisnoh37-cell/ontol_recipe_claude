@@ -1,0 +1,86 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: ggareubo_buldalg_ddeogboggi_exlla0
+title: 까르보 불닭 떡볶이
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=Exlla0AkUUI
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; cuisine '기타'→'한식'(vocab에 없음, 검수 필요)
+ingredients:
+- ingredient: null
+  raw_text: 까르보 불닭볶음면
+  role: main
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sliced_cheese
+  raw_text: 슬라이스 치즈 / 치즈 3장
+  role: sub
+  optional: false
+  amount: 3
+  unit: 장
+- ingredient: tteokbokki_rice_cake
+  raw_text: 떡볶이 떡
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sausage
+  raw_text: 비엔나 소시지 / 비엔나소시지
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: null
+  raw_text: 불닭 스프
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: mayonnaise
+  raw_text: 마요네즈 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: gochujang
+  raw_text: 고추장 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: egg
+  raw_text: 노른자
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: milk
+  raw_text: 우유 2컵
+  role: sub
+  optional: false
+  amount: 2
+  unit: 컵
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 냄비에 치즈 3장, 마요네즈 1스푼, 노른자, 불닭 스프, 고추장 1/2스푼을 더한 뒤 섞는다.
+  technique: 무침
+- text: 우유 2컵과 물 1컵을 붓고 끓인다.
+  technique: 끓이기
+- text: 끓기 시작하면 면, 떡, 비엔나소시지를 더한다.
+  technique: 끓이기
+- text: 면과 떡이 익고 소스가 꾸덕해질 때까지 끓이면 마친다.
+  technique: 끓이기

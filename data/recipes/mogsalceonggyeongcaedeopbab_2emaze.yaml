@@ -1,0 +1,74 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: mogsalceonggyeongcaedeopbab_2emaze
+title: 목살청경채덮밥
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=2emAzeOal2U
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- ingredient: pork_neck
+  raw_text: 목살 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: bok_choy
+  raw_text: 청경채
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: garlic
+  raw_text: 통마늘
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: oyster_sauce
+  raw_text: 굴소스 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: cooking_oil
+  raw_text: 식용유
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: sugar
+  raw_text: 설탕 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: rice
+  raw_text: 밥
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 식용유 두른 팬에 목살을 충분히 굽는다.
+  technique: 구이
+- text: 통마늘을 더한 뒤 굽는다.
+  technique: 구이
+- text: 청경채, 설탕 2스푼, 돈가스소스 2스푼, 굴소스 2스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 밥 위에 다 올려주면 덮밥 마친다.
+  technique: null

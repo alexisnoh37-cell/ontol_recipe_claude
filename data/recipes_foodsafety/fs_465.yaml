@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_465
+title: 치킨완자스프
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 465. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: butter
+  raw_text: 버터(20g)
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루(20g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(100g)
+  role: sub
+- ingredient: heavy_cream
+  raw_text: 생크림(20g)
+  role: sub
+- ingredient: null
+  raw_text: 브로컬리(30g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(100g)
+  role: sub
+- ingredient: null
+  raw_text: 닭고기살(100g)
+  role: sub
+- ingredient: jujube
+  raw_text: 대추(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.05g)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(5g)
+  role: sub
+steps:
+- text: 닭고기살은 곱게 다져 준비한다.
+- text: 대추는 씨를 빼고 다진다.
+- text: 당근과 양파, 표고버섯, 마늘은 다진다.
+- text: 삶은 브로컬리는 우유와 함께 갈아 놓는다.
+- text: 닭고기살에 대추(②)와 채소(③), 소금, 후춧가루, 참기름을 넣어 골고루 섞는다.
+- text: 섞여진 닭고기살(⑤)을 동글동글 하게 완자를 지어 살짝 데쳐내고, 냄비에 버터와 밀가루를 넣어 볶다가, 육수를 넣고 끓인 뒤 우유와 브로컬리 갈은 것 (④)과 생크림을 넣어 한 소큼 끓여 완성 한다.

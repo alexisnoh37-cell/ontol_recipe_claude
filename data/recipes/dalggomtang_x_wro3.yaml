@@ -1,0 +1,78 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: dalggomtang_x_wro3
+title: 닭곰탕
+cuisine: 한식
+difficulty: 1
+cook_time_min: 11
+servings: null
+source: https://www.youtube.com/watch?v=X_Wro3Zw5BQ
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음
+ingredients:
+- ingredient: chicken_thigh
+  raw_text: 닭다리살 정육 300g / 닭다리살
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- ingredient: green_onion
+  raw_text: 대파
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: glass_noodles
+  raw_text: 당면 / 당면 한 줌
+  role: sub
+  optional: false
+  amount: 1
+  unit: 줌
+- ingredient: garlic
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: black_pepper
+  raw_text: 후추
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+- ingredient: fish_sauce
+  raw_text: 액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: salt
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 닭 다리 살은 소금 간만 해주고 겉면을 굽는다.
+  technique: 구이
+- text: 물 500ml, 멸치 액젓 1스푼, 굴 소스 1스푼, 설탕 1/2스푼, 불리지 않은 당면 한 줌을 더한 뒤 약불에서 7~8분간 끓인다.
+  technique: 끓이기
+- text: 다진 마늘 1/2스푼, 대파 듬뿍, 후추를 뿌려주고 2~3분간 더 끓인다.
+  technique: 끓이기

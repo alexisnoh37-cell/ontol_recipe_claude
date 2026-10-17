@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_233
+title: 가지연어구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 233. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 가지(40g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(20g)
+  role: sub
+- ingredient: salmon
+  raw_text: 연어(200g)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리가루(1g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브유(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 소스 사과(20g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(30g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬즙(5g)
+  role: sub
+steps:
+- text: 가지는 어슷 썰고, 토마토는 반 자른다.
+- text: 연어는 파슬리와 올리브유에 재운다.
+- text: 마늘은 노릇하게 굽는다.
+- text: 재운 연어와 가지, 토마토는 180℃로 예열한 오븐에 10분 정도 굽는다.
+- text: 사과는 잘게 다져 유자청과 레몬즙을 넣고 살짝 볶아 소스를 만든다.
+- text: 연어, 가지, 토마토, 구운 마늘을 담고 소스를 얹어 마무리한다.

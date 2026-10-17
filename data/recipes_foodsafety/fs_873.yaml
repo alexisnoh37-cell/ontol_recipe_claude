@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_873
+title: 고등어구이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 873. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: mackerel
+  raw_text: 고등어 70g
+  role: sub
+- ingredient: wheat_flour
+  raw_text: 밀가루 4g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨발사믹소스
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 1g
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일 13g
+  role: sub
+- ingredient: null
+  raw_text: 발사믹식초 6g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 4g
+  role: sub
+steps:
+- text: 손질된 고등어는 5cm 길이로 토막낸 뒤 껍질에 칼집을 넣는다.
+- text: 칼집 낸 고등어에 밀가루를 묻힌다.
+- text: 오븐을 200℃로 예열한다.
+- text: 간장, 올리브오일, 발사믹식초, 꿀을 섞어 소스를 완성한다.
+- text: 고등어를 팬에 넣어 오븐에 굽는다.
+- text: 저나트륨발사믹소스와 구운 고등어를 함께 제공한다.

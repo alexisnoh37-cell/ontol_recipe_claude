@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_410
+title: 전복내장밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 410. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: abalone
+  raw_text: 전복 100g
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 칵테일새우 25g
+  role: sub
+- ingredient: manila_clam
+  raw_text: 바지락살 25g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 15g
+  role: sub
+- ingredient: lotus_root
+  raw_text: 연근 25g
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박 25g
+  role: sub
+- ingredient: glutinous_rice
+  raw_text: 찹쌀 50g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 7g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 15g
+  role: sub
+- ingredient: null
+  raw_text: 소주 15g
+  role: sub
+- ingredient: null
+  raw_text: 흰후추 1g
+  role: sub
+- ingredient: null
+  raw_text: 마늘기름 15g
+  role: sub
+steps:
+- text: 전복은 손질해 잘라주고 전복내장과 소주를 넣어서 믹서에 간다.
+- text: 참기름과 마늘기름을 섞어서 불린 쌀을 볶는다.
+- text: 연근, 당근, 단호박은 작은 깍두기 모양으로 잘라 각각 볶아준다.
+- text: 전복은 작은 깍두기 모양으로 잘라서 칵테일새우, 바지락살, 다진마늘, 청주를 넣어 살짝 볶아준다.
+- text: 냄비에 갈아준 전복내장을 만들어준 기름에 볶아주다 쌀을 넣고 볶고, 나머지 채소를 넣어 볶는다.
+- text: 마지막으로 새우, 바지락을 넣고 볶아 완성한다.

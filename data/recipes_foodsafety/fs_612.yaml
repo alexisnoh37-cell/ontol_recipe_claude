@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_612
+title: 해산물 훈제연어롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 612. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: salmon
+  raw_text: 연어(훈제연어, 120g)
+  role: sub
+- ingredient: webfoot_octopus
+  raw_text: 주꾸미(100g)
+  role: sub
+- ingredient: null
+  raw_text: 소라(50g)
+  role: sub
+- ingredient: null
+  raw_text: 완두콩(20g)
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리(30g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(1/2개)
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+steps:
+- text: 훈제 연어는 넓게 썬다.
+- text: 당근, 오이, 파프리카, 양파, 샐러리는 길게 썬다.
+- text: 주꾸미는 소금에 주물러 씻는다.
+- text: 손질한 주꾸미, 소라는 끓는 물에 데치고 썰어준다.
+- text: 고추장에 식초, 설탕을 넣고 초고추장소스를 만든다.
+- text: 훈제 연어에 야채와 주꾸미, 소라를 넣고 돌돌 말아 접시에 담고 초고추장소스를 올리고 완두콩으로 장식한다.

@@ -1,0 +1,87 @@
+id: weonpaenpaseuta_pxx1nd
+title: 원팬파스타
+cuisine: 양식
+difficulty: 2
+cook_time_min: 10
+servings: 1
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 원팬파스타 알리오올리오
+  video_url: https://www.youtube.com/watch?v=pxx1NDuuW58
+  published_at: '2024-04-15'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 파스타면
+  raw_text: 파스타면 1인분 / 파스타면
+  role: main
+  optional: false
+  amount: 1
+  unit: 인분
+- name: 페페론치노
+  raw_text: 페페론치노 3개
+  role: sub
+  optional: false
+  amount: 3
+  unit: 개
+- name: 올리브유
+  raw_text: 올리브유 5스푼
+  role: seasoning
+  optional: false
+  amount: 5
+  unit: 스푼
+- name: 멸치액젓
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 굴소스
+  raw_text: 굴소스 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고추기름이 나오면 물
+  raw_text: 고추기름이 나오면 물 600ml
+  role: sub
+  optional: false
+  amount: 600
+  unit: ml
+- name: 동전크기
+  raw_text: 동전크기 1인분
+  role: sub
+  optional: false
+  amount: 1
+  unit: 인분
+- name: 불을 끄고 올리브유
+  raw_text: 불을 끄고 올리브유 한스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 0
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 프라이팬에 올리브유 4스푼 넣어주시고 다진마늘 두 스푼 넣어서 살짝 갈색 빛이 돌.
+  technique: null
+- text: 때까지 천천히 볶아줄게요. 여기에 페페론치노 3개 부셔서 넣어서 매콤한 맛 올려줄게요.
+  technique: 볶음
+- text: 고추기름이 나오면 물 600ml 넣는다.
+  technique: null
+- text: 간 해줄게요. 물이 끓어오르면 파스타 백원 동전크기 1인분 넣어줄게요. 이제 10분동안.
+  technique: 끓이기
+- text: 불을 끄고 올리브유 한스푼 추가로 넣어줄게요. 이제 충분히 면을 섞어서 면의 전분과 물.
+  technique: 무침

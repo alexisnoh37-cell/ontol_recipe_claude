@@ -1,0 +1,40 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1024
+title: 오븐에 구운 또띠아 칩과 아보카도 딥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1024. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: tortilla
+  raw_text: 또띠아 25g
+  role: sub
+- ingredient: null
+  raw_text: 양파다진것 5g
+  role: sub
+- ingredient: null
+  raw_text: 할라피뇨다진것 2g
+  role: sub
+- ingredient: null
+  raw_text: 마늘다진것 3g
+  role: sub
+- ingredient: null
+  raw_text: 아보카도 12g
+  role: sub
+- ingredient: null
+  raw_text: 라임주스 3g
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토 30g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 적당량
+  role: sub
+steps:
+- text: 또띠아는 6등분 한다.
+- text: 양파, 할라피뇨, 마늘을 잘게 다진다.
+- text: 아보카도는 껍질을 제거하고 토마토는 씨를 제거하여 각각 1cm 주사위모양으로 자른다.
+- text: 170℃로 예열한 오븐에 또띠아를 넣어 바삭하게 굽는다.
+- text: 볼에 2를 넣고 잘 섞어 페이스트를 만들다가 아보카도를 함께 넣고 으깬 후 토마토를 넣고 라임주스, 소금으로 맛을 낸다.
+- text: 구워 낸 또띠아 칩을 찍어 먹을 수 있도록 아보카도딥을 작은 그릇에 담아낸다.

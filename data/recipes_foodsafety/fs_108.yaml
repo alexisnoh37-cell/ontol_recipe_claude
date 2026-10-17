@@ -1,0 +1,25 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_108
+title: 오렌지와 당근 만남주스
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 108. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: null
+  raw_text: 오렌지 당근펀치
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 100g(1/2개)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지 100g(1/2개)
+  role: sub
+steps:
+- text: 오렌지는 깨끗이 씻어 껍질을 벗긴다.
+- text: 당근은 깨끗이 씻어 작은 토막으로 썬다.
+- text: 당근, 오렌지, 물(50ml)을 믹서에 곱게 간다.
+- text: 믹서에 갈아낸 주스는 고운 체로 거른다.
+- text: 주스를 살얼음이 생길 만큼 시원하게 냉동한다.
+- text: 컵에 담아 마무리한다.

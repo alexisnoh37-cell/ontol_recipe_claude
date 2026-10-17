@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_138
+title: 부대된장찌개
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 138. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: kelp
+  raw_text: 다시마 1g
+  role: sub
+- ingredient: tofu
+  raw_text: 두부 10g
+  role: sub
+- ingredient: rice_cake
+  raw_text: 떡국 떡 10g
+  role: sub
+- ingredient: null
+  raw_text: 스팸(마일드) 10g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘 5g
+  role: sub
+- ingredient: radish
+  raw_text: 무 20g
+  role: sub
+- ingredient: kimchi
+  raw_text: 김치 15g
+  role: sub
+- ingredient: sausage
+  raw_text: 소시지 10g(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 우민찌 5g(1작은술)
+  role: sub
+- ingredient: onion
+  raw_text: 양파 5g
+  role: sub
+- ingredient: null
+  raw_text: 저염된장 15g(1큰술)
+  role: sub
+- ingredient: bacon
+  raw_text: 베이컨 5g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 5g
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 5g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 1g
+  role: sub
+steps:
+- text: 김치, 베이컨, 스팸, 소시지, 양파, 두부, 무는 두께 0.5cm로 썬다.
+- text: 다시마와 물을 끓여 다시마물을 만든다.
+- text: 냄비에 소시지, 베이컨, 두부, 스팸, 무, 우민찌, 김치, 다시마물 300g을 넣어 끓인 후 저염된장, 양파, 대파, 다진 마늘, 떡국 떡을 넣고 재료가 다 익으면 홍고추와 청양고추를 넣어 완성한다.

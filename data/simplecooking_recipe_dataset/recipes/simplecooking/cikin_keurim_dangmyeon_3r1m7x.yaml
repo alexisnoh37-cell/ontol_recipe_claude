@@ -1,0 +1,87 @@
+id: cikin_keurim_dangmyeon_3r1m7x
+title: 치킨 크림 당면
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source:
+  type: youtube
+  channel: Making simple Korean food
+  channel_url: https://www.youtube.com/@%EC%9E%90%EC%B7%A8%EC%9A%94%EB%A6%AC%EC%8B%A0simplecooking
+  video_title: 무조건 대기업은 실패할 수가 없습니다.
+  video_url: https://www.youtube.com/watch?v=3R1M7XaOzHY
+  published_at: '2026-02-28'
+  retrieved_at: '2026-10-11'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- name: 닭다리살
+  raw_text: 닭 다리 살 300g
+  role: main
+  optional: false
+  amount: 300
+  unit: g
+- name: 당면
+  raw_text: 당면
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 양송이버섯
+  raw_text: 양송이버섯 4개
+  role: sub
+  optional: false
+  amount: 4
+  unit: 개
+- name: 마늘
+  raw_text: 다진 마늘 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 청양고추
+  raw_text: 청양고추
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- name: 치킨스톡
+  raw_text: 치킨스톡 1/4스푼
+  role: seasoning
+  optional: false
+  amount: 0.25
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 1/2스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 소금
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 닭 다리 살에 소금, 후 출간 하여 굽는다.
+  technique: 구이
+- text: 자른 양송이버섯, 다진 마늘 1/2스푼을 더한 뒤 볶는다.
+  technique: 볶음
+- text: 물 1컵 반에 양송이 수프 가루 3스푼, 설탕 1/2스푼, 치킨스톡 1/4스푼을 잘 섞은 뒤 붓는다.
+  technique: 무침
+- text: 자른 당면을 더한 뒤 약불에서 끓인다.
+  technique: 끓이기
+- text: 청양고추 하나를 흩흩뿌려 마친다.
+  technique: null

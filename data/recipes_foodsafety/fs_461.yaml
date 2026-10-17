@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_461
+title: 단호박닭꼬치
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 461. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: chicken_thigh
+  raw_text: 닭다리살(120g)
+  role: sub
+- ingredient: milk
+  raw_text: 우유(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.05g)
+  role: sub
+- ingredient: tteokbokki_rice_cake
+  raw_text: 떡볶이떡(30g)
+  role: sub
+- ingredient: kabocha
+  raw_text: 단호박(50g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: null
+  raw_text: 꼬치(3개)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(20g)
+  role: sub
+- ingredient: null
+  raw_text: 다진양파(20g)
+  role: sub
+- ingredient: ketchup
+  raw_text: 케첩(20g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(20g)
+  role: sub
+steps:
+- text: 닭다리살은 뼈를 발라 일정 크기로 자른 뒤 우유에 재워둔다.
+- text: 재워둔 닭다리살에 소금과 후춧가루를 뿌려놓는다.
+- text: 단호박은 속을 파서 잘라 삶아 준비한다.
+- text: 떡볶이떡은 뜨거운 물에 살짝 불리고, 대파는 단호박 크기로 잘라 준비한다.
+- text: 고추장과 다진마늘, 다진양파, 케첩, 올리고당을 넣고, 골고루 섞어 양념장을 만들어 놓는다.
+- text: 꼬치에 준비한 닭다리살과 단호박, 양파, 떡볶이떡, 대파를 꽂아 은근히 초벌로 굽고, 다시 만들어 놓은 양념장을 발라 구워 완성한다.

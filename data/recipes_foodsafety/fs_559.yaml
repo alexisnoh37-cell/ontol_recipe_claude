@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_559
+title: 룰룰랄라
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 559. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: iceberg_lettuce
+  raw_text: 양상추(120g)
+  role: sub
+- ingredient: beef
+  raw_text: 소고기(120g)
+  role: sub
+- ingredient: chive
+  raw_text: 부추(100g)
+  role: sub
+- ingredient: chicken
+  raw_text: 닭고기(120g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(100g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(50g)
+  role: sub
+- ingredient: abalone
+  raw_text: 전복(1개)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: button_mushroom
+  raw_text: 양송이버섯(3개)
+  role: sub
+- ingredient: rice
+  raw_text: 쌀(200g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+steps:
+- text: 양상추, 부추를 데친다.
+- text: 양송이버섯은 얇게 슬라이스하고 팬에 기름을 살짝 두르고 굽는다.
+- text: 전복은 수저로 떼어 소금으로 씻고 일정한 크기로 썰어 팬에 굽는다.
+- text: 닭고기는 일정한 크기로 썬 뒤 삶고, 소고기도 일정한 크기로 썰어 양념 한 뒤 볶는다.
+- text: 토마토, 양파, 당근은 잘게 썰고, 쌀은 깨끗이 씻어 불려 야채를 넣고 밥을 짓는다.
+- text: 쪄낸 양배추에 볶은 고기, 삶은 닭고기, 구운 전복, 밥을 넣고 돌돌 말아 부추로 묶어 접시에 담고, 한쪽에 구운 버섯을 담는다.

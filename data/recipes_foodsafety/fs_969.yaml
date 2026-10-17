@@ -1,0 +1,79 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_969
+title: 새우 속을 채운 리치와 감자튀김
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 969. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 9개'
+ingredients:
+- ingredient: shrimp_raw
+  raw_text: 새우 60g
+  role: sub
+- ingredient: null
+  raw_text: 달걀흰자 10g
+  role: sub
+- ingredient: scallion
+  raw_text: 실파 5g
+  role: sub
+- ingredient: null
+  raw_text: 물밤다진것 15g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량
+  role: sub
+- ingredient: null
+  raw_text: 리치캔 35g
+  role: sub
+- ingredient: potato
+  raw_text: 감자 30g
+  role: sub
+- ingredient: null
+  raw_text: 전분 3g
+  role: sub
+- ingredient: null
+  raw_text: 튀김기름 10g
+  role: sub
+- ingredient: null
+  raw_text: 올ㄹ브오일 1g
+  role: sub
+- ingredient: null
+  raw_text: 다진 양파 3g
+  role: sub
+- ingredient: ginger
+  raw_text: 다진생강 1g
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘 1g
+  role: sub
+- ingredient: chili_oil
+  raw_text: 고추기름 0.5g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 1.5g
+  role: sub
+- ingredient: salt
+  raw_text: 소금적당량
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추적당량
+  role: sub
+- ingredient: null
+  raw_text: 전분 1g
+  role: sub
+- ingredient: null
+  raw_text: 다진 레몬껍질 약간
+  role: sub
+steps:
+- text: 새우는 잘게 다지고 흰자, 소금, 후추와 함께 섞어서 간이 배도록 한다.
+- text: 다진 물밤과 실파를 1과 섞어준 뒤 종이타월을 이용해서 물기를 제거한 리치의 속의 채운다.
+- text: 속이 채워진 리치에 전분을 묻혀 기름에 튀긴다.
+- text: 가열된 팬에 올리브오일을 두르고 양파, 마늘, 생강 다진 것을 살짝 볶는다.
+- text: 4에 물, 고추기름, 설탕, 소금, 후춧가루를 넣고 간을 한 뒤 물전분으로 농도를 맞춘다.
+- text: 감자는 껍질을 벗겨 채칼로 얇게 슬라이스 한 뒤 물에 담궈 전분을 빼고 튀겨 접시에 깔고 3, 4를 담는다.

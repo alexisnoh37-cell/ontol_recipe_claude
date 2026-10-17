@@ -1,0 +1,62 @@
+# 레시피 시드 (형식: data/recipes/README.md). 에이전트 작성 초안(2026-10-04, 1차 확장). 사람 검수 전(draft).
+id: bibim_guksu
+title: 비빔국수
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: 2
+source: agent_draft
+status: draft
+confidence: high
+ingredients:
+- ingredient: somen
+  raw_text: 소면 200g
+  role: main
+- ingredient: cucumber
+  raw_text: 오이 1/2개
+  role: sub
+- ingredient: egg
+  raw_text: 삶은 계란 1개
+  role: garnish
+  optional: true
+- ingredient: sesame
+  raw_text: 통깨 약간
+  role: garnish
+  optional: true
+- ingredient: gochujang
+  raw_text: 고추장 3큰술
+  role: seasoning
+- ingredient: gochugaru
+  raw_text: 고춧가루 1큰술
+  role: seasoning
+- ingredient: vinegar
+  raw_text: 식초 2큰술
+  role: seasoning
+- ingredient: sugar
+  raw_text: 설탕 1.5큰술
+  role: seasoning
+- ingredient: soy_sauce
+  raw_text: 간장 1작은술
+  role: seasoning
+- ingredient: garlic
+  raw_text: 다진 마늘 1작은술
+  role: seasoning
+- ingredient: sesame_oil
+  raw_text: 참기름 1큰술
+  role: seasoning
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 3
+  sour: 3
+  umami: 2
+  savory: 2
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 고추장, 고춧가루, 식초, 설탕, 간장, 마늘, 참기름을 섞어 비빔장을 만든다.
+- text: 소면을 끓는 물에 3분 삶아 찬물에 비벼 헹구고 물기를 뺀다.
+  technique: 끓이기
+- text: 면에 비빔장을 넣어 비비고 채 썬 오이, 계란, 깨를 올린다.
+  technique: 무침

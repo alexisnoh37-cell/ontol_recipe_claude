@@ -1,0 +1,71 @@
+id: ihanyinim_mareugeriddapija_2vpmvy
+title: 이하늬님 마르게리따피자
+cuisine: 한식
+difficulty: 1
+cook_time_min: 5
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 이하늬님 마르게리따피자
+  video_url: https://www.youtube.com/watch?v=2VpmVyXexcg
+  published_at: '2025-05-28'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 또띠아
+  raw_text: 또띠아 한장
+  role: main
+  optional: false
+  amount: 1
+  unit: 장
+- name: 모짜렐라치즈
+  raw_text: 모짜렐라치즈 한줌
+  role: sub
+  optional: false
+  amount: 1
+  unit: 줌
+- name: 방울토마토
+  raw_text: 방울토마토 6개
+  role: sub
+  optional: false
+  amount: 6
+  unit: 개
+- name: 올리브유
+  raw_text: 올리브유 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 알룰로스
+  raw_text: 알룰로스 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 위에 토마토소스
+  raw_text: 위에 토마토소스 3스푼 / 토마토소스 3스푼
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 0
+  sour: 0
+  umami: 1
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 또띠아 한장 팬에 올려주시고 불은 약불로 한다.
+  technique: null
+- text: 모짜렐라치즈 한줌 올려주세요. 방울토마토 4개는 4등분으로 잘라서 위에 올려주고 취향껏 바질잎.
+  technique: null
+- text: 잘라서 올려주세요. 뚜껑닫고 4분간 치즈가.
+  technique: null

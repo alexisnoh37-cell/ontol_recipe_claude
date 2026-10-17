@@ -1,0 +1,60 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_288
+title: 들깨된장육개장
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 288. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 숙주(30g)
+  role: sub
+- ingredient: oyster_mushroom
+  raw_text: 느타리버섯(25g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(25g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(2g)
+  role: sub
+- ingredient: null
+  raw_text: 얼갈이배추(25g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 무(50g)
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기(사태, 25g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(2g)
+  role: sub
+- ingredient: cheongju
+  raw_text: 청주(1g)
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 보리새우(3g)
+  role: sub
+- ingredient: null
+  raw_text: 양념장 고춧가루(1g)
+  role: sub
+- ingredient: perilla_powder
+  raw_text: 들깻가루(5g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(3g)
+  role: sub
+- ingredient: doenjang
+  raw_text: 된장(10g)
+  role: sub
+steps:
+- text: 냄비에 무, 돼지고기, 다시마를 넣고 끓이다가 끓어오르면 다시마를 건지고 청주와 보리새우를 넣어 약한 불로 끓여 고기가 익으면 체에 거른다.
+- text: 숙주는 끝을 다듬고, 느타리버섯은 결대로 찢고, 양파는 채 썰고, 대파와 청양고추는 어슷 썰고, 무는 납작하게 썬다.
+- text: 얼갈이배추는 밑동을 잘라 3cm 간격으로 썰어 데친 뒤 찬물로 헹궈 물기를 짠다.
+- text: 양념장을 만든 뒤 찢은 고기와 얼갈이배추를 넣어 버무린다.
+- text: 육수에 무, 양념에 버무린 고기와 얼갈이배추, 숙주, 느타리버섯, 대파, 청양고추 순으로 넣어가며 푹 끓여 마무리한다.

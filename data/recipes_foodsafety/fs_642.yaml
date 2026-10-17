@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_642
+title: 훈제오리가슴살크러스트
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 642. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: duck
+  raw_text: 오리고기(훈제오리 가슴살, 150g)
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리(2g)
+  role: sub
+- ingredient: orange
+  raw_text: 오렌지(1개)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(1개)
+  role: sub
+- ingredient: parsley
+  raw_text: 파슬리(5g)
+  role: sub
+- ingredient: peanut
+  raw_text: 땅콩(50g)
+  role: sub
+- ingredient: olive_oil
+  raw_text: 올리브오일(20g)
+  role: sub
+- ingredient: null
+  raw_text: 유자청(20g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.5g
+  role: sub
+steps:
+- text: 훈제오리 가슴살은 올리브오일, 로즈마리, 후춧가루로 마리네이드한다.
+- text: 새송이버섯은 편으로 썰고 팬에 굽는다.
+- text: 오렌지는 슬라이스로 썬다.
+- text: 땅콩과 파슬리는 입자있게 다진다.
+- text: 마리네이드한 오리 고기를 구워 접시에 담는다.
+- text: 유자청에 땅콩, 파슬리가루를 넣고 소스를 만들고, 구워진 오리고기 사이에 오렌지 슬라이스를 넣고 유자청소스를 올린다.

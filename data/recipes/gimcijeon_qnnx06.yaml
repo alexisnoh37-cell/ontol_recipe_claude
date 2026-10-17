@@ -1,0 +1,54 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: gimcijeon_qnnx06
+title: 김치전
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=QnNX06tEfbk
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음
+ingredients:
+- ingredient: kimchi
+  raw_text: 자른 김치 / 김치 1컵
+  role: main
+  optional: false
+  amount: 1
+  unit: 컵
+- ingredient: buchimgaru
+  raw_text: 부침가루
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: pork_belly
+  raw_text: 대패삼겹살 / 대패삼겹살 150g
+  role: sub
+  optional: false
+  amount: 150
+  unit: g
+- ingredient: cooking_oil
+  raw_text: 식용유 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 1
+  sweet: 0
+  sour: 2
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 팬에 자른 김치 1컵, 부침가루 1컵, 물 1컵, 대패삼겹살 150g, 식용유 3스푼을 고르게 섞는다.
+  technique: 부침
+- text: 중약불에서 은은하게 구워주다가 뒤집는다.
+  technique: 구이
+- text: 테투리에 식용유를 추가해주고 이어서 굽는다.
+  technique: 구이

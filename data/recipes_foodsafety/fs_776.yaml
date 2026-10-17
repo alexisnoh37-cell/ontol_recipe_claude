@@ -1,0 +1,52 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_776
+title: 깻잎장아찌롤
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 776. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+ingredients:
+- ingredient: rice
+  raw_text: 쌀(200g)
+  role: sub
+- ingredient: null
+  raw_text: 깻잎장아찌(30g)
+  role: sub
+- ingredient: laver
+  raw_text: 김(5g)
+  role: sub
+- ingredient: null
+  raw_text: 새싹(20g)
+  role: sub
+- ingredient: null
+  raw_text: 밥 밑간 참기름(5g)
+  role: sub
+- ingredient: sesame
+  raw_text: 참깨(3g)
+  role: sub
+- ingredient: null
+  raw_text: 허브타르타르드레싱 양파(20g)
+  role: sub
+- ingredient: pickled_cucumber
+  raw_text: 피클(20g)
+  role: sub
+- ingredient: null
+  raw_text: 삶은달걀(60g)
+  role: sub
+- ingredient: mayonnaise
+  raw_text: 마요네즈(20g)
+  role: sub
+- ingredient: null
+  raw_text: 머스터드소스 설탕(3g)
+  role: sub
+- ingredient: null
+  raw_text: 머스터드조스(1.5g)
+  role: sub
+steps:
+- text: 쌀을 씻어 밥을 지은 뒤 밥 밑간을 한다.
+- text: 양파, 피클, 삶은 달걀은 다진 뒤 마요네즈에 섞어 허브타르타르드레싱을 만든다.
+- text: 김 위에 밥을 펴고 허브타르타르드레싱을 위에 올리 후 만다.
+- text: 깻잎장아찌를 바닥에 깔고 말아놓은 롤을 올린 후 한 번 더 만다.
+- text: 머스트드소스를 만든다.
+- text: 한입 크기로 롤을 썬 뒤 새싹과 소스를 곁들여 마무리한다.

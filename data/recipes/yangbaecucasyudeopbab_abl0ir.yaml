@@ -1,0 +1,98 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: yangbaecucasyudeopbab_abl0ir
+title: 양배추차슈덮밥
+cuisine: 중식
+difficulty: 1
+cook_time_min: 45
+servings: 4
+source: https://www.youtube.com/watch?v=ABL0iR-Eblg
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: pork_belly
+  raw_text: 삼겹살 500g
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- ingredient: cabbage
+  raw_text: 양배추 1/4통
+  role: sub
+  optional: false
+  amount: 0.25
+  unit: 통
+- ingredient: soy_sauce
+  raw_text: 진간장 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 흑설탕 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: mirin
+  raw_text: 맛술 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: ginger
+  raw_text: 다진생강 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: pork_belly
+  raw_text: 통삼겹 500g
+  role: sub
+  optional: false
+  amount: 500
+  unit: g
+- ingredient: corn_syrup
+  raw_text: 물엿 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: null
+  raw_text: 하고 날려버릴 다진생강 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 색감과 감칠맛을 끌어올릴 짜장가루 1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 냄비
+  required: false
+steps:
+- text: 고기는 최대한 얇게 썰어주면 내용물도 더 반통은 최대한 얇게 채 썰어 준비한다.
+  technique: null
+- text: 넣어줄게요. 여기에 소분한 삼겹살 올려주고 뚜껑 닫고 중강불에 40분간 은근~히 끓여줄게요.
+  technique: 끓이기
+- text: 넣고 5분간 더 끓인다. 양배추 끓는 동안 삼겹살을 최대한 얇게 썰어주고 흰밥에.
+  technique: 끓이기
+- text: 계란 노른자 하나 톡 올려주면.
+  technique: null

@@ -1,0 +1,129 @@
+id: sundububeoseosdeopbab_tl2_wx
+title: 순두부버섯덮밥
+cuisine: 한식
+difficulty: 2
+cook_time_min: 5
+servings: 2
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 가성비, 맛 최고(순두부버섯덮밥)
+  video_url: https://www.youtube.com/watch?v=Tl2_wXbmiy8
+  published_at: '2024-06-25'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 양은
+  raw_text: 양은 2인분
+  role: main
+  optional: false
+  amount: 2
+  unit: 인분
+- name: 순두부
+  raw_text: 순두부 1봉
+  role: sub
+  optional: false
+  amount: 1
+  unit: 봉
+- name: 참송이버섯
+  raw_text: 참송이버섯 3개
+  role: sub
+  optional: false
+  amount: 3
+  unit: 개
+- name: 양파
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- name: 대파
+  raw_text: 대파 1/3 쪽 / 대파
+  role: sub
+  optional: false
+  amount: 0.3333333333333333
+  unit: 쪽
+- name: 마늘
+  raw_text: 마늘 1스푼 / 마늘 3개
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 올리브유
+  raw_text: 올리브유 3스푼
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 고춧가루
+  raw_text: 고춧가루 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 고추장
+  raw_text: 고추장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 진간장
+  raw_text: 진간장 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 굴소스
+  raw_text: 굴소스 1스푼 / 굴소스 2스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 올리고당
+  raw_text: 올리고당 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 전분물(전분
+  raw_text: 전분물(전분1스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 바꾼 후 고춧가루
+  raw_text: 바꾼 후 고춧가루 한스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 전분
+  raw_text: 전분 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 1
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 가성비 최고!! 맛 최고👍🏻👍🏻 순두부버섯덮밥❤ 순두부버섯덮밥이에요. 부드럽게 넘어가는 식감의.
+  technique: null
+- text: 썰어줄게요. 대파 1/3쪽 어슷 썰어주고 마늘 넣은 후 1분정도 볶다가 약불로.
+  technique: 볶음
+- text: 바꾼 후 고춧가루 한스푼 넣고 고추기름 양파 넣고 2분 정도 볶아줄게요. 여기에.
+  technique: 볶음
+- text: 올리고당 1스푼 넣어 재료 잘 섞는다.
+  technique: 무침
+- text: 물 120ml 넣고 순두부 한봉 넣고 한입.
+  technique: null

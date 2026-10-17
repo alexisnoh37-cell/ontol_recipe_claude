@@ -1,0 +1,49 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_654
+title: 먹물소스를 곁들인 토마토피클
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 654. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+ingredients:
+- ingredient: null
+  raw_text: 마(50g)
+  role: sub
+- ingredient: burdock
+  raw_text: 우엉(50g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(200g)
+  role: sub
+- ingredient: pear
+  raw_text: 배(1/2개)
+  role: sub
+- ingredient: null
+  raw_text: 새싹(10g)
+  role: sub
+- ingredient: null
+  raw_text: 피클링스파이스(10g)
+  role: sub
+- ingredient: wine
+  raw_text: 와인(20g)
+  role: sub
+- ingredient: null
+  raw_text: 먹물(10g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(50g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(30g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.2g)
+  role: sub
+steps:
+- text: 물 한 컵에 설탕, 식초, 소금, 피클링스파이스를 넣고 식촛물을 만든다.
+- text: 배는 스쿱으로 동그랗게 판다.
+- text: 토마토는 1/6등분으로 썬다.
+- text: 마와 우엉은 슬라이스 한다.
+- text: 썰어 놓은 마와 우엉을 식촛물에 담근다.
+- text: 와인에 먹물, 설탕을 넣고 섞어 식촛물에 넣고 배, 토마토, 새싹을 넣는다.

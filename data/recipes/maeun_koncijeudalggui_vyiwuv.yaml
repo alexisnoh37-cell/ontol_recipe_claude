@@ -1,0 +1,74 @@
+# 레시피 시드 (형식: data/recipes/README.md). 자취요리신 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/simplecooking_recipe_dataset/, 변환: scripts/convert_simplecooking.py
+id: maeun_koncijeudalggui_vyiwuv
+title: 매운 콘치즈닭구이
+cuisine: 한식
+difficulty: 1
+cook_time_min: 15
+servings: null
+source: https://www.youtube.com/watch?v=vYIWUV7I3Sw
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리기구 '토치'(선택) 제외(vocab에 없음)
+ingredients:
+- ingredient: chicken_thigh
+  raw_text: 닭다리살 정육 500g / 닭다리살
+  role: main
+  optional: false
+  amount: 500
+  unit: g
+- ingredient: canned_corn
+  raw_text: 스위트콘
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: mozzarella
+  raw_text: 모짜렐라 치즈 / 치즈 4스푼
+  role: sub
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: null
+  raw_text: 매운 갈비 양념
+  role: sub
+  optional: false
+  amount: null
+  unit: null
+- ingredient: mayonnaise
+  raw_text: 마요네즈 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: salt
+  raw_text: 소금
+  role: seasoning
+  optional: false
+  amount: null
+  unit: null
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 소금 간한 닭다리살 정육을 충분히 굽는다.
+  technique: 구이
+- text: 매운 갈비 양념 2스푼을 더한 뒤 볶은 다음 덜어 둔다.
+  technique: 볶음
+- text: 스위트콘 4스푼, 모짜렐라 치즈 4스푼, 설탕 1스푼, 마요네즈 4스푼을 섞어 팬에 얹는다.
+  technique: 무침
+- text: 치즈를 녹여준 뒤 매운 닭구이를 올리고 토치질 한다.
+  technique: null

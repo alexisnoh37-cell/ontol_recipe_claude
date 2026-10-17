@@ -1,0 +1,75 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_259
+title: 아귀나가사키조림
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 259. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: null
+  raw_text: 재료 미나리(10g)
+  role: sub
+- ingredient: mung_bean_sprouts
+  raw_text: 숙주(10g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추(5g)
+  role: sub
+- ingredient: null
+  raw_text: 붉은 고추(5g)
+  role: sub
+- ingredient: asparagus
+  raw_text: 아스파라거스(5g)
+  role: sub
+- ingredient: octopus
+  raw_text: 문어(20g)
+  role: sub
+- ingredient: crab
+  raw_text: 꽃게(30g)
+  role: sub
+- ingredient: clam
+  raw_text: 조개(30g)
+  role: sub
+- ingredient: abalone
+  raw_text: 전복(30g)
+  role: sub
+- ingredient: null
+  raw_text: 소라(30g)
+  role: sub
+- ingredient: shrimp_raw
+  raw_text: 새우(50g)
+  role: sub
+- ingredient: null
+  raw_text: 아귀(50g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말물(10g)
+  role: sub
+- ingredient: null
+  raw_text: 육수 마늘(7g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(10g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 통후추(5g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: katsuobushi
+  raw_text: 가다랑어포(5g)
+  role: sub
+steps:
+- text: 미나리, 숙주는 적당한 길이로 썰고, 양파는 채 썰고, 대파, 고추, 아스파라거스는 어슷하게 썬다.
+- text: 해산물을 끓는 물에 데친다.
+- text: 해산물 데친 물에 육수 재료를 넣고 끓인 뒤 체에 걸러 육수를 만든다.
+- text: 냄비에 데친 해산물과 미나리, 숙주, 양파, 대파, 청양고추, 아스파라거스, 붉은 고추를 얹은 뒤 육수를 넣어 끓인다.
+- text: 녹말물을 넣어 농도를 맞춘 뒤 조려 마무리한다.

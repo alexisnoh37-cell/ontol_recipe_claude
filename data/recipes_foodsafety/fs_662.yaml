@@ -1,0 +1,58 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_662
+title: 소금없는 초밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 662. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+ingredients:
+- ingredient: tuna
+  raw_text: 참치(100g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(50g)
+  role: sub
+- ingredient: asparagus
+  raw_text: 아스파라거스(3개)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(2개)
+  role: sub
+- ingredient: egg
+  raw_text: 달걀(2개)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(200g)
+  role: sub
+- ingredient: laver
+  raw_text: 김(10g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(100g)
+  role: sub
+- ingredient: radish
+  raw_text: 무(30g)
+  role: sub
+- ingredient: katsuobushi
+  raw_text: 가쓰오부시(20g)
+  role: sub
+- ingredient: wasabi
+  raw_text: 와사비(20g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(20g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.1g)
+  role: sub
+steps:
+- text: 냄비에 다시마와 무를 넣고 끓이다가 가쓰오부시를 넣고 불을 꺼 진한 육수를 만든다.
+- text: 육수에 식초, 설탕, 소금을 넣고 촛물을 만든다.
+- text: 참치는 불에 타다끼 한 뒤 두툼하게 썬다.
+- text: 파프리카는 직화로 겉만 태워 참치 크기로 썬다.
+- text: 아스파라거스와 표고버섯은 살짝 데쳐 편으로 썬다.
+- text: 육수에 달걀을 풀어 두툼하게 지단을 부쳐 썰고, 밥에 촛물을 넣고 골고루 섞어 초밥을 만든 뒤 와사비, 참치, 달걀, 표고버섯, 파프리카 순으로 올려 김으로 띠를 두른다.

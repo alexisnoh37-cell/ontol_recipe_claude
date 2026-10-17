@@ -1,0 +1,37 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_1004
+title: 잣 호두 강정
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1004. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: pine_nut
+  raw_text: 잣 3g
+  role: sub
+- ingredient: walnut
+  raw_text: 호두 3g
+  role: sub
+- ingredient: jujube
+  raw_text: 대추 3g
+  role: sub
+- ingredient: sesame
+  raw_text: 통깨 5g
+  role: sub
+- ingredient: null
+  raw_text: 시럽
+  role: sub
+- ingredient: corn_syrup
+  raw_text: 물엿 3g
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕 2g
+  role: sub
+steps:
+- text: 잣은 고깔을 떼어낸 뒤 젖은 행주로 문질러 먼지를 닦는다.
+- text: 호두는 미지근한 물에 불려 껍질을 제거한다.
+- text: 대추는 얇게 돌려 깎아 곱게 다진다.
+- text: 물엿과 설탕을 냄비에 담고 물을 조금 넣은 뒤 약한불에서 투명한 시럽으로 만든다.
+- text: 잣, 호두, 통깨에 다진 대추와 시럽을 넣고 덩어리지게 섞는다.
+- text: 살짝 뜨거울 때 손으로 동그랗게 뭉쳐준다.

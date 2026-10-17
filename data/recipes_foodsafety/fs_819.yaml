@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_819
+title: 수삼 냉채
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 819. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+ingredients:
+- ingredient: null
+  raw_text: 수삼 10g
+  role: sub
+- ingredient: pear
+  raw_text: 배 20g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 20g
+  role: sub
+- ingredient: celery
+  raw_text: 샐러리 20g
+  role: sub
+- ingredient: null
+  raw_text: 저나트륨내채소스
+  role: sub
+- ingredient: jujube
+  raw_text: 대추 1g
+  role: sub
+- ingredient: null
+  raw_text: 유자청 10g
+  role: sub
+- ingredient: salt
+  raw_text: 소금 0.5g
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초 2g
+  role: sub
+- ingredient: honey
+  raw_text: 꿀 2g
+  role: sub
+steps:
+- text: 수삼은 흙을 깨끗이 씻은 후 잔뿌리를 다듬어내고 길이로 얇게 썬다.
+- text: 배, 오이, 셀러리도 각각 1.5cm x 7cm 크기로 얇게 썬다.
+- text: 대추와 유자는 잘게 다진다.
+- text: 수삼, 오이, 배, 셀러리는 차가운 물에 담가 조직감을 살린다.
+- text: 대추, 유자청, 소금, 식초, 꿀물을 합하여 저나트륨 냉채소스를 만든다.
+- text: 4의 채소를 건져서 물기를 제거하고 소스에 살짝 버무려 낸다.

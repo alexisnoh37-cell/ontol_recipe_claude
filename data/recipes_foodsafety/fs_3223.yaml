@@ -1,0 +1,76 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_3223
+title: 돼지 함초 덮밥
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3223. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+ingredients:
+- ingredient: onion
+  raw_text: 양파(10g)
+  role: sub
+- ingredient: scallion
+  raw_text: 쪽파(3g)
+  role: sub
+- ingredient: lemon
+  raw_text: 레몬(3g)
+  role: sub
+- ingredient: null
+  raw_text: 무순(20개)
+  role: sub
+- ingredient: anchovy
+  raw_text: 멸치(7~8마리)
+  role: sub
+- ingredient: null
+  raw_text: 건함초(3g)
+  role: sub
+- ingredient: kelp
+  raw_text: 다시마(5g)
+  role: sub
+- ingredient: rice
+  raw_text: 밥(210g)
+  role: sub
+- ingredient: green_chili
+  raw_text: 꽈리고추(5개)
+  role: sub
+- ingredient: pork
+  raw_text: 돼지고기(등심, 120g)
+  role: sub
+- ingredient: null
+  raw_text: 수란(1개)
+  role: sub
+- ingredient: null
+  raw_text: 김가루(2g)
+  role: sub
+- ingredient: wasabi
+  raw_text: 고추냉이(2g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(3쪽)
+  role: sub
+- ingredient: ginger
+  raw_text: 생강(1톨)
+  role: sub
+- ingredient: null
+  raw_text: 건고추(3개)
+  role: sub
+- ingredient: null
+  raw_text: 팔각(1개)
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름(1T)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(⅓Ts)
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유(20ml)
+  role: sub
+steps:
+- text: 양파는 채 썰고, 쪽파는 송송 썰고, 레몬은 슬라이스하고, 마늘은 으깨고, 생강은 납작 썰고, 건고추는 굵게 부순다.
+- text: 중간 불로 달군 마른 팬에 멸치를 넣어 3분간 볶아 수분을 날린 뒤 건함초, 다시마와 함께 믹서에 넣어 곱게 간다.
+- text: 중간 불로 달군 팬에 식용유(20㎖)와 손질한 향신료를 넣고 3분간 볶아 향유를 만든다.
+- text: 향유에 참기름과 후춧가루, 곱게 간 멸치가루를 넣어 섞은 뒤 밥에 넣어 고루 섞는다.
+- text: 중간 불로 달군 팬에 남겨둔 향유(10g)를 두르고 꽈리고추와 돼지고기를 넣어 9분간 구운 뒤 돼지고기는 얇게 한입 크기로 썬다.
+- text: 그릇에 비빔밥, 구운 돼지고기와 꽈리고추, 손질한 양파, 쪽파, 레몬, 김가루, 고추냉이, 무순, 수란을 올린다.

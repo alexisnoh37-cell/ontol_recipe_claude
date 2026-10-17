@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_457
+title: 토마토떡볶이
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 457. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: tteokbokki_rice_cake
+  raw_text: 떡볶이떡(100g)
+  role: sub
+- ingredient: fish_cake
+  raw_text: 어묵(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(20g)
+  role: sub
+- ingredient: shiitake
+  raw_text: 표고버섯(20g)
+  role: sub
+- ingredient: cabbage
+  raw_text: 양배추(20g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: null
+  raw_text: 육수(100g)
+  role: sub
+- ingredient: gochujang
+  raw_text: 고추장(20g)
+  role: sub
+- ingredient: ketchup
+  raw_text: 케첩(20g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진마늘(10g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(100g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(20g)
+  role: sub
+- ingredient: butter
+  raw_text: 버터(10g)
+  role: sub
+steps:
+- text: 떡볶이는 뜨거운 물에 담그어 놓는다.
+- text: 토마토, 사과는 입자 있게 다진다.
+- text: 떡볶이떡은 뜨거운 물에 담그어 놓는다.
+- text: 고추장과 케첩, 올리고당, 다진 마늘을 골고루 섞는다.
+- text: 냄비에 버터를 녹인 뒤 토마토와 사과 (②), 소스(④)를 넣고 볶아준다.
+- text: 볶고 있는 소스(⑤)에 떡볶이 떡(①)과 썰어놓은 채소와 어묵(③)을 넣고, 육수를 부어 끓이다가 대파를 넣고 한 번 더 끓여 완성한다.

@@ -1,0 +1,101 @@
+id: rojeddeogboggi_6zduy7
+title: 로제떡볶이
+cuisine: 기타
+difficulty: 1
+cook_time_min: 6
+servings: null
+source:
+  type: youtube
+  channel: 살림팝
+  channel_url: https://www.youtube.com/@%EC%82%B4%EB%A6%BC%ED%8C%9D
+  video_title: 초간단 로제떡볶이 :)
+  video_url: https://www.youtube.com/watch?v=6zDUY7hKRhc
+  published_at: '2024-04-09'
+  retrieved_at: '2026-10-16'
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- name: 어묵
+  raw_text: 오뎅 2장
+  role: main
+  optional: false
+  amount: 2
+  unit: 장
+- name: 소세지
+  raw_text: 소세지 10개
+  role: sub
+  optional: false
+  amount: 10
+  unit: 개
+- name: 계란
+  raw_text: 계란 2알 / 계란
+  role: sub
+  optional: false
+  amount: 2
+  unit: 알
+- name: 우유
+  raw_text: 우유 400ml
+  role: sub
+  optional: false
+  amount: 400
+  unit: ml
+- name: 고추장 크게
+  raw_text: 고추장 크게 한스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 설탕
+  raw_text: 설탕 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- name: 소고기 다시다
+  raw_text: 소고기 다시다 반스푼
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- name: 토마토소스
+  raw_text: 토마토소스 3스푼
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+- name: 체다 치즈
+  raw_text: 체다치즈 1장
+  role: sub
+  optional: false
+  amount: 1
+  unit: 장
+- name: 고추장
+  raw_text: 고추장 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- name: 다시다
+  raw_text: 다시다 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+taste:
+  spicy: 3
+  salty: 1
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 떡볶이 취향이 어떻게 되세요? 고추장 VS 로제? 🥰 내주시고 전 계란을 좋아해서 삶은 달걀 2개.
+  technique: 부침
+- text: 고추장 한스푼 크게 넣어줄게요. 여기에 3스푼 넣는다. 양냠 풀어준 후 재료 다 넣고.
+  technique: null
+- text: 강불에 6분간 끓이기만 하면 되요. 마무리로 체다치즈 1장 넣어서 맛을 더.
+  technique: 끓이기

@@ -35,6 +35,7 @@ body { background: var(--bg); color: var(--text); font: 14px/1.5 var(--font); di
 .toggles { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
 .toggles legend { float: left; color: var(--muted); margin-right: 6px; font-size: 12px; }
 .toggles label { font-size: 13px; white-space: nowrap; cursor: pointer; }
+.toggles .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
 
 .layout { flex: 1; display: flex; min-height: 0; }
 .graph { position: relative; flex: 1; min-width: 0; overflow: hidden; }
@@ -64,6 +65,15 @@ body { background: var(--bg); color: var(--text); font: 14px/1.5 var(--font); di
 .chip.ancestor { background: #1f3a30; color: #c4f2da; }
 .chip.staple { background: #22282a; color: #a8b5ad; }
 .chip.removable { padding-right: 2px; }
+.chip.missing { background: #3d2616; color: #ffc59c; }
+.small-text { font-size: 12px; margin-bottom: 6px; }
+.check { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); margin: 6px 0; }
+.browse-list .notice { font-size: 12px; background: #3a2d10; color: #ffd98a; border-radius: 6px; padding: 6px 8px; margin: 8px 0 0; }
+.browse-item { border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; margin: 0 0 6px; cursor: pointer; font-size: 12px; }
+.browse-item:hover { border-color: var(--muted); }
+.browse-item .title { font-size: 13px; font-weight: 600; }
+.browse-item.warn { border-color: #7a2a30; background: #2a1a1d; }
+.browse-item .alert-text { color: #ffb4b8; }
 .chip.removable button { background: none; border: 0; color: var(--muted); cursor: pointer; padding: 0 4px; font: inherit; }
 .chip.removable button:hover { color: var(--text); }
 .info .path { margin-bottom: 3px; }
@@ -127,6 +137,26 @@ ol.ranks { margin: 6px 0 0; padding-left: 22px; }
 .rcard .sub { color: #8ff0bd; }
 .rcard .note { color: var(--muted); }
 .rcard .note.warn { color: #ffcf8a; }
+
+/* 외부 레시피 분석(부록 E) */
+.small { font-size: 12px; }
+.card h2 .small { font-weight: 400; margin-left: 4px; }
+.field input { flex: 1; min-width: 0; padding: 4px 6px; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 6px; font: inherit; }
+#adhoc-text {
+  width: 100%; margin: 6px 0; padding: 6px 8px; resize: vertical; background: var(--bg); color: var(--text);
+  border: 1px solid var(--line); border-radius: 6px; font: 13px/1.45 var(--font);
+}
+.adhoc-result { margin-top: 8px; border-top: 1px solid var(--line); padding-top: 6px; font-size: 13px; }
+.adhoc-result p { margin: 4px 0; }
+.adhoc-result .warn { color: #ffb4b8; }
+.adhoc-result .note { color: var(--muted); }
+.verdict.bad { color: #ffb4b8; }
+.verdict.ok { color: #8ff0bd; }
+table.lines { border-collapse: collapse; width: 100%; font-size: 12px; margin-top: 4px; }
+table.lines th, table.lines td { padding: 3px 4px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+table.lines th { color: var(--muted); font-weight: 600; }
+table.lines td:first-child { color: var(--muted); }
+table.lines .muted { font-size: 11px; }
 
 /* 3d-force-graph 툴팁 */
 .scene-tooltip { font: 12px/1.4 var(--font) !important; }

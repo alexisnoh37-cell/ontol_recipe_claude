@@ -1,0 +1,122 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: eomugboggeum_zz9stm
+title: 어묵볶음
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source: https://www.youtube.com/watch?v=zz9stmkFUG0
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+ingredients:
+- ingredient: fish_cake
+  raw_text: 어묵 5장
+  role: main
+  optional: false
+  amount: 5
+  unit: 장
+- ingredient: onion
+  raw_text: 양파 반개
+  role: sub
+  optional: false
+  amount: 0.5
+  unit: 개
+- ingredient: cheongyang_pepper
+  raw_text: 청양고추 2개
+  role: sub
+  optional: false
+  amount: 2
+  unit: 개
+- ingredient: red_chili
+  raw_text: 홍고추 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: soy_sauce
+  raw_text: 진간장 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: anchovy_fish_sauce
+  raw_text: 멸치액젓 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: oyster_sauce
+  raw_text: 굴소스 1스푼 / 굴소스 한스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 3쪽
+  role: seasoning
+  optional: false
+  amount: 3
+  unit: 쪽
+- ingredient: gochugaru
+  raw_text: 고춧가루 반스푼
+  role: seasoning
+  optional: false
+  amount: 0.5
+  unit: 스푼
+- ingredient: corn_syrup
+  raw_text: 물엿 4스푼 / 반스푼 물엿 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: chili_oil
+  raw_text: 고추기름 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sesame_oil
+  raw_text: 참기름 1스푼 / 참기름 한 스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: null
+  raw_text: 올려주는 고추기름 2스푼
+  role: sub
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: null
+  raw_text: 맛을 올리기 위해 참기름 한 스푼
+  role: sub
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 4
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 3
+equipment:
+- name: 프라이팬
+  required: false
+steps:
+- text: 진짜 강추하는 레시피 입니다. 이렇게 어묵볶음 채썰어줄게요. 매콤한 맛을 위해 청양고추.
+  technique: null
+- text: 2개 썰어주고 홍고추는 색감을 위해 넣는거니 없어도 돼요. 양념장 만들어.
+  technique: null
+- text: 반스푼 물엿 4스푼, 후추가루 툭툭 넣고 잘 섞는다. 프라이팬에 풍미를.
+  technique: 무침
+- text: 올려주는 고추기름 2스푼 넣고 강불로 올려주세요. 아 고추기름은 한번 사두번.
+  technique: null
+- text: 섞다가 끓어오르면 어묵과 양파를 넣어줄게요. 어묵에 양념이 다 붙으면.
+  technique: 끓이기
+- text: 천천히 볶는다. 불을 끄고 고소한 넣어주고 썰어놓은 고추 넣어 잔열로.
+  technique: 볶음
+- text: 익혀 줄게요.
+  technique: null

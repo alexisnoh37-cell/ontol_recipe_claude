@@ -1,0 +1,61 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_508
+title: 햄버거스테이크
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 508. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+ingredients:
+- ingredient: ground_pork
+  raw_text: 다진 돼지고기(60g)
+  role: sub
+- ingredient: ground_beef
+  raw_text: 다진 소고기(60g)
+  role: sub
+- ingredient: garlic
+  raw_text: 다진 마늘(10g)
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리(2g)
+  role: sub
+- ingredient: bread_crumbs
+  raw_text: 빵가루(20g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.2g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: yogurt
+  raw_text: 플레인요거트(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: null
+  raw_text: 매실액(10g)
+  role: sub
+- ingredient: vinegar
+  raw_text: 식초(5g)
+  role: sub
+- ingredient: null
+  raw_text: 녹말가루(10g)
+  role: sub
+- ingredient: null
+  raw_text: 곁들임채소
+  role: sub
+- ingredient: null
+  raw_text: 어린잎(5g)
+  role: sub
+steps:
+- text: 돼지고기와 소고기를 섞어, 매실액을 넣고 30분 정도 냉장고에서 숙성을 시킨다.
+- text: 숙성된 돼지고기와 소고기에 다진마늘, 로즈마리, 빵가루, 후춧가루를 넣고 골고루 섞는다.
+- text: 파프리카는 반으로 잘라 그 안에 씨를 수저를 이용해서 파낸다.
+- text: 속을 파낸 파프리카에 양념한 고기를 넣고, 꼭꼭 눌러 두툼하게 잘라 구워 접시에 담는다.
+- text: 양파는 입자있게 다져 팬에 기름을 넣고 은근히 볶아 양파 향을 낸다.
+- text: 볶아진 팬(⑤)에 준비한 플레인요거트와 설탕, 매실액을 넣고 끓이다가, 식초와 녹말을 넣고 한 번 더 끓여 소스를 완성한다. 햄버거스테이트(④)에 소스를 얹고, 어린잎을 올려 완성한다.

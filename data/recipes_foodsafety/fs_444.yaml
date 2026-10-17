@@ -1,0 +1,55 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_444
+title: 스테이크카나페
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 444. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: beef_sirloin
+  raw_text: 소등심(100g)
+  role: sub
+- ingredient: salt
+  raw_text: 소금(0.3g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.03g)
+  role: sub
+- ingredient: null
+  raw_text: 로즈마리(0.5g)
+  role: sub
+- ingredient: zucchini
+  raw_text: 애호박(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(20g)
+  role: sub
+- ingredient: eggplant
+  raw_text: 가지(20g)
+  role: sub
+- ingredient: bell_pepper
+  raw_text: 파프리카(20g)
+  role: sub
+- ingredient: tomato
+  raw_text: 토마토(20g)
+  role: sub
+- ingredient: null
+  raw_text: 발사믹소스(20g)
+  role: sub
+- ingredient: sugar
+  raw_text: 설탕(10g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+- ingredient: apple
+  raw_text: 사과(20g)
+  role: sub
+steps:
+- text: 소등심은 소금과 후춧가루, 로즈마리를 뿌려 약 30분 이상 숙성을 시킨다.
+- text: 애호박은 동그랗게 자르고, 양파는 형태 그대로 떼어내고, 가지는 직사각형으로 잘라 준비한다.
+- text: 파프리카는 속을 파내고 작은 사각으로 자르고, 토마토는 씨를 제거하고 네모지게 잘라 준비해 놓는다.
+- text: 사과는 껍질을 깨끗이 씻어 길쭉하게 썰어놓는다.
+- text: 발사믹소스에 설탕과 마늘을 넣고 썰어 놓은 사과채를 넣어 잘 섞은 후 바글바글 끓여 소스를 만들어놓는다.
+- text: 팬이 따끈해지면, 호박과 양파, 가지를 구워 내고, 팬에 소등심을 앞뒤로 구워 먹기 좋은 크기로 자른 뒤 구워 놓은 양파와 호박, 가지에 각각 올리고, 끓여놓은 소스와 파프리카, 토마토를 얹어 완성한다.

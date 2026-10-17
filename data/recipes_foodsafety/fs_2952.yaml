@@ -1,0 +1,46 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_2952
+title: 바지락 미역국
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 2952. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+ingredients:
+- ingredient: manila_clam
+  raw_text: 바지락 10g
+  role: sub
+- ingredient: seaweed
+  raw_text: 미역 5g
+  role: sub
+- ingredient: null
+  raw_text: 저염간장 5g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘 5g
+  role: sub
+- ingredient: sesame_oil
+  raw_text: 참기름 2g
+  role: sub
+- ingredient: red_chili
+  raw_text: 홍고추 2g
+  role: sub
+- ingredient: radish
+  raw_text: 무 10g
+  role: sub
+- ingredient: dried_shrimp
+  raw_text: 건새우 10g
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파 5g
+  role: sub
+- ingredient: null
+  raw_text: 함초가루 3g
+  role: sub
+steps:
+- text: 바지락은 해감하고 미역은 20분 동안 불린다.
+- text: 물에 파, 마늘, 홍고추, 건새우, 무를 넣고 끓여 육수를 만든다.
+- text: 냄비에 참기름과 미역, 바지락을 넣고 볶은 뒤 저염간장을 넣고 볶는다.
+- text: 볶은 냄비에 육수를 넣고 끓인다.
+- text: 함초가루로 간을 맞춘다.
+- text: 국그릇에 담는다.

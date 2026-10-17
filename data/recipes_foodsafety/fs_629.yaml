@@ -1,0 +1,43 @@
+# 자동 변환(scripts/convert_foodsafety.py). 출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01). 개인용, 재배포 금지. 검수 전(draft).
+id: fs_629
+title: 새송이등갈비
+cuisine: 미분류
+source: foodsafety
+status: draft
+confidence: low
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 629. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
+ingredients:
+- ingredient: pork
+  raw_text: 돼지고기(등갈비, 200g)
+  role: sub
+- ingredient: king_oyster_mushroom
+  raw_text: 새송이버섯(1개)
+  role: sub
+- ingredient: carrot
+  raw_text: 당근(30g)
+  role: sub
+- ingredient: green_onion
+  raw_text: 대파(20g)
+  role: sub
+- ingredient: onion
+  raw_text: 양파(30g)
+  role: sub
+- ingredient: null
+  raw_text: 저염간장(30g)
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후춧가루(0.01g)
+  role: sub
+- ingredient: oligosaccharide
+  raw_text: 올리고당(20g)
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘(20g)
+  role: sub
+steps:
+- text: 등갈비는 찬물에 담궈 핏물을 빼고 끓는 물에 데친다.
+- text: 새송이버섯은 길쭉하게 슬라이스로 썰어둔다.
+- text: 당근, 양파, 대파는 큼직하게 썰어, 뜨거운 물에 담군다.
+- text: 담궈 놓은 야채를 걸러 야채물을 만든다.
+- text: 냄비에 야채물을 넣고 저염간장과 올리고당, 다진마늘, 후춧가루를 섞는다.
+- text: 야채간장에 등갈비를 넣고 은근히 졸이다가, 썰어놓은 야채와 새송이버섯을 넣고 윤기나게 졸인다.

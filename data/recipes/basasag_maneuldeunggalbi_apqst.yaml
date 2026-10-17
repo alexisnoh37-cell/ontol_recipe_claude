@@ -1,0 +1,93 @@
+# 레시피 시드 (형식: data/recipes/README.md). 살림팝 YouTube 데이터셋에서 변환한 초안(draft, 검수 전).
+# 원본: data/sallimpop_recipe_dataset/, 변환: scripts/convert_sallimpop.py
+id: basasag_maneuldeunggalbi_apqst
+title: 바사삭 마늘등갈비
+cuisine: 한식
+difficulty: 2
+cook_time_min: 20
+servings: null
+source: https://www.youtube.com/watch?v=APqsT_d0bh8
+status: draft
+confidence: low
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준; 조리기구 '기타 조리도구'(선택) 제외(vocab에
+  없음)
+ingredients:
+- ingredient: pork_ribs
+  raw_text: 등갈비 1kg
+  role: main
+  optional: false
+  amount: 1
+  unit: kg
+- ingredient: egg
+  raw_text: 계란 1개
+  role: sub
+  optional: false
+  amount: 1
+  unit: 개
+- ingredient: oyster_sauce
+  raw_text: 굴소스 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: mirin
+  raw_text: 맛술 2스푼
+  role: seasoning
+  optional: false
+  amount: 2
+  unit: 스푼
+- ingredient: sugar
+  raw_text: 설탕 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+- ingredient: green_onion
+  raw_text: 다진대파 3스푼
+  role: sub
+  optional: false
+  amount: 3
+  unit: 스푼
+- ingredient: garlic
+  raw_text: 다진마늘 가득 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: potato_starch
+  raw_text: 감자전분 8스푼
+  role: seasoning
+  optional: false
+  amount: 8
+  unit: 스푼
+- ingredient: frying_mix
+  raw_text: 튀김가루 4스푼
+  role: seasoning
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: cooking_oil
+  raw_text: 식용유 1스푼
+  role: seasoning
+  optional: false
+  amount: 1
+  unit: 스푼
+taste:
+  spicy: 0
+  salty: 3
+  sweet: 2
+  sour: 0
+  umami: 3
+  savory: 1
+equipment: []
+steps:
+- text: 대쳐 등갈비 한데 잘 되는 칼로 자른다 큰 볼에 등갈비를 넣어주고.
+  technique: null
+- text: 계란 하나 깨서 넣고 굴소스 두스푼 세 스푼 넣고 한국인 기준 다진마늘네.
+  technique: null
+- text: 스푼 크게 넣는다 한번 양념이 식용유 한 스푼 넣고 한 번 더 섞어.
+  technique: 무침
+- text: 기름온도 올려 줄게요 온도계가 있으면 나무젓가락을 넣어 이렇게 기포가.
+  technique: null
+- text: 올라오면 등갈비를 넣는다 1차로 천천히 익어요 이차로 지난 갈색피 돌.
+  technique: null
