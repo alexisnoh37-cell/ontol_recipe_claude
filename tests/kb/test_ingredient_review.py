@@ -41,3 +41,19 @@ def test_commercial_products_are_not_prefilled_as_reviewed():
         assert d["prefill"]["decision"] in {"O", "X", "보류"}
         if d["origin"] == "시판 제품" or d["id"] in commercial:
             assert d["prefill"]["decision"] == "보류", d["id"]
+
+
+def test_ir2_decisions_applied():
+    # ir-2 사람 재료 검수: O → reviewed, 보류 → draft, X → 삭제. 어린잎·새싹채소는 메밀(가능) 삭제, 호박 이름 변경.
+    import json
+
+    decisions = json.loads((ROOT / "docs" / "review" / "ingredient_decisions.json").read_text(encoding="utf-8"))
+    assert decisions["format"] == "ingredient-decisions/1"
+    ck = compile_paths(ROOT / "knowledge", ROOT / "config" / "pantry_staples.yaml")
+    status = {i.id: i.status for i in ck.ingredients}
+    expect = {"O": "reviewed", "보류": "draft", "X": None}
+    for r in decisions["rows"]:
+        assert status.get(r["id"]) == expect[r["decision"]], r["id"]
+    closure = {(c.ingredient_id, c.allergen_group_id) for c in ck.allergen_closure}
+    assert ("baby_greens", "buckwheat") not in closure and ("sprouts_mix", "buckwheat") not in closure
+    assert {i.id: i.name for i in ck.ingredients}["squash_unspecified"] == "호박"

@@ -19,7 +19,7 @@ from kb.youtube_seed import NAME_OVERRIDES, YoutubeDataset, alias_index, convert
 
 ROOT = Path(__file__).resolve().parents[2]
 
-# 사람 결정(2026-10-17): 레시피를 보여 줄 때 재료 목록 위에 시판 제품 안내를 띄우는 재료
+# 사람 결정(um-2, 2026-10-17): 레시피를 보여 줄 때 재료 목록 위에 시판 제품 안내를 띄우는 처음 7개(ir-2에서 확대)
 COMMERCIAL = {"instant_noodle_product", "naengmyeon_broth", "buldak_sauce", "sundae", "potato_chips",
               "ssanghwatang", "misutgaru"}
 
@@ -57,7 +57,8 @@ def test_approved_aliases_and_new_ingredients_map(entries, ck, index):
             continue
         expected = e.new["id"] if e.new else e.target
         if e.new:
-            assert status.get(expected) == "draft", expected  # 재료 검수 전
+            # 새 재료는 draft로 들어가 ir-2 재료 검수에서 reviewed(또는 보류로 draft)가 됐다
+            assert status.get(expected) in ("draft", "reviewed"), expected
         for t in e.texts:
             assert index.get(normalize_term(t)) == expected, (t, expected)
 
@@ -95,10 +96,13 @@ def test_engine_recipes_left_unmapped_only_by_human_choice(entries, ck):
 def test_commercial_notice_products_are_approved_and_configured(entries):
     display = yaml.safe_load((ROOT / "config" / "display.yaml").read_text(encoding="utf-8"))
     notice = display["commercial_product_notice"]
-    assert set(notice["ingredients"]) == COMMERCIAL
     assert notice["text"] == "시판 제품으로 제품 성분을 확인해 알레르기 유무를 확인하시기 바랍니다."
     approved = {e.new["id"] for e in entries if e.decision == "O" and e.new}
-    assert COMMERCIAL <= approved
+    assert COMMERCIAL <= set(notice["ingredients"]) <= approved
+    # ir-2: 재료 검수에서 '포장 알레르기 표시 확인 권장' 메모를 단 재료(지우지 않은 것)가 모두 안내 대상이다
+    decisions = json.loads((ROOT / "docs" / "review" / "ingredient_decisions.json").read_text(encoding="utf-8"))["rows"]
+    memo = {r["id"] for r in decisions if "확인" in r["memo"] and r["decision"] != "X"}
+    assert set(notice["ingredients"]) == COMMERCIAL | memo
 
 
 def test_commercial_products_keep_broad_possible_allergens(ck):

@@ -104,8 +104,8 @@
   derived_from: [soybean]
   is_processed: true
   category: 콩·두부
-  note: 1차 레시피 확장(순두부찌개)용으로 추가. 2026-10-04 is_a tofu 결정(두부 절대 불선호가 순두부에도 적용되도록). 검수 필요
-  status: draft
+  note: 1차 레시피 확장(순두부찌개)용으로 추가. 2026-10-04 is_a tofu 결정(두부 절대 불선호가 순두부에도 적용되도록). 검수 필요 ir-2(2026-10-17) 사람 재료 검수 완료
+  status: reviewed
 - id: fried_tofu
   name: 유부
   aliases: [유부초밥용 유부, 사각유부]
@@ -131,14 +131,14 @@
 - id: chickpea
   name: 병아리콩
   category: 콩·두부
-  note: "대두 아님 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "대두 아님 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: green_peas
   name: 완두콩
   aliases: [완두]
   category: 콩·두부
-  note: "대두 아님 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "대두 아님 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: soybean_powder
   name: 콩가루
   aliases: [날콩가루, 볶은 콩가루]
@@ -146,16 +146,16 @@
     - soybean
   is_processed: true
   category: 콩·두부
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: sour_cream
   name: 사워크림
   derived_from:
     - milk
   is_processed: true
   category: 유제품
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: ricotta
   name: 리코타치즈
   aliases: [리코타]
@@ -164,5 +164,5 @@
     - milk
   is_processed: true
   category: 유제품
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed

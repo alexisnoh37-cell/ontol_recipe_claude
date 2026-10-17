@@ -428,17 +428,17 @@
   name: 아귀
   category: 생선
   allergens: [{group: other_fish, certainty: definite}]
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: whelk
   name: 골뱅이
   category: 해산물
   allergens: [{group: shellfish, certainty: definite}, {group: soybean, certainty: possible}, {group: wheat, certainty: possible}]
   confidence: low
-  note: "바다 고둥(복족류). 전복과 같이 조개류 그룹으로 둠. 원문은 통조림이라 조미액 대비 대두·밀 possible(um-2 사람 결정) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "바다 고둥(복족류). 전복과 같이 조개류 그룹으로 둠. 원문은 통조림이라 조미액 대비 대두·밀 possible(um-2 사람 결정) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: hijiki
   name: 톳
   category: 해조류
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed

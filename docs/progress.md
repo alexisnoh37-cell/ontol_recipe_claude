@@ -769,9 +769,19 @@ ui-1은 고른 재료를 추천 엔진에 넣는 방식이라 사람의 의도(�
 - 확인(내장 브라우저): 선택·메모·확인 저장, 노랑 필터 16개, 내보내기 109개(형식 `ingredient-decisions/1`), 휴대폰 폭 가로 스크롤 없음, 콘솔 오류 없음.
 - 테스트: `tests/kb/test_ingredient_review.py` 2개(모든 draft 포함·화면 최신, 시판 제품은 보류로 미리 채움).
 
+### ir-2 재료 검수 결과 반영 (2026-10-17)
+
+- 사람 결정: 검수 화면에서 내보낸 `docs/review/ingredient_decisions.json`(109개 모두 확인). O 102 · 보류 6 · X 1. 대화에서 추가 결정: 어린잎채소·새싹채소 모두 메밀(가능) 삭제, 나머지 메모는 적힌 그대로 전체 반영.
+- knowledge: O 102개 status draft → reviewed(확신도 `confidence`는 그대로, note에 'ir-2 사람 재료 검수 완료'). 보류 6개(시판 고기 양념, 불닭소스, 참소스, 폰즈 소스, 감자칩, 순대)는 draft 유지(엔진은 그대로 씀). X 1개 식용 꽃 삭제 → 그 표기는 다시 미매칭(식품안전나라 전용, 미매칭 줄 1817 → 1826). 어린잎채소·새싹채소 메밀(가능) 삭제(알레르기 없음). 호박(종류 불명) 이름 → '호박'. 재료 361 → 360, draft 109 → 6.
+- 시판 제품 안내 대상 확대(`config/display.yaml` `commercial_product_notice`): 메모 '시판 제품으로 포장 알레르기 표시를 확인한 뒤 사용 권장'을 단 재료 38개(um-2의 7개 포함, 보류 3개 포함). 콜라·탄산수·곤약·다시마육수처럼 알레르기 없는 재료도 메모대로 넣음. 안내가 붙는 엔진 레시피 38 → 113개(369개 중). 판정은 그대로.
+- **해석해서 반영한 것(되돌리기 쉬움)**: 메모를 '재료 목록 위 안내 대상에 추가'로 읽음(재료 메모로만 남기는 해석도 가능했음). 확인 없이 O로 한 시판 제품도 reviewed로 바꾸되 `confidence: low`는 유지 → 알레르기 설정 사용자에게 '성분표 확인' 표시가 계속 붙는다. 레몬즙 별칭(생레몬)은 지시가 없어 그대로 둠.
+- 기록: `docs/review/unmapped_proposal.yaml`의 식용 꽃 항목 decision → X(ir-2 삭제). 검수 화면 생성기는 reviewed가 된 재료의 미리 채운 판단을 기록으로 두고 화면에서는 뺀다(지금 화면에는 보류 6개만).
+- 테스트: `tests/kb/test_ingredient_review.py`에 결정 반영 검사 1개(O → reviewed, 보류 → draft, X → 삭제, 메밀 삭제, 호박 이름). `tests/kb/test_real_knowledge.py` draft 목록을 보류 6개로, 삭제 재료 검사. `tests/kb/test_unmapped_review.py` 새 재료 status draft/reviewed 허용, 안내 대상 = um-2 7개 ∪ 메모 재료. `tests/api/test_api.py` 안내 테스트를 설정 목록 기준으로. **DB 포함 전체 491개 통과**, `tests/allergy` 무변경, 골든셋 0.88 그대로. 개발 DB 재반영·`validate_data.py --db` 통과.
+
 ## 사람 확인 필요
 
-- **(ir-1) draft 재료 109개 검수**: 검수 화면 `docs/review/ingredient_review.html`을 열어 색 있는 재료(54개)부터 확인하고 '결과 내보내기' 파일 경로를 알려 준다. 승인분은 다음 단계(ir-2)에서 reviewed로 바꾸고 메모대로 고친다.
+- **(ir-2) 보류한 시판 제품 6개**: 시판 고기 양념·불닭소스·참소스·폰즈 소스·감자칩·순대는 포장 알레르기 표시를 확인한 뒤 `docs/review/ingredient_review.html`에서 다시 검수(지금 화면에는 이 6개만 나온다).
+- (ir-2) 메모 해석 확인: 안내 대상 38개(알레르기 없는 재료 포함), 확인 없이 승인한 시판 제품의 reviewed 처리.
 - (um-2) 승인과 다르게 반영한 2건('양념은 불닭소스', '코스트코에서')을 위 기록대로 확인.
 
 - **(int-4) 병합 PR 리뷰·병합**: `feature/ontology-integration` → main PR. 병합 후 PR #2(레시피 1차 확장)는 이 PR에 포함되어 닫는다. 병합 뒤 레시피를 실제 추천에 쓰려면 아래 fs-3 → data-1·data-2 검수 → 골든셋 처리 → published 전환 순서.
@@ -824,7 +834,7 @@ ui-1은 고른 재료를 추천 엔진에 넣는 방식이라 사람의 의도(�
 - MVP(Phase 0~1) 완료. Phase 2는 사람이 범위를 정한 뒤 시작한다(아래 "다음 단계 제안").
 - 시각화 트랙 완료(viz-v1). 시연은 README 6-1 "시연 순서"(시연 프로필은 `scripts/seed_demo_profiles.py`).
 - 새 재료를 추가할 때는 status: draft로 넣고 검수표(`scripts/make_review.py`)로 사람 확인 후 reviewed.
-- 미매칭 보강(um-2) main 병합 완료(PR #5). 새 재료 검수(ir-1) 화면 준비, 사람 검수 대기 → 반영(ir-2) → 레시피 검수(B-2) → 골든셋 처리(B-3) → published 전환(B-4).
+- 미매칭 보강(um-2) main 병합 완료(PR #5). 재료 검수(ir-1·ir-2) 반영, PR 리뷰 대기. 다음: 레시피 검수(B-2) → 골든셋 처리(B-3) → published 전환(B-4).
 - 통합 트랙(int-4): PR #4 main 병합 완료(2026-10-17). 병합 후 레시피 활용(미매칭 보강 → 레시피 검수 → 골든셋 → published 전환)은 main 위에서 단계별로 진행한다.
 - 데이터 확장 트랙(data-1, `feature/recipe-expansion`): 신규 레시피 50개 draft 검수 대기. 승인된 레시피는 published로 바꾸고 `tests/kb/test_recipe_seed.py`의 `PUBLISHED_IDS`에 추가, soft_tofu 승인 시 reviewed로 바꾸고 `tests/kb/test_real_knowledge.py`의 `DRAFT_INGREDIENTS`에서 뺀다. published 전환 전에 골든셋 처리 방법을 정한다.
 

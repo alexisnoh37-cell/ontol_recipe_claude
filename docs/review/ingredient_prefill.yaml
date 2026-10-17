@@ -1,4 +1,6 @@
 # draft 재료 검수 화면(docs/review/ingredient_review.html)에 미리 채울 판단 (ir-1, 2026-10-17)
+# ir-2(2026-10-17): 사람 검수 결과(docs/review/ingredient_decisions.json)를 반영해 아래 재료는 모두 reviewed가 되었다(기록용).
+# 화면은 status: draft 재료만 보여 주므로 지금은 보류 6개만 나온다. edible_flower는 X로 삭제되어 아래에서 뺐다.
 # 생성: uv run python scripts/make_ingredient_review_html.py
 #
 # 버튼: O = 검수 완료(status: reviewed) / X = 재료 삭제(그 표기는 다시 미매칭, 알레르기 사용자에게 제외) / 보류 = draft 유지

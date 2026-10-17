@@ -82,8 +82,8 @@
 - id: cola
   name: 콜라
   category: 가공식품
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: ssanghwatang
   name: 쌍화탕
   derived_from:
@@ -94,8 +94,8 @@
   is_processed: true
   category: 가공식품
   confidence: low
-  note: "한방 음료(숙지황·당귀·대추·생강·계피 등). 법정 알레르기 성분은 없다고 봄 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "한방 음료(숙지황·당귀·대추·생강·계피 등). 법정 알레르기 성분은 없다고 봄 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: pear_drink
   name: 시판 배 음료
   aliases: [갈아만든배, 배음료, 갈배음료]
@@ -105,8 +105,8 @@
   is_processed: true
   category: 가공식품
   confidence: low
-  note: "상표 음료(갈아만든배 등). 보존료 대비 아황산류 possible(um-2 사람 결정) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "상표 음료(갈아만든배 등). 보존료 대비 아황산류 possible(um-2 사람 결정) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: lemon_juice
   name: 레몬주스
   derived_from:
@@ -115,14 +115,14 @@
   is_processed: true
   category: 가공식품
   confidence: low
-  note: "병 제품 보존료 대비 아황산류 possible(um-2 사람 결정). 기존 '레몬즙' 별칭(레몬)은 별도 검토 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "병 제품 보존료 대비 아황산류 possible(um-2 사람 결정). 기존 '레몬즙' 별칭(레몬)은 별도 검토 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: konjac
   name: 곤약
   aliases: [실곤약, 곤약면]
   category: 가공식품
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: baek_kimchi
   name: 백김치
   derived_from:
@@ -134,22 +134,22 @@
   is_processed: true
   category: 김치
   confidence: low
-  note: "젓갈·굴 없이 담그기도 함 → possible(배추김치와 같은 기준) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "젓갈·굴 없이 담그기도 함 → possible(배추김치와 같은 기준) um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
 - id: sparkling_water
   name: 탄산수
   category: 가공식품
-  note: "또는 물처럼 재료에서 제외 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "또는 물처럼 재료에서 제외 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: cheongpomuk
   name: 청포묵
   aliases: [녹두묵]
   category: 가공식품
-  note: "녹두 전분 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "녹두 전분 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
 - id: green_tea_powder
   name: 녹차가루
   aliases: [말차]
   category: 가공식품
-  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
-  status: draft
+  note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed

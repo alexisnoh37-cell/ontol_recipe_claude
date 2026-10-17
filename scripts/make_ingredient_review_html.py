@@ -70,9 +70,9 @@ def build() -> tuple[str, list[dict]]:
     overrides = yaml.safe_load(PREFILL.read_text(encoding="utf-8"))["overrides"]
 
     drafts = [i for i in ck.ingredients if i.status == "draft"]
-    unknown = set(overrides) - {i.id for i in drafts}
-    if unknown:
-        raise SystemExit(f"{PREFILL.name}에 draft가 아닌 재료가 있습니다: {sorted(unknown)}")
+    unknown = set(overrides) - set(names)
+    if unknown:  # 검수가 끝나 reviewed가 된 재료의 판단은 기록으로 남기고 화면에서는 뺀다
+        raise SystemExit(f"{PREFILL.name}에 없는 재료가 있습니다: {sorted(unknown)}")
     drafts.sort(key=lambda i: (-len(engine[i.id]), -len(fs[i.id]), i.id))
     data = []
     for n, i in enumerate(drafts, 1):
