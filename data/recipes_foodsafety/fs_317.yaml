@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 317. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 317. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개'
 ingredients:
 - ingredient: pork_belly
   raw_text: 통삼겹 200g
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: green_onion
   raw_text: 대파 40g
   role: sub
-- ingredient: null
+- ingredient: bell_pepper
   raw_text: 2가지색 미니파프리카 40g
   role: sub
 - ingredient: green_bell_pepper
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: button_mushroom
   raw_text: 양송이 40g
   role: sub
-- ingredient: null
+- ingredient: red_chili
   raw_text: 건고추 3g
   role: sub
 - ingredient: fish_soy_sauce

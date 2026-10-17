@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 871. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 871. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
-- ingredient: null
+- ingredient: sea_bream
   raw_text: 도미 100g
   role: sub
 - ingredient: black_pepper
@@ -31,10 +31,10 @@ ingredients:
 - ingredient: tomato
   raw_text: 토마토 20g
   role: sub
-- ingredient: null
+- ingredient: olive
   raw_text: 올리브 10g
   role: sub
-- ingredient: null
+- ingredient: caper
   raw_text: 케이퍼 3g
   role: sub
 - ingredient: onion

@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 298. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 298. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 3개'
 ingredients:
 - ingredient: brown_rice
   raw_text: 현미(50g)
@@ -16,19 +16,19 @@ ingredients:
 - ingredient: kelp
   raw_text: 다시마(2g)
   role: sub
-- ingredient: null
+- ingredient: dried_shrimp
   raw_text: 새우가루(15g)
   role: sub
 - ingredient: cabbage
   raw_text: 양배추(50g)
   role: sub
-- ingredient: null
+- ingredient: beef
   raw_text: 얇게 썬 쇠고기(부채살, 80g)
   role: sub
-- ingredient: null
+- ingredient: red_chili
   raw_text: 송송 썬 붉은 고추(5g)
   role: sub
-- ingredient: null
+- ingredient: dallae
   raw_text: 달래무침 달래(10g)
   role: sub
 - ingredient: soy_sauce

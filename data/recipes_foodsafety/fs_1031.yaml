@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1031. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1031. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개. 이름 보정표로 고친 줄 1개'
 ingredients:
 - ingredient: potato
   raw_text: 감자 20g
@@ -13,7 +13,7 @@ ingredients:
 - ingredient: sweet_potato
   raw_text: 고구마 20g
   role: sub
-- ingredient: null
+- ingredient: olive_oil
   raw_text: 오릴브오일 2g
   role: sub
 - ingredient: null
@@ -28,13 +28,13 @@ ingredients:
 - ingredient: salt
   raw_text: 소금적당량
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 레드어니언 12g
   role: sub
 - ingredient: tomato
   raw_text: 토마토 25g
   role: sub
-- ingredient: null
+- ingredient: zucchini
   raw_text: 돼지호박 12g
   role: sub
 - ingredient: parmesan

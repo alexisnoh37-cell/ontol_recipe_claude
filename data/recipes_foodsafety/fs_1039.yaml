@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1039. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1039. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: broccoli
   raw_text: 브로콜리 70g
   role: sub
-- ingredient: null
+- ingredient: beef_tenderloin
   raw_text: 쇠고기안심 30g
   role: sub
 - ingredient: starch
@@ -31,7 +31,7 @@ ingredients:
 - ingredient: sugar
   raw_text: 설탕 3g
   role: sub
-- ingredient: null
+- ingredient: cooking_oil
   raw_text: 식물성기름 2g
   role: sub
 - ingredient: salt

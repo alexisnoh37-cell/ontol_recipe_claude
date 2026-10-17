@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 930. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 930. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: egg
   raw_text: 달걀 30g
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: manila_clam
   raw_text: 바지락 3g
   role: sub
-- ingredient: null
+- ingredient: sea_bream
   raw_text: 도미살 5g
   role: sub
 - ingredient: ham
@@ -31,7 +31,7 @@ ingredients:
 - ingredient: zucchini
   raw_text: 애호박 25g
   role: sub
-- ingredient: null
+- ingredient: canned_corn
   raw_text: 캔 옥수수 20g
   role: sub
 - ingredient: sliced_cheese

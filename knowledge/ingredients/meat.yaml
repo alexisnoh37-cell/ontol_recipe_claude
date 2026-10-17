@@ -10,21 +10,21 @@
 # --- 돼지고기 ---
 - id: pork
   name: 돼지고기
-  aliases: [돈육, 돼지고기 뒷다리살, 돼지 뒷다리살, 뒷다리살]
+  aliases: [돈육, 돼지고기 뒷다리살, 돼지 뒷다리살, 뒷다리살, 돼지고기살코기, 돼지고기사태, 돼지머리, 한돈]
   is_a: [meat]
   category: 육류
   allergens: [{group: pork, certainty: definite}]
   status: reviewed
 - id: pork_belly
   name: 삼겹살
-  aliases: [통삼겹, 대패삼겹살, 오겹살, 통삼겹살, 대패삼겹]
+  aliases: [통삼겹, 대패삼겹살, 오겹살, 통삼겹살, 대패삼겹, 돼지고기 삼겹살]
   is_a: [pork]
   category: 육류
   note: 2026-10-16 자취요리신 데이터 연결로 별칭 추가, 검수 필요('통삼겹살')
   status: reviewed
 - id: pork_neck
   name: 돼지고기 목살
-  aliases: [목살]
+  aliases: [목살, 돼지고기 목심, 돼지목살]
   is_a: [pork]
   category: 육류
   status: reviewed
@@ -48,13 +48,13 @@
   status: reviewed
 - id: pork_ribs
   name: 돼지갈비
-  aliases: [돼지등갈비, 등갈비]
+  aliases: [돼지등갈비, 등갈비, 쪽갈비]
   is_a: [pork]
   category: 육류
   status: reviewed
 - id: ground_pork
   name: 돼지고기 다짐육
-  aliases: [다진 돼지고기, 돼지 다짐육, 돼지고기 간 것, 간 돼지고기]
+  aliases: [다진 돼지고기, 돼지 다짐육, 돼지고기 간 것, 간 돼지고기, 돼지고기다진것, 갈은 돼지고기, 돈민찌, 돼지고기갈은것]
   is_a: [pork]
   category: 육류
   status: reviewed
@@ -62,7 +62,7 @@
 # --- 쇠고기 ---
 - id: beef
   name: 쇠고기
-  aliases: [소고기, 우육, 샤브샤브용 소고기]
+  aliases: [소고기, 우육, 샤브샤브용 소고기, 소고기 우둔살, 부챗살, 쇠고기구이용, 쇠고기사태, 쇠고기살코기, 우목심]
   is_a: [meat]
   category: 육류
   allergens: [{group: beef, certainty: definite}]
@@ -82,13 +82,13 @@
   status: reviewed
 - id: beef_bulgogi_cut
   name: 불고기용 소고기
-  aliases: [불고기감, 소불고기감]
+  aliases: [불고기감, 소불고기감, 소불고기]
   is_a: [beef]
   category: 육류
   status: reviewed
 - id: beef_soup_cut
   name: 국거리 소고기
-  aliases: [소고기 국거리, 양지, 양지머리]
+  aliases: [소고기 국거리, 양지, 양지머리, 소고기 양지, 쇠고기 양지, 양지육]
   is_a: [beef]
   category: 육류
   status: reviewed
@@ -100,19 +100,19 @@
   status: reviewed
 - id: beef_tenderloin
   name: 소고기 안심
-  aliases: [소안심]
+  aliases: [소안심, 쇠고기안심]
   is_a: [beef]
   category: 육류
   status: reviewed
 - id: ground_beef
   name: 소고기 다짐육
-  aliases: [다진 소고기, 소 다짐육, 다진 쇠고기, 쇠고기다진것]
+  aliases: [다진 소고기, 소 다짐육, 다진 쇠고기, 쇠고기다진것, 쇠고기갈은것, 우민찌, 갈은 소고기]
   is_a: [beef]
   category: 육류
   status: reviewed
 - id: beef_short_ribs
   name: 소갈비
-  aliases: [LA갈비, 찜갈비]
+  aliases: [LA갈비, 찜갈비, L.A갈비]
   is_a: [beef]
   category: 육류
   status: reviewed
@@ -128,7 +128,7 @@
 # --- 닭고기·가금류 ---
 - id: chicken
   name: 닭고기
-  aliases: [닭, 생닭, 닭 한 마리, 절단용 닭, 닭고기살]
+  aliases: [닭, 생닭, 닭 한 마리, 절단용 닭, 닭고기살, 닭뼈, 닭안심살, 닭살, 삼계탕용 닭]
   is_a: [meat]
   category: 육류
   allergens: [{group: chicken, certainty: definite}]
@@ -136,12 +136,13 @@
   status: reviewed
 - id: chicken_breast
   name: 닭가슴살
+  aliases: [닭고기가슴살, 삶은 닭가슴살, 훈제 닭가슴살]
   is_a: [chicken]
   category: 육류
   status: reviewed
 - id: chicken_thigh
   name: 닭다리살
-  aliases: [닭다리, 닭 정육, 닭다리 정육]
+  aliases: [닭다리, 닭 정육, 닭다리 정육, 닭다릿살]
   is_a: [chicken]
   category: 육류
   status: reviewed
@@ -168,13 +169,14 @@
 # --- 육가공품 (제품마다 성분이 달라 대부분 possible, confidence: low) ---
 - id: bacon
   name: 베이컨
+  aliases: [저염베이컨]
   derived_from: [pork_belly]
   is_processed: true
   category: 육가공품
   status: reviewed
 - id: ham
   name: 햄
-  aliases: [슬라이스햄, 김밥햄, 샌드위치햄]
+  aliases: [슬라이스햄, 김밥햄, 샌드위치햄, 햄다진것]
   derived_from:
     - pork
     - {id: chicken, certainty: possible}
@@ -188,7 +190,7 @@
   status: reviewed
 - id: sausage
   name: 소시지
-  aliases: [비엔나소시지, 프랑크소시지, 후랑크소시지, 소세지]
+  aliases: [비엔나소시지, 프랑크소시지, 후랑크소시지, 소세지, 저염살라미]
   derived_from:
     - {id: pork, certainty: possible}
     - {id: chicken, certainty: possible}
@@ -216,6 +218,7 @@
   status: reviewed
 - id: smoked_duck
   name: 훈제오리
+  aliases: [훈제오리가슴살]
   derived_from: [duck]
   is_processed: true
   category: 육가공품
@@ -271,3 +274,16 @@
   confidence: low
   note: "돼지 창자에 당면·선지. 밀·대두 첨가 제품 있음 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. 재료 검수 전 draft"
   status: draft
+
+# --- um-3 미매칭 2차 보강(2026-10-17, 사람 일괄 승인) ---
+- id: jokbal
+  name: 족발
+  aliases: [양념족발]
+  derived_from:
+    - pork
+    - {id: soy_sauce, certainty: possible}
+  is_processed: true
+  category: 육가공품
+  confidence: low
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed

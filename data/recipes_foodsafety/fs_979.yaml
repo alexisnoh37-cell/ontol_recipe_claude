@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 979. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 979. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: pork_ribs
   raw_text: 돼지갈비(바비큐용) 120g
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 양파작게자른것 20g
   role: sub
 - ingredient: garlic
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: cooking_oil
   raw_text: 식용유 1g
   role: sub
-- ingredient: null
+- ingredient: red_wine_vinegar
   raw_text: 레드와인식초 2g
   role: sub
 - ingredient: sugar
@@ -28,19 +28,19 @@ ingredients:
 - ingredient: honey
   raw_text: 꿀 5g
   role: sub
-- ingredient: null
+- ingredient: demi_glace
   raw_text: 데미글라스 10g
   role: sub
 - ingredient: ketchup
   raw_text: 토마토케첩 2g
   role: sub
-- ingredient: null
+- ingredient: mustard
   raw_text: 머스타드 2g
   role: sub
-- ingredient: null
+- ingredient: worcestershire
   raw_text: 우스터소스 2g
   role: sub
-- ingredient: null
+- ingredient: cayenne_pepper
   raw_text: 케이엔페퍼약간
   role: sub
 - ingredient: salt

@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 915. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 915. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
-- ingredient: null
+- ingredient: melon
   raw_text: 멜론 110g
   role: sub
 - ingredient: orange
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: sparkling_water
   raw_text: 탄산수 30g
   role: sub
-- ingredient: null
+- ingredient: lemon
   raw_text: 레몬껍질 2g
   role: sub
 - ingredient: starch
@@ -31,10 +31,10 @@ ingredients:
 - ingredient: null
   raw_text: 장식재료선택
   role: sub
-- ingredient: null
+- ingredient: melon
   raw_text: 멜론
   role: sub
-- ingredient: null
+- ingredient: plum
   raw_text: 자두
   role: sub
 - ingredient: heavy_cream

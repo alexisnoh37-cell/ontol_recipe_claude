@@ -4,29 +4,29 @@
 # --- 기본 양념 ---
 - id: salt
   name: 소금
-  aliases: [굵은소금, 꽃소금, 천일염, 맛소금, 볶은소금]
+  aliases: [굵은소금, 꽃소금, 천일염, 맛소금, 볶은소금, 저염소금, 고운 소금, 저나트륨소금]
   category: 양념
   confidence: low
   note: 맛소금은 MSG가 섞인 제품. 알레르기 성분은 없다고 보고 별칭으로 둠
   status: reviewed
 - id: sugar
   name: 설탕
-  aliases: [백설탕, 황설탕, 흑설탕]
+  aliases: [백설탕, 황설탕, 흑설탕, 슈가파우더, 설탕시럽]
   category: 양념
   status: reviewed
 - id: black_pepper
   name: 후추
-  aliases: [후춧가루, 통후추, 흑후추, 흰 후추, 흰후춧가루]
+  aliases: [후춧가루, 통후추, 흑후추, 흰 후추, 흰후춧가루, 백후추, 백후춧가루, 통후추부순것, 후추가루]
   category: 허브·향신료
   status: reviewed
 - id: gochugaru
   name: 고춧가루
-  aliases: [고운 고춧가루, 굵은 고춧가루, 고추가루]
+  aliases: [고운 고춧가루, 굵은 고춧가루, 고추가루, 매운고춧가루, 고운 고추가루]
   category: 양념
   status: reviewed
 - id: vinegar
   name: 식초
-  aliases: [양조식초, 사과식초, 현미식초]
+  aliases: [양조식초, 사과식초, 현미식초, 매실식초, 바나나식초, 초대리, 허브식초]
   category: 양념
   status: reviewed
 - id: honey
@@ -36,11 +36,12 @@
   status: reviewed
 - id: oligosaccharide
   name: 올리고당
+  aliases: [요리당]
   category: 양념
   status: reviewed
 - id: corn_syrup
   name: 물엿
-  aliases: [조청]
+  aliases: [조청, 시럽]
   category: 양념
   confidence: low
   note: 조청(쌀 등을 고아 만든 것)과 물엿(전분당)은 원료가 다름. 별칭으로 둘지 검수
@@ -49,7 +50,7 @@
 # --- 기름 ---
 - id: cooking_oil
   name: 식용유
-  aliases: [카놀라유, 포도씨유, 해바라기유, 옥수수유, 기름, 튀김기름, 현미유]
+  aliases: [카놀라유, 포도씨유, 해바라기유, 옥수수유, 기름, 튀김기름, 현미유, 식물성기름]
   category: 기름
   confidence: low
   note: 콩기름(대두유)은 별도 재료 soybean_oil. '식용유'가 콩기름일 수 있는 문제(대두 알레르기)는 검수 필요
@@ -71,13 +72,14 @@
   status: reviewed
 - id: perilla_oil
   name: 들기름
+  aliases: [생들기름]
   derived_from: [perilla_seed]
   is_processed: true
   category: 기름
   status: reviewed
 - id: olive_oil
   name: 올리브유
-  aliases: [올리브오일, 엑스트라버진 올리브유]
+  aliases: [올리브오일, 엑스트라버진 올리브유, 올리브유엑스트라버전]
   category: 기름
   status: reviewed
 - id: chili_oil
@@ -91,7 +93,7 @@
 # --- 장류 ---
 - id: soy_sauce
   name: 간장
-  aliases: [진간장, 국간장, 양조간장, 조선간장, 저염간장, 저염국간장]
+  aliases: [진간장, 국간장, 양조간장, 조선간장, 저염간장, 저염국간장, 노두유, 소야소스, 저염진간장]
   derived_from: [soybean, wheat_flour]
   is_processed: true
   category: 장류
@@ -100,7 +102,7 @@
   status: reviewed
 - id: doenjang
   name: 된장
-  aliases: [재래식 된장, 시판 된장, 저염된장]
+  aliases: [재래식 된장, 시판 된장, 저염된장, 보리된장]
   derived_from: [soybean, {id: wheat_flour, certainty: possible}]
   is_processed: true
   category: 장류
@@ -125,6 +127,7 @@
   status: reviewed
 - id: cheonggukjang
   name: 청국장
+  aliases: [생청국장]
   derived_from: [soybean]
   is_processed: true
   category: 장류
@@ -148,7 +151,7 @@
   status: reviewed
 - id: miso
   name: 미소된장
-  aliases: [미소, 일본된장]
+  aliases: [미소, 일본된장, 일식된장, 하얀된장]
   derived_from: [soybean, {id: wheat_flour, certainty: possible}]
   is_processed: true
   category: 장류
@@ -168,7 +171,7 @@
   status: reviewed
 - id: mayonnaise
   name: 마요네즈
-  aliases: [마요]
+  aliases: [마요, 무가당 아보카도 마요네즈]
   derived_from: [egg, {id: soybean_oil, certainty: possible}]
   is_processed: true
   category: 소스
@@ -182,7 +185,7 @@
   status: reviewed
 - id: tomato_sauce
   name: 토마토소스
-  aliases: [토마토 파스타소스, 마리나라소스]
+  aliases: [토마토 파스타소스, 마리나라소스, 피자소스]
   derived_from: [tomato, {id: milk, certainty: possible}, {id: cheese, certainty: possible}]
   is_processed: true
   category: 소스
@@ -191,13 +194,14 @@
   status: reviewed
 - id: tomato_paste
   name: 토마토페이스트
+  aliases: [토마토 페스트]
   derived_from: [tomato]
   is_processed: true
   category: 소스
   status: reviewed
 - id: mustard
   name: 머스터드
-  aliases: [디종 머스터드, 홀그레인 머스터드, 양겨자]
+  aliases: [디종 머스터드, 홀그레인 머스터드, 양겨자, 디존 머스타드, 머스타드, 머스터드 씨드, 씨겨자]
   category: 소스
   status: reviewed
 - id: wasabi
@@ -220,7 +224,7 @@
   status: reviewed
 - id: curry_powder
   name: 카레가루
-  aliases: [카레, 카레분말, 고형카레, 카레 루]
+  aliases: [카레, 카레분말, 고형카레, 카레 루, 커리가루, 커리 소스]
   derived_from:
     - wheat_flour
     - {id: milk, certainty: possible}
@@ -236,7 +240,7 @@
   status: reviewed
 - id: tsuyu
   name: 쯔유
-  aliases: [가쓰오 쯔유, 메밀소스]
+  aliases: [가쓰오 쯔유, 메밀소스, 가다랑어장국]
   derived_from: [soy_sauce, katsuobushi]
   is_processed: true
   category: 소스
@@ -255,7 +259,7 @@
 # --- 육수·조미료 ---
 - id: beef_bone_broth
   name: 사골육수
-  aliases: [사골국물, 사골곰탕 육수]
+  aliases: [사골국물, 사골곰탕 육수, 쇠고기육수]
   derived_from: [beef_bone]
   is_processed: true
   category: 육수·조미료
@@ -264,7 +268,7 @@
   status: reviewed
 - id: chicken_stock
   name: 치킨스톡
-  aliases: [치킨스톡 큐브, 닭육수, 치킨스톡 가루]
+  aliases: [치킨스톡 큐브, 닭육수, 치킨스톡 가루, 치킨육수, 삼계탕 육수, 닭뼈육수]
   derived_from:
     - chicken
     - {id: wheat_flour, certainty: possible}
@@ -291,34 +295,34 @@
 # --- 허브·향신료 ---
 - id: basil
   name: 바질
-  aliases: [바질잎, 건바질]
+  aliases: [바질잎, 건바질, 바질다진것, 바질마른것]
   category: 허브·향신료
   status: reviewed
 - id: parsley
   name: 파슬리
-  aliases: [파슬리가루, 건파슬리, {text: 파슬리다진것, form: minced}]
+  aliases: [파슬리가루, 건파슬리, {text: 파슬리다진것, form: minced}, 다진 파슬리, 파슬리말린것]
   category: 허브·향신료
   status: reviewed
 - id: bay_leaf
   name: 월계수잎
-  aliases: [로리에]
+  aliases: [로리에, 월계수잎마른것]
   category: 허브·향신료
   status: reviewed
 - id: cinnamon
   name: 계피
-  aliases: [시나몬, 계피가루, 시나몬파우더]
+  aliases: [시나몬, 계피가루, 시나몬파우더, 통계피]
   category: 허브·향신료
   status: reviewed
 - id: mustard_powder
   name: 겨자
-  aliases: [겨잣가루, 연겨자, 겨자가루]
+  aliases: [겨잣가루, 연겨자, 겨자가루, 겨자분말, 머스터드 파우더, 발효겨자]
   category: 허브·향신료
   status: reviewed
 
 # --- 주류 (아황산류) ---
 - id: wine
   name: 와인
-  aliases: [레드와인, 화이트와인, 포도주, 요리용 와인]
+  aliases: [레드와인, 화이트와인, 포도주, 요리용 와인, 적포도주]
   derived_from: [grape, sulfite]
   is_processed: true
   category: 주류
@@ -327,7 +331,7 @@
   status: reviewed
 - id: mirin
   name: 맛술
-  aliases: [미림, 미향]
+  aliases: [미림, 미향, 조미술]
   derived_from: [rice]
   is_processed: true
   category: 주류
@@ -356,7 +360,7 @@
 # --- um-2 미매칭 보강(2026-10-17, 사람 검수표 승인, 재료 검수 전 draft) ---
 - id: instant_stock
   name: 시판 육수(코인·분말)
-  aliases: [코인육수, 육수코인, 분말육수, 육수가루, 가루육수]
+  aliases: [코인육수, 육수코인, 분말육수, 육수가루, 가루육수, 다시팩, 천연다시다, 천연조미료]
   derived_from:
     - {id: seafood, certainty: possible}
     - {id: beef, certainty: possible}
@@ -500,12 +504,13 @@
   status: reviewed
 - id: allulose
   name: 알룰로스
+  aliases: [알룰로스 가루]
   category: 양념
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
 - id: maesil_cheong
   name: 매실청
-  aliases: [매실액, 매실원액]
+  aliases: [매실액, 매실원액, 매실농축액, 매실엑기스]
   derived_from:
     - maesil
     - sugar
@@ -584,7 +589,7 @@
   status: reviewed
 - id: rosemary
   name: 로즈마리
-  aliases: [로즈메리]
+  aliases: [로즈메리, 건 로즈마리, 건로즈메리, 로즈마리마른것]
   category: 허브·향신료
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
@@ -601,7 +606,7 @@
   status: reviewed
 - id: balsamic_glaze
   name: 발사믹 글레이즈
-  aliases: [발사믹소스]
+  aliases: [발사믹소스, 발사믹크레마, 발사믹크림]
   derived_from:
     - grape
     - {id: sulfite, certainty: possible}
@@ -641,7 +646,7 @@
   status: reviewed
 - id: yeast
   name: 이스트
-  aliases: [드라이이스트, 인스턴트 드라이이스트]
+  aliases: [드라이이스트, 인스턴트 드라이이스트, 생이스트, 인스턴트 이스트]
   category: 첨가물
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
@@ -674,7 +679,7 @@
   status: reviewed
 - id: fish_soy_sauce
   name: 어간장
-  aliases: [간편 어간장]
+  aliases: [간편 어간장, 멸치간장]
   derived_from:
     - fish_sauce
     - anchovy
@@ -686,6 +691,7 @@
   status: reviewed
 - id: baking_powder
   name: 베이킹파우더
+  aliases: [저나트륨 베이킹 파우더]
   derived_from:
     - {id: wheat_flour, certainty: possible}
   is_processed: true
@@ -695,12 +701,13 @@
   status: reviewed
 - id: oregano
   name: 오레가노
+  aliases: [오레가노가루, 오레가노다진것, 오레가노마른것]
   category: 허브·향신료
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
 - id: mint
   name: 민트
-  aliases: [애플민트]
+  aliases: [애플민트, 민트잎, 애플민트잎]
   category: 허브·향신료
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
@@ -712,6 +719,7 @@
   status: reviewed
 - id: paprika_powder
   name: 파프리카가루
+  aliases: [훈제 파프리카파우더]
   derived_from:
     - bell_pepper
   is_processed: true
@@ -720,6 +728,7 @@
   status: reviewed
 - id: cactus_fruit_powder
   name: 백년초가루
+  aliases: [백년초]
   category: 첨가물
   note: "색소용 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
   status: reviewed
@@ -730,6 +739,7 @@
   status: reviewed
 - id: thyme
   name: 타임
+  aliases: [타임다진것, 타임마른것, 건타임]
   category: 허브·향신료
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
@@ -744,4 +754,412 @@
   category: 주류
   confidence: low
   note: "원료(쌀·타피오카·고구마) 다양 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
+
+# --- um-3 미매칭 2차 보강(2026-10-17, 사람 일괄 승인) ---
+- id: clove
+  name: 정향
+  category: 허브·향신료
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: agar
+  name: 한천
+  aliases: [우무묵, 한천가루]
+  category: 첨가물
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: seafood_stock
+  name: 해물육수
+  derived_from:
+    - {id: seafood, certainty: possible}
+    - {id: kelp, certainty: possible}
+  is_processed: true
+  category: 육수·조미료
+  confidence: low
+  note: "해산물 종류 불명 → 해산물 전체 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: persimmon_vinegar
+  name: 감식초
+  derived_from:
+    - persimmon
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 양념
+  confidence: low
+  note: "과일 식초 보존료 대비 아황산류 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: red_wine_vinegar
+  name: 레드와인식초
+  aliases: [포도식초, 화이트와인식초]
+  derived_from:
+    - wine
+  is_processed: true
+  category: 양념
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: chogan_sauce
+  name: 초간장
+  derived_from:
+    - soy_sauce
+    - vinegar
+  is_processed: true
+  category: 소스
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: levain
+  name: 르뱅(발효종)
+  aliases: [르뱅 발효종, 파트 페레멘테]
+  derived_from:
+    - wheat_flour
+  is_processed: true
+  category: 첨가물
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: fruit_starter
+  name: 과일 발효종
+  aliases: [사과종, 블루베리 발효원종]
+  category: 첨가물
+  confidence: low
+  note: "과일과 물로 키운 효모액. 밀가루를 섞는 경우는 원문 다른 줄 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: beer
+  name: 맥주
+  category: 주류
+  allergens: [{group: wheat, certainty: possible}]
+  confidence: low
+  note: "밀 맥주 등 밀 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: vanilla
+  name: 바닐라 에센스
+  aliases: [바닐라빈, 바닐라향]
+  category: 첨가물
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: cumin
+  name: 커민
+  aliases: [커민파우더, 큐민파우더]
+  category: 허브·향신료
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: tagatose
+  name: 타가토스
+  category: 양념
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: garam_masala
+  name: 가람마살라
+  category: 허브·향신료
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: coriander
+  name: 고수
+  aliases: [코리앤더가루, 코리앤더 씨드, 코리앤더파우더]
+  category: 허브·향신료
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: nutmeg
+  name: 넛맥
+  aliases: [넛맥가루]
+  category: 허브·향신료
+  note: "견과류 아님(향신료) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: nuruk_salt
+  name: 누룩소금
+  derived_from:
+    - salt
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 양념
+  confidence: low
+  note: "누룩은 밀로 만드는 경우가 많아 밀 possible um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: teriyaki_sauce
+  name: 데리야키소스
+  derived_from:
+    - soy_sauce
+    - sugar
+    - {id: mirin, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: dill
+  name: 딜
+  category: 허브·향신료
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: peanut_oil
+  name: 땅콩기름
+  derived_from:
+    - peanut
+  is_processed: true
+  category: 기름
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: lemongrass
+  name: 레몬그라스
+  category: 허브·향신료
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: lecithin
+  name: 레시틴
+  aliases: [레시틴가루]
+  derived_from:
+    - {id: soybean, certainty: possible}
+    - {id: egg, certainty: possible}
+  is_processed: true
+  category: 첨가물
+  confidence: low
+  note: "대두·계란 레시틴 모두 있음(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: maple_syrup
+  name: 메이플시럽
+  category: 양념
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: meju_powder
+  name: 메주가루
+  derived_from:
+    - soybean
+  is_processed: true
+  category: 장류
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: korean_mint
+  name: 방아잎
+  category: 허브·향신료
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: baking_soda
+  name: 베이킹소다
+  category: 첨가물
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: salsa
+  name: 살사
+  aliases: [살사소스]
+  derived_from:
+    - tomato
+    - onion
+  is_processed: true
+  category: 소스
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: samgyetang_herbs
+  name: 삼계탕 약재
+  aliases: [삼계탕 티백]
+  category: 허브·향신료
+  confidence: low
+  note: "황기·대추·마늘 등 약재 묶음 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: fish_stock
+  name: 생선육수
+  derived_from:
+    - {id: fish, certainty: possible}
+  is_processed: true
+  category: 육수·조미료
+  confidence: low
+  note: "생선 종류 불명 → 생선 그룹 모두 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: steak_seasoning
+  name: 스테이크 시즈닝
+  derived_from:
+    - salt
+    - black_pepper
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 허브·향신료
+  confidence: low
+  note: "시판 혼합 시즈닝. 가수분해 단백 등 대두·밀 possible um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: agave_syrup
+  name: 아가베 시럽
+  category: 양념
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: avocado_oil
+  name: 아보카도유
+  derived_from:
+    - avocado
+  is_processed: true
+  category: 기름
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: worcestershire
+  name: 우스터소스
+  derived_from:
+    - anchovy
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "멸치 들어감. 대두·밀(맥아식초) possible um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: italian_seasoning
+  name: 이탈리안 시즈닝
+  aliases: [이태리시즈닝, 허브가루]
+  category: 허브·향신료
+  confidence: low
+  note: "말린 허브 혼합 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: bread_improver
+  name: 제빵개량제
+  derived_from:
+    - {id: wheat_flour, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 첨가물
+  confidence: low
+  note: "밀가루·대두분을 부형제로 쓰는 제품 있음 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: cayenne_pepper
+  name: 카옌페퍼
+  aliases: [카엔패퍼, 카엔페퍼, 케이엔페퍼, 키엔페퍼]
+  category: 허브·향신료
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: chlorella
+  name: 클로렐라가루
+  category: 첨가물
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: tartar_sauce
+  name: 타르타르소스
+  derived_from:
+    - mayonnaise
+    - pickled_cucumber
+  is_processed: true
+  category: 소스
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: tabasco
+  name: 타바스코
+  aliases: [타비스코 소스]
+  category: 소스
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: star_anise
+  name: 팔각
+  category: 허브·향신료
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: pink_pepper
+  name: 핑크페퍼
+  category: 허브·향신료
+  allergens: [{group: other_tree_nuts, certainty: possible}]
+  confidence: low
+  note: "캐슈와 같은 옻나무과라 교차 반응 보고가 있어 기타 견과류 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: hoisin
+  name: 해선장
+  derived_from:
+    - soybean
+    - wheat_flour
+    - {id: sesame, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: honey_mustard
+  name: 허니머스터드
+  aliases: [허니머스터드소스]
+  derived_from:
+    - mustard
+    - honey
+    - {id: mayonnaise, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+
+# --- um-3 미매칭 2차 보강 꼭 확인분(2026-10-17, 사람 검수 승인) ---
+- id: makgeolli
+  name: 막걸리
+  category: 주류
+  allergens: [{group: wheat, certainty: possible}]
+  confidence: low
+  note: "쌀 막걸리 외에 밀 막걸리가 있어 밀 possible um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: sriracha
+  name: 스리라차소스
+  aliases: [스리라차]
+  derived_from:
+    - red_chili
+    - garlic
+    - vinegar
+    - sugar
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판 소스. 대표 제품 원재료에 아황산수소나트륨이 있어 아황산류 possible. 그 밖의 법정 알레르기 성분은 보통 없음 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: cream_sauce
+  name: 크림소스
+  derived_from:
+    - heavy_cream
+    - {id: wheat_flour, certainty: possible}
+    - {id: cheese, certainty: possible}
+    - {id: chicken_stock, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판·가정식 크림소스. 우유 확정 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: mushroom_garlic_salt
+  name: 버섯마늘소금
+  derived_from:
+    - salt
+    - garlic
+    - {id: shiitake, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 양념
+  confidence: low
+  note: "시판 혼합 소금. 조미 성분(가수분해 단백 등)에 대두·밀이 들 수 있어 possible um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: demi_glace
+  name: 데미글라스소스
+  aliases: [데미글라스]
+  derived_from:
+    - {id: beef, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: tomato, certainty: possible}
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판 소스. 쇠고기 육수·밀가루 루 기반 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: tteokbokki_powder
+  name: 떡볶이 양념 분말
+  aliases: [떡볶이양념파우더]
+  derived_from:
+    - gochugaru
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: seafood, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판 양념 분말. 성분 확인 필요 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: fine_soft
+  name: 파인소프트(제빵용 전분)
+  aliases: [파인소프트 C, 파인소프트 T]
+  derived_from:
+    - {id: wheat_flour, certainty: possible}
+    - {id: corn, certainty: possible}
+  is_processed: true
+  category: 첨가물
+  confidence: low
+  note: "제빵용 가공전분 상표. 원료(타피오카·옥수수·밀) 확인 필요 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
   status: reviewed

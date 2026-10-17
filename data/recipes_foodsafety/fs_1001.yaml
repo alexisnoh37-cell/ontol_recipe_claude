@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1001. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1001. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: red_bean
   raw_text: 팥 10g
@@ -13,10 +13,10 @@ ingredients:
 - ingredient: glutinous_rice_flour
   raw_text: 찹쌀가루 15g
   role: sub
-- ingredient: null
+- ingredient: mugwort
   raw_text: 쑥가루 5g
   role: sub
-- ingredient: null
+- ingredient: sikhye
   raw_text: 식혜 110g
   role: sub
 - ingredient: salt

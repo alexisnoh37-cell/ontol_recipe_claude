@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 330. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 330. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개'
 ingredients:
 - ingredient: pasta
   raw_text: 파스타면 50g
@@ -16,7 +16,10 @@ ingredients:
 - ingredient: cucumber
   raw_text: 오이 20g
   role: sub
-- ingredient: null
+- ingredient: green_chili
+  raw_text: 청홍고추 각각 15g
+  role: sub
+- ingredient: red_chili
   raw_text: 청홍고추 각각 15g
   role: sub
 - ingredient: bell_pepper
@@ -28,7 +31,7 @@ ingredients:
 - ingredient: carrot
   raw_text: 당근 25g
   role: sub
-- ingredient: null
+- ingredient: perilla_oil
   raw_text: 생들기름 30g
   role: sub
 - ingredient: sesame

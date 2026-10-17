@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3575. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3575. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
 - ingredient: beef
   raw_text: 소고기(치맛살)(100g)
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: cooking_oil
   raw_text: 식용유(45g)
   role: sub
-- ingredient: null
+- ingredient: scallion
   raw_text: 다진 쪽파(10g)
   role: sub
 - ingredient: garlic

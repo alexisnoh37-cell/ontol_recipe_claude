@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3190. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3190. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: wheat_flour
   raw_text: 강력분 675g
@@ -13,13 +13,13 @@ ingredients:
 - ingredient: salt
   raw_text: 소금 6g
   role: sub
-- ingredient: null
+- ingredient: yeast
   raw_text: 생이스트 10g
   role: sub
-- ingredient: null
+- ingredient: fine_soft
   raw_text: 파인소프트 T 300g
   role: sub
-- ingredient: null
+- ingredient: fine_soft
   raw_text: 파인소프트 C 50g
   role: sub
 - ingredient: wheat_flour
@@ -28,10 +28,10 @@ ingredients:
 - ingredient: salt
   raw_text: 소금 8g
   role: sub
-- ingredient: null
+- ingredient: milk_powder
   raw_text: 분유 8g
   role: sub
-- ingredient: null
+- ingredient: almond
   raw_text: 아몬드 분말 74g
   role: sub
 - ingredient: yeast
@@ -52,7 +52,7 @@ ingredients:
 - ingredient: egg
   raw_text: 노른자 20g
   role: sub
-- ingredient: null
+- ingredient: sweet_potato
   raw_text: 고구마 다이스 100g
   role: sub
 steps:

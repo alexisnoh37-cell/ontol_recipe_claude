@@ -14,7 +14,10 @@ ingredients:
   raw_text: 달래 5
   role: sub
 - ingredient: olive_oil
-  raw_text: '올리브유 5 양념장: 간장 4'
+  raw_text: 올리브유 5
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 간장 4
   role: sub
 - ingredient: sugar
   raw_text: 설탕 3

@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 839. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 839. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: soybean
   raw_text: 대두 10g
   role: sub
-- ingredient: null
+- ingredient: siraegi
   raw_text: 시레기 60g
   role: sub
 - ingredient: green_chili
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: wheat_flour
   raw_text: 밀가루 6g
   role: sub
-- ingredient: null
+- ingredient: acorn_jelly
   raw_text: 도토리가루 2g
   role: sub
 - ingredient: egg

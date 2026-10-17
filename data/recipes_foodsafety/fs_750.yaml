@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 750. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 750. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개. 이름 보정표로 고친 줄 1개'
 ingredients:
 - ingredient: null
   raw_text: 완자
   role: sub
-- ingredient: null
+- ingredient: soy_pulp
   raw_text: 콩비지 50
   role: sub
 - ingredient: ground_pork
@@ -35,12 +35,18 @@ ingredients:
   raw_text: 다진 파 4
   role: sub
 - ingredient: garlic
-  raw_text: '다진 마늘 2 국물: 멸치다시마국물(물 300, 건멸치 2.5, 건다시마 2)'
+  raw_text: 다진 마늘 2
+  role: sub
+- ingredient: null
+  raw_text: 국물
+  role: sub
+- ingredient: anchovy_stock
+  raw_text: 멸치다시마국물(물 300, 건멸치 2.5, 건다시마 2)
   role: sub
 - ingredient: bok_choy
   raw_text: 청경채 20
   role: sub
-- ingredient: null
+- ingredient: green_onion
   raw_text: 어슷 썬 대파 5
   role: sub
 - ingredient: garlic

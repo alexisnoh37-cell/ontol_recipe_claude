@@ -16,7 +16,7 @@
 # --- 생선: 고등어(법정) ---
 - id: mackerel
   name: 고등어
-  aliases: [생고등어]
+  aliases: [생고등어, 냉동고등어, 손질된 고등어]
   is_a: [fish]
   category: 생선
   allergens: [{group: mackerel, certainty: definite}]
@@ -47,6 +47,7 @@
   status: reviewed
 - id: pacific_saury
   name: 꽁치
+  aliases: [꽁치살]
   is_a: [fish]
   category: 생선
   allergens: [{group: other_fish, certainty: definite}]
@@ -81,7 +82,7 @@
   status: reviewed
 - id: pollock
   name: 명태
-  aliases: [동태, 생태, 코다리]
+  aliases: [동태, 생태, 코다리, 동태포, 동태살, 명태포]
   is_a: [fish]
   category: 생선
   allergens: [{group: other_fish, certainty: definite}]
@@ -90,7 +91,7 @@
   status: reviewed
 - id: dried_pollock
   name: 황태
-  aliases: [북어, 황태채, 북어채]
+  aliases: [북어, 황태채, 북어채, 황태머리, 황태포]
   derived_from: [pollock]
   is_processed: true
   category: 생선
@@ -104,27 +105,28 @@
   status: reviewed
 - id: flatfish
   name: 가자미
+  aliases: [가자미살]
   is_a: [fish]
   category: 생선
   allergens: [{group: other_fish, certainty: definite}]
   status: reviewed
 - id: salmon
   name: 연어
-  aliases: [생연어]
+  aliases: [생연어, 슬라이스연어, 연어 필레, 통조림 연어, 훈재연어, 훈제연어]
   is_a: [fish]
   category: 생선
   allergens: [{group: other_fish, certainty: definite}]
   status: reviewed
 - id: tuna
   name: 참치
-  aliases: [참치회, 다랑어]
+  aliases: [참치회, 다랑어, 참치살]
   is_a: [fish]
   category: 생선
   allergens: [{group: other_fish, certainty: definite}]
   status: reviewed
 - id: canned_tuna
   name: 참치캔
-  aliases: [참치통조림, 통조림참치]
+  aliases: [참치통조림, 통조림참치, 캔참치]
   derived_from: [tuna, {id: soybean_oil, certainty: possible}]
   is_processed: true
   category: 생선
@@ -139,14 +141,14 @@
   status: reviewed
 - id: katsuobushi
   name: 가쓰오부시
-  aliases: [가다랑어포, 가츠오부시]
+  aliases: [가다랑어포, 가츠오부시, 가쯔오부시, 혼다랑어가쓰오부시]
   derived_from: [skipjack]
   is_processed: true
   category: 생선
   status: reviewed
 - id: anchovy
   name: 멸치
-  aliases: [국물용 멸치, 다시멸치, 볶음용 멸치, {text: 잔멸치, form: small}, 국멸치]
+  aliases: [국물용 멸치, 다시멸치, 볶음용 멸치, {text: 잔멸치, form: small}, 국멸치, 건멸치, 앤쵸비, 육수용 멸치]
   is_a: [fish]
   category: 생선
   allergens: [{group: other_fish, certainty: definite}]
@@ -161,7 +163,7 @@
 # --- 생선 가공품 ---
 - id: fish_cake
   name: 어묵
-  aliases: [오뎅, 사각어묵, 부산어묵, 어묵탕용 어묵, 꼬치어묵]
+  aliases: [오뎅, 사각어묵, 부산어묵, 어묵탕용 어묵, 꼬치어묵, 찐 어묵, 찰어묵]
   derived_from:
     - fish
     - {id: wheat_flour, certainty: possible}
@@ -174,7 +176,7 @@
   status: reviewed
 - id: imitation_crab
   name: 게맛살
-  aliases: [맛살, 게살맛살, 크래미]
+  aliases: [맛살, 게살맛살, 크래미, 크래비, 크레미]
   derived_from:
     - fish
     - {id: crab, certainty: possible}
@@ -190,21 +192,21 @@
 # --- 갑각류 ---
 - id: shrimp_raw
   name: 새우
-  aliases: [대하, 칵테일새우, 새우살, 흰다리새우, 냉동새우, 새우 머리]
+  aliases: [대하, 칵테일새우, 새우살, 흰다리새우, 냉동새우, 새우 머리, 냉동 새우살, 자숙새우, 백새우, 블랙타이거새우, 새우다진것, 새우살다진것, 생새우, 새뱅이, 잔새우살다진것, 칵텔새우]
   is_a: [seafood]
   category: 해산물
   allergens: [{group: shrimp, certainty: definite}]
   status: reviewed
 - id: dried_shrimp
   name: 건새우
-  aliases: [마른 새우, 보리새우]
+  aliases: [마른 새우, 보리새우, 새우가루, 다진 건새우]
   derived_from: [shrimp_raw]
   is_processed: true
   category: 해산물
   status: reviewed
 - id: crab
   name: 게
-  aliases: [꽃게, 대게, 홍게, 게살]
+  aliases: [꽃게, 대게, 홍게, 게살, 게살냉동]
   is_a: [seafood]
   category: 해산물
   allergens: [{group: crab, certainty: definite}]
@@ -213,7 +215,7 @@
 # --- 연체류 ---
 - id: squid
   name: 오징어
-  aliases: [생물 오징어, 한치, 냉동오징어]
+  aliases: [생물 오징어, 한치, 냉동오징어, 오징어 몸통, 물오징어, 통오징어]
   is_a: [seafood]
   category: 해산물
   allergens: [{group: squid, certainty: definite}]
@@ -222,13 +224,14 @@
   status: reviewed
 - id: dried_squid
   name: 오징어채
-  aliases: [진미채, 오징어 진미채, 마른오징어]
+  aliases: [진미채, 오징어 진미채, 마른오징어, 대왕오징어채, 건오징어]
   derived_from: [squid]
   is_processed: true
   category: 해산물
   status: reviewed
 - id: small_octopus
   name: 낙지
+  aliases: [낙지 다리]
   is_a: [seafood]
   category: 해산물
   confidence: low
@@ -257,7 +260,7 @@
 # --- 조개류(법정: 굴·전복·홍합 포함). 알레르기는 중간 노드 clam에만 적고 하위는 is_a로 상속 ---
 - id: clam
   name: 조개
-  aliases: [조개류, 조갯살]
+  aliases: [조개류, 조갯살, 백합, 조개살]
   is_a: [seafood]
   category: 해산물
   allergens: [{group: shellfish, certainty: definite}]
@@ -281,7 +284,7 @@
   status: reviewed
 - id: scallop
   name: 가리비
-  aliases: [가리비살, 관자]
+  aliases: [가리비살, 관자, 패주, 키조개관자]
   is_a: [clam]
   category: 해산물
   confidence: low
@@ -301,6 +304,7 @@
   status: reviewed
 - id: abalone
   name: 전복
+  aliases: [전복살]
   is_a: [clam]
   category: 해산물
   status: reviewed
@@ -319,7 +323,7 @@
   status: reviewed
 - id: saeujeot
   name: 새우젓
-  aliases: [새우젓갈, 육젓, 추젓]
+  aliases: [새우젓갈, 육젓, 추젓, 새우젓국, 새우젓국물]
   is_a: [jeotgal]
   derived_from: [shrimp_raw]
   is_processed: true
@@ -367,7 +371,7 @@
   status: reviewed
 - id: fish_sauce
   name: 액젓
-  aliases: [피시소스]
+  aliases: [피시소스, 피쉬소스]
   is_a: [jeotgal]
   category: 젓갈
   confidence: low
@@ -391,7 +395,7 @@
 # --- 해조류 ---
 - id: laver
   name: 김
-  aliases: [김밥김, 생김, 구운김, 김밥용 김]
+  aliases: [김밥김, 생김, 구운김, 김밥용 김, 파래김, 물파래, 파래]
   category: 해조류
   status: reviewed
 - id: seasoned_laver
@@ -405,19 +409,19 @@
   status: reviewed
 - id: seaweed
   name: 미역
-  aliases: [건미역, 자른미역]
+  aliases: [건미역, 자른미역, 마른 미역, 불린 미역, 미역마른것, 건조미역줄기, 건조미역, 건조 자른미역, 마른미역줄기, 미역 줄기]
   category: 해조류
   status: reviewed
 - id: kelp
   name: 다시마
-  aliases: [국물용 다시마, 건다시마]
+  aliases: [국물용 다시마, 건다시마, 쌈다시마, 다시마가루, 마른 다시마]
   category: 해조류
   status: reviewed
 
 # --- 육수 ---
 - id: anchovy_stock
   name: 멸치육수
-  aliases: [멸치다시마육수, 멸치 다시물]
+  aliases: [멸치다시마육수, 멸치 다시물, 다시물, 멸치다시마국물]
   derived_from: [anchovy, {id: kelp, certainty: possible}]
   is_processed: true
   category: 육수·조미료
@@ -439,6 +443,160 @@
   status: reviewed
 - id: hijiki
   name: 톳
+  aliases: [톳나물]
   category: 해조류
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
+
+# --- um-3 미매칭 2차 보강(2026-10-17, 사람 일괄 승인) ---
+- id: maesaengi
+  name: 매생이
+  aliases: [말린 매생이]
+  category: 해조류
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: eel
+  name: 장어
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: flying_fish_roe
+  name: 날치알
+  category: 해산물
+  allergens: [{group: other_fish, certainty: definite}]
+  note: "생선 알 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: olive_flounder
+  name: 광어
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: sea_bream
+  name: 도미
+  aliases: [도미살]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: turban_shell
+  name: 소라
+  aliases: [소라살]
+  category: 해산물
+  allergens: [{group: shellfish, certainty: definite}]
+  note: "복족류. 골뱅이·전복과 같이 조개류 그룹 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: fish_unspecified
+  name: 생선(종류 불명)
+  aliases: [흰살 생선, 생선살, 손질된 흰살생선]
+  derived_from:
+    - {id: fish, certainty: possible}
+  is_processed: true
+  category: 생선
+  confidence: low
+  note: "종류 불명 → 생선 그룹 모두 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: seaweed_mix
+  name: 해초(혼합)
+  aliases: [해초]
+  category: 해조류
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: gamtae
+  name: 감태
+  aliases: [감태가루]
+  category: 해조류
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: cuttlefish
+  name: 갑오징어
+  category: 해산물
+  allergens: [{group: squid, certainty: possible}, {group: other_cephalopods, certainty: possible}]
+  confidence: low
+  note: "오징어 그룹에 드는지 불확실 → 오징어·기타 연체류 둘 다 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: gompi
+  name: 곰피
+  category: 해조류
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: gwamegi
+  name: 과메기
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  note: "꽁치·청어 말린 것 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: blackthroat_seaperch
+  name: 금태(눈볼대)
+  aliases: [금태]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: pond_snail
+  name: 우렁이
+  aliases: [논우렁, 우렁]
+  category: 해산물
+  allergens: [{group: shellfish, certainty: possible}]
+  confidence: low
+  note: "민물 고둥. 조개류 그룹 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: river_snail
+  name: 다슬기
+  aliases: [다슬기살]
+  category: 해산물
+  allergens: [{group: shellfish, certainty: possible}]
+  confidence: low
+  note: "민물 고둥. 조개류 그룹 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: dipori
+  name: 디포리(밴댕이)
+  aliases: [뒤포리, 디포리]
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: squid_ink
+  name: 오징어 먹물
+  aliases: [먹물, 먹물 가루]
+  category: 해산물
+  allergens: [{group: squid, certainty: possible}, {group: other_cephalopods, certainty: possible}]
+  confidence: low
+  note: "오징어·갑오징어 먹물. 오징어·기타 연체류 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: croaker
+  name: 민어
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: pomfret
+  name: 병어
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: silchi
+  name: 실치
+  category: 생선
+  allergens: [{group: other_fish, certainty: definite}]
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+
+# --- um-3 미매칭 2차 보강 꼭 확인분(2026-10-17, 사람 검수 승인) ---
+- id: sea_squirt
+  name: 멍게
+  aliases: [멍게살]
+  category: 해산물
+  allergens: [{group: shellfish, certainty: possible}]
+  confidence: low
+  note: "멍게(우렁쉥이)는 조개류가 아니지만 해산물 알레르기와의 관계가 불확실 → 조개류 possible로 둠 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+- id: mideodeok
+  name: 미더덕
+  category: 해산물
+  allergens: [{group: shellfish, certainty: possible}]
+  confidence: low
+  note: "멍게와 같은 판단 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
   status: reviewed

@@ -5,21 +5,21 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3207. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3207. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
-- ingredient: null
+- ingredient: imitation_crab
   raw_text: 크래비(20g)
   role: sub
-- ingredient: null
+- ingredient: shrimp_raw
   raw_text: 냉동 새우살(20g)
   role: sub
 - ingredient: bell_pepper
   raw_text: 파프리카(빨강, 주황, 노랑 각각 10g)
   role: sub
-- ingredient: null
+- ingredient: avocado
   raw_text: 냉동 아보카도(15g)
   role: sub
-- ingredient: null
+- ingredient: olive
   raw_text: 절임 올리브(그린, 블랙 5g)
   role: sub
 - ingredient: null
@@ -31,13 +31,13 @@ ingredients:
 - ingredient: black_pepper
   raw_text: 후춧가루(약간)
   role: sub
-- ingredient: null
+- ingredient: parmesan
   raw_text: 간 파르메산치즈(5g)
   role: sub
 - ingredient: mustard
   raw_text: 홀그레인 머스터드(5g)
   role: sub
-- ingredient: null
+- ingredient: yogurt
   raw_text: 요플레(20g)
   role: sub
 - ingredient: oligosaccharide

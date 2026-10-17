@@ -26,7 +26,8 @@ sys.path.insert(0, str(ROOT))
 
 from kb import KnowledgeError, compile_paths  # noqa: E402
 from kb.datacheck import check_recipes  # noqa: E402
-from kb.foodsafety import SERVICE_ID, SOURCE_LABEL, Conversion, convert_rows, ingredient_name  # noqa: E402
+from kb.foodsafety import NAME_OVERRIDES, SERVICE_ID, SOURCE_LABEL, Conversion, convert_rows, ingredient_name  # noqa: E402
+from kb.youtube_seed import load_name_overrides  # noqa: E402
 from kb.text import normalize_term  # noqa: E402
 
 DEFAULT_RAW = ROOT / "data" / "external" / "foodsafety" / "raw" / f"{SERVICE_ID}.json"
@@ -100,6 +101,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--review", type=Path, default=DEFAULT_REVIEW)
     parser.add_argument("--knowledge-dir", type=Path, default=ROOT / "knowledge")
     parser.add_argument("--pantry", type=Path, default=ROOT / "config" / "pantry_staples.yaml")
+    parser.add_argument("--overrides", type=Path, default=ROOT / NAME_OVERRIDES, help="재료 이름 보정표(um-3)")
     args = parser.parse_args(argv)
 
     if not args.raw.is_file():
@@ -112,7 +114,7 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     raw = json.loads(args.raw.read_text(encoding="utf-8"))
     alias_index = {a.alias_norm: a.ingredient_id for a in ck.aliases}
-    conv = convert_rows(raw["rows"], alias_index, ck.concept_ids)
+    conv = convert_rows(raw["rows"], alias_index, ck.concept_ids, load_name_overrides(ROOT, ck, args.overrides))
 
     # 미매칭(unmapped)은 예상된 결과. 그 밖의 오류는 변환기 결함이다
     issues = [i for i in check_recipes(ck, [(r["id"], r) for r in conv.recipes]) if i.code != "unmapped"]

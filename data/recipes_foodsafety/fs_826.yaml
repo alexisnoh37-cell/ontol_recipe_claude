@@ -8,7 +8,25 @@ confidence: low
 note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 826. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
 - ingredient: lettuce
-  raw_text: 상추 10g, 오이 10g, 당근 5g, 비타민 5g, 방울토마토 10g, 쑥갓 2g, 견과류
+  raw_text: 상추 10g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 10g
+  role: sub
+- ingredient: carrot
+  raw_text: 당근 5g
+  role: sub
+- ingredient: vitamin_greens
+  raw_text: 비타민 5g
+  role: sub
+- ingredient: cherry_tomato
+  raw_text: 방울토마토 10g
+  role: sub
+- ingredient: crown_daisy
+  raw_text: 쑥갓 2g
+  role: sub
+- ingredient: mixed_nuts
+  raw_text: 견과류
   role: sub
 - ingredient: almond
   raw_text: 아몬드

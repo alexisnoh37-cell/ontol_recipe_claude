@@ -5,24 +5,27 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3469. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3469. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개'
 ingredients:
-- ingredient: null
+- ingredient: curry_powder
   raw_text: 커리 소스(80g)
   role: sub
-- ingredient: null
+- ingredient: shrimp_raw
+  raw_text: 홍새우 튀김(150g)
+  role: sub
+- ingredient: frying_mix
   raw_text: 홍새우 튀김(150g)
   role: sub
 - ingredient: cauliflower
   raw_text: 컬리플라워(50g)
   role: sub
-- ingredient: null
+- ingredient: french_fries
   raw_text: 감자튀김(100g)
   role: sub
 - ingredient: potato
   raw_text: 감자(2개=360g)
   role: sub
-- ingredient: null
+- ingredient: seaweed
   raw_text: 불린 미역(70g, 마른 미역 10g)
   role: sub
 - ingredient: onion

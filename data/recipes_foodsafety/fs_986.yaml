@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 986. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 986. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개'
 ingredients:
 - ingredient: egg
   raw_text: 달걀 20g
@@ -19,22 +19,22 @@ ingredients:
 - ingredient: tomato
   raw_text: 토마토 20g
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 레드어니언 10g
   role: sub
-- ingredient: null
+- ingredient: lettuce
   raw_text: 로메인 10g
   role: sub
 - ingredient: red_chili
   raw_text: 홍고추 2g
   role: sub
-- ingredient: null
+- ingredient: olive
   raw_text: 블랙올리브 2g
   role: sub
 - ingredient: basil
   raw_text: 바질 1g
   role: sub
-- ingredient: null
+- ingredient: canned_tuna
   raw_text: 캔참치 20g
   role: sub
 - ingredient: null
@@ -43,10 +43,10 @@ ingredients:
 - ingredient: olive_oil
   raw_text: 올리브오일 2g
   role: sub
-- ingredient: null
+- ingredient: red_wine_vinegar
   raw_text: 레드와인식초 2g
   role: sub
-- ingredient: null
+- ingredient: mustard
   raw_text: 디존 머스타드 1g
   role: sub
 - ingredient: garlic
