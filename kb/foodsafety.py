@@ -32,6 +32,7 @@ _BULLET = re.compile(r"^[\s●•·○◎■□◆◇▶▷★☆※*\-]+")
 _BRACKET_HEAD = re.compile(r"^[\[［【<〈(（]([^\]］】>〉)）]{1,15})[\]］】>〉)）]\s*")
 # 양 표기가 시작되는 지점: 숫자, 여는 괄호, 분수 문자, 양 단어
 _AMOUNT_START = re.compile(r"[0-9０-９½⅓⅔¼¾(（]|약간|적당량|적당히|조금|소량|한줌|한꼬집")
+_NOT_AMOUNT = re.compile(r"\d+\s*가지")  # "2가지색 미니파프리카"의 '2가지'는 양이 아니라 이름(um-5)
 _PAREN = re.compile(r"[(（][^)）]*[)）]")
 _HTML_TAG = re.compile(r"<\s*/?\s*[a-zA-Z]+[^>]{0,10}>")
 _MID_BRACKET = re.compile(r"\[([^\[\]\n]{1,15})\]")
@@ -84,6 +85,11 @@ def split_outside_parens(text: str) -> list[str]:
     return [s.strip() for s in out if s.strip()]
 
 
+def _starts_with_amount(text: str) -> bool:
+    """쌍점 오른쪽이 양 표기로 시작하는지("땅콩: 10g"). '2가지색 …'처럼 숫자로 시작하는 이름은 양이 아니다."""
+    return _AMOUNT_START.match(text) is not None and _NOT_AMOUNT.match(text) is None
+
+
 def _is_label(norm: str, title_norm: str) -> bool:
     """버려도 되는 묶음 머리말: 고정 단어, 레시피 이름, 분량("2인분 기준"), "…재료"(예: 추가 재료)."""
     return (not norm or _LABEL_NO.sub("", norm) in HEADER_WORDS or norm == title_norm  # "[소스1]"도 머리말(um-3)
@@ -134,7 +140,7 @@ def ingredient_segments(parts: str, title: str, skipped: list[str] | None = None
                 line = head
                 if subtitles is not None:
                     subtitles.add(normalize_term(_PAREN.sub("", head)))  # "●오이무침 :" 다음 줄에 구성 재료
-            elif _AMOUNT_START.match(rest) is None and len(split_outside_parens(head)) == 1:
+            elif not _starts_with_amount(rest) and len(split_outside_parens(head)) == 1:
                 # "양념장 : 간장 1큰술", "두부구이 : 두부 70g" → 소제목과 재료를 나눈다.
                 # "땅콩: 10g"처럼 오른쪽이 양으로 시작하면 한 재료이므로 그대로 둔다.
                 # 왼쪽에 쉼표 목록이 있으면("두부 10g, 초코크림 : 아몬드가루") 아래에서 항목별로 나눈다
@@ -143,7 +149,7 @@ def ingredient_segments(parts: str, title: str, skipped: list[str] | None = None
         items: list[str] = []
         for item in split_outside_parens(line.strip()):
             head, sep, rest = item.replace("：", ":").partition(":")
-            if sep and rest.strip() and _AMOUNT_START.match(rest.strip()) is None:
+            if sep and rest.strip() and not _starts_with_amount(rest.strip()):
                 # 쉼표 목록 속 "초코크림 : 아몬드가루 85g"(um-3): 소제목과 재료를 나눈다
                 items += [_PAREN.sub("", head).strip(), rest.strip()]
                 if subtitles is not None:
@@ -216,18 +222,21 @@ def convert_row(row: Mapping[str, Any], alias_index: Mapping[str, str], concept_
     ingredients = []
     fixed = dropped = 0
     for seg in segments:
+        matched = match_ingredient(seg, alias_index, concept_ids)
+        if matched is None and {normalize_term(ingredient_name(seg)), normalize_term(seg)} & subtitles:
+            # um-4: 재료로 연결되지 않는 소제목("구이소스", "곁들임채소")과 그 소제목을 가리키는 줄("겉절이 양념 15g")은
+            # 구성 재료가 소제목 뒤에 따로 적혀 있으므로 재료 줄로 남기지 않는다. 재료로 연결되는 소제목("팥소")은 그대로 둔다.
+            # 이름 보정표보다 먼저 본다(um-5): 보정표의 '볶음 소스'(간편식 소스)가 소제목 '볶음소스:'에 붙지 않게
+            dropped += 1
+            continue
         fix = (overrides or {}).get(normalize_term(ingredient_name(seg)))
         if fix is None:
-            ids = [match_ingredient(seg, alias_index, concept_ids)]
-            if ids == [None] and normalize_term(ingredient_name(seg)) in subtitles:
-                # um-4: 재료로 연결되지 않는 소제목("구이소스", "곁들임채소")과 그 소제목을 가리키는 줄("겉절이 양념 15g")은
-                # 구성 재료가 소제목 뒤에 따로 적혀 있으므로 재료 줄로 남기지 않는다. 재료로 연결되는 소제목("팥소")은 그대로 둔다
-                dropped += 1
-                continue
+            parts = [(matched, seg)]
         else:
             fixed += 1
-            ids = [fix["id"]] if "id" in fix else [p["id"] for p in fix.get("split", [])]
-        ingredients += [{"ingredient": i, "raw_text": seg, "role": "sub"} for i in ids]
+            # split의 text: 원문이 재료 이름을 담고 있지 않을 때 화면에 보일 이름(um-5, 재료정보가 '.'뿐인 레시피)
+            parts = ([(fix["id"], seg)] if "id" in fix else [(p["id"], p.get("text", seg)) for p in fix.get("split", [])])
+        ingredients += [{"ingredient": i, "raw_text": text, "role": "sub"} for i, text in parts]
     if not ingredients:
         return None
     unmatched = sum(1 for i in ingredients if i["ingredient"] is None)

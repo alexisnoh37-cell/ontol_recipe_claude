@@ -52,8 +52,11 @@ def test_ir2_decisions_applied():
     ck = compile_paths(ROOT / "knowledge", ROOT / "config" / "pantry_staples.yaml")
     status = {i.id: i.status for i in ck.ingredients}
     expect = {"O": "reviewed", "보류": "draft", "X": None}
+    readded = {"edible_flower"}  # um-5(2026-10-18) 사람 검수로 다시 추가(알레르기 없음)
     for r in decisions["rows"]:
-        assert status.get(r["id"]) == expect[r["decision"]], r["id"]
+        if r["id"] not in readded:
+            assert status.get(r["id"]) == expect[r["decision"]], r["id"]
+    assert status["edible_flower"] == "reviewed"
     closure = {(c.ingredient_id, c.allergen_group_id) for c in ck.allergen_closure}
     assert ("baby_greens", "buckwheat") not in closure and ("sprouts_mix", "buckwheat") not in closure
     assert {i.id: i.name for i in ck.ingredients}["squash_unspecified"] == "호박"

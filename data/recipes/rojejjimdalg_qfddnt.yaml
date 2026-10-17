@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=QfddnT_S3YY
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; cuisine '기타'→'한식'(vocab에 없음, 검수 필요)
+note: 난이도 추정; 맛 수치 추정; 시간 추정; 인분 정보 없음; cuisine '기타'→'한식'(vocab에 없음, 검수 필요); 재료 이름 '불닭 스프' → instant_noodle_product(이름 보정표)
 ingredients:
 - ingredient: chicken_thigh
   raw_text: 닭다리살 정육 / 닭다리살
@@ -41,7 +41,7 @@ ingredients:
   optional: false
   amount: null
   unit: null
-- ingredient: null
+- ingredient: instant_noodle_product
   raw_text: 불닭 스프 2개
   role: seasoning
   optional: false

@@ -473,3 +473,38 @@
   confidence: low
   note: "밀 확정. 시판 제품은 우유·대두 들어가기도 함 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
   status: reviewed
+
+# --- um-5 미매칭 4차 정리(2026-10-18, 사람 검수 승인) ---
+- id: herb_crust
+  name: 허브크러스트
+  derived_from:
+    - bread_crumbs
+    - {id: parmesan, certainty: possible}
+    - {id: butter, certainty: possible}
+    - {id: egg, certainty: possible}
+  is_processed: true
+  category: 곡류·가루
+  confidence: low
+  note: "빵가루에 허브·치즈·버터를 섞은 것. 밀 확정, 우유·계란 포함 가능. um-5(2026-10-18) 미매칭 4차 정리, 사람 검수 승인"
+  status: reviewed
+- id: color_powder
+  name: 색 내는 가루(채소·곡물 분말)
+  aliases: [삼색분말]
+  category: 곡류·가루
+  confidence: low
+  note: "반죽에 색을 내는 가루(단호박·시금치·비트 등). 법정 알레르기 없음. um-5(2026-10-18) 미매칭 4차 정리, 사람 검수 승인"
+  status: reviewed
+- id: hotteok_mix
+  name: 호떡 믹스
+  aliases: [호떡반죽]
+  derived_from:
+    - wheat_flour
+    - {id: glutinous_rice_flour, certainty: possible}
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: egg, certainty: possible}
+  is_processed: true
+  category: 곡류·가루
+  confidence: low
+  note: "시판 호떡 믹스. 밀 확정, 우유·대두·계란 포함 가능. 시판 제품으로 포장 알레르기 표시 확인 권장(재료 목록 위 안내). um-5(2026-10-18) 미매칭 4차 정리, 사람 검수 승인"
+  status: reviewed

@@ -77,6 +77,13 @@ commercial_product_notice:
     - chili_sauce
     - green_curry_paste
     - mustard_sauce
+    # um-5(2026-10-18) 꼭 확인 검수에서 '성분표 확인 후 사용 권장' 메모를 단 새 재료
+    - gat_jangajji
+    - cocoa_mix
+    - kiwi_sauce
+    - basil_rub
+    - meal_kit_sauce
+    - hotteok_mix
 
 # 알레르기 설정이 있는 사용자에게만, 가공품(is_processed)이면서 confidence: low인 재료가 든 레시피 카드에 표시(1-6 결정)
 label_check: "제품 성분표를 확인하세요"

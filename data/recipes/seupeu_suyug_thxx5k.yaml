@@ -9,7 +9,7 @@ servings: null
 source: https://www.youtube.com/watch?v=ThXx5kDpR5s
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '스프' → instant_noodle_product(이름 보정표)
 ingredients:
 - ingredient: pork_shoulder
   raw_text: 돼지고기 앞다리살 500g / 앞다리살 500g
@@ -23,7 +23,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 개
-- ingredient: null
+- ingredient: instant_noodle_product
   raw_text: 스프 2개
   role: sub
   optional: false

@@ -9,10 +9,10 @@ servings: null
 source: https://www.youtube.com/watch?v=Z4iOaz0PGPg
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 줄 '이제 물 700ml' 뺌(물, 이름 보정표); 재료 이름 '이제 뚜껑열고 채썬 양파' → onion(이름 보정표);
-  재료 이름 '채썬 애호박' → zucchini(이름 보정표)
+note: 난이도 추정; 맛 수치 추정; 인분 정보 없음; 재료는 설명란 공개 표기 기준; 재료 이름 '000원에' → zucchini(이름 보정표); 재료 줄 '이제 물 700ml' 뺌(물, 이름 보정표); 재료 이름
+  '이제 뚜껑열고 채썬 양파' → onion(이름 보정표); 재료 이름 '채썬 애호박' → zucchini(이름 보정표)
 ingredients:
-- ingredient: null
+- ingredient: zucchini
   raw_text: 000원에 2개
   role: main
   optional: false

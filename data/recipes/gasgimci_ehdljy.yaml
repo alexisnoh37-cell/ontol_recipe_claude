@@ -29,7 +29,7 @@ ingredients:
   optional: false
   amount: 3
   unit: 개
-- ingredient: null
+- ingredient: gat_jangajji
   raw_text: 갓장아찌(또는 씻은 묵은지) 1줌
   role: sub
   optional: false
