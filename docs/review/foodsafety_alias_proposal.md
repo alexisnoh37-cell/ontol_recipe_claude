@@ -1,5 +1,7 @@
 # 식품안전나라 미매칭 보강안 (검수 대기)
 
+> **2026-10-17(um-1): 이 표의 항목은 세 출처 통합 검수표 `docs/review/unmapped_review.md`로 옮겼다. 승인은 그쪽에 적는다.** 이 파일은 기록용으로 남긴다.
+>
 > 대상: `docs/review/foodsafety_unmatched.md`의 미매칭 표기 중 5회 이상 나온 154개. 결정적 정확 일치 매핑을 늘리기 위한 **제안**이다. 아직 `knowledge/`에 반영하지 않았다. 승인한 항목만 knowledge에 `status: draft`로 넣고 변환을 다시 돌린다. 생성: 분석용 스크립트 `.scratch/fs/proposal.py`(커밋 안 함, 2026-10-16).
 
 ## 효과(지금 원본 기준 시뮬레이션)
