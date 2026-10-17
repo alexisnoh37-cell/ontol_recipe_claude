@@ -240,3 +240,31 @@ overrides:
   split: [{id: bread}, {id: sesame}]
 - names: [홍새우 튀김]
   split: [{id: shrimp_raw}, {id: frying_mix}]
+# --- um-4(2026-10-18 사람 승인) 미매칭 3차 정리 ---
+# 한 줄에 홀로 적힌 소제목·요리 이름(다음 줄에 구성 재료가 적힘, 각 이름은 한 레시피에만 나옴)
+- names: [오렌지 당근펀치, 버섯볶음, 두유 소스, 북엇국, 황태해장국, 냉스프, 케일 샐러드, 오미자 드레싱, 콩나물밥 양념, 대구살 양념, 겉절이 양념]
+  drop: not_ingredient
+# 앞 줄 재료의 양이 쉼표로 잘려 나온 것("포도씨유, 12g"), 다음 줄 재료의 앞말이 줄바꿈으로 잘린 것("미니\n양배추")
+- names: [12g, 8g, 미니]
+  drop: not_ingredient
+- names: [청]
+  id: green_chili
+- names: [재료]
+  id: bomdong
+- names: [두가지 묵]
+  split: [{id: olbanggae_jelly}, {id: black_sesame_jelly}]
+# 오타: 'ghen'은 한/영 전환 없이 친 '호두', '현미휴'는 현미유, '고추자'는 고추장(장떡, 고춧가루보다 성분이 넓은 쪽)
+- names: [ghen]
+  id: walnut
+- names: [현미휴]
+  id: cooking_oil
+- names: [고추자]
+  id: gochujang
+- names: [반죽양념 다진 파, 고기 밑간 다진 파]
+  id: green_onion_unspecified
+- names: [안심, 등심얇게썬것]
+  id: meat_unspecified
+- names: [페이스트]
+  id: green_curry_paste
+- names: [머스터드조스]
+  id: mustard_sauce

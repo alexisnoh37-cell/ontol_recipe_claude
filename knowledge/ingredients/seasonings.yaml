@@ -1163,3 +1163,71 @@
   confidence: low
   note: "제빵용 가공전분 상표. 원료(타피오카·옥수수·밀) 확인 필요 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
   status: reviewed
+
+# --- um-4 미매칭 3차 정리(2026-10-18, 사람 승인) ---
+- id: stock_unspecified
+  name: 육수(종류 불명)
+  aliases: [육수]
+  derived_from:
+    - {id: seafood, certainty: possible}
+    - {id: beef, certainty: possible}
+    - {id: pork, certainty: possible}
+    - {id: chicken, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 육수·조미료
+  confidence: low
+  note: "원료를 모르는 육수. 시판 육수와 같은 기준으로 해산물 전체·육류·대두·밀을 포함 가능으로 둔다. um-4(2026-10-18) 미매칭 3차 정리, 사람 승인"
+  status: reviewed
+- id: vegetable_stock
+  name: 채소 육수
+  aliases: [야채육수, 야채국물, 채소국물]
+  derived_from:
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: milk, certainty: possible}
+  is_processed: true
+  category: 육수·조미료
+  confidence: low
+  note: "채소로 낸 육수. 시판 채소 스톡에 대두·밀·우유가 들 수 있어 포함 가능. um-4(2026-10-18) 미매칭 3차 정리, 사람 승인"
+  status: reviewed
+- id: chili_sauce
+  name: 칠리소스
+  aliases: [스위트칠리]
+  derived_from:
+    - {id: tomato, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: shrimp_raw, certainty: possible}
+    - {id: fish, certainty: possible}
+    - {id: sulfite, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판 소스(스위트칠리·핫칠리). 제품마다 성분이 달라 토마토·대두·밀·새우·생선·아황산류를 포함 가능으로 둔다. 시판 제품 안내 대상. um-4(2026-10-18) 미매칭 3차 정리, 사람 승인"
+  status: reviewed
+- id: green_curry_paste
+  name: 그린커리 페이스트
+  derived_from:
+    - {id: shrimp_raw, certainty: possible}
+    - {id: fish, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판 페이스트. 새우 페이스트·피시소스가 흔히 들어가 새우·생선을 포함 가능으로 둔다. 원문 '그린커리 / 페이스트'가 두 줄로 나뉨(이름 보정표). 시판 제품 안내 대상. um-4(2026-10-18) 미매칭 3차 정리, 사람 승인"
+  status: reviewed
+- id: mustard_sauce
+  name: 머스터드소스
+  derived_from:
+    - mustard
+    - {id: egg, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: honey, certainty: possible}
+  is_processed: true
+  category: 소스
+  confidence: low
+  note: "시판 머스터드소스(허니머스터드 등). 계란(마요네즈)·밀·대두가 들 수 있어 포함 가능. 시판 제품 안내 대상. um-4(2026-10-18) 미매칭 3차 정리, 사람 승인"
+  status: reviewed

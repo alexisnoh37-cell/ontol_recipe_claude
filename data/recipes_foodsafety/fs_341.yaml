@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 341. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 341. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 2개 뺌'
 ingredients:
 - ingredient: pork_belly
   raw_text: 통삼겹 200g
@@ -22,16 +22,13 @@ ingredients:
 - ingredient: black_pepper
   raw_text: 흰후추 1g
   role: sub
-- ingredient: null
-  raw_text: 청국장리조뜨
-  role: sub
 - ingredient: rice
   raw_text: 밥 150g
   role: sub
 - ingredient: cheonggukjang_powder
   raw_text: 청국장가루 15g
   role: sub
-- ingredient: null
+- ingredient: vegetable_stock
   raw_text: 야채육수 200g
   role: sub
 - ingredient: potato
@@ -42,9 +39,6 @@ ingredients:
   role: sub
 - ingredient: chive
   raw_text: 영양부추 20g
-  role: sub
-- ingredient: null
-  raw_text: 곁들이채소
   role: sub
 - ingredient: cabbage
   raw_text: 적양배추 30g

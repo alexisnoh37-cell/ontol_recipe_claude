@@ -85,17 +85,21 @@ def test_approved_aliases_and_new_ingredients_map(entries, ck, index):
             assert index.get(normalize_term(t)) == expected, t
 
 
+ROUND3 = ROOT / "docs" / "review" / "unmapped_round3.yaml"
+
+
 def test_held_terms_stay_unmapped(entries, index, overrides):
+    later = {normalize_term(t) for e in load_proposal(ROUND3) for t in e.texts}  # um-4에서 다시 정한 표기
     for e in entries:
         if e.decision != "O" or e.kind == "C":
-            for t in e.texts:
+            for t in [t for t in e.texts if normalize_term(t) not in later]:
                 assert normalize_term(t) not in index, t
                 assert normalize_term(t) not in overrides, t
 
 
 def test_foodsafety_name_overrides_match_approved_d_entries(entries, overrides):
     expected = {}
-    for e in entries:
+    for e in entries + load_proposal(ROUND3):  # 보정표는 2차·3차(um-4) 승인 D를 함께 담는다
         if e.kind == "D" and e.decision == "O":
             fix = ({"split": e.split} if e.split else {"drop": e.drop} if e.drop else {"id": e.target})
             for t in e.texts:

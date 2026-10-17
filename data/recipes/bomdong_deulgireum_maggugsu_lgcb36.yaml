@@ -65,7 +65,7 @@ ingredients:
   optional: false
   amount: 0.5
   unit: 스푼
-- ingredient: null
+- ingredient: sesame_unspecified
   raw_text: 깨
   role: garnish
   optional: false

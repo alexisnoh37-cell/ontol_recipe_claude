@@ -287,3 +287,12 @@
   confidence: low
   note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
   status: reviewed
+
+# --- um-4 미매칭 3차 정리(2026-10-18, 사람 승인) ---
+- id: meat_unspecified
+  name: 고기(쇠고기·돼지고기)
+  category: 육류
+  allergens: [{group: beef, certainty: possible}, {group: pork, certainty: possible}]
+  confidence: low
+  note: "'안심'·'등심'처럼 쇠고기인지 돼지고기인지 모르는 부위 이름(식품안전나라 이름 보정표로 연결). 둘 다 포함 가능. um-4(2026-10-18) 미매칭 3차 정리, 사람 승인"
+  status: reviewed

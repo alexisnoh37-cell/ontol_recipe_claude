@@ -176,7 +176,7 @@
   status: reviewed
 - id: bell_pepper
   name: 파프리카
-  aliases: [빨간 파프리카, 노란 파프리카, 노랑 파프리카, 빨강 파프리카, 홍파프리카, 황파프리카, 삼색파프리카]
+  aliases: [빨간 파프리카, 노란 파프리카, 노랑 파프리카, 빨강 파프리카, 홍파프리카, 황파프리카, 삼색파프리카, 홍피망, 홍피망다진것, 붉은피망, 다진 홍피망]
   category: 채소
   status: reviewed
 - id: green_bell_pepper
@@ -283,7 +283,7 @@
   status: reviewed
 - id: baby_greens
   name: 어린잎채소
-  aliases: [어린잎, 베이비채소, 어린채소]
+  aliases: [어린잎, 베이비채소, 어린채소, 그린 샐러드]
   category: 채소
   confidence: low
   note: "혼합 제품. 메밀싹 포함 가능성 → possible um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료 메밀(가능)은 ir-2 사람 결정으로 삭제(알레르기 없음)"
@@ -606,4 +606,18 @@
   aliases: [홀스레디쉬]
   category: 채소
   note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+
+# --- um-4 미매칭 3차 정리(2026-10-18, 사람 승인) ---
+- id: green_onion_unspecified
+  name: 파(대파·쪽파)
+  aliases: [파, 다진 파, 파다진것]
+  category: 채소
+  note: "레시피에 '파'로만 적혀 대파인지 쪽파인지 모르는 경우. 후보의 알레르기가 같아(없음) 따로 둔다. um-4(2026-10-18) 미매칭 3차 정리, 사람 승인"
+  status: reviewed
+- id: chili_unspecified
+  name: 고추(종류 불명)
+  aliases: [고추]
+  category: 채소
+  note: "풋고추·홍고추·건고추 중 무엇인지 모르는 경우. 후보의 알레르기가 같아(없음) 따로 둔다. um-4(2026-10-18) 미매칭 3차 정리, 사람 승인"
   status: reviewed
