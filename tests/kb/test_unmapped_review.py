@@ -65,11 +65,14 @@ def test_approved_aliases_and_new_ingredients_map(entries, ck, index):
 
 def test_rejected_and_held_terms_stay_unmapped(entries, index, overrides):
     # X(반영 안 함)와 C(보류)는 미매칭으로 남아 알레르기 사용자에게 계속 제외된다.
+    # 이후 차수(um-4)에서 사람이 다시 정한 표기는 뺀다
+    later = {normalize_term(t) for e in load_proposal(ROOT / "docs" / "review" / "unmapped_round3.yaml") for t in e.texts}
     for e in entries:
         if e.decision == "X" or e.kind == "C":
             for t in e.texts:
                 k = normalize_term(t)
-                assert k not in index and k not in overrides, t
+                if k not in later:
+                    assert k not in index and k not in overrides, t
 
 
 def test_name_overrides_match_approved_d_entries(entries, overrides):
@@ -98,13 +101,16 @@ def test_commercial_notice_products_are_approved_and_configured(entries):
     notice = display["commercial_product_notice"]
     assert notice["text"] == "시판 제품으로 제품 성분을 확인해 알레르기 유무를 확인하시기 바랍니다."
     round2 = load_proposal(ROOT / "docs" / "review" / "unmapped_round2.yaml")
-    approved = {e.new["id"] for e in entries + round2 if e.decision == "O" and e.new}
+    round3 = load_proposal(ROOT / "docs" / "review" / "unmapped_round3.yaml")
+    approved = {e.new["id"] for e in entries + round2 + round3 if e.decision == "O" and e.new}
     assert COMMERCIAL <= set(notice["ingredients"]) <= approved
     # ir-2 재료 검수·um-3 꼭 확인 검수에서 '포장 알레르기 표시 확인 권장' 메모를 단 재료(지우지 않은 것)가 모두 안내 대상이다
     memo = set()
     for name in ("ingredient_decisions.json", "unmapped_round2_decisions.json"):
         decisions = json.loads((ROOT / "docs" / "review" / name).read_text(encoding="utf-8"))["rows"]
         memo |= {r["id"] for r in decisions if "확인" in r["memo"] and r["decision"] != "X"}
+    # um-4: 사람이 승인한 시판 소스(E)
+    memo |= {e.new["id"] for e in round3 if e.kind == "E" and e.decision == "O"}
     assert set(notice["ingredients"]) == COMMERCIAL | memo
 
 

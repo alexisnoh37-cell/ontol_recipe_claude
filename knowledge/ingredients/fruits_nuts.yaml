@@ -428,3 +428,20 @@
   confidence: low
   note: "사람 결정(um-3 검수 2026-10-17, 메모 '알레르기 제외'): 견과류 알레르기에 넣지 않음(국내 법정 대상 아님). 밀크·오일·우유를 한 재료로 묶음 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
   status: reviewed
+
+# --- um-4 미매칭 3차 정리(2026-10-18, 사람 승인) ---
+- id: sesame_unspecified
+  name: 깨(참깨·들깨)
+  aliases: [깨, 갈은 깨]
+  category: 견과·씨앗
+  allergens: [{group: sesame, certainty: possible}]
+  note: "참깨인지 들깨인지 모르는 경우. 참깨 알레르기를 포함 가능으로 둔다. um-4(2026-10-18) 미매칭 3차 정리, 사람 승인"
+  status: reviewed
+- id: fruit_unspecified
+  name: 과일(종류 불명)
+  aliases: [제철과일, 과일]
+  category: 과일
+  allergens: [{group: peach, certainty: possible}, {group: tomato, certainty: possible}]
+  confidence: low
+  note: "종류를 모르는 과일. 법정 표시 대상 과일(복숭아·토마토)을 포함 가능으로 둔다. um-4(2026-10-18) 미매칭 3차 정리, 사람 승인"
+  status: reviewed

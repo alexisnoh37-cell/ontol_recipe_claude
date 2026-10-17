@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 243. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 1개. 이름 보정표로 고친 줄 1개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 243. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 2개'
 ingredients:
 - ingredient: tofu
   raw_text: 두부(150g)
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: sesame_oil
   raw_text: 참기름(5g)
   role: sub
-- ingredient: null
+- ingredient: green_onion_unspecified
   raw_text: 반죽양념 다진 파(10g)
   role: sub
 - ingredient: garlic

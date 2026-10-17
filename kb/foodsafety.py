@@ -105,12 +105,15 @@ def _strip_label_prefix(item: str, skipped: list[str] | None) -> str:
     return item
 
 
-def ingredient_segments(parts: str, title: str, skipped: list[str] | None = None) -> list[str]:
+def ingredient_segments(parts: str, title: str, skipped: list[str] | None = None,
+                        subtitles: set[str] | None = None) -> list[str]:
     """재료정보 원문 → 재료 표기 목록(원문 순서).
 
     버리는 것은 머리말(_is_label)과 물뿐이다. 머리말이 아닌 소제목("●두부구이 : 두부 70g"의 "두부구이",
     "[소스] …"의 "소스" 외 값)은 버리지 않고 따로 한 항목으로 남긴다(미매칭으로 검수표에 오른다).
     skipped를 주면 버린 항목(빈 문자열 제외)을 원문 순서로 덧붙인다(외부 레시피 분석이 화면에 보여 준다).
+    subtitles를 주면 쌍점·대괄호로 구분된 소제목(뒤에 구성 재료가 적힌 것)의 정규화 이름을 넣는다(um-4,
+    convert_row가 재료로 연결되지 않은 소제목 줄을 뺄 때 쓴다).
     """
     title_norm = normalize_term(title)
     out: list[str] = []
@@ -129,6 +132,8 @@ def ingredient_segments(parts: str, title: str, skipped: list[str] | None = None
             rest = rest.strip()
             if not rest:
                 line = head
+                if subtitles is not None:
+                    subtitles.add(normalize_term(_PAREN.sub("", head)))  # "●오이무침 :" 다음 줄에 구성 재료
             elif _AMOUNT_START.match(rest) is None and len(split_outside_parens(head)) == 1:
                 # "양념장 : 간장 1큰술", "두부구이 : 두부 70g" → 소제목과 재료를 나눈다.
                 # "땅콩: 10g"처럼 오른쪽이 양으로 시작하면 한 재료이므로 그대로 둔다.
@@ -141,8 +146,14 @@ def ingredient_segments(parts: str, title: str, skipped: list[str] | None = None
             if sep and rest.strip() and _AMOUNT_START.match(rest.strip()) is None:
                 # 쉼표 목록 속 "초코크림 : 아몬드가루 85g"(um-3): 소제목과 재료를 나눈다
                 items += [_PAREN.sub("", head).strip(), rest.strip()]
+                if subtitles is not None:
+                    subtitles.add(normalize_term(_PAREN.sub("", head)))
             else:
                 items.append(item)
+        if subtitles is not None:
+            for lab in labels:
+                subtitles.add(normalize_term(lab))
+                subtitles.add(normalize_term(_strip_label_prefix(lab, None)))  # "곁들임 채소" → "채소"
         for item in labels + items:
             item = _strip_label_prefix(item, skipped)
             norm = normalize_term(item)
@@ -198,15 +209,21 @@ def convert_row(row: Mapping[str, Any], alias_index: Mapping[str, str], concept_
     """
     rid = recipe_id(row)
     title = str(row.get("RCP_NM") or "").strip()
-    segments = ingredient_segments(str(row.get("RCP_PARTS_DTLS") or ""), title)
+    subtitles: set[str] = set()
+    segments = ingredient_segments(str(row.get("RCP_PARTS_DTLS") or ""), title, subtitles=subtitles)
     if not segments:
         return None
     ingredients = []
-    fixed = 0
+    fixed = dropped = 0
     for seg in segments:
         fix = (overrides or {}).get(normalize_term(ingredient_name(seg)))
         if fix is None:
             ids = [match_ingredient(seg, alias_index, concept_ids)]
+            if ids == [None] and normalize_term(ingredient_name(seg)) in subtitles:
+                # um-4: 재료로 연결되지 않는 소제목("구이소스", "곁들임채소")과 그 소제목을 가리키는 줄("겉절이 양념 15g")은
+                # 구성 재료가 소제목 뒤에 따로 적혀 있으므로 재료 줄로 남기지 않는다. 재료로 연결되는 소제목("팥소")은 그대로 둔다
+                dropped += 1
+                continue
         else:
             fixed += 1
             ids = [fix["id"]] if "id" in fix else [p["id"] for p in fix.get("split", [])]
@@ -226,6 +243,8 @@ def convert_row(row: Mapping[str, Any], alias_index: Mapping[str, str], concept_
         note += f". 미매칭 재료 {unmatched}개"
     if fixed:
         note += f". 이름 보정표로 고친 줄 {fixed}개"
+    if dropped:
+        note += f". 구성 재료가 따로 적힌 소제목 줄 {dropped}개 뺌"
     return {
         "id": rid,
         "title": title or rid,

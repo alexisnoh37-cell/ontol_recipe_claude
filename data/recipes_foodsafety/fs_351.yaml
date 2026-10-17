@@ -5,16 +5,13 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 351. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 351. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 3개 뺌'
 ingredients:
 - ingredient: pork_belly
   raw_text: 통삼겹 250g
   role: sub
 - ingredient: chicken_stock
   raw_text: 닭육수 400g
-  role: sub
-- ingredient: null
-  raw_text: 구이소스
   role: sub
 - ingredient: doenjang
   raw_text: 저염된장 15g
@@ -37,9 +34,6 @@ ingredients:
 - ingredient: sesame
   raw_text: 통깨 10g
   role: sub
-- ingredient: null
-  raw_text: 샐러드
-  role: sub
 - ingredient: ginseng
   raw_text: 수삼 1개(20g)
   role: sub
@@ -48,9 +42,6 @@ ingredients:
   role: sub
 - ingredient: carrot
   raw_text: 당근 30g
-  role: sub
-- ingredient: null
-  raw_text: 샐러드소스
   role: sub
 - ingredient: vinegar
   raw_text: 식초 30g

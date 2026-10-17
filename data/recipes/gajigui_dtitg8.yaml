@@ -17,7 +17,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 개
-- ingredient: null
+- ingredient: green_onion_unspecified
   raw_text: 파 1/4 쪽
   role: sub
   optional: false
