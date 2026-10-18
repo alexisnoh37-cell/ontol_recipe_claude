@@ -366,9 +366,11 @@ engine/          순수 Python. DB·FastAPI와 무관
   config.py      weights.yaml, pantry_staples.yaml, engine.yaml → EngineConfig
   normalize.py  candidates.py  filters.py  scoring.py  explain.py
   recommend.py   파이프라인 조립(후보 → 필터 → 점수 → 다양성 → 설명)
+  v2/            추천 v2(부록 G, D7): 3가지 형태·v2 필터(불선호 definite만)·Reranker Protocol. 기존 모듈은 import해 재사용만 한다
 kb/              지식 컴파일러의 순수 로직(DB와 무관). 테스트, 벤치, 엔진 fixture가 공유
   load.py  schema.py  validate.py  graph.py  compiled.py
   labeling.py    Jev 오프라인 라벨링 질문 스키마·변환·검증(부록 F)
+integrations/jev/  Jev 호출 어댑터(라벨링·재정렬 공용, 부록 F·G). engine은 이 패키지를 import하지 않는다
 storage/         SQLAlchemy 테이블, 엔진 입력 변환·조립(engine_source.py: 파일·DB 공급원 공용), 사용자 저장소(users.py), 컴파일 결과 writer
 api/             FastAPI (main.py, schemas.py, present.py: 이름·안내 문구 표시 계층)
 app/             Streamlit (API를 HTTP로 호출)
@@ -377,7 +379,8 @@ data/recipes/    레시피 시드 YAML(레시피당 1파일)
 data/recipes_foodsafety/  식품안전나라 변환 결과 draft YAML. 적재 대상 아님, 그래프 표시 전용(5-3-1, 부록 D-8)
 data/external/foodsafety/raw/  식품안전나라 API 원본 JSON
 data/external/jev/  (gitignore) Jev 라벨링 요청·응답 원본(부록 F)
-config/          weights.yaml, pantry_staples.yaml, labeling.yaml(Jev 라벨 확신도 기준, 부록 F), engine.yaml(serve_draft_recipes 등 가중치 외 설정), display.yaml(화면 안내·면책 문구, 표시 전용)
+data/labels/jev/  Jev 라벨 덮어쓰기 파일(레시피당 1파일, draft, 확신도 포함). v2만 읽고 원본의 '모름' 값만 채운다(부록 G-5)
+config/          weights.yaml, pantry_staples.yaml, labeling.yaml(Jev 라벨 확신도 기준, 부록 F), engine.yaml(serve_draft_recipes 등 가중치 외 설정), display.yaml(화면 안내·면책 문구, 표시 전용), v2.yaml(추천 v2 설정, 부록 G)
 scripts/         compile_knowledge.py, validate_data.py, load_recipes.py, bench.py (얇은 CLI, 로직은 kb/·storage/)
 migrations/      Alembic
 tests/           allergy/  logic/  golden/  kb/(컴파일러)  storage/(DB 통합, DATABASE_URL이 있을 때만)  support/(fixture 빌더)
@@ -806,3 +809,83 @@ viz-0 설계 기록 → viz-1 `/graph` → viz-2 trace·persona → viz-3 3D 온
 ### F-7. 범위 밖
 
 런타임 추천 연동(상위 N개 재정렬, 사용자 문장 해석), 요리 형태(국·찌개 등) 같은 새 필드, 조리 단계 technique 채우기, 재료 매핑·별칭 제안. 필요하면 progress.md "다음 단계 제안"에 적는다.
+
+## 부록 G. 추천 v2: 3가지 추천 형태와 Jev 재정렬 v2 (2026-10-18 사람 승인, decisions D7·D8)
+
+목표: 레시피 전체(1,522개)를 대상으로 ① 랜덤 ② 보유 재료로 조리 가능 ③ 요리명이나 "비슷한 느낌" 세 가지 형태로 추천한다. 알레르기와 먹기 싫은 재료는 규칙으로 아예 빼고, 남은 안전한 후보의 순서는 Jev가 다시 정한다. **기존 추천(v1)은 바꾸지 않고 나란히 둔다**(bl-1 방침). 결과는 `baseline/v1` 기준 결과와 같은 시나리오로 비교한다.
+
+부록 F와의 관계: F-1 "오프라인 전용"과 F-7 "런타임 연동은 범위 밖"은 v2 범위에서 G-4로 바뀐다. F-3의 "YAML에 값을 쓴다"는 G-5의 별도 덮어쓰기 파일로 바뀐다. 질문 스키마(F-2)·확신도(F-4)·평가(F-5)는 그대로다.
+
+### G-1. 원칙
+
+- **v1 무변경.** 기존 `engine/*.py`, `/recommend`·`/browse`, `tests/allergy/` 기존 파일, 레시피 YAML(`data/recipes*`), `config/` 기존 파일은 고치지 않는다. 새 코드는 `engine/v2/`, `integrations/jev/`, `storage/`의 새 파일, `api/`의 새 라우터 파일에 둔다. v1 모듈은 import해서 재사용만 한다(`UserConstraints`, `owned_ingredients`, `candidate_roles`, `match_lines`, `UserScorer`, `build_item`, `engine/korean.py`, `engine/normalize.py`, `engine/browse.py`의 `REQUIRED_ROLES`).
+- **엔진 순수성.** `engine/v2/`도 표준 라이브러리와 pyyaml만 쓴다. Jev는 `engine/v2/ports.py`의 `Reranker` Protocol로만 주입한다(기존 `tests/logic/test_engine_purity.py`가 `engine/` 아래 전체를 검사하므로 `engine/v2`도 자동 포함, `integrations` import도 금지됨).
+- **안전 순서.** 규칙 필터 → 형태별 후보·점수 → (Jev 재정렬). 제외된 레시피는 이후 어떤 단계에서도 복귀하지 않는다. 모든 응답에 breakdown·부족 재료·대체 안내를 담고, 제외 사유는 기존처럼 로그로 남긴다.
+- **설정.** 가중치·기준값·키워드 표는 `config/v2.yaml` 하나에 둔다. 코드에 하드코딩하지 않는다.
+
+### G-2. v2 필터 (`engine/v2/filters.py`)
+
+- v1 `UserConstraints.check()` 결과를 그대로 받되, `HARD_DISLIKE_INGREDIENT` 중 `certainty == "possible"`인 사유만 제외 사유에서 빼고 trace note(`dislike_possible`)로 남긴다(D8). 그 사유 하나뿐인 레시피는 통과한다.
+- 알레르기(possible 포함)·미매칭(알레르기 사용자)·불선호 음식 종류·매운맛 한도·조리기구·시간 사유는 v1과 같다.
+- 대체재 안전성(`is_unsafe_ingredient`)은 v1 그대로 쓴다(possible 불선호 대체재도 피함).
+
+### G-3. 형태별 동작 (`engine/v2/modes.py`, `engine/v2/recommend.py`)
+
+공통: 레시피 전체를 보는 형태(random, dish)는 v2 포트 `CatalogRepository.all()`로 전체를 받는다. v1 `RecipeRepository`는 바꾸지 않고, v2 포트를 구현한 새 어댑터를 둔다. 각 레시피의 재료 충족은 v1 `match_lines`(보유·기본 양념·is_a 하위 보유·대체재)로 계산하고, 점수는 v1 `UserScorer`(I·K·T·P·D·M)를 쓴다.
+
+| 형태 | 후보 | 순서 | Jev |
+|---|---|---|---|
+| `random` | 필터를 통과한 전체 | `seed`(없으면 서버가 정해 응답에 담음)로 균등 무작위 추출 | 쓰지 않음 |
+| `pantry` | v1 후보 생성(보유 재료로 main 충족) → 필터 → 필수 부족 수 | 묶음 `ready`(부족 0) 먼저, `near`(부족 1~`pantry.near_max_missing`) 다음. 묶음 안은 v1 점수 순. 부족이 그보다 많으면 버림 | 묶음 안에서만 재정렬 |
+| `dish` | 필터를 통과한 전체 → S(유사도) 상위 `dish.pool_size` | `dish.s_weight`·S + (1 − `dish.s_weight`)·v1 점수 | 재정렬 |
+
+- **필수 부족 수(pantry)**: 선택이 아닌 `REQUIRED_ROLES`(main·sub·seasoning) 줄 중 `missing`인 줄 수. 고명·선택 재료는 세지 않는다(알레르기 판정에는 그대로 포함). 미매칭 필수 줄은 채울 수 없으므로 부족으로 센다(browse와 같음). browse와 달리 대체재로 채워진 줄은 충족으로 본다(대체 안내 표시).
+- **S(dish)**: 질의를 `engine/korean.py`·`engine/normalize.py`로 정규화한 뒤 다음 항목의 가중합(가중치는 `dish.similarity`)으로 계산한다. 0~1 값이다.
+  - `title`: 제목 완전 일치 1, 질의가 제목에 포함되거나 제목이 질의에 포함 0.8, 공백 단위 토큰 겹침 비율
+  - `ingredient`: 질의에 나온 재료 이름(alias_index)이 레시피 main 재료(또는 그 is_a 조상)에 있는 비율
+  - `keyword`: `dish.keywords` 표(예: "얼큰" → spicy ≥ 3, "담백" → spicy ≤ 1 · salty ≤ 2, "일식" → cuisine 일식)에 맞는 정도. 맛을 모르는 레시피는 0.5
+  - `anchor`: 제목이 완전 일치한 레시피(앵커)가 있으면, 앵커와의 맛 벡터 거리·main 재료 Jaccard·음식 종류 일치. 앵커 자신은 1
+- 질의에서 아무 항목도 걸리지 않으면(S가 모두 0) 빈 결과와 안내 note("찾는 요리와 비슷한 레시피를 찾지 못했습니다")를 돌려준다. 무작위로 채우지 않는다.
+
+### G-4. Jev 재정렬 (`engine/v2/ports.py` Reranker, `integrations/jev/reranker.py`)
+
+- 대상: pantry(묶음별)·dish의 규칙 순위 상위 `rerank.top_n`개. 요청마다 켜고 끌 수 있다(`rerank`, 기본 `rerank.enabled`). 인증키가 없으면 꺼진다.
+- 질문(Score 0~1, 후보마다 한 질문): dish는 "이 레시피가 '<질의>'와 비슷한 요리인가", pantry는 "요리 실력 <n>, 맛 선호 <...>인 사람에게 맞는 레시피인가".
+- 보내는 것: 요리 실력, 맛 선호(차원·선호 정도·한도), 질의 문장, 후보 요약(제목·음식 종류·맛·main 재료 이름). **알레르기·건강 정보·사용자/프로필 id·보유 재료 목록은 보내지 않는다.**
+- 적용: J = Jev 점수. 최종 = (1 − `rerank.jev_weight`)·규칙 점수 + `rerank.jev_weight`·J. 확신도가 `rerank.min_confidence` 미만이면 J를 쓰지 않는다(규칙 점수 그대로). breakdown에 `J`와 `J_conf`를 넣는다.
+- 방어: 돌려받은 id 중 보낸 목록에 없는 것은 버린다. 응답에 빠진 후보는 규칙 점수 그대로 둔다. 실패·`rerank.timeout_ms` 초과 시 규칙 순위로 돌아가고 note `rerank_unavailable`를 남긴다. 재정렬은 순서만 바꾸고 목록 구성(포함·제외)은 바꾸지 않는다.
+
+### G-5. Jev 라벨 덮어쓰기 (`data/labels/jev/`)
+
+- 라벨러(F-3)는 레시피 YAML 대신 `data/labels/jev/<recipe_id>.yaml`에 값과 확신도, 스키마 버전, 원본 레시피 해시를 쓴다(`status: draft`).
+- v2 레시피 로더는 원본 값이 '모름'(None·미분류)인 필드에만, 확신도가 `config/labeling.yaml` 기준 이상인 라벨을 채운다. 원본에 값이 있으면 원본을 쓴다. 원본 해시가 다르면(레시피가 바뀜) 라벨을 쓰지 않는다.
+- 재료 줄 role 라벨은 후보 생성 근거(main)와 점수에만 쓴다. 알레르기·불선호 판정은 role과 무관하게 모든 줄을 본다.
+- 기준이 정해지기 전(F-4 미정)에는 모든 라벨이 기준 미만으로 처리되어 v2도 '모름' 그대로 동작한다.
+
+### G-6. 요청·응답
+
+- `POST /v2/recommend`(새 라우터 `api/v2.py`): `profile_id` 또는 `persona_id`, `mode`(random·pantry·dish), `query`(dish 필수), `pantry`, `seed`, `rerank`, `max_time_min`·`time_is_hard`, `limit`.
+- 응답 item: v1 item 필드 + `group`(pantry: ready·near), breakdown에 `S`(dish)·`J`·`J_conf`(재정렬 시). 응답 머리: `mode`, `seed`(random), `rerank_used`, `notes`, `exclusion_summary`, `excluded_total`, `disclaimer`.
+- Streamlit: 새 탭 "추천 v2"(랜덤 / 내 재료로 / 요리 찾기). pantry는 "지금 바로 가능"과 "조금만 사면 가능(살 재료)"으로 나눠 보여 준다.
+
+### G-7. 설정 (`config/v2.yaml`)
+
+`pantry.near_max_missing`(2), `dish.pool_size`, `dish.s_weight`, `dish.similarity`(title·ingredient·keyword·anchor 가중치), `dish.keywords`, `rerank.enabled`(false), `rerank.top_n`, `rerank.jev_weight`, `rerank.min_confidence`, `rerank.timeout_ms`, `random.default_limit`.
+
+### G-8. 테스트
+
+- `tests/allergy/test_v2_modes_safety.py`, `tests/allergy/test_v2_rerank_safety.py`(신규, **사람 승인 대상**)
+  - 세 형태 모두 알레르기(possible·선택·고명·기본 양념 포함)·알레르기 사용자의 미매칭·definite 불선호 레시피를 내지 않는다. possible 불선호만 걸린 레시피는 통과한다(D8).
+  - Fake reranker가 목록 밖 id·제외된 레시피 id를 돌려줘도 결과에 들어가지 않는다. Fake reranker에 넘어간 요청에 알레르기 그룹·사용자 id가 없다.
+- `tests/v2/`: 묶음 분류(부족 수 경계, 고명·선택 제외, 대체재 충족, 미매칭 필수 줄), seed 재현성, S 항목별 계산·빈 결과, 재정렬 가중·확신도 기준·timeout 복귀·묶음 경계 유지, 라벨 덮어쓰기(모름에만, 기준 미만·해시 불일치 무시).
+- 기존 테스트는 수정하지 않고 모두 통과해야 한다(v1 무변경의 증거).
+- 비교: `scripts/make_v2_recommendations.py` → `docs/review/v2_recommendations.md`(bl-1과 같은 시나리오 14개).
+- 성능: `scripts/bench.py`에 v2(재정렬 끔) 측정 추가, p95 200ms 이하. 재정렬 켬은 Fake 지연으로 따로 보고.
+
+### G-9. 단계
+
+v2-0 설계 기록 → v2-1 v2 필터와 3가지 형태(규칙만) → v2-2 Jev 라벨러와 덮어쓰기(Fake) → v2-3 Jev 재정렬(Fake) → v2-4 API·화면·기준 결과 비교 → v2-5 (Jev 키·사람 결정 후) jev-3 평가, 실제 라벨링·재정렬 측정. 단계마다 커밋하고 보고한다.
+
+### G-10. 범위 밖
+
+v1 로직 변경, 요리 형태(국·찌개 등) 새 필드, 자유 문장을 맛·종류로 바꾸는 Jev 해석기(D 방식), 사용자 행동 기반 개인화, Jev로 재료 매핑·알레르기 판정. 필요하면 progress.md "다음 단계 제안"에 적는다.
