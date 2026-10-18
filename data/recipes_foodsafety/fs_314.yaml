@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 314. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 314. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 2개. 구성 재료가 따로 적힌 소제목 줄 3개 뺌'
 ingredients:
 - ingredient: tofu
   raw_text: 두부 100g
@@ -13,11 +13,8 @@ ingredients:
 - ingredient: laver
   raw_text: 김 2g
   role: sub
-- ingredient: null
+- ingredient: salt
   raw_text: 허브소금 1g
-  role: sub
-- ingredient: null
-  raw_text: 소
   role: sub
 - ingredient: ground_beef
   raw_text: 다진쇠고기 20g
@@ -37,9 +34,6 @@ ingredients:
 - ingredient: black_pepper
   raw_text: 흰후추 0.3g
   role: sub
-- ingredient: null
-  raw_text: 곁들이채소
-  role: sub
 - ingredient: sweet_potato
   raw_text: 고구마 50g
   role: sub
@@ -51,9 +45,6 @@ ingredients:
   role: sub
 - ingredient: asparagus
   raw_text: 아스파라거스 10g
-  role: sub
-- ingredient: null
-  raw_text: 레드와인소스
   role: sub
 - ingredient: wine
   raw_text: 레드와인 25g
@@ -70,7 +61,7 @@ ingredients:
 - ingredient: olive_oil
   raw_text: 올리브유 20g
   role: sub
-- ingredient: null
+- ingredient: salt
   raw_text: 허브소금 1g
   role: sub
 - ingredient: balsamic_vinegar

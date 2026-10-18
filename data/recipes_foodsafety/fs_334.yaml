@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 334. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 334. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
 - ingredient: webfoot_octopus
   raw_text: 주꾸미 200g
@@ -28,10 +28,7 @@ ingredients:
 - ingredient: green_chili
   raw_text: 청고추 25g
   role: sub
-- ingredient: null
-  raw_text: 국물
-  role: sub
-- ingredient: null
+- ingredient: seafood_stock
   raw_text: 해물육수 400g
   role: sub
 - ingredient: cheongyang_pepper

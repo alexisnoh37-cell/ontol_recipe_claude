@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 375. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 375. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
-- ingredient: null
+- ingredient: pork_ribs
   raw_text: 쪽갈비 400g
   role: sub
 - ingredient: olive_oil
@@ -16,14 +16,11 @@ ingredients:
 - ingredient: black_pepper
   raw_text: 통후추 1g
   role: sub
-- ingredient: null
+- ingredient: rosemary
   raw_text: 건 로즈마리 1g
   role: sub
 - ingredient: wine
   raw_text: 와인 15g
-  role: sub
-- ingredient: null
-  raw_text: 곁들이채소
   role: sub
 - ingredient: cherry_tomato
   raw_text: 방울토마토 45g
@@ -31,7 +28,7 @@ ingredients:
 - ingredient: onion
   raw_text: 양파 60g
   role: sub
-- ingredient: null
+- ingredient: lemon
   raw_text: 레몬껍질 10g
   role: sub
 - ingredient: mayonnaise
@@ -40,7 +37,7 @@ ingredients:
 - ingredient: vinegar
   raw_text: 식초 15g
   role: sub
-- ingredient: null
+- ingredient: mustard
   raw_text: 홀그레인 머스터즈 10g
   role: sub
 - ingredient: sugar
@@ -49,7 +46,7 @@ ingredients:
 - ingredient: garlic
   raw_text: 다진마늘 5g
   role: sub
-- ingredient: null
+- ingredient: black_pepper
   raw_text: 백후추 1g
   role: sub
 steps:

@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3468. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3468. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개'
 ingredients:
 - ingredient: mackerel
   raw_text: 고등어(1마리=250g)
   role: sub
-- ingredient: null
+- ingredient: siraegi
   raw_text: 시래기(30g)
   role: sub
 - ingredient: radish
@@ -22,10 +22,10 @@ ingredients:
 - ingredient: cheongyang_pepper
   raw_text: 청양고추(20g)
   role: sub
-- ingredient: null
+- ingredient: meal_kit_sauce
   raw_text: 양념장(75g)
   role: sub
-- ingredient: null
+- ingredient: tomato
   raw_text: 토마토 홀(200g)
   role: sub
 - ingredient: eggplant
@@ -37,7 +37,7 @@ ingredients:
 - ingredient: shiitake
   raw_text: 표고버섯(40g)
   role: sub
-- ingredient: null
+- ingredient: tofu
   raw_text: 두부면(50g)
   role: sub
 - ingredient: katsuobushi

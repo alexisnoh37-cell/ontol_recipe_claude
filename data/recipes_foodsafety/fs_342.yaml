@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 342. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 342. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
 - ingredient: buckwheat_noodles
   raw_text: 메밀면 80g
   role: sub
-- ingredient: null
+- ingredient: baekilsongi
   raw_text: 백일송이 25g
   role: sub
 - ingredient: garlic_oil
@@ -33,9 +33,6 @@ ingredients:
   role: sub
 - ingredient: red_chili
   raw_text: 홍고추 15g
-  role: sub
-- ingredient: null
-  raw_text: 국물
   role: sub
 - ingredient: soy_milk
   raw_text: 두유 200g

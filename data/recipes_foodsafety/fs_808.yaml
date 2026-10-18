@@ -5,10 +5,16 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 808. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 808. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개. 구성 재료가 따로 적힌 소제목 줄 2개 뺌'
 ingredients:
 - ingredient: potato
-  raw_text: 감자 40g, 래디쉬 5g, 오이 10g [소스소개 단촛물
+  raw_text: 감자 40g
+  role: sub
+- ingredient: radish_red
+  raw_text: 래디쉬 5g
+  role: sub
+- ingredient: cucumber
+  raw_text: 오이 10g
   role: sub
 - ingredient: vinegar
   raw_text: 식초 1.5g
@@ -16,14 +22,14 @@ ingredients:
 - ingredient: sugar
   raw_text: 설탕 1.5g
   role: sub
-- ingredient: null
+- ingredient: pineapple_juice
   raw_text: 파인애플주스 1.5g
   role: sub
 - ingredient: salt
-  raw_text: 소금 0.3g 겨자초장:겨자가루 1.5g
+  raw_text: 소금 0.3g
   role: sub
-- ingredient: null
-  raw_text: 물미지근한것 1g
+- ingredient: mustard_powder
+  raw_text: 겨자가루 1.5g
   role: sub
 - ingredient: sugar
   raw_text: 설탕 2g
@@ -34,7 +40,7 @@ ingredients:
 - ingredient: salt
   raw_text: 소금 0.03g
   role: sub
-- ingredient: null
+- ingredient: pineapple_juice
   raw_text: 파인애플주스 1.6g
   role: sub
 steps:

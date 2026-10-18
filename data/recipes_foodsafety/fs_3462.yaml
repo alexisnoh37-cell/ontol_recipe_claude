@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3462. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3462. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: napa_cabbage
   raw_text: 알배추(40g)
   role: sub
-- ingredient: null
+- ingredient: beef
   raw_text: 우목심(50g)
   role: sub
 - ingredient: perilla_leaf
@@ -37,7 +37,7 @@ ingredients:
 - ingredient: mussel
   raw_text: 홍합(164g)
   role: sub
-- ingredient: null
+- ingredient: red_chili
   raw_text: 베트남 건고추(10g)
   role: sub
 - ingredient: tomato
@@ -55,7 +55,7 @@ ingredients:
 - ingredient: garlic
   raw_text: 편 마늘(10g)
   role: sub
-- ingredient: null
+- ingredient: nurungji
   raw_text: 시판 누룽지(50g)
   role: sub
 - ingredient: tomato_paste
@@ -73,7 +73,7 @@ ingredients:
 - ingredient: black_pepper
   raw_text: 후추(3g)
   role: sub
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 다시팩(20g)
   role: sub
 steps:

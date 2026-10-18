@@ -18,6 +18,7 @@ recipe_notices:
 commercial_product_notice:
   text: "시판 제품으로 제품 성분을 확인해 알레르기 유무를 확인하시기 바랍니다."
   # um-2 사람 결정 7개 + ir-2(2026-10-17) 재료 검수에서 '포장 알레르기 표시 확인 권장' 메모를 단 재료(검수 화면 순서)
+  # + um-3 꼭 확인 검수 메모 재료
   ingredients:
     - instant_stock
     - instant_noodle_product
@@ -57,6 +58,32 @@ commercial_product_notice:
     - cheongpomuk
     - pickling_spice
     - ricotta
+    # um-3(2026-10-17) 꼭 확인 검수에서 '성분표 확인 후 사용 권장' 메모를 단 재료(검수 화면 순서)
+    - acorn_jelly
+    - baguette
+    - castella
+    - hongcho
+    - sriracha
+    - chocolate
+    - mushroom_garlic_salt
+    - makgeolli
+    - cream_sauce
+    - granola
+    - demi_glace
+    - tteokbokki_powder
+    - ice_cream
+    - fine_soft
+    # um-4(2026-10-18) 미매칭 3차 정리에서 사람이 승인한 시판 소스
+    - chili_sauce
+    - green_curry_paste
+    - mustard_sauce
+    # um-5(2026-10-18) 꼭 확인 검수에서 '성분표 확인 후 사용 권장' 메모를 단 새 재료
+    - gat_jangajji
+    - cocoa_mix
+    - kiwi_sauce
+    - basil_rub
+    - meal_kit_sauce
+    - hotteok_mix
 
 # 알레르기 설정이 있는 사용자에게만, 가공품(is_processed)이면서 confidence: low인 재료가 든 레시피 카드에 표시(1-6 결정)
 label_check: "제품 성분표를 확인하세요"

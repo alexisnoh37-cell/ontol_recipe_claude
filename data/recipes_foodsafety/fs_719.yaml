@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 719. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 719. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
-- ingredient: null
+- ingredient: acorn_jelly
   raw_text: 건도토리묵 30g(불린것 50g)
   role: sub
 - ingredient: shiitake
@@ -25,7 +25,7 @@ ingredients:
 - ingredient: kelp
   raw_text: 건다시마 3g
   role: sub
-- ingredient: null
+- ingredient: green_onion_unspecified
   raw_text: 파 2g
   role: sub
 - ingredient: garlic

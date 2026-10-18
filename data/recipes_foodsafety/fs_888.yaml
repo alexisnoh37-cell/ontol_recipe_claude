@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 888. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 888. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
-- ingredient: null
+- ingredient: salmon
   raw_text: 훈재연어 40g
   role: sub
 - ingredient: black_pepper
@@ -19,7 +19,7 @@ ingredients:
 - ingredient: cucumber
   raw_text: 오이 3.8g
   role: sub
-- ingredient: null
+- ingredient: radish_red
   raw_text: 래디쉬 15g
   role: sub
 - ingredient: celery
@@ -28,13 +28,10 @@ ingredients:
 - ingredient: pear
   raw_text: 배 7.5g
   role: sub
-- ingredient: null
-  raw_text: 저나트륨파인애플소스
-  role: sub
 - ingredient: pineapple
   raw_text: 파인애플 3g
   role: sub
-- ingredient: null
+- ingredient: pineapple
   raw_text: 파인애플 통조림 국물 4.5g
   role: sub
 - ingredient: olive_oil

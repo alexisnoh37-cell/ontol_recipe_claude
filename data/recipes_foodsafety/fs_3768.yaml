@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3768. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3768. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: napa_cabbage
   raw_text: 배추 60g
@@ -13,7 +13,7 @@ ingredients:
 - ingredient: soybean_powder
   raw_text: 콩가루 25g
   role: sub
-- ingredient: null
+- ingredient: walnut
   raw_text: 구운 호두 15g
   role: sub
 - ingredient: lemon
@@ -40,7 +40,7 @@ ingredients:
 - ingredient: green_onion
   raw_text: 대파 5g
   role: sub
-- ingredient: null
+- ingredient: rice_flour
   raw_text: 멥쌀가루 180g
   role: sub
 - ingredient: salt

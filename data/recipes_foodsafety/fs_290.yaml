@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 290. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 290. 요리종류 국&찌개, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 2개'
 ingredients:
 - ingredient: beef_plate
   raw_text: 우삼겹(50g)
@@ -22,10 +22,10 @@ ingredients:
 - ingredient: scallion
   raw_text: 쪽파(10g)
   role: sub
-- ingredient: null
+- ingredient: cheongyang_pepper
   raw_text: 송송 썬 청양고추(3g)
   role: sub
-- ingredient: null
+- ingredient: red_chili
   raw_text: 송송 썬 붉은 고추(3g)
   role: sub
 - ingredient: chicken_breast

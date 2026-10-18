@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 131. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 131. 요리종류 일품, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: somen
   raw_text: 소면 50g
@@ -13,13 +13,13 @@ ingredients:
 - ingredient: hamcho
   raw_text: 함초 3g(1/2작은술)
   role: sub
-- ingredient: null
+- ingredient: lions_mane
   raw_text: 노루궁뎅이버섯 25g(1/2개)
   role: sub
 - ingredient: kelp
   raw_text: 다시마 17g(15cm)
   role: sub
-- ingredient: null
+- ingredient: green_onion_unspecified
   raw_text: 파 140g(1/2개)
   role: sub
 - ingredient: onion
@@ -31,7 +31,7 @@ ingredients:
 - ingredient: hard_clam
   raw_text: 모시조개 150g(3/4컵)
   role: sub
-- ingredient: null
+- ingredient: shepherds_purse
   raw_text: 냉이 35g
   role: sub
 - ingredient: soy_sauce
@@ -43,7 +43,7 @@ ingredients:
 - ingredient: green_chili
   raw_text: 청고추 20g(1개)
   role: sub
-- ingredient: null
+- ingredient: red_chili
   raw_text: 실고추 2g
   role: sub
 steps:

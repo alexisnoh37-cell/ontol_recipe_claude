@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 163. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 163. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: cockle
   raw_text: 꼬막 1000g
@@ -25,13 +25,13 @@ ingredients:
 - ingredient: gochujang
   raw_text: 고추장 5g(1작은술)
   role: sub
-- ingredient: null
+- ingredient: apple_juice
   raw_text: 사과즙 300g(1/2컵)
   role: sub
 - ingredient: sesame_oil
   raw_text: 참기름 20g(1⅓큰술)
   role: sub
-- ingredient: null
+- ingredient: sesame_unspecified
   raw_text: 깨 15g(1큰술)
   role: sub
 - ingredient: garlic

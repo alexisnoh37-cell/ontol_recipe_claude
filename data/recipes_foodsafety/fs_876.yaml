@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 876. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 876. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
-- ingredient: null
+- ingredient: blackthroat_seaperch
   raw_text: 금태 50g
   role: sub
 - ingredient: salt
@@ -45,9 +45,6 @@ ingredients:
   role: sub
 - ingredient: radish
   raw_text: 무 16g
-  role: sub
-- ingredient: null
-  raw_text: 찜소스
   role: sub
 - ingredient: kelp_stock
   raw_text: 다시마국물 100g

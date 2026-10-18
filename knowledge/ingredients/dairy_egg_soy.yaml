@@ -3,14 +3,14 @@
 # --- 알 (법정: 알류(가금류)) ---
 - id: egg
   name: 계란
-  aliases: [달걀, 계란 노른자, 계란 흰자, 유정란, 노른자, 삶은 달걀, 삶은계란, 달걀 후라이, 계란후라이, 달걀물, 달걀지단, 달걀흰자, 달걀노른자]
+  aliases: [달걀, 계란 노른자, 계란 흰자, 유정란, 노른자, 삶은 달걀, 삶은계란, 달걀 후라이, 계란후라이, 달걀물, 달걀지단, 달걀흰자, 달걀노른자, 달걀 삶은것, 삶은 달걀 노른자, 수란]
   category: 알
   note: 2026-10-16 자취요리신 데이터 연결로 별칭 추가, 검수 필요('노른자')
   allergens: [{group: egg, certainty: definite}]
   status: reviewed
 - id: quail_egg
   name: 메추리알
-  aliases: [깐 메추리알, 깐매추리알]
+  aliases: [깐 메추리알, 깐매추리알, 삶은 메추리알]
   category: 알
   allergens: [{group: egg, certainty: definite}]
   status: reviewed
@@ -24,14 +24,14 @@
   status: reviewed
 - id: butter
   name: 버터
-  aliases: [무염버터, 가염버터]
+  aliases: [무염버터, 가염버터, 저염버터, 허브버터]
   derived_from: [milk]
   is_processed: true
   category: 유제품
   status: reviewed
 - id: heavy_cream
   name: 생크림
-  aliases: [휘핑크림, 동물성 생크림]
+  aliases: [휘핑크림, 동물성 생크림, 무가당 휘핑크림, 크림, 화이트크림]
   derived_from: [milk]
   is_processed: true
   category: 유제품
@@ -40,32 +40,33 @@
   status: reviewed
 - id: yogurt
   name: 요거트
-  aliases: [플레인요거트, 요구르트, 그릭요거트, 플레인 요구르트]
+  aliases: [플레인요거트, 요구르트, 그릭요거트, 플레인 요구르트, 호상요구르트, 무가당 플레인 요거트, 요플레]
   derived_from: [milk]
   is_processed: true
   category: 유제품
   status: reviewed
 - id: cheese
   name: 치즈
+  aliases: [치즈가루, 저염치즈, 까망베르치즈, 마스카르포네치즈, 마스카포네치즈, 무염 치즈, 생치즈, 스트링치즈, 에멘탈 치즈, 에벤탈치즈, 체더치즈]
   derived_from: [milk]
   is_processed: true
   category: 유제품
   status: reviewed
 - id: mozzarella
   name: 모차렐라치즈
-  aliases: [모짜렐라치즈, 모짜렐라, 피자치즈]
+  aliases: [모짜렐라치즈, 모짜렐라, 피자치즈, 슈레드 모차렐라치즈, 생모짜렐라치즈]
   is_a: [cheese]
   category: 유제품
   status: reviewed
 - id: sliced_cheese
   name: 슬라이스치즈
-  aliases: [체다치즈, 체다 슬라이스]
+  aliases: [체다치즈, 체다 슬라이스, 치즈슬라이스, 어린이치즈, 슬라이스 체더치즈, 유기농 아기치즈]
   is_a: [cheese]
   category: 유제품
   status: reviewed
 - id: parmesan
   name: 파마산치즈
-  aliases: [파르메산, 파르미지아노 레지아노, 파마산 가루]
+  aliases: [파르메산, 파르미지아노 레지아노, 파마산 가루, 파르메산 치즈가루, 파르메산 치즈, 그라나파다노치즈, 간 파르메산치즈, 파르미지아노 치즈, 파마산치즈가루]
   is_a: [cheese]
   category: 유제품
   status: reviewed
@@ -78,20 +79,20 @@
 # --- 콩·두부 (법정: 대두) ---
 - id: soybean
   name: 대두
-  aliases: [메주콩, 백태, 노란콩]
+  aliases: [메주콩, 백태, 노란콩, 콩, 통조림콩]
   category: 콩·두부
   allergens: [{group: soybean, certainty: definite}]
   status: reviewed
 - id: black_soybean
   name: 검은콩
-  aliases: [서리태, 쥐눈이콩, 서목태]
+  aliases: [서리태, 쥐눈이콩, 서목태, 검정콩, 검은콩가루, 검은콩튀밥, 불린 검은콩, 삶은 검은콩]
   is_a: [soybean]
   category: 콩·두부
   note: 검정콩은 대두의 한 품종이라 is_a로 대두 알레르기 상속
   status: reviewed
 - id: tofu
   name: 두부
-  aliases: [부침두부, 찌개두부, 연두부, 으깬 두부]
+  aliases: [부침두부, 찌개두부, 연두부, 으깬 두부, 두부면, 쌈두부, 건두부, 검은콩두부, 포두부]
   derived_from: [soybean]
   is_processed: true
   category: 콩·두부
@@ -115,7 +116,7 @@
   status: reviewed
 - id: soy_milk
   name: 두유
-  aliases: [무가당 두유]
+  aliases: [무가당 두유, 검은콩 두유, 무첨가두유, 콩국물, 콩물]
   derived_from: [soybean]
   is_processed: true
   category: 콩·두부
@@ -130,12 +131,13 @@
 # --- um-2 미매칭 보강(2026-10-17, 사람 검수표 승인, 재료 검수 전 draft) ---
 - id: chickpea
   name: 병아리콩
+  aliases: [불린 병아리콩]
   category: 콩·두부
   note: "대두 아님 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
 - id: green_peas
   name: 완두콩
-  aliases: [완두]
+  aliases: [완두, 완두콩알]
   category: 콩·두부
   note: "대두 아님 um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
   status: reviewed
@@ -165,4 +167,57 @@
   is_processed: true
   category: 유제품
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료. 시판 제품이라 포장 알레르기 표시 확인 권장(재료 목록 위 안내)"
+  status: reviewed
+
+# --- um-3 미매칭 2차 보강(2026-10-17, 사람 일괄 승인) ---
+- id: kidney_bean
+  name: 강낭콩
+  aliases: [강낭콩 퓨레, 흰강낭콩]
+  category: 콩·두부
+  note: "대두 아님 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: soy_pulp
+  name: 콩비지
+  derived_from:
+    - soybean
+  is_processed: true
+  category: 콩·두부
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: lentil
+  name: 렌틸콩
+  category: 콩·두부
+  note: "대두 아님 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: condensed_milk
+  name: 연유
+  derived_from:
+    - milk
+    - sugar
+  is_processed: true
+  category: 유제품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: mung_bean
+  name: 녹두
+  aliases: [거피녹두]
+  category: 콩·두부
+  note: "대두 아님 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: natto
+  name: 낫토
+  derived_from:
+    - soybean
+  is_processed: true
+  category: 콩·두부
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: milk_powder
+  name: 분유
+  aliases: [탈지분유]
+  derived_from:
+    - milk
+  is_processed: true
+  category: 유제품
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
   status: reviewed

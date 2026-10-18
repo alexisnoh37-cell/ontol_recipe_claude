@@ -9,7 +9,7 @@ servings: 2
 source: https://www.youtube.com/watch?v=G2kk8Qq0sgk
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 줄 '양파오이지 채수 4스푼 / 오이1개 / 오이 한개 / 양파 반개 / 채수 4스푼' → cucumber, onion로 나눔(이름 보정표)
 ingredients:
 - ingredient: chicken_breast
   raw_text: 닭가슴살 한개
@@ -89,7 +89,13 @@ ingredients:
   optional: false
   amount: 1
   unit: 개
-- ingredient: null
+- ingredient: cucumber
+  raw_text: 양파오이지 채수 4스푼 / 오이1개 / 오이 한개 / 양파 반개 / 채수 4스푼
+  role: sub
+  optional: false
+  amount: 4
+  unit: 스푼
+- ingredient: onion
   raw_text: 양파오이지 채수 4스푼 / 오이1개 / 오이 한개 / 양파 반개 / 채수 4스푼
   role: sub
   optional: false

@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 607. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 607. 요리종류 후식, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: cherry
   raw_text: 체리(50g)
@@ -13,16 +13,16 @@ ingredients:
 - ingredient: sweet_potato
   raw_text: 고구마(150g)
   role: sub
-- ingredient: null
+- ingredient: chocolate
   raw_text: 화이트 초콜릿(50g)
   role: sub
 - ingredient: gelatin
   raw_text: 판젤라틴(1장)
   role: sub
-- ingredient: null
+- ingredient: pistachio
   raw_text: 피스타치오(20g)
   role: sub
-- ingredient: null
+- ingredient: hazelnut
   raw_text: 헤이즐넛(20g)
   role: sub
 - ingredient: cashew
@@ -34,7 +34,7 @@ ingredients:
 - ingredient: almond
   raw_text: 아몬드(20g)
   role: sub
-- ingredient: null
+- ingredient: raspberry
   raw_text: 라즈베리(20g)
   role: sub
 - ingredient: raisin

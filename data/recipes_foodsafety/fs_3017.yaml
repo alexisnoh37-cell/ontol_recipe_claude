@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3017. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3017. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 2개'
 ingredients:
 - ingredient: rice
   raw_text: 쌀 40g
@@ -13,7 +13,7 @@ ingredients:
 - ingredient: brown_rice
   raw_text: 현미 30g
   role: sub
-- ingredient: null
+- ingredient: glutinous_rice
   raw_text: 현미찹쌀 5g
   role: sub
 - ingredient: zucchini
@@ -25,13 +25,13 @@ ingredients:
 - ingredient: burdock
   raw_text: 우엉 20g
   role: sub
-- ingredient: null
+- ingredient: bell_pepper
   raw_text: 적파프리카 15g
   role: sub
 - ingredient: bell_pepper
   raw_text: 황파프리카 15g
   role: sub
-- ingredient: null
+- ingredient: bell_pepper
   raw_text: 주황파프리카 15g
   role: sub
 - ingredient: vinegar
@@ -40,7 +40,7 @@ ingredients:
 - ingredient: sugar
   raw_text: 설탕 2g
   role: sub
-- ingredient: null
+- ingredient: laver
   raw_text: 파래김 1g
   role: sub
 - ingredient: mirin

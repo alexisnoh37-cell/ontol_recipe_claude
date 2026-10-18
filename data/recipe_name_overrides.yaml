@@ -116,3 +116,32 @@ overrides:
   id: chicken_stock
 - names: [계란후라이에 다대기]
   id: egg
+# --- um-5(2026-10-18 사람 검수 승인) 남은 자막 문구·시판 스프: 조리 단계·원문 근거(docs/review/unmapped_round4.yaml) ---
+- names: [비빌 때]
+  id: olive_oil
+- names: [잘 안뭉쳐서]
+  id: starch
+- names: [마지막에]
+  id: sesame
+- names: [아니 저는]
+  id: buckwheat_noodles
+- names: ['000원에']
+  id: zucchini
+- names: [볶을때 단단]
+  id: water_spinach
+- names: [볶다가 재료]
+  drop: not_ingredient
+# 사람 승인은 '뺌'이었으나 이 줄들이 원본의 주재료(main)라 빼면 주재료가 없어진다. um-2 '코스트코에서'와 같이
+# 그 레시피에 이미 있는 실제 주재료로 연결(같은 재료라 알레르기 판정 동일)
+- names: [저도 제일 좋아하는 반찬]
+  id: pork
+- names: [양은]
+  id: soft_tofu
+- names: [제가 제일 좋아하는 식재료, 적절]
+  id: pork_belly
+- names: [양파오이지 채수]
+  split: [{id: cucumber}, {id: onion}]
+- names: [분말가루]
+  id: instant_stock
+- names: [조미유, 분말 스프, 불닭 스프, 라면스프, 스프]
+  id: instant_noodle_product

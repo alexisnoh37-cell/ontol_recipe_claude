@@ -5,21 +5,21 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3266. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 6개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3266. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: asparagus
   raw_text: 아스파라거스(2개)
   role: sub
-- ingredient: null
+- ingredient: chicken_thigh
   raw_text: 닭다릿살(400g)
   role: sub
 - ingredient: cherry_tomato
   raw_text: 방울토마토(4개)
   role: sub
-- ingredient: null
+- ingredient: korean_mint
   raw_text: 방아잎(⅓줌=30g)
   role: sub
-- ingredient: null
+- ingredient: parmesan
   raw_text: 파르메산 치즈(1Ts)
   role: sub
 - ingredient: lemon
@@ -58,13 +58,13 @@ ingredients:
 - ingredient: lemon
   raw_text: 레몬즙(0.5ts)
   role: sub
-- ingredient: null
+- ingredient: mayonnaise
   raw_text: 무가당 아보카도 마요네즈(2Ts)
   role: sub
-- ingredient: null
+- ingredient: parmesan
   raw_text: 파르메산 치즈(1Ts)
   role: sub
-- ingredient: null
+- ingredient: steak_seasoning
   raw_text: 스테이크 시즈닝(1ts)
   role: sub
 - ingredient: parsley

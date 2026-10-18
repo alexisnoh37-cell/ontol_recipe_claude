@@ -9,9 +9,10 @@ servings: 2
 source: https://www.youtube.com/watch?v=Tl2_wXbmiy8
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '전분물(전분' → starch(이름 보정표); 재료 이름 '바꾼 후 고춧가루' → gochugaru(이름 보정표)
+note: 난이도 추정; 맛 수치 추정; 재료는 설명란 공개 표기 기준; 재료 이름 '양은' → soft_tofu(이름 보정표); 재료 이름 '전분물(전분' → starch(이름 보정표); 재료 이름 '바꾼 후 고춧가루'
+  → gochugaru(이름 보정표)
 ingredients:
-- ingredient: null
+- ingredient: soft_tofu
   raw_text: 양은 2인분
   role: main
   optional: false

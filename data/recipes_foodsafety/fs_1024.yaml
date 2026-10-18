@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1024. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1024. 요리종류 후식, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: tortilla
   raw_text: 또띠아 25g
@@ -13,7 +13,7 @@ ingredients:
 - ingredient: onion
   raw_text: 양파다진것 5g
   role: sub
-- ingredient: null
+- ingredient: jalapeno
   raw_text: 할라피뇨다진것 2g
   role: sub
 - ingredient: garlic
@@ -22,7 +22,7 @@ ingredients:
 - ingredient: avocado
   raw_text: 아보카도 12g
   role: sub
-- ingredient: null
+- ingredient: lime_juice
   raw_text: 라임주스 3g
   role: sub
 - ingredient: tomato

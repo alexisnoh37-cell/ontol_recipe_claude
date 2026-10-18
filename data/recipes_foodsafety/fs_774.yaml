@@ -5,15 +5,15 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 774. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 774. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개'
 ingredients:
-- ingredient: null
+- ingredient: bomdong
   raw_text: 재료 1인분 봄동 10g
   role: sub
 - ingredient: perilla_leaf
   raw_text: 깻잎 6g
   role: sub
-- ingredient: null
+- ingredient: small_octopus
   raw_text: 낙지다리 6g
   role: sub
 - ingredient: sesame_oil
@@ -37,10 +37,10 @@ ingredients:
 - ingredient: onion
   raw_text: 다진양파 14g
   role: sub
-- ingredient: null
+- ingredient: carrot
   raw_text: 다진당근 14g
   role: sub
-- ingredient: null
+- ingredient: zucchini
   raw_text: 다진애호박 14g
   role: sub
 - ingredient: doenjang

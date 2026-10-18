@@ -14,7 +14,10 @@ ingredients:
   raw_text: 영양부추 5
   role: sub
 - ingredient: onion
-  raw_text: '적양파 8 양념: 까나리액젓 2.5'
+  raw_text: 적양파 8
+  role: sub
+- ingredient: sand_lance_fish_sauce
+  raw_text: 까나리액젓 2.5
   role: sub
 - ingredient: gochugaru
   raw_text: 고춧가루 0.6

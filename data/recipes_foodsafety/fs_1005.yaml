@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1005. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1005. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
-- ingredient: null
+- ingredient: brown_rice
   raw_text: 현미가루 10g
   role: sub
 - ingredient: wheat_flour
@@ -22,7 +22,7 @@ ingredients:
 - ingredient: salt
   raw_text: 소금적당량
   role: sub
-- ingredient: null
+- ingredient: bean_paste_sweet
   raw_text: 팥소
   role: sub
 - ingredient: red_bean
@@ -30,9 +30,6 @@ ingredients:
   role: sub
 - ingredient: sugar
   raw_text: 설탕 10g
-  role: sub
-- ingredient: null
-  raw_text: 당근조림
   role: sub
 - ingredient: carrot
   raw_text: 당근 20g

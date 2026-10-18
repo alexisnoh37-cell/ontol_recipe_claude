@@ -5,11 +5,8 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 398. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 398. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 3개 뺌'
 ingredients:
-- ingredient: null
-  raw_text: 라이스버거
-  role: sub
 - ingredient: rice
   raw_text: 밥 200g
   role: sub
@@ -28,9 +25,6 @@ ingredients:
 - ingredient: egg
   raw_text: 달걀 60g
   role: sub
-- ingredient: null
-  raw_text: 떡갈비
-  role: sub
 - ingredient: ground_beef
   raw_text: 다진소고기 50g
   role: sub
@@ -40,7 +34,7 @@ ingredients:
 - ingredient: onion
   raw_text: 다진양파 30g
   role: sub
-- ingredient: null
+- ingredient: scallion
   raw_text: 다진쪽파 15g
   role: sub
 - ingredient: seasoned_soy_sauce
@@ -48,9 +42,6 @@ ingredients:
   role: sub
 - ingredient: black_pepper
   raw_text: 후추 1g
-  role: sub
-- ingredient: null
-  raw_text: 토마토겉절이
   role: sub
 - ingredient: tomato
   raw_text: 토마토 80g

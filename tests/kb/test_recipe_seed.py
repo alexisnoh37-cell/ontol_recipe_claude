@@ -238,17 +238,24 @@ def test_seed_is_published_expansion_and_youtube(specs):
     assert len(specs) == len(PUBLISHED_IDS) + len(expansion) + sum(s.source in youtube for s in specs)
 
 
-def test_unmapped_only_in_drafts(specs):
+@pytest.fixture(scope="module")
+def all_specs(ck, specs):
+    # um-5(2026-10-18) 뒤 엔진 시드(data/recipes)의 미매칭은 0. 남은 미매칭은 식품안전나라 1줄(fs_3069)이라 함께 본다
+    return specs + load_recipe_specs(ck, ROOT / "data" / "recipes_foodsafety", ROOT)
+
+
+def test_unmapped_only_in_drafts(all_specs):
     # 미매칭(null) 재료는 draft에만 있다(docs/plan.md 5-4). 미매칭 레시피는 알레르기 사용자에게 제외된다.
-    with_unmapped = {s.id: s.status for s in specs if any(i.ingredient is None for i in s.ingredients)}
+    with_unmapped = {s.id: s.status for s in all_specs if any(i.ingredient is None for i in s.ingredients)}
     assert with_unmapped and set(with_unmapped.values()) == {"draft"}
 
 
-def test_unmapped_draft_excluded_for_any_allergy(recommender_with_drafts, specs):
-    unmapped = {s.id for s in specs if any(i.ingredient is None for i in s.ingredients)}
-    mains = {i.ingredient for s in specs if s.id in unmapped for i in s.ingredients if i.role == "main" and i.ingredient}
+def test_unmapped_draft_excluded_for_any_allergy(ck, all_specs):
+    recommender = build_recommender(ck, [recipe_from_spec(s) for s in all_specs], serve_draft_recipes=True)
+    unmapped = {s.id for s in all_specs if any(i.ingredient is None for i in s.ingredients)}
+    mains = {i.ingredient for s in all_specs if s.id in unmapped for i in s.ingredients if i.ingredient}
     ctx = UserContext(allergen_groups=frozenset({"peach"}), pantry=ALL_PANTRY | mains)
-    result = recommender_with_drafts.recommend(ctx, RecommendRequest(limit=1000))
+    result = recommender.recommend(ctx, RecommendRequest(limit=2000))
     assert not {i.recipe_id for i in result.items} & unmapped
     excluded = {e.recipe_id for e in result.exclusions if e.reason == ExclusionReason.UNMAPPED_INGREDIENT}
     assert excluded & unmapped

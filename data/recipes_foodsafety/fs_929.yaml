@@ -5,15 +5,15 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 929. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 929. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 2개'
 ingredients:
-- ingredient: null
+- ingredient: pasta
   raw_text: 펜넬파스타 40g
   role: sub
 - ingredient: green_bell_pepper
   raw_text: 청피망 10g
   role: sub
-- ingredient: null
+- ingredient: bell_pepper
   raw_text: 홍피망 10g
   role: sub
 - ingredient: onion
@@ -22,13 +22,13 @@ ingredients:
 - ingredient: green_peas
   raw_text: 완두콩 5g
   role: sub
-- ingredient: null
+- ingredient: olive
   raw_text: 블랙올리브 2g
   role: sub
 - ingredient: asparagus
   raw_text: 아스파라거스 2g
   role: sub
-- ingredient: null
+- ingredient: tomato
   raw_text: 토마토콩카세 15g
   role: sub
 - ingredient: parmesan
@@ -48,9 +48,6 @@ ingredients:
   role: sub
 - ingredient: basil
   raw_text: 바질 3g
-  role: sub
-- ingredient: null
-  raw_text: 믹서에 갈아줌
   role: sub
 steps:
 - text: 펜네 파스타를 끓는 소금물에 기름을 약간 넣고 10분정도 삶아 체에 밭쳐 물기를 뺀다.

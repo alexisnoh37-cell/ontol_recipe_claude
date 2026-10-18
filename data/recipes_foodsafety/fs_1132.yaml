@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1132. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1132. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개'
 ingredients:
-- ingredient: null
+- ingredient: plum
   raw_text: 자두(100g)
   role: sub
 - ingredient: orange
@@ -16,11 +16,8 @@ ingredients:
 - ingredient: sparkling_water
   raw_text: 탄산수(100g)
   role: sub
-- ingredient: null
+- ingredient: mint
   raw_text: 민트잎(5g)
-  role: sub
-- ingredient: null
-  raw_text: 얼음(145g)
   role: sub
 steps:
 - text: 자두(30g)를 잘게 다진다.

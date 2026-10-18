@@ -5,15 +5,15 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1042. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1042. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
-- ingredient: null
+- ingredient: lettuce
   raw_text: 상추/로메인 60g
   role: sub
 - ingredient: garlic
   raw_text: 마늘다진것 3g
   role: sub
-- ingredient: null
+- ingredient: anchovy
   raw_text: 앤쵸비 3g
   role: sub
 - ingredient: salt
@@ -34,7 +34,7 @@ ingredients:
 - ingredient: parmesan
   raw_text: 파마산 치즈 5g
   role: sub
-- ingredient: null
+- ingredient: sea_bream
   raw_text: 도미살 30g
   role: sub
 - ingredient: wheat_flour
@@ -46,13 +46,10 @@ ingredients:
 - ingredient: bread_crumbs
   raw_text: 빵가루 4g
   role: sub
-- ingredient: null
-  raw_text: 크루퉁
-  role: sub
 - ingredient: parsley
   raw_text: 파슬리다진것 2g
   role: sub
-- ingredient: null
+- ingredient: oregano
   raw_text: 오레가노다진것 1g
   role: sub
 - ingredient: bread

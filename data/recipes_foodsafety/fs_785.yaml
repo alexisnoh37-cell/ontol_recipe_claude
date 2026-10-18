@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 785. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 785. 요리종류 반찬, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
 - ingredient: onion
   raw_text: 양파 17.5g
@@ -22,7 +22,7 @@ ingredients:
 - ingredient: cooking_oil
   raw_text: 식용유 4.2g
   role: sub
-- ingredient: null
+- ingredient: heavy_cream
   raw_text: 크림 17.5g
   role: sub
 - ingredient: parmesan
@@ -30,9 +30,6 @@ ingredients:
   role: sub
 - ingredient: butter
   raw_text: 버터 2.1g
-  role: sub
-- ingredient: null
-  raw_text: 라비올리 반죽
   role: sub
 - ingredient: wheat_flour
   raw_text: 중력분 35g

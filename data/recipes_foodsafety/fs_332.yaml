@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 332. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 332. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
 - ingredient: rice
   raw_text: 쌀 100g
   role: sub
-- ingredient: null
+- ingredient: gondre
   raw_text: 건곤드레 10g
   role: sub
 - ingredient: oyster_mushroom
@@ -18,9 +18,6 @@ ingredients:
   role: sub
 - ingredient: sesame_oil
   raw_text: 참기름 15g
-  role: sub
-- ingredient: null
-  raw_text: 비빔장
   role: sub
 - ingredient: tofu
   raw_text: 두부 50g

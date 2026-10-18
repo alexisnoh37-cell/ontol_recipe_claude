@@ -113,7 +113,7 @@ ingredients:
   optional: false
   amount: 2
   unit: 스푼
-- ingredient: null
+- ingredient: sesame_unspecified
   raw_text: 갈은 깨 4스푼
   role: sub
   optional: false

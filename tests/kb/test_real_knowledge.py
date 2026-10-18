@@ -46,8 +46,10 @@ def test_garlic_minced_is_form_alias(ck):
 
 
 def test_ambiguous_alias_removed_and_soybean_oil_separate(ck):
-    assert "파" not in {a.alias_norm for a in ck.aliases}
     by_norm = {a.alias_norm: a.ingredient_id for a in ck.aliases}
+    # '파'는 대파·쪽파 어느 쪽 별칭도 아니다. um-4(2026-10-18 사람 승인)부터 '파(종류 불명)' 재료의 이름으로만 쓴다
+    assert by_norm.get("파") == "green_onion_unspecified"
+    assert by_norm["대파"] == "green_onion" and by_norm["쪽파"] == "scallion"
     assert by_norm["콩기름"] == "soybean_oil"
     assert ck.closure_of("soybean")["soybean_oil"].certainty == "possible"
 
@@ -58,7 +60,8 @@ DRAFT_INGREDIENTS = frozenset({
     "bottled_marinade", "buldak_sauce", "cham_sauce", "ponzu", "potato_chips", "sundae",
 })
 # ir-2 사람 결정으로 지운 재료(그 표기는 다시 미매칭)
-REMOVED_INGREDIENTS = frozenset({"edible_flower"})
+# (edible_flower는 ir-2에서 지웠다가 um-5 사람 검수로 다시 추가)
+REMOVED_INGREDIENTS: frozenset[str] = frozenset()
 
 
 def test_all_knowledge_is_reviewed(ck):
@@ -81,7 +84,9 @@ def test_simplecooking_links(ck):
     assert ck.closure_of("beef")["beef_plate"].certainty == "definite"
     by_norm = {a.alias_norm: a.ingredient_id for a in ck.aliases}
     assert by_norm["노른자"] == "egg" and by_norm["크래미"] == "imitation_crab" and by_norm["통삼겹살"] == "pork_belly"
-    assert "깨" not in by_norm
+    # '깨'는 참깨·들깨 어느 쪽 별칭도 아니다. um-4부터 '깨(참깨·들깨)' 재료(참깨 포함 가능)로만 연결
+    assert by_norm.get("깨") == "sesame_unspecified"
+    assert ck.closure_of("sesame")["sesame_unspecified"].certainty == "possible"
 
 
 # --- D4 알레르기 그룹 확정 내용 (docs/decisions.md) -------------------------

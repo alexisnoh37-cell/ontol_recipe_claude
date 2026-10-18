@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3271. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3271. 요리종류 기타, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: cucumber
   raw_text: 오이(⅓개)
@@ -16,10 +16,10 @@ ingredients:
 - ingredient: bell_pepper
   raw_text: 파프리카(빨강, 노랑 각 ½개)
   role: sub
-- ingredient: null
+- ingredient: acorn_jelly
   raw_text: 도토리묵(250g)
   role: sub
-- ingredient: null
+- ingredient: seaweed_noodles
   raw_text: 해조국수(1팩=180g)
   role: sub
 - ingredient: stevia
@@ -31,7 +31,7 @@ ingredients:
 - ingredient: soy_sauce
   raw_text: 간장(0.5Ts)
   role: sub
-- ingredient: null
+- ingredient: sriracha
   raw_text: 스리라차소스(1Ts)
   role: sub
 - ingredient: maesil_cheong

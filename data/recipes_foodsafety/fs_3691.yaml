@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3691. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3691. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 6개. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
 - ingredient: cream_cheese
   raw_text: 크림치즈
@@ -16,22 +16,22 @@ ingredients:
 - ingredient: vinegar
   raw_text: 식초 20ml
   role: sub
-- ingredient: null
+- ingredient: allulose
   raw_text: 알룰로스① 56g
   role: sub
 - ingredient: salt
   raw_text: 소금 1g
   role: sub
-- ingredient: null
-  raw_text: '초코크림 : 아몬드가루 85g'
+- ingredient: almond
+  raw_text: 아몬드가루 85g
   role: sub
-- ingredient: null
+- ingredient: cocoa_powder
   raw_text: 무가당 코코아가루① 20g
   role: sub
-- ingredient: null
+- ingredient: allulose
   raw_text: 알룰로스② 70g
   role: sub
-- ingredient: null
+- ingredient: soy_milk
   raw_text: 두유① 25ml
   role: sub
 - ingredient: banana
@@ -40,10 +40,10 @@ ingredients:
 - ingredient: egg
   raw_text: 달걀 105g
   role: sub
-- ingredient: null
+- ingredient: soy_milk
   raw_text: 두유② 25ml
   role: sub
-- ingredient: null
+- ingredient: cocoa_powder
   raw_text: 무가당 코코아가루② 45g
   role: sub
 - ingredient: peanut_butter

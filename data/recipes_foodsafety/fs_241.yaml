@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 241. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 241. 요리종류 반찬, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개'
 ingredients:
 - ingredient: pork
   raw_text: 돼지고기(통삼겹살, 200g)
@@ -16,7 +16,7 @@ ingredients:
 - ingredient: almond
   raw_text: 아몬드(5g)
   role: sub
-- ingredient: null
+- ingredient: plum
   raw_text: 말린 자두(15g)
   role: sub
 - ingredient: walnut
@@ -34,7 +34,7 @@ ingredients:
 - ingredient: chive
   raw_text: 부추(15g)
   role: sub
-- ingredient: null
+- ingredient: soy_sauce
   raw_text: 돼지고기 밑간 간장(5g)
   role: sub
 - ingredient: sesame_oil
@@ -70,7 +70,7 @@ ingredients:
 - ingredient: ginger
   raw_text: 다진 생강(5g)
   role: sub
-- ingredient: null
+- ingredient: carrot
   raw_text: 다진 당근(5g)
   role: sub
 steps:

@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 219. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 219. 요리종류 밥, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 2개'
 ingredients:
-- ingredient: null
+- ingredient: rice
   raw_text: 볶음밥 쌀(100g)
   role: sub
 - ingredient: asparagus
@@ -28,7 +28,7 @@ ingredients:
 - ingredient: webfoot_octopus
   raw_text: 주꾸미(15g)
   role: sub
-- ingredient: null
+- ingredient: radish
   raw_text: 미나리볶음고추장 무(20g)
   role: sub
 - ingredient: burdock

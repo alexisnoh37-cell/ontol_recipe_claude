@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3206. 요리종류 일품, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3206. 요리종류 일품, 조리방법 찌기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개'
 ingredients:
 - ingredient: napa_cabbage
   raw_text: 배추(30g)
@@ -31,22 +31,22 @@ ingredients:
 - ingredient: garlic
   raw_text: 다진 마늘(2g)
   role: sub
-- ingredient: null
+- ingredient: green_onion_unspecified
   raw_text: 다진 파(2g)
   role: sub
 - ingredient: bay_leaf
   raw_text: 월계수잎(1장)
   role: sub
-- ingredient: null
+- ingredient: glutinous_rice
   raw_text: 불린 찹쌀(30g)
   role: sub
 - ingredient: gochugaru
   raw_text: 고운 고춧가루(2g)
   role: sub
-- ingredient: null
+- ingredient: black_pepper
   raw_text: 백후추(1g)
   role: sub
-- ingredient: null
+- ingredient: saeujeot
   raw_text: 잘게 다진 새우젓(1g)
   role: sub
 steps:

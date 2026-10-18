@@ -1,0 +1,43 @@
+# 미매칭 3차 정리 결정 데이터 (um-4, 2026-10-18)
+#
+# 2차(docs/review/unmapped_round2.yaml) 뒤 남은 미매칭 447줄(식품안전나라 415 · 엔진 32)을 원문과 함께 다시 분류했다.
+# 형식과 kind 뜻은 1차 파일 머리말과 같다(A 별칭 · B 새 재료 · C 보류 · D 이름 다듬기 · E 시판 제품).
+# 사람 결정(2026-10-18): Claude 추천안 1~6 "진행해"로 모두 승인.
+#   1. 변환 규칙: 재료로 연결되지 않는 소제목 줄(쌍점·대괄호 소제목과 그 소제목을 가리키는 줄)은 뺀다(kb/foodsafety.py, plan 5-3-1).
+#      소제목 이름이 재료로 연결되면("[팥소]", "리코타치즈:") 그대로 둔다. 206줄이 빠졌고 연결된 재료 손실 0.
+#   2. 후보의 알레르기가 같은 모호한 표기는 '종류 불명' 재료로: 파, 고추, 홍피망(→ 파프리카), 그린 샐러드(→ 어린잎채소).
+#      지난 결정(파·고추·홍피망 보류)을 바꾼 것이다.
+#   3. 후보의 알레르기가 다르면 모두 포함 가능으로: 깨(참깨), 안심·등심(쇠고기·돼지고기), 과일(복숭아·토마토).
+#   4. 육수(종류 불명)는 시판 육수와 같은 기준(해산물 전체·육류·대두·밀 가능), 채소 육수는 대두·밀·우유 가능.
+#   5. 시판 소스 중 칠리소스·그린커리 페이스트·머스터드소스는 넓게 가능 + 시판 제품 안내. 나머지 10개는 미매칭 유지.
+#   6. 오타 3개: ghen → 호두, 현미휴 → 현미유, 고추자 → 고추장.
+# 반영: knowledge(새 재료 10개, 별칭), data/foodsafety_name_overrides.yaml(um-4 구역), config/display.yaml(시판 제품 안내 3개).
+
+entries:
+
+- {kind: B, decision: O, terms: [파, 다진 파, 파다진것], new: {id: green_onion_unspecified, name: 파(대파·쪽파), category: 채소}, note: 후보 알레르기 같음(없음)}
+- {kind: B, decision: O, terms: [고추], new: {id: chili_unspecified, name: 고추(종류 불명), category: 채소}, note: 후보 알레르기 같음(없음)}
+- {kind: A, decision: O, terms: [홍피망, 홍피망다진것, 붉은피망, 다진 홍피망], target: bell_pepper, note: 빨간 피망 = 파프리카(알레르기 없음)}
+- {kind: A, decision: O, terms: [그린 샐러드], target: baby_greens, note: 샐러드용 잎채소}
+- {kind: B, decision: O, terms: [깨, 갈은 깨], new: {id: sesame_unspecified, name: 깨(참깨·들깨), category: 견과·씨앗, allergens: [{group: sesame, certainty: possible}]}}
+- {kind: B, decision: O, terms: [제철과일, 과일], new: {id: fruit_unspecified, name: 과일(종류 불명), category: 과일, allergens: [{group: peach, certainty: possible}, {group: tomato, certainty: possible}], confidence: low}}
+- {kind: B, decision: O, terms: [고기(쇠고기·돼지고기)], new: {id: meat_unspecified, name: 고기(쇠고기·돼지고기), category: 육류, allergens: [{group: beef, certainty: possible}, {group: pork, certainty: possible}], confidence: low}, note: "'안심'·'등심얇게썬것'은 이름 보정표로 연결"}
+- {kind: B, decision: O, terms: [육수], new: {id: stock_unspecified, name: 육수(종류 불명), category: 육수·조미료, is_processed: true, derived_from: [{id: seafood, certainty: possible}, {id: beef, certainty: possible}, {id: pork, certainty: possible}, {id: chicken, certainty: possible}, {id: soybean, certainty: possible}, {id: wheat_flour, certainty: possible}], confidence: low}}
+- {kind: B, decision: O, terms: [채소 육수, 야채육수, 야채국물, 채소국물], new: {id: vegetable_stock, name: 채소 육수, category: 육수·조미료, is_processed: true, derived_from: [{id: soybean, certainty: possible}, {id: wheat_flour, certainty: possible}, {id: milk, certainty: possible}], confidence: low}}
+- {kind: E, decision: O, terms: [칠리소스, 스위트칠리], new: {id: chili_sauce, name: 칠리소스, category: 소스, is_processed: true, derived_from: [{id: tomato, certainty: possible}, {id: soybean, certainty: possible}, {id: wheat_flour, certainty: possible}, {id: shrimp_raw, certainty: possible}, {id: fish, certainty: possible}, {id: sulfite, certainty: possible}], confidence: low}}
+- {kind: E, decision: O, terms: [그린커리 페이스트], new: {id: green_curry_paste, name: 그린커리 페이스트, category: 소스, is_processed: true, derived_from: [{id: shrimp_raw, certainty: possible}, {id: fish, certainty: possible}, {id: soybean, certainty: possible}], confidence: low}, note: "원문 '페이스트'는 이름 보정표로 연결"}
+- {kind: E, decision: O, terms: [머스터드소스], new: {id: mustard_sauce, name: 머스터드소스, category: 소스, is_processed: true, derived_from: [mustard, {id: egg, certainty: possible}, {id: wheat_flour, certainty: possible}, {id: soybean, certainty: possible}, {id: honey, certainty: possible}], confidence: low}, note: "'머스터드조스'(오기)는 이름 보정표로 연결"}
+- {kind: D, decision: O, terms: [오렌지 당근펀치, 버섯볶음, 두유 소스, 북엇국, 황태해장국, 냉스프, 케일 샐러드, 오미자 드레싱, 콩나물밥 양념, 대구살 양념, 겉절이 양념], target: null, drop: not_ingredient, note: 한 줄에 홀로 적힌 소제목. 다음 줄에 구성 재료}
+- {kind: D, decision: O, terms: [12g, 8g, 미니], target: null, drop: not_ingredient, note: 앞·뒤 줄에서 잘려 나온 양·앞말}
+- {kind: D, decision: O, terms: [청], target: green_chili, note: "원문 '청,홍고추'"}
+- {kind: D, decision: O, terms: [재료], target: bomdong, note: "원문 '재료 1인분 봄동 10g'"}
+- {kind: D, decision: O, terms: [두가지 묵], target: null, split: [{id: olbanggae_jelly}, {id: black_sesame_jelly}]}
+- {kind: D, decision: O, terms: [ghen], target: walnut, note: 한/영 전환 없이 친 '호두'}
+- {kind: D, decision: O, terms: [현미휴], target: cooking_oil, note: 현미유 오기}
+- {kind: D, decision: O, terms: [고추자], target: gochujang, note: 고추장 오기(고춧가루보다 성분이 넓은 쪽)}
+- {kind: D, decision: O, terms: [반죽양념 다진 파, 고기 밑간 다진 파], target: green_onion_unspecified}
+- {kind: D, decision: O, terms: [안심, 등심얇게썬것], target: meat_unspecified}
+- {kind: D, decision: O, terms: [페이스트], target: green_curry_paste}
+- {kind: D, decision: O, terms: [머스터드조스], target: mustard_sauce}
+- {kind: C, decision: O, terms: [키위소스, 바질럽드, 볶음 소스, 양념장, 수제조미료, 허브크러스트, 삼색분말, 호떡반죽, 코코아], note: 구성 불명. 각 레시피 1개. 미매칭 유지}
+- {kind: C, decision: O, terms: [10g, ., 곁들이채소], note: "재료 이름이 원문에 없음('케찹 5g,10g', 재료정보 '.'), 곁들이채소2 줄은 '2가지색'이 양으로 읽혀 나뉘지 않음. 미매칭 유지"}

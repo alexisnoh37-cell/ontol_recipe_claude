@@ -5,9 +5,9 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3772. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 4개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3772. 요리종류 일품, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 2개'
 ingredients:
-- ingredient: null
+- ingredient: green_tea_powder
   raw_text: 녹차 300ml
   role: sub
 - ingredient: kelp
@@ -31,9 +31,6 @@ ingredients:
 - ingredient: egg
   raw_text: 달걀 50g
   role: sub
-- ingredient: null
-  raw_text: 콩나물밥 양념
-  role: sub
 - ingredient: soy_sauce
   raw_text: 간장 6g
   role: sub
@@ -42,9 +39,6 @@ ingredients:
   role: sub
 - ingredient: perilla_oil
   raw_text: 들기름 8g
-  role: sub
-- ingredient: null
-  raw_text: 대구살 양념
   role: sub
 - ingredient: soy_sauce
   raw_text: 간장 6g
@@ -61,7 +55,7 @@ ingredients:
 - ingredient: sesame
   raw_text: 통깨 12g
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 양파가루 8g
   role: sub
 - ingredient: gochugaru

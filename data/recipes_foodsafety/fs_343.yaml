@@ -5,18 +5,18 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 343. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 343. 요리종류 반찬, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
 ingredients:
 - ingredient: abalone
   raw_text: 전복 200g
   role: sub
-- ingredient: null
+- ingredient: shrimp_raw
   raw_text: 자숙새우 60g
   role: sub
-- ingredient: null
+- ingredient: turban_shell
   raw_text: 소라살 45g
   role: sub
-- ingredient: null
+- ingredient: garlic
   raw_text: 알마늘 20g
   role: sub
 - ingredient: green_onion
@@ -28,13 +28,13 @@ ingredients:
 - ingredient: red_chili
   raw_text: 홍고추 15g
   role: sub
-- ingredient: null
+- ingredient: bell_pepper
   raw_text: 홍피망 15g
   role: sub
 - ingredient: onion
   raw_text: 양파 50g
   role: sub
-- ingredient: null
+- ingredient: green_chili
   raw_text: 멕시코고추 2g
   role: sub
 - ingredient: seasoned_soy_sauce

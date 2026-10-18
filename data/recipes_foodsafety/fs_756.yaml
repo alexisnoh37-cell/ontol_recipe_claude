@@ -14,7 +14,10 @@ ingredients:
   raw_text: 적양파 10
   role: sub
 - ingredient: beet
-  raw_text: '비트 10 드레싱: 발사믹식초 5'
+  raw_text: 비트 10
+  role: sub
+- ingredient: balsamic_vinegar
+  raw_text: 발사믹식초 5
   role: sub
 - ingredient: oligosaccharide
   raw_text: 올리고당 3

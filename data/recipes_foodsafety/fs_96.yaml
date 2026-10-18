@@ -5,11 +5,8 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 96. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 96. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 2개 뺌'
 ingredients:
-- ingredient: null
-  raw_text: 곤약냉채
-  role: sub
 - ingredient: konjac
   raw_text: 실곤약 50g
   role: sub
@@ -24,9 +21,6 @@ ingredients:
   role: sub
 - ingredient: bell_pepper
   raw_text: 빨강 파프리카 10g(5ⅹ3cm)
-  role: sub
-- ingredient: null
-  raw_text: 유자 드레싱
   role: sub
 - ingredient: yuzu_cheong
   raw_text: 유자청 25g(1⅔큰술)

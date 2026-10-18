@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1015. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 1015. 요리종류 일품, 조리방법 볶기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
 - ingredient: manila_clam
   raw_text: 바지락살 20g
@@ -37,9 +37,6 @@ ingredients:
 - ingredient: starch
   raw_text: 물전분 4g
   role: sub
-- ingredient: null
-  raw_text: 간장소스
-  role: sub
 - ingredient: anchovy_stock
   raw_text: 멸치육수 50g
   role: sub
@@ -49,10 +46,10 @@ ingredients:
 - ingredient: sugar
   raw_text: 설탕 5g
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 양파즙 5g
   role: sub
-- ingredient: null
+- ingredient: green_onion_unspecified
   raw_text: 다진 파 5g
   role: sub
 - ingredient: garlic

@@ -5,18 +5,18 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3687. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 7개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 3687. 요리종류 후식, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 3개'
 ingredients:
-- ingredient: null
+- ingredient: chickpea
   raw_text: 삶은 병아리콩① 175g
   role: sub
 - ingredient: soy_milk
   raw_text: 두유 210g
   role: sub
-- ingredient: null
+- ingredient: coconut
   raw_text: 코코넛오일 70g
   role: sub
-- ingredient: null
+- ingredient: yuzu
   raw_text: 유자필 56g
   role: sub
 - ingredient: rice_flour
@@ -25,16 +25,16 @@ ingredients:
 - ingredient: almond
   raw_text: 아몬드가루 105g
   role: sub
-- ingredient: null
+- ingredient: gamtae
   raw_text: 감태가루 3.5g
   role: sub
-- ingredient: null
+- ingredient: bean_paste_sweet
   raw_text: 앙 금
   role: sub
-- ingredient: null
+- ingredient: bean_paste_sweet
   raw_text: 유자앙금 105g
   role: sub
-- ingredient: null
+- ingredient: chickpea
   raw_text: 삶은 병아리콩② 50g
   role: sub
 steps:

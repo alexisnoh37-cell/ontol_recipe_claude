@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 429. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 429. 요리종류 일품, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개. 구성 재료가 따로 적힌 소제목 줄 3개 뺌'
 ingredients:
 - ingredient: pork_belly
   raw_text: 통삼겹 200g
   role: sub
-- ingredient: null
+- ingredient: rosemary
   raw_text: 건로즈마리 1g
   role: sub
 - ingredient: rosemary
@@ -19,10 +19,7 @@ ingredients:
 - ingredient: olive_oil
   raw_text: 올리브유 15g
   role: sub
-- ingredient: null
-  raw_text: 곁들이채소1
-  role: sub
-- ingredient: null
+- ingredient: baekilsongi
   raw_text: 백일송이 30g
   role: sub
 - ingredient: carrot
@@ -31,8 +28,8 @@ ingredients:
 - ingredient: onion
   raw_text: 양파 60g
   role: sub
-- ingredient: null
-  raw_text: '곁들이채소2 : 2가지색 미니파프리카 30g'
+- ingredient: bell_pepper
+  raw_text: 2가지색 미니파프리카 30g
   role: sub
 - ingredient: onion
   raw_text: 양파 60g
@@ -42,9 +39,6 @@ ingredients:
   role: sub
 - ingredient: sugar
   raw_text: 설탕 1g
-  role: sub
-- ingredient: null
-  raw_text: 매쉬포테이토
   role: sub
 - ingredient: potato
   raw_text: 감자 100g

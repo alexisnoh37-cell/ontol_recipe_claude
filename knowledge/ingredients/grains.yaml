@@ -3,16 +3,17 @@
 # --- 곡류 ---
 - id: rice
   name: 쌀
-  aliases: [백미, 멥쌀, {text: 밥, form: cooked}, {text: 쌀밥, form: cooked}, {text: 흰밥, form: cooked}, 햇반, 불린쌀]
+  aliases: [백미, 멥쌀, {text: 밥, form: cooked}, {text: 쌀밥, form: cooked}, {text: 흰밥, form: cooked}, 햇반, 불린쌀, 흑미, 쌀뜨물, 강황쌀, 불린밥, 쌀튀밥, 찬밥]
   category: 곡류·가루
   status: reviewed
 - id: glutinous_rice
   name: 찹쌀
+  aliases: [현미찹쌀, 불린 찹쌀, 찹쌀현미밥]
   category: 곡류·가루
   status: reviewed
 - id: brown_rice
   name: 현미
-  aliases: [{text: 현미밥, form: cooked}, 볶은현미]
+  aliases: [{text: 현미밥, form: cooked}, 볶은현미, 현미쌀, 불린 현미, 현미가루, 현미쌀가루, 현미튀밥]
   category: 곡류·가루
   status: reviewed
 - id: buckwheat
@@ -25,19 +26,20 @@
 # --- 가루·전분 ---
 - id: wheat_flour
   name: 밀가루
-  aliases: [중력분, 박력분, 강력분, 통밀가루]
+  aliases: [중력분, 박력분, 강력분, 통밀가루, 박력 밀가루, 강력밀가루, 우리밀가루, 덧밀가루, 밀가루박력분, 밀가루중력분, 유기농 밀가루, 전립분]
   category: 곡류·가루
   allergens: [{group: wheat, certainty: definite}]
   status: reviewed
 - id: rice_flour
   name: 쌀가루
-  aliases: [습식 쌀가루, 건식 쌀가루]
+  aliases: [습식 쌀가루, 건식 쌀가루, 멥쌀가루, 박력 쌀가루, 강력 쌀가루]
   derived_from: [rice]
   is_processed: true
   category: 곡류·가루
   status: reviewed
 - id: glutinous_rice_flour
   name: 찹쌀가루
+  aliases: [젖은 찹쌀가루]
   derived_from: [glutinous_rice]
   is_processed: true
   category: 곡류·가루
@@ -64,6 +66,7 @@
   status: reviewed
 - id: frying_mix
   name: 튀김가루
+  aliases: [튀김반죽]
   derived_from:
     - wheat_flour
     - {id: soybean, certainty: possible}
@@ -89,7 +92,7 @@
   status: reviewed
 - id: potato_starch
   name: 감자전분
-  aliases: [감자녹말]
+  aliases: [감자녹말, 감자녹말가루]
   derived_from: [potato]
   is_processed: true
   category: 곡류·가루
@@ -113,14 +116,14 @@
   status: reviewed
 - id: kalguksu_noodles
   name: 칼국수면
-  aliases: [칼국수 생면]
+  aliases: [칼국수 생면, 생면]
   derived_from: [wheat_flour]
   is_processed: true
   category: 면·떡·빵
   status: reviewed
 - id: udon_noodles
   name: 우동면
-  aliases: [우동사리]
+  aliases: [우동사리, 우동]
   derived_from: [wheat_flour]
   is_processed: true
   category: 면·떡·빵
@@ -140,7 +143,7 @@
   status: reviewed
 - id: pasta
   name: 파스타
-  aliases: [스파게티, 스파게티면, 펜네, 링귀니, 파스타면, 통밀 파스타면, 통밀파스타]
+  aliases: [스파게티, 스파게티면, 펜네, 링귀니, 파스타면, 통밀 파스타면, 통밀파스타, 푸실리, 삶은 스파게티, 알파벳파스타, 탈리아텔레]
   derived_from: [wheat_flour, {id: egg, certainty: possible}]
   is_processed: true
   category: 면·떡·빵
@@ -171,6 +174,7 @@
   status: reviewed
 - id: glass_noodles
   name: 당면
+  aliases: [불린 당면, 건당면, 당면불린것]
   derived_from: [sweet_potato]
   is_processed: true
   category: 면·떡·빵
@@ -179,7 +183,7 @@
   status: reviewed
 - id: rice_noodles
   name: 쌀국수면
-  aliases: [라이스누들]
+  aliases: [라이스누들, 쌀국수, 삶은 쌀소면, 쌀국수가는것, 쌀파스타면]
   derived_from: [rice]
   is_processed: true
   category: 면·떡·빵
@@ -188,14 +192,14 @@
 # --- 떡·빵·피 ---
 - id: rice_cake
   name: 가래떡
-  aliases: [{text: 떡국떡, form: sliced}]
+  aliases: [{text: 떡국떡, form: sliced}, 조랭이떡, 절편]
   derived_from: [rice]
   is_processed: true
   category: 면·떡·빵
   status: reviewed
 - id: tteokbokki_rice_cake
   name: 떡볶이떡
-  aliases: [밀떡, 쌀떡]
+  aliases: [밀떡, 쌀떡, 누들 떡볶이 떡]
   derived_from: [{id: rice, certainty: possible}, {id: wheat_flour, certainty: possible}]
   is_processed: true
   category: 면·떡·빵
@@ -204,7 +208,7 @@
   status: reviewed
 - id: bread
   name: 식빵
-  aliases: [우유식빵, 통밀식빵]
+  aliases: [우유식빵, 통밀식빵, 버거빵, 시판 크루통, 치아바타, 포카치아빵]
   derived_from:
     - wheat_flour
     - {id: milk, certainty: possible}
@@ -255,7 +259,7 @@
   status: reviewed
 - id: starch
   name: 전분
-  aliases: [녹말가루, 녹말, 전분가루, 물전분, 물녹말]
+  aliases: [녹말가루, 녹말, 전분가루, 물전분, 물녹말, 녹말물, 전분물]
   derived_from:
     - {id: wheat_flour, certainty: possible}
   is_processed: true
@@ -293,6 +297,7 @@
   status: reviewed
 - id: rice_paper
   name: 라이스페이퍼
+  aliases: [불린 라이스페이퍼, 사각 라이스페이퍼]
   derived_from:
     - rice
   is_processed: true
@@ -318,9 +323,188 @@
   status: reviewed
 - id: nurungji
   name: 누룽지
+  aliases: [누룽지가루, 시판 누룽지]
   derived_from:
     - rice
   is_processed: true
   category: 곡류·가루
   note: "um-2(2026-10-17) 미매칭 보강으로 추가, 사람 검수표 승인. ir-2(2026-10-17) 사람 재료 검수 완료"
+  status: reviewed
+
+# --- um-3 미매칭 2차 보강(2026-10-17, 사람 일괄 승인) ---
+- id: barley
+  name: 보리
+  aliases: [보리쌀, 보릿가루, 찰보리]
+  category: 곡류·가루
+  note: "법정 알레르기(밀) 아님 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: foxtail_millet
+  name: 조(좁쌀)
+  aliases: [좁쌀]
+  category: 곡류·가루
+  note: "원문 '조'는 이름 보정으로 연결 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: spring_roll_wrapper
+  name: 춘권피
+  derived_from:
+    - wheat_flour
+  is_processed: true
+  category: 면·떡·빵
+  note: "만두피와 같은 기준 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: tteok_unspecified
+  name: 떡(종류 불명)
+  aliases: [떡]
+  derived_from:
+    - rice
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: "밀떡 가능 → 밀 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: mulberry_leaf_powder
+  name: 뽕잎가루
+  category: 곡류·가루
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: sorghum
+  name: 수수
+  aliases: [볶은수수]
+  category: 곡류·가루
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: jobs_tears
+  name: 율무
+  aliases: [볶은율무]
+  category: 곡류·가루
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: mixed_grains
+  name: 잡곡(혼합)
+  aliases: [잡곡, 오곡, 오곡밥, 잡곡밥]
+  derived_from:
+    - {id: soybean, certainty: possible}
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 곡류·가루
+  confidence: low
+  note: "콩·밀 섞일 수 있음 → possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: quinoa
+  name: 퀴노아
+  category: 곡류·가루
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: wheat_crepe
+  name: 밀전병
+  derived_from:
+    - wheat_flour
+    - {id: egg, certainty: possible}
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: rice_bran
+  name: 쌀겨
+  category: 곡류·가루
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: yangjangpi
+  name: 양장피
+  aliases: [양장피 면]
+  category: 면·떡·빵
+  confidence: low
+  note: "감자·고구마 전분 피 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: malt
+  name: 엿기름
+  category: 곡류·가루
+  note: "보리 싹. 법정 알레르기(밀) 아님 um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: jeungpyeon
+  name: 증편
+  derived_from:
+    - rice
+    - {id: wheat_flour, certainty: possible}
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: "막걸리 발효. 밀 possible um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: couscous
+  name: 쿠스쿠스
+  derived_from:
+    - wheat_flour
+  is_processed: true
+  category: 면·떡·빵
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: tapioca_starch
+  name: 타피오카 전분
+  category: 곡류·가루
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: seaweed_noodles
+  name: 해조국수
+  category: 면·떡·빵
+  confidence: low
+  note: "um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+- id: rye_flour
+  name: 호밀가루
+  category: 곡류·가루
+  allergens: [{group: wheat, certainty: possible}]
+  confidence: low
+  note: "법정 '밀'은 아니나 밀 혼입·교차 사용이 흔해 밀 possible(보수적) um-3(2026-10-17) 미매칭 2차 보강, 사람 일괄 승인"
+  status: reviewed
+
+# --- um-3 미매칭 2차 보강 꼭 확인분(2026-10-17, 사람 검수 승인) ---
+- id: baguette
+  name: 바게트
+  aliases: [바케트, 바케트빵]
+  derived_from:
+    - wheat_flour
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+  is_processed: true
+  category: 면·떡·빵
+  confidence: low
+  note: "밀 확정. 시판 제품은 우유·대두 들어가기도 함 um-3(2026-10-17) 미매칭 2차 보강, 사람 검수 승인"
+  status: reviewed
+
+# --- um-5 미매칭 4차 정리(2026-10-18, 사람 검수 승인) ---
+- id: herb_crust
+  name: 허브크러스트
+  derived_from:
+    - bread_crumbs
+    - {id: parmesan, certainty: possible}
+    - {id: butter, certainty: possible}
+    - {id: egg, certainty: possible}
+  is_processed: true
+  category: 곡류·가루
+  confidence: low
+  note: "빵가루에 허브·치즈·버터를 섞은 것. 밀 확정, 우유·계란 포함 가능. um-5(2026-10-18) 미매칭 4차 정리, 사람 검수 승인"
+  status: reviewed
+- id: color_powder
+  name: 색 내는 가루(채소·곡물 분말)
+  aliases: [삼색분말]
+  category: 곡류·가루
+  confidence: low
+  note: "반죽에 색을 내는 가루(단호박·시금치·비트 등). 법정 알레르기 없음. um-5(2026-10-18) 미매칭 4차 정리, 사람 검수 승인"
+  status: reviewed
+- id: hotteok_mix
+  name: 호떡 믹스
+  aliases: [호떡반죽]
+  derived_from:
+    - wheat_flour
+    - {id: glutinous_rice_flour, certainty: possible}
+    - {id: milk, certainty: possible}
+    - {id: soybean, certainty: possible}
+    - {id: egg, certainty: possible}
+  is_processed: true
+  category: 곡류·가루
+  confidence: low
+  note: "시판 호떡 믹스. 밀 확정, 우유·대두·계란 포함 가능. 시판 제품으로 포장 알레르기 표시 확인 권장(재료 목록 위 안내). um-5(2026-10-18) 미매칭 4차 정리, 사람 검수 승인"
   status: reviewed

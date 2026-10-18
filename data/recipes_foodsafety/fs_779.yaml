@@ -14,13 +14,19 @@ ingredients:
   raw_text: 무(10g)
   role: sub
 - ingredient: oyster_mushroom
-  raw_text: '느타리버섯(20g) 육수: 쇠고기(양지 50g, 갈비 50g)'
+  raw_text: 느타리버섯(20g)
+  role: sub
+- ingredient: beef
+  raw_text: 쇠고기(양지 50g, 갈비 50g)
   role: sub
 - ingredient: onion
   raw_text: 양파(40g)
   role: sub
 - ingredient: garlic
   raw_text: 마늘(10g)
+  role: sub
+- ingredient: soy_sauce
+  raw_text: 저염간장(10g)
   role: sub
 steps:
 - text: 소고기는 핏물을 제거한 뒤 양파, 마늘을 넣고 물(300g)을 부어 1시간 이상 끓인 뒤 면포에 걸러 육수를 만든다.

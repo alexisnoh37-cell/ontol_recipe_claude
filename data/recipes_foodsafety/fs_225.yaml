@@ -5,12 +5,12 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 225. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 5개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 225. 요리종류 밥, 조리방법 끓이기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 3개'
 ingredients:
 - ingredient: rice
   raw_text: 쌀(200g)
   role: sub
-- ingredient: null
+- ingredient: perilla_leaf_pickle
   raw_text: 깻잎장아찌(30g)
   role: sub
 - ingredient: laver
@@ -19,13 +19,13 @@ ingredients:
 - ingredient: sprouts_mix
   raw_text: 새싹(20g)
   role: sub
-- ingredient: null
+- ingredient: sesame_oil
   raw_text: 밥 밑간 참기름(5g)
   role: sub
 - ingredient: sesame
   raw_text: 참깨(3g)
   role: sub
-- ingredient: null
+- ingredient: onion
   raw_text: 허브타르타르드레싱 양파(20g)
   role: sub
 - ingredient: pickled_cucumber
@@ -37,10 +37,10 @@ ingredients:
 - ingredient: mayonnaise
   raw_text: 마요네즈(20g)
   role: sub
-- ingredient: null
+- ingredient: sugar
   raw_text: 머스터드소스 설탕(3g)
   role: sub
-- ingredient: null
+- ingredient: mustard_sauce
   raw_text: 머스터드소스(15g)
   role: sub
 steps:

@@ -5,19 +5,13 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 32. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 3개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 32. 요리종류 반찬, 조리방법 기타. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 2개 뺌'
 ingredients:
-- ingredient: null
-  raw_text: 오이무침
-  role: sub
 - ingredient: cucumber
   raw_text: 오이 70g(1/3개)
   role: sub
-- ingredient: null
+- ingredient: peanut
   raw_text: 다진 땅콩 10g(1큰술)
-  role: sub
-- ingredient: null
-  raw_text: 순두부사과 소스
   role: sub
 - ingredient: soft_tofu
   raw_text: 순두부 40g(1/8봉지)

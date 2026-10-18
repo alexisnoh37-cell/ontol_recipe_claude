@@ -5,10 +5,43 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 861. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 861. 요리종류 반찬, 조리방법 굽기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
 - ingredient: chicken_breast
-  raw_text: 닭가슴살 100g, 식용유 8g, 파프리카가루 2g, 키엔페퍼 1g, 양파가루 1g, 마늘가루 1g, 후추 1g, 흰후춧가루 1g, 오레가노마른것 0.5g, 타임 마른것 0.5g, 바질마른것 1g, 로즈마리마른것 0.5g *선택
+  raw_text: 닭가슴살 100g
+  role: sub
+- ingredient: cooking_oil
+  raw_text: 식용유 8g
+  role: sub
+- ingredient: paprika_powder
+  raw_text: 파프리카가루 2g
+  role: sub
+- ingredient: cayenne_pepper
+  raw_text: 키엔페퍼 1g
+  role: sub
+- ingredient: onion
+  raw_text: 양파가루 1g
+  role: sub
+- ingredient: garlic
+  raw_text: 마늘가루 1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 후추 1g
+  role: sub
+- ingredient: black_pepper
+  raw_text: 흰후춧가루 1g
+  role: sub
+- ingredient: oregano
+  raw_text: 오레가노마른것 0.5g
+  role: sub
+- ingredient: thyme
+  raw_text: 타임 마른것 0.5g
+  role: sub
+- ingredient: basil
+  raw_text: 바질마른것 1g
+  role: sub
+- ingredient: rosemary
+  raw_text: 로즈마리마른것 0.5g
   role: sub
 - ingredient: sugar
   raw_text: 황설탕 1g

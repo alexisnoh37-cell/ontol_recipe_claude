@@ -5,7 +5,7 @@ cuisine: 미분류
 source: foodsafety
 status: draft
 confidence: low
-note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 451. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 미매칭 재료 2개'
+note: '출처: 식품의약품안전처 식품안전나라 조리식품의 레시피 DB(COOKRCP01) 일련번호 451. 요리종류 반찬, 조리방법 튀기기. 자동 변환: role(모두 sub)·cuisine·조리시간·난이도·맛은 검수 때 정함. 이름 보정표로 고친 줄 1개. 구성 재료가 따로 적힌 소제목 줄 1개 뺌'
 ingredients:
 - ingredient: chicken_wing
   raw_text: 닭봉(120g)
@@ -34,14 +34,11 @@ ingredients:
 - ingredient: mayonnaise
   raw_text: 마요네즈(20g)
   role: sub
-- ingredient: null
+- ingredient: parsley
   raw_text: 파스리가루(0.3g)
   role: sub
 - ingredient: yogurt
   raw_text: 요거트(30g)
-  role: sub
-- ingredient: null
-  raw_text: 곁들임채소
   role: sub
 - ingredient: baby_greens
   raw_text: 어린잎(10g)

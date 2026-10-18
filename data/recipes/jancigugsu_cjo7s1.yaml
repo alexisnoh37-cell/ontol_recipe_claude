@@ -9,7 +9,7 @@ servings: 1
 source: https://www.youtube.com/watch?v=cjO7s1-SPBg
 status: draft
 confidence: low
-note: 난이도 추정; 맛 수치 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준
+note: 난이도 추정; 맛 수치 추정; 조리 단계는 공개 한국어 자동 자막을 요약했으며 자막 오류 가능; 재료는 설명란 공개 표기 기준; 재료 이름 '분말가루' → instant_stock(이름 보정표)
 ingredients:
 - ingredient: somen
   raw_text: 국수면 1인분
@@ -53,7 +53,7 @@ ingredients:
   optional: false
   amount: 1
   unit: 스푼
-- ingredient: null
+- ingredient: instant_stock
   raw_text: 분말가루 1개
   role: sub
   optional: false

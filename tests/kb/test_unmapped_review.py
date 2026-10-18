@@ -12,6 +12,7 @@ import pytest
 import yaml
 
 from kb import compile_paths
+from kb.foodsafety import NAME_OVERRIDES as FS_NAME_OVERRIDES
 from kb.foodsafety import ingredient_segments
 from kb.text import normalize_term
 from kb.unmapped_review import PROPOSAL, ProposalError, engine_unmapped, load_proposal
@@ -65,17 +66,25 @@ def test_approved_aliases_and_new_ingredients_map(entries, ck, index):
 
 def test_rejected_and_held_terms_stay_unmapped(entries, index, overrides):
     # X(반영 안 함)와 C(보류)는 미매칭으로 남아 알레르기 사용자에게 계속 제외된다.
+    # 이후 차수(um-4)에서 사람이 다시 정한 표기는 뺀다
+    later = {normalize_term(t) for f in ("unmapped_round3.yaml", "unmapped_round4.yaml")
+             for e in load_proposal(ROOT / "docs" / "review" / f) for t in e.texts}
     for e in entries:
         if e.decision == "X" or e.kind == "C":
             for t in e.texts:
                 k = normalize_term(t)
-                assert k not in index and k not in overrides, t
+                if k not in later:
+                    assert k not in index and k not in overrides, t
 
 
 def test_name_overrides_match_approved_d_entries(entries, overrides):
     fs_rules = {"재료 닭가슴살", "양념 다진 마늘", "육수 무", "장식"}  # 식품안전나라는 변환 규칙으로 처리
     expected = {}
-    for e in entries:
+    # um-5: 엔진 레시피 표기를 4차에서 다시 정했다(식품안전나라 전용 항목은 그쪽 보정표)
+    fs_fix = load_name_overrides(ROOT, compile_paths(ROOT / "knowledge", ROOT / "config" / "pantry_staples.yaml"), FS_NAME_OVERRIDES)
+    round4 = [e for e in load_proposal(ROOT / "docs" / "review" / "unmapped_round4.yaml") if e.kind == "D" and e.decision == "O"
+              and not all(normalize_term(t) in fs_fix for t in e.texts)]
+    for e in entries + round4:
         if e.kind == "D" and e.decision == "O" and e.key not in fs_rules:
             fix = {"split": e.split} if e.split else {"drop": e.drop} if e.drop else {"id": e.target}
             expected.update({normalize_term(t): fix for t in e.texts})
@@ -83,13 +92,15 @@ def test_name_overrides_match_approved_d_entries(entries, overrides):
 
 
 def test_drop_is_only_for_water_or_a_line_already_present(overrides):
-    assert {f["drop"].split(":")[0] for f in overrides.values() if "drop" in f} <= {"water", "duplicate"}
+    # um-5: 재료가 아닌 자막 문구(not_ingredient)도 뺄 수 있다(사람 검수 승인)
+    assert {f["drop"].split(":")[0] for f in overrides.values() if "drop" in f} <= {"water", "duplicate", "not_ingredient"}
 
 
 def test_engine_recipes_left_unmapped_only_by_human_choice(entries, ck):
     # 엔진 레시피(자취요리신·살림팝)에 남은 미매칭 표기는 모두 X·C로 결정된 것뿐이다.
     left = set(engine_unmapped(ROOT, ck).terms)
     kept = {normalize_term(t) for e in entries if e.decision == "X" or e.kind == "C" for t in e.texts}
+    assert not left  # um-5: 엔진 레시피 미매칭 0
     assert left <= kept, sorted(left - kept)
 
 
@@ -97,11 +108,22 @@ def test_commercial_notice_products_are_approved_and_configured(entries):
     display = yaml.safe_load((ROOT / "config" / "display.yaml").read_text(encoding="utf-8"))
     notice = display["commercial_product_notice"]
     assert notice["text"] == "시판 제품으로 제품 성분을 확인해 알레르기 유무를 확인하시기 바랍니다."
-    approved = {e.new["id"] for e in entries if e.decision == "O" and e.new}
+    round2 = load_proposal(ROOT / "docs" / "review" / "unmapped_round2.yaml")
+    round3 = load_proposal(ROOT / "docs" / "review" / "unmapped_round3.yaml")
+    round4 = load_proposal(ROOT / "docs" / "review" / "unmapped_round4.yaml")
+    approved = {e.new["id"] for e in entries + round2 + round3 + round4 if e.decision == "O" and e.new}
     assert COMMERCIAL <= set(notice["ingredients"]) <= approved
-    # ir-2: 재료 검수에서 '포장 알레르기 표시 확인 권장' 메모를 단 재료(지우지 않은 것)가 모두 안내 대상이다
-    decisions = json.loads((ROOT / "docs" / "review" / "ingredient_decisions.json").read_text(encoding="utf-8"))["rows"]
-    memo = {r["id"] for r in decisions if "확인" in r["memo"] and r["decision"] != "X"}
+    # ir-2 재료 검수·um-3 꼭 확인 검수에서 '포장 알레르기 표시 확인 권장' 메모를 단 재료(지우지 않은 것)가 모두 안내 대상이다
+    memo = set()
+    for name in ("ingredient_decisions.json", "unmapped_round2_decisions.json"):
+        decisions = json.loads((ROOT / "docs" / "review" / name).read_text(encoding="utf-8"))["rows"]
+        memo |= {r["id"] for r in decisions if "확인" in r["memo"] and r["decision"] != "X"}
+    # um-4: 사람이 승인한 시판 소스(E)
+    memo |= {e.new["id"] for e in round3 if e.kind == "E" and e.decision == "O"}
+    # um-5: 꼭 확인 검수 메모(새 재료만. '000원에'→애호박의 메모는 시판 제품이 아니어서 반영하지 않음)
+    r4 = json.loads((ROOT / "docs" / "review" / "unmapped_round4_decisions.json").read_text(encoding="utf-8"))["rows"]
+    new4 = {e.new["id"] for e in round4 if e.new}
+    memo |= {r["id"] for r in r4 if "확인" in r["memo"] and r["id"] in new4}
     assert set(notice["ingredients"]) == COMMERCIAL | memo
 
 
