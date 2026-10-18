@@ -1,0 +1,81 @@
+# 추천 v2 설정 (docs/plan.md 부록 G, decisions D7·D8). v1 설정(weights.yaml·engine.yaml)은 그대로 쓰고,
+# v2에만 필요한 값을 여기에 둔다. 코드에 하드코딩하지 않는다.
+
+pantry:
+  # 꼭 필요한 재료(main·sub·seasoning, 선택 아님)가 이 개수 이하로 부족하면 "조금만 사면 가능(near)"
+  near_max_missing: 2
+
+random:
+  default_limit: 5
+
+dish:
+  # 유사도 S 상위 몇 개를 후보로 남길지
+  pool_size: 40
+  # 최종 점수 = s_weight·S + (1 − s_weight)·v1 점수(재정렬 전)
+  s_weight: 0.7
+  # S 항목 가중치. 질의에서 걸린 항목만 합산하고 가중치 합으로 나눈다(G-3)
+  similarity:
+    title: 0.4
+    ingredient: 0.25
+    keyword: 0.2
+    anchor: 0.15
+  # 부분 일치로 인정하는 최소 글자 수(정규화 후)
+  min_term_len: 2
+  # 질의 키워드 → 조건. match 중 하나라도 질의에 있으면 그 규칙을 쓴다.
+  # taste: 차원별 min/max(0~5), cuisine: 음식 종류, title_any: 제목에 하나라도 있으면 만족
+  keywords:
+    - match: [얼큰, 칼칼, 매콤, 화끈, 얼얼]  # "매운"은 "안 매운"과 겹쳐 넣지 않는다
+      taste: {spicy: {min: 3}}
+    - match: [순한, 안매운, 안 매운, 맵지않은, 맵지 않은, 담백]
+      taste: {spicy: {max: 1}}
+    - match: [국물, 뜨끈, 따끈, 시원한]
+      title_any: [국, 찌개, 탕, 전골, 짬뽕, 국수, 우동, 라면, 수제비, 칼국수]
+    - match: [달달, 달콤, 단짠]
+      taste: {sweet: {min: 3}}
+    - match: [새콤, 상큼]
+      taste: {sour: {min: 2}}
+    - match: [짭짤, 짭조름]
+      taste: {salty: {min: 3}}
+    - match: [고소]
+      taste: {savory: {min: 3}}
+    - match: [한식, 한국]
+      cuisine: 한식
+    - match: [일식, 일본]
+      cuisine: 일식
+    - match: [중식, 중국]
+      cuisine: 중식
+    - match: [양식, 서양, 파스타]
+      cuisine: 양식
+    - match: [볶음]
+      title_any: [볶음]
+    - match: [반찬]
+      title_any: [무침, 조림, 볶음, 나물, 장아찌, 전]
+
+rerank:
+  # 요청에 rerank 값이 없을 때의 기본값. 인증키(TYPESAFE_API_KEY)가 없으면 켜도 쓰지 않는다
+  enabled: true
+  # Jev 모델. 최신 릴리스 jev-1.14.0(2026-10-14)을 버전으로 고정한다(jev-latest 별칭은 1.13.0을 가리킴)
+  model: jev-1.14.0
+  # 규칙 순위 상위 몇 개를 Jev에 보낼지(pantry는 묶음마다)
+  top_n: 30
+  # 최종 점수 = (1 − jev_weight)·규칙 점수 + jev_weight·J
+  jev_weight: 0.5
+  # Jev 확신도가 이 값보다 낮으면 J를 쓰지 않는다(규칙 점수 그대로)
+  min_confidence: 0.3
+  # 이 시간을 넘기면 규칙 순위로 돌아간다
+  timeout_ms: 4000
+
+# 화면 표시 문구(판정과 무관). v1 display.yaml은 바꾸지 않고 v2 문구만 여기에 둔다
+display:
+  breakdown_labels:
+    S: 찾는 요리와 비슷함
+    J: Jev 적합도
+    J_conf: Jev 확신도
+  group_labels:
+    ready: 지금 바로 만들 수 있어요
+    near: 조금만 사면 만들 수 있어요
+  notes:
+    rerank_unavailable: Jev 응답이 없어 규칙 점수 순서로 보여 드립니다
+    rerank_off: 규칙 점수 순서입니다(Jev 재정렬 꺼짐)
+    dish_no_match: 찾는 요리와 비슷한 레시피를 찾지 못했습니다. 요리 이름이나 재료, 맛(얼큰한·담백한 등)으로 다시 찾아 보세요
+    dislike_possible: 먹지 않는 재료가 들어 있을 수도 있는 재료(가공품 등)가 있습니다. 성분표를 확인하세요

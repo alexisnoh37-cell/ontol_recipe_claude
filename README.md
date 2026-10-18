@@ -105,6 +105,17 @@ uv run streamlit run app/main.py
 
 브라우저가 `http://localhost:8501`로 열립니다. 왼쪽에서 프로필을 만들고, "프로필·선호 편집" 탭에서 보유 재료(별칭 검색)와 맛·선호를, "알레르기" 탭에서 알레르기를 저장한 뒤 "추천" 탭에서 추천을 받습니다. "추천" 탭에서 "이번만 재료 직접 고르기"를 고르면 프로필을 바꾸지 않고 고른 재료로 추천받고, "재료로 레시피 찾기" 탭에서는 재료를 여러 개 골라 그 재료(+기본 양념)로 만들 수 있는 레시피와 1~2개 모자란 레시피를 봅니다(알레르기 레시피는 ⚠️ 주의 표시). 카드의 "전체 재료·조리 순서 보기"를 펼치면 레시피 재료 전체가 보유(✅)/없음(⬜)으로 표시됩니다. API 주소가 다르면 `$env:API_URL = "http://127.0.0.1:8000"`.
 
+### 6-2. 추천 v2 (랜덤 · 내 재료로 · 요리 찾기, Jev 재정렬, 부록 G)
+
+기존 추천(v1)은 그대로 두고 나란히 동작합니다. `.env`에 `TYPESAFE_API_KEY`가 있으면 Jev(jev-1.14.0)가 안전한 후보의 순서를 다시 정하고, 없으면 규칙 점수 순서로만 보여 줍니다. 알레르기와 먹지 않는 재료는 Jev와 관계없이 규칙으로 먼저 제외합니다.
+
+```powershell
+uv run uvicorn api.v2:default_app --factory --port 8000   # 기존 경로 + POST /v2/recommend, GET /v2/info
+uv run streamlit run app/v2.py                             # 다른 창에서. 기존 화면은 app/main.py
+```
+
+DB 없이 파일에서 바로 읽으려면 API를 띄우기 전에 `$env:ENGINE_SOURCE = "files"`를 설정합니다(프로필 저장에는 DB가 필요). 요청 예: `{"persona_id": "korean_lover", "mode": "dish", "query": "오늘은 얼큰한 국물이 끌려"}`. `mode`는 `random`(seed로 재현), `pantry`(`pantry`에 재료 id), `dish`(`query` 필수)입니다.
+
 ### 6-1. 3D 지식 그래프 (시각화, 부록 D)
 
 API를 띄운 상태에서 브라우저로 `http://127.0.0.1:8000/viz`를 엽니다(별도 빌드 없음, three.js·3d-force-graph는 jsDelivr CDN에서 받으므로 인터넷 연결 필요).
@@ -150,6 +161,8 @@ DB 없이 보려면 `$env:ENGINE_SOURCE = "files"`로 knowledge·레시피를 �
 ```powershell
 uv run python scripts/bench.py       # 합성 레시피 1만 개, 요청 300회: p50/p95 출력 (기준 p95 200ms 이하)
 uv run python scripts/bench.py --trace   # trace() 생성과 표시 변환이 응답 시간에 주는 영향
+uv run python scripts/bench_v2.py                   # 추천 v2 형태별 p95(재정렬 끔, 기준 200ms)
+uv run python scripts/bench_v2.py --fake-jev-ms 300   # 재정렬 켬(가짜 Jev 지연) 참고값
 uv run python scripts/bench.py --recipes 1000 --graph-out viz/_bench/graph_1000.json
 # → API 실행 중 http://127.0.0.1:8000/viz?graph=/viz/static/_bench/graph_1000.json (HUD에 로딩 시간·fps)
 ```

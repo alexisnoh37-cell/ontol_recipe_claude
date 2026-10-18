@@ -838,10 +838,12 @@ viz-0 설계 기록 → viz-1 `/graph` → viz-2 trace·persona → viz-3 3D 온
 
 | 형태 | 후보 | 순서 | Jev |
 |---|---|---|---|
-| `random` | 필터를 통과한 전체 | `seed`(없으면 서버가 정해 응답에 담음)로 균등 무작위 추출 | 쓰지 않음 |
+| `random` | 레시피 전체를 `seed`(없으면 엔진이 정해 결과에 담음)로 섞은 순서대로 필터에 걸어 limit개를 채우면 멈춤(통과한 레시피 중 균등 추출과 같음) | 섞은 순서 | 쓰지 않음 |
 | `pantry` | v1 후보 생성(보유 재료로 main 충족) → 필터 → 필수 부족 수 | 묶음 `ready`(부족 0) 먼저, `near`(부족 1~`pantry.near_max_missing`) 다음. 묶음 안은 v1 점수 순. 부족이 그보다 많으면 버림 | 묶음 안에서만 재정렬 |
-| `dish` | 필터를 통과한 전체 → S(유사도) 상위 `dish.pool_size` | `dish.s_weight`·S + (1 − `dish.s_weight`)·v1 점수 | 재정렬 |
+| `dish` | 레시피 전체의 S(유사도)를 먼저 계산 → S가 높은 순으로 필터에 걸어 `dish.pool_size`개를 채움 | `dish.s_weight`·S + (1 − `dish.s_weight`)·v1 점수 | 재정렬 |
 
+- **제외 기록 범위**: random·dish는 필요한 만큼만 필터에 걸므로(1만 개 기준 p95를 지키기 위해) 제외 기록·`excluded_total`은 *확인한 레시피*에 대한 것이다. 안전성은 같다(결과에 나오는 레시피는 모두 필터를 통과). pantry는 v1처럼 후보 전체를 확인한다.
+- 추천할 수 있는 레시피 목록(id 순)과 정규화한 제목은 `RecommenderV2.catalog()`가 인스턴스마다 한 번만 만든다.
 - **필수 부족 수(pantry)**: 선택이 아닌 `REQUIRED_ROLES`(main·sub·seasoning) 줄 중 `missing`인 줄 수. 고명·선택 재료는 세지 않는다(알레르기 판정에는 그대로 포함). 미매칭 필수 줄은 채울 수 없으므로 부족으로 센다(browse와 같음). browse와 달리 대체재로 채워진 줄은 충족으로 본다(대체 안내 표시).
 - **S(dish)**: 질의를 `engine/korean.py`·`engine/normalize.py`로 정규화한 뒤 다음 항목의 가중합(가중치는 `dish.similarity`)으로 계산한다. 0~1 값이다.
   - `title`: 제목 완전 일치 1, 질의가 제목에 포함되거나 제목이 질의에 포함 0.8, 공백 단위 토큰 겹침 비율
@@ -852,11 +854,12 @@ viz-0 설계 기록 → viz-1 `/graph` → viz-2 trace·persona → viz-3 3D 온
 
 ### G-4. Jev 재정렬 (`engine/v2/ports.py` Reranker, `integrations/jev/reranker.py`)
 
-- 대상: pantry(묶음별)·dish의 규칙 순위 상위 `rerank.top_n`개. 요청마다 켜고 끌 수 있다(`rerank`, 기본 `rerank.enabled`). 인증키가 없으면 꺼진다.
+- API(2026-10-18 실제 호출로 확인, docs.typesafe.ai): `POST https://api.typesafe.ai/v1/systemone`, `Authorization: Bearer <TYPESAFE_API_KEY>`, 본문 `{model, state, questions}`. Score 답은 `score`(단계 확률 가중값)·`confidence`·`probabilities`. 모델은 최신 릴리스 `jev-1.14.0`(2026-10-14)을 버전으로 고정한다(`jev-latest` 별칭은 안정판 1.13.0). 후보 20개 한 요청에 1.14.0 약 0.7초, 1.13.0 약 0.3초(실측 1회). 영어가 주 학습 언어라 질문 문구는 영어, 레시피·질의는 한국어 원문으로 보낸다.
+- 대상: pantry(묶음별)·dish의 규칙 순위 상위 `rerank.top_n`개. **요청당 Jev 호출은 한 번**이다(pantry는 ready·near 묶음의 후보를 한 요청에 담고, ready만으로 limit이 차면 near는 보내지 않는다). 요청마다 켜고 끌 수 있다(`rerank`, 기본 `rerank.enabled`). 인증키가 없으면 꺼진다.
 - 질문(Score 0~1, 후보마다 한 질문): dish는 "이 레시피가 '<질의>'와 비슷한 요리인가", pantry는 "요리 실력 <n>, 맛 선호 <...>인 사람에게 맞는 레시피인가".
 - 보내는 것: 요리 실력, 맛 선호(차원·선호 정도·한도), 질의 문장, 후보 요약(제목·음식 종류·맛·main 재료 이름). **알레르기·건강 정보·사용자/프로필 id·보유 재료 목록은 보내지 않는다.**
 - 적용: J = Jev 점수. 최종 = (1 − `rerank.jev_weight`)·규칙 점수 + `rerank.jev_weight`·J. 확신도가 `rerank.min_confidence` 미만이면 J를 쓰지 않는다(규칙 점수 그대로). breakdown에 `J`와 `J_conf`를 넣는다.
-- 방어: 돌려받은 id 중 보낸 목록에 없는 것은 버린다. 응답에 빠진 후보는 규칙 점수 그대로 둔다. 실패·`rerank.timeout_ms` 초과 시 규칙 순위로 돌아가고 note `rerank_unavailable`를 남긴다. 재정렬은 순서만 바꾸고 목록 구성(포함·제외)은 바꾸지 않는다.
+- 방어: 후보는 요청 안에서만 쓰는 key(c0, c1, …)로 보내고 레시피 id는 보내지 않는다. 돌려받은 key 중 보낸 목록에 없는 것은 버린다. 응답에 빠진 후보는 규칙 점수 그대로 둔다. 실패·`rerank.timeout_ms` 초과 시 규칙 순위로 돌아가고 note `rerank_unavailable`를 남긴다. 재정렬은 순서만 바꾸고 목록 구성(포함·제외)은 바꾸지 않는다.
 
 ### G-5. Jev 라벨 덮어쓰기 (`data/labels/jev/`)
 
@@ -867,9 +870,10 @@ viz-0 설계 기록 → viz-1 `/graph` → viz-2 trace·persona → viz-3 3D 온
 
 ### G-6. 요청·응답
 
-- `POST /v2/recommend`(새 라우터 `api/v2.py`): `profile_id` 또는 `persona_id`, `mode`(random·pantry·dish), `query`(dish 필수), `pantry`, `seed`, `rerank`, `max_time_min`·`time_is_hard`, `limit`.
+- `api/v2.py`가 기존 `api.main.create_app`을 감싸 경로만 더한다(`uv run uvicorn api.v2:default_app --factory`). 기존 경로는 그대로다. `GET /v2/info`는 재정렬 사용 가능 여부와 모델을 알려 준다.
+- `POST /v2/recommend`: `profile_id` 또는 `persona_id`, `mode`(random·pantry·dish), `query`(dish 필수), `pantry`, `seed`, `rerank`, `max_time_min`·`time_is_hard`, `limit`.
 - 응답 item: v1 item 필드 + `group`(pantry: ready·near), breakdown에 `S`(dish)·`J`·`J_conf`(재정렬 시). 응답 머리: `mode`, `seed`(random), `rerank_used`, `notes`, `exclusion_summary`, `excluded_total`, `disclaimer`.
-- Streamlit: 새 탭 "추천 v2"(랜덤 / 내 재료로 / 요리 찾기). pantry는 "지금 바로 가능"과 "조금만 사면 가능(살 재료)"으로 나눠 보여 준다.
+- Streamlit: 별도 화면 `app/v2.py`(랜덤 / 내 재료로 / 요리 찾기). 기존 `app/main.py`는 바꾸지 않는다. pantry는 "지금 바로 가능"과 "조금만 사면 가능(살 재료)"으로 나눠 보여 준다.
 
 ### G-7. 설정 (`config/v2.yaml`)
 
@@ -883,11 +887,11 @@ viz-0 설계 기록 → viz-1 `/graph` → viz-2 trace·persona → viz-3 3D 온
 - `tests/v2/`: 묶음 분류(부족 수 경계, 고명·선택 제외, 대체재 충족, 미매칭 필수 줄), seed 재현성, S 항목별 계산·빈 결과, 재정렬 가중·확신도 기준·timeout 복귀·묶음 경계 유지, 라벨 덮어쓰기(모름에만, 기준 미만·해시 불일치 무시).
 - 기존 테스트는 수정하지 않고 모두 통과해야 한다(v1 무변경의 증거).
 - 비교: `scripts/make_v2_recommendations.py` → `docs/review/v2_recommendations.md`(bl-1과 같은 시나리오 14개).
-- 성능: `scripts/bench.py`에 v2(재정렬 끔) 측정 추가, p95 200ms 이하. 재정렬 켬은 Fake 지연으로 따로 보고.
+- 성능: `scripts/bench_v2.py`(기존 `bench.py`의 합성 데이터·사용자 재사용, bench.py는 무변경). 재정렬 끔 p95 200ms 이하가 기준. 재정렬 켬은 `--fake-jev-ms`로 지연을 흉내 낸 참고값.
 
 ### G-9. 단계
 
-v2-0 설계 기록 → v2-1 v2 필터와 3가지 형태(규칙만) → v2-2 Jev 라벨러와 덮어쓰기(Fake) → v2-3 Jev 재정렬(Fake) → v2-4 API·화면·기준 결과 비교 → v2-5 (Jev 키·사람 결정 후) jev-3 평가, 실제 라벨링·재정렬 측정. 단계마다 커밋하고 보고한다.
+v2-0 설계 기록 → v2-1 v2 필터·3가지 형태·Jev 재정렬(실제 jev-1.14.0)·API·화면·성능(2026-10-18, 사람이 Jev 키를 주고 "최신 Jev로 구축" 지시해 처음 계획의 v2-1·v2-3·v2-4를 한 단계로 묶음) → v2-2 Jev 라벨러와 라벨 덮어쓰기(G-5, 1,153개 실제 라벨링은 비용 확인 후) → v2-3 기준 결과(bl-1) 비교·jev-3 라벨 정확도 평가. 단계마다 커밋하고 보고한다.
 
 ### G-10. 범위 밖
 
