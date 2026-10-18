@@ -18,6 +18,7 @@ from typing import Annotated, Any, Literal
 
 import yaml
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 from pydantic import Field, model_validator
 
 from api.main import create_app, user_context
@@ -108,6 +109,11 @@ def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_
                                      "reason": e.reason.value, "ingredient_id": e.ingredient_id, "target": e.target,
                                      "certainty": e.certainty, "via": list(e.via), "detail": e.detail},
                                     ensure_ascii=False) + "\n")
+
+    @app.get("/", include_in_schema=False)
+    def root() -> RedirectResponse:
+        """API 주소를 브라우저로 열면 빈 Not Found 대신 API 문서(/docs)로 보낸다. 화면은 app/v2.py(Streamlit)."""
+        return RedirectResponse("/docs")
 
     @app.get("/v2/info")
     def v2_info() -> dict[str, Any]:

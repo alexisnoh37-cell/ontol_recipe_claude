@@ -118,3 +118,8 @@ def test_v1_routes_unchanged(client):
     pid = profile(client, pantry=["egg", "rice"])
     r = client.post("/recommend", json={"profile_id": pid})
     assert r.status_code == 200 and "items" in r.json()
+
+
+def test_root_redirects_to_docs(client):
+    r = client.get("/", follow_redirects=False)
+    assert r.status_code in (302, 307) and r.headers["location"] == "/docs"
