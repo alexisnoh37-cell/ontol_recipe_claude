@@ -60,21 +60,30 @@ limit = st.sidebar.slider("보여 줄 개수", 1, 30, 8)
 
 
 def ingredient_pick(key: str) -> list[str]:
-    selected: dict[str, str] = st.session_state.setdefault(f"{key}_sel", {})
+    """검색 → "추가"로 선택 목록에 넣는다. 선택 목록에서 지우면 빠진다. 반환: 선택된 재료 id.
+
+    키가 있는 multiselect는 default가 바뀌어도 이전 값을 유지한다(Streamlit 1.64). 그래서 "추가"는 위젯 값
+    (ms_key)을 직접 바꾸고, 위젯을 그리기 전에만 바꿀 수 있으므로 버튼 처리 → multiselect 순서를 지킨다(app/main.py와 같음).
+    이름 표는 지우지 않고 쌓아 둔다. format_func가 None을 돌려주면 Streamlit이 TypeError를 낸다.
+    """
+    names: dict[str, str] = st.session_state.setdefault(f"{key}_names", {})
+    ms_key = f"{key}_ms"
+    st.session_state.setdefault(ms_key, [])
     q = st.text_input("재료 검색(예: 달걀, 김치, 두부)", key=f"{key}_q")
     if q.strip():
         hits = api("GET", "/ingredients/search", params={"q": q})
         if hits:
             opts = {h["id"]: h["name"] for h in hits}
+            names.update(opts)
             cols = st.columns([4, 1])
-            pick = cols[0].selectbox("검색 결과", list(opts), format_func=opts.get, key=f"{key}_pick")
-            if cols[1].button("추가", key=f"{key}_add"):
-                selected[pick] = opts[pick]
-    keep = st.multiselect("내 재료", list(selected), default=list(selected), format_func=selected.get,
-                          key=f"{key}_ms")
-    for gone in set(selected) - set(keep):
-        selected.pop(gone)
-    return keep
+            pick = cols[0].selectbox("검색 결과", list(opts), format_func=lambda i: opts.get(i, i), key=f"{key}_pick")
+            cols[1].write("")  # 버튼을 입력 칸 높이에 맞춘다
+            if cols[1].button("추가", key=f"{key}_add") and pick not in st.session_state[ms_key]:
+                st.session_state[ms_key] = st.session_state[ms_key] + [pick]
+        else:
+            st.caption("일치하는 재료가 없습니다.")
+    chosen = list(st.session_state[ms_key])
+    return st.multiselect("내 재료", chosen, format_func=lambda i: names.get(i, i), key=ms_key)
 
 
 def show(body: dict[str, Any]) -> None:
