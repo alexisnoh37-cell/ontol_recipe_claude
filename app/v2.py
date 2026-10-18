@@ -73,32 +73,24 @@ if persona:
     with st.expander(f"👤 {persona['name']} — 사용자 정보와 확인할 것", expanded=True):
         st.write(persona["description"])
         c1, c2 = st.columns(2)
-        c1.markdown(
-            f"**못 먹는 것**  
-알레르기: {names_of(persona['allergens'])}  
-절대 안 먹음: {names_of(persona['never_eat'])}
-
-"
-            f"**좋아하는 재료**: {names_of(persona['likes'])}  
-**싫어하는 재료**: {names_of(persona['dislikes'])}"
-        )
         spicy = persona["spicy_level"]
-        c2.markdown(
-            f"**매운맛 정도**: {'모름' if spicy is None else f'{spicy} / 5'}"
-            f"{' (한도 없음)' if spicy == 5 else ''}  
-"
-            f"**좋아하는 음식 종류**: {', '.join(persona['cuisine_likes']) or '없음'}  
-"
-            f"**덜 좋아하는 음식 종류**: {', '.join(persona['cuisine_dislikes']) or '없음'}  
-"
-            f"**요리 실력**: {SKILL.get(persona['skill_level'])}"
-        )
-        st.markdown(f"**넣어 볼 재료**: {names_of(persona['try_pantry'])}  
-"
+        spicy_text = "모름" if spicy is None else f"{spicy} / 5" + (" (한도 없음)" if spicy == 5 else "")
+        c1.markdown("  \n".join([
+            "**못 먹는 것**",
+            f"알레르기: {names_of(persona['allergens'])}",
+            f"절대 안 먹음: {names_of(persona['never_eat'])}",
+            f"**좋아하는 재료**: {names_of(persona['likes'])}",
+            f"**싫어하는 재료**: {names_of(persona['dislikes'])}",
+        ]))
+        c2.markdown("  \n".join([
+            f"**매운맛 정도**: {spicy_text}",
+            f"**좋아하는 음식 종류**: {', '.join(persona['cuisine_likes']) or '없음'}",
+            f"**덜 좋아하는 음식 종류**: {', '.join(persona['cuisine_dislikes']) or '없음'}",
+            f"**요리 실력**: {SKILL.get(persona['skill_level'])}",
+        ]))
+        st.markdown(f"**넣어 볼 재료**: {names_of(persona['try_pantry'])}  \n"
                     f"**찾아 볼 문장**: {' / '.join(persona['try_dish'])}")
-        st.markdown("**확인할 것**
-" + "
-".join(f"- [ ] {c}" for c in persona["checks"]))
+        st.markdown("**확인할 것**\n" + "\n".join(f"- {c}" for c in persona["checks"]))
 
 
 def ingredient_pick(key: str) -> list[str]:
