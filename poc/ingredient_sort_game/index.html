@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101915" />
+    <title>한입 취향 탐험대 · 손 제스처 POC</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-mark" aria-hidden="true">🥕</div>
+          <div>
+            <p class="eyebrow">손으로 완성하는 나의 식재료 지도</p>
+            <h1>한입 취향 탐험대</h1>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <div id="cameraStatus" class="status-chip status-off">
+            <span class="status-dot"></span>
+            <span>마우스 체험 모드</span>
+          </div>
+          <button id="cameraButton" class="button button-primary" type="button">
+            <span>📷</span>
+            카메라 켜기
+          </button>
+        </div>
+      </header>
+
+      <section class="progress-panel" aria-label="게임 진행 상황">
+        <div class="round-copy">
+          <span id="roundKicker" class="round-kicker">ROUND 1 · 동물성 식재료</span>
+          <h2 id="roundTitle">먼저, 자주 만나는 식재료부터 알아볼게요</h2>
+          <p id="roundDescription">카드 위에서 주먹을 쥐어 잡고, 원하는 칸에서 손을 펴세요.</p>
+        </div>
+
+        <div class="progress-stats">
+          <span id="progressText">0 / 23</span>
+          <button id="helpButton" class="icon-button" type="button" aria-label="도움말 열기">?</button>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <div id="roundDots" class="round-dots" aria-label="전체 라운드">
+          <span class="active">1</span><span>2</span><span>3</span>
+        </div>
+      </section>
+
+      <section class="game-layout">
+        <div id="gameStage" class="game-stage" aria-label="식재료 분류 게임 영역">
+          <video id="cameraVideo" autoplay muted playsinline></video>
+          <canvas id="handCanvas"></canvas>
+          <div class="camera-shade"></div>
+          <div class="stage-grid"></div>
+
+          <div class="stage-hud">
+            <div class="instruction-pill">
+              <span id="gestureIcon" aria-hidden="true">🖱️</span>
+              <span id="gestureText">카드를 끌어서 분류 칸에 놓아보세요</span>
+            </div>
+            <button id="skipButton" class="skip-button" type="button" disabled>
+              선택한 카드 보류
+            </button>
+          </div>
+
+          <div id="cardsLayer" class="cards-layer"></div>
+
+          <div id="palmCursor" class="palm-cursor" aria-hidden="true">
+            <span class="cursor-core"></span>
+            <span id="cursorLabel">손바닥</span>
+          </div>
+
+          <div class="drop-zones" aria-label="분류 칸">
+            <button class="drop-zone avoid" type="button" data-bucket="avoid">
+              <span class="zone-icon">🚫</span>
+              <span class="zone-copy">
+                <strong>못 먹어요</strong>
+                <small>알레르기 · 절대 안 먹음</small>
+              </span>
+            </button>
+            <button class="drop-zone dislike" type="button" data-bucket="dislike">
+              <span class="zone-icon">😕</span>
+              <span class="zone-copy">
+                <strong>선호하지 않아요</strong>
+                <small>추천에서 덜 보고 싶어요</small>
+              </span>
+            </button>
+            <button class="drop-zone like" type="button" data-bucket="like">
+              <span class="zone-icon">💚</span>
+              <span class="zone-copy">
+                <strong>좋아해요</strong>
+                <small>추천에서 자주 보고 싶어요</small>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <aside class="side-panel">
+          <div class="panel-card how-to-card">
+            <p class="panel-label">HOW TO PLAY</p>
+            <ol class="steps">
+              <li><span>1</span><p><strong>손바닥을 카드에</strong><br />원 안에 카드를 담아주세요.</p></li>
+              <li><span>2</span><p><strong>주먹을 쥐어 잡기</strong><br />카드가 손을 따라 움직여요.</p></li>
+              <li><span>3</span><p><strong>손을 펴서 놓기</strong><br />분류 칸 위에서 손을 펴세요.</p></li>
+            </ol>
+            <div class="privacy-note">
+              <span>🔒</span>
+              <p>카메라 영상은 브라우저 안에서만 처리되며 저장하거나 전송하지 않습니다.</p>
+            </div>
+          </div>
+
+          <div class="panel-card tray-card">
+            <div class="tray-heading">
+              <div>
+                <p class="panel-label">MY FOOD MAP</p>
+                <h3>지금까지 담은 재료</h3>
+              </div>
+              <span id="sortedCount" class="count-badge">0</span>
+            </div>
+            <div class="mini-trays">
+              <div>
+                <span class="mini-label avoid-label">못 먹어요</span>
+                <div id="avoidTray" class="mini-tray"><span class="empty-copy">아직 없어요</span></div>
+              </div>
+              <div>
+                <span class="mini-label dislike-label">비선호</span>
+                <div id="dislikeTray" class="mini-tray"><span class="empty-copy">아직 없어요</span></div>
+              </div>
+              <div>
+                <span class="mini-label like-label">선호</span>
+                <div id="likeTray" class="mini-tray"><span class="empty-copy">아직 없어요</span></div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <dialog id="introDialog" class="game-dialog intro-dialog">
+      <div class="dialog-illustration" aria-hidden="true">
+        <span>🖐️</span><span>🥩</span><span>💚</span>
+      </div>
+      <p class="dialog-kicker">3 ROUNDS · 23 INGREDIENTS</p>
+      <h2>손으로 재료를 옮겨<br />나만의 취향 지도를 만들어요</h2>
+      <p>정답은 없어요. 잘 모르거나 상관없는 재료는 그대로 두거나 보류할 수 있습니다.</p>
+      <div class="dialog-actions">
+        <button id="mouseStartButton" class="button button-secondary" type="button">마우스로 먼저 해보기</button>
+        <button id="cameraStartButton" class="button button-primary" type="button">카메라로 시작하기</button>
+      </div>
+    </dialog>
+
+    <dialog id="roundDialog" class="game-dialog round-dialog">
+      <div id="roundCompleteIcon" class="round-complete-icon">✨</div>
+      <p id="roundCompleteKicker" class="dialog-kicker">ROUND 1 COMPLETE</p>
+      <h2 id="roundCompleteTitle">첫 번째 탐색을 마쳤어요!</h2>
+      <p id="roundCompleteDescription">다음은 콩과 곡물 취향을 알아볼게요.</p>
+      <button id="nextRoundButton" class="button button-primary button-wide" type="button">다음 라운드</button>
+    </dialog>
+
+    <dialog id="resultDialog" class="result-dialog">
+      <div class="result-header">
+        <div>
+          <p class="dialog-kicker">FOOD MAP COMPLETE</p>
+          <h2>취향 지도가 완성됐어요</h2>
+          <p>못 먹는 재료는 다음 단계에서 알레르기인지, 절대 먹지 않는 것인지 정확히 확인해 주세요.</p>
+        </div>
+        <div class="result-score"><strong id="resultCount">0</strong><span>분류 완료</span></div>
+      </div>
+      <div id="resultColumns" class="result-columns"></div>
+      <div id="followupNotice" class="followup-notice"></div>
+      <div class="dialog-actions result-actions">
+        <button id="restartButton" class="button button-secondary" type="button">다시 하기</button>
+        <button id="copyButton" class="button button-secondary" type="button">결과 복사</button>
+        <button id="detailButton" class="button button-primary" type="button">상세 입력으로 이어가기</button>
+      </div>
+    </dialog>
+
+    <dialog id="helpDialog" class="game-dialog help-dialog">
+      <button id="helpCloseButton" class="dialog-close" type="button" aria-label="도움말 닫기">×</button>
+      <p class="dialog-kicker">GESTURE GUIDE</p>
+      <h2>손 제스처가 잘 잡히는 방법</h2>
+      <ul>
+        <li>상체와 손이 카메라 화면 안에 모두 보이게 해주세요.</li>
+        <li>손바닥을 카메라 쪽으로 향하고, 카드 위에서 천천히 주먹을 쥐세요.</li>
+        <li>분류 칸 안에서 손을 완전히 펴면 카드가 놓입니다.</li>
+        <li>인식이 어렵다면 언제든 마우스로 카드를 끌 수 있어요.</li>
+      </ul>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
