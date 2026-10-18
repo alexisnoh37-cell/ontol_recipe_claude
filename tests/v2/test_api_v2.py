@@ -123,3 +123,39 @@ def test_v1_routes_unchanged(client):
 def test_root_redirects_to_docs(client):
     r = client.get("/", follow_redirects=False)
     assert r.status_code in (302, 307) and r.headers["location"] == "/docs"
+
+
+def test_v2_personas_listed(client):
+    body = client.get("/v2/personas").json()
+    assert len(body) == 5 and all(p["checks"] and p["try_dish"] for p in body)
+    assert body[0]["allergens"][0]["name"]
+
+
+def test_v2_persona_recommend(client):
+    pid = client.get("/v2/personas").json()[0]["id"]
+    body = client.post("/v2/recommend", json={"persona_id": pid, "mode": "dish", "query": "김치찌개"}).json()
+    assert "dish_excluded" in [n["code"] for n in body["notes"]]
+
+
+def test_inline_profile(client):
+    profile = {"allergens": ["egg"], "never_eat": ["cucumber"], "likes": ["potato"], "dislikes": ["onion"],
+               "spicy_level": 2, "cuisine_likes": ["한식"], "skill_level": 1}
+    body = client.post("/v2/recommend", json={"profile": profile, "mode": "pantry", "pantry": ["potato", "rice"]}).json()
+    assert body["items"] and body["profile_id"] is None
+
+
+@pytest.mark.parametrize("profile,status", [
+    ({"likes": ["no_such"]}, 400),
+    ({"cuisine_likes": ["태국식"]}, 400),
+    ({"likes": ["egg"], "dislikes": ["egg"]}, 400),
+    ({"allergens": ["no_group"]}, 400),
+    ({"spicy_level": 9}, 422),
+])
+def test_inline_profile_rejects_bad_input(client, profile, status):
+    r = client.post("/v2/recommend", json={"profile": profile, "mode": "random"})
+    assert r.status_code == status, r.text
+
+
+def test_exactly_one_subject(client):
+    r = client.post("/v2/recommend", json={"profile": {}, "persona_id": "x", "mode": "random"})
+    assert r.status_code == 422

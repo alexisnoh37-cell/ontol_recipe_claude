@@ -15,6 +15,7 @@ Group = Literal["ready", "near"]
 NOTE_RERANK_UNAVAILABLE = "rerank_unavailable"  # Jev 실패·시간 초과 → 규칙 순위
 NOTE_RERANK_OFF = "rerank_off"  # 요청·설정에서 껐거나 Jev가 주입되지 않음
 NOTE_DISH_NO_MATCH = "dish_no_match"  # 질의와 비슷한 레시피를 찾지 못함
+NOTE_DISH_EXCLUDED = "dish_excluded"  # 질의와 가장 비슷한 레시피가 못 먹는 재료 때문에 제외됨
 NOTE_DISLIKE_POSSIBLE = "dislike_possible"  # 불선호 재료가 '포함 가능'이라 제외하지 않음(D8)
 
 

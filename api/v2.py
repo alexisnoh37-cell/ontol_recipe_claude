@@ -28,15 +28,36 @@ from engine.recommend import Recommender
 from engine.v2.config import V2Config, load_v2_config
 from engine.v2.model import V2Request, V2Result
 from engine.v2.ports import Reranker
+from engine.v2.profile import SimpleProfile
 from engine.v2.recommend import RecommenderV2
 from storage.engine_source import CONFIG_DIR, ROOT, EngineData
 from storage.personas import Persona, load_personas
+from storage.personas_v2 import V2Persona, load_v2_personas
 from storage.users import ProfileNotFound, UserStore
+
+
+class SimpleProfileIn(Strict):
+    """다른 앱이 저장하는 6가지 사용자 정보(docs/plan.md 부록 G-11). 재료는 재료 id(GET /ingredients/search)."""
+
+    allergens: list[str] = []  # 알레르기 그룹 id(GET /allergen-groups): 들어 있을 수도 있는 재료까지 제외
+    never_eat: list[str] = []  # 절대 안 먹는 재료: 확실히 들어간 재료만 제외
+    likes: list[str] = []  # 좋아하는 재료: 점수 가산
+    dislikes: list[str] = []  # 싫어하는 재료: 점수 감산(제외 안 함)
+    spicy_level: Annotated[int, Field(ge=0, le=5)] | None = None  # 매운맛 정도(넘으면 제외, 5는 한도 없음)
+    cuisine_likes: list[str] = []
+    cuisine_dislikes: list[str] = []
+    skill_level: Annotated[int, Field(ge=1, le=3)] | None = None
+
+    def to_profile(self) -> SimpleProfile:
+        return SimpleProfile(frozenset(self.allergens), frozenset(self.never_eat), frozenset(self.likes),
+                             frozenset(self.dislikes), self.spicy_level, frozenset(self.cuisine_likes),
+                             frozenset(self.cuisine_dislikes), self.skill_level)
 
 
 class V2RecommendIn(Strict):
     profile_id: int | None = None
     persona_id: str | None = None
+    profile: SimpleProfileIn | None = None  # 다른 앱 연동: 사용자 정보를 요청에 바로 담는다(저장 안 함)
     mode: Literal["random", "pantry", "dish"]
     query: Annotated[str, Field(max_length=200)] | None = None  # dish 필수
     pantry: list[str] | None = None
@@ -48,8 +69,8 @@ class V2RecommendIn(Strict):
 
     @model_validator(mode="after")
     def _check(self) -> V2RecommendIn:
-        if (self.profile_id is None) == (self.persona_id is None):
-            raise ValueError("profile_id와 persona_id 중 정확히 하나를 주세요")
+        if sum(x is not None for x in (self.profile_id, self.persona_id, self.profile)) != 1:
+            raise ValueError("profile_id, persona_id, profile 중 정확히 하나를 주세요")
         if self.mode == "dish" and not (self.query and self.query.strip()):
             raise ValueError("요리 찾기(dish)에는 query가 필요합니다")
         return self
@@ -65,13 +86,15 @@ def jev_reranker_from_env(cfg: V2Config) -> Reranker | None:
 
 def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir: Path = CONFIG_DIR,
                   exclusion_log: Path | None = None, personas: Callable[[], list[Persona]] = load_personas,
-                  reranker_factory: Callable[[V2Config], Reranker | None] = lambda cfg: None) -> FastAPI:
+                  reranker_factory: Callable[[V2Config], Reranker | None] = lambda cfg: None,
+                  v2_personas: Callable[[], list[V2Persona]] = load_v2_personas) -> FastAPI:
     app = create_app(loader, store, config_dir=config_dir, exclusion_log=exclusion_log, personas=personas)
     state = app.state.engine_state
     cfg = load_v2_config(config_dir)
     display = (yaml.safe_load((config_dir / "v2.yaml").read_text(encoding="utf-8")) or {}).get("display") or {}
     reranker = reranker_factory(cfg)
     persona_index = {p.id: p for p in personas()}
+    v2_persona_index = {p.id: p for p in v2_personas()}
     cache: dict[str, Any] = {}
     lock = threading.Lock()
 
@@ -82,7 +105,27 @@ def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_
                 cache["v1"], cache["v2"] = v1, RecommenderV2.from_v1(v1, cfg, reranker)
             return cache["v2"]
 
+    def from_profile(profile: SimpleProfile) -> UserContext:
+        """조리기구는 6가지 입력에 없으므로 모두 있다고 본다(기구 때문에 빠지는 레시피가 없게, G-11)."""
+        cat = state.catalog
+        unknown = sorted(i for i in profile.never_eat | profile.likes | profile.dislikes if i not in cat.ingredients)
+        if unknown:
+            raise HTTPException(status_code=400, detail=f"모르는 재료 id: {', '.join(unknown)}")
+        cuisines = set(cat.vocab["cuisines"])
+        unknown = sorted(c for c in profile.cuisine_likes | profile.cuisine_dislikes if c not in cuisines)
+        if unknown:
+            raise HTTPException(status_code=400, detail=f"모르는 음식 종류: {', '.join(unknown)}")
+        try:
+            return profile.to_user_context(equipment=cat.vocab["equipment"])
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc)) from None
+
     def subject(body: V2RecommendIn) -> tuple[int | None, UserContext, int | None, bool]:
+        if body.profile is not None:
+            return None, from_profile(body.profile.to_profile()), body.max_time_min, body.time_is_hard
+        if body.persona_id is not None and body.persona_id in v2_persona_index:
+            user = from_profile(v2_persona_index[body.persona_id].profile)
+            return None, user, body.max_time_min, body.time_is_hard
         if body.persona_id is not None:
             persona = persona_index.get(body.persona_id)
             if persona is None:
@@ -120,6 +163,25 @@ def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_
         return {"modes": ["random", "pantry", "dish"], "rerank_available": reranker is not None,
                 "rerank_default": cfg.rerank_enabled, "rerank_model": cfg.rerank_model,
                 "near_max_missing": cfg.near_max_missing}
+
+    @app.get("/v2/personas")
+    def v2_personas_list() -> list[dict[str, Any]]:
+        """직접 테스트용 페르소나(data/personas/v2_test_personas.yaml): 6가지 정보, 넣어 볼 재료·문장, 확인할 것."""
+        cat = state.catalog
+        groups = cat.groups
+        named = lambda ids: [{"id": i, "name": cat.names.get(i, i)} for i in sorted(ids)]  # noqa: E731
+        out = []
+        for p in v2_persona_index.values():
+            pr = p.profile
+            out.append({
+                "id": p.id, "name": p.name, "description": p.description,
+                "allergens": [{"id": g, "name": groups[g].display_name if g in groups else g} for g in sorted(pr.allergens)],
+                "never_eat": named(pr.never_eat), "likes": named(pr.likes), "dislikes": named(pr.dislikes),
+                "spicy_level": pr.spicy_level, "cuisine_likes": sorted(pr.cuisine_likes),
+                "cuisine_dislikes": sorted(pr.cuisine_dislikes), "skill_level": pr.skill_level,
+                "try_pantry": named(p.try_pantry), "try_dish": list(p.try_dish), "checks": list(p.checks),
+            })
+        return out
 
     @app.post("/v2/recommend")
     def v2_recommend(body: V2RecommendIn) -> dict[str, Any]:

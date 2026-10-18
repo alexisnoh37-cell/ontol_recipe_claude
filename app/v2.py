@@ -47,8 +47,11 @@ st.caption(
 st.sidebar.header("누구를 위한 추천인가요?")
 profiles = api("GET", "/profiles")
 personas = api("GET", "/personas")
-choices: dict[str, dict[str, Any]] = {f"프로필: {p['display_name']}": {"profile_id": p["id"]} for p in profiles}
-choices.update({f"예시 사용자: {p['name']}": {"persona_id": p["id"]} for p in personas})
+test_personas = {p["id"]: p for p in api("GET", "/v2/personas")}
+# 직접 테스트용 페르소나(6가지 정보)를 맨 앞에 둔다
+choices: dict[str, dict[str, Any]] = {f"테스트: {p['name']}": {"persona_id": p["id"]} for p in test_personas.values()}
+choices.update({f"프로필: {p['display_name']}": {"profile_id": p["id"]} for p in profiles})
+choices.update({f"골든셋: {p['name']}": {"persona_id": p["id"]} for p in personas})
 if not choices:
     st.warning("프로필이 없습니다. 기존 화면(app/main.py)에서 프로필을 만드세요.")
     st.stop()
@@ -57,6 +60,45 @@ who = choices[who_label]
 rerank = st.sidebar.toggle("Jev 재정렬 사용", value=bool(info["rerank_available"] and info["rerank_default"]),
                            disabled=not info["rerank_available"])
 limit = st.sidebar.slider("보여 줄 개수", 1, 30, 8)
+
+SKILL = {1: "초보", 2: "보통", 3: "숙련", None: "모름(보통으로 계산)"}
+
+
+def names_of(items: list[dict[str, Any]]) -> str:
+    return ", ".join(x["name"] for x in items) or "없음"
+
+
+persona = test_personas.get(who.get("persona_id", ""))
+if persona:
+    with st.expander(f"👤 {persona['name']} — 사용자 정보와 확인할 것", expanded=True):
+        st.write(persona["description"])
+        c1, c2 = st.columns(2)
+        c1.markdown(
+            f"**못 먹는 것**  
+알레르기: {names_of(persona['allergens'])}  
+절대 안 먹음: {names_of(persona['never_eat'])}
+
+"
+            f"**좋아하는 재료**: {names_of(persona['likes'])}  
+**싫어하는 재료**: {names_of(persona['dislikes'])}"
+        )
+        spicy = persona["spicy_level"]
+        c2.markdown(
+            f"**매운맛 정도**: {'모름' if spicy is None else f'{spicy} / 5'}"
+            f"{' (한도 없음)' if spicy == 5 else ''}  
+"
+            f"**좋아하는 음식 종류**: {', '.join(persona['cuisine_likes']) or '없음'}  
+"
+            f"**덜 좋아하는 음식 종류**: {', '.join(persona['cuisine_dislikes']) or '없음'}  
+"
+            f"**요리 실력**: {SKILL.get(persona['skill_level'])}"
+        )
+        st.markdown(f"**넣어 볼 재료**: {names_of(persona['try_pantry'])}  
+"
+                    f"**찾아 볼 문장**: {' / '.join(persona['try_dish'])}")
+        st.markdown("**확인할 것**
+" + "
+".join(f"- [ ] {c}" for c in persona["checks"]))
 
 
 def ingredient_pick(key: str) -> list[str]:
@@ -136,6 +178,9 @@ with tab_random:
 
 with tab_pantry:
     st.write("가진 재료로 **지금 바로** 만들 수 있는 레시피와 **조금만 사면** 되는 레시피를 나눠 보여 드립니다.")
+    if persona and persona["try_pantry"] and st.button("이 페르소나의 '넣어 볼 재료' 채우기", key="pantry_fill"):
+        st.session_state.setdefault("pantry_names", {}).update({x["id"]: x["name"] for x in persona["try_pantry"]})
+        st.session_state["pantry_ms"] = [x["id"] for x in persona["try_pantry"]]
     pantry = ingredient_pick("pantry")
     if st.button("추천 받기", key="pantry_go", disabled=not pantry):
         request({"mode": "pantry", "pantry": pantry})

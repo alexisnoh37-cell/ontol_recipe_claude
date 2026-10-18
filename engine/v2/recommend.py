@@ -26,6 +26,7 @@ from engine.scoring import UserScorer, diversify, rank
 from engine.v2.config import TASTE_DIMENSIONS, V2Config
 from engine.v2.filters import check_v2
 from engine.v2.model import (
+    NOTE_DISH_EXCLUDED,
     NOTE_DISH_NO_MATCH,
     NOTE_DISLIKE_POSSIBLE,
     NOTE_RERANK_OFF,
@@ -199,13 +200,17 @@ class _Run:
         weights = self.cfg.dish_similarity
         scored = [(combine(c, weights, active), r) for r, c in comps]
         pool: list[tuple[float, Recipe]] = []
+        best_excluded = 0.0  # 제외된 레시피 중 가장 높은 S(찾는 요리가 못 먹는 재료 때문에 빠졌는지 알리려고)
         for s, recipe in sorted((x for x in scored if x[0] > 0), key=lambda x: (-x[0], x[1].id)):
             if len(pool) >= self.cfg.dish_pool_size:
                 break
             if self.passes(recipe):
                 pool.append((s, recipe))
+            else:
+                best_excluded = max(best_excluded, s)
         if not pool:
-            return self.result([], notes=[NOTE_DISH_NO_MATCH])
+            return self.result([], notes=[NOTE_DISH_EXCLUDED if best_excluded else NOTE_DISH_NO_MATCH])
+        excluded_note = [NOTE_DISH_EXCLUDED] if best_excluded > pool[0][0] else []
         sw = self.cfg.dish_s_weight
         ranked: list[_Ranked] = []
         for s, recipe in pool:
@@ -216,7 +221,7 @@ class _Run:
         ranked.sort(key=lambda r: (-round(r.score, 6), r.candidate.recipe.id))
         (ordered,), used, note = self.rerank("dish", [ranked])
         items = [self.item(r) for r in ordered[: self.limit]]
-        return self.result(items, rerank_used=used, notes=[note] if note else [])
+        return self.result(items, rerank_used=used, notes=excluded_note + ([note] if note else []))
 
     # --- Jev 재정렬 -----------------------------------------------------------------------------------
 
