@@ -347,8 +347,10 @@ class _Run:
                 except Exception:  # noqa: BLE001  걸러내기 실패: 규칙 관련 후보만으로 진행(없으면 규칙 경로)
                     scores = None
                 if isinstance(scores, Mapping) and scores:
+                    # 점수 내림차순, 같으면 원래 순서(레시피 id 순). key 문자열 순서(c10 < c2)에 기대지 않는다
+                    order = {k: i for i, k in enumerate(cands)}
                     picked = sorted((k for k in scores if k in cands and _finite01(scores[k])),
-                                    key=lambda k: (-scores[k], k))[: self.cfg.ranking_pool_size - len(pool)]
+                                    key=lambda k: (-scores[k], order[k]))[: self.cfg.ranking_pool_size - len(pool)]
                     pool += [(0.0, cands[k]) for k in picked]
                     if picked:
                         notes.append(NOTE_JEV_SCREENED)

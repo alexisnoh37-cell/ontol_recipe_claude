@@ -14,6 +14,8 @@
 
 Phase 0(기반 설계)과 Phase 1(MVP)까지만 만든다. LLM 연동, 개인화, 장보기 등 Phase 2 이후 기능은 만들지 않는다. 필요해 보이면 docs/progress.md의 "다음 단계 제안"에 적기만 한다.
 
+예외(사람 결정, docs/decisions.md D6~D10): 추천 v2(`engine/v2/`)에 한해 Jev(TypeSafe AI) 연동을 허용한다. Jev는 데이터 라벨링과 순위·추천 이유 판단에만 쓰고, 알레르기 판정과 제외는 아래 안전 규칙대로 규칙으로만 한다. 다른 앱 연동 안내는 docs/integration/README.md를 따른다. 그 밖의 Phase 2 기능은 위 원칙대로 만들지 않는다.
+
 ## 아키텍처 규칙
 
 - 식재료 지식은 `knowledge/*.yaml`이 원본이다(온톨로지 역할). 형식은 `knowledge/README.md`와 예시 파일을 따른다.

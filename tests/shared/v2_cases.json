@@ -1,0 +1,10134 @@
+{
+ "format_version": 1,
+ "description": "추천 v2 공용 시험 세트. 형식·비교 방법: docs/integration/v2_logic_spec.md 10장. 생성: scripts/make_shared_cases.py(이 저장소 엔진의 계산 결과).",
+ "equipment": [
+  "냄비",
+  "프라이팬"
+ ],
+ "knowledge": {
+  "ingredient_names": {
+   "buchimgaru": "부침가루",
+   "butter": "버터",
+   "cabbage": "배추",
+   "clam": "조개",
+   "cooking_oil": "식용유",
+   "crab": "게",
+   "cucumber": "오이",
+   "egg": "계란",
+   "gochujang": "고추장",
+   "green_onion": "대파",
+   "jeotgal": "젓갈류",
+   "kimchi": "배추김치",
+   "kimchi_sauce": "김치양념소스",
+   "manila_clam": "바지락",
+   "mayonnaise": "마요네즈",
+   "milk": "우유",
+   "mushroom": "버섯",
+   "octopus": "낙지",
+   "oyster": "굴",
+   "oyster_sauce": "굴소스",
+   "peanut": "땅콩",
+   "peanut_butter": "땅콩버터",
+   "potato": "감자",
+   "rice": "쌀",
+   "saeujeot": "새우젓",
+   "salt": "소금",
+   "seafood": "해산물",
+   "seasoning_blend": "혼합 조미료",
+   "sesame_oil": "참기름",
+   "shrimp_raw": "새우",
+   "soy_sauce": "간장",
+   "soybean": "대두",
+   "squid_raw": "오징어",
+   "walnut": "호두",
+   "wheat_flour": "밀가루"
+  },
+  "alias_index": {
+   "간장": "soy_sauce",
+   "감자": "potato",
+   "게": "crab",
+   "계란": "egg",
+   "고추장": "gochujang",
+   "굴": "oyster",
+   "굴소스": "oyster_sauce",
+   "김치": "kimchi",
+   "김치양념소스": "kimchi_sauce",
+   "낙지": "octopus",
+   "달걀": "egg",
+   "대두": "soybean",
+   "대파": "green_onion",
+   "땅콩": "peanut",
+   "땅콩버터": "peanut_butter",
+   "마요네즈": "mayonnaise",
+   "밀가루": "wheat_flour",
+   "바지락": "manila_clam",
+   "배추": "cabbage",
+   "배추김치": "kimchi",
+   "버섯": "mushroom",
+   "버터": "butter",
+   "부침가루": "buchimgaru",
+   "새우": "shrimp_raw",
+   "새우젓": "saeujeot",
+   "소금": "salt",
+   "식용유": "cooking_oil",
+   "쌀": "rice",
+   "오이": "cucumber",
+   "오징어": "squid_raw",
+   "우유": "milk",
+   "젓갈류": "jeotgal",
+   "조개": "clam",
+   "참기름": "sesame_oil",
+   "해산물": "seafood",
+   "호두": "walnut",
+   "혼합조미료": "seasoning_blend"
+  },
+  "ancestors": {
+   "clam": {
+    "seafood": 1
+   },
+   "crab": {
+    "seafood": 1
+   },
+   "jeotgal": {
+    "seafood": 1
+   },
+   "manila_clam": {
+    "clam": 1,
+    "seafood": 2
+   },
+   "octopus": {
+    "seafood": 1
+   },
+   "oyster": {
+    "seafood": 1
+   },
+   "saeujeot": {
+    "jeotgal": 1,
+    "seafood": 2
+   },
+   "shrimp_raw": {
+    "seafood": 1
+   },
+   "squid_raw": {
+    "seafood": 1
+   }
+  },
+  "contains": {
+   "buchimgaru": {
+    "wheat_flour": {
+     "certainty": "definite",
+     "via": [
+      "buchimgaru",
+      "wheat_flour"
+     ]
+    }
+   },
+   "butter": {
+    "milk": {
+     "certainty": "definite",
+     "via": [
+      "butter",
+      "milk"
+     ]
+    }
+   },
+   "clam": {
+    "manila_clam": {
+     "certainty": "possible",
+     "via": [
+      "clam",
+      "manila_clam"
+     ]
+    },
+    "seafood": {
+     "certainty": "definite",
+     "via": [
+      "clam",
+      "seafood"
+     ]
+    }
+   },
+   "crab": {
+    "seafood": {
+     "certainty": "definite",
+     "via": [
+      "crab",
+      "seafood"
+     ]
+    }
+   },
+   "gochujang": {
+    "soybean": {
+     "certainty": "definite",
+     "via": [
+      "gochujang",
+      "soybean"
+     ]
+    },
+    "wheat_flour": {
+     "certainty": "possible",
+     "via": [
+      "gochujang",
+      "wheat_flour"
+     ]
+    }
+   },
+   "jeotgal": {
+    "saeujeot": {
+     "certainty": "possible",
+     "via": [
+      "jeotgal",
+      "saeujeot"
+     ]
+    },
+    "seafood": {
+     "certainty": "definite",
+     "via": [
+      "jeotgal",
+      "seafood"
+     ]
+    },
+    "shrimp_raw": {
+     "certainty": "possible",
+     "via": [
+      "jeotgal",
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    }
+   },
+   "kimchi": {
+    "jeotgal": {
+     "certainty": "possible",
+     "via": [
+      "kimchi",
+      "saeujeot",
+      "jeotgal"
+     ]
+    },
+    "saeujeot": {
+     "certainty": "possible",
+     "via": [
+      "kimchi",
+      "saeujeot"
+     ]
+    },
+    "seafood": {
+     "certainty": "possible",
+     "via": [
+      "kimchi",
+      "saeujeot",
+      "jeotgal",
+      "seafood"
+     ]
+    },
+    "shrimp_raw": {
+     "certainty": "possible",
+     "via": [
+      "kimchi",
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    }
+   },
+   "kimchi_sauce": {
+    "jeotgal": {
+     "certainty": "possible",
+     "via": [
+      "kimchi_sauce",
+      "kimchi",
+      "saeujeot",
+      "jeotgal"
+     ]
+    },
+    "kimchi": {
+     "certainty": "definite",
+     "via": [
+      "kimchi_sauce",
+      "kimchi"
+     ]
+    },
+    "saeujeot": {
+     "certainty": "possible",
+     "via": [
+      "kimchi_sauce",
+      "kimchi",
+      "saeujeot"
+     ]
+    },
+    "seafood": {
+     "certainty": "possible",
+     "via": [
+      "kimchi_sauce",
+      "kimchi",
+      "saeujeot",
+      "jeotgal",
+      "seafood"
+     ]
+    },
+    "shrimp_raw": {
+     "certainty": "possible",
+     "via": [
+      "kimchi_sauce",
+      "kimchi",
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    }
+   },
+   "manila_clam": {
+    "clam": {
+     "certainty": "definite",
+     "via": [
+      "manila_clam",
+      "clam"
+     ]
+    },
+    "seafood": {
+     "certainty": "definite",
+     "via": [
+      "manila_clam",
+      "clam",
+      "seafood"
+     ]
+    }
+   },
+   "mayonnaise": {
+    "egg": {
+     "certainty": "definite",
+     "via": [
+      "mayonnaise",
+      "egg"
+     ]
+    }
+   },
+   "octopus": {
+    "seafood": {
+     "certainty": "definite",
+     "via": [
+      "octopus",
+      "seafood"
+     ]
+    }
+   },
+   "oyster": {
+    "seafood": {
+     "certainty": "definite",
+     "via": [
+      "oyster",
+      "seafood"
+     ]
+    }
+   },
+   "oyster_sauce": {
+    "oyster": {
+     "certainty": "definite",
+     "via": [
+      "oyster_sauce",
+      "oyster"
+     ]
+    },
+    "seafood": {
+     "certainty": "definite",
+     "via": [
+      "oyster_sauce",
+      "oyster",
+      "seafood"
+     ]
+    }
+   },
+   "peanut_butter": {
+    "peanut": {
+     "certainty": "definite",
+     "via": [
+      "peanut_butter",
+      "peanut"
+     ]
+    }
+   },
+   "saeujeot": {
+    "jeotgal": {
+     "certainty": "definite",
+     "via": [
+      "saeujeot",
+      "jeotgal"
+     ]
+    },
+    "seafood": {
+     "certainty": "definite",
+     "via": [
+      "saeujeot",
+      "jeotgal",
+      "seafood"
+     ]
+    },
+    "shrimp_raw": {
+     "certainty": "definite",
+     "via": [
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    }
+   },
+   "seafood": {
+    "clam": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "clam"
+     ]
+    },
+    "crab": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "crab"
+     ]
+    },
+    "jeotgal": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "jeotgal"
+     ]
+    },
+    "manila_clam": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "clam",
+      "manila_clam"
+     ]
+    },
+    "octopus": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "octopus"
+     ]
+    },
+    "oyster": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "oyster"
+     ]
+    },
+    "saeujeot": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "jeotgal",
+      "saeujeot"
+     ]
+    },
+    "shrimp_raw": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "shrimp_raw"
+     ]
+    },
+    "squid_raw": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "squid_raw"
+     ]
+    }
+   },
+   "shrimp_raw": {
+    "seafood": {
+     "certainty": "definite",
+     "via": [
+      "shrimp_raw",
+      "seafood"
+     ]
+    }
+   },
+   "soy_sauce": {
+    "soybean": {
+     "certainty": "definite",
+     "via": [
+      "soy_sauce",
+      "soybean"
+     ]
+    },
+    "wheat_flour": {
+     "certainty": "definite",
+     "via": [
+      "soy_sauce",
+      "wheat_flour"
+     ]
+    }
+   },
+   "squid_raw": {
+    "seafood": {
+     "certainty": "definite",
+     "via": [
+      "squid_raw",
+      "seafood"
+     ]
+    }
+   }
+  },
+  "allergen_closure": {
+   "crab": {
+    "crab": {
+     "certainty": "definite",
+     "via": [
+      "crab"
+     ]
+    },
+    "seafood": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "crab"
+     ]
+    }
+   },
+   "crustacean_bundle": {
+    "crab": {
+     "certainty": "definite",
+     "via": [
+      "crab"
+     ]
+    },
+    "jeotgal": {
+     "certainty": "possible",
+     "via": [
+      "jeotgal",
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    },
+    "kimchi": {
+     "certainty": "possible",
+     "via": [
+      "kimchi",
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    },
+    "kimchi_sauce": {
+     "certainty": "possible",
+     "via": [
+      "kimchi_sauce",
+      "kimchi",
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    },
+    "saeujeot": {
+     "certainty": "definite",
+     "via": [
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    },
+    "seafood": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "crab"
+     ]
+    },
+    "shrimp_raw": {
+     "certainty": "definite",
+     "via": [
+      "shrimp_raw"
+     ]
+    }
+   },
+   "egg": {
+    "egg": {
+     "certainty": "definite",
+     "via": [
+      "egg"
+     ]
+    },
+    "mayonnaise": {
+     "certainty": "definite",
+     "via": [
+      "mayonnaise",
+      "egg"
+     ]
+    }
+   },
+   "milk": {
+    "butter": {
+     "certainty": "definite",
+     "via": [
+      "butter",
+      "milk"
+     ]
+    },
+    "milk": {
+     "certainty": "definite",
+     "via": [
+      "milk"
+     ]
+    },
+    "seasoning_blend": {
+     "certainty": "possible",
+     "via": [
+      "seasoning_blend"
+     ]
+    }
+   },
+   "nuts_bundle": {
+    "peanut": {
+     "certainty": "definite",
+     "via": [
+      "peanut"
+     ]
+    },
+    "peanut_butter": {
+     "certainty": "definite",
+     "via": [
+      "peanut_butter",
+      "peanut"
+     ]
+    },
+    "walnut": {
+     "certainty": "definite",
+     "via": [
+      "walnut"
+     ]
+    }
+   },
+   "peanut": {
+    "peanut": {
+     "certainty": "definite",
+     "via": [
+      "peanut"
+     ]
+    },
+    "peanut_butter": {
+     "certainty": "definite",
+     "via": [
+      "peanut_butter",
+      "peanut"
+     ]
+    }
+   },
+   "seafood_bundle": {
+    "clam": {
+     "certainty": "definite",
+     "via": [
+      "clam"
+     ]
+    },
+    "crab": {
+     "certainty": "definite",
+     "via": [
+      "crab"
+     ]
+    },
+    "jeotgal": {
+     "certainty": "possible",
+     "via": [
+      "jeotgal",
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    },
+    "kimchi": {
+     "certainty": "possible",
+     "via": [
+      "kimchi",
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    },
+    "kimchi_sauce": {
+     "certainty": "possible",
+     "via": [
+      "kimchi_sauce",
+      "kimchi",
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    },
+    "manila_clam": {
+     "certainty": "definite",
+     "via": [
+      "manila_clam",
+      "clam"
+     ]
+    },
+    "oyster": {
+     "certainty": "definite",
+     "via": [
+      "oyster"
+     ]
+    },
+    "oyster_sauce": {
+     "certainty": "definite",
+     "via": [
+      "oyster_sauce",
+      "oyster"
+     ]
+    },
+    "saeujeot": {
+     "certainty": "definite",
+     "via": [
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    },
+    "seafood": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "clam"
+     ]
+    },
+    "shrimp_raw": {
+     "certainty": "definite",
+     "via": [
+      "shrimp_raw"
+     ]
+    },
+    "squid_raw": {
+     "certainty": "definite",
+     "via": [
+      "squid_raw"
+     ]
+    }
+   },
+   "shellfish": {
+    "clam": {
+     "certainty": "definite",
+     "via": [
+      "clam"
+     ]
+    },
+    "manila_clam": {
+     "certainty": "definite",
+     "via": [
+      "manila_clam",
+      "clam"
+     ]
+    },
+    "oyster": {
+     "certainty": "definite",
+     "via": [
+      "oyster"
+     ]
+    },
+    "oyster_sauce": {
+     "certainty": "definite",
+     "via": [
+      "oyster_sauce",
+      "oyster"
+     ]
+    },
+    "seafood": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "clam"
+     ]
+    }
+   },
+   "shrimp": {
+    "jeotgal": {
+     "certainty": "possible",
+     "via": [
+      "jeotgal",
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    },
+    "kimchi": {
+     "certainty": "possible",
+     "via": [
+      "kimchi",
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    },
+    "kimchi_sauce": {
+     "certainty": "possible",
+     "via": [
+      "kimchi_sauce",
+      "kimchi",
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    },
+    "saeujeot": {
+     "certainty": "definite",
+     "via": [
+      "saeujeot",
+      "shrimp_raw"
+     ]
+    },
+    "seafood": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "shrimp_raw"
+     ]
+    },
+    "shrimp_raw": {
+     "certainty": "definite",
+     "via": [
+      "shrimp_raw"
+     ]
+    }
+   },
+   "soybean": {
+    "gochujang": {
+     "certainty": "definite",
+     "via": [
+      "gochujang",
+      "soybean"
+     ]
+    },
+    "soy_sauce": {
+     "certainty": "definite",
+     "via": [
+      "soy_sauce",
+      "soybean"
+     ]
+    },
+    "soybean": {
+     "certainty": "definite",
+     "via": [
+      "soybean"
+     ]
+    }
+   },
+   "squid": {
+    "seafood": {
+     "certainty": "possible",
+     "via": [
+      "seafood",
+      "squid_raw"
+     ]
+    },
+    "squid_raw": {
+     "certainty": "definite",
+     "via": [
+      "squid_raw"
+     ]
+    }
+   },
+   "walnut": {
+    "walnut": {
+     "certainty": "definite",
+     "via": [
+      "walnut"
+     ]
+    }
+   },
+   "wheat": {
+    "buchimgaru": {
+     "certainty": "definite",
+     "via": [
+      "buchimgaru",
+      "wheat_flour"
+     ]
+    },
+    "gochujang": {
+     "certainty": "possible",
+     "via": [
+      "gochujang",
+      "wheat_flour"
+     ]
+    },
+    "soy_sauce": {
+     "certainty": "definite",
+     "via": [
+      "soy_sauce",
+      "wheat_flour"
+     ]
+    },
+    "wheat_flour": {
+     "certainty": "definite",
+     "via": [
+      "wheat_flour"
+     ]
+    }
+   }
+  },
+  "allergen_groups": [
+   {
+    "id": "crab",
+    "name": "crab",
+    "kind": "base",
+    "members": []
+   },
+   {
+    "id": "crustacean_bundle",
+    "name": "갑각류",
+    "kind": "bundle",
+    "members": [
+     "crab",
+     "shrimp"
+    ]
+   },
+   {
+    "id": "egg",
+    "name": "egg",
+    "kind": "base",
+    "members": []
+   },
+   {
+    "id": "milk",
+    "name": "milk",
+    "kind": "base",
+    "members": []
+   },
+   {
+    "id": "nuts_bundle",
+    "name": "견과류",
+    "kind": "bundle",
+    "members": [
+     "peanut",
+     "walnut"
+    ]
+   },
+   {
+    "id": "peanut",
+    "name": "peanut",
+    "kind": "base",
+    "members": []
+   },
+   {
+    "id": "seafood_bundle",
+    "name": "해산물 전체",
+    "kind": "bundle",
+    "members": [
+     "crab",
+     "shellfish",
+     "shrimp",
+     "squid"
+    ]
+   },
+   {
+    "id": "shellfish",
+    "name": "shellfish",
+    "kind": "base",
+    "members": []
+   },
+   {
+    "id": "shrimp",
+    "name": "shrimp",
+    "kind": "base",
+    "members": []
+   },
+   {
+    "id": "soybean",
+    "name": "soybean",
+    "kind": "base",
+    "members": []
+   },
+   {
+    "id": "squid",
+    "name": "squid",
+    "kind": "base",
+    "members": []
+   },
+   {
+    "id": "walnut",
+    "name": "walnut",
+    "kind": "base",
+    "members": []
+   },
+   {
+    "id": "wheat",
+    "name": "wheat",
+    "kind": "base",
+    "members": []
+   }
+  ],
+  "substitutes": {
+   "cooking_oil": [
+    {
+     "to": "butter",
+     "context": [
+      "볶음"
+     ],
+     "ratio": null
+    }
+   ],
+   "octopus": [
+    {
+     "to": "shrimp_raw",
+     "context": [
+      "볶음"
+     ],
+     "ratio": null
+    }
+   ]
+  },
+  "pantry_staples": [
+   "gochujang",
+   "salt",
+   "sesame_oil",
+   "soy_sauce"
+  ],
+  "concept_ids": [
+   "seafood"
+  ],
+  "ingredient_meta": {
+   "buchimgaru": {
+    "category": null,
+    "is_processed": true,
+    "confidence": "high"
+   },
+   "butter": {
+    "category": null,
+    "is_processed": true,
+    "confidence": "high"
+   },
+   "cabbage": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "clam": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "cooking_oil": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "crab": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "cucumber": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "egg": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "gochujang": {
+    "category": null,
+    "is_processed": true,
+    "confidence": "high"
+   },
+   "green_onion": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "jeotgal": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "kimchi": {
+    "category": null,
+    "is_processed": true,
+    "confidence": "high"
+   },
+   "kimchi_sauce": {
+    "category": null,
+    "is_processed": true,
+    "confidence": "high"
+   },
+   "manila_clam": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "mayonnaise": {
+    "category": null,
+    "is_processed": true,
+    "confidence": "high"
+   },
+   "milk": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "mushroom": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "octopus": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "oyster": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "oyster_sauce": {
+    "category": null,
+    "is_processed": true,
+    "confidence": "high"
+   },
+   "peanut": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "peanut_butter": {
+    "category": null,
+    "is_processed": true,
+    "confidence": "high"
+   },
+   "potato": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "rice": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "saeujeot": {
+    "category": null,
+    "is_processed": true,
+    "confidence": "high"
+   },
+   "salt": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "seafood": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "seasoning_blend": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "sesame_oil": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "shrimp_raw": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "soy_sauce": {
+    "category": null,
+    "is_processed": true,
+    "confidence": "high"
+   },
+   "soybean": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "squid_raw": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "walnut": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   },
+   "wheat_flour": {
+    "category": null,
+    "is_processed": false,
+    "confidence": "high"
+   }
+  }
+ },
+ "recipes": [
+  {
+   "id": "butter_potato",
+   "title": "버터감자",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "potato",
+     "role": "main",
+     "optional": false,
+     "raw_text": "potato"
+    },
+    {
+     "line": 2,
+     "ingredient": "butter",
+     "role": "sub",
+     "optional": false,
+     "raw_text": "butter"
+    }
+   ]
+  },
+  {
+   "id": "cabbage_saeujeot_soup",
+   "title": "배추 새우젓국",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "cabbage",
+     "role": "main",
+     "optional": false,
+     "raw_text": "cabbage"
+    },
+    {
+     "line": 2,
+     "ingredient": "saeujeot",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "saeujeot"
+    }
+   ]
+  },
+  {
+   "id": "crab_soup",
+   "title": "게탕",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "crab",
+     "role": "main",
+     "optional": false,
+     "raw_text": "crab"
+    },
+    {
+     "line": 2,
+     "ingredient": "salt",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "salt"
+    }
+   ]
+  },
+  {
+   "id": "cucumber_soup_egg_garnish",
+   "title": "오이냉국(지단 고명)",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "cucumber",
+     "role": "main",
+     "optional": false,
+     "raw_text": "cucumber"
+    },
+    {
+     "line": 2,
+     "ingredient": "egg",
+     "role": "garnish",
+     "optional": false,
+     "raw_text": "egg"
+    }
+   ]
+  },
+  {
+   "id": "gochujang_potato",
+   "title": "고추장 감자조림",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "potato",
+     "role": "main",
+     "optional": false,
+     "raw_text": "potato"
+    },
+    {
+     "line": 2,
+     "ingredient": "gochujang",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "gochujang"
+    }
+   ]
+  },
+  {
+   "id": "jeotgal_cabbage_salad",
+   "title": "배추겉절이(젓갈)",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "cabbage",
+     "role": "main",
+     "optional": false,
+     "raw_text": "cabbage"
+    },
+    {
+     "line": 2,
+     "ingredient": "jeotgal",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "jeotgal"
+    }
+   ]
+  },
+  {
+   "id": "kimchi_fried_rice",
+   "title": "김치볶음밥",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "rice",
+     "role": "main",
+     "optional": false,
+     "raw_text": "rice"
+    },
+    {
+     "line": 2,
+     "ingredient": "kimchi",
+     "role": "sub",
+     "optional": false,
+     "raw_text": "kimchi"
+    },
+    {
+     "line": 3,
+     "ingredient": "sesame_oil",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "sesame_oil"
+    }
+   ]
+  },
+  {
+   "id": "kimchi_sauce_potato",
+   "title": "김치양념 감자볶음",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "potato",
+     "role": "main",
+     "optional": false,
+     "raw_text": "potato"
+    },
+    {
+     "line": 2,
+     "ingredient": "kimchi_sauce",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "kimchi_sauce"
+    }
+   ]
+  },
+  {
+   "id": "manila_clam_soup",
+   "title": "바지락국",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "manila_clam",
+     "role": "main",
+     "optional": false,
+     "raw_text": "manila_clam"
+    },
+    {
+     "line": 2,
+     "ingredient": "salt",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "salt"
+    }
+   ]
+  },
+  {
+   "id": "mayo_cucumber_salad",
+   "title": "오이 마요 샐러드",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "cucumber",
+     "role": "main",
+     "optional": false,
+     "raw_text": "cucumber"
+    },
+    {
+     "line": 2,
+     "ingredient": "mayonnaise",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "mayonnaise"
+    }
+   ]
+  },
+  {
+   "id": "mushroom_rice_optional_egg",
+   "title": "버섯밥(계란 선택)",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "rice",
+     "role": "main",
+     "optional": false,
+     "raw_text": "rice"
+    },
+    {
+     "line": 2,
+     "ingredient": "mushroom",
+     "role": "sub",
+     "optional": false,
+     "raw_text": "mushroom"
+    },
+    {
+     "line": 3,
+     "ingredient": "egg",
+     "role": "sub",
+     "optional": true,
+     "raw_text": "egg"
+    }
+   ]
+  },
+  {
+   "id": "mushroom_secret_sauce",
+   "title": "비법소스 버섯구이",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "mushroom",
+     "role": "main",
+     "optional": false,
+     "raw_text": "mushroom"
+    },
+    {
+     "line": 2,
+     "ingredient": null,
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "비법 소스 2큰술"
+    }
+   ]
+  },
+  {
+   "id": "mushroom_stirfry_oil",
+   "title": "버섯볶음",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [
+    "볶음"
+   ],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "mushroom",
+     "role": "main",
+     "optional": false,
+     "raw_text": "mushroom"
+    },
+    {
+     "line": 2,
+     "ingredient": "cooking_oil",
+     "role": "sub",
+     "optional": false,
+     "raw_text": "cooking_oil"
+    }
+   ]
+  },
+  {
+   "id": "octopus_stirfry",
+   "title": "낙지볶음",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [
+    "볶음"
+   ],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "octopus",
+     "role": "main",
+     "optional": false,
+     "raw_text": "octopus"
+    },
+    {
+     "line": 2,
+     "ingredient": "salt",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "salt"
+    }
+   ]
+  },
+  {
+   "id": "oyster_sauce_mushroom",
+   "title": "굴소스 버섯볶음",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "mushroom",
+     "role": "main",
+     "optional": false,
+     "raw_text": "mushroom"
+    },
+    {
+     "line": 2,
+     "ingredient": "oyster_sauce",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "oyster_sauce"
+    }
+   ]
+  },
+  {
+   "id": "pajeon",
+   "title": "파전",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "green_onion",
+     "role": "main",
+     "optional": false,
+     "raw_text": "green_onion"
+    },
+    {
+     "line": 2,
+     "ingredient": "buchimgaru",
+     "role": "sub",
+     "optional": false,
+     "raw_text": "buchimgaru"
+    }
+   ]
+  },
+  {
+   "id": "peanut_butter_cucumber",
+   "title": "오이 땅콩버터 무침",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "cucumber",
+     "role": "main",
+     "optional": false,
+     "raw_text": "cucumber"
+    },
+    {
+     "line": 2,
+     "ingredient": "peanut_butter",
+     "role": "sub",
+     "optional": false,
+     "raw_text": "peanut_butter"
+    }
+   ]
+  },
+  {
+   "id": "potato_salt",
+   "title": "감자구이",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "potato",
+     "role": "main",
+     "optional": false,
+     "raw_text": "potato"
+    },
+    {
+     "line": 2,
+     "ingredient": "salt",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "salt"
+    }
+   ]
+  },
+  {
+   "id": "seasoning_blend_mushroom",
+   "title": "조미료 버섯구이",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "mushroom",
+     "role": "main",
+     "optional": false,
+     "raw_text": "mushroom"
+    },
+    {
+     "line": 2,
+     "ingredient": "seasoning_blend",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "seasoning_blend"
+    }
+   ]
+  },
+  {
+   "id": "shrimp_stirfry",
+   "title": "새우볶음",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "shrimp_raw",
+     "role": "main",
+     "optional": false,
+     "raw_text": "shrimp_raw"
+    },
+    {
+     "line": 2,
+     "ingredient": "salt",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "salt"
+    }
+   ]
+  },
+  {
+   "id": "soy_braised_potato",
+   "title": "감자조림",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "potato",
+     "role": "main",
+     "optional": false,
+     "raw_text": "potato"
+    },
+    {
+     "line": 2,
+     "ingredient": "soy_sauce",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "soy_sauce"
+    }
+   ]
+  },
+  {
+   "id": "squid_stirfry",
+   "title": "오징어볶음",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "squid_raw",
+     "role": "main",
+     "optional": false,
+     "raw_text": "squid_raw"
+    },
+    {
+     "line": 2,
+     "ingredient": "salt",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "salt"
+    }
+   ]
+  },
+  {
+   "id": "u_gochujang_potato",
+   "title": "감자 고추장볶음",
+   "cuisine": "미분류",
+   "difficulty": null,
+   "cook_time_min": null,
+   "status": "published",
+   "taste": null,
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "potato",
+     "role": "main",
+     "optional": false,
+     "raw_text": "potato"
+    },
+    {
+     "line": 2,
+     "ingredient": "gochujang",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "gochujang"
+    }
+   ]
+  },
+  {
+   "id": "u_mild_potato",
+   "title": "감자 소금찜",
+   "cuisine": "미분류",
+   "difficulty": null,
+   "cook_time_min": null,
+   "status": "published",
+   "taste": null,
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "potato",
+     "role": "main",
+     "optional": false,
+     "raw_text": "potato"
+    },
+    {
+     "line": 2,
+     "ingredient": "salt",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "salt"
+    }
+   ]
+  },
+  {
+   "id": "u_title_spicy",
+   "title": "매콤 버섯구이",
+   "cuisine": "미분류",
+   "difficulty": null,
+   "cook_time_min": null,
+   "status": "published",
+   "taste": null,
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "mushroom",
+     "role": "main",
+     "optional": false,
+     "raw_text": "mushroom"
+    },
+    {
+     "line": 2,
+     "ingredient": "salt",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "salt"
+    }
+   ]
+  },
+  {
+   "id": "walnut_roast",
+   "title": "호두볶음",
+   "cuisine": "한식",
+   "difficulty": 1,
+   "cook_time_min": 20,
+   "status": "published",
+   "taste": {
+    "spicy": 0,
+    "salty": 0,
+    "sweet": 0,
+    "sour": 0,
+    "umami": 0,
+    "savory": 0
+   },
+   "required_equipment": [],
+   "techniques": [],
+   "ingredients": [
+    {
+     "line": 1,
+     "ingredient": "walnut",
+     "role": "main",
+     "optional": false,
+     "raw_text": "walnut"
+    },
+    {
+     "line": 2,
+     "ingredient": "salt",
+     "role": "seasoning",
+     "optional": false,
+     "raw_text": "salt"
+    }
+   ]
+  }
+ ],
+ "config": {
+  "weights": {
+   "weights": {
+    "ingredient_coverage": 0.3,
+    "cuisine": 0.2,
+    "taste": 0.15,
+    "ingredient_preference": 0.15,
+    "difficulty": 0.1,
+    "time": 0.1
+   },
+   "coverage": {
+    "role_weight": {
+     "main": 3,
+     "sub": 2,
+     "seasoning": 1
+    },
+    "substitute_credit": 0.8,
+    "exclude_pantry_staples": true,
+    "exclude_optional": true
+   },
+   "cuisine": {
+    "like": 1.0,
+    "neutral": 0.5,
+    "dislike": 0.1
+   },
+   "ingredient_preference": {
+    "neutral": 0.5,
+    "role_weight": {
+     "main": 1.0,
+     "sub": 0.6,
+     "garnish": 0.2,
+     "optional": 0.2
+    }
+   },
+   "difficulty": {
+    "-2": 0.8,
+    "-1": 0.9,
+    "0": 1.0,
+    "1": 0.4,
+    "2": 0.1,
+    "unknown": 0.5
+   },
+   "time": {
+    "unknown": 0.5
+   },
+   "taste": {
+    "dimensions": [
+     "spicy",
+     "salty",
+     "sweet",
+     "sour",
+     "umami",
+     "savory"
+    ],
+    "dimension_weight": {
+     "spicy": 1.0,
+     "salty": 1.0,
+     "sweet": 1.0,
+     "sour": 1.0,
+     "umami": 1.0,
+     "savory": 1.0
+    },
+    "unknown": 0.5
+   },
+   "diversity": {
+    "top_n": 10,
+    "max_same_cuisine": 5,
+    "max_same_main_ingredient": 3,
+    "max_score_gap": 0.1
+   }
+  },
+  "engine": {
+   "serve_draft_recipes": true,
+   "browse_max_missing": 2
+  },
+  "v2": {
+   "pantry": {
+    "near_max_missing": 2
+   },
+   "random": {
+    "default_limit": 5
+   },
+   "dish": {
+    "pool_size": 40,
+    "s_weight": 0.7,
+    "similarity": {
+     "title": 0.4,
+     "ingredient": 0.25,
+     "keyword": 0.2,
+     "anchor": 0.15
+    },
+    "min_term_len": 2,
+    "keywords": [
+     {
+      "match": [
+       "얼큰",
+       "칼칼",
+       "매콤",
+       "화끈",
+       "얼얼"
+      ],
+      "taste": {
+       "spicy": {
+        "min": 3
+       }
+      }
+     },
+     {
+      "match": [
+       "순한",
+       "안매운",
+       "안 매운",
+       "맵지않은",
+       "맵지 않은",
+       "담백"
+      ],
+      "taste": {
+       "spicy": {
+        "max": 1
+       }
+      }
+     },
+     {
+      "match": [
+       "국물",
+       "뜨끈",
+       "따끈",
+       "시원한"
+      ],
+      "title_any": [
+       "국",
+       "찌개",
+       "탕",
+       "전골",
+       "짬뽕",
+       "국수",
+       "우동",
+       "라면",
+       "수제비",
+       "칼국수"
+      ]
+     },
+     {
+      "match": [
+       "달달",
+       "달콤",
+       "단짠"
+      ],
+      "taste": {
+       "sweet": {
+        "min": 3
+       }
+      }
+     },
+     {
+      "match": [
+       "새콤",
+       "상큼"
+      ],
+      "taste": {
+       "sour": {
+        "min": 2
+       }
+      }
+     },
+     {
+      "match": [
+       "짭짤",
+       "짭조름"
+      ],
+      "taste": {
+       "salty": {
+        "min": 3
+       }
+      }
+     },
+     {
+      "match": [
+       "고소"
+      ],
+      "taste": {
+       "savory": {
+        "min": 3
+       }
+      }
+     },
+     {
+      "match": [
+       "한식",
+       "한국"
+      ],
+      "cuisine": "한식"
+     },
+     {
+      "match": [
+       "일식",
+       "일본"
+      ],
+      "cuisine": "일식"
+     },
+     {
+      "match": [
+       "중식",
+       "중국"
+      ],
+      "cuisine": "중식"
+     },
+     {
+      "match": [
+       "양식",
+       "서양",
+       "파스타"
+      ],
+      "cuisine": "양식"
+     },
+     {
+      "match": [
+       "볶음"
+      ],
+      "title_any": [
+       "볶음"
+      ]
+     },
+     {
+      "match": [
+       "반찬"
+      ],
+      "title_any": [
+       "무침",
+       "조림",
+       "볶음",
+       "나물",
+       "장아찌",
+       "전"
+      ]
+     }
+    ]
+   },
+   "spicy_inference": {
+    "enabled": true,
+    "markers": [
+     "gochujang",
+     "kimchi"
+    ],
+    "title_markers": [
+     "매콤",
+     "고추"
+    ]
+   },
+   "ranking": {
+    "mode": "jev",
+    "pool_size": 40,
+    "min_pool": 10,
+    "screen_max": 1200,
+    "screen_chunk": 250,
+    "timeout_ms": 8000,
+    "aspect_weights": {
+     "request": 2.0,
+     "taste": 1.0,
+     "ingredients": 1.0,
+     "cuisine": 1.0,
+     "skill": 1.0,
+     "pantry": 1.0
+    }
+   },
+   "rerank": {
+    "enabled": true,
+    "model": "jev-1.14.0",
+    "top_n": 30,
+    "jev_weight": 0.5,
+    "min_confidence": 0.3,
+    "timeout_ms": 4000
+   },
+   "display": {
+    "breakdown_labels": {
+     "S": "찾는 요리와 비슷함",
+     "J": "Jev 적합도",
+     "J_conf": "Jev 확신도",
+     "J_request": "요청과 맞음(Jev)",
+     "J_taste": "맛 취향(Jev)",
+     "J_ingredients": "재료 취향(Jev)",
+     "J_cuisine": "음식 종류(Jev)",
+     "J_skill": "실력에 맞는 난이도(Jev)",
+     "J_pantry": "가진 재료 활용(Jev)"
+    },
+    "group_labels": {
+     "ready": "지금 바로 만들 수 있어요",
+     "near": "조금만 사면 만들 수 있어요"
+    },
+    "notes": {
+     "rerank_unavailable": "Jev 응답이 없어 규칙 점수 순서로 보여 드립니다",
+     "jev_unavailable": "Jev가 응답하지 않아 규칙 점수 순서로 보여 드립니다",
+     "jev_screened": "관련 레시피가 적어 Jev가 전체에서 찾아 보았습니다",
+     "rerank_off": "규칙 점수 순서입니다(Jev 재정렬 꺼짐)",
+     "dish_no_match": "찾는 요리와 비슷한 레시피를 찾지 못했습니다. 요리 이름이나 재료, 맛(얼큰한·담백한 등)으로 다시 찾아 보세요",
+     "dish_excluded": "찾는 요리와 가장 비슷한 레시피는 못 드시는 재료(알레르기·절대 안 먹는 재료 등)가 들어 있어 뺐습니다",
+     "spicy_inferred": "맛 정보는 없지만 고추류 등 매운 재료가 없어 맵지 않은 요리로 보았습니다",
+     "dislike_possible": "먹지 않는 재료가 들어 있을 수도 있는 재료(가공품 등)가 있습니다. 성분표를 확인하세요"
+    }
+   }
+  }
+ },
+ "cases": [
+  {
+   "id": "safety_shrimp_random",
+   "description": "새우 알레르기: 랜덤에 새우·새우젓·김치(포함 가능) 레시피가 없다",
+   "profile": {
+    "allergens": [
+     "shrimp"
+    ]
+   },
+   "request": {
+    "mode": "random",
+    "seed": 1,
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "set",
+    "ranking": "rules",
+    "notes": [],
+    "items": [
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "crab"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "egg"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [
+     "cabbage_saeujeot_soup",
+     "jeotgal_cabbage_salad",
+     "kimchi_fried_rice",
+     "kimchi_sauce_potato",
+     "mushroom_secret_sauce",
+     "shrimp_stirfry"
+    ]
+   }
+  },
+  {
+   "id": "safety_shrimp_pantry",
+   "description": "새우 알레르기: 내 재료로(모든 재료 보유)에서도 없다. 낙지 → 새우 대체도 쓰지 않는다",
+   "profile": {
+    "allergens": [
+     "shrimp"
+    ]
+   },
+   "request": {
+    "mode": "pantry",
+    "pantry": [
+     "buchimgaru",
+     "butter",
+     "cabbage",
+     "crab",
+     "cucumber",
+     "egg",
+     "green_onion",
+     "kimchi",
+     "manila_clam",
+     "mushroom",
+     "peanut_butter",
+     "potato",
+     "rice",
+     "shrimp_raw",
+     "squid_raw",
+     "walnut"
+    ],
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "ordered",
+    "ranking": "rules",
+    "notes": [
+     "rerank_off"
+    ],
+    "items": [
+     {
+      "id": "butter_potato",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": "ready",
+      "score": 0.7,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": "ready",
+      "score": 0.7,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": "ready",
+      "score": 0.716,
+      "breakdown": {
+       "I": 0.92,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [
+       [
+        "cooking_oil",
+        "butter"
+       ]
+      ],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": "ready",
+      "score": 0.7,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": "near",
+      "score": 0.665,
+      "breakdown": {
+       "I": 0.75,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": "near",
+      "score": 0.665,
+      "breakdown": {
+       "I": 0.75,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": "near",
+      "score": 0.665,
+      "breakdown": {
+       "I": 0.75,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [
+     "cabbage_saeujeot_soup",
+     "jeotgal_cabbage_salad",
+     "kimchi_fried_rice",
+     "kimchi_sauce_potato",
+     "mushroom_secret_sauce",
+     "shrimp_stirfry"
+    ]
+   }
+  },
+  {
+   "id": "safety_shrimp_dish_excluded",
+   "description": "새우 알레르기로 '김치볶음밥'을 찾으면 그 요리는 빠지고 dish_excluded",
+   "profile": {
+    "allergens": [
+     "shrimp"
+    ]
+   },
+   "request": {
+    "mode": "dish",
+    "query": "김치볶음밥",
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "ordered",
+    "ranking": "rules",
+    "notes": [
+     "dish_excluded",
+     "rerank_off"
+    ],
+    "items": [
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.342,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.3
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.342,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.3
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.342,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.3
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.342,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.3
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.342,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.3
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.278,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.225
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.237,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.15
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "crab"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "cucumber",
+       "egg"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "cucumber",
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.138,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.025
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.138,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.025
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [
+     "cabbage_saeujeot_soup",
+     "jeotgal_cabbage_salad",
+     "kimchi_fried_rice",
+     "kimchi_sauce_potato",
+     "mushroom_secret_sauce",
+     "shrimp_stirfry"
+    ]
+   }
+  },
+  {
+   "id": "safety_egg_garnish_optional",
+   "description": "계란 알레르기: 고명·선택 재료로 든 레시피도 제외",
+   "profile": {
+    "allergens": [
+     "egg"
+    ]
+   },
+   "request": {
+    "mode": "pantry",
+    "pantry": [
+     "buchimgaru",
+     "butter",
+     "cabbage",
+     "crab",
+     "cucumber",
+     "egg",
+     "green_onion",
+     "kimchi",
+     "manila_clam",
+     "mushroom",
+     "peanut_butter",
+     "potato",
+     "rice",
+     "shrimp_raw",
+     "squid_raw",
+     "walnut"
+    ],
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "ordered",
+    "ranking": "rules",
+    "notes": [
+     "rerank_off"
+    ],
+    "items": [
+     {
+      "id": "butter_potato",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_fried_rice",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": "ready",
+      "score": 0.7,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": "ready",
+      "score": 0.7,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "shrimp_stirfry",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": "ready",
+      "score": 0.74,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": "ready",
+      "score": 0.716,
+      "breakdown": {
+       "I": 0.92,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [
+       [
+        "cooking_oil",
+        "butter"
+       ]
+      ],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": "ready",
+      "score": 0.7,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": "ready",
+      "score": 0.68,
+      "breakdown": {
+       "I": 0.8,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [
+       [
+        "octopus",
+        "shrimp_raw"
+       ]
+      ],
+      "notes": []
+     },
+     {
+      "id": "cabbage_saeujeot_soup",
+      "group": "near",
+      "score": 0.665,
+      "breakdown": {
+       "I": 0.75,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "saeujeot"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "jeotgal_cabbage_salad",
+      "group": "near",
+      "score": 0.665,
+      "breakdown": {
+       "I": 0.75,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "jeotgal"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": "near",
+      "score": 0.665,
+      "breakdown": {
+       "I": 0.75,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": "near",
+      "score": 0.665,
+      "breakdown": {
+       "I": 0.75,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": "near",
+      "score": 0.665,
+      "breakdown": {
+       "I": 0.75,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [
+     "cucumber_soup_egg_garnish",
+     "mayo_cucumber_salad",
+     "mushroom_rice_optional_egg",
+     "mushroom_secret_sauce"
+    ]
+   }
+  },
+  {
+   "id": "safety_unmapped_with_allergy",
+   "description": "알레르기가 있으면 미매칭 재료(비법 소스) 레시피 제외",
+   "profile": {
+    "allergens": [
+     "milk"
+    ]
+   },
+   "request": {
+    "mode": "dish",
+    "query": "버섯",
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "ordered",
+    "ranking": "rules",
+    "notes": [
+     "rerank_off"
+    ],
+    "items": [
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.734,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [
+     "butter_potato",
+     "mushroom_secret_sauce",
+     "seasoning_blend_mushroom"
+    ]
+   }
+  },
+  {
+   "id": "safety_unmapped_without_allergy",
+   "description": "알레르기가 없으면 미매칭 재료 레시피도 나온다",
+   "profile": {},
+   "request": {
+    "mode": "dish",
+    "query": "버섯",
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "ordered",
+    "ranking": "rules",
+    "notes": [
+     "rerank_off"
+    ],
+    "items": [
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_secret_sauce",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.734,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": []
+   }
+  },
+  {
+   "id": "safety_allergy_beats_like",
+   "description": "김치를 좋아해도 새우 알레르기면 김치 레시피 제외",
+   "profile": {
+    "allergens": [
+     "shrimp"
+    ],
+    "likes": [
+     "kimchi"
+    ]
+   },
+   "request": {
+    "mode": "random",
+    "seed": 2,
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "set",
+    "ranking": "rules",
+    "notes": [],
+    "items": [
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "crab"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "egg"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [
+     "cabbage_saeujeot_soup",
+     "jeotgal_cabbage_salad",
+     "kimchi_fried_rice",
+     "kimchi_sauce_potato",
+     "mushroom_secret_sauce",
+     "shrimp_stirfry"
+    ]
+   }
+  },
+  {
+   "id": "safety_never_eat_definite_only",
+   "description": "새우 절대 안 먹음: 확실히 든 것만 제외, 김치(포함 가능)는 통과하고 dislike_possible",
+   "profile": {
+    "never_eat": [
+     "shrimp_raw"
+    ]
+   },
+   "request": {
+    "mode": "dish",
+    "query": "김치볶음밥",
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "ordered",
+    "ranking": "rules",
+    "notes": [
+     "rerank_off"
+    ],
+    "items": [
+     {
+      "id": "kimchi_fried_rice",
+      "group": null,
+      "score": 0.832,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 1.0
+      },
+      "missing": [
+       "rice",
+       "kimchi"
+      ],
+      "substitutions": [],
+      "notes": [
+       "dislike_possible"
+      ]
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": null,
+      "score": 0.342,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.3
+      },
+      "missing": [
+       "potato",
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": [
+       "dislike_possible"
+      ]
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.342,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.3
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.342,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.3
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.342,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.3
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.342,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.3
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.342,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.3
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.278,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.225
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.237,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.15
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "crab"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "cucumber",
+       "egg"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "jeotgal_cabbage_salad",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "cabbage",
+       "jeotgal"
+      ],
+      "substitutions": [],
+      "notes": [
+       "dislike_possible"
+      ]
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "cucumber",
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_secret_sauce",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.202,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.1
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.138,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.025
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.138,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.025
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [
+     "cabbage_saeujeot_soup",
+     "shrimp_stirfry"
+    ]
+   }
+  },
+  {
+   "id": "safety_bundle",
+   "description": "갑각류 묶음 = 게 + 새우",
+   "profile": {
+    "allergens": [
+     "crustacean_bundle"
+    ]
+   },
+   "request": {
+    "mode": "random",
+    "seed": 3,
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "set",
+    "ranking": "rules",
+    "notes": [],
+    "items": [
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "egg"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [
+     "cabbage_saeujeot_soup",
+     "crab_soup",
+     "jeotgal_cabbage_salad",
+     "kimchi_fried_rice",
+     "kimchi_sauce_potato",
+     "mushroom_secret_sauce",
+     "shrimp_stirfry"
+    ]
+   }
+  },
+  {
+   "id": "dislike_is_not_exclusion",
+   "description": "싫어하는 재료(감자)는 제외하지 않는다",
+   "profile": {
+    "dislikes": [
+     "potato"
+    ]
+   },
+   "request": {
+    "mode": "random",
+    "seed": 4,
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "set",
+    "ranking": "rules",
+    "notes": [],
+    "items": [
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.393,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.187,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cabbage_saeujeot_soup",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cabbage",
+       "saeujeot"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "crab"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "egg"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.365,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.0,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "jeotgal_cabbage_salad",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cabbage",
+       "jeotgal"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_fried_rice",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "rice",
+       "kimchi"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": null,
+      "score": 0.365,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.0,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato",
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_secret_sauce",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.365,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.0,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "shrimp_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "shrimp_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.365,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.0,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.325,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.0,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.325,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.0,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": []
+   }
+  },
+  {
+   "id": "spicy_limit_with_inference",
+   "description": "매운맛 0: 맛 모르는 레시피는 매운 재료·매운 제목이 없을 때만 통과(spicy_inferred)",
+   "profile": {
+    "spicy_level": 0
+   },
+   "request": {
+    "mode": "random",
+    "seed": 5,
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "set",
+    "ranking": "rules",
+    "notes": [],
+    "items": [
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cabbage_saeujeot_soup",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cabbage",
+       "saeujeot"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "crab"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "egg"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "jeotgal_cabbage_salad",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cabbage",
+       "jeotgal"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_fried_rice",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "rice",
+       "kimchi"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato",
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_secret_sauce",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "shrimp_stirfry",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "shrimp_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.475,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": [
+       "spicy_inferred"
+      ]
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.515,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 1.0,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [
+     "u_gochujang_potato",
+     "u_title_spicy"
+    ]
+   }
+  },
+  {
+   "id": "spicy_five_no_limit",
+   "description": "매운맛 5 = 한도 없음(맛 모르는 레시피도 모두 통과)",
+   "profile": {
+    "spicy_level": 5
+   },
+   "request": {
+    "mode": "random",
+    "seed": 6,
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "set",
+    "ranking": "rules",
+    "notes": [],
+    "items": [
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cabbage_saeujeot_soup",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cabbage",
+       "saeujeot"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "crab"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "egg"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "jeotgal_cabbage_salad",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cabbage",
+       "jeotgal"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_fried_rice",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "rice",
+       "kimchi"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato",
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_secret_sauce",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "shrimp_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "shrimp_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.4,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": []
+   }
+  },
+  {
+   "id": "pantry_groups_rules",
+   "description": "감자만 보유: 지금 바로 / 조금만 사면 묶음과 규칙 순위",
+   "profile": {
+    "skill_level": 1
+   },
+   "request": {
+    "mode": "pantry",
+    "pantry": [
+     "potato"
+    ],
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "ordered",
+    "ranking": "rules",
+    "notes": [
+     "rerank_off"
+    ],
+    "items": [
+     {
+      "id": "gochujang_potato",
+      "group": "ready",
+      "score": 0.75,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 1.0,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": "ready",
+      "score": 0.75,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 1.0,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": "ready",
+      "score": 0.75,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 1.0,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": "ready",
+      "score": 0.7,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": "ready",
+      "score": 0.7,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": "near",
+      "score": 0.675,
+      "breakdown": {
+       "I": 0.75,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 1.0,
+       "M": 1.0
+      },
+      "missing": [
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "butter_potato",
+      "group": "near",
+      "score": 0.63,
+      "breakdown": {
+       "I": 0.6,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 1.0,
+       "M": 1.0
+      },
+      "missing": [
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": []
+   }
+  },
+  {
+   "id": "pantry_substitute",
+   "description": "버섯 + 버터 보유: 버섯볶음은 식용유 대신 버터로 지금 바로",
+   "profile": {},
+   "request": {
+    "mode": "pantry",
+    "pantry": [
+     "mushroom",
+     "butter"
+    ],
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "ordered",
+    "ranking": "rules",
+    "notes": [
+     "rerank_off"
+    ],
+    "items": [
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": "ready",
+      "score": 0.716,
+      "breakdown": {
+       "I": 0.92,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [
+       [
+        "cooking_oil",
+        "butter"
+       ]
+      ],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": "ready",
+      "score": 0.7,
+      "breakdown": {
+       "I": 1.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_secret_sauce",
+      "group": "near",
+      "score": 0.665,
+      "breakdown": {
+       "I": 0.75,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": "near",
+      "score": 0.665,
+      "breakdown": {
+       "I": 0.75,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": "near",
+      "score": 0.665,
+      "breakdown": {
+       "I": 0.75,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0
+      },
+      "missing": [
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": []
+   }
+  },
+  {
+   "id": "dish_rules_exact_title",
+   "description": "'감자조림' 찾기(규칙 순위): 정확히 같은 제목이 1위",
+   "profile": {},
+   "request": {
+    "mode": "dish",
+    "query": "감자조림",
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "ordered",
+    "ranking": "rules",
+    "notes": [
+     "rerank_off"
+    ],
+    "items": [
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.832,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 1.0
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.762,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.482,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.5
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": null,
+      "score": 0.482,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.5
+      },
+      "missing": [
+       "potato",
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.482,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.5
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.404,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.406
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.404,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.406
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cabbage_saeujeot_soup",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "cabbage",
+       "saeujeot"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "crab"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "cucumber",
+       "egg"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "jeotgal_cabbage_salad",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "cabbage",
+       "jeotgal"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_fried_rice",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "rice",
+       "kimchi"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "cucumber",
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_secret_sauce",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "shrimp_stirfry",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "shrimp_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.22,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.125
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.142,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.031
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": []
+   }
+  },
+  {
+   "id": "dish_no_match",
+   "description": "아무것도 걸리지 않는 문장(규칙 순위) → 결과 없음, dish_no_match",
+   "profile": {},
+   "request": {
+    "mode": "dish",
+    "query": "xyzxyz",
+    "limit": 50,
+    "rerank": false
+   },
+   "judge": null,
+   "expect": {
+    "compare": "ordered",
+    "ranking": "rules",
+    "notes": [
+     "dish_no_match"
+    ],
+    "items": [],
+    "must_exclude": []
+   }
+  },
+  {
+   "id": "jev_dish",
+   "description": "Jev 순위: '감자' 찾기, 항목은 요청·실력",
+   "profile": {
+    "skill_level": 2
+   },
+   "request": {
+    "mode": "dish",
+    "query": "감자",
+    "limit": 50
+   },
+   "judge": {
+    "judge_scores": {
+     "감자 고추장볶음": 0.98,
+     "감자 소금찜": 0.95,
+     "감자구이": 0.92,
+     "감자조림": 0.89,
+     "게탕": 0.86,
+     "고추장 감자조림": 0.83,
+     "굴소스 버섯볶음": 0.8,
+     "김치볶음밥": 0.77,
+     "김치양념 감자볶음": 0.74,
+     "낙지볶음": 0.71,
+     "매콤 버섯구이": 0.68,
+     "바지락국": 0.65,
+     "배추 새우젓국": 0.62,
+     "배추겉절이(젓갈)": 0.59,
+     "버섯밥(계란 선택)": 0.56,
+     "버섯볶음": 0.53,
+     "버터감자": 0.5,
+     "비법소스 버섯구이": 0.47,
+     "새우볶음": 0.44,
+     "오이 땅콩버터 무침": 0.41,
+     "오이 마요 샐러드": 0.38,
+     "오이냉국(지단 고명)": 0.35,
+     "오징어볶음": 0.32,
+     "조미료 버섯구이": 0.29,
+     "파전": 0.26,
+     "호두볶음": 0.23
+    },
+    "default": 0.5,
+    "confidence": 0.9,
+    "screen_scores": {},
+    "fails": false
+   },
+   "expect": {
+    "compare": "ordered",
+    "ranking": "jev",
+    "notes": [
+     "jev_screened"
+    ],
+    "items": [
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.98,
+      "breakdown": {
+       "J_request": 0.98,
+       "J_skill": 0.98,
+       "J": 0.98,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.95,
+      "breakdown": {
+       "J_request": 0.95,
+       "J_skill": 0.95,
+       "J": 0.95,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.92,
+      "breakdown": {
+       "J_request": 0.92,
+       "J_skill": 0.92,
+       "J": 0.92,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.89,
+      "breakdown": {
+       "J_request": 0.89,
+       "J_skill": 0.89,
+       "J": 0.89,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": null,
+      "score": 0.86,
+      "breakdown": {
+       "J_request": 0.86,
+       "J_skill": 0.86,
+       "J": 0.86,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "crab"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.83,
+      "breakdown": {
+       "J_request": 0.83,
+       "J_skill": 0.83,
+       "J": 0.83,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.8,
+      "breakdown": {
+       "J_request": 0.8,
+       "J_skill": 0.8,
+       "J": 0.8,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_fried_rice",
+      "group": null,
+      "score": 0.77,
+      "breakdown": {
+       "J_request": 0.77,
+       "J_skill": 0.77,
+       "J": 0.77,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "rice",
+       "kimchi"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": null,
+      "score": 0.74,
+      "breakdown": {
+       "J_request": 0.74,
+       "J_skill": 0.74,
+       "J": 0.74,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato",
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.71,
+      "breakdown": {
+       "J_request": 0.71,
+       "J_skill": 0.71,
+       "J": 0.71,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.68,
+      "breakdown": {
+       "J_request": 0.68,
+       "J_skill": 0.68,
+       "J": 0.68,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.65,
+      "breakdown": {
+       "J_request": 0.65,
+       "J_skill": 0.65,
+       "J": 0.65,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cabbage_saeujeot_soup",
+      "group": null,
+      "score": 0.62,
+      "breakdown": {
+       "J_request": 0.62,
+       "J_skill": 0.62,
+       "J": 0.62,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cabbage",
+       "saeujeot"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "jeotgal_cabbage_salad",
+      "group": null,
+      "score": 0.59,
+      "breakdown": {
+       "J_request": 0.59,
+       "J_skill": 0.59,
+       "J": 0.59,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cabbage",
+       "jeotgal"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.56,
+      "breakdown": {
+       "J_request": 0.56,
+       "J_skill": 0.56,
+       "J": 0.56,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.53,
+      "breakdown": {
+       "J_request": 0.53,
+       "J_skill": 0.53,
+       "J": 0.53,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_secret_sauce",
+      "group": null,
+      "score": 0.47,
+      "breakdown": {
+       "J_request": 0.47,
+       "J_skill": 0.47,
+       "J": 0.47,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "shrimp_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "J_request": 0.44,
+       "J_skill": 0.44,
+       "J": 0.44,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "shrimp_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.41,
+      "breakdown": {
+       "J_request": 0.41,
+       "J_skill": 0.41,
+       "J": 0.41,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": null,
+      "score": 0.38,
+      "breakdown": {
+       "J_request": 0.38,
+       "J_skill": 0.38,
+       "J": 0.38,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cucumber",
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": null,
+      "score": 0.35,
+      "breakdown": {
+       "J_request": 0.35,
+       "J_skill": 0.35,
+       "J": 0.35,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cucumber",
+       "egg"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.32,
+      "breakdown": {
+       "J_request": 0.32,
+       "J_skill": 0.32,
+       "J": 0.32,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.29,
+      "breakdown": {
+       "J_request": 0.29,
+       "J_skill": 0.29,
+       "J": 0.29,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.26,
+      "breakdown": {
+       "J_request": 0.26,
+       "J_skill": 0.26,
+       "J": 0.26,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.23,
+      "breakdown": {
+       "J_request": 0.23,
+       "J_skill": 0.23,
+       "J": 0.23,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [],
+    "aspects": [
+     "request",
+     "skill"
+    ]
+   }
+  },
+  {
+   "id": "jev_pantry_aspects",
+   "description": "Jev 순위: 내 재료로, 항목은 맛·재료 취향·음식 종류·실력·가진 재료. 묶음 경계 유지",
+   "profile": {
+    "likes": [
+     "potato"
+    ],
+    "spicy_level": 2,
+    "cuisine_likes": [
+     "한식"
+    ],
+    "skill_level": 1
+   },
+   "request": {
+    "mode": "pantry",
+    "pantry": [
+     "potato",
+     "mushroom"
+    ],
+    "limit": 50
+   },
+   "judge": {
+    "judge_scores": {
+     "감자 고추장볶음": 0.98,
+     "감자 소금찜": 0.95,
+     "감자구이": 0.92,
+     "감자조림": 0.89,
+     "게탕": 0.86,
+     "고추장 감자조림": 0.83,
+     "굴소스 버섯볶음": 0.8,
+     "김치볶음밥": 0.77,
+     "김치양념 감자볶음": 0.74,
+     "낙지볶음": 0.71,
+     "매콤 버섯구이": 0.68,
+     "바지락국": 0.65,
+     "배추 새우젓국": 0.62,
+     "배추겉절이(젓갈)": 0.59,
+     "버섯밥(계란 선택)": 0.56,
+     "버섯볶음": 0.53,
+     "버터감자": 0.5,
+     "비법소스 버섯구이": 0.47,
+     "새우볶음": 0.44,
+     "오이 땅콩버터 무침": 0.41,
+     "오이 마요 샐러드": 0.38,
+     "오이냉국(지단 고명)": 0.35,
+     "오징어볶음": 0.32,
+     "조미료 버섯구이": 0.29,
+     "파전": 0.26,
+     "호두볶음": 0.23
+    },
+    "default": 0.5,
+    "confidence": 0.9,
+    "screen_scores": {},
+    "fails": false
+   },
+   "expect": {
+    "compare": "ordered",
+    "ranking": "jev",
+    "notes": [],
+    "items": [
+     {
+      "id": "u_mild_potato",
+      "group": "ready",
+      "score": 0.95,
+      "breakdown": {
+       "J_taste": 0.95,
+       "J_ingredients": 0.95,
+       "J_cuisine": 0.95,
+       "J_skill": 0.95,
+       "J_pantry": 0.95,
+       "J": 0.95,
+       "J_conf": 0.9
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": [
+       "spicy_inferred"
+      ]
+     },
+     {
+      "id": "potato_salt",
+      "group": "ready",
+      "score": 0.92,
+      "breakdown": {
+       "J_taste": 0.92,
+       "J_ingredients": 0.92,
+       "J_cuisine": 0.92,
+       "J_skill": 0.92,
+       "J_pantry": 0.92,
+       "J": 0.92,
+       "J_conf": 0.9
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": "ready",
+      "score": 0.89,
+      "breakdown": {
+       "J_taste": 0.89,
+       "J_ingredients": 0.89,
+       "J_cuisine": 0.89,
+       "J_skill": 0.89,
+       "J_pantry": 0.89,
+       "J": 0.89,
+       "J_conf": 0.9
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": "ready",
+      "score": 0.83,
+      "breakdown": {
+       "J_taste": 0.83,
+       "J_ingredients": 0.83,
+       "J_cuisine": 0.83,
+       "J_skill": 0.83,
+       "J_pantry": 0.83,
+       "J": 0.83,
+       "J_conf": 0.9
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": "near",
+      "score": 0.8,
+      "breakdown": {
+       "J_taste": 0.8,
+       "J_ingredients": 0.8,
+       "J_cuisine": 0.8,
+       "J_skill": 0.8,
+       "J_pantry": 0.8,
+       "J": 0.8,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": "near",
+      "score": 0.74,
+      "breakdown": {
+       "J_taste": 0.74,
+       "J_ingredients": 0.74,
+       "J_cuisine": 0.74,
+       "J_skill": 0.74,
+       "J_pantry": 0.74,
+       "J": 0.74,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": "near",
+      "score": 0.53,
+      "breakdown": {
+       "J_taste": 0.53,
+       "J_ingredients": 0.53,
+       "J_cuisine": 0.53,
+       "J_skill": 0.53,
+       "J_pantry": 0.53,
+       "J": 0.53,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "butter_potato",
+      "group": "near",
+      "score": 0.5,
+      "breakdown": {
+       "J_taste": 0.5,
+       "J_ingredients": 0.5,
+       "J_cuisine": 0.5,
+       "J_skill": 0.5,
+       "J_pantry": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_secret_sauce",
+      "group": "near",
+      "score": 0.47,
+      "breakdown": {
+       "J_taste": 0.47,
+       "J_ingredients": 0.47,
+       "J_cuisine": 0.47,
+       "J_skill": 0.47,
+       "J_pantry": 0.47,
+       "J": 0.47,
+       "J_conf": 0.9
+      },
+      "missing": [],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": "near",
+      "score": 0.29,
+      "breakdown": {
+       "J_taste": 0.29,
+       "J_ingredients": 0.29,
+       "J_cuisine": 0.29,
+       "J_skill": 0.29,
+       "J_pantry": 0.29,
+       "J": 0.29,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [
+     "u_gochujang_potato",
+     "u_title_spicy"
+    ],
+    "aspects": [
+     "taste",
+     "ingredients",
+     "cuisine",
+     "skill",
+     "pantry"
+    ]
+   }
+  },
+  {
+   "id": "jev_screen_fill",
+   "description": "Jev 순위: 규칙 관련 후보가 없는 문장 → 걸러내기로 보충(jev_screened)",
+   "profile": {},
+   "request": {
+    "mode": "dish",
+    "query": "오늘 저녁 뭐 먹지",
+    "limit": 50
+   },
+   "judge": {
+    "judge_scores": {},
+    "default": 0.5,
+    "confidence": 0.9,
+    "screen_scores": {
+     "버섯볶음": 1.0,
+     "파전": 0.9,
+     "감자구이": 0.8
+    },
+    "fails": false
+   },
+   "expect": {
+    "compare": "ordered",
+    "ranking": "jev",
+    "notes": [
+     "jev_screened"
+    ],
+    "items": [
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cabbage_saeujeot_soup",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cabbage",
+       "saeujeot"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "crab"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cucumber",
+       "egg"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "jeotgal_cabbage_salad",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cabbage",
+       "jeotgal"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_fried_rice",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "rice",
+       "kimchi"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato",
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cucumber",
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_secret_sauce",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "shrimp_stirfry",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "shrimp_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [],
+    "aspects": [
+     "request",
+     "skill"
+    ]
+   }
+  },
+  {
+   "id": "jev_random_pool",
+   "description": "Jev 순위: 랜덤(후보 = 제외 통과 레시피 전체, 시험 데이터가 40개 미만)",
+   "profile": {
+    "allergens": [
+     "egg"
+    ]
+   },
+   "request": {
+    "mode": "random",
+    "seed": 7,
+    "limit": 50
+   },
+   "judge": {
+    "judge_scores": {
+     "감자 고추장볶음": 0.98,
+     "감자 소금찜": 0.95,
+     "감자구이": 0.92,
+     "감자조림": 0.89,
+     "게탕": 0.86,
+     "고추장 감자조림": 0.83,
+     "굴소스 버섯볶음": 0.8,
+     "김치볶음밥": 0.77,
+     "김치양념 감자볶음": 0.74,
+     "낙지볶음": 0.71,
+     "매콤 버섯구이": 0.68,
+     "바지락국": 0.65,
+     "배추 새우젓국": 0.62,
+     "배추겉절이(젓갈)": 0.59,
+     "버섯밥(계란 선택)": 0.56,
+     "버섯볶음": 0.53,
+     "버터감자": 0.5,
+     "비법소스 버섯구이": 0.47,
+     "새우볶음": 0.44,
+     "오이 땅콩버터 무침": 0.41,
+     "오이 마요 샐러드": 0.38,
+     "오이냉국(지단 고명)": 0.35,
+     "오징어볶음": 0.32,
+     "조미료 버섯구이": 0.29,
+     "파전": 0.26,
+     "호두볶음": 0.23
+    },
+    "default": 0.5,
+    "confidence": 0.9,
+    "screen_scores": {},
+    "fails": false
+   },
+   "expect": {
+    "compare": "ordered",
+    "ranking": "jev",
+    "notes": [],
+    "items": [
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.98,
+      "breakdown": {
+       "J_skill": 0.98,
+       "J": 0.98,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.95,
+      "breakdown": {
+       "J_skill": 0.95,
+       "J": 0.95,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.92,
+      "breakdown": {
+       "J_skill": 0.92,
+       "J": 0.92,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.89,
+      "breakdown": {
+       "J_skill": 0.89,
+       "J": 0.89,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": null,
+      "score": 0.86,
+      "breakdown": {
+       "J_skill": 0.86,
+       "J": 0.86,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "crab"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.83,
+      "breakdown": {
+       "J_skill": 0.83,
+       "J": 0.83,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.8,
+      "breakdown": {
+       "J_skill": 0.8,
+       "J": 0.8,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_fried_rice",
+      "group": null,
+      "score": 0.77,
+      "breakdown": {
+       "J_skill": 0.77,
+       "J": 0.77,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "rice",
+       "kimchi"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": null,
+      "score": 0.74,
+      "breakdown": {
+       "J_skill": 0.74,
+       "J": 0.74,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato",
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.71,
+      "breakdown": {
+       "J_skill": 0.71,
+       "J": 0.71,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.68,
+      "breakdown": {
+       "J_skill": 0.68,
+       "J": 0.68,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.65,
+      "breakdown": {
+       "J_skill": 0.65,
+       "J": 0.65,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cabbage_saeujeot_soup",
+      "group": null,
+      "score": 0.62,
+      "breakdown": {
+       "J_skill": 0.62,
+       "J": 0.62,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cabbage",
+       "saeujeot"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "jeotgal_cabbage_salad",
+      "group": null,
+      "score": 0.59,
+      "breakdown": {
+       "J_skill": 0.59,
+       "J": 0.59,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cabbage",
+       "jeotgal"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.53,
+      "breakdown": {
+       "J_skill": 0.53,
+       "J": 0.53,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "shrimp_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "J_skill": 0.44,
+       "J": 0.44,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "shrimp_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.41,
+      "breakdown": {
+       "J_skill": 0.41,
+       "J": 0.41,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.32,
+      "breakdown": {
+       "J_skill": 0.32,
+       "J": 0.32,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.29,
+      "breakdown": {
+       "J_skill": 0.29,
+       "J": 0.29,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.26,
+      "breakdown": {
+       "J_skill": 0.26,
+       "J": 0.26,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.23,
+      "breakdown": {
+       "J_skill": 0.23,
+       "J": 0.23,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [
+     "cucumber_soup_egg_garnish",
+     "mayo_cucumber_salad",
+     "mushroom_rice_optional_egg",
+     "mushroom_secret_sauce"
+    ],
+    "aspects": [
+     "skill"
+    ]
+   }
+  },
+  {
+   "id": "jev_failure_fallback",
+   "description": "Jev 실패 → 규칙 순위로 대체(jev_unavailable)",
+   "profile": {},
+   "request": {
+    "mode": "dish",
+    "query": "감자",
+    "limit": 50
+   },
+   "judge": {
+    "judge_scores": {
+     "감자 고추장볶음": 0.98,
+     "감자 소금찜": 0.95,
+     "감자구이": 0.92,
+     "감자조림": 0.89,
+     "게탕": 0.86,
+     "고추장 감자조림": 0.83,
+     "굴소스 버섯볶음": 0.8,
+     "김치볶음밥": 0.77,
+     "김치양념 감자볶음": 0.74,
+     "낙지볶음": 0.71,
+     "매콤 버섯구이": 0.68,
+     "바지락국": 0.65,
+     "배추 새우젓국": 0.62,
+     "배추겉절이(젓갈)": 0.59,
+     "버섯밥(계란 선택)": 0.56,
+     "버섯볶음": 0.53,
+     "버터감자": 0.5,
+     "비법소스 버섯구이": 0.47,
+     "새우볶음": 0.44,
+     "오이 땅콩버터 무침": 0.41,
+     "오이 마요 샐러드": 0.38,
+     "오이냉국(지단 고명)": 0.35,
+     "오징어볶음": 0.32,
+     "조미료 버섯구이": 0.29,
+     "파전": 0.26,
+     "호두볶음": 0.23
+    },
+    "default": 0.5,
+    "confidence": 0.9,
+    "screen_scores": {},
+    "fails": true
+   },
+   "expect": {
+    "compare": "ordered",
+    "ranking": "rules",
+    "notes": [
+     "jev_unavailable",
+     "rerank_off"
+    ],
+    "items": [
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "potato",
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.746,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.9,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.734,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.734,
+      "breakdown": {
+       "I": 0.0,
+       "K": 0.5,
+       "T": 0.5,
+       "P": 0.5,
+       "D": 0.5,
+       "M": 1.0,
+       "S": 0.877
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": []
+   }
+  },
+  {
+   "id": "jev_spicy_five_not_asked",
+   "description": "매운맛 5는 Jev 맛 취향 항목으로 묻지 않는다",
+   "profile": {
+    "spicy_level": 5,
+    "likes": [
+     "potato"
+    ]
+   },
+   "request": {
+    "mode": "dish",
+    "query": "감자",
+    "limit": 50
+   },
+   "judge": {
+    "judge_scores": {
+     "감자 고추장볶음": 0.98,
+     "감자 소금찜": 0.95,
+     "감자구이": 0.92,
+     "감자조림": 0.89,
+     "게탕": 0.86,
+     "고추장 감자조림": 0.83,
+     "굴소스 버섯볶음": 0.8,
+     "김치볶음밥": 0.77,
+     "김치양념 감자볶음": 0.74,
+     "낙지볶음": 0.71,
+     "매콤 버섯구이": 0.68,
+     "바지락국": 0.65,
+     "배추 새우젓국": 0.62,
+     "배추겉절이(젓갈)": 0.59,
+     "버섯밥(계란 선택)": 0.56,
+     "버섯볶음": 0.53,
+     "버터감자": 0.5,
+     "비법소스 버섯구이": 0.47,
+     "새우볶음": 0.44,
+     "오이 땅콩버터 무침": 0.41,
+     "오이 마요 샐러드": 0.38,
+     "오이냉국(지단 고명)": 0.35,
+     "오징어볶음": 0.32,
+     "조미료 버섯구이": 0.29,
+     "파전": 0.26,
+     "호두볶음": 0.23
+    },
+    "default": 0.5,
+    "confidence": 0.9,
+    "screen_scores": {},
+    "fails": false
+   },
+   "expect": {
+    "compare": "ordered",
+    "ranking": "jev",
+    "notes": [
+     "jev_screened"
+    ],
+    "items": [
+     {
+      "id": "u_gochujang_potato",
+      "group": null,
+      "score": 0.98,
+      "breakdown": {
+       "J_request": 0.98,
+       "J_ingredients": 0.98,
+       "J_skill": 0.98,
+       "J": 0.98,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_mild_potato",
+      "group": null,
+      "score": 0.95,
+      "breakdown": {
+       "J_request": 0.95,
+       "J_ingredients": 0.95,
+       "J_skill": 0.95,
+       "J": 0.95,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "potato_salt",
+      "group": null,
+      "score": 0.92,
+      "breakdown": {
+       "J_request": 0.92,
+       "J_ingredients": 0.92,
+       "J_skill": 0.92,
+       "J": 0.92,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "soy_braised_potato",
+      "group": null,
+      "score": 0.89,
+      "breakdown": {
+       "J_request": 0.89,
+       "J_ingredients": 0.89,
+       "J_skill": 0.89,
+       "J": 0.89,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "crab_soup",
+      "group": null,
+      "score": 0.86,
+      "breakdown": {
+       "J_request": 0.86,
+       "J_ingredients": 0.86,
+       "J_skill": 0.86,
+       "J": 0.86,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "crab"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "gochujang_potato",
+      "group": null,
+      "score": 0.83,
+      "breakdown": {
+       "J_request": 0.83,
+       "J_ingredients": 0.83,
+       "J_skill": 0.83,
+       "J": 0.83,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "oyster_sauce_mushroom",
+      "group": null,
+      "score": 0.8,
+      "breakdown": {
+       "J_request": 0.8,
+       "J_ingredients": 0.8,
+       "J_skill": 0.8,
+       "J": 0.8,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom",
+       "oyster_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_fried_rice",
+      "group": null,
+      "score": 0.77,
+      "breakdown": {
+       "J_request": 0.77,
+       "J_ingredients": 0.77,
+       "J_skill": 0.77,
+       "J": 0.77,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "rice",
+       "kimchi"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "kimchi_sauce_potato",
+      "group": null,
+      "score": 0.74,
+      "breakdown": {
+       "J_request": 0.74,
+       "J_ingredients": 0.74,
+       "J_skill": 0.74,
+       "J": 0.74,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato",
+       "kimchi_sauce"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "octopus_stirfry",
+      "group": null,
+      "score": 0.71,
+      "breakdown": {
+       "J_request": 0.71,
+       "J_ingredients": 0.71,
+       "J_skill": 0.71,
+       "J": 0.71,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "octopus"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "u_title_spicy",
+      "group": null,
+      "score": 0.68,
+      "breakdown": {
+       "J_request": 0.68,
+       "J_ingredients": 0.68,
+       "J_skill": 0.68,
+       "J": 0.68,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "manila_clam_soup",
+      "group": null,
+      "score": 0.65,
+      "breakdown": {
+       "J_request": 0.65,
+       "J_ingredients": 0.65,
+       "J_skill": 0.65,
+       "J": 0.65,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "manila_clam"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cabbage_saeujeot_soup",
+      "group": null,
+      "score": 0.62,
+      "breakdown": {
+       "J_request": 0.62,
+       "J_ingredients": 0.62,
+       "J_skill": 0.62,
+       "J": 0.62,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cabbage",
+       "saeujeot"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "jeotgal_cabbage_salad",
+      "group": null,
+      "score": 0.59,
+      "breakdown": {
+       "J_request": 0.59,
+       "J_ingredients": 0.59,
+       "J_skill": 0.59,
+       "J": 0.59,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cabbage",
+       "jeotgal"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_rice_optional_egg",
+      "group": null,
+      "score": 0.56,
+      "breakdown": {
+       "J_request": 0.56,
+       "J_ingredients": 0.56,
+       "J_skill": 0.56,
+       "J": 0.56,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "rice",
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_stirfry_oil",
+      "group": null,
+      "score": 0.53,
+      "breakdown": {
+       "J_request": 0.53,
+       "J_ingredients": 0.53,
+       "J_skill": 0.53,
+       "J": 0.53,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom",
+       "cooking_oil"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "butter_potato",
+      "group": null,
+      "score": 0.5,
+      "breakdown": {
+       "J_request": 0.5,
+       "J_ingredients": 0.5,
+       "J_skill": 0.5,
+       "J": 0.5,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "potato",
+       "butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mushroom_secret_sauce",
+      "group": null,
+      "score": 0.47,
+      "breakdown": {
+       "J_request": 0.47,
+       "J_ingredients": 0.47,
+       "J_skill": 0.47,
+       "J": 0.47,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "shrimp_stirfry",
+      "group": null,
+      "score": 0.44,
+      "breakdown": {
+       "J_request": 0.44,
+       "J_ingredients": 0.44,
+       "J_skill": 0.44,
+       "J": 0.44,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "shrimp_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "peanut_butter_cucumber",
+      "group": null,
+      "score": 0.41,
+      "breakdown": {
+       "J_request": 0.41,
+       "J_ingredients": 0.41,
+       "J_skill": 0.41,
+       "J": 0.41,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cucumber",
+       "peanut_butter"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "mayo_cucumber_salad",
+      "group": null,
+      "score": 0.38,
+      "breakdown": {
+       "J_request": 0.38,
+       "J_ingredients": 0.38,
+       "J_skill": 0.38,
+       "J": 0.38,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cucumber",
+       "mayonnaise"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "cucumber_soup_egg_garnish",
+      "group": null,
+      "score": 0.35,
+      "breakdown": {
+       "J_request": 0.35,
+       "J_ingredients": 0.35,
+       "J_skill": 0.35,
+       "J": 0.35,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "cucumber",
+       "egg"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "squid_stirfry",
+      "group": null,
+      "score": 0.32,
+      "breakdown": {
+       "J_request": 0.32,
+       "J_ingredients": 0.32,
+       "J_skill": 0.32,
+       "J": 0.32,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "squid_raw"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "seasoning_blend_mushroom",
+      "group": null,
+      "score": 0.29,
+      "breakdown": {
+       "J_request": 0.29,
+       "J_ingredients": 0.29,
+       "J_skill": 0.29,
+       "J": 0.29,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "mushroom",
+       "seasoning_blend"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "pajeon",
+      "group": null,
+      "score": 0.26,
+      "breakdown": {
+       "J_request": 0.26,
+       "J_ingredients": 0.26,
+       "J_skill": 0.26,
+       "J": 0.26,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "green_onion",
+       "buchimgaru"
+      ],
+      "substitutions": [],
+      "notes": []
+     },
+     {
+      "id": "walnut_roast",
+      "group": null,
+      "score": 0.23,
+      "breakdown": {
+       "J_request": 0.23,
+       "J_ingredients": 0.23,
+       "J_skill": 0.23,
+       "J": 0.23,
+       "J_conf": 0.9
+      },
+      "missing": [
+       "walnut"
+      ],
+      "substitutions": [],
+      "notes": []
+     }
+    ],
+    "must_exclude": [],
+    "aspects": [
+     "request",
+     "ingredients",
+     "skill"
+    ]
+   }
+  },
+  {
+   "id": "invalid_like_and_dislike",
+   "description": "같은 재료를 좋아함·싫어함에 동시에 → 입력 오류",
+   "profile": {
+    "likes": [
+     "potato"
+    ],
+    "dislikes": [
+     "potato"
+    ]
+   },
+   "request": {
+    "mode": "random",
+    "seed": 1
+   },
+   "judge": null,
+   "expect": {
+    "error": "invalid_profile",
+    "message": "좋아하는 재료와 싫어하는 재료에 같은 재료가 있습니다: ['potato']"
+   }
+  },
+  {
+   "id": "invalid_spicy_range",
+   "description": "매운맛 정도 범위 밖 → 입력 오류",
+   "profile": {
+    "spicy_level": 6
+   },
+   "request": {
+    "mode": "random",
+    "seed": 1
+   },
+   "judge": null,
+   "expect": {
+    "error": "invalid_profile",
+    "message": "매운맛 정도는 0~5입니다: 6"
+   }
+  }
+ ]
+}
