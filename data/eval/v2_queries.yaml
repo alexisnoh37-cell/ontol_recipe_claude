@@ -1,0 +1,22 @@
+# 추천 v2 평가용 요리 찾기 문장 (docs/plan.md 부록 G-13, scripts/eval_v2.py). 사람이 늘리고 고친다.
+# expect_title_any: 상위 결과 제목에 이 말 중 하나가 있으면 '요청에 맞음'으로 센다(자동 지표)
+# expect_ingredients: 상위 결과가 이 재료(또는 그 하위 재료)를 쓰면 '요청에 맞음'으로 센다
+# 둘 다 비어 있으면 자동 판정 없이 사람이 결과표를 보고 판단한다
+queries:
+  - query: 김치찌개
+    expect_title_any: [김치찌개]
+  - query: 된장찌개
+    expect_title_any: [된장찌개, 된장국]
+  - query: 오늘은 얼큰한 국물이 끌려
+    expect_title_any: [국, 찌개, 탕, 전골, 짬뽕, 국수, 라면, 칼국수, 수제비]
+  - query: 파스타
+    expect_title_any: [파스타, 스파게티, 펜네, 라자냐]
+  - query: 닭고기로 뭐 해먹지
+    expect_ingredients: [chicken]
+  - query: 계란 요리
+    expect_ingredients: [egg]
+  - query: 순한 아이 반찬
+    expect_title_any: [무침, 조림, 볶음, 나물, 전, 찜]
+  - query: 간단한 아침
+  - query: 비 오는 날 생각나는 음식
+  - query: 다이어트 메뉴

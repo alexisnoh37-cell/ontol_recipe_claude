@@ -1,0 +1,108 @@
+# 추천 v2 직접 테스트용 페르소나 (docs/plan.md 부록 G-11). 골든셋(tests/golden/personas.yaml)과 별개다.
+# 사용자 정보는 다른 앱이 저장하는 6가지 입력 그대로다(engine/v2/profile.py SimpleProfile).
+#   allergens: 알레르기 그룹 id(들어 있을 수도 있는 재료까지 제외)
+#   never_eat: 절대 안 먹는 재료 id(확실히 들어간 재료만 제외)
+#   likes / dislikes: 좋아하는·싫어하는 재료 id(점수만, 제외 안 함)
+#   spicy_level: 매운맛 정도 0~5(넘으면 제외, 5는 한도 없음)
+#   cuisine_likes / cuisine_dislikes: 음식 종류(한식·일식·중식·양식, 점수만)
+#   skill_level: 요리 실력 1~3
+# try: 화면에서 넣어 볼 재료(pantry)와 요리 찾기 문장(dish). checks: 결과에서 확인할 것.
+
+personas:
+  - id: t1_shrimp_allergy_spicy
+    name: "① 새우 알레르기 · 매운 한식파"
+    description: 매운 한식을 좋아하고 김치·삼겹살을 좋아하지만 새우 알레르기가 있다.
+    allergens: [shrimp]
+    never_eat: []
+    likes: [pork_belly, kimchi]
+    dislikes: [eggplant]
+    spicy_level: 4
+    cuisine_likes: [한식]
+    cuisine_dislikes: []
+    skill_level: 2
+    try:
+      pantry: [pork_belly, tofu, onion, green_onion]
+      dish: [김치찌개, 오늘은 얼큰한 국물이 끌려]
+    checks:
+      - 김치는 좋아하는 재료지만 새우젓이 들어 있을 수 있어 김치가 든 레시피는 나오지 않는다(알레르기가 좋아함보다 우선).
+      - '"김치찌개"를 찾으면 "못 드시는 재료가 들어 있어 뺐습니다" 안내가 나오고, 김치가 없는 다른 요리가 나온다(Jev가 전체에서 찾아 보충).'
+      - 새우·새우젓·액젓류가 든 레시피가 없다. 확인되지 않은 재료가 있는 레시피도 없다(알레르기 사용자).
+      - 맛 정보가 없는 식품안전나라 레시피는 고추류 등 매운 재료가 없을 때만 나오고, 카드에 "맵지 않은 요리로 보았습니다" 안내가 붙는다(D9).
+
+  - id: t2_no_spicy_beginner
+    name: "② 매운 것 못 먹는 요리 초보"
+    description: 매운 것을 전혀 못 먹고 요리도 처음이다. 계란과 햄을 좋아하고 오이는 별로다.
+    allergens: []
+    never_eat: []
+    likes: [egg, ham]
+    dislikes: [cucumber]
+    spicy_level: 0
+    cuisine_likes: []
+    cuisine_dislikes: []
+    skill_level: 1
+    try:
+      pantry: [egg, rice, ham, onion]
+      dish: [간단한 아침, 계란 요리]
+    checks:
+      - 매운맛이 1 이상인 레시피가 없다.
+      - 맛 정보가 없는 식품안전나라 레시피도 매운 재료(고추·고추장·김치·카레가루 등)가 없고 제목에 매운 말이 없으면 나오고, "맵지 않은 요리로 보았습니다" 안내가 붙는다(D9). 추천 가능 149개 → 약 860개.
+      - 오이가 든 레시피는 빠지지 않고 순위만 뒤로 간다(싫어함은 감점).
+      - 난이도 1(쉬움) 레시피가 위쪽에 온다.
+
+  - id: t3_milk_egg_allergy_western
+    name: "③ 우유·계란 알레르기 아이 부모 · 양식파"
+    description: 아이가 우유·계란 알레르기다. 양식을 좋아하고 중식은 덜 좋아한다. 닭고기·감자를 자주 쓴다.
+    allergens: [milk, egg]
+    never_eat: []
+    likes: [chicken, potato]
+    dislikes: [shiitake]
+    spicy_level: 1
+    cuisine_likes: [양식]
+    cuisine_dislikes: [중식]
+    skill_level: 2
+    try:
+      pantry: [chicken, potato, onion]
+      dish: [크림파스타, 아이 반찬]
+    checks:
+      - 치즈·버터·우유·생크림·마요네즈·계란이 든 레시피가 없다(고명·선택 재료라도 제외).
+      - '"크림파스타"를 찾으면 크림이 든 파스타는 나오지 않는다.'
+      - 양식 레시피가 같은 조건의 한식보다 위에 온다. 중식은 빠지지 않고 순위만 뒤로 간다.
+
+  - id: t4_no_cucumber_japanese_expert
+    name: "④ 오이·고수 절대 안 먹는 일식 숙련자"
+    description: 요리를 잘하고 일식을 좋아한다. 연어·표고버섯을 좋아하고 오이와 고수는 절대 안 먹는다.
+    allergens: []
+    never_eat: [cucumber, coriander]
+    likes: [salmon, shiitake]
+    dislikes: []
+    spicy_level: 2
+    cuisine_likes: [일식]
+    cuisine_dislikes: []
+    skill_level: 3
+    try:
+      pantry: [salmon, rice, shiitake, green_onion]
+      dish: [연어덮밥, 깔끔한 일식]
+    checks:
+      - 오이·고수가 들어간 레시피가 없다.
+      - 일식 레시피와 연어·표고버섯이 든 레시피가 위쪽에 온다.
+      - 알레르기가 없으므로 확인되지 않은 재료가 있는 레시피도 나올 수 있다.
+
+  - id: t5_no_pork_peanut_allergy_hot
+    name: "⑤ 돼지고기 절대 안 먹음 · 땅콩 알레르기 · 아주 매운 것 OK"
+    description: 돼지고기는 절대 안 먹고 땅콩 알레르기가 있다. 아주 매운 중식을 좋아하고 쇠고기·닭고기를 좋아한다.
+    allergens: [peanut]
+    never_eat: [pork]
+    likes: [beef, chicken]
+    dislikes: []
+    spicy_level: 5
+    cuisine_likes: [중식]
+    cuisine_dislikes: []
+    skill_level: 3
+    try:
+      pantry: [beef, onion, green_onion]
+      dish: [라면, 매콤한 볶음]
+    checks:
+      - 삼겹살·목살·햄·베이컨·통조림햄처럼 돼지고기가 확실히 든 레시피가 없다.
+      - 소시지·라면 제품·카레가루처럼 돼지고기가 '들어 있을 수도 있는' 재료는 나올 수 있고, 카드에 성분표 확인 안내가 붙는다(D8).
+      - 종교 등으로 엄격히 피해야 한다면 돼지고기를 never_eat 대신 allergens(pork)에 넣어야 한다. 이 차이를 비교해 본다.
+      - 매운맛 5는 '한도 없음'으로만 본다. 맛 정보가 없는 식품안전나라 레시피도 나오고, 맵지 않은 요리도 맛 때문에 밀리지 않는다(Jev 항목에 '맛 취향' 없음).
