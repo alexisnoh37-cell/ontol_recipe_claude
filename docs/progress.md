@@ -952,11 +952,12 @@ ui-1은 고른 재료를 추천 엔진에 넣는 방식이라 사람의 의도(�
 - 코드: `engine/v2/ports.py`(Judge·JudgeProfile·JudgeCandidate·ASPECTS), `engine/v2/recommend.py`(jev_random·jev_pantry·jev_dish·judged, 실패 시 규칙 경로 재실행, 묶음·후보 고르기 공용 함수로 정리), `engine/v2/config.py`·`config/v2.yaml`(ranking), `integrations/jev/judge.py`(항목별 질문·걸러내기 병렬), `api/v2.py`(judge_factory, 응답 `ranking`), `app/v2.py`(문구). 규칙 경로·기존 테스트는 그대로 동작(판단기가 없으면 규칙).
 - 테스트 추가: `tests/allergy/test_v2_judge_safety.py` 20개(승인 대상), `tests/v2/test_jev_ranking.py` 12개, API 1개. 전체 682개 통과(DB 포함). 작성 중 발견: 내 재료로에서 보유 재료 이름을 보낼 때 못 먹는 재료(사용자가 가진 오이·새우 등)도 보내고 있었다 → 먹을 수 있는 보유 재료만 보내도록 수정.
 - 실제 Jev(페르소나 5명 × 랜덤·내 재료·요리 찾기 2문장): 알레르기 위반 0, 요청당 0.2~0.5초(걸러내기 보충 0.8~1.3초). ② "간단한 아침" 결과 생김. ① "김치찌개"는 제외 안내 + 김치 없는 요리.
-- **알려진 문제**: 매운맛 정도 5(아주 매운 것도 OK)가 "매운 걸 원함"으로 읽혀 맵지 않은 요리의 맛 점수가 거의 0(⑤ 내 재료로의 소고기 장조림 맛 0.01). 확신도(J_conf)가 낮은 답(0.0~0.7)도 그대로 쓴다. 요청당 토큰이 규칙 재정렬보다 많다(약 2만~3만, 보충 시 7만~13만).
+- 보완(사람 결정): 매운맛 정도는 하나로 두고, 5는 '한도 없음'으로만 본다(맛 점수·Jev 취향 질문에서 뺀다). 전에는 5가 "매운 걸 원함"으로 읽혀 ⑤ 내 재료로의 소고기 장조림 맛 점수가 0.01이었다 → 맛 항목이 빠지고 종합 0.39 → 0.53. `engine/v2/profile.py`(5면 맛 선호 없음), `engine/v2/recommend.py`(Jev 프로필에서 5 제외), 테스트 갱신 1·추가 1, 전체 683개 통과.
+- **알려진 문제**: 확신도(J_conf)가 낮은 답(0.0~0.7)도 그대로 쓴다. 요청당 토큰이 규칙 재정렬보다 많다(약 2만~3만, 보충 시 7만~13만).
 
 ## 사람 확인 필요
 
-- **(D10) Jev 순위 경로 확인**: `tests/allergy/test_v2_judge_safety.py` 승인, 매운맛 정도를 한도·선호로 나눌지, Jev 요금(요청당 입력 2만~3만 토큰) 확인, 확신도가 낮은 답 처리.
+- **(D10) Jev 순위 경로 확인**: `tests/allergy/test_v2_judge_safety.py` 승인, Jev 요금(요청당 입력 2만~3만 토큰) 확인, 확신도가 낮은 답 처리.
 - **(D9) 매운 재료 목록 검수**: `config/v2.yaml` `spicy_inference.markers`·`title_markers`가 빠짐없는지(특히 시판 소스류). 
 - **(v2-1 보완) 설계 제안 남은 3건 결정**(1번은 D9로 반영): docs/plan.md 부록 G-11 "제안" 1~4(맛 모르는 레시피 매운맛 처리, 취향 반영 랜덤, 규칙이 못 찾는 문장의 Jev 처리, Jev 전송 범위). `tests/allergy/test_v2_profile_safety.py` 승인.
 - **(v2-1) 추천 v2 확인**: `tests/allergy/test_v2_modes_safety.py`·`test_v2_rerank_safety.py`(신규 33개) 승인. 화면 `uv run streamlit run app/v2.py`(API는 `api.v2:default_app`)로 세 형태를 써 보고 Jev 재정렬 가중치(0.5)·확신도 하한(0.3)·top_n(30)이 괜찮은지. 앞에 노출된 API 키는 대화 기록에 남았으므로 필요하면 TypeSafe 콘솔에서 재발급.

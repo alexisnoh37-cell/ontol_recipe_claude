@@ -5,7 +5,8 @@
                never_eat(재료 id: '확실히 들어간' 재료만 제외, D8)
   좋아하는 것  likes(재료 id) → 점수 가산(P)
   싫어하는 것  dislikes(재료 id) → 점수 감산(P). 제외하지 않는다
-  매운맛 정도  spicy_level 0~5 → 선호 강도(T) = 한도(넘으면 제외). 5는 한도 없음. None은 모름(맵기 무관)
+  매운맛 정도  spicy_level 0~4 → 한도(넘으면 제외)이자 선호 강도(T·Jev 취향 질문).
+               5는 '한도 없음'으로만 본다(제외도 취향도 없음, D10 보완). None은 모름(맵기 무관)
   음식 종류    cuisine_likes / cuisine_dislikes → 점수(K). 제외하지 않는다
   요리 실력    skill_level 1~3 → 난이도 점수(D). None이면 2(보통)
 
@@ -55,9 +56,8 @@ class SimpleProfile:
         prefs += [Preference("cuisine", c, 1, 1.0) for c in sorted(self.cuisine_likes)]
         prefs += [Preference("cuisine", c, -1, 1.0) for c in sorted(self.cuisine_dislikes)]
         tastes: tuple[TastePreference, ...] = ()
-        if self.spicy_level is not None:
-            limit = None if self.spicy_level >= NO_LIMIT_SPICY else self.spicy_level
-            tastes = (TastePreference("spicy", preferred_level=self.spicy_level, max_level=limit),)
+        if self.spicy_level is not None and self.spicy_level < NO_LIMIT_SPICY:
+            tastes = (TastePreference("spicy", preferred_level=self.spicy_level, max_level=self.spicy_level),)
         return UserContext(
             skill_level=self.skill_level if self.skill_level is not None else DEFAULT_SKILL,
             allergen_groups=frozenset(self.allergens),

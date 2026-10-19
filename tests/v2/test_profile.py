@@ -21,10 +21,12 @@ def test_mapping_to_user_context():
     assert (t.dimension, t.preferred_level, t.max_level) == ("spicy", 2, 2)
 
 
-def test_spicy_five_means_no_limit_and_none_means_unknown():
-    (t,) = SimpleProfile(spicy_level=5).to_user_context().tastes
-    assert t.max_level is None and t.preferred_level == 5
+def test_spicy_five_means_no_limit_only_and_none_means_unknown():
+    # 5는 '한도 없음'으로만 본다: 제외도 없고 맛 취향(T 점수·Jev 질문)도 없다(D10 보완)
+    assert SimpleProfile(spicy_level=5).to_user_context().tastes == ()
     assert SimpleProfile().to_user_context().tastes == ()
+    (t,) = SimpleProfile(spicy_level=4).to_user_context().tastes
+    assert (t.preferred_level, t.max_level) == (4, 4)
 
 
 def test_skill_default_is_middle():

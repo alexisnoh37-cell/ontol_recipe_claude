@@ -143,6 +143,8 @@ class _Run:
         self.not_spicy = owner.not_spicy()
         self.spicy_pref = next((t.preferred_level for t in user.tastes
                                 if t.dimension == "spicy" and t.preferred_level is not None), None)
+        # Jev 취향 질문에 쓰는 매운맛 선호. 5(최대)는 '한도 없음'으로만 보고 취향으로 묻지 않는다(D10 보완)
+        self.jev_spicy_pref = self.spicy_pref if self.spicy_pref is not None and self.spicy_pref < 5 else None
         self.taste_dims = {t.dimension for t in user.tastes if t.preferred_level is not None}
         self.cares_spicy = any(t.dimension == "spicy" for t in user.tastes)
         default = self.cfg.random_default_limit if req.mode == "random" else DEFAULT_LIMIT
@@ -437,7 +439,7 @@ class _Run:
         on_hand = (tuple(sorted(names[i] for i in self.pantry if not self.constraints.is_unsafe_ingredient(i)))
                    if self.req.mode == "pantry" else ())
         return JudgeProfile(
-            skill_level=self.user.skill_level, spicy_preference=self.spicy_pref,
+            skill_level=self.user.skill_level, spicy_preference=self.jev_spicy_pref,
             liked_ingredients=ing(1), disliked_ingredients=ing(-1), liked_cuisines=cui(1), disliked_cuisines=cui(-1),
             request=request, ingredients_on_hand=on_hand,
         )

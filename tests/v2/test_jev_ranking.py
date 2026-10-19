@@ -181,3 +181,15 @@ def test_adapter_screen_chunks_in_parallel():
     cands = tuple(JudgeCandidate(f"c{i}", f"요리{i}", None, None, None, ()) for i in range(10))
     out = judge.screen(JudgeProfile(), cands, timeout_s=5)
     assert sorted(calls) == [2, 4, 4] and len(out) == 10 and out["c3"] == pytest.approx(0.5)
+
+
+def test_spicy_max_not_asked_as_taste(compiled):
+    """매운맛 선호 5(최대)는 Jev 취향 질문에서 뺀다(5는 '한도 없음'으로만 본다, D10 보완)."""
+    judge = Table()
+    v2 = make(compiled, judge)
+    v2.recommend(UserContext(tastes=(TastePreference("spicy", preferred_level=5),)), V2Request("dish", query="감자"))
+    profile, _, aspects = judge.judge_calls[-1]
+    assert "taste" not in aspects and profile.spicy_preference is None
+    v2.recommend(UserContext(tastes=(TastePreference("spicy", preferred_level=4),)), V2Request("dish", query="감자"))
+    profile, _, aspects = judge.judge_calls[-1]
+    assert "taste" in aspects and profile.spicy_preference == 4
