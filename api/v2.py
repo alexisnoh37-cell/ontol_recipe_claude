@@ -23,13 +23,14 @@ from pydantic import Field, model_validator
 
 from api.main import create_app, user_context
 from api.schemas import Strict
+from api.viz_v2 import trace_v2
 from engine.model import RecommendResult, UserContext
 from engine.recommend import Recommender
 from engine.v2.config import V2Config, load_v2_config
 from engine.v2.model import V2Request, V2Result
 from engine.v2.ports import Judge, Reranker
 from engine.v2.profile import SimpleProfile
-from engine.v2.recommend import RecommenderV2
+from engine.v2.recommend import DEFAULT_LIMIT, RecommenderV2
 from storage.engine_source import CONFIG_DIR, ROOT, EngineData
 from storage.personas import Persona, load_personas
 from storage.personas_v2 import V2Persona, load_v2_personas
@@ -66,6 +67,7 @@ class V2RecommendIn(Strict):
     max_time_min: Annotated[int, Field(gt=0)] | None = None
     time_is_hard: bool = False
     limit: Annotated[int, Field(ge=1, le=50)] | None = None
+    trace: bool = False  # true면 응답에 추천 과정(trace)을 더한다(/viz v2 재생, 부록 H)
 
     @model_validator(mode="after")
     def _check(self) -> V2RecommendIn:
@@ -103,6 +105,8 @@ def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_
     state = app.state.engine_state
     cfg = load_v2_config(config_dir)
     display = (yaml.safe_load((config_dir / "v2.yaml").read_text(encoding="utf-8")) or {}).get("display") or {}
+    viz_file = config_dir / "viz_v2.yaml"  # /viz v2 재생 문구(부록 H). 인계 묶음과 분리해 따로 둔다
+    playback = (yaml.safe_load(viz_file.read_text(encoding="utf-8")) or {}) if viz_file.exists() else {}
     reranker = reranker_factory(cfg)
     judge = judge_factory(cfg)
     persona_index = {p.id: p for p in personas()}
@@ -201,7 +205,7 @@ def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_
     def v2_recommend(body: V2RecommendIn) -> dict[str, Any]:
         profile_id, user, max_time, time_is_hard = subject(body)
         with state.lock:
-            v1, catalog = state.recommender, state.catalog
+            v1, catalog, graph = state.recommender, state.catalog, state.graph
         pantry = None
         if body.pantry is not None:
             unknown = [i for i in body.pantry if i not in catalog.ingredients]
@@ -211,7 +215,10 @@ def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_
         req = V2Request(mode=body.mode, query=body.query, pantry=pantry, seed=body.seed, rerank=body.rerank,
                         max_time_min=max_time, time_is_hard=time_is_hard, limit=body.limit)
         try:
-            result = v2_for(v1).recommend(user, req)
+            if body.trace:
+                result, trace = v2_for(v1).trace(user, req)
+            else:
+                result, trace = v2_for(v1).recommend(user, req), None
         except ValueError as exc:
             raise HTTPException(status_code=400, detail=str(exc)) from None
         log(profile_id, body.persona_id, result)
@@ -228,7 +235,7 @@ def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_
             out["notes"] = out["notes"] + [notes_text.get(n, n) for n in it.notes]
             items.append(out)
         summary_src = RecommendResult(items=(), exclusions=result.exclusions, exclusion_summary=result.exclusion_summary)
-        return {
+        out: dict[str, Any] = {
             "mode": result.mode, "profile_id": profile_id, "persona_id": body.persona_id, "query": body.query,
             "seed": result.seed, "ranking": result.ranking, "rerank_used": result.rerank_used,
             "rerank_model": result.rerank_model,
@@ -238,6 +245,15 @@ def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_
             "excluded_total": len({e.recipe_id for e in result.exclusions}),
             "disclaimer": catalog.display["disclaimer"],
         }
+        if trace is not None:
+            limit = body.limit if body.limit is not None else (
+                cfg.random_default_limit if body.mode == "random" else DEFAULT_LIMIT)
+            out["trace"] = trace_v2(
+                result, trace, graph, user, exclusion_labels=catalog.display["exclusion_labels"],
+                breakdown_labels=labels, playback=playback,
+                rule_weights=dict(v1.scoring.weights), s_weight=cfg.dish_s_weight,
+                similarity_weights=dict(cfg.dish_similarity), limit=limit)
+        return out
 
     return app
 

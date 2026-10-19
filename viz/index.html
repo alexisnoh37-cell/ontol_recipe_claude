@@ -46,11 +46,59 @@
     </section>
 
     <aside class="panel">
+      <nav class="tabs" role="tablist" aria-label="패널">
+        <button type="button" role="tab" id="tab-v1" data-tab="v1" aria-selected="true">v1 재생·탐색</button>
+        <button type="button" role="tab" id="tab-v2" data-tab="v2" aria-selected="false">v2(Jev) 추천 과정</button>
+      </nav>
+      <section class="card" id="v2-card" data-panel="v2" hidden>
+        <h2>v2(Jev) 추천 과정 보기</h2>
+        <p class="muted small-text">버튼을 누르면 그 자리에서 추천을 실행하고, 규칙이 무엇을 빼고 어떤 후보를 골랐는지, Jev가 무엇을 받고 어떻게 판단했는지를 그래프와 함께 단계별로 보여 줍니다.</p>
+        <label class="field">테스트 페르소나 <select id="v2-persona" aria-label="테스트 페르소나"><option>불러오는 중…</option></select></label>
+        <div id="v2-persona-info" class="subject"></div>
+        <label class="field">순위 방식 <select id="v2-ranking" aria-label="순위 방식"></select></label>
+        <p id="v2-ranking-note" class="muted small-text"></p>
+        <div class="v2-mode">
+          <button type="button" class="primary" data-v2-run="random">🎲 랜덤 추천</button>
+        </div>
+        <div class="v2-mode">
+          <h4>가진 재료</h4>
+          <div id="v2-pantry-chips" class="pantry"></div>
+          <div class="search small">
+            <input id="v2-pantry-add" type="search" placeholder="재료 추가(재료·별칭)" autocomplete="off" aria-label="가진 재료 추가">
+            <ul id="v2-pantry-results" class="search-results" role="listbox" hidden></ul>
+          </div>
+          <label class="check"><input type="checkbox" id="v2-pick"> 그래프에서 재료 노드를 클릭해 더하기</label>
+          <button type="button" class="primary" data-v2-run="pantry">🥕 내 재료로 추천</button>
+        </div>
+        <div class="v2-mode">
+          <h4>요리 찾기</h4>
+          <input id="v2-query" type="text" maxlength="200" value="얼큰한 국물요리" aria-label="찾을 요리 문장" class="text">
+          <div class="examples"><span class="muted">예:</span>
+            <button type="button" class="link" data-v2-example="얼큰한 국물요리">얼큰한 국물요리</button>
+            <button type="button" class="link" data-v2-example="김치찌개">김치찌개</button>
+            <button type="button" class="link" data-v2-example="간단한 아침">간단한 아침</button>
+          </div>
+          <button type="button" class="primary" data-v2-run="dish">🔎 요리 찾기</button>
+        </div>
+        <p id="v2-status" class="muted small-text"></p>
+        <div id="v2-player" class="player" hidden>
+          <div id="v2-dots" class="dots" aria-label="단계"></div>
+          <div class="controls">
+            <button type="button" id="v2-prev">◀ 이전</button>
+            <button type="button" id="v2-auto">▶ 자동재생</button>
+            <button type="button" id="v2-next">다음 ▶</button>
+            <button type="button" id="v2-stop" class="link">끝내기</button>
+          </div>
+          <h3 id="v2-step-title" class="step-title"></h3>
+          <div id="v2-step-body" class="step-body"></div>
+          <div id="v2-cards" class="cards"></div>
+        </div>
+      </section>
       <section class="card">
         <h2>노드 정보</h2>
         <div id="info" class="info"><p class="muted">노드를 클릭하면 연결된 관계만 강조합니다. 빈 곳 클릭 또는 Esc로 해제.</p></div>
       </section>
-      <section class="card" id="browse-card">
+      <section class="card" id="browse-card" data-panel="v1">
         <h2>재료로 레시피 찾기</h2>
         <p class="muted small-text">재료를 여러 개 고르면 고른 재료와 기본 양념만으로 만들 수 있는 레시피를 찾습니다(상위 재료 상속, 대체 재료 미사용).</p>
         <div id="browse-chips" class="pantry"></div>
@@ -64,7 +112,7 @@
           <button type="button" id="browse-clear" class="link" hidden>지우기</button><span id="browse-status" class="muted"></span></div>
         <div id="browse-list" class="browse-list"></div>
       </section>
-      <section class="card" id="play-card">
+      <section class="card" id="play-card" data-panel="v1">
         <h2>추천 과정 재생</h2>
         <label class="field">프로필 <select id="subject" aria-label="프로필 선택"><option>불러오는 중…</option></select></label>
         <div id="subject-info" class="subject"></div>
@@ -87,7 +135,7 @@
           <div id="step-body" class="step-body"></div>
         </div>
       </section>
-      <section class="card" id="adhoc-card">
+      <section class="card" id="adhoc-card" data-panel="v1">
         <h2>외부 레시피 분석 <span class="muted small">저장 안 함</span></h2>
         <label class="field">이름 <input id="adhoc-title" type="text" maxlength="100" placeholder="예) AI 마파두부" autocomplete="off"></label>
         <textarea id="adhoc-text" rows="6" maxlength="5000" aria-label="재료 원문"
