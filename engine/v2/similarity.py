@@ -47,11 +47,12 @@ def parse_query(snapshot: KnowledgeSnapshot, cfg: V2Config, text: str, recipes: 
 
 class DishScorer:
     def __init__(self, snapshot: KnowledgeSnapshot, cfg: V2Config, query: DishQuery,
-                 titles: Mapping[str, str] | None = None):
+                 titles: Mapping[str, str] | None = None, not_spicy: frozenset[str] = frozenset()):
         self._snapshot = snapshot
         self._cfg = cfg
         self._q = query
         self._titles = titles or {}
+        self._not_spicy = not_spicy  # 맛 정보는 없지만 매운맛 0으로 추정한 레시피(D9)
 
     def components(self, recipe: Recipe) -> dict[str, float]:
         """걸린 항목만 담는다. title은 값이 0이어도 담고, 호출자가 전체 후보 중 0뿐이면 뺀다."""
@@ -93,7 +94,10 @@ class DishScorer:
         for rule in self._q.rules:
             for dim, (lo, hi) in rule.taste.items():
                 if recipe.taste is None:
-                    scores.append(0.5)
+                    if dim == "spicy" and recipe.id in self._not_spicy:
+                        scores.append(1.0 if (lo is None or lo <= 0) else 0.0)
+                    else:
+                        scores.append(0.5)
                     continue
                 level = getattr(recipe.taste, dim)
                 scores.append(1.0 if (lo is None or level >= lo) and (hi is None or level <= hi) else 0.0)

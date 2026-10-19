@@ -22,7 +22,7 @@ from engine.filters import UserConstraints
 from engine.model import Exclusion, Recipe, RecommendRequest, UserContext
 from engine.normalize import clean_pantry, normalize_term
 from engine.ports import KnowledgeRepository
-from engine.scoring import UserScorer, diversify, rank
+from engine.scoring import Scored, UserScorer, diversify, rank
 from engine.v2.config import TASTE_DIMENSIONS, V2Config
 from engine.v2.filters import check_v2
 from engine.v2.model import (
@@ -31,6 +31,7 @@ from engine.v2.model import (
     NOTE_DISLIKE_POSSIBLE,
     NOTE_RERANK_OFF,
     NOTE_RERANK_UNAVAILABLE,
+    NOTE_SPICY_INFERRED,
     Group,
     V2Item,
     V2Request,
@@ -38,6 +39,7 @@ from engine.v2.model import (
 )
 from engine.v2.ports import CatalogRepository, RerankCandidate, Reranker, RerankError, RerankQuery
 from engine.v2.similarity import DishScorer, combine, parse_query
+from engine.v2.spicy import not_spicy_ids
 
 DEFAULT_LIMIT = 10
 MAX_MAIN_NAMES = 8  # Jev에 보내는 후보 요약의 주재료 이름 수
@@ -60,6 +62,16 @@ class RecommenderV2:
         self.reranker = reranker
         self.scoring = ScoringConfig.from_mapping(engine_config.weights)
         self._catalog: tuple[tuple[Recipe, ...], dict[str, str]] | None = None
+        self._not_spicy: frozenset[str] | None = None
+
+    def not_spicy(self) -> frozenset[str]:
+        """맛 정보는 없지만 매운맛 0으로 추정한 레시피 id(D9). 설정에서 끄면 비어 있다. 인스턴스마다 한 번 계산."""
+        if self._not_spicy is None:
+            cfg = self.config
+            self._not_spicy = (not_spicy_ids(self.knowledge.snapshot(), self.recipes.all(), cfg.spicy_markers,
+                                             cfg.spicy_title_markers)
+                               if cfg.spicy_inference_enabled else frozenset())
+        return self._not_spicy
 
     def catalog(self) -> tuple[tuple[Recipe, ...], dict[str, str]]:
         """추천할 수 있는 레시피(id 순)와 정규화한 제목. 레시피 공급원은 인스턴스 동안 바뀌지 않으므로 한 번만 만든다."""
@@ -105,13 +117,18 @@ class _Run:
         self.owned = owned_ingredients(self.snapshot, self.pantry)
         self.exclusions: list[Exclusion] = []
         self.relaxed: dict[str, bool] = {}
+        self.not_spicy = owner.not_spicy()
+        self.spicy_pref = next((t.preferred_level for t in user.tastes
+                                if t.dimension == "spicy" and t.preferred_level is not None), None)
+        self.taste_dims = {t.dimension for t in user.tastes if t.preferred_level is not None}
+        self.cares_spicy = any(t.dimension == "spicy" for t in user.tastes)
         default = self.cfg.random_default_limit if req.mode == "random" else DEFAULT_LIMIT
         self.limit = req.limit if req.limit is not None else default
 
     # --- 공용 -----------------------------------------------------------------------------------------
 
     def passes(self, recipe: Recipe) -> bool:
-        found = check_v2(self.constraints, recipe)
+        found = check_v2(self.constraints, recipe, not_spicy=recipe.id in self.not_spicy)
         if found.exclusions:
             self.exclusions.extend(found.exclusions)
             return False
@@ -126,11 +143,21 @@ class _Run:
 
     def scored(self, candidate: Candidate) -> _Ranked:
         s = self.scorer.score(candidate)
-        return _Ranked(candidate, s.score, dict(s.breakdown))
+        return self.adjust_taste(_Ranked(candidate, s.score, dict(s.breakdown)))
+
+    def adjust_taste(self, r: _Ranked) -> _Ranked:
+        """맛 선호가 매운맛 하나뿐이고 레시피를 매운맛 0으로 추정했으면, '모름'(중간값) 대신 T를 계산한다(D9)."""
+        if (r.candidate.recipe.id in self.not_spicy and self.spicy_pref is not None
+                and self.taste_dims == {"spicy"}):
+            new_t = max(0.0, 1.0 - self.spicy_pref / 5.0)
+            r.score += self.o.scoring.weights["T"] * (new_t - r.breakdown["T"])
+            r.breakdown["T"] = new_t
+        return r
 
     def item(self, r: _Ranked, group: Group | None = None) -> V2Item:
         base = build_item(self.snapshot, r.candidate, r.score, r.breakdown)
-        notes = (NOTE_DISLIKE_POSSIBLE,) if self.relaxed.get(r.candidate.recipe.id) else ()
+        rid = r.candidate.recipe.id
+        notes = ((NOTE_DISLIKE_POSSIBLE,) if self.relaxed.get(rid) else ()) +                 ((NOTE_SPICY_INFERRED,) if self.cares_spicy and rid in self.not_spicy else ())
         return V2Item(base, group, required_missing(r.candidate), notes)
 
     def result(self, items: Sequence[V2Item], *, seed: int | None = None, rerank_used: bool = False,
@@ -173,9 +200,12 @@ class _Run:
             elif missing <= self.cfg.near_max_missing:
                 groups["near"].append(c)
         names: tuple[Group, Group] = ("ready", "near")
-        ordered = [[_Ranked(s.candidate, s.score, dict(s.breakdown))
-                    for s in diversify(rank([self.scorer.score(c) for c in groups[g]]), self.o.scoring)]
-                   for g in names]
+        ordered: list[list[_Ranked]] = []
+        for g in names:
+            adjusted = [self.scored(c) for c in groups[g]]  # 매운맛 추정 T 보정을 정렬 전에 반영
+            ranked = rank([Scored(r.candidate, r.score, r.breakdown) for r in adjusted])
+            ordered.append([_Ranked(s.candidate, s.score, dict(s.breakdown))
+                            for s in diversify(ranked, self.o.scoring)])
         # limit 밖으로 밀려날 near는 Jev에 보내지 않는다(ready가 limit을 채우면 near 재정렬은 결과에 영향이 없다)
         room = max(0, self.limit - len(ordered[0]))
         ordered[1], rest = ordered[1][:room], ordered[1][room:]
@@ -190,7 +220,7 @@ class _Run:
         query_text = (self.req.query or "").strip()
         all_recipes, titles = self.o.catalog()
         query = parse_query(self.snapshot, self.cfg, query_text, all_recipes, titles)
-        scorer = DishScorer(self.snapshot, self.cfg, query, titles)
+        scorer = DishScorer(self.snapshot, self.cfg, query, titles, self.not_spicy)
         comps = [(r, scorer.components(r)) for r in all_recipes]
         active = [k for k in ("ingredient", "keyword", "anchor") if comps and k in comps[0][1]]
         if any(c["title"] > 0 for _, c in comps):

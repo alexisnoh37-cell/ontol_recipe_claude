@@ -36,11 +36,15 @@ class V2Config:
     rerank_jev_weight: float
     rerank_min_confidence: float
     rerank_timeout_ms: int
+    spicy_inference_enabled: bool = False
+    spicy_markers: frozenset[str] = frozenset()
+    spicy_title_markers: tuple[str, ...] = ()
 
     @classmethod
     def from_mapping(cls, raw: Mapping[str, Any]) -> V2Config:
         try:
             pantry, rnd, dish, rr = raw["pantry"], raw["random"], raw["dish"], raw["rerank"]
+            spicy = raw.get("spicy_inference") or {}
             sim = {k: float(dish["similarity"][k]) for k in SIMILARITY_KEYS}
             cfg = cls(
                 near_max_missing=int(pantry["near_max_missing"]),
@@ -56,6 +60,9 @@ class V2Config:
                 rerank_jev_weight=float(rr["jev_weight"]),
                 rerank_min_confidence=float(rr["min_confidence"]),
                 rerank_timeout_ms=int(rr["timeout_ms"]),
+                spicy_inference_enabled=bool(spicy.get("enabled", False)),
+                spicy_markers=frozenset(str(m) for m in spicy.get("markers") or ()),
+                spicy_title_markers=tuple(str(m) for m in spicy.get("title_markers") or ()),
             )
         except (KeyError, TypeError, AttributeError) as e:
             raise ValueError(f"config/v2.yaml 형식 오류 또는 누락된 키: {e!r}") from e
@@ -65,6 +72,8 @@ class V2Config:
                 raise ValueError(f"config/v2.yaml {name}는 0~1이어야 합니다: {value}")
         if cfg.near_max_missing < 0 or cfg.dish_pool_size < 1 or cfg.rerank_top_n < 1 or cfg.rerank_timeout_ms < 1:
             raise ValueError("config/v2.yaml 개수·시간 값은 양수여야 합니다(near_max_missing은 0 이상)")
+        if cfg.spicy_inference_enabled and not cfg.spicy_markers:
+            raise ValueError("config/v2.yaml spicy_inference.markers가 비었습니다(비우면 모든 레시피를 맵지 않다고 보게 됨)")
         if any(w < 0 for w in sim.values()) or not sum(sim.values()):
             raise ValueError("config/v2.yaml dish.similarity 가중치는 0 이상이고 합이 0보다 커야 합니다")
         return cfg
