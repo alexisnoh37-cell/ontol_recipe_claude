@@ -945,8 +945,18 @@ ui-1은 고른 재료를 추천 엔진에 넣는 방식이라 사람의 의도(�
 - 테스트: 전체 649개 통과(DB 포함), bench_v2 p95 최댓값 137ms. `tests/v2/test_spicy_inference.py` 13개(판정 규칙: 매운 재료·포함 관계·선택 재료·미매칭·제목·맛 정보 있음, 한도 사용자 결과, 설정 끔, 안내, T 점수, 요리 찾기 키워드, 목록의 재료 id가 실제 지식에 있는지).
 - **알려진 문제**: 목록 밖의 매운 재료(예: 지식에 없는 새 매운 양념)가 있으면 맵지 않다고 잘못 추정할 수 있다. 목록은 사람 검수로 보강한다. 다른 맛(짠맛·단맛 등)은 여전히 모른다.
 
+### v2-1 보완 3: 순위를 Jev가 정하도록 변경 (2026-10-19, D10)
+
+- 사람 요청: 제외 규칙은 유지하고, 규칙 점수 없이 사용자 정보(취향·재료·입력한 선호 요리)만으로 Jev가 판별해 추천.
+- 질문으로 정한 것: 내 재료 묶음 유지, 추천 이유는 Jev 항목별 질문, Jev 실패 시 규칙 점수로 대체. 후보 고르기는 비교 분석 요청 → 실제 Jev로 A(규칙 관련 검색)·B(Jev 2단계)를 측정해 보고(decisions D10 배경) → **A 기본 + 부족하면 B** 결정.
+- 코드: `engine/v2/ports.py`(Judge·JudgeProfile·JudgeCandidate·ASPECTS), `engine/v2/recommend.py`(jev_random·jev_pantry·jev_dish·judged, 실패 시 규칙 경로 재실행, 묶음·후보 고르기 공용 함수로 정리), `engine/v2/config.py`·`config/v2.yaml`(ranking), `integrations/jev/judge.py`(항목별 질문·걸러내기 병렬), `api/v2.py`(judge_factory, 응답 `ranking`), `app/v2.py`(문구). 규칙 경로·기존 테스트는 그대로 동작(판단기가 없으면 규칙).
+- 테스트 추가: `tests/allergy/test_v2_judge_safety.py` 20개(승인 대상), `tests/v2/test_jev_ranking.py` 12개, API 1개. 전체 682개 통과(DB 포함). 작성 중 발견: 내 재료로에서 보유 재료 이름을 보낼 때 못 먹는 재료(사용자가 가진 오이·새우 등)도 보내고 있었다 → 먹을 수 있는 보유 재료만 보내도록 수정.
+- 실제 Jev(페르소나 5명 × 랜덤·내 재료·요리 찾기 2문장): 알레르기 위반 0, 요청당 0.2~0.5초(걸러내기 보충 0.8~1.3초). ② "간단한 아침" 결과 생김. ① "김치찌개"는 제외 안내 + 김치 없는 요리.
+- **알려진 문제**: 매운맛 정도 5(아주 매운 것도 OK)가 "매운 걸 원함"으로 읽혀 맵지 않은 요리의 맛 점수가 거의 0(⑤ 내 재료로의 소고기 장조림 맛 0.01). 확신도(J_conf)가 낮은 답(0.0~0.7)도 그대로 쓴다. 요청당 토큰이 규칙 재정렬보다 많다(약 2만~3만, 보충 시 7만~13만).
+
 ## 사람 확인 필요
 
+- **(D10) Jev 순위 경로 확인**: `tests/allergy/test_v2_judge_safety.py` 승인, 매운맛 정도를 한도·선호로 나눌지, Jev 요금(요청당 입력 2만~3만 토큰) 확인, 확신도가 낮은 답 처리.
 - **(D9) 매운 재료 목록 검수**: `config/v2.yaml` `spicy_inference.markers`·`title_markers`가 빠짐없는지(특히 시판 소스류). 
 - **(v2-1 보완) 설계 제안 남은 3건 결정**(1번은 D9로 반영): docs/plan.md 부록 G-11 "제안" 1~4(맛 모르는 레시피 매운맛 처리, 취향 반영 랜덤, 규칙이 못 찾는 문장의 Jev 처리, Jev 전송 범위). `tests/allergy/test_v2_profile_safety.py` 승인.
 - **(v2-1) 추천 v2 확인**: `tests/allergy/test_v2_modes_safety.py`·`test_v2_rerank_safety.py`(신규 33개) 승인. 화면 `uv run streamlit run app/v2.py`(API는 `api.v2:default_app`)로 세 형태를 써 보고 Jev 재정렬 가중치(0.5)·확신도 하한(0.3)·top_n(30)이 괜찮은지. 앞에 노출된 API 키는 대화 기록에 남았으므로 필요하면 TypeSafe 콘솔에서 재발급.

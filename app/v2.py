@@ -3,7 +3,7 @@
     uv run uvicorn api.v2:default_app --factory --port 8000   # v2 경로가 있는 API
     uv run streamlit run app/v2.py                             # API_URL 기본값 http://127.0.0.1:8000
 
-판정은 하지 않는다. 알레르기·먹지 않는 재료 제외와 Jev 재정렬은 API(엔진)가 한다.
+판정은 하지 않는다. 알레르기·먹지 않는 재료 제외(규칙)와 Jev 판단(순위)은 API(엔진)가 한다.
 """
 
 from __future__ import annotations
@@ -38,7 +38,7 @@ def api(method: str, path: str, **kwargs: Any) -> Any:
 info = api("GET", "/v2/info")
 st.title("🍲 레시피 추천 v2")
 st.caption(
-    f"Jev 재정렬: {'사용 가능(' + info['rerank_model'] + ')' if info['rerank_available'] else '꺼짐(TYPESAFE_API_KEY 없음)'}"
+    f"Jev 판단: {'사용 가능(' + info['rerank_model'] + ')' if info['rerank_available'] else '꺼짐(TYPESAFE_API_KEY 없음)'}"
     " · 알레르기와 먹지 않는 재료는 Jev와 관계없이 규칙으로 먼저 제외합니다."
 )
 
@@ -57,7 +57,7 @@ if not choices:
     st.stop()
 who_label = st.sidebar.selectbox("사용자", list(choices))
 who = choices[who_label]
-rerank = st.sidebar.toggle("Jev 재정렬 사용", value=bool(info["rerank_available"] and info["rerank_default"]),
+rerank = st.sidebar.toggle("Jev가 순위 정하기", value=bool(info["rerank_available"] and info["rerank_default"]),
                            disabled=not info["rerank_available"])
 limit = st.sidebar.slider("보여 줄 개수", 1, 30, 8)
 
@@ -127,7 +127,10 @@ def show(body: dict[str, Any]) -> None:
     if body.get("seed") is not None:
         meta.append(f"seed {body['seed']}")
     if body["rerank_used"]:
-        meta.append(f"Jev 재정렬({body['rerank_model']})")
+        how = "Jev가 순위 결정" if body.get("ranking") == "jev" else "Jev 재정렬"
+        meta.append(f"{how}({body['rerank_model']})")
+    elif body.get("ranking") == "rules":
+        meta.append("규칙 점수 순서")
     st.caption(" · ".join(meta))
     group = None
     for it in body["items"]:

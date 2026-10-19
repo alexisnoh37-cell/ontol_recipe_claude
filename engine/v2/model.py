@@ -18,6 +18,8 @@ NOTE_DISH_NO_MATCH = "dish_no_match"  # 질의와 비슷한 레시피를 찾지 
 NOTE_DISH_EXCLUDED = "dish_excluded"  # 질의와 가장 비슷한 레시피가 못 먹는 재료 때문에 제외됨
 NOTE_DISLIKE_POSSIBLE = "dislike_possible"  # 불선호 재료가 '포함 가능'이라 제외하지 않음(D8)
 NOTE_SPICY_INFERRED = "spicy_inferred"  # 맛 정보는 없지만 매운 재료가 없어 맵지 않다고 봄(D9)
+NOTE_JEV_UNAVAILABLE = "jev_unavailable"  # Jev 판단 실패 → 규칙 점수 순서(D10)
+NOTE_JEV_SCREENED = "jev_screened"  # 관련 후보가 적어 Jev가 전체를 걸러 보충(D10)
 
 
 @dataclass(frozen=True)
@@ -47,6 +49,7 @@ class V2Result:
     exclusions: tuple[Exclusion, ...] = ()
     exclusion_summary: Mapping[str, int] = field(default_factory=dict)
     seed: int | None = None
-    rerank_used: bool = False
+    rerank_used: bool = False  # Jev가 순서를 정했거나 재정렬했는가
     rerank_model: str | None = None
+    ranking: str = "rules"  # jev(Jev가 순위·항목별 점수) | rules(규칙 점수, D10)
     notes: tuple[str, ...] = ()

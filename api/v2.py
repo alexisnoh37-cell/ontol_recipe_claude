@@ -27,7 +27,7 @@ from engine.model import RecommendResult, UserContext
 from engine.recommend import Recommender
 from engine.v2.config import V2Config, load_v2_config
 from engine.v2.model import V2Request, V2Result
-from engine.v2.ports import Reranker
+from engine.v2.ports import Judge, Reranker
 from engine.v2.profile import SimpleProfile
 from engine.v2.recommend import RecommenderV2
 from storage.engine_source import CONFIG_DIR, ROOT, EngineData
@@ -62,7 +62,7 @@ class V2RecommendIn(Strict):
     query: Annotated[str, Field(max_length=200)] | None = None  # dish 필수
     pantry: list[str] | None = None
     seed: Annotated[int, Field(ge=0)] | None = None
-    rerank: bool | None = None  # 비우면 config/v2.yaml rerank.enabled
+    rerank: bool | None = None  # Jev 사용 여부. false면 규칙 점수만. 비우면 설정(ranking.mode·rerank.enabled)
     max_time_min: Annotated[int, Field(gt=0)] | None = None
     time_is_hard: bool = False
     limit: Annotated[int, Field(ge=1, le=50)] | None = None
@@ -84,15 +84,27 @@ def jev_reranker_from_env(cfg: V2Config) -> Reranker | None:
     return JevReranker(JevClient(key, model=cfg.rerank_model)) if key else None
 
 
+def jev_judge_from_env(cfg: V2Config) -> Judge | None:
+    """인증키가 있으면 Jev 판단기(순위를 Jev가 정함, D10), 없으면 None(규칙 점수)."""
+    from integrations.jev import JevClient, JevJudge, api_key_from_env
+
+    key = api_key_from_env()
+    if not key:
+        return None
+    return JevJudge(JevClient(key, model=cfg.rerank_model), screen_chunk=cfg.ranking_screen_chunk)
+
+
 def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_dir: Path = CONFIG_DIR,
                   exclusion_log: Path | None = None, personas: Callable[[], list[Persona]] = load_personas,
                   reranker_factory: Callable[[V2Config], Reranker | None] = lambda cfg: None,
-                  v2_personas: Callable[[], list[V2Persona]] = load_v2_personas) -> FastAPI:
+                  v2_personas: Callable[[], list[V2Persona]] = load_v2_personas,
+                  judge_factory: Callable[[V2Config], Judge | None] = lambda cfg: None) -> FastAPI:
     app = create_app(loader, store, config_dir=config_dir, exclusion_log=exclusion_log, personas=personas)
     state = app.state.engine_state
     cfg = load_v2_config(config_dir)
     display = (yaml.safe_load((config_dir / "v2.yaml").read_text(encoding="utf-8")) or {}).get("display") or {}
     reranker = reranker_factory(cfg)
+    judge = judge_factory(cfg)
     persona_index = {p.id: p for p in personas()}
     v2_persona_index = {p.id: p for p in v2_personas()}
     cache: dict[str, Any] = {}
@@ -102,7 +114,7 @@ def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_
         """v1 재적재(/admin/reload) 뒤에는 새 v1에 맞춰 다시 만든다."""
         with lock:
             if cache.get("v1") is not v1:
-                cache["v1"], cache["v2"] = v1, RecommenderV2.from_v1(v1, cfg, reranker)
+                cache["v1"], cache["v2"] = v1, RecommenderV2.from_v1(v1, cfg, reranker, judge)
             return cache["v2"]
 
     def from_profile(profile: SimpleProfile) -> UserContext:
@@ -160,7 +172,9 @@ def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_
 
     @app.get("/v2/info")
     def v2_info() -> dict[str, Any]:
-        return {"modes": ["random", "pantry", "dish"], "rerank_available": reranker is not None,
+        return {"modes": ["random", "pantry", "dish"], "ranking": cfg.ranking_mode,
+                "jev_available": judge is not None or reranker is not None,
+                "rerank_available": judge is not None or reranker is not None,
                 "rerank_default": cfg.rerank_enabled, "rerank_model": cfg.rerank_model,
                 "near_max_missing": cfg.near_max_missing}
 
@@ -216,7 +230,8 @@ def create_v2_app(loader: Callable[[], EngineData], store: UserStore, *, config_
         summary_src = RecommendResult(items=(), exclusions=result.exclusions, exclusion_summary=result.exclusion_summary)
         return {
             "mode": result.mode, "profile_id": profile_id, "persona_id": body.persona_id, "query": body.query,
-            "seed": result.seed, "rerank_used": result.rerank_used, "rerank_model": result.rerank_model,
+            "seed": result.seed, "ranking": result.ranking, "rerank_used": result.rerank_used,
+            "rerank_model": result.rerank_model,
             "notes": [{"code": n, "text": notes_text.get(n, n)} for n in result.notes],
             "items": items,
             "exclusion_summary": catalog.exclusion_summary(summary_src),
@@ -248,4 +263,7 @@ def default_app() -> FastAPI:
             return load_db(conn)
 
     log = Path(os.environ.get("EXCLUSION_LOG", ROOT / "logs" / "exclusions.jsonl"))
-    return create_v2_app(loader, SqlUserStore(engine), exclusion_log=log, reranker_factory=jev_reranker_from_env)
+    # ranking.mode가 jev면 Jev 판단기가 순위를 정하고, 실패 시 규칙 점수만 쓴다(같은 Jev로 재정렬을 다시 시도하지 않음)
+    return create_v2_app(loader, SqlUserStore(engine), exclusion_log=log,
+                         reranker_factory=lambda cfg: None if cfg.ranking_mode == "jev" else jev_reranker_from_env(cfg),
+                         judge_factory=jev_judge_from_env)

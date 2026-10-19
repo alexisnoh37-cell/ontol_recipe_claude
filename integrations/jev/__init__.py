@@ -5,6 +5,7 @@ API: POST https://api.typesafe.ai/v1/systemone, Authorization: Bearer <TYPESAFE_
 """
 
 from integrations.jev.client import JevClient, JevError, api_key_from_env
+from integrations.jev.judge import JevJudge
 from integrations.jev.reranker import JevReranker
 
-__all__ = ["JevClient", "JevError", "JevReranker", "api_key_from_env"]
+__all__ = ["JevClient", "JevError", "JevJudge", "JevReranker", "api_key_from_env"]

@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
 import yaml
+
+from engine.v2.ports import ASPECTS
 
 TASTE_DIMENSIONS = ("spicy", "salty", "sweet", "sour", "umami", "savory")
 SIMILARITY_KEYS = ("title", "ingredient", "keyword", "anchor")
@@ -39,12 +41,20 @@ class V2Config:
     spicy_inference_enabled: bool = False
     spicy_markers: frozenset[str] = frozenset()
     spicy_title_markers: tuple[str, ...] = ()
+    ranking_mode: str = "rules"  # jev | rules (D10)
+    ranking_pool_size: int = 40
+    ranking_min_pool: int = 10
+    ranking_screen_max: int = 1200
+    ranking_screen_chunk: int = 250
+    ranking_timeout_ms: int = 8000
+    aspect_weights: Mapping[str, float] = field(default_factory=dict)
 
     @classmethod
     def from_mapping(cls, raw: Mapping[str, Any]) -> V2Config:
         try:
             pantry, rnd, dish, rr = raw["pantry"], raw["random"], raw["dish"], raw["rerank"]
             spicy = raw.get("spicy_inference") or {}
+            ranking = raw.get("ranking") or {}
             sim = {k: float(dish["similarity"][k]) for k in SIMILARITY_KEYS}
             cfg = cls(
                 near_max_missing=int(pantry["near_max_missing"]),
@@ -63,6 +73,13 @@ class V2Config:
                 spicy_inference_enabled=bool(spicy.get("enabled", False)),
                 spicy_markers=frozenset(str(m) for m in spicy.get("markers") or ()),
                 spicy_title_markers=tuple(str(m) for m in spicy.get("title_markers") or ()),
+                ranking_mode=str(ranking.get("mode", "rules")),
+                ranking_pool_size=int(ranking.get("pool_size", 40)),
+                ranking_min_pool=int(ranking.get("min_pool", 10)),
+                ranking_screen_max=int(ranking.get("screen_max", 1200)),
+                ranking_screen_chunk=int(ranking.get("screen_chunk", 250)),
+                ranking_timeout_ms=int(ranking.get("timeout_ms", 8000)),
+                aspect_weights={str(k): float(v) for k, v in (ranking.get("aspect_weights") or {}).items()},
             )
         except (KeyError, TypeError, AttributeError) as e:
             raise ValueError(f"config/v2.yaml 형식 오류 또는 누락된 키: {e!r}") from e
@@ -72,6 +89,16 @@ class V2Config:
                 raise ValueError(f"config/v2.yaml {name}는 0~1이어야 합니다: {value}")
         if cfg.near_max_missing < 0 or cfg.dish_pool_size < 1 or cfg.rerank_top_n < 1 or cfg.rerank_timeout_ms < 1:
             raise ValueError("config/v2.yaml 개수·시간 값은 양수여야 합니다(near_max_missing은 0 이상)")
+        if cfg.ranking_mode not in ("jev", "rules"):
+            raise ValueError(f"config/v2.yaml ranking.mode는 jev 또는 rules입니다: {cfg.ranking_mode}")
+        if cfg.ranking_mode == "jev":
+            unknown = sorted(set(cfg.aspect_weights) - set(ASPECTS))
+            missing = sorted(set(ASPECTS) - set(cfg.aspect_weights))
+            if unknown or missing or any(w <= 0 for w in cfg.aspect_weights.values()):
+                raise ValueError(f"config/v2.yaml ranking.aspect_weights는 {list(ASPECTS)} 모두 양수여야 합니다 "
+                                 f"(모름 {unknown}, 빠짐 {missing})")
+            if min(cfg.ranking_pool_size, cfg.ranking_screen_max, cfg.ranking_screen_chunk, cfg.ranking_timeout_ms) < 1:
+                raise ValueError("config/v2.yaml ranking 개수·시간 값은 양수여야 합니다")
         if cfg.spicy_inference_enabled and not cfg.spicy_markers:
             raise ValueError("config/v2.yaml spicy_inference.markers가 비었습니다(비우면 모든 레시피를 맵지 않다고 보게 됨)")
         if any(w < 0 for w in sim.values()) or not sum(sim.values()):

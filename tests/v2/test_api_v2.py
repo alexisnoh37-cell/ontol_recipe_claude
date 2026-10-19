@@ -159,3 +159,28 @@ def test_inline_profile_rejects_bad_input(client, profile, status):
 def test_exactly_one_subject(client):
     r = client.post("/v2/recommend", json={"profile": {}, "persona_id": "x", "mode": "random"})
     assert r.status_code == 422
+
+
+def test_jev_ranking_via_api(data, log_path):
+    from engine.v2.ports import RerankAnswer
+
+    class Judge:
+        model = "fake-judge"
+
+        def screen(self, profile, candidates, *, timeout_s):
+            return {c.key: 0.5 for c in candidates}
+
+        def judge(self, profile, candidates, aspects, *, timeout_s):
+            return {c.key: {a: RerankAnswer(0.7, 0.8) for a in aspects} for c in candidates}
+
+    c = TestClient(create_v2_app(lambda: data, InMemoryUserStore(), exclusion_log=log_path,
+                                 judge_factory=lambda cfg: Judge()))
+    assert c.get("/v2/info").json()["ranking"] == "jev"
+    pid = c.get("/v2/personas").json()[0]["id"]
+    body = c.post("/v2/recommend", json={"persona_id": pid, "mode": "dish", "query": "얼큰한 국물"}).json()
+    assert body["ranking"] == "jev" and body["rerank_model"] == "fake-judge" and body["items"]
+    labels = {b["key"]: b["label"] for b in body["items"][0]["breakdown"]}
+    assert labels["J_request"] == "요청과 맞음(Jev)" and "I" not in labels
+    off = c.post("/v2/recommend", json={"persona_id": pid, "mode": "dish", "query": "얼큰한 국물",
+                                        "rerank": False}).json()
+    assert off["ranking"] == "rules"
