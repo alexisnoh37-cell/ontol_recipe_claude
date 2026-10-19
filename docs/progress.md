@@ -984,6 +984,14 @@ ui-1은 고른 재료를 추천 엔진에 넣는 방식이라 사람의 의도(�
 - 합의한 방향: 교체가 아니라 "새 추천(베타)"을 옆에 붙여 써 보고 팀이 정식 통합·일부 채택·접기를 결정. 베타는 팀 앱 변경을 최소로(토글·서버 경로 1개·베타용 입력), 로직은 이 저장소 엔진을 별도 서비스로.
 - `docs/proposals/team-app-recipe-v2-beta.md`: 팀 제안 초안(배경, 사용자에게 주는 것, 평가 근거와 한계, 대가와 외부 전송 범위, 베타 방식, 서비스 위치 선택지, 진행 순서·판단 지표, 팀 결정 사항, 안전). 팀에 올리기 전 사람 검토용. 팀 저장소는 바꾸지 않음.
 
+### v2-5 다른 앱용 인계 자료 (2026-10-19)
+
+- 사람 질문: 다른 앱에 저장소 주소만 주고 "Jev 기반 추천 로직을 활용하라"고 하면 이해할 수 있나 → 확인 결과 README 첫머리가 "MVP v1, LLM은 Phase 2부터", CLAUDE.md가 "LLM 연동은 만들지 않는다"로 남아 있고, 옮겨 심기용 명세·시험 세트·데이터 내보내기가 없어 오해 가능성이 큼 → 사람이 정리 진행 지시.
+- 만든 것(plan.md 부록 G-14): `docs/integration/README.md`(시작 문서), `docs/integration/v2_logic_spec.md`(언어 무관 로직 명세), `scripts/export_v2_bundle.py` + `storage/v2_bundle.py`(데이터 묶음, 실제 데이터 약 3MB: 레시피 1,522·재료 572·매운맛 0 추정 708), `scripts/make_shared_cases.py` + `tests/shared/v2_cases.json`(사례 24개), README 첫머리를 v2 기준으로, CLAUDE.md 범위에 D6~D10 예외 한 줄.
+- 엔진 변경 1건: Jev 걸러내기 동점 순서를 key 문자열 순서에서 원래 순서(레시피 id 순)로(명세로 옮기기 쉽게). 기존 테스트 영향 없음.
+- 테스트: `tests/v2/test_shared_cases.py` 27개(최신 여부, JSON만으로 24개 사례 재현, 비교기가 위험 결과를 잡는지), `tests/v2/test_v2_bundle.py` 2개(내보낸 JSON만으로 조립한 엔진 = 원래 엔진, 매운맛 추정 일치, 문서 링크). 전체 726개 통과(DB 포함).
+- 팀 제안 초안(`docs/proposals/team-app-recipe-v2-beta.md`)도 이 브랜치에 포함.
+
 ## 사람 확인 필요
 
 - **(팀 베타) 제안 초안 검토**: `docs/proposals/team-app-recipe-v2-beta.md`를 검토하고 팀에 공유. 팀 결정(베타 동의·외부 전송 범위·서비스 위치·베타 입력 저장 위치·기간과 지표) 후 이 저장소의 서비스 준비(DB 없는 v2 진입점·API 키 인증·팀 앱 id 형식·로그)를 진행.
