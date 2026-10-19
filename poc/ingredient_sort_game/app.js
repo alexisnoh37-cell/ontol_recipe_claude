@@ -1,52 +1,52 @@
 const ROUNDS = [
   {
-    kicker: "ROUND 1 · 동물성 식재료",
+    kicker: "GAME 1 / 3 · 동물성 식재료",
     title: "먼저, 자주 만나는 식재료부터 알아볼게요",
     description: "고기와 수산물, 달걀과 유제품을 분류해 보세요.",
-    complete: "첫 번째 탐색을 마쳤어요!",
-    next: "다음은 콩과 곡물 취향을 알아볼게요.",
+    complete: "첫 번째 게임을 마쳤어요!",
+    next: "이번 결과를 확인한 뒤 콩과 곡물 게임을 시작해요.",
     items: [
-      { id: "beef", label: "소고기", icon: "🥩", hint: "구이 · 국 · 볶음" },
-      { id: "pork", label: "돼지고기", icon: "🐖", hint: "삼겹살 · 수육" },
-      { id: "chicken", label: "닭고기", icon: "🍗", hint: "구이 · 튀김 · 탕" },
-      { id: "fish", label: "생선", icon: "🐟", hint: "고등어 · 연어 등" },
-      { id: "crustacean", label: "갑각류", icon: "🦐🦀", hint: "새우 · 게" },
-      { id: "shellfish", label: "조개류", icon: "🦪🐚", hint: "굴 · 홍합 · 조개" },
-      { id: "egg", label: "달걀", icon: "🥚", hint: "흰자 · 노른자" },
-      { id: "cheese", label: "치즈", icon: "🧀", hint: "자연 · 가공 치즈" },
-      { id: "butter", label: "버터", icon: "🧈", hint: "가염 · 무염" },
-      { id: "milk", label: "우유", icon: "🥛", hint: "우유 · 두유 아님" },
-      { id: "other_dairy", label: "기타 유제품", icon: "🥣🍦", hint: "생크림 · 요거트" },
+      { id: "beef", label: "소고기", icon: "🥩", dish: "🍲", hint: "구이 · 국 · 볶음" },
+      { id: "pork", label: "돼지고기", icon: "🐖", dish: "🍖", hint: "삼겹살 · 수육" },
+      { id: "chicken", label: "닭고기", icon: "🍗", dish: "🍛", hint: "구이 · 튀김 · 탕" },
+      { id: "fish", label: "생선", icon: "🐟", dish: "🍣", hint: "고등어 · 연어 등" },
+      { id: "crustacean", label: "갑각류", icon: "🦐🦀", dish: "🍤", hint: "새우 · 게" },
+      { id: "shellfish", label: "조개류", icon: "🦪🐚", dish: "🥘", hint: "굴 · 홍합 · 조개" },
+      { id: "egg", label: "달걀", icon: "🥚", dish: "🍳", hint: "흰자 · 노른자" },
+      { id: "cheese", label: "치즈", icon: "🧀", dish: "🍕", hint: "자연 · 가공 치즈" },
+      { id: "butter", label: "버터", icon: "🧈", dish: "🥞", hint: "가염 · 무염" },
+      { id: "milk", label: "우유", icon: "🥛", dish: "🍮", hint: "우유 · 두유 아님" },
+      { id: "other_dairy", label: "기타 유제품", icon: "🥣🍦", dish: "🍰", hint: "생크림 · 요거트" },
     ],
   },
   {
-    kicker: "ROUND 2 · 콩과 곡물",
+    kicker: "GAME 2 / 3 · 콩과 곡물",
     title: "매일 먹는 주식과 식물성 단백질이에요",
     description: "콩, 두부, 쌀과 밀로 만든 음식을 분류해 보세요.",
-    complete: "두 번째 탐색도 끝났어요!",
-    next: "마지막으로 채소와 과일 취향을 알아볼게요.",
+    complete: "두 번째 게임도 끝났어요!",
+    next: "이번 결과를 확인한 뒤 마지막 채소와 과일 게임을 시작해요.",
     items: [
-      { id: "beans", label: "콩", icon: "🫘", hint: "대두 · 검은콩 등" },
-      { id: "tofu", label: "두부", icon: "⬜", hint: "두부 · 순두부" },
-      { id: "rice", label: "쌀 · 밥", icon: "🍚", hint: "흰쌀 · 현미 · 잡곡" },
-      { id: "flour", label: "밀가루", icon: "🌾", hint: "가루 · 반죽 음식" },
-      { id: "bread", label: "빵류", icon: "🍞🥐", hint: "식빵 · 페이스트리" },
-      { id: "noodles", label: "면류", icon: "🍜🍝", hint: "국수 · 파스타" },
+      { id: "beans", label: "콩", icon: "🫘", dish: "🥣", hint: "대두 · 검은콩 등" },
+      { id: "tofu", label: "두부", icon: "⬜", dish: "🍲", hint: "두부 · 순두부" },
+      { id: "rice", label: "쌀 · 밥", icon: "🍚", dish: "🍙", hint: "흰쌀 · 현미 · 잡곡" },
+      { id: "flour", label: "밀가루", icon: "🌾", dish: "🥞", hint: "가루 · 반죽 음식" },
+      { id: "bread", label: "빵류", icon: "🍞🥐", dish: "🥪", hint: "식빵 · 페이스트리" },
+      { id: "noodles", label: "면류", icon: "🍜🍝", dish: "🍜", hint: "국수 · 파스타" },
     ],
   },
   {
-    kicker: "ROUND 3 · 채소와 과일",
+    kicker: "GAME 3 / 3 · 채소와 과일",
     title: "마지막은 싱그러운 식재료들이에요",
     description: "채소, 버섯, 해조류와 과일·견과류를 분류해 보세요.",
-    complete: "모든 탐색을 마쳤어요!",
-    next: "이제 나만의 취향 지도를 확인해 볼까요?",
+    complete: "세 번째 게임까지 모두 마쳤어요!",
+    next: "마지막 게임 결과를 확인하고 전체 취향 지도를 볼게요.",
     items: [
-      { id: "leafy_veg", label: "잎채소", icon: "🥬", hint: "배추 · 상추 · 시금치" },
-      { id: "root_veg", label: "뿌리채소", icon: "🥕", hint: "당근 · 무 · 감자" },
-      { id: "mushroom", label: "버섯류", icon: "🍄", hint: "표고 · 느타리 등" },
-      { id: "seaweed", label: "해조류", icon: "🌿", hint: "김 · 미역 · 다시마" },
-      { id: "fruit", label: "과일류", icon: "🍎🍑", hint: "사과 · 복숭아 등" },
-      { id: "nuts", label: "견과류", icon: "🥜🌰", hint: "땅콩 · 호두 · 잣" },
+      { id: "leafy_veg", label: "잎채소", icon: "🥬", dish: "🥗", hint: "배추 · 상추 · 시금치" },
+      { id: "root_veg", label: "뿌리채소", icon: "🥕", dish: "🍛", hint: "당근 · 무 · 감자" },
+      { id: "mushroom", label: "버섯류", icon: "🍄", dish: "🍲", hint: "표고 · 느타리 등" },
+      { id: "seaweed", label: "해조류", icon: "🌿", dish: "🍙", hint: "김 · 미역 · 다시마" },
+      { id: "fruit", label: "과일류", icon: "🍎🍑", dish: "🥧", hint: "사과 · 복숭아 등" },
+      { id: "nuts", label: "견과류", icon: "🥜🌰", dish: "🍪", hint: "땅콩 · 호두 · 잣" },
     ],
   },
 ];
@@ -71,9 +71,9 @@ const MOBILE_SLOT_LAYOUTS = [
 ];
 
 const BUCKETS = {
-  avoid: { label: "못 먹어요", icon: "🚫", css: "avoid" },
-  dislike: { label: "선호하지 않아요", icon: "😕", css: "dislike" },
-  like: { label: "좋아해요", icon: "💚", css: "like" },
+  avoid: { label: "못 먹어요", icon: "🗑️", css: "avoid" },
+  dislike: { label: "선호하지 않아요", icon: "🧺", css: "dislike" },
+  like: { label: "좋아해요", icon: "🍽️", css: "like" },
 };
 
 const state = {
@@ -111,6 +111,7 @@ const dom = {
   roundTitle: document.querySelector("#roundTitle"),
   roundDescription: document.querySelector("#roundDescription"),
   progressText: document.querySelector("#progressText"),
+  overallText: document.querySelector("#overallText"),
   progressBar: document.querySelector("#progressBar"),
   roundDots: [...document.querySelectorAll("#roundDots span")],
   sortedCount: document.querySelector("#sortedCount"),
@@ -127,6 +128,7 @@ const dom = {
   roundCompleteKicker: document.querySelector("#roundCompleteKicker"),
   roundCompleteTitle: document.querySelector("#roundCompleteTitle"),
   roundCompleteDescription: document.querySelector("#roundCompleteDescription"),
+  roundSummary: document.querySelector("#roundSummary"),
   nextRound: document.querySelector("#nextRoundButton"),
   resultDialog: document.querySelector("#resultDialog"),
   resultCount: document.querySelector("#resultCount"),
@@ -166,10 +168,23 @@ function classifiedTotal() {
   return state.results.avoid.length + state.results.dislike.length + state.results.like.length;
 }
 
+function resultsForRound(index) {
+  const ids = new Set(ROUNDS[index].items.map((item) => item.id));
+  return Object.fromEntries(
+    Object.entries(state.results).map(([key, items]) => [key, items.filter((item) => ids.has(item.id))]),
+  );
+}
+
+function roundSortedTotal(index = state.roundIndex) {
+  return Object.values(resultsForRound(index)).reduce((sum, items) => sum + items.length, 0);
+}
+
 function updateProgress() {
-  const done = sortedTotal();
-  dom.progressText.textContent = `${done} / ${TOTAL_ITEMS}`;
-  dom.progressBar.style.width = `${(done / TOTAL_ITEMS) * 100}%`;
+  const round = ROUNDS[state.roundIndex];
+  const roundDone = roundSortedTotal();
+  dom.progressText.textContent = `${roundDone} / ${round.items.length}`;
+  dom.overallText.textContent = `전체 ${sortedTotal()} / ${TOTAL_ITEMS}`;
+  dom.progressBar.style.width = `${(roundDone / round.items.length) * 100}%`;
   dom.sortedCount.textContent = classifiedTotal();
 
   dom.roundDots.forEach((dot, index) => {
@@ -344,11 +359,38 @@ function clearZoneHighlights() {
   dom.zones.forEach((zone) => zone.classList.remove("drag-over"));
 }
 
+function playBucketReaction(bucket, item) {
+  const zone = dom.zones.find((candidate) => candidate.dataset.bucket === bucket);
+  const scene = zone?.querySelector(".zone-scene");
+  if (!zone || !scene) return;
+
+  zone.classList.remove("reacting");
+  void zone.offsetWidth;
+  zone.classList.add("reacting");
+
+  const effect = document.createElement("span");
+  effect.className = `bucket-effect ${bucket}-effect`;
+  if (bucket === "avoid") {
+    effect.innerHTML = `<b>${item.icon}</b><i>퐁!</i>`;
+  } else if (bucket === "dislike") {
+    effect.innerHTML = `<b>${item.icon}</b><i>보관</i>`;
+  } else {
+    effect.innerHTML = `<b class="raw-food">${item.icon}</b><i>✦</i><b class="cooked-food">${item.dish}</b>`;
+  }
+  scene.append(effect);
+
+  window.setTimeout(() => {
+    effect.remove();
+    zone.classList.remove("reacting");
+  }, 900);
+}
+
 function classify(id, bucket) {
   const entry = state.visible.get(id);
   if (!entry || !BUCKETS[bucket]) return;
   const card = cardElement(id);
   const item = entry.item;
+  playBucketReaction(bucket, item);
   state.results[bucket].push(item);
   state.visible.delete(id);
   state.cardOrigins.delete(id);
@@ -358,7 +400,7 @@ function classify(id, bucket) {
     window.setTimeout(() => {
       card.remove();
       fillVisibleCards();
-    }, 250);
+    }, 720);
   } else {
     fillVisibleCards();
   }
@@ -420,10 +462,23 @@ function onCardPointerDown(event) {
 
 function showRoundComplete() {
   const round = ROUNDS[state.roundIndex];
-  dom.roundCompleteKicker.textContent = `ROUND ${state.roundIndex + 1} COMPLETE`;
+  const roundResults = resultsForRound(state.roundIndex);
+  dom.roundCompleteKicker.textContent = `GAME ${state.roundIndex + 1} / ${ROUNDS.length} COMPLETE`;
   dom.roundCompleteTitle.textContent = round.complete;
   dom.roundCompleteDescription.textContent = round.next;
-  dom.nextRound.textContent = state.roundIndex === ROUNDS.length - 1 ? "결과 확인하기" : "다음 라운드";
+  dom.roundSummary.innerHTML = ["avoid", "dislike", "like", "skipped"].map((key) => {
+    const labels = {
+      avoid: ["🗑️", "버림"],
+      dislike: ["🧺", "보관"],
+      like: ["🍽️", "요리"],
+      skipped: ["⏸️", "보류"],
+    };
+    const [icon, label] = labels[key];
+    return `<span class="round-summary-item ${key}"><b>${icon}</b><strong>${roundResults[key].length}</strong><small>${label}</small></span>`;
+  }).join("");
+  dom.nextRound.textContent = state.roundIndex === ROUNDS.length - 1
+    ? "전체 결과 확인하기"
+    : `${state.roundIndex + 2}번째 게임 시작`;
   if (!dom.roundDialog.open) dom.roundDialog.showModal();
 }
 
@@ -469,8 +524,15 @@ function resetGame() {
 
 function exportResult() {
   const payload = {
-    version: "ingredient-sort-poc/1",
+    version: "ingredient-sort-poc/2",
     completedAt: new Date().toISOString(),
+    games: ROUNDS.map((round, index) => ({
+      game: index + 1,
+      title: round.kicker,
+      results: Object.fromEntries(
+        Object.entries(resultsForRound(index)).map(([key, items]) => [key, items.map(({ id, label }) => ({ id, label }))]),
+      ),
+    })),
     results: Object.fromEntries(
       Object.entries(state.results).map(([key, items]) => [key, items.map(({ id, label }) => ({ id, label }))]),
     ),
