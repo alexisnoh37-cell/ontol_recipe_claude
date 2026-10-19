@@ -107,6 +107,8 @@ uv run streamlit run app/main.py
 
 ### 6-2. 추천 v2 (랜덤 · 내 재료로 · 요리 찾기, Jev 재정렬, 부록 G)
 
+다른 앱 연동은 `docs/integration/recipe_v2_api.md`(연동 명세)를 보세요.
+
 기존 추천(v1)은 그대로 두고 나란히 동작합니다. `.env`에 `TYPESAFE_API_KEY`가 있으면 Jev(jev-1.14.0)가 안전한 후보의 순서를 다시 정하고, 없으면 규칙 점수 순서로만 보여 줍니다. 알레르기와 먹지 않는 재료는 Jev와 관계없이 규칙으로 먼저 제외합니다.
 
 ```powershell
