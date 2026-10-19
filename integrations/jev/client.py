@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import os
+import threading
 import time
 from collections.abc import Mapping
 from typing import Any
@@ -40,6 +41,11 @@ class JevClient:
         if not api_key:
             raise ValueError("Jev 인증키가 비었습니다")
         self.model = model
+        # 사용량(평가·비용 확인용). 걸러내기는 병렬로 부르므로 잠금으로 더한다
+        self.calls = 0
+        self.input_tokens = 0
+        self.output_tokens = 0
+        self._usage_lock = threading.Lock()
         self._client = httpx.Client(base_url=base_url, transport=transport,
                                     headers={"Authorization": f"Bearer {api_key}"})
 
@@ -70,9 +76,16 @@ class JevClient:
             if resp.status_code != 200:
                 raise JevError(f"HTTP {resp.status_code}: {_error_detail(resp)}")
             try:
-                answers = resp.json()["answers"]
+                data = resp.json()
+                answers = data["answers"]
             except (ValueError, KeyError, TypeError):
                 raise JevError("응답 형식 오류(answers 없음)") from None
+            usage = data.get("usage") if isinstance(data, dict) else None
+            with self._usage_lock:
+                self.calls += 1
+                if isinstance(usage, dict):
+                    self.input_tokens += int(usage.get("input_tokens") or 0)
+                    self.output_tokens += int(usage.get("output_tokens") or 0)
             if not isinstance(answers, dict):
                 raise JevError("응답 형식 오류(answers가 객체가 아님)")
             return answers

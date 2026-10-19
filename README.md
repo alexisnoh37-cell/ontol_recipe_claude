@@ -163,6 +163,7 @@ uv run python scripts/bench.py       # 합성 레시피 1만 개, 요청 300회:
 uv run python scripts/bench.py --trace   # trace() 생성과 표시 변환이 응답 시간에 주는 영향
 uv run python scripts/bench_v2.py                   # 추천 v2 형태별 p95(재정렬 끔, 기준 200ms)
 uv run python scripts/bench_v2.py --fake-jev-ms 300   # 재정렬 켬(가짜 Jev 지연) 참고값
+uv run python scripts/eval_v2.py                   # 추천 v2 평가(규칙·Jev 비교) → docs/review/v2_eval.md
 uv run python scripts/bench.py --recipes 1000 --graph-out viz/_bench/graph_1000.json
 # → API 실행 중 http://127.0.0.1:8000/viz?graph=/viz/static/_bench/graph_1000.json (HUD에 로딩 시간·fps)
 ```
