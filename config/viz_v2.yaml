@@ -1,0 +1,31 @@
+# /viz v2(Jev) 추천 과정 재생(docs/plan.md 부록 H) 화면 문구. 판정과 무관하고, 다른 앱 인계 묶음(config/v2.yaml)에는 넣지 않는다.
+
+max_similarity: 60   # 요리 찾기 2단계에 보일 유사도 S 상위 레시피 수
+labels:
+  aspect_ko:
+    request: 요청 문장과 맞는가
+    taste: 매운맛 취향에 맞는가
+    ingredients: 좋아하는·싫어하는 재료에 맞는가
+    cuisine: 음식 종류 선호에 맞는가
+    skill: 요리 실력에 맞는 난이도인가
+    pantry: 가진 재료를 잘 쓰는가(덜 사도 되는가)
+  state_ko:
+    user_request: 요청 문장
+    cooking_skill: 요리 실력
+    spiciness_preference_0_to_5: 매운맛 선호(0~5)
+    liked_ingredients: 좋아하는 재료
+    disliked_ingredients: 싫어하는 재료
+    liked_cuisines: 좋아하는 음식 종류
+    disliked_cuisines: 싫어하는 음식 종류
+    ingredients_on_hand: 가진 재료
+  not_sent: [알레르기, 절대 안 먹는 재료, 사용자 id, 레시피 id]
+  similarity_ko:
+    title: 제목이 비슷함
+    ingredient: 문장에 나온 재료를 씀
+    keyword: 키워드 조건(맛·종류·제목 낱말)
+    anchor: 같은 이름 요리와 비슷함
+  owned_ko:
+    pantry: 가진 재료
+    ancestor: 상위 분류(is_a)로 보유
+    staple: 기본 양념
+  levels_ko: [전혀 아님, 약간, 어느 정도, 잘 맞음, 완벽히]   # Jev 5단계 답(not at all … perfectly)

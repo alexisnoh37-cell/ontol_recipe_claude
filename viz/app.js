@@ -3,11 +3,13 @@
 // 데이터: GET /graph(기본). ?graph=<url>이면 그 JSON을, ?recipes=all|none이면 그 범위를 불러온다(viz-5 측정용).
 // ?display=1이면 표시 전용 레시피(식품안전나라, 엔진 미적재)도 불러온다. 레시피는 출처(origin)별 색·토글(int-2).
 // ?layout=tree-ingredient(기본)|tree-cuisine|flat: 나무(주재료 방향·음식 종류) 또는 평면 배치(부록 D-9). 화면에서 바로 바꾼다.
+// ?panel=v2: v2(Jev) 추천 과정 탭(부록 H). v2는 레시피 전체가 대상이라 그래프를 recipes=all로 불러온다.
 
 import { GROUP_CATEGORY_LABEL, LAYER_LABEL, LINK_COLOR, LINK_LABEL, NODE_COLOR, ORIGIN_COLOR, PLAY_COLOR, REASON_COLOR, ROLE_LABEL } from "./palette.js";
 import { setupAdhoc } from "./adhoc.js";
 import { setupBrowse } from "./browse.js";
 import { setupPlayback } from "./playback.js";
+import { setupPlaybackV2 } from "./playback_v2.js";
 import { LAYOUTS, createScene } from "./scene.js";
 
 const $ = (sel) => document.querySelector(sel);
@@ -17,12 +19,14 @@ const norm = (s) => String(s ?? "").toLowerCase().replace(/\s+/g, "");
 const params = new URLSearchParams(location.search);
 const t0 = performance.now();
 let playback = null;
+let playbackV2 = null;
 let browse = null;
 let originLabels = {};
 const withDisplay = ["1", "true"].includes(params.get("display"));
+const v2Panel = params.get("panel") === "v2";
 
 async function loadGraph() {
-  const scope = encodeURIComponent(params.get("recipes") || (withDisplay ? "all" : "published"));
+  const scope = encodeURIComponent(params.get("recipes") || (withDisplay || v2Panel ? "all" : "published"));
   const url = params.get("graph") || `/graph?recipes=${scope}${withDisplay ? "&display=true" : ""}`;
   const res = await fetch(url);
   if (!res.ok) throw new Error(`${url} → ${res.status}`);
@@ -57,7 +61,7 @@ function tooltip(n) {
     if (n.layer === 3 && !n.is_processed) flags.push("가공품 아님");
     lines.push([esc(n.category || ""), ...flags].filter(Boolean).join(" · "));
   }
-  const extra = playback?.tooltipExtra(n) || "";
+  const extra = (playbackV2?.active ? playbackV2.tooltipExtra(n) : playback?.tooltipExtra(n)) || "";
   return `<div class="tip">${lines.join("<br>")}${extra}</div>`;
 }
 
@@ -314,6 +318,34 @@ function startHud(scene, data, loadMs) {
   requestAnimationFrame(tick);
 }
 
+// --- 패널 탭: v1 재생·탐색 / v2(Jev) 추천 과정 ----------------------------------------------------
+
+function setupTabs(data) {
+  const allRecipes = params.get("recipes") === "all" || (!params.get("recipes") && (withDisplay || v2Panel));
+  function open(tab) {
+    for (const b of document.querySelectorAll("[data-tab]")) b.setAttribute("aria-selected", String(b.dataset.tab === tab));
+    for (const el of document.querySelectorAll('[data-panel="v1"]')) el.hidden = tab !== "v1";
+    $("#v2-card").hidden = tab !== "v2";
+    if (tab === "v2") { playback?.stop(); $("#cards-card").hidden = true; } else playbackV2?.stop();
+  }
+  for (const b of document.querySelectorAll("[data-tab]")) {
+    b.addEventListener("click", () => {
+      const tab = b.dataset.tab;
+      const next = new URLSearchParams(location.search);
+      if (tab === "v2") next.set("panel", "v2"); else next.delete("panel");
+      if (tab === "v2" && !allRecipes) { // v2는 레시피 전체가 대상: 그래프를 전체로 다시 불러온다
+        open("v2");
+        $("#v2-status").textContent = `레시피 전체 그래프로 다시 불러오는 중…(지금 ${data.stats.recipes}개)`;
+        location.search = next.toString();
+        return;
+      }
+      history.replaceState(null, "", `${location.pathname}?${next}`);
+      open(tab);
+    });
+  }
+  open(v2Panel ? "v2" : "v1");
+}
+
 // --- 시작 -----------------------------------------------------------------------------------------
 
 async function main() {
@@ -326,7 +358,7 @@ async function main() {
   }
   const tFetched = performance.now();
   const scene = createScene($("#graph"), data, {
-    tooltip, onSelect: (n) => { renderInfo(scene, n); browse?.onNodeSelect(n); }, layout: params.get("layout") || "tree-ingredient",
+    tooltip, onSelect: (n) => { renderInfo(scene, n); browse?.onNodeSelect(n); playbackV2?.onNodeSelect(n); }, layout: params.get("layout") || "tree-ingredient",
   });
   const tScene = performance.now();
   $("#loading").remove();
@@ -343,6 +375,12 @@ async function main() {
     scene, $, attachSearch,
     ingredientIndex: searchIndex(scene, (n) => n.kind === "ingredient" && !n.is_concept),
   });
+  playbackV2 = setupPlaybackV2({
+    scene, $, attachSearch,
+    ingredientIndex: searchIndex(scene, (n) => n.kind === "ingredient" && !n.is_concept),
+    onActivate: () => playback?.stop(),
+  });
+  setupTabs(data);
   requestAnimationFrame(() => requestAnimationFrame(() => {
     const now = performance.now();
     window.__vizTimings = { fetch: tFetched - t0, scene: tScene - tFetched, firstFrame: now - tScene, ...scene.timings };

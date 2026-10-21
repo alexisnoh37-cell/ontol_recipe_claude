@@ -658,7 +658,7 @@ ALTER TABLE recipe
 
 ## 부록 D. 시각화 부가 트랙 viz (2026-10-03 사람 승인)
 
-목표: API 서버가 `/viz`로 제공하는 정적 3D 페이지(HTML+JS 한 벌, 3d-force-graph CDN, 빌드 도구 없음)에서 컴파일된 지식+레시피를 4층 그래프로 탐색하고, 프로필(골든셋 페르소나 + 저장 프로필) 하나의 추천 과정을 6단계로 재생한다. **화면은 판정하지 않는다.** 엔진이 계산한 값(trace)을 색과 위치로만 바꾼다. 엔진 판정 로직과 `tests/allergy/`는 바꾸지 않는다.
+목표: API 서버가 `/viz`로 제공하는 정적 3D 페이지(HTML+JS 한 벌, 3d-force-graph CDN, 빌드 도구 없음)에서 컴파일된 지식+레시피를 4층 그래프로 탐색하고, 프로필(골든셋 페르소나 + 저장 프로필) 하나의 추천 과정을 6단계로 재생한다. **화면은 판정하지 않는다.** 엔진이 계산한 값(trace)을 색과 위치로만 바꾼다. 엔진 판정 로직과 `tests/allergy/`는 바꾸지 않는다. v2(Jev) 추천 재생은 부록 H.
 
 ### D-1. 층 배치(서버가 `layer`로 내려줌)
 
@@ -971,3 +971,34 @@ v1 로직 변경, 요리 형태(국·찌개 등) 새 필드, 자유 문장을 �
 - 데이터 묶음 `scripts/export_v2_bundle.py`(형식 `storage/v2_bundle.py`): knowledge·recipes·config(weights·engine·v2·display)·derived(매운맛 추정)·manifest(커밋·SHA-256·dirty).
 - 공용 시험 세트 `tests/shared/v2_cases.json`(생성 `scripts/make_shared_cases.py`): 입력 전부 + 사례 24개(안전·매운맛·형태·Jev·입력 오류). 기대값은 이 저장소 엔진의 계산 결과. `tests/v2/test_shared_cases.py`가 최신 여부와 JSON만으로 다시 돌린 결과를 확인한다.
 - 명세화 중 바꾼 동작: Jev 걸러내기에서 점수가 같은 후보의 순서를 key 문자열(c10 < c2) 대신 원래 순서(레시피 id 순)로 정함(다른 언어에서 같게 구현하기 쉽게).
+
+
+## 부록 H. 3D 온톨로지 위 v2(Jev) 추천 재생 (2026-10-20 사람 요청·승인)
+
+목표: `/viz` 3D 온톨로지가 떠 있는 한 화면에서 v2 추천(랜덤·내 재료로·요리 찾기)을 실행하면, 규칙이 무엇을 빼고 어떤 후보를 골랐는지, Jev가 무엇을 받고 어떤 질문에 어떻게 답해 순위가 정해졌는지를 그래프 강조와 오른쪽 패널로 **동시에** 본다. 부록 D(v1 재생)와 같은 원칙: **화면·표시 계층은 판정하지 않는다.** 엔진이 이미 계산한 값을 모아 보일 뿐이다.
+
+### H-1. 원칙
+
+- 실제로 일어나는 일만 보인다. 요리 찾기 문장의 첫 해석(키워드 규칙·재료 이름·앵커 → 유사도 S → 후보)은 **규칙**이고, Jev는 후보 × 항목 질문에 5단계 점수·확신도로 답한다. Jev는 이유 문장을 주지 않으므로 화면도 이유를 지어내지 않는다(받은 정보·질문·점수·확신도만).
+- 알레르기·절대 안 먹는 재료·id는 Jev에 보내지 않는다(G-12). 화면에 "보내지 않음"으로 따로 보인다.
+- v1 코드·v1 재생(`viz/playback.js`)·`tests/allergy/`·데이터·Jev 질문 문구는 바꾸지 않는다. 점수는 확률로 표시하지 않는다.
+
+### H-2. trace (`engine/v2/trace.py`, `RecommenderV2.trace`)
+
+`recommend()` 본문을 `_execute(user, req, collect)`로 옮겨 `recommend()`(collect 없음)와 `trace()`가 같은 경로를 쓴다. Jev 실패 시 규칙 경로 재실행도 같다(`jev_failed`). 기록: 보유·상속 재료, `passes()`에 걸린 레시피 순서와 통과 여부, random seed, pantry 묶음·가진 재료 활용 수, dish 질의 해석(낱말·걸린 키워드 규칙·질의 재료·앵커)·활성 S 항목·S 구성(pool과 제외된 것 중 확인한 것), 걸러내기 보충 점수, Jev에 보낸 프로필·후보 요약·항목·원답(점수·확신도), 순위 단계 출력(breakdown).
+
+### H-3. API
+
+`POST /v2/recommend`에 `trace: bool = False`. true면 응답에 `trace`(표시 변환 `api/viz_v2.py`: id 접두어·링크 id·라벨만 붙임, 알레르기 경로는 `GraphCatalog.exclusion()` 재사용, Jev 전송 형태는 `integrations/jev/judge.py`의 `build_state`·`recipe_brief`·`ASPECT_QUESTIONS`로 다시 만듦, 추가 호출 없음). false면 응답이 이전과 같다. 화면 문구는 `config/viz_v2.yaml`(다른 앱 인계 묶음에 들어가는 `config/v2.yaml`과 분리).
+
+### H-4. 화면 (`viz/playback_v2.js`)
+
+패널 위 "v1 재생 / v2(Jev) 추천" 탭. v2 탭: 테스트 페르소나, 버튼 3개(랜덤·내 재료로·요리 찾기), 순위 방식 Jev/규칙. v2 탭을 열면 그래프를 레시피 전체(`recipes=all&display=1`)로 다시 싣는다. 단계: 1 못 먹는 것(규칙) → 2 요청 해석(규칙: seed·확인 순서 / 보유·상속 / 낱말·키워드 규칙·S) → 3 제외(경로 빛) → 4 Jev에 보낸 후보와 정보 → 5 Jev 판단(질문·후보 × 항목 점수표·확신도, 규칙 방식이면 규칙 점수) → 6 결과 카드. 단계마다 3D 강조·높이와 패널이 함께 바뀌고, 패널 행 클릭 ↔ 3D 노드가 서로 연결된다.
+
+### H-5. 테스트
+
+`tests/v2/test_trace_v2.py`(trace 결과 = recommend 결과, 포함 관계, dish S 구성, Jev 실패 기록), `tests/v2/test_viz_v2.py`(모든 노드·경로 링크가 그래프에 있음, 알레르기 경로, Jev 전송 정보에 알레르기·절대 안 먹음 없음, trace=false 응답 무변경), `tests/viz/test_page.py`(v2 탭 요소). `tests/allergy/` 무변경.
+
+### H-6. 범위 밖
+
+판정·Jev 질문 변경, Jev에 이유 문장 요청, v1 재생 변경, 별도 2D 화면.

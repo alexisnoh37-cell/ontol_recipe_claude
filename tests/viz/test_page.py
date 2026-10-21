@@ -47,3 +47,14 @@ def test_tree_layout_controls_are_served(client):
     assert tree.status_code == 200 and "export function treeLayout" in tree.text
     scene = client.get("/viz/static/scene.js").text
     assert all(k in scene for k in ('"tree-ingredient"', '"tree-cuisine"', "flat:"))
+
+
+def test_v2_playback_panel_is_served(client):
+    """v2(Jev) 추천 과정 탭(부록 H-4). 단계·그래프 강조는 브라우저로 확인한다."""
+    html = client.get("/viz").text
+    for el in ('data-tab="v1"', 'data-tab="v2"', 'id="v2-persona"', 'id="v2-ranking"', 'data-v2-run="random"',
+               'data-v2-run="pantry"', 'data-v2-run="dish"', 'id="v2-query"', 'id="v2-step-body"', 'id="v2-cards"'):
+        assert el in html, el
+    js = client.get("/viz/static/playback_v2.js")
+    assert js.status_code == 200 and "export function setupPlaybackV2" in js.text
+    assert "setupPlaybackV2" in client.get("/viz/static/app.js").text

@@ -58,6 +58,7 @@ from engine.v2.ports import (
 )
 from engine.v2.similarity import DishScorer, combine, parse_query
 from engine.v2.spicy import not_spicy_ids
+from engine.v2.trace import JudgeCall, V2Trace
 
 DEFAULT_LIMIT = 10
 MAX_MAIN_NAMES = 8  # Jev에 보내는 후보 요약의 주재료 이름 수
@@ -109,25 +110,38 @@ class RecommenderV2:
 
     def recommend(self, user: UserContext, req: V2Request) -> V2Result:
         """모르는 알레르기 그룹·재료 id, dish의 빈 질의면 ValueError(v1과 같이 조용히 꺼지지 않게)."""
+        return self._execute(user, req, None)[0]
+
+    def trace(self, user: UserContext, req: V2Request) -> tuple[V2Result, V2Trace]:
+        """recommend()와 같은 경로로 실행하고 중간 결과를 함께 돌려준다(부록 H-2, 시각화용)."""
+        result, t = self._execute(user, req, V2Trace(req.mode))
+        assert t is not None
+        return result, t
+
+    def _execute(self, user: UserContext, req: V2Request,
+                 collect: V2Trace | None) -> tuple[V2Result, V2Trace | None]:
         if req.mode == "dish" and not (req.query and req.query.strip()):
             raise ValueError("요리 찾기(dish)에는 질의(query)가 필요합니다")
         if req.mode not in ("random", "pantry", "dish"):
             raise ValueError(f"모르는 추천 형태: {req.mode}")
-        run = _Run(self, user, req)
+        run = _Run(self, user, req, collect)
         if run.use_jev:
             result = getattr(run, f"jev_{req.mode}")()
             if result is not None:
-                return result
-            run = _Run(self, user, req)  # Jev 실패: 규칙 경로로 처음부터(제외 기록이 겹치지 않게)
+                return result, collect
+            if collect is not None:  # 규칙 경로 기록을 새로 시작하되, 실패한 Jev 요청은 남긴다
+                collect = V2Trace(req.mode, jev_failed=True, failed_judge=collect.judge)
+            run = _Run(self, user, req, collect)  # Jev 실패: 규칙 경로로 처음부터(제외 기록이 겹치지 않게)
             run.fallback_note = NOTE_JEV_UNAVAILABLE
-        return getattr(run, f"run_{req.mode}")()
+        return getattr(run, f"run_{req.mode}")(), collect
 
 
 class _Run:
     """요청 한 번의 상태."""
 
-    def __init__(self, owner: RecommenderV2, user: UserContext, req: V2Request):
+    def __init__(self, owner: RecommenderV2, user: UserContext, req: V2Request, collect: V2Trace | None = None):
         self.o = owner
+        self.t = collect
         self.cfg = owner.config
         self.user = user
         self.req = req
@@ -151,11 +165,15 @@ class _Run:
         self.limit = req.limit if req.limit is not None else default
         self.use_jev = self.cfg.ranking_mode == "jev" and owner.judge is not None and req.rerank is not False
         self.fallback_note: str | None = None
+        if self.t is not None:
+            self.t.pantry, self.t.owned, self.t.from_pantry = frozenset(self.pantry), self.owned, self.from_pantry
 
     # --- 공용 -----------------------------------------------------------------------------------------
 
     def passes(self, recipe: Recipe) -> bool:
         found = check_v2(self.constraints, recipe, not_spicy=recipe.id in self.not_spicy)
+        if self.t is not None:
+            self.t.checked.append((recipe.id, not found.exclusions))
         if found.exclusions:
             self.exclusions.extend(found.exclusions)
             return False
@@ -195,6 +213,8 @@ class _Run:
             model = self.o.reranker.model if rerank_used and self.o.reranker else None
         if self.fallback_note:
             notes = [self.fallback_note, *notes]
+        if self.t is not None:
+            self.t.ranking = ranking
         return V2Result(
             mode=self.req.mode, items=tuple(items), exclusions=tuple(self.exclusions),
             exclusion_summary=_summary(self.exclusions), seed=seed, rerank_used=rerank_used,
@@ -215,7 +235,9 @@ class _Run:
                 break
             if self.passes(recipe):
                 chosen.append(recipe)
-        return self.result([self.item(self.scored(self.candidate(r))) for r in chosen], seed=seed)
+        scored = [self.scored(self.candidate(r)) for r in chosen]
+        self.record(seed=seed, pool=scored, ranked=scored)
+        return self.result([self.item(r) for r in scored], seed=seed)
 
     def pantry_groups(self) -> dict[Group, list[Candidate]]:
         """v1 후보 생성 → 필터 → 꼭 필요한 재료 부족 수로 ready(0)·near(1~near_max_missing). 더 부족하면 버린다."""
@@ -232,6 +254,11 @@ class _Run:
                 groups["ready"].append(c)
             elif missing <= self.cfg.near_max_missing:
                 groups["near"].append(c)
+        if self.t is not None:
+            self.t.groups = {g: [c.recipe.id for c in cs] for g, cs in groups.items()}
+            for c in groups["ready"] + groups["near"]:
+                self.t.missing[c.recipe.id] = required_missing(c)
+                self.t.uses_pantry[c.recipe.id] = self.uses_pantry(c)
         return groups
 
     def run_pantry(self) -> V2Result:
@@ -248,6 +275,7 @@ class _Run:
         ordered[1], rest = ordered[1][:room], ordered[1][room:]
         ordered, used, note = self.rerank("pantry", ordered)
         ordered[1] += rest
+        self.record(pool=ordered[0] + ordered[1], ranked=ordered[0] + ordered[1])
         items = [self.item(r, g) for g, rs in zip(names, ordered, strict=True) for r in rs]
         return self.result(items[: self.limit], rerank_used=used, notes=[note] if note else [])
 
@@ -266,6 +294,10 @@ class _Run:
             return [], 0.0
         weights = self.cfg.dish_similarity
         scored = [(combine(c, weights, active), r) for r, c in comps]
+        if self.t is not None:
+            self.t.query, self.t.active = query, tuple(active)
+            self.t.similarity = {r.id: (s, {k: c[k] for k in active if k in c})
+                                 for (s, r), (_, c) in zip(scored, comps, strict=True) if s > 0}
         pool: list[tuple[float, Recipe]] = []
         best_excluded = 0.0  # 제외된 레시피 중 가장 높은 S(찾는 요리가 못 먹는 재료 때문에 빠졌는지 알리려고)
         for s, recipe in sorted((x for x in scored if x[0] > 0), key=lambda x: (-x[0], x[1].id)):
@@ -275,6 +307,8 @@ class _Run:
                 pool.append((s, recipe))
             else:
                 best_excluded = max(best_excluded, s)
+        if self.t is not None:
+            self.t.best_excluded = best_excluded
         return pool, best_excluded
 
     def run_dish(self) -> V2Result:
@@ -291,6 +325,7 @@ class _Run:
             ranked.append(r)
         ranked.sort(key=lambda r: (-round(r.score, 6), r.candidate.recipe.id))
         (ordered,), used, note = self.rerank("dish", [ranked])
+        self.record(pool=ranked, ranked=ordered)
         items = [self.item(r) for r in ordered[: self.limit]]
         return self.result(items, rerank_used=used, notes=excluded_note + ([note] if note else []))
 
@@ -308,6 +343,8 @@ class _Run:
                 break
             if self.passes(recipe):
                 pool.append(recipe)
+        if self.t is not None:
+            self.t.seed = seed
         judged = self.judged([self.candidate(r) for r in pool])
         if judged is None:
             return None
@@ -326,8 +363,10 @@ class _Run:
         if judged is None:
             return None
         in_ready = {c.recipe.id for c in ready}
-        items = [self.item(r, "ready") for r in judged if r.candidate.recipe.id in in_ready]
-        items += [self.item(r, "near") for r in judged if r.candidate.recipe.id not in in_ready]
+        ordered = [r for r in judged if r.candidate.recipe.id in in_ready]
+        ordered += [r for r in judged if r.candidate.recipe.id not in in_ready]
+        self.record(ranked=ordered)  # 결과와 같은 순서(묶음 경계 유지)
+        items = [self.item(r, "ready" if r.candidate.recipe.id in in_ready else "near") for r in ordered]
         return self.result(items[: self.limit], rerank_used=bool(judged), ranking="jev")
 
     def jev_dish(self) -> V2Result | None:
@@ -352,6 +391,8 @@ class _Run:
                     picked = sorted((k for k in scores if k in cands and _finite01(scores[k])),
                                     key=lambda k: (-scores[k], order[k]))[: self.cfg.ranking_pool_size - len(pool)]
                     pool += [(0.0, cands[k]) for k in picked]
+                    if self.t is not None:
+                        self.t.screened = {cands[k].id: float(scores[k]) for k in picked}
                     if picked:
                         notes.append(NOTE_JEV_SCREENED)
                 elif not pool:
@@ -374,9 +415,14 @@ class _Run:
             return []
         aspects = self.aspects()
         keyed = {f"c{i}": c for i, c in enumerate(candidates)}
+        call = None
         try:
-            answers = self.o.judge.judge(self.profile(), tuple(self.brief(k, c) for k, c in keyed.items()), aspects,
-                                         timeout_s=self.cfg.ranking_timeout_ms / 1000)
+            profile, briefs = self.profile(), tuple(self.brief(k, c) for k, c in keyed.items())
+            if self.t is not None:
+                self.t.pool = [c.recipe.id for c in candidates]
+                call = self.t.judge = JudgeCall(profile, briefs, {k: c.recipe.id for k, c in keyed.items()}, aspects,
+                                                {a: self.cfg.aspect_weights[a] for a in aspects}, failed=True)
+            answers = self.o.judge.judge(profile, briefs, aspects, timeout_s=self.cfg.ranking_timeout_ms / 1000)
         except Exception:  # noqa: BLE001  실패·구현 결함 모두 규칙 경로로(안전 쪽)
             return None
         if not isinstance(answers, Mapping):
@@ -402,10 +448,29 @@ class _Run:
             breakdown["J"] = score
             breakdown["J_conf"] = min(confs) if confs else 0.0
             out.append((score, i, _Ranked(c, score, breakdown)))
+            if call is not None:
+                call.answers[key] = {a: (got[a].score, got[a].confidence) for a in aspects
+                                     if f"J_{a}" in breakdown}
         if not any(len(r.breakdown) > 2 for _, _, r in out):
             return None  # 쓸 수 있는 답이 하나도 없음
         out.sort(key=lambda x: (-round(x[0], 6), x[1]))
-        return [r for _, _, r in out]
+        ranked = [r for _, _, r in out]
+        if call is not None:
+            call.failed = False
+            self.record(ranked=ranked)
+        return ranked
+
+    def record(self, *, seed: int | None = None, pool: Sequence[_Ranked] | None = None,
+               ranked: Sequence[_Ranked] | None = None) -> None:
+        """trace 기록(시각화용). 판정에 쓰지 않는다."""
+        if self.t is None:
+            return
+        if seed is not None:
+            self.t.seed = seed
+        if pool is not None:
+            self.t.pool = [r.candidate.recipe.id for r in pool]
+        if ranked is not None:
+            self.t.ranked = [(r.candidate.recipe.id, r.score, dict(r.breakdown)) for r in ranked]
 
     def aspects(self) -> tuple[Aspect, ...]:
         """사용자 정보가 있는 항목만 묻는다."""
