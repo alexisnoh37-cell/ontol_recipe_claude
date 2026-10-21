@@ -363,8 +363,10 @@ class _Run:
         if judged is None:
             return None
         in_ready = {c.recipe.id for c in ready}
-        items = [self.item(r, "ready") for r in judged if r.candidate.recipe.id in in_ready]
-        items += [self.item(r, "near") for r in judged if r.candidate.recipe.id not in in_ready]
+        ordered = [r for r in judged if r.candidate.recipe.id in in_ready]
+        ordered += [r for r in judged if r.candidate.recipe.id not in in_ready]
+        self.record(ranked=ordered)  # 결과와 같은 순서(묶음 경계 유지)
+        items = [self.item(r, "ready" if r.candidate.recipe.id in in_ready else "near") for r in ordered]
         return self.result(items[: self.limit], rerank_used=bool(judged), ranking="jev")
 
     def jev_dish(self) -> V2Result | None:
@@ -413,13 +415,13 @@ class _Run:
             return []
         aspects = self.aspects()
         keyed = {f"c{i}": c for i, c in enumerate(candidates)}
-        profile, briefs = self.profile(), tuple(self.brief(k, c) for k, c in keyed.items())
         call = None
-        if self.t is not None:
-            self.t.pool = [c.recipe.id for c in candidates]
-            call = self.t.judge = JudgeCall(profile, briefs, {k: c.recipe.id for k, c in keyed.items()}, aspects,
-                                            {a: self.cfg.aspect_weights[a] for a in aspects}, failed=True)
         try:
+            profile, briefs = self.profile(), tuple(self.brief(k, c) for k, c in keyed.items())
+            if self.t is not None:
+                self.t.pool = [c.recipe.id for c in candidates]
+                call = self.t.judge = JudgeCall(profile, briefs, {k: c.recipe.id for k, c in keyed.items()}, aspects,
+                                                {a: self.cfg.aspect_weights[a] for a in aspects}, failed=True)
             answers = self.o.judge.judge(profile, briefs, aspects, timeout_s=self.cfg.ranking_timeout_ms / 1000)
         except Exception:  # noqa: BLE001  실패·구현 결함 모두 규칙 경로로(안전 쪽)
             return None

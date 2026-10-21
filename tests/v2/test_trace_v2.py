@@ -79,6 +79,7 @@ def test_trace_matches_recommend_and_is_consistent(compiled, judge_name, mode, u
     shown = [i.item.recipe_id for i in result.items]
     ranked = [rid for rid, _, _ in t.ranked]
     assert set(shown) <= set(ranked) <= set(t.pool) <= set(passed)
+    assert ranked[: len(shown)] == shown  # 화면의 n위 = 실제 결과의 n번째
     assert t.ranking == result.ranking and t.mode == mode
 
     if judge_name == "jev":
@@ -142,3 +143,33 @@ def test_recommend_does_not_collect(compiled, monkeypatch):
                         lambda self, u, r, c: calls.append(c) or original(self, u, r, c))
     v2.recommend(UserContext(), REQUESTS["dish"])
     assert calls == [None]
+
+
+def test_jev_pantry_rank_follows_result_order(compiled):
+    """Jev가 '조금만 사면' 레시피를 더 높게 보아도 결과는 '지금 바로'가 먼저다. trace 순위도 결과 순서를 따른다."""
+    judge = Table({"감자조림": 0.1, "감자구이": 0.2, "버터감자": 1.0, "고추장 감자조림": 0.95})
+    result, t = make(compiled, judge).trace(UserContext(), V2Request("pantry", pantry=frozenset({"potato"}), limit=50))
+    groups = [i.group for i in result.items]
+    assert "near" in groups and groups == sorted(groups, key=lambda g: g != "ready")
+    near_top = next(i for i in result.items if i.group == "near")
+    assert near_top.item.title == "버터감자"  # Jev 최고점이지만 near 묶음 맨 앞
+    assert [rid for rid, _, _ in t.ranked] == [i.item.recipe_id for i in result.items]
+    by_id = {rid: (score, bd) for rid, score, bd in t.ranked}
+    for i in result.items:  # 순서만 묶음 순, 점수는 Jev 판단 그대로
+        assert by_id[i.item.recipe_id][0] == pytest.approx(i.item.score)
+
+
+def test_brief_error_falls_back_to_rules(compiled, monkeypatch):
+    """후보 요약을 만들다 오류가 나도 Jev 실패와 같이 규칙 경로로 돌아간다(추천과 trace 모두)."""
+    from engine.v2.recommend import _Run
+
+    def broken(self, key, c):
+        raise KeyError("brief")
+
+    monkeypatch.setattr(_Run, "brief", broken)
+    v2 = make(compiled, Table())
+    req = V2Request("dish", query="감자", limit=5)
+    plain = v2.recommend(UserContext(), req)
+    result, t = v2.trace(UserContext(), req)
+    assert plain.ranking == result.ranking == "rules" and "jev_unavailable" in plain.notes
+    assert t.jev_failed and t.failed_judge is None and t.judge is None
