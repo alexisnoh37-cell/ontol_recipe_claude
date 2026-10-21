@@ -14,6 +14,11 @@ const MOVE_MS = 1400; // 단계 전환 이동 시간
 const STAGGER_MS = 1600; // 떨어지고 떠오르는 순서를 보이도록 나눠 주는 최대 지연
 const PODIUM_RISE = 320; // 순위 무대에서 점수 1.0일 때 높이
 const LABELS = 15;
+// 꽃잎 색(항목별, 부록 H-8). Jev 항목과 규칙 점수 항목. 판정과 무관한 표시 색
+const PETAL_COLOR = {
+  request: "#ffb224", taste: "#ff6b5a", ingredients: "#5fd18b", cuisine: "#58a6ff", skill: "#c49bff", pantry: "#3ccfcf",
+  I: "#3ccfcf", K: "#58a6ff", T: "#ff6b5a", P: "#5fd18b", D: "#c49bff", M: "#9aa1ad", S: "#ffb224",
+};
 const COLOR = { screened: "#c9a0ff", ready: "#7ee2a8", near: "#ffe08a", hardDislike: REASON_COLOR.hard_dislike_ingredient };
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -171,6 +176,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     els.player.hidden = true;
     els.cards.innerHTML = "";
     scene.setView(null);
+    scene.setGlyphs([]);
     scene.setTargets(new Map());
     scene.setStage(false);
     els.funnel.hidden = true;
@@ -210,6 +216,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     bindGoto(els.cards);
     scene.setView(built.view);
     scene.setTargets(targetsFor(run.step), MOVE_MS);
+    scene.setGlyphs(glyphsFor(run.step));
     renderFunnel();
     if (els.follow.checked) followCamera(run.step);
   }
@@ -285,11 +292,46 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
       });
       if (step === 5) {
         shown.forEach((x, i) => out.set(x.recipe, {
-          ...ringAt(i, shown.length, shown.length > 1 ? info.daisR * 0.7 : 0, info.daisY + (shown.length - i) * 14),
+          ...ringAt(i, shown.length, shown.length > 1 ? info.daisR : 0, info.daisY + (shown.length - i) * 14),
           delay: i * 120 }));
       }
     }
     return out;
+  }
+
+  // --- 꽃: 순위 단계(5)는 후보 전부, 결과 단계(6)는 결과만. 꽃잎 = 항목, 길이 = 점수, 진하기 = 확신도 -----------
+
+  function petalKeys() {
+    const t = run.t;
+    if (t.ranking === "jev") return t.jev.aspects;
+    return Object.keys(t.ranked[0]?.breakdown || {}).filter((k) => !k.startsWith("J"));
+  }
+
+  function glyphsFor(step) {
+    const t = run.t;
+    if (step < 4 || !t.ranked.length) return [];
+    const keys = petalKeys();
+    const list = step === 5 ? t.ranked.filter((x) => x.shown) : t.ranked;
+    return list.map((x) => ({
+      id: x.recipe,
+      petals: keys.map((k) => {
+        if (t.ranking === "jev") {
+          const ans = t.jev.answers[x.recipe]?.[k];
+          return { color: PETAL_COLOR[k] || "#e6e8ec", length: ans?.score ?? 0, opacity: ans ? 0.25 + 0.75 * ans.confidence : 0.12 };
+        }
+        return { color: PETAL_COLOR[k] || "#e6e8ec", length: x.breakdown[k] ?? 0, opacity: 0.85 };
+      }),
+    }));
+  }
+
+  function petalLegend() {
+    const t = run.t;
+    const ak = L().aspect_ko || {};
+    const keys = petalKeys();
+    if (!keys.length) return "";
+    const name = (k) => (t.ranking === "jev" ? ak[k] || k : `${k} ${t.breakdown_labels[k] || ""}`);
+    return `<div class="petal-legend"><span class="muted">꽃잎(12시부터 시계 방향) · 길이 = 점수${t.ranking === "jev" ? " · 진하기 = 확신도" : ""}:</span>`
+      + keys.map((k) => `<span><i style="background:${PETAL_COLOR[k] || "#e6e8ec"}"></i>${esc(name(k))}</span>`).join("") + "</div>";
   }
 
   function followCamera(step) {
@@ -531,7 +573,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
             + keys.map((k) => `<td>${f2(r.breakdown[k])}</td>`).join("") + "</tr>").join("")
           + "</tbody></table></div>";
       }
-      return { html, view: { nodes, links: new Map(), labels } };
+      return { html: petalLegend() + html, view: { nodes, links: new Map(), labels } };
     },
     // 6 결과: 최종 레시피와 주재료 간선
     () => {
@@ -549,7 +591,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
           if (!nodes.has(l.t)) nodes.set(l.t, run.mode === "pantry" && owned.has(l.t) ? { color: PLAY_COLOR.owned, scale: 1.3 } : { scale: 1.1 });
         }
       }
-      const notes = (run.response.notes || []).map((n) => `<p class="notice">${esc(n.text)}</p>`).join("");
+      const notes = petalLegend() + (run.response.notes || []).map((n) => `<p class="notice">${esc(n.text)}</p>`).join("");
       const html = `<p>추천 <b>${run.response.items.length}</b>개 · 제외 ${run.response.excluded_total}개 · 순위: ${t.ranking === "jev" ? `Jev(${esc(t.model)})` : "규칙 점수"}.`
         + " 레시피와 주재료·부재료 간선이 강조됩니다. 카드를 누르면 그 레시피로 이동합니다.</p>" + notes
         + (run.response.disclaimer ? `<p class="muted small-text">${esc(run.response.disclaimer)}</p>` : "");
