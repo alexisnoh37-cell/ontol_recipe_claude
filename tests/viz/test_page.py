@@ -58,3 +58,14 @@ def test_v2_playback_panel_is_served(client):
     js = client.get("/viz/static/playback_v2.js")
     assert js.status_code == 200 and "export function setupPlaybackV2" in js.text
     assert "setupPlaybackV2" in client.get("/viz/static/app.js").text
+
+
+def test_v2_stage_controls_are_served(client):
+    """v2 재생 무대(부록 H-7): 깔때기 막대·자동 재생·카메라 따라가기, 장면의 무대 함수. 움직임은 브라우저로 확인한다."""
+    html = client.get("/viz").text
+    for el in ('id="v2-funnel"', 'id="v2-autoplay"', 'id="v2-follow"'):
+        assert el in html, el
+    scene = client.get("/viz/static/scene.js").text
+    assert all(k in scene for k in ("setStage", "setTargets", "stageInfo", "homeOf", "lookAt", "function buildStage"))
+    play = client.get("/viz/static/playback_v2.js").text
+    assert all(k in play for k in ("targetsFor", "renderFunnel", "followCamera"))

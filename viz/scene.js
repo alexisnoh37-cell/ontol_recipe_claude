@@ -198,6 +198,8 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
     incident.get(l.t)?.push(l);
   }
   let mode = LAYOUTS[layout] ? layout : "tree-ingredient";
+  const staged = { home: new Map(), moved: new Set() }; // v2 무대 이동(부록 H-7): 옮기기 전 자리, 옮겨 둔 노드
+  let stageDecor = null; // v2 무대 장식(땅·순위 무대)
   let flatPos = null; // 평면 배치 좌표. force warmup은 비동기라 평면에서 다른 배치로 바꿀 때 저장한다
   const flatSectors = mode === "flat" ? initialLayout(nodes) : null;
   if (mode !== "flat") applyPositions(treeLayout(nodes, incident, byId, treeKind(mode)).pos);
@@ -560,6 +562,78 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
     pulseAnim = requestAnimationFrame(tickPulses);
   }
 
+  // --- v2 재생 무대(부록 H-7): 땅 = 제외된 레시피가 떨어지는 곳, 순위 무대 = 후보가 떠올라 순위대로 서는 곳 ----
+  // 좌표만 바꾼다(판정 없음). 지정하지 않은 노드 중 옮겨 둔 노드는 원래 자리로 돌아간다.
+
+  function stageInfo() {
+    const flat = mode === "flat";
+    const groundY = flat ? LAYER_Y[1] - 170 : TREE.trunkBottom - 30;
+    const podiumY = flat ? LAYER_Y[4] + 380 : TREE.domeY + TREE.domeR + 220;
+    return { groundY, groundR: flat ? 760 : 1000, podiumY, ringR: 540, innerR: 360, daisY: podiumY + 470, daisR: 210 };
+  }
+  function setStage(on) {
+    if (!stageDecor && on) stageDecor = buildStage(graph.scene(), stageInfo());
+    if (stageDecor) stageDecor.group.visible = Boolean(on);
+    syncDecor();
+  }
+  function dropStage() {
+    if (!stageDecor) return;
+    graph.scene().remove(stageDecor.group);
+    stageDecor.sprites.forEach(disposeSprite);
+    stageDecor = null;
+  }
+
+  let stageAnim = null;
+  function setTargets(targets, ms = 1400) {
+    // targets: Map<id, {x, y, z, delay?}>(delay ms). 움직임이 끝날 때까지 간선·라벨이 따라온다
+    const moving = [];
+    for (const [id, t] of targets) {
+      const n = byId.get(id);
+      if (!n) continue;
+      if (!staged.home.has(id)) staged.home.set(id, { x: n.x, y: n.baseY ?? n.y, z: n.z });
+      moving.push({ n, from: { x: n.x, y: n.y, z: n.z }, to: t, delay: t.delay || 0 });
+    }
+    for (const id of staged.moved) {
+      if (targets.has(id)) continue;
+      const n = byId.get(id);
+      const h = staged.home.get(id);
+      if (n && h) moving.push({ n, from: { x: n.x, y: n.y, z: n.z }, to: h, delay: 0 });
+    }
+    staged.moved = new Set([...targets.keys()].filter((id) => byId.has(id)));
+    if (stageAnim) cancelAnimationFrame(stageAnim);
+    const live = moving.filter((m) => Math.abs(m.to.x - m.from.x) + Math.abs(m.to.y - m.from.y) + Math.abs(m.to.z - m.from.z) > 0.01);
+    if (!live.length) { stageAnim = null; return; }
+    const last = Math.max(...live.map((m) => m.delay)) + ms;
+    const t0 = performance.now();
+    const step = (now) => {
+      for (const m of live) {
+        const k = ms <= 0 ? 1 : Math.max(0, Math.min(1, (now - t0 - m.delay) / ms));
+        const e = k < 0.5 ? 4 * k * k * k : 1 - (-2 * k + 2) ** 3 / 2;
+        m.n.x = m.n.fx = m.from.x + (m.to.x - m.from.x) * e;
+        m.n.y = m.n.fy = m.from.y + (m.to.y - m.from.y) * e;
+        m.n.z = m.n.fz = m.from.z + (m.to.z - m.from.z) * e;
+      }
+      graph.d3ReheatSimulation(); // cooldownTicks 0: 위치만 한 번 동기화
+      for (const entry of shownLabels) placeLabel(entry);
+      stageAnim = now - t0 < last ? requestAnimationFrame(step) : null;
+    };
+    stageAnim = requestAnimationFrame(step);
+  }
+  function homeOf(id) {
+    const n = byId.get(id);
+    return staged.home.get(id) || (n ? { x: n.x, y: n.baseY ?? n.y, z: n.z } : null);
+  }
+
+  // 카메라를 지금 방향(방위각)은 그대로 두고 높이·거리만 바꿔 옮긴다
+  function lookAt(targetY, distance, pitchDeg, ms = 1500) {
+    const cam = graph.camera().position;
+    const az = Math.atan2(cam.x, cam.z);
+    const pitch = (pitchDeg * Math.PI) / 180;
+    const flat = distance * Math.cos(pitch);
+    graph.cameraPosition({ x: flat * Math.sin(az), y: targetY + distance * Math.sin(pitch), z: flat * Math.cos(az) },
+      { x: 0, y: targetY, z: 0 }, ms);
+  }
+
   // --- 카메라·토글 ------------------------------------------------------------------------------
 
   function flyTo(id) {
@@ -626,7 +700,9 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   }
 
   function applyPositions(pos) {
-    // 노드를 그 자리에 고정(fx·fy·fz). baseY는 재생 높이 이동의 기준
+    // 노드를 그 자리에 고정(fx·fy·fz). baseY는 재생 높이 이동의 기준. 배치가 바뀌면 무대 이동 기록도 새로 시작
+    staged.home.clear();
+    staged.moved.clear();
     for (const [id, p] of pos) {
       const n = byId.get(id);
       if (!n) continue;
@@ -643,6 +719,7 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
       d.group.visible = d === (mode === "flat" ? flatDecor : treeDecor);
       if (d.group.visible) fixedLabels.push(...d.sprites);
     }
+    if (stageDecor?.group.visible) fixedLabels.push(...stageDecor.sprites);
     for (const sp of fixedLabels) rescale(sp);
   }
 
@@ -669,6 +746,7 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
     const y = mode === "flat" ? LAYER_Y[4] + OVERLAY.dy : TREE.domeY + TREE.domeR + OVERLAY.dy;
     for (const n of overlay.nodes) { n.fy = n.y = n.baseY = y; }
     graph.d3ReheatSimulation(); // cooldownTicks 0: force tick 없이 위치만 한 번 동기화
+    if (stageDecor) { const on = stageDecor.group.visible; dropStage(); setStage(on); }
     syncDecor();
     for (const entry of shownLabels) placeLabel(entry);
     resetCamera(900);
@@ -707,6 +785,7 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   return {
     graph, nodes, links, byId, linkById, incident, timings, THREE,
     select, setView, setOffsets, flyTo, resetCamera, setLayer, setOrigin, setLinkType, setOverlay, setLayoutMode,
+    setStage, setTargets, stageInfo, homeOf, lookAt,
     get selected() { return state.selected; },
     get layout() { return mode; },
     // 점검용: 지금 보이는 장식 라벨(층·부위·구역·잎 무리 이름)
@@ -752,6 +831,39 @@ function decorate(scene, sectors) {
     labels.push(t);
   }
   return { group, sprites: labels };
+}
+
+function buildStage(scene, info) {
+  // 땅(바닥 원판·테두리)과 순위 무대(고리·단상). 아주 흐리게 그려 노드가 주인공이 되게 한다
+  const group = new THREE.Group();
+  scene.add(group);
+  const flatMat = (color, opacity) => new THREE.MeshBasicMaterial({ color, transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false });
+  const ground = new THREE.Mesh(new THREE.CircleGeometry(info.groundR, 96), flatMat("#3a2f2a", 0.28));
+  ground.rotation.x = -Math.PI / 2;
+  ground.position.y = info.groundY;
+  const rim = new THREE.Mesh(new THREE.RingGeometry(info.groundR - 6, info.groundR, 128), flatMat("#e5484d", 0.35));
+  rim.rotation.x = -Math.PI / 2;
+  rim.position.y = info.groundY + 1;
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(info.ringR, 2.2, 6, 160), flatMat("#ffb224", 0.45));
+  ring.rotation.x = Math.PI / 2;
+  ring.position.y = info.podiumY;
+  const inner = new THREE.Mesh(new THREE.TorusGeometry(info.innerR, 1.6, 6, 140), flatMat("#7ee2a8", 0.3));
+  inner.rotation.x = Math.PI / 2;
+  inner.position.y = info.podiumY;
+  const dais = new THREE.Mesh(new THREE.CircleGeometry(info.daisR, 64), flatMat("#ffb224", 0.16));
+  dais.rotation.x = -Math.PI / 2;
+  dais.position.y = info.daisY - 18;
+  for (const m of [ground, rim, ring, inner, dais]) group.add(m);
+  const sprites = [];
+  for (const [text, y, color] of [["땅: 제외된 레시피", info.groundY, "#ff9aa0"], ["순위 무대: 후보", info.podiumY, "#ffd27a"], ["결과", info.daisY, "#ffd27a"]]) {
+    const t = textSprite(text, { px: LABEL_PX.sector, color, background: "rgba(14,15,18,0.55)", above: false });
+    t.center.set(0, 0.5);
+    const r = text === "결과" ? info.daisR : text.startsWith("땅") ? info.groundR : info.ringR;
+    t.position.set(r + 24, y, 0);
+    group.add(t);
+    sprites.push(t);
+  }
+  return { group, sprites };
 }
 
 function decorateTree(scene, labels) {

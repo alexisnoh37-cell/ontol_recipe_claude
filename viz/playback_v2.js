@@ -1,15 +1,18 @@
 // v2(Jev) 추천 6단계 재생(docs/plan.md 부록 H-4). 화면은 판정하지 않는다: POST /v2/recommend(trace: true)가
 // 돌려준 값만 색·높이·라벨·표로 바꾼다. 3D 그래프와 패널은 같은 단계에서 함께 바뀌고, 패널 행 ↔ 노드가 서로 연결된다.
 //   1 못 먹는 것(규칙) → 2 요청 해석(규칙) → 3 제외(규칙) → 4 Jev에 보낸 후보 → 5 순위 판단(Jev 또는 규칙) → 6 결과
+// 무대(부록 H-7): 제외된 잎은 땅으로 떨어지고, 후보는 수관 위 순위 무대로 떠올라 점수만큼 높이 서며, 결과는 단상에 오른다.
+// 아래 깔때기 막대가 남은 레시피 수를, 카메라는 단계마다 뿌리 → 수관 → 땅 → 무대 순으로 따라간다.
 
 import { LINK_COLOR, PLAY_COLOR, REASON_COLOR, REASON_SHORT } from "./palette.js";
 
 const STEP_TITLES = ["못 먹는 것 (규칙)", "요청 해석 (규칙)", "제외 (규칙)", "Jev에 보낸 후보", "순위 판단", "결과"];
 const usedJev = (t) => t.ranking === "jev" || t.jev_failed;
 const MODE_LABEL = { random: "🎲 랜덤 추천", pantry: "🥕 내 재료로 추천", dish: "🔎 요리 찾기" };
-const AUTO_MS = 5000;
-const SINK = -80;
-const RISE = 160;
+const AUTO_MS = 5500;
+const MOVE_MS = 1400; // 단계 전환 이동 시간
+const STAGGER_MS = 1600; // 떨어지고 떠오르는 순서를 보이도록 나눠 주는 최대 지연
+const PODIUM_RISE = 320; // 순위 무대에서 점수 1.0일 때 높이
 const LABELS = 15;
 const COLOR = { screened: "#c9a0ff", ready: "#7ee2a8", near: "#ffe08a", hardDislike: REASON_COLOR.hard_dislike_ingredient };
 
@@ -24,6 +27,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     query: $("#v2-query"), status: $("#v2-status"), player: $("#v2-player"), dots: $("#v2-dots"),
     prev: $("#v2-prev"), next: $("#v2-next"), auto: $("#v2-auto"), stop: $("#v2-stop"),
     title: $("#v2-step-title"), body: $("#v2-step-body"), cards: $("#v2-cards"),
+    funnel: $("#v2-funnel"), autoplay: $("#v2-autoplay"), follow: $("#v2-follow"),
   };
   const personas = new Map();
   let persona = null;
@@ -144,6 +148,8 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
       scene.select(null);
       show(0);
       els.player.scrollIntoView({ block: "start", behavior: "smooth" });
+      scene.setStage(true);
+      if (els.autoplay.checked) startAuto();
       window.__vizV2 = { get step() { return run?.step; }, get trace() { return run?.t; }, get response() { return run?.response; } };
     } catch (err) {
       els.status.textContent = `실패: ${err.message}`;
@@ -165,7 +171,9 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     els.player.hidden = true;
     els.cards.innerHTML = "";
     scene.setView(null);
-    scene.setOffsets(new Map());
+    scene.setTargets(new Map());
+    scene.setStage(false);
+    els.funnel.hidden = true;
   }
 
   function pause() {
@@ -201,19 +209,136 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     els.cards.innerHTML = run.step === 5 ? cardsHtml() : "";
     bindGoto(els.cards);
     scene.setView(built.view);
-    scene.setOffsets(built.offsets || new Map());
+    scene.setTargets(targetsFor(run.step), MOVE_MS);
+    renderFunnel();
+    if (els.follow.checked) followCamera(run.step);
   }
 
   els.prev.addEventListener("click", () => { pause(); show(run.step - 1); });
   els.next.addEventListener("click", () => { pause(); show(run.step + 1); });
   els.stop.addEventListener("click", stop);
-  els.auto.addEventListener("click", () => {
+  function startAuto() {
     if (!run) return;
-    if (timer) { pause(); return; }
     if (run.step === 5) show(0);
     els.auto.textContent = "❚❚ 멈춤";
     timer = setInterval(() => { if (!run || run.step >= 5) { pause(); return; } show(run.step + 1); }, AUTO_MS);
+  }
+  els.auto.addEventListener("click", () => {
+    if (!run) return;
+    if (timer) { pause(); return; }
+    startAuto();
   });
+
+  // --- 무대: 단계별 목표 위치(판정 없이 trace 값만 자리로 바꾼다) -------------------------------------
+
+  const hash01 = (str) => {
+    let h = 2166136261;
+    for (let i = 0; i < str.length; i++) h = Math.imul(h ^ str.charCodeAt(i), 16777619);
+    return ((h >>> 0) % 1000) / 1000;
+  };
+  const stagger = (i, n) => (n > 1 ? (STAGGER_MS * i) / (n - 1) : 0);
+  const ringAt = (i, n, r, y, phase = 0) => {
+    const a = Math.PI / 2 + phase + (2 * Math.PI * i) / Math.max(1, n);
+    return { x: r * Math.cos(a), y, z: r * Math.sin(a) };
+  };
+
+  function targetsFor(step) {
+    const t = run.t;
+    const info = scene.stageInfo();
+    const out = new Map();
+    if (step === 1 && run.mode === "dish") { // 요청 해석: 비슷한 레시피가 S만큼 제자리에서 솟는다
+      for (const sm of t.similarity) {
+        const h = scene.homeOf(sm.recipe);
+        if (h) out.set(sm.recipe, { ...h, y: h.y + sm.S * 160 });
+      }
+    }
+    if (step >= 2) { // 제외: 확인한 순서대로 잎이 땅으로 떨어진다(자기 방향 그대로, 반지름만 흩뿌림)
+      const order = new Map(t.checked.map((c, i) => [c.recipe, i]));
+      for (const r of Object.keys(t.excluded)) {
+        const h = scene.homeOf(r);
+        if (!h) continue;
+        const a = Math.atan2(h.z, h.x);
+        const rr = info.groundR * (0.3 + 0.62 * hash01(r));
+        out.set(r, { x: rr * Math.cos(a), y: info.groundY + 4, z: rr * Math.sin(a),
+          delay: step === 2 ? stagger(order.get(r) ?? 0, t.checked.length) : 0 });
+      }
+    }
+    const ready = new Set(t.groups.ready || []);
+    const radius = (r) => (ready.has(r) ? info.innerR : info.ringR);
+    if (step === 3) { // 후보: 순위 무대 고리로 떠오른다(내 재료로는 지금 바로 = 안쪽 고리)
+      const inner = t.pool.filter((r) => ready.has(r));
+      const outer = t.pool.filter((r) => !ready.has(r));
+      for (const [list, r] of [[inner, info.innerR], [outer, info.ringR]]) {
+        list.forEach((id, i) => out.set(id, { ...ringAt(i, list.length, r, info.podiumY), delay: stagger(i, list.length) }));
+      }
+    }
+    if (step >= 4) { // 순위: 순위 순서로 고리를 돌며 점수만큼 높이 선다. 결과는 단상으로
+      const shown = t.ranked.filter((x) => x.shown);
+      const scores = t.ranked.map((x) => x.score);
+      const lo = Math.min(...scores);
+      const span = Math.max(...scores) - lo || 1;
+      const height = (x) => info.podiumY + 30 + ((x.score - lo) / span) * PODIUM_RISE; // 후보들 안에서의 상대 점수
+      t.ranked.forEach((x, i) => {
+        if (step === 5 && x.shown) return;
+        out.set(x.recipe, { ...ringAt(i, t.ranked.length, radius(x.recipe), height(x)),
+          delay: step === 4 ? stagger(i, t.ranked.length) / 2 : 0 });
+      });
+      if (step === 5) {
+        shown.forEach((x, i) => out.set(x.recipe, {
+          ...ringAt(i, shown.length, shown.length > 1 ? info.daisR * 0.7 : 0, info.daisY + (shown.length - i) * 14),
+          delay: i * 120 }));
+      }
+    }
+    return out;
+  }
+
+  function followCamera(step) {
+    const info = scene.stageInfo();
+    const mid = (info.groundY + info.podiumY) / 2;
+    const shots = [
+      [info.groundY - 120, 1900, 6], // 뿌리(알레르기)
+      [info.podiumY - 560, 2500, 16], // 수관(요청 해석)
+      [mid, 3600, 9], // 땅까지 한눈에(제외)
+      [info.podiumY + 80, 2300, 24], // 순위 무대(후보)
+      [info.podiumY + 160, 2200, 20], // 순위 무대(순위)
+      [info.daisY - 40, 1500, 26], // 단상(결과)
+    ];
+    const [y, d, pitch] = shots[step];
+    scene.lookAt(y, d, pitch, 1500);
+  }
+
+  // --- 깔때기 막대: 전체 → 확인 → 통과 → 후보 → 결과(지금 단계 칸이 밝다) ----------------------------
+
+  let shownCounts = new Map();
+  function renderFunnel() {
+    const t = run.t;
+    const total = scene.nodes.filter((n) => n.kind === "recipe" && n.engine !== false).length;
+    const excluded = Object.keys(t.excluded).length;
+    const cells = [
+      { key: "all", label: "전체", n: total, on: [0, 1] },
+      { key: "checked", label: "확인", n: t.checked.length, on: [1, 2] },
+      { key: "passed", label: `통과 (제외 ${excluded})`, n: t.checked.length - excluded, on: [2] },
+      { key: "pool", label: usedJev(t) ? "Jev에 보낸 후보" : "순위 후보", n: t.pool.length, on: [3, 4] },
+      { key: "result", label: "결과", n: run.response.items.length, on: [5] },
+    ];
+    const max = Math.log10(total + 1);
+    els.funnel.hidden = false;
+    els.funnel.innerHTML = cells.map((c) => `<div class="fcell${c.on.includes(run.step) ? " on" : ""}" data-key="${c.key}"`
+      + ` style="flex:${(0.6 + Math.log10(c.n + 1) / max).toFixed(2)}"><b data-count="${c.n}">${shownCounts.get(c.key) ?? 0}</b><span>${esc(c.label)}</span></div>`).join('<i class="farrow">›</i>');
+    for (const b of els.funnel.querySelectorAll("b[data-count]")) {
+      const key = b.parentElement.dataset.key;
+      const from = shownCounts.get(key) ?? 0;
+      const to = Number(b.dataset.count);
+      shownCounts.set(key, to);
+      const t0 = performance.now();
+      const tick = (now) => {
+        const k = Math.min(1, (now - t0) / 900);
+        b.textContent = Math.round(from + (to - from) * k).toLocaleString("ko-KR");
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+  }
 
   // 3D 노드 클릭 → 패널에서 같은 레시피(재료) 행 강조. 재료 고르기 모드면 가진 재료에 더한다
   function onNodeSelect(n) {
@@ -232,7 +357,6 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
 
   const L = () => run.t.labels || {};
   const chip = (id, cls = "") => `<span class="chip ${cls}" data-goto="${esc(id)}">${esc(name(id))}</span>`;
-  const excludedOffsets = (off = new Map()) => { for (const r of Object.keys(run.t.excluded)) off.set(r, SINK); return off; };
 
   function userView() {
     const t = run.t;
@@ -333,12 +457,12 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
       const dishNote = (run.response.notes || []).find((n) => n.code === "dish_excluded");
       const html = `<p>확인한 레시피 <b>${checked}</b>개 중 <b>${Object.keys(t.excluded).length}</b>개 제외`
         + (Object.keys(counts).length ? ` (${Object.entries(counts).map(([k, v]) => `<span style="color:${REASON_COLOR[k]}">${REASON_SHORT[k]} ${v}</span>`).join(", ")})` : "")
-        + `, 통과 ${checked - Object.keys(t.excluded).length}개. 빠진 레시피는 가라앉고, 행을 누르면 그 경로만 빛납니다.</p>`
+        + `, 통과 ${checked - Object.keys(t.excluded).length}개. 빠진 레시피는 확인한 순서대로 땅으로 떨어지고, 행을 누르면 그 경로만 빛납니다.</p>`
         + (run.mode !== "pantry" ? '<p class="muted small-text">랜덤·요리 찾기는 필요한 후보 수가 모이면 확인을 멈추므로, 확인하지 않은 레시피는 판정하지 않았습니다.</p>' : "")
         + (dishNote ? `<p class="notice">${esc(dishNote.text)}</p>` : "")
         + (filter ? '<p class="muted">한 레시피만 보는 중 — 다시 누르면 전체</p>' : "")
         + (rows.length ? `<div class="excl-list">${rows.join("")}</div>` : '<p class="muted">제외된 레시피가 없습니다.</p>');
-      return { html, view: { nodes, links, labels, pulses }, offsets: excludedOffsets() };
+      return { html, view: { nodes, links, labels, pulses } };
     },
     // 4 Jev에 보낸 후보와 정보
     () => {
@@ -370,18 +494,16 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
       html += `<h4>후보</h4><div class="rows">${t.pool.map((r) => `<div data-row="${esc(r)}">${chip(r)}`
         + (run.groupOf.get(r) ? `<span class="muted">${run.groupOf.get(r) === "ready" ? "지금 바로" : `${t.missing[r]}개 사면`}</span>` : "")
         + (t.screened[r] !== undefined ? `<span class="muted">걸러내기 ${f2(t.screened[r])}</span>` : "") + "</div>").join("")}</div>`;
-      return { html, view: { nodes, links: new Map(), labels }, offsets: excludedOffsets() };
+      return { html: '<p class="muted small-text">후보가 수관 위 순위 무대 고리로 떠오릅니다(내 재료로는 지금 바로 = 안쪽 초록 고리).</p>' + html, view: { nodes, links: new Map(), labels } };
     },
     // 5 순위 판단: Jev 항목별 점수표(색 = 점수, 흐림 = 확신도) 또는 규칙 점수
     () => {
       const t = run.t;
       const nodes = new Map();
       const labels = [];
-      const off = excludedOffsets();
       for (const r of Object.keys(t.excluded)) nodes.set(r, { color: REASON_COLOR[t.excluded[r]], opacity: 0.25 });
       for (const r of t.ranked) {
         nodes.set(r.recipe, { color: r.shown ? PLAY_COLOR.rank : PLAY_COLOR.pass, scale: 1.1 + r.score * 0.6, opacity: r.shown ? 1 : 0.55 });
-        off.set(r.recipe, r.score * RISE);
         if (r.rank <= LABELS) labels.push({ id: r.recipe, text: `${r.rank}위 ${name(r.recipe)} ${f2(r.score)}`, color: r.shown ? PLAY_COLOR.rank : "#cfc6b0", priority: r.rank });
       }
       let html;
@@ -389,7 +511,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
         const j = t.jev;
         const ak = L().aspect_ko || {};
         html = `<p>Jev는 후보마다 아래 질문에 5단계(${esc((L().levels_ko || []).join(" · "))})로 답하고 확신도를 붙입니다.`
-          + ` 종합 J = 항목 점수의 가중 평균이고, 이 순서가 그대로 순위입니다. 레시피가 J만큼 올라갑니다.</p>`
+          + ` 종합 J = 항목 점수의 가중 평균이고, 이 순서가 그대로 순위입니다. 무대 고리를 순위 순으로 돌며, 후보들 안에서 J가 높을수록 높이 섭니다(가장 낮은 후보 = 고리 높이).</p>`
           + `<ol class="questions">${j.aspects.map((a) => `<li><b>${esc(ak[a] || a)}</b> <span class="muted">× ${j.weights[a]}</span><div class="en">${esc(j.questions[a])}</div></li>`).join("")}</ol>`
           + '<p class="muted small-text">칸 색이 진할수록 점수가 높고, 흐릴수록 Jev 확신도가 낮습니다. Jev는 이유 문장을 주지 않으므로 점수와 확신도만 보입니다.</p>'
           + `<div class="table-wrap"><table class="scores jev"><thead><tr><th>순위</th><th>레시피</th>${j.aspects.map((a) => `<th title="${esc(ak[a] || a)}">${esc(a)}</th>`).join("")}<th>J</th><th title="가장 낮은 확신도">확신</th></tr></thead><tbody>`
@@ -402,14 +524,14 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
         const w = (k) => (k === "S" ? `S × ${t.s_weight}` : t.rule_weights[k] !== undefined ? `× ${t.rule_weights[k]}` : "");
         const why = t.jev_failed ? "Jev가 응답하지 않아 규칙 점수로 대체했습니다. " : "";
         const randomNote = run.mode === "random" ? "랜덤(규칙)은 점수로 정렬하지 않고 섞은 순서 그대로 보여 줍니다. 점수는 참고용입니다. " : "";
-        html = `<p>${why}${randomNote}규칙 점수 = 항목 값 × 가중치의 합${run.mode === "dish" ? `, 요리 찾기는 ${t.s_weight}·S + ${(1 - t.s_weight).toFixed(1)}·규칙 점수` : ""}.</p>`
+        html = `<p>${why}${randomNote}규칙 점수 = 항목 값 × 가중치의 합${run.mode === "dish" ? `, 요리 찾기는 ${t.s_weight}·S + ${(1 - t.s_weight).toFixed(1)}·규칙 점수` : ""}. 무대에서는 후보들 안에서 점수가 높을수록 높이 섭니다.</p>`
           + `<p class="muted small-text">${keys.map((k) => `${esc(k)} ${esc(t.breakdown_labels[k] || "")} ${w(k)}`).join(" · ")}</p>`
           + `<div class="table-wrap"><table class="scores"><thead><tr><th>순위</th><th>레시피</th><th>점수</th>${keys.map((k) => `<th title="${esc(t.breakdown_labels[k] || k)}">${esc(k)}</th>`).join("")}</tr></thead><tbody>`
           + t.ranked.map((r) => `<tr data-row="${esc(r.recipe)}" class="${r.shown ? "" : "muted"}"><td>${r.rank}</td><td>${chip(r.recipe)}</td><td><b>${f2(r.score)}</b></td>`
             + keys.map((k) => `<td>${f2(r.breakdown[k])}</td>`).join("") + "</tr>").join("")
           + "</tbody></table></div>";
       }
-      return { html, view: { nodes, links: new Map(), labels }, offsets: off };
+      return { html, view: { nodes, links: new Map(), labels } };
     },
     // 6 결과: 최종 레시피와 주재료 간선
     () => {
@@ -417,11 +539,9 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
       const nodes = new Map();
       const links = new Map();
       const labels = [];
-      const off = excludedOffsets();
       const owned = new Set(t.pantry.owned.map((o) => o.node));
       for (const r of t.ranked.filter((x) => x.shown)) {
         nodes.set(r.recipe, { color: PLAY_COLOR.rank, scale: 1.7 });
-        off.set(r.recipe, r.score * RISE);
         labels.push({ id: r.recipe, text: `${r.rank}위 ${name(r.recipe)}`, color: PLAY_COLOR.rank, px: 13, priority: r.rank });
         for (const l of scene.incident.get(r.recipe) || []) {
           if (l.type !== "uses" || l.s !== r.recipe || !["main", "sub"].includes(l.role)) continue;
@@ -433,7 +553,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
       const html = `<p>추천 <b>${run.response.items.length}</b>개 · 제외 ${run.response.excluded_total}개 · 순위: ${t.ranking === "jev" ? `Jev(${esc(t.model)})` : "규칙 점수"}.`
         + " 레시피와 주재료·부재료 간선이 강조됩니다. 카드를 누르면 그 레시피로 이동합니다.</p>" + notes
         + (run.response.disclaimer ? `<p class="muted small-text">${esc(run.response.disclaimer)}</p>` : "");
-      return { html, view: { nodes, links, labels }, offsets: off };
+      return { html, view: { nodes, links, labels } };
     },
   ];
 
@@ -487,13 +607,11 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     const sk = L().similarity_ko || {};
     const nodes = new Map();
     const labels = [];
-    const off = new Map();
     if (!q) return { html: '<p class="muted">질의 해석 결과가 없습니다.</p>', view: { nodes, links: new Map(), labels } };
     for (const i of q.ingredients) { nodes.set(i, { color: PLAY_COLOR.owned, scale: 1.8 }); labels.push({ id: i, text: `${name(i)} (문장 속 재료)`, color: PLAY_COLOR.owned, px: 13 }); }
     for (const a of q.anchors) labels.push({ id: a, text: `${name(a)} (같은 이름)`, color: "#fff", px: 13 });
     t.similarity.forEach((s, i) => {
       nodes.set(s.recipe, { color: s.passed === false ? REASON_COLOR.allergen : PLAY_COLOR.candidate, scale: 1 + s.S * 0.8, opacity: 0.4 + 0.6 * s.S });
-      off.set(s.recipe, s.S * RISE);
       if (i < LABELS) labels.push({ id: s.recipe, text: `${name(s.recipe)} S ${f2(s.S)}`, color: PLAY_COLOR.candidate, priority: i + 1 });
     });
     const ruleText = (r) => {
@@ -509,12 +627,12 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
       + `<h4>걸린 키워드 규칙</h4><div class="rows">${q.rules.map(ruleText).join("") || '<div class="muted">없음</div>'}</div>`
       + `<h4>문장 속 재료</h4><div>${q.ingredients.map((i) => chip(i, "owned")).join("") || '<span class="muted">없음</span>'}</div>`
       + `<h4>같은 이름 요리(앵커)</h4><div>${q.anchors.map((a) => chip(a)).join("") || '<span class="muted">없음</span>'}</div>`
-      + `<p>유사도 S = 걸린 항목의 가중 평균: ${parts.map((k) => `${esc(sk[k] || k)} ×${q.weights[k]}`).join(" · ") || "없음"}. S가 높은 레시피부터 제외 조건을 확인해 후보를 모읍니다. 레시피가 S만큼 올라갑니다.</p>`
+      + `<p>유사도 S = 걸린 항목의 가중 평균: ${parts.map((k) => `${esc(sk[k] || k)} ×${q.weights[k]}`).join(" · ") || "없음"}. S가 높은 레시피부터 제외 조건을 확인해 후보를 모읍니다. 레시피가 제자리에서 S만큼 솟습니다.</p>`
       + `<div class="table-wrap"><table class="scores"><thead><tr><th>레시피</th><th>S</th>${parts.map((k) => `<th title="${esc(sk[k] || k)}">${esc(k)}</th>`).join("")}<th>확인</th></tr></thead><tbody>`
       + t.similarity.map((s) => `<tr data-row="${esc(s.recipe)}"><td>${chip(s.recipe)}</td><td><b>${f2(s.S)}</b></td>${parts.map((k) => `<td>${f2(s.parts[k])}</td>`).join("")}`
         + `<td>${s.passed === true ? "통과" : s.passed === false ? '<span style="color:#ff8a90">제외</span>' : '<span class="muted">-</span>'}</td></tr>`).join("")
       + "</tbody></table></div>";
-    return { html, view: { nodes, links: new Map(), labels }, offsets: off };
+    return { html, view: { nodes, links: new Map(), labels } };
   }
 
   // --- 결과 카드 ------------------------------------------------------------------------------------

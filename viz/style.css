@@ -204,3 +204,18 @@ tr.hit td, .rows > div.hit, .excl.hit { outline: 2px solid var(--accent); outlin
 .table-wrap table.scores { width: max-content; min-width: 100%; }
 .table-wrap table.scores .chip { white-space: nowrap; }
 .table-wrap table.scores th { position: sticky; top: 0; background: var(--card); }
+
+/* v2 재생 깔때기 막대(부록 H-7): 그래프 아래쪽에 떠서 남은 레시피 수를 보인다 */
+.funnel {
+  position: absolute; left: 50%; bottom: 36px; transform: translateX(-50%); width: min(760px, calc(100% - 32px));
+  display: flex; align-items: stretch; gap: 4px; pointer-events: none;
+}
+.funnel .fcell {
+  min-width: 0; padding: 6px 10px; border-radius: 6px; background: rgba(30, 33, 40, 0.82); border: 1px solid var(--line);
+  display: flex; flex-direction: column; justify-content: center; transition: background 0.4s, border-color 0.4s, opacity 0.4s; opacity: 0.6;
+}
+.funnel .fcell b { font-size: 18px; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.funnel .fcell span { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.funnel .fcell.on { opacity: 1; background: rgba(58, 47, 23, 0.92); border-color: var(--accent); }
+.funnel .fcell.on b { color: var(--accent); }
+.funnel .farrow { align-self: center; color: var(--muted); font-style: normal; }

@@ -43,6 +43,7 @@
       <div id="graph" class="graph-canvas"></div>
       <div id="loading" class="loading">그래프를 불러오는 중…</div>
       <div id="hud" class="hud"></div>
+      <div id="v2-funnel" class="funnel" aria-label="남은 레시피 수" hidden></div>
     </section>
 
     <aside class="panel">
@@ -79,6 +80,10 @@
             <button type="button" class="link" data-v2-example="간단한 아침">간단한 아침</button>
           </div>
           <button type="button" class="primary" data-v2-run="dish">🔎 요리 찾기</button>
+        </div>
+        <div class="examples">
+          <label class="check"><input type="checkbox" id="v2-autoplay" checked> 실행하면 자동 재생</label>
+          <label class="check"><input type="checkbox" id="v2-follow" checked> 카메라 따라가기</label>
         </div>
         <p id="v2-status" class="muted small-text"></p>
         <div id="v2-player" class="player" hidden>
