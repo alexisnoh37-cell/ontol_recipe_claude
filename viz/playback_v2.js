@@ -3,6 +3,8 @@
 //   1 못 먹는 것(규칙) → 2 요청 해석(규칙) → 3 제외(규칙) → 4 Jev에 보낸 후보 → 5 순위 판단(Jev 또는 규칙) → 6 결과
 // 무대(부록 H-7): 제외된 잎은 땅으로 떨어지고, 후보는 수관 위 순위 무대로 떠올라 점수만큼 높이 서며, 결과는 단상에 오른다.
 // 아래 깔때기 막대가 남은 레시피 수를, 카메라는 단계마다 뿌리 → 수관 → 땅 → 무대 순으로 따라간다.
+// What-if(부록 H-9): 실행한 뒤 조건 하나(알레르기·절대 안 먹음·매운맛 한도·가진 재료·순위 방식)를 바꿔 다시 실행하고,
+// 기준 ↔ 바꾼 결과를 오가며 새로 빠진 잎은 떨어지고 다시 통과한 잎은 땅에서 올라오는 것을 본다(두 응답의 차이만 표시).
 
 import { LINK_COLOR, PLAY_COLOR, REASON_COLOR, REASON_SHORT } from "./palette.js";
 
@@ -32,7 +34,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     query: $("#v2-query"), status: $("#v2-status"), player: $("#v2-player"), dots: $("#v2-dots"),
     prev: $("#v2-prev"), next: $("#v2-next"), auto: $("#v2-auto"), stop: $("#v2-stop"),
     title: $("#v2-step-title"), body: $("#v2-step-body"), cards: $("#v2-cards"),
-    funnel: $("#v2-funnel"), autoplay: $("#v2-autoplay"), follow: $("#v2-follow"),
+    funnel: $("#v2-funnel"), autoplay: $("#v2-autoplay"), follow: $("#v2-follow"), whatif: $("#v2-whatif"),
   };
   const personas = new Map();
   let persona = null;
@@ -40,14 +42,20 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
   let run = null; // { response, t, step, filter, mode, byRecipe, ranked, rankOf }
   let timer = null;
   let jevAvailable = false;
+  let allergenGroups = []; // /allergen-groups (What-if에서 알레르기 더하기)
+  let base = null; // What-if 기준 실행(처음 실행)
+  let variant = null; // 조건을 바꾼 실행
+  let wi = null; // 편집 중인 조건
 
   // --- 페르소나·입력 -------------------------------------------------------------------------------
 
   async function load() {
-    const [list, info] = await Promise.all([
+    const [list, info, groups] = await Promise.all([
       fetch("/v2/personas").then((r) => (r.ok ? r.json() : [])).catch(() => []),
       fetch("/v2/info").then((r) => (r.ok ? r.json() : {})).catch(() => ({})),
+      fetch("/allergen-groups").then((r) => (r.ok ? r.json() : [])).catch(() => []),
     ]);
+    allergenGroups = groups;
     for (const p of list) personas.set(p.id, p);
     els.persona.innerHTML = list.map((p) => `<option value="${esc(p.id)}">${esc(p.name)}</option>`).join("")
       || '<option value="">페르소나 없음(v2 서버로 실행했는지 확인)</option>';
@@ -134,21 +142,13 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     if (mode === "dish") body.query = query;
     els.status.textContent = `${MODE_LABEL[mode]} 계산 중…${body.rerank && jevAvailable ? " (Jev 판단 대기)" : ""}`;
     for (const b of document.querySelectorAll("[data-v2-run]")) b.disabled = true;
-    const t0 = performance.now();
     try {
-      const res = await fetch("/v2/recommend", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
-      const json = await res.json();
-      if (!res.ok) throw new Error(typeof json.detail === "string" ? json.detail : JSON.stringify(json.detail));
-      const t = json.trace;
-      const byRecipe = new Map();
-      for (const e of t.exclusions) {
-        if (!byRecipe.has(e.recipe)) byRecipe.set(e.recipe, []);
-        byRecipe.get(e.recipe).push(e);
-      }
-      run = { response: json, t, mode, step: 0, filter: null, byRecipe, ms: performance.now() - t0,
-        rankOf: new Map(t.ranked.map((r) => [r.recipe, r])), groupOf: groupIndex(t) };
-      els.status.textContent = `${MODE_LABEL[mode]} · ${(run.ms / 1000).toFixed(1)}초 · 순위: ${t.ranking === "jev" ? `Jev(${t.model})` : "규칙 점수"}`
-        + (t.jev_failed ? " · Jev 실패 → 규칙" : "");
+      run = await fetchRun(body, mode);
+      base = run;
+      variant = null;
+      initWhatif();
+      els.status.textContent = `${MODE_LABEL[mode]} · ${(run.ms / 1000).toFixed(1)}초 · 순위: ${run.t.ranking === "jev" ? `Jev(${run.t.model})` : "규칙 점수"}`
+        + (run.t.jev_failed ? " · Jev 실패 → 규칙" : "");
       els.player.hidden = false;
       scene.select(null);
       show(0);
@@ -163,6 +163,21 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     }
   }
 
+  async function fetchRun(body, mode) {
+    const t0 = performance.now();
+    const res = await fetch("/v2/recommend", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const json = await res.json();
+    if (!res.ok) throw new Error(typeof json.detail === "string" ? json.detail : JSON.stringify(json.detail));
+    const t = json.trace;
+    const byRecipe = new Map();
+    for (const e of t.exclusions) {
+      if (!byRecipe.has(e.recipe)) byRecipe.set(e.recipe, []);
+      byRecipe.get(e.recipe).push(e);
+    }
+    return { response: json, t, mode, body, step: 0, filter: null, byRecipe, ms: performance.now() - t0,
+      rankOf: new Map(t.ranked.map((r) => [r.recipe, r])), groupOf: groupIndex(t) };
+  }
+
   function groupIndex(t) {
     const out = new Map();
     for (const [g, ids] of Object.entries(t.groups || {})) for (const id of ids) out.set(id, g);
@@ -173,6 +188,9 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     pause();
     if (!run) return;
     run = null;
+    base = null;
+    variant = null;
+    els.whatif.hidden = true;
     els.player.hidden = true;
     els.cards.innerHTML = "";
     scene.setView(null);
@@ -214,6 +232,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     els.next.disabled = run.step === 5;
     els.cards.innerHTML = run.step === 5 ? cardsHtml() : "";
     bindGoto(els.cards);
+    if (run.diff) overlayDiff(built.view);
     scene.setView(built.view);
     scene.setTargets(targetsFor(run.step), MOVE_MS);
     scene.setGlyphs(glyphsFor(run.step));
@@ -349,6 +368,160 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     scene.lookAt(y, d, pitch, 1500);
   }
 
+  // --- What-if: 조건 하나를 바꿔 다시 실행하고 기준과 비교한다(부록 H-9) ------------------------------
+
+  const DIFF_COLOR = { out: REASON_COLOR.allergen, back: "#3dd68c", moved: "#ffb224" };
+
+  function initWhatif() {
+    const p = persona;
+    wi = {
+      allergens: new Set(p.allergens.map((x) => x.id)), never: new Set(p.never_eat.map((x) => x.id)),
+      spicy: p.spicy_level, pantry: new Set(base.body.pantry || []), rerank: base.body.rerank,
+    };
+    renderWhatif();
+  }
+
+  function whatifChanges() {
+    const p = persona;
+    const out = [];
+    const was = new Set(p.allergens.map((x) => x.id));
+    for (const g of was) if (!wi.allergens.has(g)) out.push(`알레르기 ${groupName(g)} 끔`);
+    for (const g of wi.allergens) if (!was.has(g)) out.push(`알레르기 ${groupName(g)} 더함`);
+    for (const x of p.never_eat) if (!wi.never.has(x.id)) out.push(`절대 안 먹음 ${x.name} 끔`);
+    if (wi.spicy !== p.spicy_level) out.push(`매운맛 ${p.spicy_level ?? "모름"} → ${wi.spicy ?? "모름"}`);
+    for (const id of base.body.pantry || []) if (!wi.pantry.has(id)) out.push(`가진 재료 ${name(`ing:${id}`)} 뺌`);
+    if (wi.rerank !== base.body.rerank) out.push(`순위 ${base.body.rerank ? "Jev" : "규칙"} → ${wi.rerank ? "Jev" : "규칙"}`);
+    return out;
+  }
+
+  const groupName = (id) => allergenGroups.find((g) => g.id === id)?.display_name || name(`ag:${id}`);
+
+  function renderWhatif() {
+    if (!base || !wi) { els.whatif.hidden = true; return; }
+    const p = persona;
+    const chipToggle = (kind, id, label, on) => `<button type="button" class="chip toggle ${on ? "alert" : "off"}" data-wi="${kind}" data-id="${esc(id)}" title="눌러서 ${on ? "끄기" : "켜기"}">${esc(label)}</button>`;
+    const groupsShown = [...new Set([...p.allergens.map((x) => x.id), ...wi.allergens])];
+    const addable = allergenGroups.filter((g) => !groupsShown.includes(g.id));
+    const pantryIds = base.body.pantry || [];
+    const changes = whatifChanges();
+    let html = '<h4>What-if: 조건을 바꾸면?</h4>'
+      + '<p class="muted small-text">하나를 바꿔 "다시 보기"를 누르면 같은 요청을 다시 실행해 기준과 비교합니다(랜덤은 같은 seed).</p>'
+      + `<div class="wi-row"><b>알레르기</b> ${groupsShown.map((g) => chipToggle("allergen", g, groupName(g), wi.allergens.has(g))).join("") || '<span class="muted">없음</span>'}`
+      + `<select id="wi-add" aria-label="알레르기 더하기"><option value="">+ 더하기</option>${addable.map((g) => `<option value="${esc(g.id)}">${esc(g.display_name)}</option>`).join("")}</select></div>`
+      + `<div class="wi-row"><b>절대 안 먹음</b> ${p.never_eat.map((x) => chipToggle("never", x.id, x.name, wi.never.has(x.id))).join("") || '<span class="muted">없음</span>'}</div>`
+      + `<div class="wi-row"><b>매운맛</b> <select id="wi-spicy" aria-label="매운맛 정도"><option value="">모름</option>${[0, 1, 2, 3, 4, 5].map((v) => `<option value="${v}"${wi.spicy === v ? " selected" : ""}>${v}${v === 5 ? " (한도 없음)" : ""}</option>`).join("")}</select></div>`
+      + (base.mode === "pantry" ? `<div class="wi-row"><b>가진 재료</b> ${pantryIds.map((id) => `<button type="button" class="chip toggle ${wi.pantry.has(id) ? "owned" : "off"}" data-wi="pantry" data-id="${esc(id)}">${esc(name(`ing:${id}`))}</button>`).join("")}</div>` : "")
+      + `<div class="wi-row"><b>순위</b> <select id="wi-rerank" aria-label="순위 방식"><option value="jev"${wi.rerank ? " selected" : ""}>Jev</option><option value="rules"${wi.rerank ? "" : " selected"}>규칙</option></select>`
+      + (wi.rerank && jevAvailable ? ' <span class="muted small-text">다시 볼 때 Jev를 한 번 더 부릅니다</span>' : "") + "</div>"
+      + `<p class="small-text">${changes.length ? `바꾼 것: ${changes.map(esc).join(" · ")}` : '<span class="muted">아직 바꾼 것이 없습니다.</span>'}</p>`
+      + '<div class="run-row"><button type="button" class="primary" id="wi-apply">바꿔서 다시 보기</button>'
+      + (variant ? `<button type="button" id="wi-flip">${run === variant ? "◀ 기준 보기" : "바꾼 결과 보기 ▶"}</button>` : "")
+      + '<button type="button" class="link" id="wi-reset">처음 조건으로</button><span id="wi-status" class="muted small-text"></span></div>';
+    if (variant?.diff) html += diffHtml(variant.diff);
+    els.whatif.innerHTML = html;
+    els.whatif.hidden = false;
+    for (const b of els.whatif.querySelectorAll("[data-wi]")) {
+      b.addEventListener("click", () => {
+        const set = { allergen: wi.allergens, never: wi.never, pantry: wi.pantry }[b.dataset.wi];
+        if (set.has(b.dataset.id)) set.delete(b.dataset.id); else set.add(b.dataset.id);
+        renderWhatif();
+      });
+    }
+    els.whatif.querySelector("#wi-add").addEventListener("change", (e) => { if (e.target.value) { wi.allergens.add(e.target.value); renderWhatif(); } });
+    els.whatif.querySelector("#wi-spicy").addEventListener("change", (e) => { wi.spicy = e.target.value === "" ? null : Number(e.target.value); renderWhatif(); });
+    els.whatif.querySelector("#wi-rerank").addEventListener("change", (e) => { wi.rerank = e.target.value === "jev"; renderWhatif(); });
+    els.whatif.querySelector("#wi-apply").addEventListener("click", applyWhatif);
+    els.whatif.querySelector("#wi-reset").addEventListener("click", () => { initWhatif(); });
+    els.whatif.querySelector("#wi-flip")?.addEventListener("click", () => {
+      pause();
+      const step = run.step;
+      run = run === variant ? base : variant;
+      show(step);
+      renderWhatif();
+    });
+    bindGoto(els.whatif);
+  }
+
+  async function applyWhatif() {
+    const st = els.whatif.querySelector("#wi-status");
+    if (base.mode === "pantry" && !wi.pantry.size) { st.textContent = "가진 재료를 하나 이상 남겨 두세요."; return; }
+    const p = persona;
+    const ids = (xs) => xs.map((x) => x.id);
+    const body = {
+      profile: {
+        allergens: [...wi.allergens], never_eat: [...wi.never], likes: ids(p.likes), dislikes: ids(p.dislikes),
+        spicy_level: wi.spicy, cuisine_likes: p.cuisine_likes, cuisine_dislikes: p.cuisine_dislikes, skill_level: p.skill_level,
+      },
+      mode: base.mode, trace: true, rerank: wi.rerank,
+    };
+    if (base.mode === "pantry") body.pantry = [...wi.pantry];
+    if (base.mode === "dish") body.query = base.body.query;
+    if (base.mode === "random") body.seed = base.t.seed; // 같은 순서로 섞어야 비교가 된다
+    pause();
+    st.textContent = `다시 실행 중…${wi.rerank && jevAvailable ? " (Jev 판단 대기)" : ""}`;
+    try {
+      const step = run.step < 2 ? 2 : run.step;
+      variant = await fetchRun(body, base.mode);
+      variant.diff = diffRuns(base, variant);
+      base.diff = variant.diff;
+      run = variant;
+      show(step);
+      renderWhatif();
+    } catch (err) {
+      st.textContent = `실패: ${err.message}`;
+    }
+  }
+
+  // 두 실행의 차이(표시용). 제외 차이는 두 실행이 모두 확인한 레시피만 비교한다(랜덤·요리 찾기는 일부만 확인)
+  function diffRuns(a, b) {
+    const ca = new Map(a.t.checked.map((c) => [c.recipe, c.passed]));
+    const cb = new Map(b.t.checked.map((c) => [c.recipe, c.passed]));
+    const out = [...cb].filter(([id, ok]) => !ok && ca.get(id) === true).map(([id]) => id);
+    const back = [...cb].filter(([id, ok]) => ok && ca.get(id) === false).map(([id]) => id);
+    const rank = (r) => new Map(r.response.items.map((it, i) => [`rcp:${it.recipe_id}`, i + 1]));
+    const ra = rank(a);
+    const rb = rank(b);
+    return {
+      out, back,
+      entered: [...rb.keys()].filter((id) => !ra.has(id)),
+      left: [...ra.keys()].filter((id) => !rb.has(id)),
+      moved: [...rb].filter(([id, r]) => ra.has(id) && ra.get(id) !== r).map(([id, r]) => ({ id, from: ra.get(id), to: r })),
+      ra, rb,
+      jevBoth: a.t.ranking === "jev" && b.t.ranking === "jev",
+    };
+  }
+
+  function diffHtml(d) {
+    const list = (ids, max = 12) => ids.slice(0, max).map((id) => chip(id)).join("") + (ids.length > max ? `<span class="muted">외 ${ids.length - max}</span>` : "");
+    const rows = [];
+    rows.push(`<div><b style="color:${DIFF_COLOR.out}">새로 제외 ${d.out.length}</b> ${list(d.out)}</div>`);
+    rows.push(`<div><b style="color:${DIFF_COLOR.back}">다시 통과 ${d.back.length}</b> ${list(d.back)}</div>`);
+    rows.push(`<div><b style="color:${DIFF_COLOR.back}">결과에 들어옴 ${d.entered.length}</b> ${list(d.entered)}</div>`);
+    rows.push(`<div><b style="color:${DIFF_COLOR.out}">결과에서 빠짐 ${d.left.length}</b> ${list(d.left)}</div>`);
+    if (d.moved.length) rows.push(`<div><b style="color:${DIFF_COLOR.moved}">순위 바뀜 ${d.moved.length}</b> ${d.moved.slice(0, 8).map((m) => `${chip(m.id)}<span class="muted">${m.from}→${m.to}위</span>`).join(" ")}</div>`);
+    return `<div class="wi-diff"><h4>기준과 비교 <span class="muted small-text">(지금 보는 것: ${run === variant ? "바꾼 결과" : "기준"})</span></h4><div class="rows">${rows.join("")}</div>`
+      + (d.jevBoth ? '<p class="muted small-text">Jev는 같은 입력에도 점수가 조금 달라질 수 있어, 순위 변화 일부는 조건과 무관할 수 있습니다.</p>' : "")
+      + "</div>";
+  }
+
+  // 단계 보기 위에 차이를 겹친다: 바꾼 결과에서는 "새로 제외/다시 통과", 기준에서는 "바꾸면 제외/바꾸면 통과"
+  function overlayDiff(view) {
+    const d = run.diff;
+    const now = run === variant;
+    const labels = [];
+    const mark = (ids, color, text, prio) => ids.forEach((id, i) => {
+      view.nodes.set(id, { ...(view.nodes.get(id) || {}), color, scale: 1.7, opacity: 1 });
+      if (i < 12) labels.push({ id, text: `${name(id)} · ${text}`, color, priority: prio + i });
+    });
+    mark(d.out, DIFF_COLOR.out, now ? "새로 제외" : "바꾸면 제외", 1);
+    mark(d.back, DIFF_COLOR.back, now ? "다시 통과" : "바꾸면 통과", 1);
+    if (run.step >= 4) {
+      mark(now ? d.entered : d.left, now ? DIFF_COLOR.back : DIFF_COLOR.out, now ? "결과에 들어옴" : "바꾸면 빠짐", 30);
+      for (const m of d.moved.slice(0, 8)) labels.push({ id: m.id, text: `${name(m.id)} ${now ? `${m.from}→${m.to}위` : `${m.from}위(바꾸면 ${m.to}위)`}`, color: DIFF_COLOR.moved, priority: 60 });
+    }
+    view.labels = [...labels, ...(view.labels || [])];
+  }
+
   // --- 깔때기 막대: 전체 → 확인 → 통과 → 후보 → 결과(지금 단계 칸이 밝다) ----------------------------
 
   let shownCounts = new Map();
@@ -363,6 +536,12 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
       { key: "pool", label: usedJev(t) ? "Jev에 보낸 후보" : "순위 후보", n: t.pool.length, on: [3, 4] },
       { key: "result", label: "결과", n: run.response.items.length, on: [5] },
     ];
+    if (run.diff && base && run !== base) { // What-if: 기준 수를 함께 적는다
+      const bt = base.t;
+      const bex = Object.keys(bt.excluded).length;
+      const was = { all: total, checked: bt.checked.length, passed: bt.checked.length - bex, pool: bt.pool.length, result: base.response.items.length };
+      for (const c of cells) if (was[c.key] !== c.n) c.label += ` · 기준 ${was[c.key]}`;
+    }
     const max = Math.log10(total + 1);
     els.funnel.hidden = false;
     els.funnel.innerHTML = cells.map((c) => `<div class="fcell${c.on.includes(run.step) ? " on" : ""}" data-key="${c.key}"`
@@ -379,6 +558,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
         if (k < 1) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
+      setTimeout(() => { b.textContent = to.toLocaleString("ko-KR"); }, 950); // 창이 가려져 그리기가 멈춰도 최종 수는 보인다
     }
   }
 

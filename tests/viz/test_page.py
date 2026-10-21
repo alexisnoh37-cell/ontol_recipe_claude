@@ -79,3 +79,12 @@ def test_v2_petals_are_served():
     assert all(k in play for k in ("glyphsFor", "petalLegend", "PETAL_COLOR"))
     for aspect in ("request", "taste", "ingredients", "cuisine", "skill", "pantry"):  # Jev 항목마다 꽃잎 색
         assert f"{aspect}:" in play, aspect
+
+
+def test_v2_whatif_is_served(client):
+    """What-if(부록 H-9): 패널 자리와 재생 코드. 비교·움직임은 브라우저로 확인한다."""
+    assert 'id="v2-whatif"' in client.get("/viz").text
+    play = (VIZ_DIR / "playback_v2.js").read_text(encoding="utf-8")
+    assert all(k in play for k in ("applyWhatif", "diffRuns", "overlayDiff", "renderWhatif"))
+    assert "body.seed = base.t.seed" in play  # 랜덤은 같은 seed로 다시 실행해야 비교가 된다
+    assert '"/allergen-groups"' in play
