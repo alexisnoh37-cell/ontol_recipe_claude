@@ -69,3 +69,13 @@ def test_v2_stage_controls_are_served(client):
     assert all(k in scene for k in ("setStage", "setTargets", "stageInfo", "homeOf", "lookAt", "function buildStage"))
     play = client.get("/viz/static/playback_v2.js").text
     assert all(k in play for k in ("targetsFor", "renderFunnel", "followCamera"))
+
+
+def test_v2_petals_are_served():
+    """Jev 꽃잎(부록 H-8): 장면의 꽃 그리기, 재생의 꽃·범례. 모양·움직임은 브라우저로 확인한다."""
+    scene = (VIZ_DIR / "scene.js").read_text(encoding="utf-8")
+    assert all(k in scene for k in ("setGlyphs", "const PETAL ", "PETAL_SIZE"))
+    play = (VIZ_DIR / "playback_v2.js").read_text(encoding="utf-8")
+    assert all(k in play for k in ("glyphsFor", "petalLegend", "PETAL_COLOR"))
+    for aspect in ("request", "taste", "ingredients", "cuisine", "skill", "pantry"):  # Jev 항목마다 꽃잎 색
+        assert f"{aspect}:" in play, aspect

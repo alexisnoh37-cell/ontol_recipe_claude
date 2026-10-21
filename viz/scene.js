@@ -569,7 +569,7 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
     const flat = mode === "flat";
     const groundY = flat ? LAYER_Y[1] - 170 : TREE.trunkBottom - 30;
     const podiumY = flat ? LAYER_Y[4] + 380 : TREE.domeY + TREE.domeR + 220;
-    return { groundY, groundR: flat ? 760 : 1000, podiumY, ringR: 540, innerR: 360, daisY: podiumY + 470, daisR: 210 };
+    return { groundY, groundR: flat ? 760 : 1000, podiumY, ringR: 540, innerR: 360, daisY: podiumY + 470, daisR: 270 };
   }
   function setStage(on) {
     if (!stageDecor && on) stageDecor = buildStage(graph.scene(), stageInfo());
@@ -622,6 +622,43 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   function homeOf(id) {
     const n = byId.get(id);
     return staged.home.get(id) || (n ? { x: n.x, y: n.baseY ?? n.y, z: n.z } : null);
+  }
+
+  // --- 꽃(부록 H-8): 노드마다 항목별 꽃잎(길이 = 점수, 진하기 = 확신도). 늘 카메라를 보도록 세우고 노드를 따라간다 ---
+
+  let glyphs = [];
+  let glyphAnim = null;
+  function setGlyphs(list) {
+    // list: [{ id, petals: [{ color, length(0~1), opacity(0~1) }] }]. 빈 목록이면 지운다
+    for (const g of glyphs) graph.scene().remove(g.group);
+    glyphs = [];
+    for (const item of list || []) {
+      const n = byId.get(item.id);
+      if (!n || !item.petals.length) continue;
+      const group = new THREE.Group();
+      group.renderOrder = 12;
+      item.petals.forEach((pt, i) => {
+        const mesh = new THREE.Mesh(PETAL, petalMaterial(pt.color, pt.opacity));
+        mesh.rotation.z = (-2 * Math.PI * i) / item.petals.length; // 첫 꽃잎이 위(12시), 시계 방향
+        const len = PETAL_SIZE.min + PETAL_SIZE.max * Math.max(0, Math.min(1, pt.length));
+        mesh.scale.set(PETAL_SIZE.width, len, 1);
+        mesh.renderOrder = 12;
+        group.add(mesh);
+      });
+      graph.scene().add(group);
+      glyphs.push({ group, n });
+    }
+    if (glyphs.length && !glyphAnim) glyphAnim = requestAnimationFrame(tickGlyphs);
+  }
+  function tickGlyphs() {
+    if (!glyphs.length) { glyphAnim = null; return; }
+    const q = graph.camera().quaternion;
+    for (const g of glyphs) {
+      g.group.position.set(g.n.x, g.n.y, g.n.z);
+      g.group.quaternion.copy(q);
+      g.group.visible = nodeVisible(g.n);
+    }
+    glyphAnim = requestAnimationFrame(tickGlyphs);
   }
 
   // 카메라를 지금 방향(방위각)은 그대로 두고 높이·거리만 바꿔 옮긴다
@@ -785,7 +822,8 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   return {
     graph, nodes, links, byId, linkById, incident, timings, THREE,
     select, setView, setOffsets, flyTo, resetCamera, setLayer, setOrigin, setLinkType, setOverlay, setLayoutMode,
-    setStage, setTargets, stageInfo, homeOf, lookAt,
+    setStage, setTargets, stageInfo, homeOf, lookAt, setGlyphs,
+    get glyphCount() { return glyphs.length; },
     get selected() { return state.selected; },
     get layout() { return mode; },
     // 점검용: 지금 보이는 장식 라벨(층·부위·구역·잎 무리 이름)
@@ -831,6 +869,26 @@ function decorate(scene, sectors) {
     labels.push(t);
   }
   return { group, sprites: labels };
+}
+
+// 꽃잎 하나: 원점에서 위(+y)로 길이 1, 폭 1인 물방울 모양(꽃 중심에서 바깥으로)
+const PETAL = (() => {
+  const sh = new THREE.Shape();
+  sh.moveTo(0, 0.08);
+  sh.quadraticCurveTo(0.5, 0.45, 0, 1);
+  sh.quadraticCurveTo(-0.5, 0.45, 0, 0.08);
+  return new THREE.ShapeGeometry(sh, 10);
+})();
+const PETAL_SIZE = { min: 10, max: 62, width: 26 }; // 점수 0 → 10, 1 → 72
+const petalMaterials = new Map();
+function petalMaterial(color, opacity) {
+  const key = `${color}|${opacity.toFixed(2)}`;
+  let m = petalMaterials.get(key);
+  if (!m) {
+    m = new THREE.MeshBasicMaterial({ color, transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false });
+    petalMaterials.set(key, m);
+  }
+  return m;
 }
 
 function buildStage(scene, info) {
