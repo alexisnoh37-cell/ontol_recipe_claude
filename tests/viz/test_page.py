@@ -119,7 +119,9 @@ def test_scene_imports_do_not_shadow_local_functions():
 def test_bowl_layout_is_served():
     """원형 경기장(부록 H-11): 배치 선택, 계단 높이 배치, 3D 장식, 바닥으로 미끄러지는 제외. 모양은 브라우저로 확인한다."""
     sector = (VIZ_DIR / "sector.js").read_text(encoding="utf-8")
-    assert all(k in sector for k in ("export function bowlLayout", "export const BOWL", "heightAt", "pitR"))
+    assert all(k in sector for k in ("export function bowlLayout", "export const BOWL", "heightAt", "pitR", "BOWL_LAYERS"))
+    for name in ("알레르기 그룹", "원천 재료·분류", "가공품", "레시피"):  # 층 이름(옆 눈금·먼 쪽 벽·계단 테두리 색)
+        assert f'name: "{name}"' in sector, name
     scene = (VIZ_DIR / "scene.js").read_text(encoding="utf-8")
     assert 'bowl: "원형 경기장(3D)"' in scene and "function decorateBowl" in scene
     play = (VIZ_DIR / "playback_v2.js").read_text(encoding="utf-8")

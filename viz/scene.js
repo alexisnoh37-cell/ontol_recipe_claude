@@ -1000,20 +1000,44 @@ function decorateBowl(scene, layout) {
   const guides = [];
   const add = (m, opacity) => { m.userData.opacity = opacity; group.add(m); guides.push(m); };
   const surf = (color, opacity) => new THREE.MeshBasicMaterial({ color, transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false });
-  const colors = ["#e5484d", "#46a758", "#3e9bd6", "#ffb224"]; // 바닥(알레르기)·원천 재료·가공품·레시피
+  const circle = (r, y) => {
+    const pts = [];
+    for (let i = 0; i <= 200; i++) { const a = (2 * Math.PI * i) / 200; pts.push(new THREE.Vector3(r * Math.cos(a), y, r * Math.sin(a))); }
+    return new THREE.BufferGeometry().setFromPoints(pts);
+  };
   layout.terraces.forEach((t, i) => {
-    const ring = new THREE.Mesh(t.from > 0 ? new THREE.RingGeometry(t.from, t.to, 160) : new THREE.CircleGeometry(t.to, 96), surf(colors[i], 0.05));
+    const color = t.layer.color;
+    const ring = new THREE.Mesh(t.from > 0 ? new THREE.RingGeometry(t.from, t.to, 160) : new THREE.CircleGeometry(t.to, 96), surf(color, 0.07));
     ring.rotation.x = -Math.PI / 2;
     ring.position.y = t.y - 2;
-    add(ring, 0.05);
+    add(ring, 0.07);
+    // 계단 가장자리 테두리 선(층 색): 어느 층인지 높이와 색으로 구분
+    add(new THREE.Line(circle(t.to, t.y), new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.55, depthWrite: false })), 0.55);
     const next = layout.terraces[i + 1];
-    if (next) { // 다음 계단까지 올라가는 벽
+    if (next) { // 다음 계단까지 올라가는 벽(위층 색)
       const h = next.y - t.y;
-      const wall = new THREE.Mesh(new THREE.CylinderGeometry(t.to, t.to, h, 160, 1, true), surf(colors[i + 1], 0.04));
+      const wall = new THREE.Mesh(new THREE.CylinderGeometry(t.to, t.to, h, 160, 1, true), surf(next.layer.color, 0.05));
       wall.position.y = t.y + h / 2;
-      add(wall, 0.04);
+      add(wall, 0.05);
     }
   });
+  // 층 눈금: 그릇 바깥 옆에 세운 기둥과 층마다 가로 눈금·이름(바닥 → 테두리)
+  const R = layout.radius;
+  const scaleX = R + 260;
+  const top = layout.terraces[layout.terraces.length - 1].y;
+  add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(scaleX, 0, 0), new THREE.Vector3(scaleX, top, 0)]),
+    new THREE.LineBasicMaterial({ color: "#9aa1ad", transparent: true, opacity: 0.6, depthWrite: false })), 0.6);
+  const scaleSprites = [];
+  for (const t of layout.terraces) {
+    add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(t.to, t.y, 0), new THREE.Vector3(scaleX, t.y, 0)]),
+      new THREE.LineDashedMaterial({ color: t.layer.color, transparent: true, opacity: 0.7, dashSize: 24, gapSize: 16, depthWrite: false })), 0.7);
+    group.children[group.children.length - 1].computeLineDistances();
+    const sp = textSprite(`${t.layer.name} · ${t.layer.note}`, { px: LABEL_PX.layer, color: t.layer.color, background: "rgba(14,15,18,0.78)", above: false });
+    sp.center.set(0, 0.5);
+    sp.position.set(scaleX + 24, t.y, 0);
+    group.add(sp);
+    scaleSprites.push(sp);
+  }
   const lineMat = (opacity) => new THREE.LineBasicMaterial({ color: "#9aa1ad", transparent: true, opacity, depthWrite: false });
   for (const a of layout.dividers) { // 분류 경계: 원천 재료 계단부터 테두리까지 계단 모양으로
     const pts = [];
@@ -1024,14 +1048,14 @@ function decorateBowl(scene, layout) {
     });
     add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), lineMat(0.16)), 0.16);
   }
-  const sprites = [];
+  const sprites = [...scaleSprites];
   for (const lb of layout.labels) {
-    const part = lb.role === "part";
-    const t = textSprite(lb.text, part
-      ? { px: LABEL_PX.sector, color: "#e6e8ec", background: "rgba(14,15,18,0.6)", above: false }
+    const layer = lb.role === "layer";
+    const t = textSprite(lb.text, layer
+      ? { px: LABEL_PX.layer - 2, color: lb.color, background: "rgba(14,15,18,0.72)", above: false }
       : { px: LABEL_PX.sector - 1, color: "#c8d3c0", background: "rgba(14,15,18,0.5)", above: false });
     t.position.set(lb.x, lb.y, lb.z);
-    t.userData.sector = !part;
+    t.userData.sector = !layer; // 강조 중에는 분류 이름만 흐리게(층 이름은 그대로)
     group.add(t);
     sprites.push(t);
   }
