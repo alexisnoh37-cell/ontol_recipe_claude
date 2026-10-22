@@ -1021,22 +1021,25 @@ function decorateBowl(scene, layout) {
       add(wall, 0.05);
     }
   });
-  // 층 눈금: 그릇 바깥 옆에 세운 기둥과 층마다 가로 눈금·이름(바닥 → 테두리)
+  // 층 눈금: 그릇 바깥 양옆(왼쪽·오른쪽)에 세운 기둥과 층마다 가로 점선 눈금·큰 이름(바닥 → 테두리).
+  // 층 이름은 그릇 안에 두지 않는다(분류 이름과 겹침). 바깥에서 층 높이를 그대로 짚어 준다
   const R = layout.radius;
-  const scaleX = R + 260;
   const top = layout.terraces[layout.terraces.length - 1].y;
-  add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(scaleX, 0, 0), new THREE.Vector3(scaleX, top, 0)]),
-    new THREE.LineBasicMaterial({ color: "#9aa1ad", transparent: true, opacity: 0.6, depthWrite: false })), 0.6);
   const scaleSprites = [];
-  for (const t of layout.terraces) {
-    add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(t.to, t.y, 0), new THREE.Vector3(scaleX, t.y, 0)]),
-      new THREE.LineDashedMaterial({ color: t.layer.color, transparent: true, opacity: 0.7, dashSize: 24, gapSize: 16, depthWrite: false })), 0.7);
-    group.children[group.children.length - 1].computeLineDistances();
-    const sp = textSprite(`${t.layer.name} · ${t.layer.note}`, { px: LABEL_PX.layer, color: t.layer.color, background: "rgba(14,15,18,0.78)", above: false });
-    sp.center.set(0, 0.5);
-    sp.position.set(scaleX + 24, t.y, 0);
-    group.add(sp);
-    scaleSprites.push(sp);
+  for (const side of [1, -1]) {
+    const scaleX = side * (R + 150);
+    add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(scaleX, 0, 0), new THREE.Vector3(scaleX, top, 0)]),
+      new THREE.LineBasicMaterial({ color: "#9aa1ad", transparent: true, opacity: 0.6, depthWrite: false })), 0.6);
+    for (const t of layout.terraces) {
+      add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(side * t.to, t.y, 0), new THREE.Vector3(scaleX, t.y, 0)]),
+        new THREE.LineDashedMaterial({ color: t.layer.color, transparent: true, opacity: 0.75, dashSize: 24, gapSize: 16, depthWrite: false })), 0.75);
+      group.children[group.children.length - 1].computeLineDistances();
+      const sp = textSprite(`${t.layer.name} · ${t.layer.note}`, { px: LABEL_PX.layer + 6, color: t.layer.color, background: "rgba(14,15,18,0.82)", above: false });
+      sp.center.set(side > 0 ? 0 : 1, 0.5); // 오른쪽은 왼쪽 정렬, 왼쪽은 오른쪽 정렬(글자가 그릇 바깥으로)
+      sp.position.set(scaleX + side * 28, t.y, 0);
+      group.add(sp);
+      scaleSprites.push(sp);
+    }
   }
   const lineMat = (opacity) => new THREE.LineBasicMaterial({ color: "#9aa1ad", transparent: true, opacity, depthWrite: false });
   for (const a of layout.dividers) { // 분류 경계: 원천 재료 계단부터 테두리까지 계단 모양으로

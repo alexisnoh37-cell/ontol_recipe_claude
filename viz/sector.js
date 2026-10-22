@@ -183,7 +183,7 @@ export function sectorLayout(nodes, incident, byId) {
 // 원천 재료 → 가공품 → 레시피(맨 위 테두리). 분류 이름은 레시피가 아니라 재료 계단에 붙인다.
 
 export const BOWL = { y: { group: 0, raw: 420, processed: 840, recipe: 1280 }, pitFloor: -10 };
-export const BOWL_CAMERA = { pitchDeg: 36, distance: 5400, targetY: 560 };
+export const BOWL_CAMERA = { pitchDeg: 34, distance: 6800, targetY: 560 };
 // 층 이름·색(바닥 → 테두리). 화면의 층 눈금·계단 테두리·층 이름이 같은 색을 쓴다
 export const BOWL_LAYERS = [
   { key: "group", name: "알레르기 그룹", note: "바닥", color: "#ff8a90" },
@@ -221,14 +221,6 @@ export function bowlLayout(nodes, incident, byId) {
     const text = lb.text.replace(/ \d+$/, ""); // 레시피 수는 빼고 분류 이름만(재료 계단이므로)
     labels.push({ text, x: catR * Math.cos(lb.angle), y: BOWL.y.raw + 34 + tier * 46, z: catR * Math.sin(lb.angle), role: "bunch" });
   }
-  // 층 이름: 그릇 안쪽 먼 쪽 벽 앞에 층 색으로 크게(앞쪽에 두면 분류 이름과 겹침)
-  const mids = [160, (raw[0] + raw[1]) / 2, (processed[0] + processed[1]) / 2, (recipe[0] + recipe[1]) / 2];
-  terraces.forEach((t, i) => {
-    for (const a of [-Math.PI / 2 - 0.03]) { // 그릇 안쪽 먼 쪽(카메라 반대편) 한 곳. 옆 눈금에도 같은 이름
-      const r = i === 0 ? 0 : mids[i];
-      labels.push({ text: `${t.layer.name} · ${t.layer.note}`, x: r * Math.cos(a), y: t.y + 60, z: r * Math.sin(a), role: "layer", color: t.layer.color });
-      if (i === 0) break; // 바닥은 가운데 한 곳
-    }
-  });
+  // 층 이름은 그릇 바깥 양옆 층 눈금(scene.js decorateBowl)에 크게 붙인다. 그릇 안에는 분류 이름만 둔다
   return { ...sl, labels, terraces, heightAt, pitR: [SECTOR.bundleR + 25, raw[0] - 25] };
 }

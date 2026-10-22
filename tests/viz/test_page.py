@@ -124,5 +124,6 @@ def test_bowl_layout_is_served():
         assert f'name: "{name}"' in sector, name
     scene = (VIZ_DIR / "scene.js").read_text(encoding="utf-8")
     assert 'bowl: "원형 경기장(3D)"' in scene and "function decorateBowl" in scene
+    assert "for (const side of [1, -1])" in scene  # 층 이름은 그릇 바깥 양옆 눈금에
     play = (VIZ_DIR / "playback_v2.js").read_text(encoding="utf-8")
     assert "info.bowl" in play and "heightAt: info.heightAt" in play

@@ -405,7 +405,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
   function followCamera(step) {
     const info = scene.stageInfo();
     if (info.bowl) { // 바닥(알레르기) → 그릇 전체 → 낮게(미끄러짐) → 테두리(탑)
-      const shots = [[80, 3000, 62], [560, 5400, 36], [420, 5000, 20], [800, 5200, 30], [1220, 5000, 18], [1220, 4300, 22]];
+      const shots = [[80, 3400, 62], [560, 6800, 34], [420, 6300, 20], [800, 6500, 30], [1220, 6200, 18], [1220, 5400, 22]];
       const [y, d, pitch] = shots[step];
       scene.lookAt(y, d, pitch, 1500);
       return;
