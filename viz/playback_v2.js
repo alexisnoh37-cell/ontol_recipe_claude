@@ -3,6 +3,8 @@
 //   1 못 먹는 것(규칙) → 2 요청 해석(규칙) → 3 제외(규칙) → 4 Jev에 보낸 후보 → 5 순위 판단(Jev 또는 규칙) → 6 결과
 // 무대(부록 H-7): 제외된 잎은 땅으로 떨어지고, 후보는 수관 위 순위 무대로 떠올라 점수만큼 높이 서며, 결과는 단상에 오른다.
 // 아래 깔때기 막대가 남은 레시피 수를, 카메라는 단계마다 뿌리 → 수관 → 땅 → 무대 순으로 따라간다.
+// 분류 지도(부록 H-10): 배치가 "분류 지도"면 무대 대신 제자리 연출 — 알레르기 물결이 가운데에서 번지고, 제외된 레시피는
+// 원판 아래로 가라앉으며, 가진 재료에서 레시피로 빛이 흐르고, 순위는 레시피 자리에서 항목별 칸이 쌓인 탑으로 자란다.
 // What-if(부록 H-9): 실행한 뒤 조건 하나(알레르기·절대 안 먹음·매운맛 한도·가진 재료·순위 방식)를 바꿔 다시 실행하고,
 // 기준 ↔ 바꾼 결과를 오가며 새로 빠진 잎은 떨어지고 다시 통과한 잎은 땅에서 올라오는 것을 본다(두 응답의 차이만 표시).
 
@@ -195,6 +197,8 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     els.cards.innerHTML = "";
     scene.setView(null);
     scene.setGlyphs([]);
+    scene.setTowers([]);
+    scene.setWave(null);
     scene.setTargets(new Map());
     scene.setStage(false);
     els.funnel.hidden = true;
@@ -236,6 +240,10 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     scene.setView(built.view);
     scene.setTargets(targetsFor(run.step), MOVE_MS);
     scene.setGlyphs(glyphsFor(run.step));
+    scene.setTowers(towersFor(run.step));
+    const info = scene.stageInfo();
+    const allergic = run.t.user.allergen_groups.length > 0;
+    scene.setWave(info.sector && allergic && (run.step === 0 || run.step === 2) ? { from: info.coreR * 0.4, to: info.mapR, color: "#e5484d" } : null);
     renderFunnel();
     if (els.follow.checked) followCamera(run.step);
   }
@@ -283,11 +291,16 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
       for (const r of Object.keys(t.excluded)) {
         const h = scene.homeOf(r);
         if (!h) continue;
+        const delay = step === 2 ? stagger(order.get(r) ?? 0, t.checked.length) : 0;
+        if (info.sector) { out.set(r, { x: h.x, y: info.groundY, z: h.z, delay }); continue; } // 제자리에서 원판 아래로
         const a = Math.atan2(h.z, h.x);
         const rr = info.groundR * (0.3 + 0.62 * hash01(r));
-        out.set(r, { x: rr * Math.cos(a), y: info.groundY + 4, z: rr * Math.sin(a),
-          delay: step === 2 ? stagger(order.get(r) ?? 0, t.checked.length) : 0 });
+        out.set(r, { x: rr * Math.cos(a), y: info.groundY + 4, z: rr * Math.sin(a), delay });
       }
+    }
+    if (info.sector) { // 후보는 제자리에서 살짝 들린다(순위 단계부터는 탑이 자란다)
+      if (step === 3) t.pool.forEach((r, i) => { const h = scene.homeOf(r); if (h) out.set(r, { ...h, y: h.y + 50, delay: stagger(i, t.pool.length) }); });
+      return out;
     }
     const ready = new Set(t.groups.ready || []);
     const radius = (r) => (ready.has(r) ? info.innerR : info.ringR);
@@ -328,7 +341,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
 
   function glyphsFor(step) {
     const t = run.t;
-    if (step < 4 || !t.ranked.length) return [];
+    if (step < 4 || !t.ranked.length || scene.stageInfo().sector) return []; // 분류 지도는 꽃 대신 탑
     const keys = petalKeys();
     const list = step === 5 ? t.ranked.filter((x) => x.shown) : t.ranked;
     return list.map((x) => ({
@@ -343,18 +356,53 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     }));
   }
 
+  // 분류 지도의 탑: 칸 = 항목별 몫(Jev: 가중치 × 점수 / 가중치 합, 규칙: 가중치 × 값), 전체 높이 = 종합 점수 × TOWER_H
+  const TOWER_H = 520;
+  function towersFor(step) {
+    const t = run.t;
+    if (!scene.stageInfo().sector || step < 4 || !t.ranked.length) return [];
+    const list = step === 5 ? t.ranked.filter((x) => x.shown) : t.ranked;
+    const keys = petalKeys();
+    return list.map((x) => {
+      let segs;
+      if (t.ranking === "jev") {
+        const w = t.jev.weights;
+        const ans = t.jev.answers[x.recipe] || {};
+        const answered = keys.filter((k) => ans[k]);
+        const wsum = answered.reduce((s, k) => s + w[k], 0) || 1;
+        segs = answered.map((k) => ({ color: PETAL_COLOR[k] || "#e6e8ec", h: (TOWER_H * w[k] * ans[k].score) / wsum }));
+      } else {
+        const dish = run.mode === "dish";
+        segs = keys.map((k) => {
+          const v = x.breakdown[k] ?? 0;
+          const share = k === "S" ? t.s_weight * v : (dish ? 1 - t.s_weight : 1) * (t.rule_weights[k] ?? 0) * v;
+          return { color: PETAL_COLOR[k] || "#e6e8ec", h: TOWER_H * share };
+        });
+      }
+      return { id: x.recipe, segments: segs };
+    });
+  }
+
   function petalLegend() {
     const t = run.t;
     const ak = L().aspect_ko || {};
     const keys = petalKeys();
     if (!keys.length) return "";
     const name = (k) => (t.ranking === "jev" ? ak[k] || k : `${k} ${t.breakdown_labels[k] || ""}`);
-    return `<div class="petal-legend"><span class="muted">꽃잎(12시부터 시계 방향) · 길이 = 점수${t.ranking === "jev" ? " · 진하기 = 확신도" : ""}:</span>`
+    const head = scene.stageInfo().sector ? "탑의 칸(아래부터) · 칸 높이 = 항목 몫, 전체 = 점수" : `꽃잎(12시부터 시계 방향) · 길이 = 점수${t.ranking === "jev" ? " · 진하기 = 확신도" : ""}`;
+    return `<div class="petal-legend"><span class="muted">${head}:</span>`
       + keys.map((k) => `<span><i style="background:${PETAL_COLOR[k] || "#e6e8ec"}"></i>${esc(name(k))}</span>`).join("") + "</div>";
   }
 
   function followCamera(step) {
     const info = scene.stageInfo();
+    if (info.sector) { // 위에서 → 낮게(가라앉음) → 비스듬히(탑)
+      const R = info.mapR / 1730;
+      const shots = [[0, 3100, 74], [0, 4300 * R, 58], [-100, 4300 * R, 30], [0, 4000 * R, 46], [160, 3900 * R, 24], [160, 3400 * R, 28]];
+      const [y, d, pitch] = shots[step];
+      scene.lookAt(y, d, pitch, 1500);
+      return;
+    }
     const mid = (info.groundY + info.podiumY) / 2;
     const shots = [
       [info.groundY - 120, 1900, 6], // 뿌리(알레르기)
@@ -602,6 +650,20 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     return { nodes, links, labels };
   }
 
+  function allergenReach(groups) {
+    const want = new Set(groups);
+    for (const g of groups) for (const m of scene.byId.get(g)?.members || []) want.add(m); // 묶음 → 구성 그룹
+    const out = new Map();
+    for (const n of scene.nodes) {
+      if (n.kind !== "ingredient") continue;
+      for (const hit of n.allergens || []) {
+        if (!want.has(hit.group)) continue;
+        if (hit.certainty === "definite" || !out.has(n.id)) out.set(n.id, hit.certainty);
+      }
+    }
+    return out;
+  }
+
   function exclusionText(e) {
     if (e.reason === "allergen") {
       const group = esc(name(e.source_group)) + (e.target_node !== e.source_group ? ` ⊂ ${esc(name(e.target_node))}` : "");
@@ -627,6 +689,12 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     () => {
       const t = run.t;
       const view = userView();
+      // 알레르기가 닿는 재료: 재료 노드에 실린 컴파일된 포함 관계(closure) 그대로(확실 = 진한 빨강, 포함 가능 = 옅게)
+      const reach = allergenReach(t.user.allergen_groups);
+      for (const [id, cert] of reach) {
+        if (!view.nodes.has(id)) view.nodes.set(id, { color: cert === "definite" ? REASON_COLOR.allergen : "#ff9aa0", scale: 1.3, opacity: cert === "definite" ? 1 : 0.6 });
+      }
+      const definite = [...reach.values()].filter((c) => c === "definite").length;
       const notSent = (L().not_sent || []).map((x) => `<span class="chip">${esc(x)}</span>`).join("");
       const bits = [];
       if (t.user.allergen_groups.length) bits.push(`<div><b>알레르기</b> ${t.user.allergen_groups.map((g) => chip(g, "alert")).join("")}<span class="muted">들어 있을 수도 있는 재료까지 제외</span></div>`);
@@ -635,7 +703,8 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
       if (t.user.hard_cuisines.length) bits.push(`<div><b>절대 안 먹는 음식 종류</b> ${esc(t.user.hard_cuisines.join(", "))}</div>`);
       const html = `<p>${MODE_LABEL[run.mode]}${run.response.query ? ` "<b>${esc(run.response.query)}</b>"` : ""}. 추천은 언제나 <b>규칙으로 먼저 못 먹는 것을 뺀 뒤</b>에 순위를 정합니다.</p>`
         + `<div class="rows">${bits.join("") || '<div class="muted">제외 조건 없음</div>'}</div>`
-        + `<p class="muted small-text">알레르기 판정은 컴파일된 지식 그래프(재료 → 포함 관계 → 알레르기 그룹)로만 합니다. 아래 정보는 Jev에 <b>보내지 않습니다</b>: ${notSent}</p>`;
+        + `<p class="muted small-text">알레르기 판정은 컴파일된 지식 그래프(재료 → 포함 관계 → 알레르기 그룹)로만 합니다. 아래 정보는 Jev에 <b>보내지 않습니다</b>: ${notSent}</p>`
+        + (reach.size ? `<p>이 알레르기가 닿는 재료 <b>${reach.size}</b>개(확실 ${definite} · 포함 가능 ${reach.size - definite})가 그래프에서 빨갛게 표시됩니다.</p>` : "");
       return { html, view };
     },
     // 2 요청 해석(규칙): 형태별로 후보를 어떻게 모으는지
@@ -806,11 +875,17 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
       else nodes.set(o.node, { color: PLAY_COLOR.staple, scale: 1, opacity: 0.6 });
     }
     const owned = new Set(t.pantry.owned.map((o) => o.node));
+    const inputs = new Set(t.pantry.input);
+    const pulses = [];
     for (const [g, ids] of Object.entries(t.groups)) {
       ids.forEach((r, i) => {
         nodes.set(r, { color: COLOR[g], scale: 1.3 });
         if (i < 8) labels.push({ id: r, text: `${name(r)}${g === "near" ? ` (+${t.missing[r]})` : ""}`, color: COLOR[g], priority: 20 + i });
-        for (const l of scene.incident.get(r) || []) if (l.type === "uses" && l.s === r && owned.has(l.t)) links.set(l.id, { color: COLOR[g], alpha: 0.7 });
+        for (const l of scene.incident.get(r) || []) {
+          if (l.type !== "uses" || l.s !== r || !owned.has(l.t)) continue;
+          links.set(l.id, { color: COLOR[g], alpha: 0.7 });
+          if (inputs.has(l.t)) pulses.push({ nodes: [l.t, r], color: COLOR[g] });
+        }
       });
     }
     const rowsOf = (g) => (t.groups[g] || []).map((r) => `<div data-row="${esc(r)}">${chip(r)}<span class="muted">가진 재료 ${t.uses_pantry[r]}줄${g === "near" ? ` · 부족 ${t.missing[r]}` : ""}</span></div>`);
@@ -820,7 +895,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
       + `<span style="color:${COLOR.near}">1~2개 부족하면 "조금만 사면"</span>으로 나눕니다(묶음은 규칙, 묶음 안 순서는 다음 단계). 확인 ${t.checked.length}개.</p>`
       + `<h4>지금 바로 ${t.groups.ready?.length || 0}</h4><div class="rows">${rowsOf("ready").join("")}</div>`
       + `<h4>조금만 사면 ${t.groups.near?.length || 0}</h4><div class="rows">${rowsOf("near").join("")}</div>`;
-    return { html, view: { nodes, links, labels } };
+    return { html, view: { nodes, links, labels, pulses } };
   }
 
   function dishStep() {

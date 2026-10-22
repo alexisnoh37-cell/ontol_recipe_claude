@@ -88,3 +88,29 @@ def test_v2_whatif_is_served(client):
     assert all(k in play for k in ("applyWhatif", "diffRuns", "overlayDiff", "renderWhatif"))
     assert "body.seed = base.t.seed" in play  # 랜덤은 같은 seed로 다시 실행해야 비교가 된다
     assert '"/allergen-groups"' in play
+
+
+def test_sector_map_layout_is_served(client):
+    """분류 지도 배치(부록 H-10): 배치 선택에 들어 있고, sector.js·물결·탑을 제공한다. 좌표·움직임은 브라우저로 확인한다."""
+    sector = client.get("/viz/static/sector.js")
+    assert sector.status_code == 200 and "export function sectorLayout" in sector.text
+    scene = (VIZ_DIR / "scene.js").read_text(encoding="utf-8")
+    assert 'sector: "분류 지도(위에서)"' in scene
+    assert all(k in scene for k in ("setWave", "setTowers", "function decorateSector", "sectorMapLayout"))
+    play = (VIZ_DIR / "playback_v2.js").read_text(encoding="utf-8")
+    assert all(k in play for k in ("towersFor", "allergenReach"))
+    assert 'v2Panel ? "sector"' in (VIZ_DIR / "app.js").read_text(encoding="utf-8")  # v2 탭 기본 배치
+
+
+def test_scene_imports_do_not_shadow_local_functions():
+    """모듈 안 같은 이름 선언은 브라우저에서 SyntaxError로 화면 전체가 멈춘다(분류 지도 작업 중 실제로 겪음)."""
+    for path in VIZ_DIR.glob("*.js"):
+        text = path.read_text(encoding="utf-8")
+        imported = set()
+        for spec in re.findall(r"import\s*\{([^}]*)\}", text):
+            for part in spec.split(","):
+                name = part.split(" as ")[-1].strip()
+                if name:
+                    imported.add(name)
+        declared = re.findall(r"^(?:export\s+)?(?:async\s+)?(?:function|const|let|class)\s+([A-Za-z_$][\w$]*)", text, re.M)
+        assert not imported & set(declared), (path.name, imported & set(declared))
