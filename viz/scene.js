@@ -15,8 +15,9 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.186.1/+esm";
 
 import { BUNDLE_DY, LAYER_LABEL, LAYER_Y, NODE_COLOR, ORIGIN_COLOR, linkAlpha, linkBaseColor, linkRestAlpha, rgba } from "./palette.js";
 import { TREE, TREE_CAMERA, treeLayout } from "./tree.js";
+import { SECTOR, SECTOR_CAMERA, sectorLayout as sectorMapLayout } from "./sector.js";
 
-export const LAYOUTS = { "tree-ingredient": "나무: 주재료 방향", "tree-cuisine": "나무: 음식 종류", flat: "평면(층 원판)" };
+export const LAYOUTS = { "tree-ingredient": "나무: 주재료 방향", "tree-cuisine": "나무: 음식 종류", sector: "분류 지도(위에서)", flat: "평면(층 원판)" };
 const treeKind = (mode) => (mode === "tree-cuisine" ? "cuisine" : "ingredient");
 
 const DIM = { select: 0.07, play: 0.025 }; // 강조 밖 노드 투명도(재생 중에는 더 흐리게)
@@ -200,9 +201,16 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   let mode = LAYOUTS[layout] ? layout : "tree-ingredient";
   const staged = { home: new Map(), moved: new Set() }; // v2 무대 이동(부록 H-7): 옮기기 전 자리, 옮겨 둔 노드
   let stageDecor = null; // v2 무대 장식(땅·순위 무대)
+  let sectorRadius = 0; // 분류 지도 바깥 반지름(무대·카메라용)
+  function placeLayout(m) { // 나무(주재료·음식 종류) 또는 분류 지도의 좌표·장식 정보
+    if (m !== "sector") return treeLayout(nodes, incident, byId, treeKind(m));
+    const sl = sectorMapLayout(nodes, incident, byId);
+    sectorRadius = sl.radius;
+    return sl;
+  }
   let flatPos = null; // 평면 배치 좌표. force warmup은 비동기라 평면에서 다른 배치로 바꿀 때 저장한다
   const flatSectors = mode === "flat" ? initialLayout(nodes) : null;
-  if (mode !== "flat") applyPositions(treeLayout(nodes, incident, byId, treeKind(mode)).pos);
+  if (mode !== "flat") applyPositions(placeLayout(mode).pos);
 
   const state = {
     layers: { 1: true, 2: true, 3: true, 4: true },
@@ -227,7 +235,7 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   }
   function linkColor(l) {
     const f = focus();
-    if (!f) return rgba(linkBaseColor(l), linkRestAlpha(l));
+    if (!f) return rgba(linkBaseColor(l), linkRestAlpha(l) * (mode === "sector" ? 0.45 : 1)); // 분류 지도: 구역을 가로지르는 간선을 흐리게
     const st = f.links.get(l);
     if (!st) return rgba(linkBaseColor(l), LINK_DIM[f.mode]);
     return rgba(st.color || linkBaseColor(l), st.alpha ?? linkAlpha(l));
@@ -310,13 +318,13 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   if (mode === "flat") {
     flatDecor = decorate(graph.scene(), flatSectors);
   } else {
-    treeDecor = decorateTree(graph.scene(), treeLayout(nodes, incident, byId, treeKind(mode)).labels);
+    treeDecor = decorateShape(graph.scene(), mode, placeLayout(mode));
   }
   syncDecor();
   const timings = { graphData: tLayout - tData, decorate: performance.now() - tLayout };
 
   function resetCamera(ms = 0) {
-    const cam = mode === "flat" ? CAMERA : TREE_CAMERA;
+    const cam = mode === "flat" ? CAMERA : mode === "sector" ? SECTOR_CAMERA : TREE_CAMERA;
     const pitch = (cam.pitchDeg * Math.PI) / 180;
     graph.cameraPosition(
       { x: 0, y: cam.targetY + cam.distance * Math.sin(pitch), z: cam.distance * Math.cos(pitch) },
@@ -566,6 +574,10 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   // 좌표만 바꾼다(판정 없음). 지정하지 않은 노드 중 옮겨 둔 노드는 원래 자리로 돌아간다.
 
   function stageInfo() {
+    if (mode === "sector") { // 분류 지도: 제외는 원판 아래로 가라앉고, 순위는 제자리 탑으로(무대 고리·단상 없음)
+      return { sector: true, groundY: -280, groundR: sectorRadius, podiumY: 0, ringR: 0, innerR: 0, daisY: 0, daisR: 0,
+        mapR: sectorRadius, coreR: SECTOR.bundleR };
+    }
     const flat = mode === "flat";
     const groundY = flat ? LAYER_Y[1] - 170 : TREE.trunkBottom - 30;
     const podiumY = flat ? LAYER_Y[4] + 380 : TREE.domeY + TREE.domeR + 220;
@@ -661,6 +673,72 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
     glyphAnim = requestAnimationFrame(tickGlyphs);
   }
 
+  // --- 물결: 가운데에서 바깥으로 번지는 고리(알레르기 확산을 보이는 장식, 판정 없음) -------------------------
+  let wave = null;
+  function setWave(opt) {
+    if (wave) { graph.scene().remove(wave.mesh); wave.mesh.material.dispose(); wave = null; }
+    if (!opt) return;
+    const mesh = new THREE.Mesh(WAVE, new THREE.MeshBasicMaterial({ color: opt.color || "#e5484d", transparent: true, opacity: 0.5, side: THREE.DoubleSide, depthWrite: false }));
+    mesh.rotation.x = -Math.PI / 2;
+    mesh.position.y = 3;
+    mesh.renderOrder = 11;
+    graph.scene().add(mesh);
+    wave = { mesh, from: opt.from || 60, to: opt.to || 1500, ms: opt.ms || 2600, t0: performance.now() };
+    const tick = (now) => {
+      if (!wave || wave.mesh !== mesh) return;
+      const k = ((now - wave.t0) % wave.ms) / wave.ms;
+      const r = wave.from + (wave.to - wave.from) * k;
+      mesh.scale.set(r, r, 1);
+      mesh.material.opacity = 0.55 * (1 - k);
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  // --- 탑: 레시피 자리에서 위로 쌓인 칸(칸 높이 = 항목 몫, 전체 = 점수). 순서대로 자라 오른다 -------------------
+  let towers = [];
+  let towerAnim = null;
+  function setTowers(list, { stagger = 60, ms = 900 } = {}) {
+    // list: [{ id, segments: [{ color, h }] }] (rank 순서). 빈 목록이면 지운다
+    for (const t of towers) graph.scene().remove(t.group);
+    towers = [];
+    const t0 = performance.now();
+    (list || []).forEach((item, i) => {
+      const n = byId.get(item.id);
+      if (!n) return;
+      const group = new THREE.Group();
+      let y = 0;
+      for (const seg of item.segments) {
+        if (!(seg.h > 0.5)) continue;
+        const mesh = new THREE.Mesh(TOWER, material("glow", seg.color, 0.92));
+        mesh.scale.set(TOWER_W, seg.h, TOWER_W);
+        mesh.position.y = y + seg.h / 2;
+        mesh.renderOrder = 10;
+        group.add(mesh);
+        y += seg.h;
+      }
+      group.scale.y = 0.001;
+      graph.scene().add(group);
+      towers.push({ group, n, delay: i * stagger, height: y });
+    });
+    if (towerAnim) cancelAnimationFrame(towerAnim);
+    const tick = (now) => {
+      for (const t of towers) {
+        const k = Math.max(0.001, Math.min(1, (now - t0 - t.delay) / ms));
+        t.group.scale.y = 1 - (1 - k) ** 3;
+        t.group.position.set(t.n.x, t.n.y, t.n.z);
+        t.group.visible = nodeVisible(t.n);
+      }
+      for (const entry of shownLabels) placeTowerLabel(entry);
+      towerAnim = towers.length ? requestAnimationFrame(tick) : null;
+    };
+    if (towers.length) towerAnim = requestAnimationFrame(tick);
+  }
+  function placeTowerLabel(entry) { // 탑이 있는 레시피의 라벨은 탑 꼭대기에
+    const t = towers.find((x) => x.n.id === entry.id);
+    if (t) entry.sprite.position.set(t.n.x, t.n.y + t.height * t.group.scale.y + 8, t.n.z);
+  }
+
   // 카메라를 지금 방향(방위각)은 그대로 두고 높이·거리만 바꿔 옮긴다
   function lookAt(targetY, distance, pitchDeg, ms = 1500) {
     const cam = graph.camera().position;
@@ -684,6 +762,11 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   // --- 외부 레시피 겹쳐 보기(부록 E): 이전 임시 노드·간선을 빼고 새로 넣는다. 배열은 제자리에서 바꾼다 ----
 
   let overlay = { nodes: [], links: [] };
+  function overlayY() {
+    if (mode === "flat") return LAYER_Y[4] + OVERLAY.dy;
+    if (mode === "sector") return OVERLAY.dy * 2;
+    return TREE.domeY + TREE.domeR + OVERLAY.dy;
+  }
   function setOverlay(data) {
     const dropNodes = new Set(overlay.nodes.map((n) => n.id));
     const dropLinks = new Set(overlay.links);
@@ -700,7 +783,7 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
     for (const id of dropNodes) { byId.delete(id); incident.delete(id); objects.delete(id); }
     overlay = { nodes: [], links: [] };
     if (data) {
-      const y = mode === "flat" ? LAYER_Y[4] + OVERLAY.dy : TREE.domeY + TREE.domeR + OVERLAY.dy; // 나무: 수관 꼭대기 위
+      const y = overlayY(); // 나무: 수관 꼭대기 위, 분류 지도: 원판 위
       const raws = data.nodes.filter((n) => n.kind === "unmapped");
       for (const src of data.nodes) {
         const n = { ...src };
@@ -772,15 +855,15 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
       graph.warmupTicks(flatWarmup()).graphData({ nodes, links }); // warmup은 라이브러리가 다음 갱신 때 돈다
       flatDecor = decorate(graph.scene(), sectors);
     } else {
-      const tl = mode === "flat" ? null : treeLayout(nodes, incident, byId, treeKind(mode));
+      const tl = mode === "flat" ? null : placeLayout(mode);
       applyPositions(tl ? tl.pos : flatPos);
       if (tl) {
         if (treeDecor) { graph.scene().remove(treeDecor.group); treeDecor.sprites.forEach(disposeSprite); }
-        treeDecor = decorateTree(graph.scene(), tl.labels);
+        treeDecor = decorateShape(graph.scene(), mode, tl);
       }
     }
     // 외부 레시피 노드를 새 배치의 자리로
-    const y = mode === "flat" ? LAYER_Y[4] + OVERLAY.dy : TREE.domeY + TREE.domeR + OVERLAY.dy;
+    const y = overlayY();
     for (const n of overlay.nodes) { n.fy = n.y = n.baseY = y; }
     graph.d3ReheatSimulation(); // cooldownTicks 0: force tick 없이 위치만 한 번 동기화
     if (stageDecor) { const on = stageDecor.group.visible; dropStage(); setStage(on); }
@@ -822,7 +905,8 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   return {
     graph, nodes, links, byId, linkById, incident, timings, THREE,
     select, setView, setOffsets, flyTo, resetCamera, setLayer, setOrigin, setLinkType, setOverlay, setLayoutMode,
-    setStage, setTargets, stageInfo, homeOf, lookAt, setGlyphs,
+    setStage, setTargets, stageInfo, homeOf, lookAt, setGlyphs, setWave, setTowers,
+    get towerCount() { return towers.length; },
     get glyphCount() { return glyphs.length; },
     get selected() { return state.selected; },
     get layout() { return mode; },
@@ -891,11 +975,79 @@ function petalMaterial(color, opacity) {
   return m;
 }
 
+const WAVE = new THREE.RingGeometry(0.97, 1, 160); // 반지름 1 고리(scale로 키움)
+const TOWER = new THREE.BoxGeometry(1, 1, 1);
+const TOWER_W = 14;
+
+function decorateShape(scene, mode, layout) {
+  return mode === "sector" ? decorateSector(scene, layout) : decorateTree(scene, layout.labels);
+}
+
+function decorateSector(scene, layout) {
+  // 분류 지도 바닥: 고리 경계(아주 흐린 원), 분류 경계선, 분류·고리 이름
+  const group = new THREE.Group();
+  scene.add(group);
+  const guides = [];
+  const lineMat = (opacity, color = "#9aa1ad") => new THREE.LineBasicMaterial({ color, transparent: true, opacity, depthWrite: false });
+  for (const r of layout.rings) {
+    const pts = [];
+    for (let i = 0; i <= 180; i++) { const a = (2 * Math.PI * i) / 180; pts.push(new THREE.Vector3(r * Math.cos(a), -1, r * Math.sin(a))); }
+    const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), lineMat(0.18));
+    line.userData.opacity = 0.18;
+    group.add(line);
+    guides.push(line);
+  }
+  const inner = layout.bands.raw[0] - 30;
+  for (const a of layout.dividers) {
+    const geo = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(inner * Math.cos(a), -1, inner * Math.sin(a)),
+      new THREE.Vector3(layout.radius * Math.cos(a), -1, layout.radius * Math.sin(a)),
+    ]);
+    const line = new THREE.Line(geo, lineMat(0.14));
+    line.userData.opacity = 0.14;
+    group.add(line);
+    guides.push(line);
+  }
+  const disc = new THREE.Mesh(new THREE.CircleGeometry(layout.radius, 160),
+    new THREE.MeshBasicMaterial({ color: "#46a758", transparent: true, opacity: 0.025, side: THREE.DoubleSide, depthWrite: false }));
+  disc.rotation.x = -Math.PI / 2;
+  disc.position.y = -2;
+  disc.userData.opacity = 0.025;
+  group.add(disc);
+  guides.push(disc);
+  const sprites = [];
+  for (const lb of layout.labels) {
+    const part = lb.role === "part";
+    const t = textSprite(lb.text, part
+      ? { px: LABEL_PX.sector, color: "#e6e8ec", background: "rgba(14,15,18,0.6)", above: false }
+      : { px: LABEL_PX.sector, color: "#b8bfca", background: "rgba(14,15,18,0.5)", above: false });
+    t.position.set(lb.x, lb.y, lb.z);
+    t.userData.sector = !part;
+    group.add(t);
+    sprites.push(t);
+  }
+  return { group, sprites, guides };
+}
+
 function buildStage(scene, info) {
   // 땅(바닥 원판·테두리)과 순위 무대(고리·단상). 아주 흐리게 그려 노드가 주인공이 되게 한다
   const group = new THREE.Group();
   scene.add(group);
   const flatMat = (color, opacity) => new THREE.MeshBasicMaterial({ color, transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false });
+  if (info.sector) {
+    const floor = new THREE.Mesh(new THREE.CircleGeometry(info.groundR, 128), flatMat("#3a2f2a", 0.22));
+    floor.rotation.x = -Math.PI / 2;
+    floor.position.y = info.groundY;
+    const edge = new THREE.Mesh(new THREE.RingGeometry(info.groundR - 8, info.groundR, 160), flatMat("#e5484d", 0.3));
+    edge.rotation.x = -Math.PI / 2;
+    edge.position.y = info.groundY + 1;
+    group.add(floor, edge);
+    const t = textSprite("아래: 제외된 레시피", { px: LABEL_PX.sector, color: "#ff9aa0", background: "rgba(14,15,18,0.55)", above: false });
+    t.center.set(0, 0.5);
+    t.position.set(info.groundR + 30, info.groundY, 0);
+    group.add(t);
+    return { group, sprites: [t] };
+  }
   const ground = new THREE.Mesh(new THREE.CircleGeometry(info.groundR, 96), flatMat("#3a2f2a", 0.28));
   ground.rotation.x = -Math.PI / 2;
   ground.position.y = info.groundY;
