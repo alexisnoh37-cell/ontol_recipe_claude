@@ -358,7 +358,7 @@ async function main() {
   }
   const tFetched = performance.now();
   const scene = createScene($("#graph"), data, {
-    tooltip, onSelect: (n) => { renderInfo(scene, n); browse?.onNodeSelect(n); playbackV2?.onNodeSelect(n); }, layout: params.get("layout") || (v2Panel ? "sector" : "tree-ingredient"),
+    tooltip, onSelect: (n) => { renderInfo(scene, n); browse?.onNodeSelect(n); playbackV2?.onNodeSelect(n); }, layout: params.get("layout") || (v2Panel ? "bowl" : "tree-ingredient"),
   });
   const tScene = performance.now();
   $("#loading").remove();

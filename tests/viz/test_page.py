@@ -99,7 +99,7 @@ def test_sector_map_layout_is_served(client):
     assert all(k in scene for k in ("setWave", "setTowers", "function decorateSector", "sectorMapLayout"))
     play = (VIZ_DIR / "playback_v2.js").read_text(encoding="utf-8")
     assert all(k in play for k in ("towersFor", "allergenReach"))
-    assert 'v2Panel ? "sector"' in (VIZ_DIR / "app.js").read_text(encoding="utf-8")  # v2 탭 기본 배치
+    assert 'v2Panel ? "bowl"' in (VIZ_DIR / "app.js").read_text(encoding="utf-8")  # v2 탭 기본 배치
 
 
 def test_scene_imports_do_not_shadow_local_functions():
@@ -114,3 +114,13 @@ def test_scene_imports_do_not_shadow_local_functions():
                     imported.add(name)
         declared = re.findall(r"^(?:export\s+)?(?:async\s+)?(?:function|const|let|class)\s+([A-Za-z_$][\w$]*)", text, re.M)
         assert not imported & set(declared), (path.name, imported & set(declared))
+
+
+def test_bowl_layout_is_served():
+    """원형 경기장(부록 H-11): 배치 선택, 계단 높이 배치, 3D 장식, 바닥으로 미끄러지는 제외. 모양은 브라우저로 확인한다."""
+    sector = (VIZ_DIR / "sector.js").read_text(encoding="utf-8")
+    assert all(k in sector for k in ("export function bowlLayout", "export const BOWL", "heightAt", "pitR"))
+    scene = (VIZ_DIR / "scene.js").read_text(encoding="utf-8")
+    assert 'bowl: "원형 경기장(3D)"' in scene and "function decorateBowl" in scene
+    play = (VIZ_DIR / "playback_v2.js").read_text(encoding="utf-8")
+    assert "info.bowl" in play and "heightAt: info.heightAt" in play

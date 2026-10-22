@@ -15,9 +15,10 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.186.1/+esm";
 
 import { BUNDLE_DY, LAYER_LABEL, LAYER_Y, NODE_COLOR, ORIGIN_COLOR, linkAlpha, linkBaseColor, linkRestAlpha, rgba } from "./palette.js";
 import { TREE, TREE_CAMERA, treeLayout } from "./tree.js";
-import { SECTOR, SECTOR_CAMERA, sectorLayout as sectorMapLayout } from "./sector.js";
+import { BOWL, BOWL_CAMERA, SECTOR, SECTOR_CAMERA, bowlLayout, sectorLayout as sectorMapLayout } from "./sector.js";
 
-export const LAYOUTS = { "tree-ingredient": "나무: 주재료 방향", "tree-cuisine": "나무: 음식 종류", sector: "분류 지도(위에서)", flat: "평면(층 원판)" };
+export const LAYOUTS = { "tree-ingredient": "나무: 주재료 방향", "tree-cuisine": "나무: 음식 종류", bowl: "원형 경기장(3D)", sector: "분류 지도(위에서)", flat: "평면(층 원판)" };
+const isMap = (m) => m === "sector" || m === "bowl"; // 분류 부채꼴을 쓰는 배치
 const treeKind = (mode) => (mode === "tree-cuisine" ? "cuisine" : "ingredient");
 
 const DIM = { select: 0.07, play: 0.025 }; // 강조 밖 노드 투명도(재생 중에는 더 흐리게)
@@ -202,10 +203,12 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   const staged = { home: new Map(), moved: new Set() }; // v2 무대 이동(부록 H-7): 옮기기 전 자리, 옮겨 둔 노드
   let stageDecor = null; // v2 무대 장식(땅·순위 무대)
   let sectorRadius = 0; // 분류 지도 바깥 반지름(무대·카메라용)
-  function placeLayout(m) { // 나무(주재료·음식 종류) 또는 분류 지도의 좌표·장식 정보
-    if (m !== "sector") return treeLayout(nodes, incident, byId, treeKind(m));
-    const sl = sectorMapLayout(nodes, incident, byId);
+  let bowlShape = null; // 원형 경기장: 계단 높이 함수·바닥 반지름
+  function placeLayout(m) { // 나무(주재료·음식 종류), 분류 지도, 원형 경기장의 좌표·장식 정보
+    if (!isMap(m)) return treeLayout(nodes, incident, byId, treeKind(m));
+    const sl = m === "bowl" ? bowlLayout(nodes, incident, byId) : sectorMapLayout(nodes, incident, byId);
     sectorRadius = sl.radius;
+    if (m === "bowl") bowlShape = { heightAt: sl.heightAt, pitR: sl.pitR };
     return sl;
   }
   let flatPos = null; // 평면 배치 좌표. force warmup은 비동기라 평면에서 다른 배치로 바꿀 때 저장한다
@@ -235,7 +238,7 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   }
   function linkColor(l) {
     const f = focus();
-    if (!f) return rgba(linkBaseColor(l), linkRestAlpha(l) * (mode === "sector" ? 0.45 : 1)); // 분류 지도: 구역을 가로지르는 간선을 흐리게
+    if (!f) return rgba(linkBaseColor(l), linkRestAlpha(l) * (isMap(mode) ? 0.45 : 1)); // 분류 지도·원형 경기장: 구역을 가로지르는 간선을 흐리게
     const st = f.links.get(l);
     if (!st) return rgba(linkBaseColor(l), LINK_DIM[f.mode]);
     return rgba(st.color || linkBaseColor(l), st.alpha ?? linkAlpha(l));
@@ -324,7 +327,7 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   const timings = { graphData: tLayout - tData, decorate: performance.now() - tLayout };
 
   function resetCamera(ms = 0) {
-    const cam = mode === "flat" ? CAMERA : mode === "sector" ? SECTOR_CAMERA : TREE_CAMERA;
+    const cam = mode === "flat" ? CAMERA : mode === "sector" ? SECTOR_CAMERA : mode === "bowl" ? BOWL_CAMERA : TREE_CAMERA;
     const pitch = (cam.pitchDeg * Math.PI) / 180;
     graph.cameraPosition(
       { x: 0, y: cam.targetY + cam.distance * Math.sin(pitch), z: cam.distance * Math.cos(pitch) },
@@ -574,6 +577,10 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   // 좌표만 바꾼다(판정 없음). 지정하지 않은 노드 중 옮겨 둔 노드는 원래 자리로 돌아간다.
 
   function stageInfo() {
+    if (mode === "bowl") { // 원형 경기장: 제외는 가운데 바닥(알레르기 쪽)으로 미끄러져 내려가고, 순위는 테두리에서 탑으로
+      return { sector: true, bowl: true, groundY: BOWL.pitFloor, groundR: sectorRadius, podiumY: 0, ringR: 0, innerR: 0,
+        daisY: 0, daisR: 0, mapR: sectorRadius, coreR: SECTOR.bundleR, pitR: bowlShape.pitR, heightAt: bowlShape.heightAt };
+    }
     if (mode === "sector") { // 분류 지도: 제외는 원판 아래로 가라앉고, 순위는 제자리 탑으로(무대 고리·단상 없음)
       return { sector: true, groundY: -280, groundR: sectorRadius, podiumY: 0, ringR: 0, innerR: 0, daisY: 0, daisR: 0,
         mapR: sectorRadius, coreR: SECTOR.bundleR };
@@ -683,12 +690,13 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
     mesh.position.y = 3;
     mesh.renderOrder = 11;
     graph.scene().add(mesh);
-    wave = { mesh, from: opt.from || 60, to: opt.to || 1500, ms: opt.ms || 2600, t0: performance.now() };
+    wave = { mesh, from: opt.from || 60, to: opt.to || 1500, ms: opt.ms || 2600, t0: performance.now(), heightAt: opt.heightAt };
     const tick = (now) => {
       if (!wave || wave.mesh !== mesh) return;
       const k = ((now - wave.t0) % wave.ms) / wave.ms;
       const r = wave.from + (wave.to - wave.from) * k;
       mesh.scale.set(r, r, 1);
+      mesh.position.y = (wave.heightAt ? wave.heightAt(r) : 0) + 4;
       mesh.material.opacity = 0.55 * (1 - k);
       requestAnimationFrame(tick);
     };
@@ -765,6 +773,7 @@ export function createScene(el, data, { tooltip, onSelect, layout = "tree-ingred
   function overlayY() {
     if (mode === "flat") return LAYER_Y[4] + OVERLAY.dy;
     if (mode === "sector") return OVERLAY.dy * 2;
+    if (mode === "bowl") return BOWL.y.recipe + OVERLAY.dy * 2;
     return TREE.domeY + TREE.domeR + OVERLAY.dy;
   }
   function setOverlay(data) {
@@ -980,7 +989,53 @@ const TOWER = new THREE.BoxGeometry(1, 1, 1);
 const TOWER_W = 14;
 
 function decorateShape(scene, mode, layout) {
+  if (mode === "bowl") return decorateBowl(scene, layout);
   return mode === "sector" ? decorateSector(scene, layout) : decorateTree(scene, layout.labels);
+}
+
+function decorateBowl(scene, layout) {
+  // 계단 면(아주 흐린 고리), 계단 벽(열린 원기둥), 분류 경계선(계단을 타고 오름), 분류·계단 이름
+  const group = new THREE.Group();
+  scene.add(group);
+  const guides = [];
+  const add = (m, opacity) => { m.userData.opacity = opacity; group.add(m); guides.push(m); };
+  const surf = (color, opacity) => new THREE.MeshBasicMaterial({ color, transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false });
+  const colors = ["#e5484d", "#46a758", "#3e9bd6", "#ffb224"]; // 바닥(알레르기)·원천 재료·가공품·레시피
+  layout.terraces.forEach((t, i) => {
+    const ring = new THREE.Mesh(t.from > 0 ? new THREE.RingGeometry(t.from, t.to, 160) : new THREE.CircleGeometry(t.to, 96), surf(colors[i], 0.05));
+    ring.rotation.x = -Math.PI / 2;
+    ring.position.y = t.y - 2;
+    add(ring, 0.05);
+    const next = layout.terraces[i + 1];
+    if (next) { // 다음 계단까지 올라가는 벽
+      const h = next.y - t.y;
+      const wall = new THREE.Mesh(new THREE.CylinderGeometry(t.to, t.to, h, 160, 1, true), surf(colors[i + 1], 0.04));
+      wall.position.y = t.y + h / 2;
+      add(wall, 0.04);
+    }
+  });
+  const lineMat = (opacity) => new THREE.LineBasicMaterial({ color: "#9aa1ad", transparent: true, opacity, depthWrite: false });
+  for (const a of layout.dividers) { // 분류 경계: 원천 재료 계단부터 테두리까지 계단 모양으로
+    const pts = [];
+    layout.terraces.slice(1).forEach((t, i) => {
+      if (i > 0) pts.push(new THREE.Vector3(t.from * Math.cos(a), layout.terraces[i].y, t.from * Math.sin(a)));
+      pts.push(new THREE.Vector3(t.from * Math.cos(a), t.y, t.from * Math.sin(a)));
+      pts.push(new THREE.Vector3(t.to * Math.cos(a), t.y, t.to * Math.sin(a)));
+    });
+    add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), lineMat(0.16)), 0.16);
+  }
+  const sprites = [];
+  for (const lb of layout.labels) {
+    const part = lb.role === "part";
+    const t = textSprite(lb.text, part
+      ? { px: LABEL_PX.sector, color: "#e6e8ec", background: "rgba(14,15,18,0.6)", above: false }
+      : { px: LABEL_PX.sector - 1, color: "#c8d3c0", background: "rgba(14,15,18,0.5)", above: false });
+    t.position.set(lb.x, lb.y, lb.z);
+    t.userData.sector = !part;
+    group.add(t);
+    sprites.push(t);
+  }
+  return { group, sprites, guides };
 }
 
 function decorateSector(scene, layout) {
@@ -1034,6 +1089,18 @@ function buildStage(scene, info) {
   const group = new THREE.Group();
   scene.add(group);
   const flatMat = (color, opacity) => new THREE.MeshBasicMaterial({ color, transparent: true, opacity, side: THREE.DoubleSide, depthWrite: false });
+  if (info.bowl) {
+    const [r0, r1] = info.pitR;
+    const pit = new THREE.Mesh(new THREE.RingGeometry(r0 - 20, r1 + 20, 128), flatMat("#e5484d", 0.12));
+    pit.rotation.x = -Math.PI / 2;
+    pit.position.y = info.groundY - 2;
+    group.add(pit);
+    const t = textSprite("바닥: 제외된 레시피", { px: LABEL_PX.sector, color: "#ff9aa0", background: "rgba(14,15,18,0.55)", above: false });
+    t.center.set(0.5, 0.5);
+    t.position.set(0, info.groundY + 10, r1 + 40);
+    group.add(t);
+    return { group, sprites: [t] };
+  }
   if (info.sector) {
     const floor = new THREE.Mesh(new THREE.CircleGeometry(info.groundR, 128), flatMat("#3a2f2a", 0.22));
     floor.rotation.x = -Math.PI / 2;

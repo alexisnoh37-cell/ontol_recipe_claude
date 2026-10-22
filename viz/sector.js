@@ -160,7 +160,7 @@ export function sectorLayout(nodes, incident, byId) {
     const n = counts.get(c) || 0;
     const r = labelR + (w < 0.16 ? (narrow++ % 3) * 90 : 0);
     if (w >= 0.16) narrow = 0;
-    labels.push({ text: n ? `${c} ${n}` : c, x: r * Math.cos(a), y: 0, z: r * Math.sin(a), role: "bunch", angle: a });
+    labels.push({ text: n ? `${c} ${n}` : c, x: r * Math.cos(a), y: 0, z: r * Math.sin(a), role: "bunch", angle: a, narrow: w < 0.16 });
   }
   const ringLabelAngle = -Math.PI / 2 - 0.02; // 첫 분류 경계 바로 바깥(위쪽)
   const ringLabel = (text, r) => labels.push({ text, x: r * Math.cos(ringLabelAngle), y: 30, z: r * Math.sin(ringLabelAngle), role: "part" });
@@ -176,4 +176,49 @@ export function sectorLayout(nodes, incident, byId) {
     bands: { raw: [SECTOR.ringStart, rawEnd], processed: [procStart, procEnd], recipe: [recStart, recEnd] },
     radius: recEnd + 30,
   };
+}
+
+// --- 원형 경기장(그릇) 배치(docs/plan.md 부록 H-11) ---------------------------------------------------
+// 분류 지도와 같은 각도·반지름에 단계별 높이(계단)를 더한다: 가운데 바닥 = 알레르기 그룹, 바깥으로 갈수록 높아져
+// 원천 재료 → 가공품 → 레시피(맨 위 테두리). 분류 이름은 레시피가 아니라 재료 계단에 붙인다.
+
+export const BOWL = { y: { group: 0, raw: 260, processed: 520, recipe: 800 }, pitFloor: -10 };
+export const BOWL_CAMERA = { pitchDeg: 42, distance: 4700, targetY: 330 };
+
+export function bowlLayout(nodes, incident, byId) {
+  const sl = sectorLayout(nodes, incident, byId);
+  const layerY = (n) => (n.kind === "allergen_group" ? BOWL.y.group : n.kind === "recipe" ? BOWL.y.recipe
+    : n.layer === 3 ? BOWL.y.processed : BOWL.y.raw);
+  for (const [id, p] of sl.pos) {
+    const n = byId.get(id);
+    if (n) p.y = layerY(n);
+  }
+  const { raw, processed, recipe } = sl.bands;
+  // 계단 경계(반지름): 바닥 | 원천 재료 | 가공품 | 레시피
+  const edges = [raw[0] - 40, (raw[1] + processed[0]) / 2, (processed[1] + recipe[0]) / 2, sl.radius];
+  const terraces = [
+    { from: 0, to: edges[0], y: BOWL.y.group },
+    { from: edges[0], to: edges[1], y: BOWL.y.raw },
+    { from: edges[1], to: edges[2], y: BOWL.y.processed },
+    { from: edges[2], to: edges[3], y: BOWL.y.recipe },
+  ];
+  const heightAt = (r) => (terraces.find((t) => r <= t.to) || terraces[3]).y;
+
+  // 이름: 분류는 원천 재료 계단 바깥 가장자리(가공품 벽 앞), 좁은 부채꼴은 높이를 엇갈림. 고리 이름은 각 계단 위
+  const labels = [];
+  const catR = (raw[1] + edges[1]) / 2;
+  let narrow = 0;
+  for (const lb of sl.labels.filter((l) => l.role === "bunch")) {
+    const tier = lb.narrow ? (narrow++ % 3) : 0;
+    if (!lb.narrow) narrow = 0;
+    const text = lb.text.replace(/ \d+$/, ""); // 레시피 수는 빼고 분류 이름만(재료 계단이므로)
+    labels.push({ text, x: catR * Math.cos(lb.angle), y: BOWL.y.raw + 34 + tier * 46, z: catR * Math.sin(lb.angle), role: "bunch" });
+  }
+  const a = -Math.PI / 2 - 0.02;
+  const ring = (text, r, y) => labels.push({ text, x: r * Math.cos(a), y: y + 40, z: r * Math.sin(a), role: "part" });
+  ring("알레르기 그룹 (바닥)", 160, BOWL.y.group);
+  ring("원천 재료·분류", (raw[0] + raw[1]) / 2, BOWL.y.raw);
+  ring("가공품", (processed[0] + processed[1]) / 2, BOWL.y.processed);
+  ring("레시피 (테두리)", (recipe[0] + recipe[1]) / 2, BOWL.y.recipe);
+  return { ...sl, labels, terraces, heightAt, pitR: [SECTOR.bundleR + 25, raw[0] - 25] };
 }
