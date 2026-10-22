@@ -5,6 +5,8 @@
 // 아래 깔때기 막대가 남은 레시피 수를, 카메라는 단계마다 뿌리 → 수관 → 땅 → 무대 순으로 따라간다.
 // 분류 지도(부록 H-10): 배치가 "분류 지도"면 무대 대신 제자리 연출 — 알레르기 물결이 가운데에서 번지고, 제외된 레시피는
 // 원판 아래로 가라앉으며, 가진 재료에서 레시피로 빛이 흐르고, 순위는 레시피 자리에서 항목별 칸이 쌓인 탑으로 자란다.
+// 원형 경기장(부록 H-11): 분류 지도와 같지만, 제외된 레시피는 테두리에서 가운데 바닥(알레르기 쪽)으로 미끄러져 내려가고
+// 물결은 계단을 타고 오른다.
 // What-if(부록 H-9): 실행한 뒤 조건 하나(알레르기·절대 안 먹음·매운맛 한도·가진 재료·순위 방식)를 바꿔 다시 실행하고,
 // 기준 ↔ 바꾼 결과를 오가며 새로 빠진 잎은 떨어지고 다시 통과한 잎은 땅에서 올라오는 것을 본다(두 응답의 차이만 표시).
 
@@ -243,7 +245,7 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
     scene.setTowers(towersFor(run.step));
     const info = scene.stageInfo();
     const allergic = run.t.user.allergen_groups.length > 0;
-    scene.setWave(info.sector && allergic && (run.step === 0 || run.step === 2) ? { from: info.coreR * 0.4, to: info.mapR, color: "#e5484d" } : null);
+    scene.setWave(info.sector && allergic && (run.step === 0 || run.step === 2) ? { from: info.coreR * 0.4, to: info.mapR, color: "#e5484d", heightAt: info.heightAt } : null);
     renderFunnel();
     if (els.follow.checked) followCamera(run.step);
   }
@@ -292,6 +294,12 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
         const h = scene.homeOf(r);
         if (!h) continue;
         const delay = step === 2 ? stagger(order.get(r) ?? 0, t.checked.length) : 0;
+        if (info.bowl) { // 자기 방향 그대로 가운데 바닥 둘레로 미끄러져 내려간다
+          const a = Math.atan2(h.z, h.x);
+          const rr = info.pitR[0] + (info.pitR[1] - info.pitR[0]) * hash01(r);
+          out.set(r, { x: rr * Math.cos(a), y: info.groundY - 60 * hash01(`${r}#y`), z: rr * Math.sin(a), delay }); // 쌓인 더미처럼 높이를 흩뜨림
+          continue;
+        }
         if (info.sector) { out.set(r, { x: h.x, y: info.groundY, z: h.z, delay }); continue; } // 제자리에서 원판 아래로
         const a = Math.atan2(h.z, h.x);
         const rr = info.groundR * (0.3 + 0.62 * hash01(r));
@@ -396,6 +404,12 @@ export function setupPlaybackV2({ scene, $, attachSearch, ingredientIndex, onAct
 
   function followCamera(step) {
     const info = scene.stageInfo();
+    if (info.bowl) { // 바닥(알레르기) → 그릇 전체 → 낮게(미끄러짐) → 테두리(탑)
+      const shots = [[80, 3400, 62], [560, 6800, 34], [420, 6300, 20], [800, 6500, 30], [1220, 6200, 18], [1220, 5400, 22]];
+      const [y, d, pitch] = shots[step];
+      scene.lookAt(y, d, pitch, 1500);
+      return;
+    }
     if (info.sector) { // 위에서 → 낮게(가라앉음) → 비스듬히(탑)
       const R = info.mapR / 1730;
       const shots = [[0, 3100, 74], [0, 4300 * R, 58], [-100, 4300 * R, 30], [0, 4000 * R, 46], [160, 3900 * R, 24], [160, 3400 * R, 28]];
